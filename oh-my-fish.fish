@@ -1,3 +1,6 @@
+# Add all functions to fish_funtion_path.
+set fish_function_path $FISH/functions/ $fish_function_path
+
 # Add all defined plugins to fish_function_path.
 for plugin in $FISH_PLUGINS
   set fish_function_path $FISH/plugins/$plugin $fish_function_path
