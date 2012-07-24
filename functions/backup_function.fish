@@ -13,11 +13,11 @@ function backup_function
 end
 
 function _create_tmpname
-    set -l TMPDIR /tmp
+    set -l tmpdir /tmp
 
-    set -g tmpname (printf "$TMPDIR/fish_funced_%d_%d.fish" %self (random))
+    set -g tmpname (printf "$tmpdir/fish_funced_%d_%d.fish" %self (random))
     while test -f $tmpname
-        set -g tmpname (printf "$TMPDIR/fish_funced_%d_%d.fish" %self (random))
+        set -g tmpname (printf "$tmpdir/fish_funced_%d_%d.fish" %self (random))
     end
 end
 
