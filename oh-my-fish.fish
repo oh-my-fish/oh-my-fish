@@ -1,6 +1,6 @@
 # Add all defined plugins to fish_function_path.
 for plugin in $FISH_PLUGINS
-  set fish_function_path $fish_function_path $FISH/plugins/$plugin
+  set fish_function_path $FISH/plugins/$plugin $fish_function_path
 end
 
 # Add theme to fish_function_path.
