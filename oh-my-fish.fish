@@ -2,7 +2,7 @@
 set user_function_path $fish_function_path[1]
 set -e fish_function_path[1]
 
-# Add all functions to fish_funtion_path.
+# Add all functions to fish_function_path.
 set fish_function_path $FISH/functions/ $fish_function_path
 
 # Add all defined plugins to fish_function_path.
