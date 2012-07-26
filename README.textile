@@ -24,17 +24,17 @@ h3. The manual way
 
 1. Clone the repository
 
-  @git clone git://github.com/bpinto/oh-my-fish.git ~/.oh-my-fish@
+@git clone git://github.com/bpinto/oh-my-fish.git ~/.oh-my-fish@
 
 2. Create a new fish config by copying the fish template we've provided.
 
-  *NOTE*: If you already have a ~/.config/fish/config.fish file, you should back it up. @cp ~/.config/fish/config.fish ~/.config/fish/config.orig@ in case you want to go back to your original settings.
+*NOTE*: If you already have a ~/.config/fish/config.fish file, you should back it up: @cp ~/.config/fish/config.{fish,orig}@ in case you want to go back to your original settings.
 
-  @cp ~/.oh-my-fish/templates/config.fish-template ~/.config/fish/config.fish@
+@cp ~/.oh-my-fish/templates/config.fish-template ~/.config/fish/config.fish@
 
 3. Set fish as your default shell:
 
-  @chsh -s /usr/local/bin/fish@
+@chsh -s /usr/local/bin/fish@
 
 4. Start / restart fish (open a new terminal is easy enough...)
 
@@ -61,7 +61,7 @@ I'm far from being a fish-expert and suspect there are many ways to improve. If 
 
 h3. Send us your theme!
 
--I'm hoping to collect a bunch of themes for our command prompts. You can see existing ones in the @themes/@ directory.-
+I'm hoping to collect a bunch of themes for our command prompts. You can see existing ones in the @themes/@ directory.
 
 
 
