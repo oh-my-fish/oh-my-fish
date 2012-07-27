@@ -8,20 +8,30 @@ end
 set user_function_path $fish_function_path[1]
 set -e fish_function_path[1]
 
-# Add all functions to fish_function_path.
+# Add all functions
 set fish_function_path $FISH/functions/ $fish_function_path
 
-# Add all defined plugins to fish_function_path.
+# Add all defined plugins
 for plugin in $FISH_PLUGINS
   set fish_function_path $FISH/plugins/$plugin $fish_function_path
+
+  # Add plugin completion
+  if test -e $FISH/plugins/$plugin/completions
+    set fish_complete_path $FISH/plugins/$plugin/completions $fish_complete_path
+  end
 end
 
-# Add user defined theme to fish_function_path.
+# Add user defined theme
 set fish_function_path /Users/bpinto/.oh-my-fish/themes/$FISH_THEME $fish_function_path
 
-# Add all custom plugins to fish_function_path
+# Add all custom plugins
 for plugin in $FISH_CUSTOM/plugins/*
   set fish_function_path $plugin $fish_function_path
+
+  # Add plugin completion
+  if test -e $plugin/completions
+    set fish_complete_path $plugin/completions $fish_complete_path
+  end
 end
 
 # Source all files inside custom folder
