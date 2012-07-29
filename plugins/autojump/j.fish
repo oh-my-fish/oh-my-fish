@@ -1,3 +1,3 @@
 function j
-    cd (command autojump $argv)
+  cd (command autojump $argv)
 end
