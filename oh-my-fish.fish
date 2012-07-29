@@ -28,6 +28,19 @@ function _fish_add_completion
   end
 end
 
+function _fish_source_plugin_load_file
+  set -l plugin $argv[1]
+  set -l load_file_path "plugins/$plugin/$plugin.load.fish"
+
+  if test -e $FISH/$load_file_path
+    . $FISH/$load_file_path
+  end
+
+  if test -e $FISH_CUSTOM/$load_file_path
+    . $FISH_CUSTOM/$load_file_path
+  end
+end
+
 ###
 # Configuration
 ###
@@ -49,13 +62,14 @@ set fish_function_path $FISH/functions/ $fish_function_path
 for plugin in $FISH_PLUGINS
   _fish_add_plugin $plugin
   _fish_add_completion $plugin
+  _fish_source_plugin_load_file $plugin
 end
 
 # Add user defined theme
 set fish_function_path $FISH/themes/$FISH_THEME $fish_function_path
 
 # Source all files inside custom folder
-for config_file in $FISH_CUSTOM/*.fish
+for config_file in $FISH_CUSTOM/*.load.fish
   . $config_file
 end
 
