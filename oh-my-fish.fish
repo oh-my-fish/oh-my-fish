@@ -22,7 +22,7 @@ for plugin in $FISH_PLUGINS
 end
 
 # Add user defined theme
-set fish_function_path /Users/bpinto/.oh-my-fish/themes/$FISH_THEME $fish_function_path
+set fish_function_path $FISH/themes/$FISH_THEME $fish_function_path
 
 # Add all custom plugins
 for plugin in $FISH_CUSTOM/plugins/*
