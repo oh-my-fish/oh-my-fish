@@ -2,7 +2,7 @@
 
 ## Functions
 function _bundler-installed
-  which bundle >- ^&1
+  which bundle >/dev/null ^&1
 end
 
 function _within-bundled-project
