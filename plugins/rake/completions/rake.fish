@@ -1,3 +1,11 @@
+# fish completion for rake
+function __fish_rake_tasks
+  rake -P ^/dev/null | grep rake | cut -c 6-
+end
+
+### commands
+
+complete -c rake -f -a '(__fish_rake_tasks)'
 complete -c rake -s C -l classic-namespace        -d 'Put Task and FileTask in the top level namespace'
 complete -c rake -s D -l describe              -x -d 'Describe the tasks (matching optional PATTERN), then exit.'
 complete -c rake -s n -l dry-run                  -d 'Do a dry run without executing actions.'
