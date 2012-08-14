@@ -27,6 +27,6 @@ set -l bundled_commands annotate cap capify cucumber foreman guard middleman nan
 
 for cmd in $bundled_commands
   if not contains $cmd bundle gem
-    eval "function $cmd; _run-with-bundler $cmd \$argv; end"
+    eval "function $cmd; _run-with-bundler $cmd \$argv;end"
   end
 end
