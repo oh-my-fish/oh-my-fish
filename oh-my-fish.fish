@@ -30,7 +30,7 @@ end
 
 function _fish_source_plugin_load_file
   set -l plugin $argv[1]
-  set -l load_file_path "plugins/$plugin/$plugin.load.fish"
+  set -l load_file_path "plugins/$plugin/$plugin.load"
 
   if test -e $fish_path/$load_file_path
     . $fish_path/$load_file_path
@@ -69,7 +69,7 @@ end
 set fish_function_path $fish_path/themes/$fish_theme $fish_function_path
 
 # Source all files inside custom folder
-for config_file in $fish_custom/*.load.fish
+for config_file in $fish_custom/*.load
   . $config_file
 end
 
