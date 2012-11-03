@@ -8,17 +8,17 @@ end
 function _within-bundled-project
   set -l check_dir $PWD
   while [ $check_dir != "/" ]
-    [ -f "$check_dir/Gemfile" ] and return
+    test -f "$check_dir/Gemfile"; and return
     set check_dir (dirname $check_dir)
   end
   false
 end
 
 function _run-with-bundler
-  if _bundler-installed and _within-bundled-project
+  if begin; _bundler-installed; and _within-bundled-project; end
     command bundle exec $argv
   else
-    $argv
+    eval command $argv
   end
 end
 
