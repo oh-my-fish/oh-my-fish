@@ -30,7 +30,7 @@ h3. The manual way
 
 *NOTE*: If you already have a ~/.config/fish/config.fish file, you should back it up: @cp ~/.config/fish/config.{fish,orig}@ in case you want to go back to your original settings.
 
-@cp ~/.oh-my-fish/templates/config.fish-template ~/.config/fish/config.fish@
+@cp ~/.oh-my-fish/templates/config.fish ~/.config/fish/config.fish@
 
 3. Set fish as your default shell:
 
