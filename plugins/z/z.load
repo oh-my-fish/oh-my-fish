@@ -1,0 +1,5 @@
+function __check_z --on-variable PWD --description 'Setup z on directory change'
+  status --is-command-substitution; and return
+
+  bash -c "source /usr/local/etc/profile.d/z.sh; _z --add `pwd -P`"
+end
