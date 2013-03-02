@@ -1,3 +1,5 @@
+rvm current 1>/dev/null 2>&1
+
 function __check_rvm --on-variable PWD --description 'Setup rvm on directory change'
   status --is-command-substitution; and return
 
