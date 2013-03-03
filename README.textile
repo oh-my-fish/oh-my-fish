@@ -13,11 +13,11 @@ You can install this via the command line with either `curl` or `wget`.
 
 h4. via `curl`
 
--@curl -L https://github.com/bpinto/oh-my-fish/raw/master/tools/install.sh | sh@-
+@curl -L https://github.com/bpinto/oh-my-fish/raw/master/tools/install.sh | sh@
 
 h4. via `wget`
 
--@wget --no-check-certificate https://github.com/bpinto/oh-my-fish/raw/master/tools/install.sh -O - | sh@-
+@wget --no-check-certificate https://github.com/bpinto/oh-my-fish/raw/master/tools/install.sh -O - | sh@
 
 h3. The manual way
 
@@ -32,17 +32,23 @@ h3. The manual way
 
 @cp ~/.oh-my-fish/templates/config.fish ~/.config/fish/config.fish@
 
-3. Set fish as your default shell:
+3. Start / restart fish (open a new terminal is easy enough...)
+
+h3. Set fish as your default shell
+
+1. Add fish to the list of login shells
+
+@grep -q '^/usr/local/bin/fish$' /etc/shells; or echo '/usr/local/bin/fish' | sudo tee -a /etc/shells@
+
+2. Set fish as default shell
 
 @chsh -s /usr/local/bin/fish@
-
-4. Start / restart fish (open a new terminal is easy enough...)
 
 h2. Usage
 
 * enable the plugins you want in your @~/.config/fish/config.fish@ (take a look at @plugins/@ to see what's possible)
-** example: @set FISH_PLUGINS autojump git@
-* Theme support: Change the @FISH_THEME@ environment variable in @~/.config/fish/config.fish@.
+** example: @set fish_plugins autojump git@
+* Theme support: Change the @fish_theme@ environment variable in @~/.config/fish/config.fish@.
 
 h3. Customization
 
