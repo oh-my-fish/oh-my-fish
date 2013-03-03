@@ -21,10 +21,10 @@ function fish_prompt
     set git_info "$green$git_branch "
 
     if [ (_is_git_dirty) ]
-      set -l dirty "$yellow ✗"
+      set -l dirty "$yellow✗"
       set git_info "$git_info$dirty"
     end
   end
 
-  echo -n -s $cwd $red '|'$git_info $normal⇒ ' '$normal
+  echo -n -s $cwd $red '|' $git_info $normal ⇒ ' ' $normal
 end
