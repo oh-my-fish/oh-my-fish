@@ -1,1 +1,3 @@
-set PATH /usr/local/share/npm/bin $PATH
+if test -d /usr/local/share/npm/bin
+  set PATH /usr/local/share/npm/bin $PATH
+end
