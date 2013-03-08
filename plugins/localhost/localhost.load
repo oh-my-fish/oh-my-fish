@@ -1,0 +1,25 @@
+# Opens http://localhost:3000 (and other ports) in the default browser
+# Requires `open` to be installed (MacOS only)
+
+# Example:
+# $ 3000
+
+## Functions
+function _open-installed
+  which open >/dev/null ^&1
+end
+
+function _open_browser
+  if _open-installed
+    command open http://localhost:$argv
+  else
+    echo 'Requires open to be installed'
+  end
+end
+
+## Main program
+set -l localhost_ports 3000 4000 5000 6000 7000 8000 9000 8080
+
+for port in $localhost_ports
+  eval "function $port; _open_browser $port; end"
+end
