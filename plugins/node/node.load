@@ -1,3 +1,24 @@
 if test -d /usr/local/share/npm/bin
   set PATH /usr/local/share/npm/bin $PATH
 end
+
+function __check_node_project --on-variable PWD --description 'Setup local npm binaries on directory change'
+  status --is-command-substitution; and return
+
+  set -l count 1
+
+  for path in $PATH
+    if echo $path | grep 'node_module' >/dev/null
+      set -e PATH[$count]
+    else
+      set count (math $count + 1)
+    end
+  end
+
+  for path in $PWD/node_modules/*/bin
+    set PATH $path $PATH
+  end
+
+  bash -c "source /usr/local/etc/profile.d/z.sh; _z --add `pwd -P`"
+  set -e count
+end
