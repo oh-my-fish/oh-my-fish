@@ -1,33 +1,6 @@
-### Functions
-function __remove_local_npm_binaries_from_path
-  set -l count 1
-
-  for path in $PATH
-    if echo $path | grep 'node_module' >/dev/null
-      set -e PATH[$count]
-    else
-      set count (math $count + 1)
-    end
-  end
-end
-
-function __add_local_npm_binaries_to_path
-  for path in $PWD/node_modules/*/bin
-    set PATH $path $PATH
-  end
-end
-
-
 ### Main program
 if test -d /usr/local/share/npm/bin
   set PATH /usr/local/share/npm/bin $PATH
 end
 
-__add_local_npm_binaries_to_path
-
-function __check_node_project --on-variable PWD --description 'Setup local npm binaries on directory change'
-  status --is-command-substitution; and return
-
-  __remove_local_npm_binaries_from_path
-  __add_local_npm_binaries_to_path
-end
+set PATH ./node_modules/.bin $PATH
