@@ -19,6 +19,5 @@ function __check_node_project --on-variable PWD --description 'Setup local npm b
     set PATH $path $PATH
   end
 
-  bash -c "source /usr/local/etc/profile.d/z.sh; _z --add `pwd -P`"
   set -e count
 end
