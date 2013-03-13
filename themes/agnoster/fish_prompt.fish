@@ -7,14 +7,14 @@
 # [Powerline-patched font](https://gist.github.com/1595572).
 
 ## Set this options in your config.fish (if you want to :])
-# set -g THEME_DISPLAY_USER yes
-# set -g $DEFAULT_USER your_normal_user
+# set -g theme_display_user yes
+# set -g default_user your_normal_user
 
 
 
-set -g CURRENT_BG NONE
-set SEGMENT_SEPARATOR \u2b80
-set RIGHT_SEGMENT_SEPARATOR \u2b80
+set -g current_bg NONE
+set segment_separator \u2b80
+set right_segment_separator \u2b80
 # ===========================
 # Helper methods
 # ===========================
@@ -56,10 +56,10 @@ function prompt_segment -d "Function to draw a segment"
   else
     set fg normal
   end
-  if [ "$CURRENT_BG" != 'NONE' -a "$argv[1]" != "$CURRENT_BG" ]
+  if [ "$current_bg" != 'NONE' -a "$argv[1]" != "$current_bg" ]
     set_color -b $bg
-    set_color $CURRENT_BG
-    echo -n "$SEGMENT_SEPARATOR "
+    set_color $current_bg
+    echo -n "$segment_separator "
     set_color -b $bg
     set_color $fg
   else
@@ -67,19 +67,19 @@ function prompt_segment -d "Function to draw a segment"
     set_color $fg
     echo -n " "
   end
-  set CURRENT_BG $argv[1]
+  set current_bg $argv[1]
   if [ -n "$argv[3]" ]
     echo -n -s $argv[3] " "
   end
 end
 
 function prompt_finish -d "Close open segments"
-  if [ -n $CURRENT_BG ]
+  if [ -n $current_bg ]
     set_color -b normal
-    set_color $CURRENT_BG
-    echo -n "$SEGMENT_SEPARATOR "
+    set_color $current_bg
+    echo -n "$segment_separator "
   end
-  set -g CURRENT_BG NONE
+  set -g current_bg NONE
 end
 
 
@@ -87,9 +87,9 @@ end
 # Theme components
 # ===========================
 
-function prompt_user -d "Display actual user if different from $DEFAULT_USER"
-  if [ "$THEME_DISPLAY_USER" = "yes" ]
-    if [ "$USER" != "$DEFAULT_USER" -o -n "$SSH_CLIENT" ]
+function prompt_user -d "Display actual user if different from $default_user"
+  if [ "$theme_display_user" = "yes" ]
+    if [ "$USER" != "$default_user" -o -n "$SSH_CLIENT" ]
       set USER_PROMPT (whoami)@(hostname)
       prompt_segment black yellow $USER_PROMPT
     end
