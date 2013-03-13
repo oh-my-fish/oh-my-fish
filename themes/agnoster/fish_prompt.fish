@@ -6,10 +6,15 @@
 # In order for this theme to render correctly, you will need a
 # [Powerline-patched font](https://gist.github.com/1595572).
 
+## Set this options in your config.fish (if you want to :])
+# set -g THEME_DISPLAY_USER yes
+# set -g $DEFAULT_USER your_normal_user
+
+
+
 set -g CURRENT_BG NONE
 set SEGMENT_SEPARATOR \u2b80
 set RIGHT_SEGMENT_SEPARATOR \u2b80
-
 # ===========================
 # Helper methods
 # ===========================
@@ -33,7 +38,7 @@ function parse_git_dirty
   end
 end
 
-#set -g THEME_DISPLAY_USER yes
+
 # ===========================
 # Segments functions
 # ===========================
@@ -54,7 +59,6 @@ function prompt_segment -d "Function to draw a segment"
   if [ "$CURRENT_BG" != 'NONE' -a "$argv[1]" != "$CURRENT_BG" ]
     set_color -b $bg
     set_color $CURRENT_BG
-    #echo -n " %{$bg%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR%{$fg%} "
     echo -n "$SEGMENT_SEPARATOR "
     set_color -b $bg
     set_color $fg
@@ -67,14 +71,12 @@ function prompt_segment -d "Function to draw a segment"
   if [ -n "$argv[3]" ]
     echo -n -s $argv[3] " "
   end
-  #echo $CURRENT_BG $fg $bg
 end
 
 function prompt_finish -d "Close open segments"
   if [ -n $CURRENT_BG ]
     set_color -b normal
     set_color $CURRENT_BG
-    #echo -n " %{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR"
     echo -n "$SEGMENT_SEPARATOR "
   end
   set -g CURRENT_BG NONE
@@ -86,9 +88,9 @@ end
 # ===========================
 
 function prompt_user -d "Display actual user if different from $DEFAULT_USER"
-  set USER_PROMPT (whoami)@(hostname)
   if [ "$THEME_DISPLAY_USER" = "yes" ]
-    if [ "$user" != "$DEFAULT_USER" -o -n "$SSH_CLIENT" ]
+    if [ "$USER" != "$DEFAULT_USER" -o -n "$SSH_CLIENT" ]
+      set USER_PROMPT (whoami)@(hostname)
       prompt_segment black yellow $USER_PROMPT
     end
   end
@@ -126,7 +128,7 @@ function prompt_status -d "the symbols for a non zero exit status, root and back
     end
 
     # if superuser (uid == 0)
-    set -l uid (id -u $user)
+    set -l uid (id -u $USER)
     if [ $uid -eq 0 ]
       prompt_segment black yellow "⚡"
     end
@@ -149,4 +151,3 @@ function fish_prompt
   prompt_git
   prompt_finish
 end
-
