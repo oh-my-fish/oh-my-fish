@@ -5,7 +5,7 @@ bq. "OH MY FISH!"
 
 h2. Setup
 
-@oh-my-fish@ should work with any recent release of "fish":http://ridiculousfish.com/shell/
+@oh-my-fish@ should work with any release from "fish 2.0":http://ridiculousfish.com/shell/
 
 h3. The automatic installer... (do you trust me?)
 
