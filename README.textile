@@ -47,7 +47,7 @@ h3. Set fish as your default shell
 h2. Usage
 
 * enable the plugins you want in your @~/.config/fish/config.fish@ (take a look at @plugins/@ to see what's possible)
-** example: @set fish_plugins autojump git@
+** example: @set fish_plugins autojump bundler@
 * Theme support: Change the @fish_theme@ environment variable in @~/.config/fish/config.fish@.
 
 h3. Customization
