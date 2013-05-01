@@ -37,7 +37,8 @@ function fish_prompt
   end
 
   # Unconditional stuff
-  set -l basic_prompt $yellow(whoami)$normal" at "$green(hostname -s)$normal" in "$blue(pwd)" "
+  set -l path $blue(pwd | sed "s:^$HOME:~:")
+  set -l basic_prompt $yellow(whoami)$normal" at "$green(hostname -s)$normal" in "$blue$path" "
 
   # Prompt
   set -l prompt
