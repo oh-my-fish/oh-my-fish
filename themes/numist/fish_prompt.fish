@@ -78,7 +78,7 @@ function fish_prompt
   end
 
   # Last command
-  set -l status_info
+  set -l status_info ""
   if [ $last_status -ne 0 ]
     set status_info "$red""command failed with status: $last_status"
   end
