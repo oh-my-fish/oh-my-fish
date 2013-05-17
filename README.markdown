@@ -11,8 +11,6 @@
 ### What?
   A user-friendly framework for managing your fish-shell configuration. Includes optional plugins (brew, git, rails, python, node, etc) and themes.
 
-A handful of functions, auto-complete helpers, and stuff that makes you shout...
-
 
 ## Installation
 
@@ -77,7 +75,7 @@ Substitute /bin/bash with /bin/tcsh or /bin/zsh as appropriate.
 3. Start / restart fish (just open a new terminal)
 
 
-##. Oh My ZSH
+###. Oh My ZSH
 
 This project is heavily inspired by [oh-my-zsh][oh-my-zsh]
 
