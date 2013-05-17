@@ -51,32 +51,34 @@ I'm hoping to collect a bunch of themes for our command prompts. You can see exi
 
 If you wish to use fish as your default shell, use the following command:
 
-  grep -q '^/usr/local/bin/fish$' /etc/shells; or echo '/usr/local/bin/fish' | sudo tee -a /etc/shells
-  chsh -s /usr/local/bin/fish
+    grep -q '^/usr/local/bin/fish$' /etc/shells; or echo '/usr/local/bin/fish' | sudo tee -a /etc/shells
+    chsh -s /usr/local/bin/fish
 
 chsh will prompt you for your password, and change your default shell.
 
 To switch your default shell back, you can run:
 
-  chsh -s /bin/bash
+    chsh -s /bin/bash
 
 Substitute /bin/bash with /bin/tcsh or /bin/zsh as appropriate.
 
 ### Manual installation
 
 1. Clone the repository
-
+```
     git clone git://github.com/bpinto/oh-my-fish.git ~/.oh-my-fish
+```
 
 2. Create a new fish config by copying the fish template we've provided.
-
+```
     cp ~/.oh-my-fish/templates/config.fish ~/.config/fish/config.fish
+```
 
 3. Start / restart fish (just open a new terminal)
 
 
 ##. Oh My ZSH
 
-This project is heavily inspired by "oh-my-zsh":https://github.com/robbyrussell/oh-my-zsh/
+This project is heavily inspired by [oh-my-zsh][oh-my-zsh]
 
-Thank you so much!
+[oh-my-zsh]: https://github.com/robbyrussell/oh-my-zsh/
