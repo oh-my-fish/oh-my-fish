@@ -23,6 +23,9 @@ function fish_prompt
 
   # output the prompt, left to right
 
+  # Add a newline before prompts
+  echo -e ""
+
   # Display [venvname] if in a virtualenv
   if set -q VIRTUAL_ENV
       echo -n -s (set_color -b cyan black) '[' (basename "$VIRTUAL_ENV") ']' $normal ' '
