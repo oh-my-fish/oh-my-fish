@@ -12,7 +12,7 @@ function __check_rvm --on-variable PWD --description 'Setup rvm on directory cha
         end
         break
       else
-        if begin ; test -s ".rvmrc" ; or test -s ".versions.conf" ; end
+        if begin ; test -s ".rvmrc" ; or test -s ".ruby-version" ; or test -s ".ruby-gemset" ; or test -s ".versions.conf" ; end
           rvm reload 1>/dev/null 2>&1
           break
         else
