@@ -6,5 +6,5 @@ function pyclean
     set path2CLEAN .
   end
 
-  find $path2CLEAN -name "*.pyc" -delete -o -name "*.pyo" -delete
+  find $path2CLEAN -name "*.py[co]" -type f -delete
 end
