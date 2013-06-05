@@ -1,5 +1,7 @@
 function fish_prompt
   set -l script_dir (dirname (status -f))
+  . $script_dir/tbytes.sh
+
   set_color yellow
   printf '%s' (whoami)
   set_color normal
@@ -13,7 +15,7 @@ function fish_prompt
   set_color $fish_color_cwd
   printf '%s ' (prompt_pwd)
   set_color blue
-  printf '%s' ($script_dir/TBytes.sh)
+  printf '%s' (tbytes)
   set_color normal
   printf '%s' (__fish_git_prompt)
 
