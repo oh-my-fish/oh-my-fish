@@ -1,6 +1,6 @@
 function fish_prompt
   set -l script_dir (dirname (status -f))
-  . $script_dir/tbytes.sh
+  . $script_dir/tbytes.fish
 
   set_color yellow
   printf '%s' (whoami)
