@@ -66,7 +66,7 @@ for plugin in $fish_plugins
 end
 
 # Add user defined theme
-set fish_function_path $fish_path/themes/$fish_theme $fish_function_path
+set fish_function_path $fish_custom/themes/$fish_theme $fish_path/themes/$fish_theme $fish_function_path 
 
 # Source all files inside custom folder
 for config_file in $fish_custom/*.load
