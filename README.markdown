@@ -74,6 +74,10 @@ Substitute /bin/bash with /bin/tcsh or /bin/zsh as appropriate.
 
 3. Start / restart fish (just open a new terminal)
 
+### Uninstall
+
+    rm -rf ~/.oh-my-fish
+
 
 ###. Oh My ZSH
 
