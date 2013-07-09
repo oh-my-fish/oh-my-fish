@@ -1,11 +1,11 @@
 # Display git branch and dirty bit and current time on the right 
 
 function _git_branch_name
-  echo (git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
+  echo (command git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
 end
 
 function _is_git_dirty
-  echo (git status -s --ignore-submodules=dirty ^/dev/null)
+  echo (command git status -s --ignore-submodules=dirty ^/dev/null)
 end
 
 function fish_right_prompt
