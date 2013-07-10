@@ -50,17 +50,17 @@ function fish_prompt
 
   # Git stuff
   set -l git_info
-  if [ (git rev-parse --is-inside-work-tree ^/dev/null) ]
+  if [ (command git rev-parse --is-inside-work-tree ^/dev/null) ]
     # Get the current branch name/commit
-    set -l git_branch_name (git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
+    set -l git_branch_name (command git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
     if [ -z $git_branch_name ]
-      set git_branch_name (git show-ref --head -s --abbrev | head -n1 2> /dev/null)
+      set git_branch_name (command git show-ref --head -s --abbrev | head -n1 2> /dev/null)
     end
 
     # Unconditional git component
     set git_info "$normal""on $white$git_branch_name"
 
-    if [ (git status -s --ignore-submodules=dirty | wc -l) -gt 0 ]
+    if [ (command git status -s --ignore-submodules=dirty | wc -l) -gt 0 ]
       set git_info "$git_info$yellow*"
     end
 

@@ -26,7 +26,7 @@ set -g __fish_git_prompt_char_cleanstate ''
 function parse_git_dirty
   set -l submodule_syntax
   set submodule_syntax "--ignore-submodules=dirty"
-  set git_dirty (git status -s $submodule_syntax  2> /dev/null)
+  set git_dirty (command git status -s $submodule_syntax  2> /dev/null)
   if [ -n "$git_dirty" ]
     if [ $__fish_git_prompt_showdirtystate = "yes" ]
       echo -n "$__fish_git_prompt_char_dirtystate"
@@ -105,12 +105,12 @@ end
 function prompt_git -d "Display the actual git state"
   set -l ref
   set -l dirty
-  if git rev-parse --is-inside-work-tree >/dev/null 2>&1
+  if command git rev-parse --is-inside-work-tree >/dev/null 2>&1
     set dirty (parse_git_dirty)
-    set ref (git symbolic-ref HEAD 2> /dev/null)
-    set ref (git symbolic-ref HEAD 2> /dev/null)
+    set ref (command git symbolic-ref HEAD 2> /dev/null)
+    set ref (command git symbolic-ref HEAD 2> /dev/null)
     if [ $status -gt 0 ]
-      set -l branch (git show-ref --head -s --abbrev |head -n1 2> /dev/null)
+      set -l branch (command git show-ref --head -s --abbrev |head -n1 2> /dev/null)
       set ref "➦ $branch "
     end
     set -l branch (echo $ref | sed  's-refs/heads/-⭠ -')
