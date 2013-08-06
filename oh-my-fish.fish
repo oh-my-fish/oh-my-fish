@@ -41,6 +41,16 @@ function _fish_source_plugin_load_file
   end
 end
 
+function _fish_configure_theme
+  if test -d $fish_path/themes/$fish_theme
+    set fish_function_path $fish_path/themes/$fish_theme $fish_function_path
+  end
+
+  if test -d $fish_custom/themes/$fish_theme
+    set fish_function_path $fish_custom/themes/$fish_theme $fish_function_path
+  end
+end
+
 ###
 # Configuration
 ###
@@ -66,7 +76,7 @@ for plugin in $fish_plugins
 end
 
 # Add user defined theme
-set fish_function_path $fish_custom/themes/$fish_theme $fish_path/themes/$fish_theme $fish_function_path 
+_fish_configure_theme $fish_theme
 
 # Source all files inside custom folder
 for config_file in $fish_custom/*.load
