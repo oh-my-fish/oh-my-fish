@@ -8,7 +8,7 @@ A theme optimized for people who use:
 For Mac users, I highly recommend iTerm 2.
 
 ![jacaetevha
-theme](https://f.cloud.github.com/assets/1765209/255379/452c668e-8c0b-11e2-8a8e-d1d13e57d15f.png)
+theme](http://jacaetevha.github.io/oh-my-fish/screenshot.png)
 
 
 #### Characteristics
