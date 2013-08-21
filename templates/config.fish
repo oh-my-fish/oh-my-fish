@@ -11,5 +11,5 @@ set fish_theme robbyrussell
 # Path to your custom folder (default path is $FISH/custom)
 #set fish_custom $HOME/dotfiles/oh-my-fish
 
-# Load oh-my-fish cofiguration.
+# Load oh-my-fish configuration.
 . $fish_path/oh-my-fish.fish
