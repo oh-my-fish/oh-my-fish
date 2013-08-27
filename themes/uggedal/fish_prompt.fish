@@ -1,3 +1,4 @@
+# name: Uggedal
 function fish_prompt
   if test -n "$SSH_CONNECTION"
     printf '%s ' $HOSTNAME

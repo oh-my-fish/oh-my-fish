@@ -1,3 +1,4 @@
+# name: Jacaetevha
 function tbytes -d 'calculates the total size of the files in the current directory'
   set -l tBytes (ls -al | grep "^-" | awk 'BEGIN {i=0} { i += $5 } END { print i }')
   

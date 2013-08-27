@@ -1,3 +1,4 @@
+# name: idan
 # Display the following bits on the left:
 # * Virtualenv name (if applicable, see https://github.com/adambrenecki/virtualfish)
 # * Current directory name
