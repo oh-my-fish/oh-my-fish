@@ -1,3 +1,4 @@
+# name: Numist
 function fish_prompt
   set -l last_status $status
 

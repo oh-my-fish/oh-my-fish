@@ -1,3 +1,4 @@
+# name: Agnoster
 # agnoster's Theme - https://gist.github.com/3712874
 # A Powerline-inspired theme for FISH
 #
