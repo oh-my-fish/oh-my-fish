@@ -19,6 +19,9 @@ set fish_pager_color_description 555 yellow
 set fish_pager_color_progress cyan
 set fish_pager_color_secondary
 
+set fish_color_host cyan
+set fish_color_user cyan
+
 # Git prompt setup
 set __fish_git_prompt_char_untrackedfiles '*'
 set __fish_git_prompt_color yellow
