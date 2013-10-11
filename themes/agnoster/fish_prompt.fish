@@ -14,8 +14,8 @@
 
 
 set -g current_bg NONE
-set segment_separator \u2b80
-set right_segment_separator \u2b80
+set segment_separator \uE0B0
+set right_segment_separator \uE0B0
 # ===========================
 # Helper methods
 # ===========================
@@ -114,7 +114,8 @@ function prompt_git -d "Display the actual git state"
       set -l branch (command git show-ref --head -s --abbrev |head -n1 2> /dev/null)
       set ref "➦ $branch "
     end
-    set -l branch (echo $ref | sed  's-refs/heads/-⭠ -')
+    set branch_symbol \uE0A0
+    set -l branch (echo $ref | sed  "s-refs/heads/-$branch_symbol -")
     if [ "$dirty" != "" ]
       prompt_segment yellow black "$branch $dirty"
     else
