@@ -33,11 +33,11 @@ function _fish_source_plugin_load_file
   set -l load_file_path "plugins/$plugin/$plugin.load"
 
   if test -e $fish_path/$load_file_path
-    . $fish_path/$load_file_path
+    source $fish_path/$load_file_path
   end
 
   if test -e $fish_custom/$load_file_path
-    . $fish_custom/$load_file_path
+    source $fish_custom/$load_file_path
   end
 end
 
@@ -80,7 +80,7 @@ _fish_load_theme $fish_theme
 
 # Source all files inside custom folder
 for config_file in $fish_custom/*.load
-  . $config_file
+  source $config_file
 end
 
 # Re-adding user's functions so they have the highest priority

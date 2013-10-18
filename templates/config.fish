@@ -12,4 +12,4 @@ set fish_theme robbyrussell
 #set fish_custom $HOME/dotfiles/oh-my-fish
 
 # Load oh-my-fish configuration.
-. $fish_path/oh-my-fish.fish
+source $fish_path/oh-my-fish.fish
