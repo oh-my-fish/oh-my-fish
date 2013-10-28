@@ -20,7 +20,7 @@ function _git_status_symbol
 end
 
 function _remote_hostname
-  if test $SSH_CONNECTION
+  if test -n "$SSH_CONNECTION"
     echo (whoami)@(hostname)
   end
 end
