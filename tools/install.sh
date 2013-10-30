@@ -7,7 +7,7 @@ then
 fi
 
 echo -e "\033[0;34mCloning Oh My Fish...\033[0m"
-hash git >/dev/null && /usr/bin/env git clone git://github.com/bpinto/oh-my-fish.git ~/.oh-my-fish || {
+hash git >/dev/null && /usr/bin/env git clone https://github.com/bpinto/oh-my-fish.git ~/.oh-my-fish || {
   echo -e "git not installed"
   exit
 }
