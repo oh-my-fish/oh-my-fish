@@ -1,0 +1,7 @@
+if test -d $HOME/.plenv/bin
+  set PATH $HOME/.plenv/bin $PATH
+end
+
+if test -d $HOME/.plenv/shims
+  set PATH $HOME/.plenv/shims $PATH
+end
