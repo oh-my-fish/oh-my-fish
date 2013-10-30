@@ -1,6 +1,6 @@
 # fish completion for rake
 function __fish_rake_tasks
-  rake -P ^/dev/null | grep rake | cut -c 6-
+  rake -T ^/dev/null | awk '{print $2"\t"substr($0, index($0, $4))}'
 end
 
 ### commands
