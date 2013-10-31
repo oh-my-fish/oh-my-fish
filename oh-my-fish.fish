@@ -6,11 +6,14 @@ function _fish_add_plugin
   set -l plugin $argv[1]
   set -l plugin_path "plugins/$plugin"
 
-  if test -d $fish_path/$plugin_path
+  echo 'adding plugin'
+  if begin; test -d $fish_path/$plugin_path; and not contains \
+                    $fish_path/$plugin_path $fish_function_path; end
     set fish_function_path $fish_path/$plugin_path $fish_function_path
   end
 
-  if test -d $fish_custom/$plugin_path
+  if begin; test -d $fish_custom/$plugin_path; and not contains \
+                    $custom_path/$plugin_path $fish_function_path; end
     set fish_function_path $fish_custom/$plugin_path $fish_function_path
   end
 end
@@ -42,11 +45,13 @@ function _fish_source_plugin_load_file
 end
 
 function _fish_load_theme
-  if test -d $fish_path/themes/$fish_theme
+  if begin; test -d $fish_path/themes/$fish_theme; and not contains \
+                    $fish_custom/themes/$fish_theme $fish_function_path; end
     set fish_function_path $fish_path/themes/$fish_theme $fish_function_path
   end
 
-  if test -d $fish_custom/themes/$fish_theme
+  if begin; test -d $fish_custom/themes/$fish_theme; and not contains \
+                    $fish_custom/themes/$fish_theme $fish_function_path; end
     set fish_function_path $fish_custom/themes/$fish_theme $fish_function_path
   end
 end
@@ -66,7 +71,9 @@ set user_function_path $fish_function_path[1]
 set -e fish_function_path[1]
 
 # Add all functions
-set fish_function_path $fish_path/functions/ $fish_function_path
+if not contains $fish_path/functions/ $fish_function_path
+    set fish_function_path $fish_path/functions/ $fish_function_path
+end
 
 # Add all defined plugins
 for plugin in $fish_plugins
@@ -84,4 +91,9 @@ for config_file in $fish_custom/*.load
 end
 
 # Re-adding user's functions so they have the highest priority
+if contains $user_function_path $fish_function_path
+    set -e fish_function_path[(contains -i $user_function_path \
+                                           $fish_function_path)]
+end
+
 set fish_function_path $user_function_path $fish_function_path
