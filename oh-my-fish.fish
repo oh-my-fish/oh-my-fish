@@ -6,7 +6,6 @@ function _fish_add_plugin
   set -l plugin $argv[1]
   set -l plugin_path "plugins/$plugin"
 
-  echo 'adding plugin'
   if begin; test -d $fish_path/$plugin_path; and not contains \
                     $fish_path/$plugin_path $fish_function_path; end
     set fish_function_path $fish_path/$plugin_path $fish_function_path
