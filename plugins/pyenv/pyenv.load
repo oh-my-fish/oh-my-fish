@@ -1,0 +1,7 @@
+if test -d $HOME/.pyenv/bin
+  set PATH $HOME/.pyenv/bin $PATH
+end
+
+if test -d $HOME/.pyenv/shims
+  set PATH $HOME/.pyenv/shims $PATH
+end
