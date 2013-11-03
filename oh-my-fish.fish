@@ -13,26 +13,16 @@ function _fish_add_plugin
   set -l plugin $argv[1]
   set -l plugin_path "plugins/$plugin"
 
-  if _test_dir $fish_path/$plugin_path $fish_function_path
-    set fish_function_path $fish_path/$plugin_path $fish_function_path
-  end
-
-  if  _test_dir $fish_custom/$plugin_path $fish_function_path
-    set fish_function_path $fish_custom/$plugin_path $fish_function_path
-  end
+  _append_path $fish_path/$plugin_path fish_function_path
+  _append_path $fish_custom/$plugin_path fish_function_path
 end
 
 function _fish_add_completion
   set -l plugin $argv[1]
   set -l completion_path "plugins/$plugin/completions"
 
-  if test -d $fish_path/$completion_path
-    set fish_complete_path $fish_path/$completion_path $fish_complete_path
-  end
-
-  if test -d $fish_custom/$completion_path
-    set fish_complete_path $fish_custom/$completion_path $fish_complete_path
-  end
+  _append_path $fish_path/$completion_path fish_complete_path
+  _append_path $fish_custom/$completion_path fish_complete_path
 end
 
 function _fish_source_plugin_load_file
@@ -49,13 +39,8 @@ function _fish_source_plugin_load_file
 end
 
 function _fish_load_theme
-  if _test_dir $fish_path/themes/$fish_theme $fish_function_path
-    set fish_function_path $fish_path/themes/$fish_theme $fish_function_path
-  end
-
-  if _test_dir $fish_custom/themes/$fish_theme $fish_function_path
-    set fish_function_path $fish_custom/themes/$fish_theme $fish_function_path
-  end
+  _append_path $fish_path/themes/$fish_theme fish_function_path
+  _append_path $fish_custom/themes/$fish_theme fish_function_path
 end
 
 ###
