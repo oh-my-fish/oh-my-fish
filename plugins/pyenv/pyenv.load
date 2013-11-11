@@ -3,7 +3,7 @@ if test -n "$PYENV_ROOT"
     set PATH $PYENV_ROOT/bin $PATH
   end
   if test -d $PYENV_ROOT/shims
-    set $PATH $PYENV_ROOT/shims $PATH
+    set PATH $PYENV_ROOT/shims $PATH
   end
 else
   if test -d $HOME/.pyenv/bin
