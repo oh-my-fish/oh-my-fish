@@ -2,17 +2,22 @@
 # Helper functions
 ###
 
+function _test_dir
+    set -l path $argv[1]
+    set -l paths $argv[2]
+
+    return (test -d $path; and not contains $path $paths)
+end
+
 function _fish_add_plugin
   set -l plugin $argv[1]
   set -l plugin_path "plugins/$plugin"
 
-  if begin; test -d $fish_path/$plugin_path; and not contains \
-                    $fish_path/$plugin_path $fish_function_path; end
+  if _test_dir $fish_path/$plugin_path $fish_function_path
     set fish_function_path $fish_path/$plugin_path $fish_function_path
   end
 
-  if begin; test -d $fish_custom/$plugin_path; and not contains \
-                    $custom_path/$plugin_path $fish_function_path; end
+  if  _test_dir $fish_custom/$plugin_path $fish_function_path
     set fish_function_path $fish_custom/$plugin_path $fish_function_path
   end
 end
@@ -44,13 +49,11 @@ function _fish_source_plugin_load_file
 end
 
 function _fish_load_theme
-  if begin; test -d $fish_path/themes/$fish_theme; and not contains \
-                    $fish_custom/themes/$fish_theme $fish_function_path; end
+  if _test_dir $fish_path/themes/$fish_theme $fish_function_path
     set fish_function_path $fish_path/themes/$fish_theme $fish_function_path
   end
 
-  if begin; test -d $fish_custom/themes/$fish_theme; and not contains \
-                    $fish_custom/themes/$fish_theme $fish_function_path; end
+  if _test_dir $fish_custom/themes/$fish_theme $fish_function_path
     set fish_function_path $fish_custom/themes/$fish_theme $fish_function_path
   end
 end
