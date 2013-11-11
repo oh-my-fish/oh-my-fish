@@ -93,9 +93,4 @@ for config_file in $fish_custom/*.load
 end
 
 # Re-adding user's functions so they have the highest priority
-if contains $user_function_path $fish_function_path
-    set -e fish_function_path[(contains -i $user_function_path \
-                                           $fish_function_path)]
-end
-
 set fish_function_path $user_function_path $fish_function_path
