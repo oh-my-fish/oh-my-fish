@@ -3,10 +3,10 @@
 ###
 
 function _test_dir
-    set -l path $argv[1]
-    set -l paths $argv[2]
+  set -l path $argv[1]
+  set -l paths $argv[2]
 
-    return (test -d $path; and not contains $path $paths)
+  return (test -d $path; and not contains $path $paths)
 end
 
 function _fish_add_plugin
@@ -74,7 +74,7 @@ set -e fish_function_path[1]
 
 # Add all functions
 if not contains $fish_path/functions/ $fish_function_path
-    set fish_function_path $fish_path/functions/ $fish_function_path
+  set fish_function_path $fish_path/functions/ $fish_function_path
 end
 
 # Add all defined plugins
