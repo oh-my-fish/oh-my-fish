@@ -1,4 +1,2 @@
-if test -d /usr/local/share/python
-  set PATH /usr/local/share/python $PATH
-end
+_append_path /usr/local/share/python
 
