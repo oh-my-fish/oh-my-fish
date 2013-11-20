@@ -1,6 +1,4 @@
 ### Main program
-if test -d /usr/local/share/npm/bin
-  set PATH /usr/local/share/npm/bin $PATH
-end
+_append_path /usr/local/share/npm/bin
 
 set PATH ./node_modules/.bin $PATH
