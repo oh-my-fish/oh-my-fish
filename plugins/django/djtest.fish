@@ -9,5 +9,4 @@ function djtest
   else
     time python manage.py test $VERBOSE
   end
-
 end

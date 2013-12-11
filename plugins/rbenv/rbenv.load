@@ -1,17 +1,7 @@
 if test -n "$RBENV_ROOT"
-  if test -d $RBENV_ROOT/bin
-    set PATH $RBENV_ROOT/bin $PATH
-  end
-
-  if test -d $RBENV_ROOT/shims
-    set PATH $RBENV_ROOT/shims $PATH
-  end
+  _append_path $RBENV_ROOT/bin
+  _append_path $RBENV_ROOT/shims
 else
-  if test -d $HOME/.rbenv/bin
-    set PATH $HOME/.rbenv/bin $PATH
-  end
-
-  if test -d $HOME/.rbenv/shims
-    set PATH $HOME/.rbenv/shims $PATH
-  end
+  _append_path $HOME/.rbenv/bin
+  _append_path $HOME/.rbenv/shims
 end

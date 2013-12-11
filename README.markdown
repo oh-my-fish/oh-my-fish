@@ -44,11 +44,6 @@ just add a new file (ending in .load) into the `custom/` directory.
 
 I'm hoping to collect a bunch of themes for our command prompts. You can see existing ones in the [themes](themes/) directory.
 
-## Integrating oh-my-fish themes with fish_config
-
-Fish provides fish_config, a web portal where you can modify some configurations, including changing your fish_prompt.  By default, fish_config comes with a series of prepackaged themes.  Running copy_prompts.fish installed with oh-my-fish will integrate oh-my-fish's provided themes with fish_config and allow you to choose a custom theme as your prompt.
-
-
 ## Switching to fish
 
 If you wish to use fish as your default shell, use the following command:

@@ -2,30 +2,27 @@
 # Helper functions
 ###
 
+function _test_dir
+  set -l path $argv[1]
+  set -l paths $argv[2]
+
+  return (test -d $path; and not contains $path $paths)
+end
+
 function _fish_add_plugin
   set -l plugin $argv[1]
   set -l plugin_path "plugins/$plugin"
 
-  if test -d $fish_path/$plugin_path
-    set fish_function_path $fish_path/$plugin_path $fish_function_path
-  end
-
-  if test -d $fish_custom/$plugin_path
-    set fish_function_path $fish_custom/$plugin_path $fish_function_path
-  end
+  _append_path $fish_path/$plugin_path fish_function_path
+  _append_path $fish_custom/$plugin_path fish_function_path
 end
 
 function _fish_add_completion
   set -l plugin $argv[1]
   set -l completion_path "plugins/$plugin/completions"
 
-  if test -d $fish_path/$completion_path
-    set fish_complete_path $fish_path/$completion_path $fish_complete_path
-  end
-
-  if test -d $fish_custom/$completion_path
-    set fish_complete_path $fish_custom/$completion_path $fish_complete_path
-  end
+  _append_path $fish_path/$completion_path fish_complete_path
+  _append_path $fish_custom/$completion_path fish_complete_path
 end
 
 function _fish_source_plugin_load_file
@@ -42,13 +39,8 @@ function _fish_source_plugin_load_file
 end
 
 function _fish_load_theme
-  if test -d $fish_path/themes/$fish_theme
-    set fish_function_path $fish_path/themes/$fish_theme $fish_function_path
-  end
-
-  if test -d $fish_custom/themes/$fish_theme
-    set fish_function_path $fish_custom/themes/$fish_theme $fish_function_path
-  end
+  _append_path $fish_path/themes/$fish_theme fish_function_path
+  _append_path $fish_custom/themes/$fish_theme fish_function_path
 end
 
 ###
@@ -66,7 +58,9 @@ set user_function_path $fish_function_path[1]
 set -e fish_function_path[1]
 
 # Add all functions
-set fish_function_path $fish_path/functions/ $fish_function_path
+if not contains $fish_path/functions/ $fish_function_path
+  set fish_function_path $fish_path/functions/ $fish_function_path
+end
 
 # Add all defined plugins
 for plugin in $fish_plugins
