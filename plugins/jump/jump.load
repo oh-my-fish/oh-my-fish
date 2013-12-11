@@ -1,0 +1,2 @@
+set -x MARKPATH $HOME/.marks
+command mkdir -p $MARKPATH
