@@ -13,7 +13,7 @@ function marks
             echo "No marks currently defined."
         else
             for mark_name in $mark_list
-                echo "$mark_name -> "(realpath $MARKPATH/$mark_name)
+                echo "$mark_name -> "(readlink -f $MARKPATH/$mark_name)
             end
         end
     end
