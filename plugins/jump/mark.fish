@@ -3,9 +3,10 @@ function mark
         command ln -s (pwd) $MARKPATH/$argv[1]
     else if test (count $argv) -eq 2
         if test -d $argv[2]
+            set -l current_dir (pwd)
             cd $argv[2]
             command ln -s (pwd) $MARKPATH/$argv[1]
-            cd -
+            cd $current_dir
         else
             echo "$argv[2] is not a valid directory."
         end
