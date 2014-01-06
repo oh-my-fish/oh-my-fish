@@ -5,5 +5,6 @@ function pyhttp
   else
     set HTTPPORT 1025
   end
-  python -m SimpleHTTPServer $HTTPPORT;
+
+  _python -m SimpleHTTPServer $HTTPPORT;
 end
