@@ -5,6 +5,7 @@ function pysmtp
   else
     set SMTPPORT 1025
   end
+
   echo "smtp server started on port" $SMTPPORT;
-  python -m smtpd -n -c DebuggingServer localhost:$SMTPPORT;
+  _python -m smtpd -n -c DebuggingServer localhost:$SMTPPORT;
 end

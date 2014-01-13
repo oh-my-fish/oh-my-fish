@@ -43,6 +43,7 @@ function fish_prompt
 
   # Prompt
   set -l prompt
+  set -l UID (id -u $USER)
   if [ "$UID" = "0" ]
     set prompt "$red# "
   else
