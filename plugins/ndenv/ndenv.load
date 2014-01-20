@@ -1,0 +1,7 @@
+if test -n "$NDENV_ROOT"
+  _append_path $NDENV_ROOT/bin
+  _append_path $NDENV_ROOT/shims
+else
+  _append_path $HOME/.ndenv/bin
+  _append_path $HOME/.ndenv/shims
+end
