@@ -1,4 +1,4 @@
-function pacdisowned
+function pacdisowned -d "Display list of disowned files"
   if test -d $TMPDIR
     set tmp "/tmp"
   else
