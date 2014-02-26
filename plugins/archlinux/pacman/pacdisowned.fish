@@ -1,18 +1,23 @@
-# TODO: Need to convert to fish
 function pacdisowned
-  # tmp=${TMPDIR-/tmp}/pacman-disowned-$UID-$$
-  # db=$tmp/db
-  # fs=$tmp/fs
+  if test -d $TMPDIR
+    set tmp "/tmp"
+  else
+    set tmp $TMPDIR
+  end
 
-  # mkdir "$tmp"
-  # trap  'rm -rf "$tmp"' EXIT
+  set dir (mktemp -d -p $tmp)
 
-  # pacman -Qlq | sort -u > "$db"
+  set -l fs "$dir/fs"
+  set -l db "$dir/db"
 
-  # find /bin /etc /lib /sbin /usr \
-  #     ! -name lost+found \
-  #       \( -type d -printf '%p/\n' -o -print \) | sort > "$fs"
+  pacman -Qlq | sort -u > "$db"
 
-  # comm -23 "$fs" "$db"
+  find /bin /etc /lib /sbin /usr ! -name lost+found \
+         \( -type d -printf '%p/\n' -o -print \) | sort > "$fs"
+
+  comm -23 "$fs" "$db"
+
+  # clean-up after ourself
+  rm -rf "$dir"
 end
 
