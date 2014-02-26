@@ -13,7 +13,7 @@ To use this plugin append the following `archlinux` to `fish_plugins`.
 
 ## archlinux/pacman
 
-This plugin makes working work pacman easier and faster.  Please refer to pacman/README.md for more information.
+This plugin makes working with pacman easier and faster.  Please refer to pacman/README.md for more information.
 
 To use this plugin append the following `archlinux/pacman` to `fish_plugins`.
 
