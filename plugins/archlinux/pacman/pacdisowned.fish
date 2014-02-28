@@ -1,10 +1,9 @@
 function pacdisowned -d "Display list of disowned files"
-  if test -d $TMPDIR
-    set tmp "/tmp"
-  else
+  if test -d "$TMPDIR"
     set tmp $TMPDIR
+  else
+    set tmp "/tmp"
   end
-
   set dir (mktemp -d -p $tmp)
 
   set -l fs "$dir/fs"
