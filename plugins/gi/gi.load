@@ -8,7 +8,7 @@ end
 
 # enable the complation by invoking `gi list`
 if not set -q -g gi_list
-  timeout 2 ping -c 1 -q gitignore.io >/dev/null
+  ping -t 2 -c 1 -q gitignore.io >/dev/null
   set gi_available $status
 
   if test $gi_available
