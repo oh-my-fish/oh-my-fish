@@ -9,5 +9,6 @@ Display username, hostname, current path and git status:
 
 TODO:
  - display latest return code
+ - display escalated privileges
  - display Ruby version
  - display Python version
