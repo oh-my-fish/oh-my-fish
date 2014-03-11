@@ -2,7 +2,13 @@
 # Some code stolen from oh-my-fish clearance theme: https://github.com/bpinto/oh-my-fish/blob/master/themes/clearance/
 
 function __user_host
-  echo -n (set_color --bold green)$USER@(hostname|cut -d . -f 1) (set color normal)
+  set -l content 
+  if [ (id -u) = "0" ];
+    echo -n (set_color red)
+  else
+    echo -n (set_color green)
+  end
+  echo -n $USER@(hostname|cut -d . -f 1) (set color normal)
 end
 
 function __current_path
@@ -38,4 +44,12 @@ function fish_prompt
   __git_status
   echo -e ''
   echo (set_color white)"╰─"(set_color --bold white)"\$ "(set_color normal)
+end
+
+function fish_right_prompt
+  set -l st $status
+
+  if [ $st != 0 ];
+    echo (set_color red) ↵ $st(set_color normal)
+  end
 end
