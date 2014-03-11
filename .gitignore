@@ -2,3 +2,4 @@ custom/*
 
 .DS_Store
 *.pyc
+*~
