@@ -32,8 +32,6 @@ function __git_status
 end
 
 function fish_prompt
-  set -l white (set_color white)
-  
   echo -n (set_color white)"╭─"(set_color normal)
   __user_host
   __current_path
