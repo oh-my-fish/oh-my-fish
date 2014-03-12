@@ -4,9 +4,9 @@
 function __user_host
   set -l content 
   if [ (id -u) = "0" ];
-    echo -n (set_color red)
+    echo -n (set_color --bold red)
   else
-    echo -n (set_color green)
+    echo -n (set_color --bold green)
   end
   echo -n $USER@(hostname|cut -d . -f 1) (set color normal)
 end
