@@ -30,7 +30,7 @@ function fish_prompt
   set -l green (set_color green)
 
   set -l arrow "∫"
-  set -l cwd $blue(basename (prompt_pwd))
+  set -l cwd $blue(prompt_pwd)
 
   if [ (_git_branch_name) ]
     set -l git_branch (_git_branch_name)
