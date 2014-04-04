@@ -16,7 +16,7 @@
 
 Oh-my-fish is built for recent versions of the fish shell, namely "fish 2.0".
 
-    curl -L https://github.com/bpinto/oh-my-fish/raw/master/tools/install.sh | sh
+    curl -L https://github.com/bpinto/oh-my-fish/raw/master/tools/install.fish | fish
 
 If you want to install it manually, keep reading.
 
