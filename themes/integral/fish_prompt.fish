@@ -4,18 +4,19 @@ function _git_branch_name
 end
 
 function _git_vs_upstream
-  set -l count (command git rev-list --count --left-right "origin/$argv"...HEAD ^/dev/null)
+  set count (command git rev-list --count --left-right "origin/$argv"...HEAD ^/dev/null)
+
   switch $count
     case "" # no upstream
       echo ''
     case "0?0" # equal to upstream
       echo ''
     case "0??" # ahead of upstream
-      echo u+
+      echo 'u+'(echo $count | cut -f2)
     case "??0" # behind upstream
-      echo u-
+      echo 'u-'(echo $count | cut -f1)
     case '???'      # diverged from upstream
-      echo u+-
+      echo 'u+'(echo $count | cut -f2)'-'(echo $count | cut -f1)
     end
 end
 
