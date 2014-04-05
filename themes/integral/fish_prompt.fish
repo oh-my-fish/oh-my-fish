@@ -47,7 +47,7 @@ function fish_prompt
 
     if [ (_is_git_dirty) ]
       set git_info $yellow '('$git_branch "±" "$git_vs_upstream"')' $normal
-    else if [ (_upstream_count) ]
+    else if [ (_git_up_info) ]
       set git_info $yellow '('$git_branch "$git_vs_upstream"')' $normal
     else
       set git_info $green '('$git_branch')' $normal
