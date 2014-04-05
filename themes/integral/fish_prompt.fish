@@ -3,10 +3,14 @@ function _git_branch_name
   echo (command git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
 end
 
-function _git_vs_upstream
-  set count (command git rev-list --count --left-right "origin/$argv"...HEAD ^/dev/null)
+function _upstream_count
+  echo (command git rev-list --count --left-right origin/(_git_branch_name)...HEAD ^/dev/null)
+end
 
-  if count
+function _git_up_info
+  if [ (_upstream_count) ]
+    set -l count (_upstream_count)
+
     switch $count
       case "" # no upstream
         echo ''
@@ -17,7 +21,9 @@ function _git_vs_upstream
       case "??0" # behind upstream
         echo 'u-'(echo $count | cut -f1)
       case '???'      # diverged from upstream
-        echo 'u+'(echo $count | cut -f2)'-'(echo $count | cut -f1)
+        echo $count 'u+'(echo $count | cut -f2)'-'(echo $count | cut -f1)
+      case '*'
+        echo ''
     end
   end
 end
@@ -37,11 +43,11 @@ function fish_prompt
 
   if [ (_git_branch_name) ]
     set -l git_branch (_git_branch_name)
-    set -l git_vs_upstream (_git_vs_upstream $git_branch)
+    set -l git_vs_upstream (_git_up_info)
 
     if [ (_is_git_dirty) ]
       set git_info $yellow '('$git_branch "±" "$git_vs_upstream"')' $normal
-    else if [ (_git_vs_upstream $git_branch) ]
+    else if [ (_upstream_count) ]
       set git_info $yellow '('$git_branch "$git_vs_upstream"')' $normal
     else
       set git_info $green '('$git_branch')' $normal
