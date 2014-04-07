@@ -39,7 +39,7 @@ function fish_prompt
 
     if [ (_git_branch_name) ]
         set -l git_branch $brightred(_git_branch_name)$normal
-        set git_info "$blue git:($git_branch$blue)$normal"
+        set git_info "$blue ($git_branch$blue)$normal"
         set -l git_ahead_count (_git_ahead_count)
 
         if [ $git_ahead_count != 0 ]
