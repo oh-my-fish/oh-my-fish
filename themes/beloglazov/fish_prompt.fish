@@ -8,8 +8,8 @@ function _is_git_dirty
     echo (command git status -s --ignore-submodules=dirty ^/dev/null)
 end
 
-function _git_ahead_count
-    echo (command git log origin/(_git_branch_name)..HEAD ^/dev/null | \
+function _git_ahead_count -a branch_name
+    echo (command git log origin/$branch_name..HEAD ^/dev/null | \
         grep '^commit' | wc -l | tr -d ' ')
 end
 
@@ -38,9 +38,10 @@ function fish_prompt
     set -l cwd $cyan(basename (prompt_pwd))$normal
 
     if [ (_git_branch_name) ]
-        set -l git_branch $brightred(_git_branch_name)$normal
+        set -l git_branch_name (_git_branch_name)
+        set -l git_branch $brightred$git_branch_name$normal
         set git_info "$blue ($git_branch$blue)$normal"
-        set -l git_ahead_count (_git_ahead_count)
+        set -l git_ahead_count (_git_ahead_count $git_branch_name)
 
         if [ $git_ahead_count != 0 ]
             set -l ahead_count "$green+$git_ahead_count$normal"
