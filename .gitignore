@@ -3,3 +3,4 @@ custom/*
 .DS_Store
 *.pyc
 *~
+*.sw?
