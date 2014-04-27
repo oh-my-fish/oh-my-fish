@@ -1,0 +1,3 @@
+for gvm_path in (find $HOME/.gvm/*/current/bin -maxdepth 0)
+  _append_path $gvm_path
+end
