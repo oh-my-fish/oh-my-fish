@@ -4,7 +4,7 @@
 # Based on oh-my-zsh's sprunge plugin
 
 function sprunge
-  if isatty stdin
+  if isatty
     if [ (count $argv) -gt 0 ]
       if [ -f $argv ]
         cat $argv
