@@ -4,6 +4,7 @@ A ZSH theme optimized for people who use:
 
 * Solarized
 * Git
+* Mercurial
 * Unicode-compatible fonts and terminals (I use iTerm2 + Menlo)
 
 For Mac users, I highly recommend iTerm 2 + Solarized Dark
@@ -16,6 +17,7 @@ For Mac users, I highly recommend iTerm 2 + Solarized Dark
 * If the previous command failed (✘)
 * User @ Hostname (if user is not DEFAULT_USER, which can then be set in your profile)
 * Git status
+* Mercurial status
 * Branch (⭠) or detached head (➦)
 * Current branch / SHA1 in detached head state
 * Dirty working directory (±, color change)
