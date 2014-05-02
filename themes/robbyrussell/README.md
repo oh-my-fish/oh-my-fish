@@ -1,9 +1,10 @@
 ## robbyrussell
 The default theme – cloned from oh-my-zsh.
 
-![robbyrussell theme](http://f.cl.ly/items/2q0v3i3y2E1F0C1R3C1y/Screen%20Shot%202013-08-06%20at%2017.52.17%20.png)
+![robbyrussell theme](https://bachue.github.io/oh-my-fish/images/robbyrussell-screenshot.png)
 
 
 #### Characteristics
 
 * Displays git information in the command prompt when available.
+* If the last command was failed, the indicator would be red, otherwise it's green
