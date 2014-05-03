@@ -1,8 +1,8 @@
-## iden
+## edan
+
 Inspired by idan, a functional, uncluttered fish theme with usability perks for git users and python developers.
 
-
-![Screenshot of iden theme](https://f.cloud.github.com/assets/22723/544512/14b7cd6e-c251-11e2-82c0-d5b4f41581c7.png)
+![Screenshot of edan theme](https://cloud.githubusercontent.com/assets/215282/2869575/7bd3f828-d278-11e3-91ce-7ff84a5ea1b0.png)
 
 
 #### Characteristics
