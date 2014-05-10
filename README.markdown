@@ -37,7 +37,7 @@ If you would like to override the functionality of a plugin distributed with oh-
 create a plugin of the same name in the `custom/plugins/` directory and it will be loaded
 instead of the one shipped with oh-my-fish.
 
-If you would to use your custom theme, move it with the same name in the `custom/themes/` directory
+If you would like to use your custom theme, move it with the same name in the `custom/themes/` directory
 and it will override the original theme in `themes/`.
 
 If you just want to override any of the default behavior or add some environment variables,
