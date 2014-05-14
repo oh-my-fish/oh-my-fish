@@ -187,6 +187,8 @@ function __bobthefish_prompt_status -d 'Display symbols for a non zero exit stat
       set_color $__bobthefish_slate_blue --bold
       echo -n $__bobthefish_bg_job_glyph
     end
+
+    set_color normal
   end
 end
 
