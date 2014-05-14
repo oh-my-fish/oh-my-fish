@@ -54,11 +54,11 @@ set lt_grey    ccc
 # Helper methods
 # ===========================
 
-function __bobthefish_in_git
+function __bobthefish_in_git -d 'Check whether pwd is inside a git repo'
   command git rev-parse --is-inside-work-tree >/dev/null 2>&1
 end
 
-function __bobthefish_git_branch
+function __bobthefish_git_branch -d 'Get the current git branch (or commitish)'
   set -l ref (command git symbolic-ref HEAD 2> /dev/null)
   if [ $status -gt 0 ]
     set -l branch (command git show-ref --head -s --abbrev |head -n1 2> /dev/null)
@@ -85,7 +85,7 @@ end
 # Segment functions
 # ===========================
 
-function __bobthefish_start_segment -d 'Start a segment'
+function __bobthefish_start_segment -d 'Start a prompt segment'
   set_color -b $argv[1]
   set_color $argv[2]
   if [ "$current_bg" = 'NONE' ]
@@ -133,7 +133,7 @@ function __bobthefish_path_segment -d 'Display a shortened form of a directory'
   set_color normal
 end
 
-function __bobthefish_finish_segments -d 'Close open segments'
+function __bobthefish_finish_segments -d 'Close open prompt segments'
   if [ -n $current_bg -a $current_bg != 'NONE' ]
     set_color -b normal
     set_color $current_bg
@@ -148,7 +148,7 @@ end
 # Theme components
 # ===========================
 
-function __bobthefish_prompt_status -d 'the symbols for a non zero exit status, root and background jobs'
+function __bobthefish_prompt_status -d 'Display symbols for a non zero exit status, root and background jobs'
   set -l nonzero
   set -l superuser
   set -l bg_jobs
@@ -252,7 +252,7 @@ end
 # Apply theme
 # ===========================
 
-function fish_prompt
+function fish_prompt -d 'bobthefish, a fish theme optimized for awesome'
   set -g RETVAL $status
   __bobthefish_prompt_status
   __bobthefish_prompt_user
