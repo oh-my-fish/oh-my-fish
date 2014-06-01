@@ -1,12 +1,13 @@
 ## yimmy
 
 A simple two-line theme best displayed on a terminal configured with Solarized
-Dark colors.  Displays:
+Dark colors.
 
-     user@host cwd (branch)
-     %
+&lceil;`user@host ~/c/w/dir (branch+)`  
+&lfloor;`%`
 
 Characteristics:
+
 - Uses the fish prompt_pwd, so paths will be abbreviated
 - Git branch name will be followed by a red + if dirty
 - Indicates Git work-in-progress (gwip/gunwip) if detected
