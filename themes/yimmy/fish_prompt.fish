@@ -2,6 +2,19 @@ function fish_prompt
   # Cache exit status
   set -l last_status $status
 
+  # Just calculate these once, to save a few cycles when displaying the prompt
+  if not set -q __fish_prompt_hostname
+    set -g __fish_prompt_hostname (hostname|cut -d . -f 1)
+  end
+  if not set -q __fish_prompt_char
+    switch (id -u)
+      case 0
+	set -g __fish_prompt_char '#'
+      case '*'
+	set -g __fish_prompt_char '>'
+    end
+  end
+
   # Setup colors
   set -l normal (set_color normal)
   set -l red (set_color red)
@@ -23,14 +36,8 @@ function fish_prompt
     set pcolor $red
   end
 
-  # Traditional prompt chars
-  set -l pchar '$'
-  if test (id -u) = '0'
-    set pchar = '#'
-  end
-
   # Line 1
-  echo -n $red'┌'$cyan$USER$white'@'$cyan(hostname -s)' '$gray(prompt_pwd)$normal
+  echo -n $red'┌'$cyan$USER$white'@'$cyan$__fish_prompt_hostname $gray(prompt_pwd)$normal
   __fish_git_prompt
   # Check for gwip; does last commit log contain --wip--?
   if begin git log -n 1 ^/dev/null | grep -qc "\-\-wip\-\-"; end
@@ -39,5 +46,5 @@ function fish_prompt
   echo
 
   # Line 2
-  echo -n $red'└'$pcolor$pchar' '$normal
+  echo -n $red'└'$pcolor$__fish_prompt_char $normal
 end
