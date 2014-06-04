@@ -10,7 +10,8 @@ Characteristics:
 
 - Standard fish prompt characters: > for user, # for root
 - Uses the fish prompt_pwd, so paths will be abbreviated
-- Uses built-in __fish_git_prompt functionality
+- Uses built-in `__fish_git_prompt` functionality
 - Indicates Git work-in-progress (gwip/gunwip) if detected
 - Prompt character is colored red if previous command had a non-zero exit
   status
+- Includes completmentary `LS_COLORS`
