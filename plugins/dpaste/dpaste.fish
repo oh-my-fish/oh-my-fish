@@ -29,7 +29,7 @@ function __dpaste_parse_expires
   if [ -z (echo $expires | sed -r "s/$__dpaste_expires_choises//") ]
     set __dpaste_send_url "$__dpaste_send_url&expires=$expires"
   end
-  echo $argv | sed -r "s/$expires_spec//"
+  echo $argv | sed -r "s/$expires_spec//" | xargs
 end
 
 function __dpaste_help
