@@ -30,7 +30,6 @@ The proxy plugin will prepend `http://` for you.  Here's the result:
     FTP_PROXY http://myproxy.example.com:8000
     HTTPS_PROXY http://myproxy.example.com:8000
     HTTP_PROXY http://myproxy.example.com:8000
-    NO_PROXY http://myproxy.example.com:8000
     all_proxy http://myproxy.example.com:8000
     ftp_proxy http://myproxy.example.com:8000
     http_proxy http://myproxy.example.com:8000
