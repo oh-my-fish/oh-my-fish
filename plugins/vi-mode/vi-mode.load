@@ -1,3 +1,7 @@
+set_color red
+echo "Vi-mode plugin deprecated. Please use fish's builtin instead."
+set_color normal
+
 # vi:noexpandtab:sw=4:ts=4
 #
 # vi-mode for fish
