@@ -35,8 +35,9 @@ end
 
 function __dpaste_parse_expires
   set expires_spec "-t $__dpaste_expires_choises"
-  set expires (echo $argv | __sed "s/.*$expires_spec.*/\1/" | sed 's/hour/3600/' | sed 's/week/604800/' | sed 's/month/2592000/')
+  set expires (echo $argv | __sed "s/.*$expires_spec.*/\1/")
   if [ -z (echo $expires | __sed "s/$__dpaste_expires_choises//") ]
+    set expires (echo $expires | sed 's/hour/3600/' | sed 's/week/604800/' | sed 's/month/2592000/')
     set __dpaste_send_url "$__dpaste_send_url&expires=$expires"
   end
   echo $argv | __sed "s/$expires_spec//" | xargs
