@@ -1,0 +1,3 @@
+set_color red
+echo 'Rake plugin deprecated.'
+set_color normal
