@@ -6,7 +6,7 @@ Dark colors.
     user@host ~/c/w/dir (branch *)
     >
 
-![Screenshot](screenshot.png)
+![Screenshot](https://cloud.githubusercontent.com/assets/2502736/3245408/32c42cde-f172-11e3-8ba3-912191222a11.png)
 
 Characteristics:
 
