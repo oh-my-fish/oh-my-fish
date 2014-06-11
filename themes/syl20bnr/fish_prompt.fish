@@ -40,6 +40,21 @@ function __syl20bnr_unpushed_commit_count -d "Return the number of unpushed comm
   git status -s -b ^/dev/null | grep -E -o "ahead\ [0-9]+" | awk '{print $2}'
 end
 
+function fish_vi_prompt_cm --description "Displays the current mode"
+  switch $fish_bind_mode
+    case default
+      set_color --bold --background red white
+      echo "[N]"
+    case insert
+      set_color --bold --background green white
+      echo "[I]"
+    case visual
+      set_color --bold --background magenta white
+      echo "[V]"
+  end
+  set_color normal
+end
+
 # ----------------------------------------------------------------------------
 # Aliases
 # ----------------------------------------------------------------------------
@@ -129,10 +144,14 @@ function fish_prompt -d "Write out the left prompt of the syl20bnr theme"
   end
       
   # vi mode
-  # If vi_mode plugin is activated then print the vi mode in the prompt.
+  # If vi_mode plugin or native vi mode is activated then print the vi mode
+  # in the prompt.
   set -l ps_vi ""
   if test -n "$vi_mode"
     set ps_vi $colnormal"["$vi_mode$colnormal"]"
+  end
+  if test "$fish_key_bindings" = "fish_vi_key_bindings"
+    set ps_vi (fish_vi_prompt_cm)
   end
 
   # end of prompt

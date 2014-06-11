@@ -71,7 +71,8 @@ In a sub-directory of the repository:
 
 ### vi-mode
 
-This segment display the current `vi-mode` if the plugin is used.
+This segment display the current `vi-mode` if the fish native vi mode or
+the oh-my-fish vi-mode plugin is used.
 See the `[n]` in the previous screenshots.
 
 ### end
