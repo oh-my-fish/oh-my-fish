@@ -13,7 +13,7 @@ function proxy -d "Setup proxy environment variables"
   # Hacky way to read password in fish
   echo -n 'Proxy Password: '
   stty -echo
-  head -n 1 - | read -l pass
+  head -n 1 | read -l pass
   stty echo
   echo
   # URL encode password
