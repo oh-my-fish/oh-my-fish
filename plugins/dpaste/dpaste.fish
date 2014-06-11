@@ -10,7 +10,7 @@ set __dpaste_expires_choises '(onetime|never|hour|week|month)'
 
 function __dpaste_set_defaults
   if [ -z $dpaste_keyword ]
-    set -g dpaste_keyword content
+    set -g dpaste_keyword 'content'
   end
   if [ -z $dpaste_url ]
     set -g dpaste_url 'https://dpaste.de/api/?format=url'
@@ -45,9 +45,11 @@ Options:
 end
 
 function __dpaste_parse_help
-  if contains -- -h $argv
-    __dpaste_help
+  begin
+    contains -- -h $argv
+	or contains -- --help $argv
   end
+  and __dpaste_help
 end
 
 function dpaste
