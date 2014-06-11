@@ -1,0 +1,22 @@
+function __bak_name
+  # trim / for directories
+  set arg (echo $argv[1] | sed "s/\///")
+  echo "$arg.(date +"%Y%m%d_%H%M%S").bak"
+end
+
+function __bak_help
+  echo -e \
+"Usage:
+  $argv[1]bak SOURCE..."
+end
+
+function __bak
+  set program $argv[1]
+  if [ (count $argv) -gt 1 ]
+    for arg in $argv[2..-1]
+      eval $program $arg (__bak_name $arg)
+    end
+  else
+    __bak_help $argv[1]
+  end
+end
