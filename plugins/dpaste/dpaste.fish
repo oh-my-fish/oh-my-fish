@@ -22,25 +22,14 @@ function __dpaste_send
   curl -F "$dpaste_keyword=<-" $__dpaste_send_url
 end
 
-function __sed
-  set sed_extended_regexp_flag -r
-  switch (uname)
-  case *BSD
-    set sed_extended_regexp_flag -E
-  case Darwin
-    set sed_extended_regexp_flag -E
-  end
-  sed $sed_extended_regexp_flag $argv
-end
-
 function __dpaste_parse_expires
   set expires_spec "-t $__dpaste_expires_choises"
-  set expires (echo $argv | __sed "s/.*$expires_spec.*/\1/")
-  if [ -z (echo $expires | __sed "s/$__dpaste_expires_choises//") ]
+  set expires (echo $argv | sed -E "s/.*$expires_spec.*/\1/")
+  if [ -z (echo $expires | sed -E "s/$__dpaste_expires_choises//") ]
     set expires (echo $expires | sed 's/hour/3600/' | sed 's/week/604800/' | sed 's/month/2592000/')
     set __dpaste_send_url "$__dpaste_send_url&expires=$expires"
   end
-  echo $argv | __sed "s/$expires_spec//" | xargs
+  echo $argv | sed -E "s/$expires_spec//" | xargs
 end
 
 function __dpaste_help
