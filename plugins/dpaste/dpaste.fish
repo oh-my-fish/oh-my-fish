@@ -15,21 +15,31 @@ function __dpaste_set_defaults
   if [ -z $dpaste_url ]
     set -g dpaste_url 'https://dpaste.de/api/?format=url'
   end
+  set -g __dpaste_send_url $dpaste_url
 end
 
 function __dpaste_send
-  # echo $dpaste_url >&2
-  # echo $__dpaste_send_url >&2
   curl -F "$dpaste_keyword=<-" $__dpaste_send_url
+end
+
+function __sed
+  set sed_extended_regexp_flag -r
+  switch (uname)
+  case *BSD
+    set sed_extended_regexp_flag -E
+  case Darwin
+    set sed_extended_regexp_flag -E
+  end
+  sed $sed_extended_regexp_flag $argv
 end
 
 function __dpaste_parse_expires
   set expires_spec "-t $__dpaste_expires_choises"
-  set expires (echo $argv | sed -r "s/.*$expires_spec.*/\1/" | sed 's/hour/3600/' | sed 's/week/604800/' | sed 's/month/2592000/')
-  if [ -z (echo $expires | sed -r "s/$__dpaste_expires_choises//") ]
+  set expires (echo $argv | __sed "s/.*$expires_spec.*/\1/" | sed 's/hour/3600/' | sed 's/week/604800/' | sed 's/month/2592000/')
+  if [ -z (echo $expires | __sed "s/$__dpaste_expires_choises//") ]
     set __dpaste_send_url "$__dpaste_send_url&expires=$expires"
   end
-  echo $argv | sed -r "s/$expires_spec//" | xargs
+  echo $argv | __sed "s/$expires_spec//" | xargs
 end
 
 function __dpaste_help
@@ -54,7 +64,6 @@ end
 
 function dpaste
   __dpaste_set_defaults
-  set -g __dpaste_send_url $dpaste_url
   __dpaste_parse_help $argv
   or begin
     set argv (__dpaste_parse_expires $argv)
