@@ -43,7 +43,7 @@ function fish_prompt
   echo -n $red'┌'$cyan$USER$white'@'$cyan$__fish_prompt_hostname $gray(prompt_pwd)$normal
   __fish_git_prompt
   # Check for gwip; does last commit log contain --wip--?
-  if begin git log -n 1 ^/dev/null | grep -qc "\-\-wip\-\-"; end
+  if begin; git log -n 1 ^/dev/null | grep -qc "\-\-wip\-\-"; end
     echo -n $brwhite' WIP!'$normal
   end
   echo
