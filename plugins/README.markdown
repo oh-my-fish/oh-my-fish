@@ -3,6 +3,7 @@
 * __autojump__ - makes navigating filesystem much faster. see [autojump article](https://github.com/joelthelion/autojump/wiki) and [video](https://www.youtube.com/watch?v=tnNyoMGnbKg). bindings only, autojump needs to be installed separately.
 * __brew__  [Homebrew](http://brew.sh/) integration
 * __bundler__ use Ruby's [Bundler](http://bundler.io/) automatically for some commands
+* __ccache__ Enable [ccache](http://ccache.samba.org/) to speed up compilation
 * __django__  - helper for Django Unit tests. Cleans the cached modules as well.
 * __ec2__ - exports env variables for Amazon's EC2 management
 * __emoji-clock__ - The current time with half hour accuracy as an emoji symbol
