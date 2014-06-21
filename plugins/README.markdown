@@ -10,15 +10,16 @@
 * __emoji-clock__ - The current time with half hour accuracy as an emoji symbol
 * __extract__ - Plugin to expand or extract bundled & compressed files
 * __fry__ - starts [fry](https://github.com/terlar/fry) Simple ruby version manager for fish
+* __gem__ Ruby gem integration
 * __gi__  - [gitignore.io](http://gitignore.io) cli for fish
-* __jump__ - A port of [Jeroen Janssens' "jump" utility](http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html) 
+* __jump__ - A port of [Jeroen Janssens' "jump" utility](http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html)
 * __localhost__ - Opens http://localhost:3000 (and other ports) in the default browser
 * __mc__ - Plugin to start mc with a shell compliant (bash).
 * __ndenv__  - helpers for [another node.js version manager](https://github.com/riywo/ndenv)
 * __node__ - adds locally installed NodeJS npm binary executable modules to the path
 * __percol__ - browse your fish history with [percol](https://github.com/mooz/percol)
 * __peco__ - browse your fish history with [peco](https://github.com/peco/peco)
-* __php__ - manage phphttp server 
+* __php__ - manage phphttp server
 * __plenv__  - [plenv](https://github.com/tokuhirom/plenv) perl binary manager integration
 * __pyenv__ - [Simple Python Version Management](https://github.com/yyuu/pyenv) integration
 * __python__ - set of shortcuts to python based utilities (pybeatifyjson - clean JSON files, pyclean - remove old .pyc, pyhttp & pysmtp - simple HTTP & SMTP servers)
