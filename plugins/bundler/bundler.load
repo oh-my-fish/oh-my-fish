@@ -23,7 +23,7 @@ function _run-with-bundler
 end
 
 ### Main program
-set -l bundled_commands annotate cap capify cucumber foreman guard middleman nanoc puma rackup rainbows rake rspec ruby shotgun sidekiq spec spinach spork thin thor unicorn unicorn_rails
+set -l bundled_commands annotate cap capify cucumber dashing foreman guard middleman nanoc puma rackup rainbows rake rspec ruby shotgun sidekiq spec spinach spork thin thor unicorn unicorn_rails
 
 for cmd in $bundled_commands
   if not contains $cmd bundle gem
