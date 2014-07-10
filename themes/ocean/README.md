@@ -18,7 +18,7 @@ This theme is based loosely on [agnoster](https://gist.github.com/agnoster/37128
 * The anchor (⚓) turns red if the previous command failed
 * Full path of current working directory
 * Show the Git branch and dirty state (if applicable)
-* Show **User@Hostname** if user is not the default user. Set the following two lines in your config.fish in your config.fish to turn on this feature:
+* Show **User@Hostname** if user is not the default user. Set the following two lines in your config.fish to turn on this feature:
     
     ```fish
     set -g theme display_user yes
