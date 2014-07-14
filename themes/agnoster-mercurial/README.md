@@ -18,7 +18,7 @@ For Mac users, I highly recommend iTerm 2 + Solarized Dark
 * User @ Hostname (if user is not DEFAULT_USER, which can then be set in your profile)
 * Git status
 * Mercurial status
-* Branch (⭠) or detached head (➦)
+* Branch () or detached head (➦)
 * Current branch / SHA1 in detached head state
 * Dirty working directory (±, color change)
 * Working directory
