@@ -166,8 +166,19 @@ function fish_prompt -d "Write out the left prompt of the syl20bnr theme"
   # the current shell process and get back to the ranger process.
   set -l ps_end ">"
   # indicator for ranger parent process
-  set ranger ""
-  if pstree -p -l | grep "fish("(echo %self)")" | grep 'ranger([0-9]*)' > /dev/null
+  set -l ranger ""
+  set -l os (uname)
+  if test "$os" = "Darwin"
+    if pstree -s ranger | grep (echo %self) | grep -v grep > /dev/null
+      set ranger 1
+    end
+  end
+  if test "$os" = "Linux"
+    if pstree -p -l | grep "fish("(echo %self)")" | grep 'ranger([0-9]*)' > /dev/null
+      set ranger 1
+    end
+  end
+  if test -n "$ranger"
     set ps_end $ps_end$ps_end
   end
   # last status give the color of the right arrows at the end of the prompt
