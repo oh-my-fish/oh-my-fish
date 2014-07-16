@@ -2,13 +2,6 @@
 # Helper functions
 ###
 
-function _test_dir
-  set -l path $argv[1]
-  set -l paths $argv[2]
-
-  return (test -d $path; and not contains $path $paths)
-end
-
 function _fish_add_plugin
   set -l plugin $argv[1]
   set -l plugin_path "plugins/$plugin"
