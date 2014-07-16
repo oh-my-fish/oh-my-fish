@@ -13,6 +13,7 @@ Sylvain Benner personal, compact (hmmm...) yet complete (almost :-)) oh-my-fish 
 	- [end](#end)
 	- [where](#where)
 - [Functions](#functions)
+- [Mac compatibility](#mac-compatibility)
 - [Cygwin compatibility](#cygwin-compatibility)
 
 ## Segments
@@ -101,12 +102,18 @@ This segment is displayed in the right prompt.
 Some functions come with the theme:
 - `toggle_right_prompt` will... toggle the right prompt! (alias: `trp`)
 
+## Mac compatibility
+
+In order to make this theme work correctly with all the features make sure to
+install the following packages via MacPorts or Homebrew:
+-`pstree` (used in ranger detection)
+
 ## Cygwin compatibility
 
 In order to make this theme work on [Cygwin][cygwin], make sure to install the following
 packages:
 - `bc` for `math` fish function
-- `psmisc` for `pstree`
+- `psmisc` for `pstree` (used in ranger detection)
 - `git` if you want to use the `git` segment.
 
 [git]: http://git-scm.com/
