@@ -30,12 +30,18 @@ Translation of zsh's prezto [budspencer theme][budspencer]
     - `short` (show truncated path)
     - `long` (show full path)
     - `none` (show nothing)
-  * configurable by global array `$PWDSTYLE` (defaults to `short long none`)
+  * configurable by global array `$PWDSTYLE` (if not set, defaults to `short long none`)
 
-### TODO:
+## Screenshot
+
+![budspencer theme][screenshot]
+
+## TODO
+
 - elapsed time indicator
 - host/username indicator for ssh connections
 - vi REPLACE mode
 
 [budspencer]: https://github.com/tannhuber/prezto
 [ranger]: http://ranger.nongnu.org/
+[screenshot]: https://raw.githubusercontent.com/tannhuber/prezto/master/screenshots/budspencer.png
