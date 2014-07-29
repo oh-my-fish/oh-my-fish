@@ -14,6 +14,7 @@
 * __ndenv__  - helpers for [another node.js version manager](https://github.com/riywo/ndenv)
 * __node__ - adds locally installed NodeJS npm binary executable modules to the path
 * __percol__ - browse your fish history with [percol](https://github.com/mooz/percol)
+* __peco__ - browse your fish history with [peco](https://github.com/peco/peco)
 * __php__ - manage phphttp server 
 * __plenv__  - [plenv](https://github.com/tokuhirom/plenv) perl binary manager integration
 * __pyenv__ - [Simple Python Version Management](https://github.com/yyuu/pyenv) integration
