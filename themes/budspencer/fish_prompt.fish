@@ -115,12 +115,7 @@ function fish_prompt -d "Write out the left prompt of the budspencer theme"
   # Segments
   
   # vi mode
-  # If vi_mode plugin or native vi mode is activated then print the vi mode
-  # in the prompt.
   set -l ps_vi ""
-#  if test -n "$vi_mode"
-#    set ps_vi $colnormal"["$vi_mode$colnormal"]"
-#  end
   if test "$fish_key_bindings" = "fish_vi_key_bindings" -o "$fish_key_bindings" = "my_fish_key_bindings" 
     set ps_vi (fish_vi_prompt_cm)
   end
@@ -143,17 +138,7 @@ function fish_prompt -d "Write out the left prompt of the budspencer theme"
   set -l ps_git ""
   set -l git_branch_name (__budspencer_git_branch_name)
   if test -n "$git_branch_name"
-#    set -l git_repo_name (__budspencer_git_repo_name)
-#    if test -n (__budspencer_is_git_dirty)
-#      set git_info $git_info$colbred"·"
-#    end
     set ps_git $bcol_base01 "" $fcol_black "  "$git_branch_name" " $fcol_base01 #"@"$colbred$git_repo_name
-#    if test "$basedir_name" != "$git_repo_name"
-#        set -l basedir_depth (echo (__budspencer_git_repo_base) | sed "s/\// /g" | wc -w)
-#        set -l depth (echo (pwd) | sed "s/\// /g" | wc -w)
-#        set depth (math $depth - $basedir_depth)
-#        set ps_git $ps_git$colbwhite":"$colbgreen$basedir_name$colnormal"("$depth")"
-#    end
   end
 
   set -l ps_symbols (fish_prompt_symbols)
