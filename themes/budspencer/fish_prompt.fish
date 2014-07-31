@@ -1,4 +1,5 @@
-# TODO: color definitions
+# TODO: color definitions cleanup
+# TODO: git improvements
 # name: budspencer
 
 # ----------------------------------------------------------------------------
