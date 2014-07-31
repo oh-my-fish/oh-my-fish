@@ -16,14 +16,20 @@ Translation of zsh's prezto [budspencer theme][budspencer]
   * ⚡: superuser indicator
 
 ## Right prompt segments
-- Git status symbols
-  * ↑: git repository is ahead origin
-  * ↓: git repository is behind origin
-  * +: new files added
-  * –: files deleted
-  * ✱: files have changed
-  * ●: uncommited changes
-  * ✭: commits stashed
+- Git status
+  * style can be toggled in NORMAL mode with `,,`
+    - symbols
+    - amount of files that have been changed
+  * symbols:
+    - ↑: git repository is ahead origin
+    - ↓: git repository is behind origin
+    - +: new files were added
+    - –: files have been deleted
+    - ✱: files have been modified
+    - →: files have been renamed
+    - ═: there are unmerged commits
+    - ●: there are untracked files
+    - ✭: there are stashed commits
 - Present working directory
   * style can be toggled in NORMAL mode with space bar
   * styles implemented:
