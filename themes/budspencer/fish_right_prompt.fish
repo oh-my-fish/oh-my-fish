@@ -1,33 +1,31 @@
 # TODO: color definitions
 # TODO: elapsed time segment
-# TODO: configurable pwd_style
 
-function __budspencer_is_git_ahead -d "Check if there are unpushed commits"
-  echo (command git status -s -b ^/dev/null | grep ahead)
+function __budspencer_is_git_ahead_or_behind -d "Check if there are unpulled or unpushed commits"
+  echo (command git rev-list --count --left-right "HEAD...@{upstream}" ^/dev/null | sed 's/[[:space:]+]/\\x1e/g')
 end
 
-function __budspencer_is_git_behind -d "Check if there are unpushed commits"
-  echo (command git status -s -b ^/dev/null | grep behind)
-end
-
-function __budspencer_is_git_added -d "Check if there are added files"
-  echo (command git status -s -b ^/dev/null | grep "^A")
-end
-
-function __budspencer_is_git_deleted -d "Check if there are deleted files"
-  echo (command git status -s -b ^/dev/null | grep "^.D")
-end
-
-function __budspencer_is_git_changed -d "Check if there are changed files"
-  echo (command git status -s -b ^/dev/null | grep "^.M")
-end
-
-function __budspencer_is_git_uncomitted -d "Check if there are uncommited changes"
-  echo (command git status -s -b ^/dev/null | grep "^??")
+function __budspencer_git_status -d "Check git status"
+  set -l added 0
+  set -l deleted 0
+  set -l modified 0
+  set -l renamed 0
+  set -l unmerged 0
+  set -l untracked 0
+  set -l git_status (command git status --porcelain ^/dev/null)
+  for i in (seq 1 (count $git_status))
+    echo $git_status[$i] | egrep "^[ACDMT][\ MT]\ |^[ACMT]D\ " > /dev/null; and set added (math $added+1)
+    echo $git_status[$i] | egrep "^[\ ACMRT]D\ " > /dev/null; and set deleted (math $deleted+1)
+    echo $git_status[$i] | egrep "^.[MT]\ " > /dev/null; and set modified (math $modified+1)
+    echo $git_status[$i] | egrep "^R.\ " > /dev/null; and set renamed (math $renamed+1)
+    echo $git_status[$i] | egrep "^AA\ |^DD\ |^U.\ |^.U\ " > /dev/null; and set unmerged (math $unmerged+1)
+    echo $git_status[$i] | egrep "^\?\?\ " > /dev/null; and set untracked (math $untracked+1)
+  end
+  printf '%s\x1e%s\x1e%s\x1e%s\x1e%s\x1e%s' $added $deleted $modified $renamed $unmerged $untracked
 end
 
 function __budspencer_is_git_stashed -d "Check if there are stashed commits"
-  echo (command git stash list ^/dev/null)
+  echo (command git stash list ^/dev/null | wc -l | awk '{print $1}')
 end
 
 if set -q -x $PWDSTYLE
@@ -116,32 +114,46 @@ function fish_right_prompt -d "Write out the right prompt of the budspencer them
 
   # git
   set -l ps_git ""
-  if test -n (__budspencer_is_git_ahead)
-    set ps_git $fcol_yellow" ↑"
-  end
-  
-  if test -n (__budspencer_is_git_behind)
-    set ps_git $ps_git$fcol_yellow" ↓"
-  end
+  set -l is_repo (command git rev-parse --is-inside-work-tree ^/dev/null)
+  if test $is_repo="true" 
+    set -l git_ahead_behind (__budspencer_is_git_ahead_or_behind)
+    if test $git_ahead_behind[1] -gt 0
+      set ps_git $fcol_yellow" ↑"
+    end
+    
+    if test $git_ahead_behind[2] -gt 0
+      set ps_git $ps_git$fcol_yellow" ↓"
+    end
+    
+    set -l git_status (__budspencer_git_status)
+    echo $git_status
+    if test $git_status[1] -gt 0
+      set ps_git $ps_git$fcol_green" +"
+    end
 
-  if test -n (__budspencer_is_git_added)
-    set ps_git $ps_git$fcol_green" +"
-  end
+    if test $git_status[2] -gt 0
+      set ps_git $ps_git$fcol_red" –"
+    end
 
-  if test -n (__budspencer_is_git_deleted)
-    set ps_git $ps_git$fcol_red" –"
-  end
+    if test $git_status[3] -gt 0
+      set ps_git $ps_git$fcol_blue" ✱"
+    end
 
-  if test -n (__budspencer_is_git_changed)
-    set ps_git $ps_git$fcol_blue" ✱"
-  end
+    if test $git_status[4] -gt 0
+      set ps_git $ps_git$fcol_blue" →"
+    end
 
-  if test -n (__budspencer_is_git_uncomitted)
-    set ps_git $ps_git$fcol_base3" ●"
-  end
+    if test $git_status[5] -gt 0
+      set ps_git $ps_git$fcol_violet" ═"
+    end
 
-  if test -n (__budspencer_is_git_stashed)
-    set ps_git $ps_git$fcol_cyan" ✭"
+    if test $git_status[6] -gt 0
+      set ps_git $ps_git$fcol_base3" ●"
+    end
+
+    if test (__budspencer_is_git_stashed) -gt 0
+      set ps_git $ps_git$fcol_cyan" ✭"
+    end
   end
 
   if test -n "$ps_git"
