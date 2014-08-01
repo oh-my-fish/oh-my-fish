@@ -16,11 +16,13 @@ function marks
         echo "No marks currently defined."
       else
         set -l current_dir (pwd)
+        set -l output ""
         for mark_name in $mark_list
           cd $MARKPATH/$mark_name
           set -l real_path (pwd)
-          echo "$mark_name -> $real_path"
+          set output "$output$mark_name -> $real_path"\n
         end
+        echo $output | column -t
         cd $current_dir
       end
     end
