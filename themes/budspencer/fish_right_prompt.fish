@@ -82,7 +82,7 @@ end
 bind -M default ' ' fish_pwd_toggle_cm
 
 set git_style "symbols"
-function fish_git_toggle_cm --description "Toggles style of git segment, press G in NORMAL mode"
+function fish_git_toggle_cm --description "Toggles style of git segment, press ,, in NORMAL mode"
   if test $git_style = "symbols"
     set git_style "counts" 
   else

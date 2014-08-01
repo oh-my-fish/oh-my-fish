@@ -17,9 +17,9 @@ Translation of zsh's prezto [budspencer theme][budspencer]
 
 ## Right prompt segments
 - Git status
-  * style can be toggled in NORMAL mode with `,,`
-    - symbols
-    - amount of files that have been changed
+  * style can be toggled in NORMAL mode with `,,` between
+    - `symbols` (shows git status symbols, see below)
+    - `counts` (shows amount of files that are affected)
   * symbols:
     - ↑: git repository is ahead origin
     - ↓: git repository is behind origin
