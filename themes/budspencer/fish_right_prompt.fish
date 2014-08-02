@@ -1,6 +1,4 @@
 # TODO: color definitions cleanup
-# TODO: elapsed time segment
-# TODO: username/host segment for ssh connections
 
   # Init colors
 
@@ -66,6 +64,17 @@ function __budspencer_is_git_stashed -d "Check if there are stashed commits"
   echo (command git stash list ^/dev/null | wc -l | awk '{print $1}')
 end
 
+set git_style "symbols"
+function fish_git_toggle_cm --description "Toggles style of git segment, press ,, in NORMAL mode"
+  if test $git_style = "symbols"
+    set git_style "counts" 
+  else
+    set git_style "symbols"
+  end
+  commandline -f repaint
+end
+bind -M default ',,' fish_git_toggle_cm
+
 if set -q -x $PWDSTYLE
   set -x PWDSTYLE short long none
 end
@@ -81,44 +90,15 @@ function fish_pwd_toggle_cm --description "Toggles style of pwd segment, press s
 end
 bind -M default ' ' fish_pwd_toggle_cm
 
-set git_style "symbols"
-function fish_git_toggle_cm --description "Toggles style of git segment, press ,, in NORMAL mode"
-  if test $git_style = "symbols"
-    set git_style "counts" 
-  else
-    set git_style "symbols"
+function fish_cmd_duration_cm -d "Displays the elapsed time of last command"
+  if test (count $CMD_DURATION) -gt 0
+    set -l duration (echo $CMD_DURATION | tr -d '[[:space:]]' | sed 's|\.[[:digit:]]*||')
+    if test $last_status -ne 0
+      echo -n $fcol_base02""$bcol_base02$fcol_red" "$duration
+    else
+      echo -n $fcol_base02""$bcol_base02$fcol_green" "$duration
+    end
   end
-  commandline -f repaint
-end
-bind -M default ',,' fish_git_toggle_cm
-
-function fish_pwd_prompt_cm --description "Displays the present working directory"
-  switch $fish_bind_mode
-    case default
-      set_color blue
-      echo -n ""
-      set_color normal
-      set_color --background blue 000
-    case insert
-      set_color yellow
-      echo -n ""
-      set_color normal
-      set_color --background yellow 000
-    case visual
-      set_color magenta
-      echo -n ""
-      set_color normal
-      set_color --background magenta 000
-  end
-  switch $pwd_style
-    case none
-      echo -n ' '
-    case short
-      echo -n ' '(prompt_pwd)' '
-    case long
-      echo -n ' '$PWD' ' # | sed "s|$HOME|~|"
-  end
-  set_color normal
 end
 
 function fish_git_prompt_cm --description "Displays the git symbols"
@@ -205,14 +185,53 @@ function fish_git_prompt_cm --description "Displays the git symbols"
   end
 end
 
+function fish_pwd_prompt_cm --description "Displays the present working directory"
+  set -l user_host " "
+  if test (count $SSH_CLIENT) -gt 0
+    set user_host " "$USER"@"(hostname)
+    if test $pwd_style != "none"
+      set user_host $user_host":"
+    end
+  end 
+  switch $fish_bind_mode
+    case default
+      set_color blue
+      echo -n ""
+      set_color normal
+      set_color --background blue 000
+    case insert
+      set_color yellow
+      echo -n ""
+      set_color normal
+      set_color --background yellow 000
+    case visual
+      set_color magenta
+      echo -n ""
+      set_color normal
+      set_color --background magenta 000
+  end
+  switch $pwd_style
+    case none
+      echo -n $user_host' '
+    case short
+      echo -n $user_host(prompt_pwd)' '
+    case long
+      echo -n $user_host$PWD' ' # | sed "s|$HOME|~|"
+  end
+  set_color normal
+end
+
 function fish_right_prompt -d "Write out the right prompt of the budspencer theme"
   
   # Segments
 
+  # command duration
+  set ps_duration (fish_cmd_duration_cm)
+
   # git
   set ps_git (fish_git_prompt_cm)
   if test -n "$ps_git"
-    set ps_git $fcol_base02""$bcol_base02""$ps_git
+    set ps_git $fcol_base01""$bcol_base01""$ps_git
   end
 
   # pwd 
@@ -221,6 +240,6 @@ function fish_right_prompt -d "Write out the right prompt of the budspencer them
     set ps_pwd (fish_pwd_prompt_cm)
   end
 
-  echo -n $ps_git $ps_pwd
+  echo -n $ps_duration $ps_git $ps_pwd
   set_color normal
 end

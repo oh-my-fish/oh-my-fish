@@ -16,6 +16,8 @@ Translation of zsh's prezto [budspencer theme][budspencer]
   * ⚡: superuser indicator
 
 ## Right prompt segments
+
+- Last command's duration time
 - Git status
   * style can be toggled in NORMAL mode with `,,` between
     - `symbols` (shows git status symbols, see below)
@@ -44,8 +46,6 @@ Translation of zsh's prezto [budspencer theme][budspencer]
 
 ## TODO
 
-- elapsed time indicator
-- host/username indicator for ssh connections
 - vi REPLACE mode
 
 [budspencer]: https://github.com/tannhuber/prezto
