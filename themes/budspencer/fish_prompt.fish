@@ -20,21 +20,24 @@ function fish_vi_prompt_cm --description "Displays the current mode"
   switch $fish_bind_mode
     case default
       set_color -b $budspencer_colors[15] $budspencer_colors[1]
+      echo -en "\033]12;#$budspencer_colors[15]\007"
       echo -n " NORMAL "
       set_color -b $budspencer_colors[1] $budspencer_colors[15]
     case insert
       set_color -b $budspencer_colors[10] $budspencer_colors[1]
+      echo -en "\033]12;#$budspencer_colors[10]\007"
       echo -n " INSERT "
       set_color -b $budspencer_colors[1] $budspencer_colors[10]
     case visual
       set_color -b $budspencer_colors[13] $budspencer_colors[1]
+      echo -en "\033]12;#$budspencer_colors[13]\007"
       echo -n " VISUAL "
       set_color -b $budspencer_colors[1] $budspencer_colors[13]
   end
 end
 
 function fish_prompt_symbols --description "Display symbols"
-  set_color -o -b $budspencer_colors[3]
+  set_color -b $budspencer_colors[3]
   echo -n ""
   # indicator for vim parent process
   if set -q -x VIM
