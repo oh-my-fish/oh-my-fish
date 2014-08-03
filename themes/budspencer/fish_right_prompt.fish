@@ -35,6 +35,7 @@ function fish_git_toggle_cm --description "Toggles style of git segment, press ,
   commandline -f repaint
 end
 bind -M default ',,' fish_git_toggle_cm
+bind -M visual ',,' fish_git_toggle_cm
 
 if set -q -x $PWDSTYLE
   set -x PWDSTYLE short long none
@@ -50,6 +51,7 @@ function fish_pwd_toggle_cm --description "Toggles style of pwd segment, press s
   end
 end
 bind -M default ' ' fish_pwd_toggle_cm
+bind -M visual ' ' fish_pwd_toggle_cm
 
 function fish_cmd_duration_cm -d "Displays the elapsed time of last command"
   if test (count $CMD_DURATION) -gt 0

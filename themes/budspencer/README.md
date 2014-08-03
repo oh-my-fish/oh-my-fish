@@ -19,7 +19,7 @@ Translation of zsh's prezto [budspencer theme][budspencer]
 
 - Last command's duration time
 - Git status
-  * style can be toggled in NORMAL mode with `,,` between
+  * style can be toggled in NORMAL and in VISUAL mode with `,,` between
     - `symbols` (shows git status symbols, see below)
     - `counts` (shows amount of files that are affected)
   * symbols:
@@ -33,7 +33,7 @@ Translation of zsh's prezto [budspencer theme][budspencer]
     - ●: there are untracked files
     - ✭: there are stashed commits
 - Present working directory
-  * style can be toggled in NORMAL mode with space bar
+  * style can be toggled in NORMAL and in VISUAL mode with space bar
   * styles implemented:
     - `short` (show truncated path)
     - `long` (show full path)
