@@ -68,19 +68,21 @@ function fish_git_prompt_cm --description "Displays the git symbols"
   if test $is_repo="true"
 
     set -l git_ahead_behind (__budspencer_is_git_ahead_or_behind)
-    if test $git_ahead_behind[1] -gt 0
-      if test $git_style = "symbols"
-        set git_prompt (set_color -o $budspencer_colors[10])" ↑"
-      else
-        set git_prompt (set_color -o $budspencer_colors[10])" "$git_ahead_behind[1]
+    if test (count $git_ahead_behind) -eq 2
+      if test $git_ahead_behind[1] -gt 0
+        if test $git_style = "symbols"
+          set git_prompt (set_color -o $budspencer_colors[10])" ↑"
+        else
+          set git_prompt (set_color -o $budspencer_colors[10])" "$git_ahead_behind[1]
+        end
       end
-    end
 
-    if test $git_ahead_behind[2] -gt 0
-      if test $git_style = "symbols"
-        set git_prompt $git_prompt(set_color -o $budspencer_colors[10])" ↓"
-      else
-        set git_prompt $git_prompt(set_color -o $budspencer_colors[10])" "$git_ahead_behind[2]
+      if test $git_ahead_behind[2] -gt 0
+        if test $git_style = "symbols"
+          set git_prompt $git_prompt(set_color -o $budspencer_colors[10])" ↓"
+        else
+          set git_prompt $git_prompt(set_color -o $budspencer_colors[10])" "$git_ahead_behind[2]
+        end
       end
     end
 
@@ -141,7 +143,7 @@ function fish_git_prompt_cm --description "Displays the git symbols"
         set git_prompt $git_prompt(set_color -o $budspencer_colors[16])" "$git_stashed
       end
     end
-    echo $git_prompt
+    echo -n $git_prompt
 
   end
 end
