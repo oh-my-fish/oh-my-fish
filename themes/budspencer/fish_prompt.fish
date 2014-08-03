@@ -4,7 +4,7 @@
 ###############################################################################
 # Color definitions
 ###############################################################################
-  set -g budspencer_colors 000000 002b36 083743 445659 657b83 839496 93a1a1 eee8d5 fdf6e3 b58900 cb4b16 dc121f d33682 6c71c4 268bd2 2aa198 859900
+set -g budspencer_colors 000000 002b36 083743 445659 657b83 839496 93a1a1 eee8d5 fdf6e3 b58900 cb4b16 dc121f af005f 6c71c4 268bd2 2aa198 859900
 
 ###############################################################################
 # Utils
@@ -13,7 +13,12 @@
 set -g __budspencer_display_rprompt 1
 
 function __budspencer_git_branch_name -d "Return the current branch name"
-  echo (command git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
+  set -l branch (git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
+  if test (count $branch) -eq 0
+    echo -n (set_color -b $budspencer_colors[14])""(set_color $budspencer_colors[1])"  "(git describe --contains --all HEAD ^/dev/null)" "(set_color $budspencer_colors[14])
+  else
+    echo -n (set_color -b $budspencer_colors[4])""(set_color $budspencer_colors[1])"  "$branch" "(set_color $budspencer_colors[4])
+  end
 end
 
 function fish_vi_prompt_cm --description "Displays the current mode"
@@ -95,7 +100,7 @@ function fish_prompt -d "Write out the left prompt of the budspencer theme"
   set -l ps_git ""
   set -l git_branch_name (__budspencer_git_branch_name)
   if test -n "$git_branch_name"
-    set ps_git (set_color -b $budspencer_colors[4]) "" (set_color $budspencer_colors[1]) "  "$git_branch_name" " (set_color $budspencer_colors[4]) #"@"$colbred$git_repo_name
+    set ps_git $git_branch_name
   end
 
   set -l ps_symbols (fish_prompt_symbols)
