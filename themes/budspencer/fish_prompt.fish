@@ -24,7 +24,7 @@ function __budspencer_git_branch_name -d "Return the current branch name"
   if test (count $branch) -eq 0
     set -l position (git describe --contains --all HEAD ^/dev/null)
       if test (count $position) -eq 0
-        set -l commit (git rev-parse HEAD ^/dev/null)
+        set -l commit (git rev-parse HEAD ^/dev/null | sed -r 's|(^.{7}).*|\1|')
         echo -n (set_color -b $budspencer_colors[11])""(set_color $budspencer_colors[1])" ➦ "$commit" "(set_color $budspencer_colors[11])
       else
         echo -n (set_color -b $budspencer_colors[9])""(set_color $budspencer_colors[1])"  "$position" "(set_color $budspencer_colors[9])
