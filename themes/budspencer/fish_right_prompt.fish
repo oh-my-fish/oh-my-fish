@@ -30,7 +30,7 @@ function __budspencer_is_git_stashed -d "Check if there are stashed commits"
 end
 
 set git_style "symbols"
-function fish_git_toggle_cm --description "Toggles style of git segment, press ,, in NORMAL mode"
+function fish_git_toggle_cm -d "Toggles style of git segment, press # in NORMAL or VISUAL mode"
   if test $git_style = "symbols"
     set git_style "counts"
   else
@@ -38,14 +38,14 @@ function fish_git_toggle_cm --description "Toggles style of git segment, press ,
   end
   commandline -f repaint
 end
-bind -M default ',,' fish_git_toggle_cm
-bind -M visual ',,' fish_git_toggle_cm
+bind -M default '#' fish_git_toggle_cm
+bind -M visual '#' fish_git_toggle_cm
 
 if set -q -x $PWDSTYLE
   set -x PWDSTYLE short long none
 end
 set pwd_style $PWDSTYLE[1]
-function fish_pwd_toggle_cm --description "Toggles style of pwd segment, press space bar in NORMAL mode"
+function fish_pwd_toggle_cm -d "Toggles style of pwd segment, press space bar in NORMAL or VISUAL mode"
   for i in (seq 1 (count $PWDSTYLE))
     if test $PWDSTYLE[$i] = $pwd_style
       set pwd_style $PWDSTYLE[(math $i%(count $PWDSTYLE)+1)]
@@ -68,7 +68,7 @@ function fish_cmd_duration_cm -d "Displays the elapsed time of last command"
   end
 end
 
-function fish_git_prompt_cm --description "Displays the git symbols"
+function fish_git_prompt_cm -d "Displays the git symbols"
   set -l git_prompt ""
   set -l is_repo (command git rev-parse --is-inside-work-tree ^/dev/null)
   if test $is_repo="true"
@@ -79,7 +79,7 @@ function fish_git_prompt_cm --description "Displays the git symbols"
         if test $git_style = "symbols"
           set git_prompt (set_color -o $budspencer_colors[5])" ↑"
         else
-          set git_prompt (set_color -o $budspencer_colors[5])" "$git_ahead_behind[1]
+          set git_prompt (set_color $budspencer_colors[5])" "$git_ahead_behind[1]
         end
       end
 
@@ -87,7 +87,7 @@ function fish_git_prompt_cm --description "Displays the git symbols"
         if test $git_style = "symbols"
           set git_prompt $git_prompt(set_color -o $budspencer_colors[5])" ↓"
         else
-          set git_prompt $git_prompt(set_color -o $budspencer_colors[5])" "$git_ahead_behind[2]
+          set git_prompt $git_prompt(set_color $budspencer_colors[5])" "$git_ahead_behind[2]
         end
       end
     end
@@ -97,7 +97,7 @@ function fish_git_prompt_cm --description "Displays the git symbols"
       if test $git_style = "symbols"
         set git_prompt $git_prompt(set_color -o $budspencer_colors[12])" +"
       else
-        set git_prompt $git_prompt(set_color -o $budspencer_colors[12])" "$git_status[1]
+        set git_prompt $git_prompt(set_color $budspencer_colors[12])" "$git_status[1]
       end
     end
 
@@ -105,7 +105,7 @@ function fish_git_prompt_cm --description "Displays the git symbols"
       if test $git_style = "symbols"
         set git_prompt $git_prompt(set_color -o $budspencer_colors[7])" –"
       else
-        set git_prompt $git_prompt(set_color -o $budspencer_colors[7])" "$git_status[2]
+        set git_prompt $git_prompt(set_color $budspencer_colors[7])" "$git_status[2]
       end
     end
 
@@ -113,7 +113,7 @@ function fish_git_prompt_cm --description "Displays the git symbols"
       if test $git_style = "symbols"
         set git_prompt $git_prompt(set_color -o $budspencer_colors[10])" ✱"
       else
-        set git_prompt $git_prompt(set_color -o $budspencer_colors[10])" "$git_status[3]
+        set git_prompt $git_prompt(set_color $budspencer_colors[10])" "$git_status[3]
       end
     end
 
@@ -121,7 +121,7 @@ function fish_git_prompt_cm --description "Displays the git symbols"
       if test $git_style = "symbols"
         set git_prompt $git_prompt(set_color -o $budspencer_colors[8])" →"
       else
-        set git_prompt $git_prompt(set_color -o $budspencer_colors[8])" "$git_status[4]
+        set git_prompt $git_prompt(set_color $budspencer_colors[8])" "$git_status[4]
       end
     end
 
@@ -129,7 +129,7 @@ function fish_git_prompt_cm --description "Displays the git symbols"
       if test $git_style = "symbols"
         set git_prompt $git_prompt(set_color -o $budspencer_colors[9])" ═"
       else
-        set git_prompt $git_prompt(set_color -o $budspencer_colors[9])" "$git_status[5]
+        set git_prompt $git_prompt(set_color $budspencer_colors[9])" "$git_status[5]
       end
     end
 
@@ -137,7 +137,7 @@ function fish_git_prompt_cm --description "Displays the git symbols"
       if test $git_style = "symbols"
         set git_prompt $git_prompt(set_color -o $budspencer_colors[4])" ●"
       else
-        set git_prompt $git_prompt(set_color -o $budspencer_colors[4])" "$git_status[6]
+        set git_prompt $git_prompt(set_color $budspencer_colors[4])" "$git_status[6]
       end
     end
 
@@ -146,7 +146,7 @@ function fish_git_prompt_cm --description "Displays the git symbols"
       if test $git_style = "symbols"
         set git_prompt $git_prompt(set_color -o $budspencer_colors[11])" ✭"
       else
-        set git_prompt $git_prompt(set_color -o $budspencer_colors[11])" "$git_stashed
+        set git_prompt $git_prompt(set_color $budspencer_colors[11])" "$git_stashed
       end
     end
     echo -n $git_prompt
@@ -154,7 +154,7 @@ function fish_git_prompt_cm --description "Displays the git symbols"
   end
 end
 
-function fish_pwd_prompt_cm --description "Displays the present working directory"
+function fish_pwd_prompt_cm -d "Displays the present working directory"
   set -l user_host " "
   if test (count $SSH_CLIENT) -gt 0
     set user_host " "$USER"@"(hostname)

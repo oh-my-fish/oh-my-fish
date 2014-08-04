@@ -45,7 +45,7 @@ function __budspencer_git_branch_name -d "Return the current branch name"
   end
 end
 
-function fish_vi_prompt_cm --description "Displays the current mode"
+function fish_vi_prompt_cm -d "Displays the current mode"
   switch $fish_bind_mode
     case default
       set_color -b $budspencer_colors[10] $budspencer_colors[1]
@@ -65,7 +65,7 @@ function fish_vi_prompt_cm --description "Displays the current mode"
   end
 end
 
-function fish_prompt_symbols --description "Display symbols"
+function fish_prompt_symbols -d "Display symbols"
   set_color -b $budspencer_colors[2]
   echo -n ""
   # indicator for vim parent process

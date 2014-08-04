@@ -19,7 +19,7 @@ Translation of zsh's prezto [budspencer theme][budspencer]
 
 - Last command's duration time
 - Git status
-  * style can be toggled in NORMAL and in VISUAL mode with `,,` between
+  * style can be toggled in NORMAL and in VISUAL mode with `#` between
     - `symbols` (shows git status symbols, see below)
     - `counts` (shows amount of files that are affected)
   * symbols:
