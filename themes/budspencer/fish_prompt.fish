@@ -1,7 +1,7 @@
 ###############################################################################
 #
 # prompt theme name: budspencer
-# 
+#
 # description: a sophisticated airline/powerline theme
 #
 # author: Joseph Tannhuber
@@ -11,7 +11,18 @@
 ###############################################################################
 # Color definitions
 ###############################################################################
+
+# define colors
 set -g budspencer_colors 000000 083743 445659 fdf6e3 b58900 cb4b16 dc121f af005f 6c71c4 268bd2 2aa198 859900
+
+# cursor colors
+set -g budspencer_cursors "\033]12;#$budspencer_colors[10]\007" "\033]12;#$budspencer_colors[5]\007" "\033]12;#$budspencer_colors[8]\007"
+set -l unsupported_terminals "fbterm" "st" "linux" "screen"
+for term in $unsupported_terminals
+  if test $term = $TERM
+    set -g budspencer_cursors "" "" ""
+  end
+end
 
 ###############################################################################
 # Utils
@@ -38,17 +49,17 @@ function fish_vi_prompt_cm --description "Displays the current mode"
   switch $fish_bind_mode
     case default
       set_color -b $budspencer_colors[10] $budspencer_colors[1]
-      echo -en "\033]12;#$budspencer_colors[10]\007"
+      echo -en $budspencer_cursors[1]
       echo -n " NORMAL "
       set_color -b $budspencer_colors[1] $budspencer_colors[10]
     case insert
       set_color -b $budspencer_colors[5] $budspencer_colors[1]
-      echo -en "\033]12;#$budspencer_colors[5]\007"
+      echo -en $budspencer_cursors[2]
       echo -n " INSERT "
       set_color -b $budspencer_colors[1] $budspencer_colors[5]
     case visual
       set_color -b $budspencer_colors[8] $budspencer_colors[1]
-      echo -en "\033]12;#$budspencer_colors[8]\007"
+      echo -en $budspencer_cursors[3]
       echo -n " VISUAL "
       set_color -b $budspencer_colors[1] $budspencer_colors[8]
   end
