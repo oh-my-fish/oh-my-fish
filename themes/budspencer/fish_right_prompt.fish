@@ -1,3 +1,7 @@
+###############################################################################
+# Utils
+###############################################################################
+
 function __budspencer_is_git_ahead_or_behind -d "Check if there are unpulled or unpushed commits"
   echo (command git rev-list --count --left-right "HEAD...@{upstream}" ^/dev/null | sed 's/[[:space:]+]/\\x1e/g')
 end
@@ -57,9 +61,9 @@ function fish_cmd_duration_cm -d "Displays the elapsed time of last command"
   if test (count $CMD_DURATION) -gt 0
     set -l duration (echo $CMD_DURATION | tr -d '[[:space:]]' | sed 's|\.[[:digit:]]*||')
     if test $last_status -ne 0
-      echo -n (set_color $budspencer_colors[3])""(set_color -b $budspencer_colors[3] $budspencer_colors[12])" "$duration
+      echo -n (set_color $budspencer_colors[2])""(set_color -b $budspencer_colors[2] $budspencer_colors[7])" "$duration
     else
-      echo -n (set_color $budspencer_colors[3])""(set_color -b $budspencer_colors[3] $budspencer_colors[17])" "$duration
+      echo -n (set_color $budspencer_colors[2])""(set_color -b $budspencer_colors[2] $budspencer_colors[12])" "$duration
     end
   end
 end
@@ -73,17 +77,17 @@ function fish_git_prompt_cm --description "Displays the git symbols"
     if test (count $git_ahead_behind) -eq 2
       if test $git_ahead_behind[1] -gt 0
         if test $git_style = "symbols"
-          set git_prompt (set_color -o $budspencer_colors[10])" ↑"
+          set git_prompt (set_color -o $budspencer_colors[5])" ↑"
         else
-          set git_prompt (set_color -o $budspencer_colors[10])" "$git_ahead_behind[1]
+          set git_prompt (set_color -o $budspencer_colors[5])" "$git_ahead_behind[1]
         end
       end
 
       if test $git_ahead_behind[2] -gt 0
         if test $git_style = "symbols"
-          set git_prompt $git_prompt(set_color -o $budspencer_colors[10])" ↓"
+          set git_prompt $git_prompt(set_color -o $budspencer_colors[5])" ↓"
         else
-          set git_prompt $git_prompt(set_color -o $budspencer_colors[10])" "$git_ahead_behind[2]
+          set git_prompt $git_prompt(set_color -o $budspencer_colors[5])" "$git_ahead_behind[2]
         end
       end
     end
@@ -91,58 +95,58 @@ function fish_git_prompt_cm --description "Displays the git symbols"
     set -l git_status (__budspencer_git_status)
     if test $git_status[1] -gt 0
       if test $git_style = "symbols"
-        set git_prompt $git_prompt(set_color -o $budspencer_colors[17])" +"
+        set git_prompt $git_prompt(set_color -o $budspencer_colors[12])" +"
       else
-        set git_prompt $git_prompt(set_color -o $budspencer_colors[17])" "$git_status[1]
+        set git_prompt $git_prompt(set_color -o $budspencer_colors[12])" "$git_status[1]
       end
     end
 
     if test $git_status[2] -gt 0
       if test $git_style = "symbols"
-        set git_prompt $git_prompt(set_color -o $budspencer_colors[12])" –"
+        set git_prompt $git_prompt(set_color -o $budspencer_colors[7])" –"
       else
-        set git_prompt $git_prompt(set_color -o $budspencer_colors[12])" "$git_status[2]
+        set git_prompt $git_prompt(set_color -o $budspencer_colors[7])" "$git_status[2]
       end
     end
 
     if test $git_status[3] -gt 0
       if test $git_style = "symbols"
-        set git_prompt $git_prompt(set_color -o $budspencer_colors[15])" ✱"
+        set git_prompt $git_prompt(set_color -o $budspencer_colors[10])" ✱"
       else
-        set git_prompt $git_prompt(set_color -o $budspencer_colors[15])" "$git_status[3]
+        set git_prompt $git_prompt(set_color -o $budspencer_colors[10])" "$git_status[3]
       end
     end
 
     if test $git_status[4] -gt 0
       if test $git_style = "symbols"
-        set git_prompt $git_prompt(set_color -o $budspencer_colors[13])" →"
+        set git_prompt $git_prompt(set_color -o $budspencer_colors[8])" →"
       else
-        set git_prompt $git_prompt(set_color -o $budspencer_colors[13])" "$git_status[4]
+        set git_prompt $git_prompt(set_color -o $budspencer_colors[8])" "$git_status[4]
       end
     end
 
     if test $git_status[5] -gt 0
       if test $git_style = "symbols"
-        set git_prompt $git_prompt(set_color -o $budspencer_colors[14])" ═"
+        set git_prompt $git_prompt(set_color -o $budspencer_colors[9])" ═"
       else
-        set git_prompt $git_prompt(set_color -o $budspencer_colors[14])" "$git_status[5]
+        set git_prompt $git_prompt(set_color -o $budspencer_colors[9])" "$git_status[5]
       end
     end
 
     if test $git_status[6] -gt 0
       if test $git_style = "symbols"
-        set git_prompt $git_prompt(set_color -o $budspencer_colors[9])" ●"
+        set git_prompt $git_prompt(set_color -o $budspencer_colors[4])" ●"
       else
-        set git_prompt $git_prompt(set_color -o $budspencer_colors[9])" "$git_status[6]
+        set git_prompt $git_prompt(set_color -o $budspencer_colors[4])" "$git_status[6]
       end
     end
 
     set -l git_stashed (__budspencer_is_git_stashed)
     if test git_stashed -gt 0
       if test $git_style = "symbols"
-        set git_prompt $git_prompt(set_color -o $budspencer_colors[16])" ✭"
+        set git_prompt $git_prompt(set_color -o $budspencer_colors[11])" ✭"
       else
-        set git_prompt $git_prompt(set_color -o $budspencer_colors[16])" "$git_stashed
+        set git_prompt $git_prompt(set_color -o $budspencer_colors[11])" "$git_stashed
       end
     end
     echo -n $git_prompt
@@ -160,20 +164,20 @@ function fish_pwd_prompt_cm --description "Displays the present working director
   end
   switch $fish_bind_mode
     case default
-      set_color $budspencer_colors[15]
-      echo -n ""
-      set_color normal
-      set_color -b $budspencer_colors[15] $budspencer_colors[1]
-    case insert
       set_color $budspencer_colors[10]
       echo -n ""
       set_color normal
       set_color -b $budspencer_colors[10] $budspencer_colors[1]
-    case visual
-      set_color $budspencer_colors[13]
+    case insert
+      set_color $budspencer_colors[5]
       echo -n ""
       set_color normal
-      set_color -b $budspencer_colors[13] $budspencer_colors[1]
+      set_color -b $budspencer_colors[5] $budspencer_colors[1]
+    case visual
+      set_color $budspencer_colors[8]
+      echo -n ""
+      set_color normal
+      set_color -b $budspencer_colors[8] $budspencer_colors[1]
   end
   switch $pwd_style
     case none
@@ -186,9 +190,15 @@ function fish_pwd_prompt_cm --description "Displays the present working director
   set_color normal
 end
 
+###############################################################################
+# Prompt
+###############################################################################
+
 function fish_right_prompt -d "Write out the right prompt of the budspencer theme"
 
+  #############################################################################
   # Segments
+  #############################################################################
 
   # command duration
   set ps_duration (fish_cmd_duration_cm)
@@ -196,7 +206,7 @@ function fish_right_prompt -d "Write out the right prompt of the budspencer them
   # git
   set ps_git (fish_git_prompt_cm)
   if test -n "$ps_git"
-    set ps_git (set_color $budspencer_colors[4])""(set_color -b $budspencer_colors[4])""$ps_git
+    set ps_git (set_color $budspencer_colors[3])""(set_color -b $budspencer_colors[3])""$ps_git
   end
 
   # pwd
@@ -205,6 +215,7 @@ function fish_right_prompt -d "Write out the right prompt of the budspencer them
     set ps_pwd (fish_pwd_prompt_cm)
   end
 
+  # right prompt
   echo -n $ps_duration $ps_git $ps_pwd
   set_color normal
 end
