@@ -13,29 +13,29 @@
 ###############################################################################
 
 # define colors
+# values are: black dark_gray light_gray white yellow orange red magenta violet blue cyan green
 set -g budspencer_colors 000000 083743 445659 fdf6e3 b58900 cb4b16 dc121f af005f 6c71c4 268bd2 2aa198 859900
 
-# cursor colors
+# cursor color changes according to vi-mode
+# define values for: normal_mode insert_mode visual_mode
 set -g budspencer_cursors "\033]12;#$budspencer_colors[10]\007" "\033]12;#$budspencer_colors[5]\007" "\033]12;#$budspencer_colors[8]\007"
+
+# some terminals cannot change the cursor color
 set -l unsupported_terminals "fbterm" "st" "linux" "screen"
-for term in $unsupported_terminals
-  if test $term = $TERM
-    set -g budspencer_cursors "" "" ""
-  end
+if contains $TERM $unsupported_terminals
+   set -e budspencer_cursors
 end
 
 ###############################################################################
 # Utils
 ###############################################################################
 
-set -g __budspencer_display_rprompt 1
-
 function __budspencer_git_branch_name -d "Return the current branch name"
   set -l branch (git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
   if test (count $branch) -eq 0
     set -l position (git describe --contains --all HEAD ^/dev/null)
       if test (count $position) -eq 0
-        set -l commit (git rev-parse HEAD ^/dev/null | sed -r 's|(^.{7}).*|\1|')
+        set -l commit (git rev-parse HEAD ^/dev/null | sed  's|\(^.......\).*|\1|')
         echo -n (set_color -b $budspencer_colors[11])""(set_color $budspencer_colors[1])" ➦ "$commit" "(set_color $budspencer_colors[11])
       else
         echo -n (set_color -b $budspencer_colors[9])""(set_color $budspencer_colors[1])"  "$position" "(set_color $budspencer_colors[9])
@@ -111,7 +111,6 @@ end
 
 function fish_prompt -d "Write out the left prompt of the budspencer theme"
   set -g last_status $status
-  set -l basedir_name (basename (prompt_pwd))
 
   #############################################################################
   # Segments

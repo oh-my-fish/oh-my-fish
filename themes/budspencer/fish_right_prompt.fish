@@ -1,4 +1,9 @@
 ###############################################################################
+# Init
+###############################################################################
+set -g CMD_DURATION 0
+
+###############################################################################
 # Utils
 ###############################################################################
 
@@ -14,7 +19,7 @@ function __budspencer_git_status -d "Check git status"
   set -l unmerged 0
   set -l untracked 0
   set -l git_status (command git status --porcelain ^/dev/null)
-  for i in (seq 1 (count $git_status))
+  for i in (seq (count $git_status))
     echo $git_status[$i] | egrep "^[ACDMT][\ MT]\ |^[ACMT]D\ " > /dev/null; and set added (math $added+1)
     echo $git_status[$i] | egrep "^[\ ACMRT]D\ " > /dev/null; and set deleted (math $deleted+1)
     echo $git_status[$i] | egrep "^.[MT]\ " > /dev/null; and set modified (math $modified+1)
@@ -46,7 +51,7 @@ if set -q -x $PWDSTYLE
 end
 set pwd_style $PWDSTYLE[1]
 function fish_pwd_toggle_cm -d "Toggles style of pwd segment, press space bar in NORMAL or VISUAL mode"
-  for i in (seq 1 (count $PWDSTYLE))
+  for i in (seq (count $PWDSTYLE))
     if test $PWDSTYLE[$i] = $pwd_style
       set pwd_style $PWDSTYLE[(math $i%(count $PWDSTYLE)+1)]
       commandline -f repaint
@@ -58,12 +63,26 @@ bind -M default ' ' fish_pwd_toggle_cm
 bind -M visual ' ' fish_pwd_toggle_cm
 
 function fish_cmd_duration_cm -d "Displays the elapsed time of last command"
-  if test (count $CMD_DURATION) -gt 0
-    set -l duration (echo $CMD_DURATION | tr -d '[[:space:]]' | sed 's|\.[[:digit:]]*||')
+  set -l seconds ""
+  set -l minutes ""
+  set -l hours ""
+  set -l days ""
+  set -l cmd_duration (math $CMD_DURATION/1000)
+  if test $cmd_duration -gt 0
+    set seconds (math $cmd_duration%68400%3600%60)"s"
+    if test $cmd_duration -ge 60
+      set minutes (math $cmd_duration%68400%3600/60)"m"
+      if test $cmd_duration -ge 3600
+        set hours (math $cmd_duration%68400/3600)"h"
+        if test $cmd_duration -ge 68400
+          set days (math $cmd_duration/68400)"d"
+        end
+      end
+    end
     if test $last_status -ne 0
-      echo -n (set_color $budspencer_colors[2])""(set_color -b $budspencer_colors[2] $budspencer_colors[7])" "$duration
+      echo -n (set_color $budspencer_colors[2])""(set_color -b $budspencer_colors[2] $budspencer_colors[7])" "$days$hours$minutes$seconds
     else
-      echo -n (set_color $budspencer_colors[2])""(set_color -b $budspencer_colors[2] $budspencer_colors[12])" "$duration
+      echo -n (set_color $budspencer_colors[2])""(set_color -b $budspencer_colors[2] $budspencer_colors[12])" "$days$hours$minutes$seconds
     end
   end
 end
