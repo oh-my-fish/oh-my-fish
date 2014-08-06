@@ -1,6 +1,6 @@
 function __bak_name
   # trim / for directories
-  set arg (echo $argv[1] | sed "s/\///")
+  set arg (echo $argv[1] | sed 's/\/$//')
   echo "$arg.(date +"%Y%m%d_%H%M%S").bak"
 end
 
