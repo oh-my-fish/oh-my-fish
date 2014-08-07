@@ -65,4 +65,4 @@ echo
 colored green ' ....is now installed.'
 
 # Run shell after installation.
-fish
+fish < /dev/tty 2>&1 > /dev/tty 
