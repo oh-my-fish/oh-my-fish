@@ -5,7 +5,7 @@
 * __bundler__ use Ruby's [Bundler](http://bundler.io/) automatically for some commands
 * __django__  - helper for Django Unit tests. Cleans the cached modules as well.
 * __ec2__ - exports env variables for Amazon's EC2 management
-* __emoji__-clock - The current time with half hour accuracy as an emoji symbol
+* __emoji-clock__ - The current time with half hour accuracy as an emoji symbol
 * __extract__ - Plugin to expand or extract bundled & compressed files
 * __fry__ - starts [fry](https://github.com/terlar/fry) Simple ruby version manager for fish
 * __gi__  - [gitignore.io](http://gitignore.io) cli for fish
