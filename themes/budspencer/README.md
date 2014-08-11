@@ -1,6 +1,18 @@
 # budspencer theme
 
-Translation of zsh's prezto [budspencer theme][budspencer]
+Translation of zsh's prezto [budspencer theme][budspencer].
+
+## Configuration
+
+The theme behaves similar to vim's airline/powerline plugins. It needs a
+[powerline font][font]. Although it works with emacs mode, it's more powerful
+with vi mode. In order to enable vi mode, put the following lines into
+`$HOME/.config/fish/config.fish` before `set fish_path $HOME/.oh-my-fish`:
+
+```
+set -e fish_key_bindings
+set -U fish_key_bindings fish_vi_key_bindings
+```
 
 ## Left prompt segments
 
@@ -46,8 +58,9 @@ Translation of zsh's prezto [budspencer theme][budspencer]
 
 ## TODO
 
-- vi REPLACE mode
+- vi REPLACE mode, as soon as REPLACE mode is implemented within fish
 
 [budspencer]: https://github.com/tannhuber/prezto
+[font]: https://github.com/Lokaltog/powerline-fonts
 [ranger]: http://ranger.nongnu.org/
 [screenshot]: https://raw.githubusercontent.com/tannhuber/prezto/master/screenshots/budspencer.png

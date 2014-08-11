@@ -50,7 +50,11 @@ function fish_vi_prompt_cm -d "Displays the current mode"
     case default
       set_color -b $budspencer_colors[10] $budspencer_colors[1]
       echo -en $budspencer_cursors[1]
-      echo -n " NORMAL "
+      if test "$fish_key_bindings" = "fish_vi_key_bindings" -o "$fish_key_bindings" = "my_fish_key_bindings"
+        echo -n " NORMAL "
+      else
+        echo -n " EMACS "
+      end
       set_color -b $budspencer_colors[1] $budspencer_colors[10]
     case insert
       set_color -b $budspencer_colors[5] $budspencer_colors[1]
@@ -118,9 +122,9 @@ function fish_prompt -d "Write out the left prompt of the budspencer theme"
 
   # vi mode
   set -l ps_vi ""
-  if test "$fish_key_bindings" = "fish_vi_key_bindings" -o "$fish_key_bindings" = "my_fish_key_bindings"
+#  if test "$fish_key_bindings" = "fish_vi_key_bindings" -o "$fish_key_bindings" = "my_fish_key_bindings"
     set ps_vi (fish_vi_prompt_cm)
-  end
+#  end
 
   # git
   set -l ps_git ""

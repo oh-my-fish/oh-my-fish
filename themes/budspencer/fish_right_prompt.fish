@@ -43,8 +43,10 @@ function fish_git_toggle_cm -d "Toggles style of git segment, press # in NORMAL 
   end
   commandline -f repaint
 end
-bind -M default '#' fish_git_toggle_cm
-bind -M visual '#' fish_git_toggle_cm
+if test "$fish_key_bindings" = "fish_vi_key_bindings" -o "$fish_key_bindings" = "my_fish_key_bindings"
+  bind -M default '#' fish_git_toggle_cm
+  bind -M visual '#' fish_git_toggle_cm
+end
 
 if set -q -x $PWDSTYLE
   set -x PWDSTYLE short long none
@@ -59,8 +61,10 @@ function fish_pwd_toggle_cm -d "Toggles style of pwd segment, press space bar in
     end
   end
 end
-bind -M default ' ' fish_pwd_toggle_cm
-bind -M visual ' ' fish_pwd_toggle_cm
+if test "$fish_key_bindings" = "fish_vi_key_bindings" -o "$fish_key_bindings" = "my_fish_key_bindings"
+  bind -M default ' ' fish_pwd_toggle_cm
+  bind -M visual ' ' fish_pwd_toggle_cm
+end
 
 function fish_cmd_duration_cm -d "Displays the elapsed time of last command"
   set -l seconds ""
@@ -225,14 +229,14 @@ function fish_right_prompt -d "Write out the right prompt of the budspencer them
   # git
   set ps_git (fish_git_prompt_cm)
   if test -n "$ps_git"
-    set ps_git (set_color $budspencer_colors[3])""(set_color -b $budspencer_colors[3])""$ps_git
+    set ps_git (set_color $budspencer_colors[3])""(set_color -b $budspencer_colors[3])""$ps_git(set_color -b $budspencer_colors[3] normal)
   end
 
   # pwd
   set -l ps_pwd ""
-  if test "$fish_key_bindings" = "fish_vi_key_bindings" -o "$fish_key_bindings" = "my_fish_key_bindings"
+#  if test "$fish_key_bindings" = "fish_vi_key_bindings" -o "$fish_key_bindings" = "my_fish_key_bindings"
     set ps_pwd (fish_pwd_prompt_cm)
-  end
+#  end
 
   # right prompt
   echo -n $ps_duration $ps_git $ps_pwd
