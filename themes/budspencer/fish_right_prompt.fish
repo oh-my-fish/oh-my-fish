@@ -234,9 +234,7 @@ function fish_right_prompt -d "Write out the right prompt of the budspencer them
 
   # pwd
   set -l ps_pwd ""
-#  if test "$fish_key_bindings" = "fish_vi_key_bindings" -o "$fish_key_bindings" = "my_fish_key_bindings"
-    set ps_pwd (fish_pwd_prompt_cm)
-#  end
+  set ps_pwd (fish_pwd_prompt_cm)
 
   # right prompt
   echo -n $ps_duration $ps_git $ps_pwd

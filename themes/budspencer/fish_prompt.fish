@@ -122,9 +122,7 @@ function fish_prompt -d "Write out the left prompt of the budspencer theme"
 
   # vi mode
   set -l ps_vi ""
-#  if test "$fish_key_bindings" = "fish_vi_key_bindings" -o "$fish_key_bindings" = "my_fish_key_bindings"
-    set ps_vi (fish_vi_prompt_cm)
-#  end
+  set ps_vi (fish_vi_prompt_cm)
 
   # git
   set -l ps_git ""
