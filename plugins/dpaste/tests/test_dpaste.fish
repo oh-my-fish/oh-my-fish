@@ -1,11 +1,7 @@
 #!/usr/bin/env fish
 
-set -l script_dir (dirname (status -f))
-
 function suite_dpaste
   function setup
-    set -g __dpaste_expires_choises
-    source $script_dir/../dpaste.fish
     __dpaste_set_defaults
   end
 
@@ -23,6 +19,8 @@ function suite_dpaste
 end
 
 if not set -q tank_running
-  source $script_dir/helper.fish
+  source (dirname (status -f))/helper.fish
+  set -g __dpaste_expires_choises
+  source (dirname (status -f))/../dpaste.fish
   tank_run
 end
