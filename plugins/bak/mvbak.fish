@@ -2,5 +2,5 @@
 # (c) Roman Inflianskas (rominf) <infroma@gmail.com>, 2014
 
 function mvbak
-  __bak mv $argv
+  __bak mvbak mv $argv
 end

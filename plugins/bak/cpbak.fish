@@ -2,5 +2,5 @@
 # (c) Roman Inflianskas (rominf) <infroma@gmail.com>, 2014
 
 function cpbak
-  __bak 'cp -a' $argv
+  __bak cpbak 'cp -a' $argv
 end
