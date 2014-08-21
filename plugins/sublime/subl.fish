@@ -5,6 +5,8 @@ function subl --description 'Open Sublime Text'
     "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" $argv
   else if test -x "/opt/sublime_text/sublime_text"
     "/opt/sublime_text/sublime_text" $argv
+  else if test -x "/opt/sublime_text_3/sublime_text"
+    "/opt/sublime_text_3/sublime_text" $argv
   else
     echo "No Sublime Text installation found"
   end
