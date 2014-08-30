@@ -4,6 +4,16 @@ function __bak_help
   $argv[1] SOURCE..."
 end
 
+function __bak_parse_help
+  function has_help_arg
+    # non implemented
+  end
+
+  if [ (count $argv) -lt 3 ]; or has_help_arg $argv
+    __bak_help $argv[1]
+  end
+end
+
 function __bak_name
   # trim / for directories
   set file (echo $argv[1] | sed 's/\/$//')
@@ -11,13 +21,12 @@ function __bak_name
 end
 
 function __bak
-  set program $argv[2]
-  if [ (count $argv) -gt 2 ]
+  __bak_parse_help $argv
+  or begin
+    set program $argv[2]
     for file in $argv[3..-1]
       eval $program $file (__bak_name $file)
     end
-  else
-    __bak_help $argv[1]
   end
 end
 
@@ -34,8 +43,9 @@ function __bak_normalized
 end
   
 function __unbak
-  set program $argv[2]
-  if [ (count $argv) -gt 2 ]
+  __bak_parse_help $argv
+  or begin
+    set program $argv[2]
     for file in $argv[3..-1]
       set normalized (__bak_normalized $file)
       if test ! -e $file
@@ -48,7 +58,5 @@ function __unbak
         eval $program $file $normalized
       end
     end
-  else
-    __bak_help $argv[1]
   end
 end
