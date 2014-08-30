@@ -72,6 +72,14 @@ function suite_bak
     assert_equal (echo -e 'a' (__bak_name a) | sort) (ls | sort)
   end
 
+  function test_uncp_dir_single
+    mkdir a
+    cpbak a/
+    rmdir a
+    uncpbak (ls -p)
+    assert_equal (echo -e 'a/' (__bak_name a)'/' | sort) (ls -p | sort)
+  end
+
   function test_cp_multiple
     set files (seq 4)
     touch $files

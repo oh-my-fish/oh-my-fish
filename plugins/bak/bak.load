@@ -16,7 +16,7 @@ end
 
 function __bak_name
   # trim / for directories
-  set file (echo $argv[1] | sed 's/\/$//')
+  set file (echo $argv[1] | sed 's/\/*$//')
   echo "$file."(date +'%Y%m%d_%H%M%S')".bak"
 end
 
@@ -30,7 +30,7 @@ function __bak
   end
 end
 
-set -g __bak_re '(.*)\.[0-9]{8,8}_[0-9]{6,6}\.bak$'
+set -g __bak_re '(.*)\.[0-9]{8,8}_[0-9]{6,6}\.bak\/*$'
 
 function __is_bak
   set file $argv[1]
