@@ -88,6 +88,12 @@ end
 # Theme components
 # ===========================
 
+function prompt_virtual_env -d "Display Python virtual environment"
+  if test "$VIRTUAL_ENV"
+    prompt_segment white black (basename $VIRTUAL_ENV)
+  end
+end
+
 function prompt_user -d "Display actual user if different from $default_user"
   if [ "$theme_display_user" = "yes" ]
     if [ "$USER" != "$default_user" -o -n "$SSH_CLIENT" ]
@@ -166,6 +172,7 @@ end
 function fish_prompt
   set -g RETVAL $status
   prompt_status
+  prompt_virtual_env
   prompt_user
   prompt_dir
   prompt_hg
