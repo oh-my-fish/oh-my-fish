@@ -7,7 +7,7 @@ function rvm -d 'Ruby enVironment Manager'
   # exclude lines with _clr and _debug
   # apply rvm_* *PATH RUBY_* GEM_* variables from the captured environment
 
-  and eval (grep '^rvm\|^[^=]*PATH\|^RUBY_\|^GEM_' $env_file |grep -v _clr| |grep -v _debug| sed '/^[^=]*PATH/y/:/ /; s/^/set -xg /; s/=/ /; s/$/ ;/; s/(//; s/)//')
+  and eval (grep '^rvm\|^[^=]*PATH\|^RUBY_\|^GEM_' $env_file |grep -v _clr |grep -v _debug| sed '/^[^=]*PATH/y/:/ /; s/^/set -xg /; s/=/ /; s/$/ ;/; s/(//; s/)//')
 
   # clean up
   rm -f $env_file
