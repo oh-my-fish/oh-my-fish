@@ -1,6 +1,9 @@
 # syl20bnr theme
 
-Sylvain Benner personal, compact (hmmm...) yet complete (almost :-)) oh-my-fish theme.
+A semi-compact oh-my-fish theme with [nice support for git](#git).
+
+The theme has been tested on `Ubuntu 14.04 (Trusty)` and `Mac OS X 10.10 (Yosemite)`.
+It is also compatible with [Cygwin with the appropriate packages](#cygwin-compatibility).
 
 **Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 
@@ -47,28 +50,44 @@ replaced by the `git` segment (I should know where I am).
 The `git` segment format is `X:YI@Z:P(N)` where:
 - `X` is `git`
 - `Y` is the current branch name
-- `I` is the information about the current repository state
+- `I` is some information about the current repository state
 - `Z` is the name of the repository
 - `P` is the current working path basename (name of the current directory)
 If `P` = `Z` then `P(N)` is not displayed
 - `N` is the depth of the path starting from base directory of the repository
 
 The displayed information `I` is:
-- Dirtiness is indicated by a little dot after the branch name.
-- Unpushed commits are indicated with up arrows
-- The number of unpushed commits is indicated right after the up arrows
+- Unpushed commits are indicated with an up arrow like this `[↑1]`
+- Unmerged fetched commits are indicated with a down arrow like this `[↓1]`
 
+**Note:** The dirtiness of the current branch is indicated by its color:
+- red: it is dirty
+- green: it is up to date
+
+**Note:** The unmerged commits count appears only if the changes in the
+upstream branch as been fetched.
 
 #### Examples
 
-Dirty:
-![dirty](http://raw2.github.com/syl20bnr/oh-my-fish-theme-syl20bnr/master/screenshots/prompt_fish-syl20bnr-git-dirty.png)
+Dirty (changes not committed):
+
+![dirty](http://raw2.github.com/syl20bnr/oh-my-fish-theme-syl20bnr/master/screenshots/prompt_fish-syl20bnr-git-dirty2.png)
 
 Unpushed commits:
-![unpushed_commits](http://raw2.github.com/syl20bnr/oh-my-fish-theme-syl20bnr/master/screenshots/prompt_fish-syl20bnr-git-ucommit-count.png)
+
+![unpushed_commits](http://raw2.github.com/syl20bnr/oh-my-fish-theme-syl20bnr/master/screenshots/prompt_fish-syl20bnr-git-unpushed.png)
+
+Unmerged commits:
+
+![unmerged_commits](http://raw2.github.com/syl20bnr/oh-my-fish-theme-syl20bnr/master/screenshots/prompt_fish-syl20bnr-git-unmerged.png)
+
+Both unpushed and unmerged commits:
+
+![unmerged_commits](http://raw2.github.com/syl20bnr/oh-my-fish-theme-syl20bnr/master/screenshots/prompt_fish-syl20bnr-git-unpushed_unmerged.png)
 
 In a sub-directory of the repository:
-![repo_subdir](http://raw2.github.com/syl20bnr/oh-my-fish-theme-syl20bnr/master/screenshots/prompt_fish-syl20bnr-git-subdir.png)
+
+![repo_subdir](http://raw2.github.com/syl20bnr/oh-my-fish-theme-syl20bnr/master/screenshots/prompt_fish-syl20bnr-git-subdir2.png)
 
 ### vi-mode
 
