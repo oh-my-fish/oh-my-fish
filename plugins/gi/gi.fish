@@ -5,5 +5,5 @@ function gi -d "gitignore.io cli for fish"
   end
 
   set -l params (echo $argv|tr ' ' ',')
-  curl -s http://www.gitignore.io/api/$params
+  curl -s https://www.gitignore.io/api/$params
 end
