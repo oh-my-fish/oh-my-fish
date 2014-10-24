@@ -1,4 +1,5 @@
 # Plugins
+* __android-sdk__ - [Android SDK](http://developer.android.com/sdk/index.html) integration.
 * __archlinux__ - The Arch Linux Plugins provides a number of plugins to make using arch easier.
 * __autojump__ - makes navigating filesystem much faster. see [autojump article](https://github.com/joelthelion/autojump/wiki) and [video](https://www.youtube.com/watch?v=tnNyoMGnbKg). bindings only, autojump needs to be installed separately.
 * __brew__  [Homebrew](http://brew.sh/) integration
