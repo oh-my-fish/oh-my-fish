@@ -1,32 +1,54 @@
-# The following is based on https://github.com/gma/bundler-exec
+# These methods override the default calls to append `bundle exec` if this gem
+# is available within the context of bundler.
+#
+set -l execs annotate      \
+             cap           \
+             capify        \
+             cucumber      \
+             dashing       \
+             foreman       \
+             guard         \
+             kitchen       \
+             middleman     \
+             nanoc         \
+             puma          \
+             rackup        \
+             rainbows      \
+             rake          \
+             rspec         \
+             rubocop       \
+             ruby          \
+             shotgun       \
+             sidekiq       \
+             spec          \
+             spinach       \
+             spork         \
+             thin          \
+             thor          \
+             unicorn       \
+             unicorn_rails
 
-## Functions
-function _bundler-installed
-  which bundle >/dev/null ^&1
-end
+set -l do_eval (function --help | grep -q '‐‐inherit‐variable'; and echo false)
 
-function _within-bundled-project
-  set -l check_dir $PWD
-  while [ $check_dir != "/" ]
-    test -f "$check_dir/Gemfile"; and return
-    set check_dir (dirname $check_dir)
+for executable in $execs
+  if test -z "$do_eval"
+    eval "function $executable; __execute_as_bundler $executable \$argv; end"
+  else
+    function $executable --inherit-variable executable
+      __execute_as_bundler $executable $argv
+    end
   end
-  false
 end
 
-function _run-with-bundler
-  if begin; _bundler-installed; and _within-bundled-project; end
+function __execute_as_bundler
+  if __is_a_bundled_executable $argv[1]
     command bundle exec $argv
   else
     eval command $argv
   end
 end
 
-### Main program
-set -l bundled_commands annotate cap capify cucumber dashing foreman guard middleman nanoc puma rackup rainbows rake rspec ruby shotgun sidekiq spec spinach spork thin thor unicorn unicorn_rails
-
-for cmd in $bundled_commands
-  if not contains $cmd bundle gem
-    eval "function $cmd; _run-with-bundler $cmd \$argv;end"
-  end
+function __is_a_bundled_executable
+  set -l bindir (command bundle exec ruby -e 'puts Gem.bindir')
+  test -f "$bindir/$argv"
 end
