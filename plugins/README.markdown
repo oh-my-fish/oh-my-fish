@@ -2,6 +2,7 @@
 * __android-sdk__ – [Android SDK](http://developer.android.com/sdk/index.html) integration.
 * __archlinux__ – Provides a number of plugins to make using Arch Linux easier.
 * __autojump__ – Makes navigating filesystem much faster. See [autojump article](https://github.com/joelthelion/autojump/wiki) and [video](https://www.youtube.com/watch?v=tnNyoMGnbKg). Bindings only, autojump needs to be installed separately.
+* __better-alias__ - Provide alias with auto completion.
 * __brew__ – [Homebrew](http://brew.sh/) integration.
 * __bundler__ – Use Ruby's [Bundler](http://bundler.io/) automatically for some commands.
 * __ccache__ – Enable [ccache](http://ccache.samba.org/) to speed up compilation.
