@@ -10,11 +10,17 @@ set __toaster_color_lilac AE81FF
 
 function __toaster_color_echo
   set_color $argv[1]
-  echo -n $argv[2]
+  if test (count $argv) -eq 2
+    echo -n $argv[2]
+  end
 end
 
 function __toaster_current_folder
-  echo -n $PWD | grep -o -E '[^\/]+$'
+  if test $PWD = '/'
+    echo -n '/'
+  else
+    echo -n $PWD | grep -o -E '[^\/]+$'
+  end
 end
 
 function __toaster_git_status_codes
