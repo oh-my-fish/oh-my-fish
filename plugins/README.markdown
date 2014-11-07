@@ -27,6 +27,7 @@
 * __rails__ – Alias for executing database migrations.
 * __rake__ – Completions for rake tasks.
 * __rbenv__ – [rbenv](https://github.com/sstephenson/rbenv) Ruby environment/version manager.
+* __replace__ – A port of [replace](https://github.com/thoughtbot/dotfiles/blob/master/bin/replace).
 * __rvm__ – [RVM](http://rvm.io) Ruby version manager.
 * __sublime__ – Creates `subl` command line shortcut to launch [Sublime Text editor](http://sublimetext.com/).
 * __tmux__ – Plugin to start tmux with support for 256 colours.
