@@ -85,8 +85,9 @@ function __bobthefish_git_branch -d 'Get the current git branch (or commitish)'
 end
 
 function __bobthefish_hg_branch -d 'Get the current hg branch'
-  set -g branch (hg branch ^/dev/null)
-  echo "$__bobthefish_branch_glyph $branch"
+  set -l branch (hg branch ^/dev/null)
+  set -l book " @ "(hg book | grep \* | cut -d\  -f3)
+  echo "$__bobthefish_branch_glyph $branch$book"
 end
 
 function __bobthefish_pretty_parent -d 'Print a parent directory, shortened to fit the prompt'
