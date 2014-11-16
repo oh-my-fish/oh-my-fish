@@ -4,3 +4,4 @@ custom/*
 *.pyc
 *~
 *.sw?
+*.sublime*
