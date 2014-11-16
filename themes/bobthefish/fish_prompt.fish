@@ -71,6 +71,10 @@ function __bobthefish_in_git -d 'Check whether pwd is inside a git repo'
   command git rev-parse --is-inside-work-tree >/dev/null 2>&1
 end
 
+function __bobthefish_in_hg -d 'Check whether pwd is inside a hg repo'
+  command hg stat > /dev/null 2>&1
+end
+
 function __bobthefish_git_branch -d 'Get the current git branch (or commitish)'
   set -l ref (command git symbolic-ref HEAD 2> /dev/null)
   if [ $status -gt 0 ]
@@ -78,6 +82,11 @@ function __bobthefish_git_branch -d 'Get the current git branch (or commitish)'
     set ref "$__bobthefish_detached_glyph $branch"
   end
   echo $ref | sed  "s-refs/heads/-$__bobthefish_branch_glyph -"
+end
+
+function __bobthefish_hg_branch -d 'Get the current hg branch'
+  set -g branch (hg branch ^/dev/null)
+  echo "$__bobthefish_branch_glyph $branch"
 end
 
 function __bobthefish_pretty_parent -d 'Print a parent directory, shortened to fit the prompt'
@@ -88,10 +97,20 @@ function __bobthefish_project_dir -d 'Print the current git project base directo
   command git rev-parse --show-toplevel 2>/dev/null
 end
 
+function __bobthefish_project_dir_hg -d 'Print the current git project base directory'
+  command hg root 2>/dev/null
+end
+
 function __bobthefish_project_pwd -d 'Print the working directory relative to project root'
   set -l base_dir (__bobthefish_project_dir)
   echo "$PWD" | sed -e "s*$base_dir**g" -e 's*^/**'
 end
+
+function __bobthefish_project_pwd_hg -d 'Print the working directory relative to project root'
+  set -l base_dir (__bobthefish_project_dir_hg)
+  echo "$PWD" | sed -e "s*$base_dir**g" -e 's*^/**'
+end
+
 
 
 # ===========================
@@ -214,6 +233,38 @@ function __bobthefish_prompt_user -d 'Display actual user if different from $def
   end
 end
 
+function __bobthefish_prompt_hg -d 'Display the actual hg state'
+  set -l dirty   (command hg stat; or echo -n '*')
+
+  set -l flags "$dirty"
+  test "$flags"; and set flags ""
+
+  set -l flag_bg $__bobthefish_lt_green
+  set -l flag_fg $__bobthefish_dk_green
+  if test "$dirty"
+    set flag_bg $__bobthefish_med_red
+    set flag_fg fff
+  end
+
+  __bobthefish_path_segment (__bobthefish_project_dir_hg)
+
+  __bobthefish_start_segment $flag_bg $flag_fg
+  set_color $flag_fg --bold
+  echo -n -s (__bobthefish_hg_branch) $flags ' '
+  set_color normal
+
+  set -l project_pwd  (__bobthefish_project_pwd_hg)
+  if test "$project_pwd"
+    if test -w "$PWD"
+      __bobthefish_start_segment 333 999
+    else
+      __bobthefish_start_segment $__bobthefish_med_red $__bobthefish_lt_red
+    end
+
+    echo -n -s $project_pwd ' '
+  end
+end
+
 # TODO: clean up the fugly $ahead business
 function __bobthefish_prompt_git -d 'Display the actual git state'
   set -l dirty   (command git diff --no-ext-diff --quiet --exit-code; or echo -n '*')
@@ -302,7 +353,9 @@ function fish_prompt -d 'bobthefish, a fish theme optimized for awesome'
   if __bobthefish_in_virtualfish_virtualenv
     __bobthefish_prompt_virtualfish
   end
-  if __bobthefish_in_git
+  if __bobthefish_in_hg
+    __bobthefish_prompt_hg
+  else if __bobthefish_in_git
     __bobthefish_prompt_git
   else
     __bobthefish_prompt_dir
