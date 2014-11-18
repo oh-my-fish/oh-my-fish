@@ -95,11 +95,11 @@ function __bobthefish_pretty_parent -d 'Print a parent directory, shortened to f
   echo -n (dirname $argv[1]) | sed -e 's|/private||' -e "s|^$HOME|~|" -e 's-/\(\.\{0,1\}[^/]\)\([^/]*\)-/\1-g' -e 's|/$||'
 end
 
-function __bobthefish_project_dir -d 'Print the current git project base directory'
+function __bobthefish_git_project_dir -d 'Print the current git project base directory'
   command git rev-parse --show-toplevel 2>/dev/null
 end
 
-function __bobthefish_project_dir_hg -d 'Print the current git project base directory'
+function __bobthefish_hg_project_dir -d 'Print the current hg project base directory'
   command hg root 2>/dev/null
 end
 
@@ -241,7 +241,7 @@ function __bobthefish_prompt_hg -d 'Display the actual hg state'
     set flag_fg fff
   end
 
-  __bobthefish_path_segment (__bobthefish_project_dir_hg)
+  __bobthefish_path_segment (__bobthefish_hg_project_dir)
 
   __bobthefish_start_segment $flag_bg $flag_fg
   echo -n -s $__bobthefish_hg_glyph ' '
@@ -251,7 +251,7 @@ function __bobthefish_prompt_hg -d 'Display the actual hg state'
   echo -n -s (__bobthefish_hg_branch) $flags ' '
   set_color normal
 
-  set -l project_pwd  (__bobthefish_project_pwd (__bobthefish_project_dir_hg))
+  set -l project_pwd  (__bobthefish_project_pwd (__bobthefish_hg_project_dir))
   if test "$project_pwd"
     if test -w "$PWD"
       __bobthefish_start_segment 333 999
@@ -288,14 +288,14 @@ function __bobthefish_prompt_git -d 'Display the actual git state'
     end
   end
 
-  __bobthefish_path_segment (__bobthefish_project_dir)
+  __bobthefish_path_segment (__bobthefish_git_project_dir)
 
   __bobthefish_start_segment $flag_bg $flag_fg
   set_color $flag_fg --bold
   echo -n -s (__bobthefish_git_branch) $flags ' '
   set_color normal
 
-  set -l project_pwd  (__bobthefish_project_pwd (__bobthefish_project_dir))
+  set -l project_pwd  (__bobthefish_project_pwd (__bobthefish_git_project_dir))
   if test "$project_pwd"
     if test -w "$PWD"
       __bobthefish_start_segment 333 999
@@ -353,7 +353,7 @@ function fish_prompt -d 'bobthefish, a fish theme optimized for awesome'
   end
   if __bobthefish_in_git       # TODO: do this right.
     __bobthefish_prompt_git    # if something is in both git and hg, check the length of
-  else if __bobthefish_in_hg   # __bobthefish_project_dir vs __bobthefish_project_dir_hg
+  else if __bobthefish_in_hg   # __bobthefish_git_project_dir vs __bobthefish_hg_project_dir
     __bobthefish_prompt_hg     # and pick the longer of the two.
   else
     __bobthefish_prompt_dir
