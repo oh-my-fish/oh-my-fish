@@ -358,10 +358,10 @@ function fish_prompt -d 'bobthefish, a fish theme optimized for awesome'
   if __bobthefish_in_virtualfish_virtualenv
     __bobthefish_prompt_virtualfish
   end
-  if __bobthefish_in_hg
-    __bobthefish_prompt_hg
-  else if __bobthefish_in_git
-    __bobthefish_prompt_git
+  if __bobthefish_in_git       # TODO: do this right.
+    __bobthefish_prompt_git    # if something is in both git and hg, check the length of
+  else if __bobthefish_in_hg   # __bobthefish_project_dir vs __bobthefish_project_dir_hg
+    __bobthefish_prompt_hg     # and pick the longer of the two.
   else
     __bobthefish_prompt_dir
   end
