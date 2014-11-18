@@ -68,11 +68,11 @@ set __bobthefish_lt_blue    326D9E
 # ===========================
 
 function __bobthefish_in_git -d 'Check whether pwd is inside a git repo'
-  command git rev-parse --is-inside-work-tree >/dev/null 2>&1
+  command which git > /dev/null 2>&1; and command git rev-parse --is-inside-work-tree >/dev/null 2>&1
 end
 
 function __bobthefish_in_hg -d 'Check whether pwd is inside a hg repo'
-  command hg root > /dev/null 2>&1
+  command which hg > /dev/null 2>&1; and command hg stat > /dev/null 2>&1
 end
 
 function __bobthefish_git_branch -d 'Get the current git branch (or commitish)'
