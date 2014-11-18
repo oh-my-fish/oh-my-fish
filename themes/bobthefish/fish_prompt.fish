@@ -104,15 +104,8 @@ function __bobthefish_project_dir_hg -d 'Print the current git project base dire
 end
 
 function __bobthefish_project_pwd -d 'Print the working directory relative to project root'
-  set -l base_dir (__bobthefish_project_dir)
-  echo "$PWD" | sed -e "s*$base_dir**g" -e 's*^/**'
+  echo "$PWD" | sed -e "s*$argv[1]**g" -e 's*^/**'
 end
-
-function __bobthefish_project_pwd_hg -d 'Print the working directory relative to project root'
-  set -l base_dir (__bobthefish_project_dir_hg)
-  echo "$PWD" | sed -e "s*$base_dir**g" -e 's*^/**'
-end
-
 
 
 # ===========================
@@ -258,7 +251,7 @@ function __bobthefish_prompt_hg -d 'Display the actual hg state'
   echo -n -s (__bobthefish_hg_branch) $flags ' '
   set_color normal
 
-  set -l project_pwd  (__bobthefish_project_pwd_hg)
+  set -l project_pwd  (__bobthefish_project_pwd (__bobthefish_project_dir_hg))
   if test "$project_pwd"
     if test -w "$PWD"
       __bobthefish_start_segment 333 999
@@ -302,7 +295,7 @@ function __bobthefish_prompt_git -d 'Display the actual git state'
   echo -n -s (__bobthefish_git_branch) $flags ' '
   set_color normal
 
-  set -l project_pwd  (__bobthefish_project_pwd)
+  set -l project_pwd  (__bobthefish_project_pwd (__bobthefish_project_dir))
   if test "$project_pwd"
     if test -w "$PWD"
       __bobthefish_start_segment 333 999
