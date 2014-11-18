@@ -72,7 +72,7 @@ function __bobthefish_in_git -d 'Check whether pwd is inside a git repo'
 end
 
 function __bobthefish_in_hg -d 'Check whether pwd is inside a hg repo'
-  command hg stat > /dev/null 2>&1
+  command hg root > /dev/null 2>&1
 end
 
 function __bobthefish_git_branch -d 'Get the current git branch (or commitish)'
