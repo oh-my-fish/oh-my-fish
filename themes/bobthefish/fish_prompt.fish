@@ -181,7 +181,7 @@ function __bobthefish_prompt_status -d 'Display symbols for a non zero exit stat
   set -l bg_jobs
 
   # Last exit was nonzero
-  if [ $RETVAL -ne 0 ]
+  if [ $status -ne 0 ]
     set nonzero $__bobthefish_nonzero_exit_glyph
   end
 
@@ -345,7 +345,6 @@ end
 # ===========================
 
 function fish_prompt -d 'bobthefish, a fish theme optimized for awesome'
-  set -g RETVAL $status
   __bobthefish_prompt_status
   __bobthefish_prompt_user
   if __bobthefish_in_virtualfish_virtualenv
