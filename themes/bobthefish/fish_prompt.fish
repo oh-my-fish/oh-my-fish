@@ -59,6 +59,10 @@ set __bobthefish_dk_brown   4d2600
 set __bobthefish_med_brown  803F00
 set __bobthefish_lt_brown   BF5E00
 
+set __bobthefish_dk_blue    1E2933
+set __bobthefish_med_blue   275379
+set __bobthefish_lt_blue    326D9E
+
 # ===========================
 # Helper methods
 # ===========================
@@ -278,8 +282,8 @@ function __bobthefish_virtualenv -d 'Get the current virtualenv'
 end
 
 function __bobthefish_promt_virtualfish -d "Display activated virtual environment (only for virtualfish, virtualenv's activate.fish changes promt by itself)"
-  set flag_bg $__bobthefish_lt_brown
-  set flag_fg $__bobthefish_dk_brown
+  set flag_bg $__bobthefish_lt_blue
+  set flag_fg $__bobthefish_dk_blue
   __bobthefish_start_segment $flag_bg $flag_fg
   set_color $flag_fg --bold
   echo -n -s (__bobthefish_virtualenv) $flags ' '
