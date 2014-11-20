@@ -281,7 +281,7 @@ function __bobthefish_virtualenv -d 'Get the current virtualenv'
   echo $__bobthefish_virtualenv_glyph(__bobthefish_virtualenv_python_version) (basename "$VIRTUAL_ENV")
 end
 
-function __bobthefish_promt_virtualfish -d "Display activated virtual environment (only for virtualfish, virtualenv's activate.fish changes promt by itself)"
+function __bobthefish_prompt_virtualfish -d "Display activated virtual environment (only for virtualfish, virtualenv's activate.fish changes prompt by itself)"
   set flag_bg $__bobthefish_lt_blue
   set flag_fg $__bobthefish_dk_blue
   __bobthefish_start_segment $flag_bg $flag_fg
@@ -300,7 +300,7 @@ function fish_prompt -d 'bobthefish, a fish theme optimized for awesome'
   __bobthefish_prompt_status
   __bobthefish_prompt_user
   if __bobthefish_in_virtualfish_virtualenv
-    __bobthefish_promt_virtualfish
+    __bobthefish_prompt_virtualfish
   end
   if __bobthefish_in_git
     __bobthefish_prompt_git
