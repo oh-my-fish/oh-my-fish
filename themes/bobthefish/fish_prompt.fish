@@ -33,7 +33,7 @@ set __bobthefish_superuser_glyph         '$ '
 set __bobthefish_bg_job_glyph            '% '
 
 # Python glyphs
-set __bobthefish_superscript_glyph       \u00B1 \u00B2 \u00B3
+set __bobthefish_superscript_glyph       \u00B9 \u00B2 \u00B3
 set __bobthefish_virtualenv_glyph        \u25F0
 set __bobthefish_pypy_glyph              \u1D56
 
