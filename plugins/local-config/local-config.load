@@ -1,0 +1,30 @@
+# Load custom settings for current hostname
+set -l HOST (hostname | sed 's/\(-[0-9]\{1,\}\)\{0,1\}\(\.local\)\{0,1\}$//')
+set -l HOST_SPECIFIC_FILE $fish_custom/hosts/$HOST.fish
+if test -f $HOST_SPECIFIC_FILE
+  . $HOST_SPECIFIC_FILE
+else
+  echo Creating host specific file: $HOST_SPECIFIC_FILE
+  mkdir -p (dirname $HOST_SPECIFIC_FILE)
+  touch $HOST_SPECIFIC_FILE
+end
+
+# Load custom settings for current user
+set -l USER_SPECIFIC_FILE $fish_custom/users/(whoami).fish
+if test -f $USER_SPECIFIC_FILE
+  . $USER_SPECIFIC_FILE
+else
+  echo Creating user specific file: $USER_SPECIFIC_FILE
+  mkdir -p (dirname $USER_SPECIFIC_FILE)
+  touch $USER_SPECIFIC_FILE
+end
+
+# Load custom settings for current OS
+set -l PLATFORM_SPECIFIC_FILE $fish_custom/platforms/(uname -s).fish
+if test -f $PLATFORM_SPECIFIC_FILE
+  . $PLATFORM_SPECIFIC_FILE
+else
+  echo Creating platform specific file: $PLATFORM_SPECIFIC_FILE
+  mkdir -p (dirname $PLATFORM_SPECIFIC_FILE)
+  touch $PLATFORM_SPECIFIC_FILE
+end

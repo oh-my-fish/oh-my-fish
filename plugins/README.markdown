@@ -14,6 +14,7 @@
 * __gem__ – Ruby gem integration.
 * __gi__ – [gitignore.io](http://gitignore.io) CLI for fish.
 * __jump__ – A port of [Jeroen Janssens’ “jump” utility](http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html).
+* __local-config__ – Support per-user, per-host and per-platform custom config files.
 * __localhost__ – Opens `http://localhost:3000` (and other ports) in the default browser.
 * __mc__ – Plugin to start mc with a shell compliant (Bash).
 * __ndenv__ – Helpers for [another node.js version manager](https://github.com/riywo/ndenv).
