@@ -32,6 +32,11 @@ set __bobthefish_nonzero_exit_glyph      '! '
 set __bobthefish_superuser_glyph         '$ '
 set __bobthefish_bg_job_glyph            '% '
 
+# Python glyphs
+set __bobthefish_superscript             \u00B1 \u00B2 \u00B3
+set __bobthefish_virtualenv_glyph        \u25F0
+set __bobthefish_pypy                    \u1D56
+
 # Colors
 set __bobthefish_lt_green   addc10
 set __bobthefish_med_green  189303
@@ -49,6 +54,10 @@ set __bobthefish_dk_orange  3a2a03
 set __bobthefish_dk_grey    333
 set __bobthefish_med_grey   999
 set __bobthefish_lt_grey    ccc
+
+set __bobthefish_dk_brown   4d2600
+set __bobthefish_med_brown  803F00
+set __bobthefish_lt_brown   BF5E00
 
 # ===========================
 # Helper methods
@@ -249,6 +258,34 @@ function __bobthefish_prompt_dir -d 'Display a shortened form of the current dir
   __bobthefish_path_segment "$PWD"
 end
 
+function __bobthefish_in_virtualfish_virtualenv
+  set -q VIRTUAL_ENV
+end
+
+function __bobthefish_virtualenv_python_version -d 'Get current python version'
+  switch (readlink (which python))
+    case python2
+      echo $__bobthefish_superscript[2]
+    case python3
+      echo $__bobthefish_superscript[3]
+    case pypy
+      echo $__bobthefish_pypy
+    end
+end
+
+function __bobthefish_virtualenv -d 'Get the current virtualenv'
+  echo $__bobthefish_virtualenv_glyph(__bobthefish_virtualenv_python_version) (basename "$VIRTUAL_ENV")
+end
+
+function __bobthefish_promt_virtualfish -d "Display activated virtual environment (only for virtualfish, virtualenv's activate.fish changes promt by itself)"
+  set flag_bg $__bobthefish_lt_brown
+  set flag_fg $__bobthefish_dk_brown
+  __bobthefish_start_segment $flag_bg $flag_fg
+  set_color $flag_fg --bold
+  echo -n -s (__bobthefish_virtualenv) $flags ' '
+  set_color normal
+end
+
 
 # ===========================
 # Apply theme
@@ -262,6 +299,9 @@ function fish_prompt -d 'bobthefish, a fish theme optimized for awesome'
     __bobthefish_prompt_git
   else
     __bobthefish_prompt_dir
+  end
+  if __bobthefish_in_virtualfish_virtualenv
+    __bobthefish_promt_virtualfish
   end
   __bobthefish_finish_segments
 end
