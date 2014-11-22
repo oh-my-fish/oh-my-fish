@@ -66,13 +66,13 @@ set __bobthefish_lt_brown   BF5E00
 # Helper methods
 # ===========================
 
-function __bobthefish_in_git -d 'Check whether pwd is inside a git repo'
-  command which git > /dev/null 2>&1; and command git rev-parse --is-inside-work-tree >/dev/null 2>&1
-end
+# function __bobthefish_in_git -d 'Check whether pwd is inside a git repo'
+#   command which git > /dev/null 2>&1; and command git rev-parse --is-inside-work-tree >/dev/null 2>&1
+# end
 
-function __bobthefish_in_hg -d 'Check whether pwd is inside a hg repo'
-  command which hg > /dev/null 2>&1; and command hg stat > /dev/null 2>&1
-end
+# function __bobthefish_in_hg -d 'Check whether pwd is inside a hg repo'
+#   command which hg > /dev/null 2>&1; and command hg stat > /dev/null 2>&1
+# end
 
 function __bobthefish_git_branch -d 'Get the current git branch (or commitish)'
   set -l ref (command git symbolic-ref HEAD 2> /dev/null)
@@ -239,7 +239,7 @@ function __bobthefish_prompt_hg -d 'Display the actual hg state'
     set flag_fg fff
   end
 
-  __bobthefish_path_segment (__bobthefish_hg_project_dir)
+  __bobthefish_path_segment $argv[1]
 
   __bobthefish_start_segment $flag_bg $flag_fg
   echo -n -s $__bobthefish_hg_glyph ' '
@@ -249,7 +249,7 @@ function __bobthefish_prompt_hg -d 'Display the actual hg state'
   echo -n -s (__bobthefish_hg_branch) $flags ' '
   set_color normal
 
-  set -l project_pwd  (__bobthefish_project_pwd (__bobthefish_hg_project_dir))
+  set -l project_pwd  (__bobthefish_project_pwd $argv[1])
   if test "$project_pwd"
     if test -w "$PWD"
       __bobthefish_start_segment 333 999
@@ -286,14 +286,14 @@ function __bobthefish_prompt_git -d 'Display the actual git state'
     end
   end
 
-  __bobthefish_path_segment (__bobthefish_git_project_dir)
+  __bobthefish_path_segment $argv[1]
 
   __bobthefish_start_segment $flag_bg $flag_fg
   set_color $flag_fg --bold
   echo -n -s (__bobthefish_git_branch) $flags ' '
   set_color normal
 
-  set -l project_pwd  (__bobthefish_project_pwd (__bobthefish_git_project_dir))
+  set -l project_pwd  (__bobthefish_project_pwd $argv[1])
   if test "$project_pwd"
     if test -w "$PWD"
       __bobthefish_start_segment 333 999
@@ -343,10 +343,13 @@ function fish_prompt -d 'bobthefish, a fish theme optimized for awesome'
   __bobthefish_prompt_status
   __bobthefish_prompt_user
   __bobthefish_prompt_virtualfish
-  if __bobthefish_in_git       # TODO: do this right.
-    __bobthefish_prompt_git    # if something is in both git and hg, check the length of
-  else if __bobthefish_in_hg   # __bobthefish_git_project_dir vs __bobthefish_hg_project_dir
-    __bobthefish_prompt_hg     # and pick the longer of the two.
+
+  set -l git_root (__bobthefish_git_project_dir)
+  set -l hg_root  (__bobthefish_hg_project_dir)
+  if test (echo "$hg_root" | wc -c) -gt (echo "$git_root" | wc -c)
+    __bobthefish_prompt_hg $hg_root
+  else if test "$git_root"
+    __bobthefish_prompt_git $git_root
   else
     __bobthefish_prompt_dir
   end
