@@ -1,9 +1,3 @@
-#function _path_index
-#  if test $PATH[$argv[1]] = $argv[2]
-#    echo 'Path index correct'
-#  end
-#end
-
 set -l brew_paths /usr/local/bin /usr/bin /bin /usr/local/sbin /usr/sbin /sbin
 for brew_path in $brew_paths[-1..1]
   if test -d $brew_path
