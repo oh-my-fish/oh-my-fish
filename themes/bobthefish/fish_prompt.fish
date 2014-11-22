@@ -75,6 +75,17 @@ set __bobthefish_lt_brown   BF5E00
 #   command which hg > /dev/null 2>&1; and command hg stat > /dev/null 2>&1
 # end
 
+function __bobthefish_check_hg_dir_recursively -d 'Check whether pwd or parents contain .hg dir'
+  set d (pwd)
+  while not [ $d = / ]
+    if test -e $d/.hg
+      return 0
+    end
+    set d (dirname $d)
+  end
+  return 1
+end
+
 function __bobthefish_git_branch -d 'Get the current git branch (or commitish)'
   set -l ref (command git symbolic-ref HEAD ^/dev/null)
   if [ $status -gt 0 ]
