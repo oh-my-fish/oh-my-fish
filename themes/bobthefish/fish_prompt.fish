@@ -139,7 +139,7 @@ function __bobthefish_start_segment -d 'Start a prompt segment'
 end
 
 function __bobthefish_path_segment -d 'Display a shortened form of a directory'
-  if test -w "$argv[1]"
+  if [ -w "$argv[1]" ]
     __bobthefish_start_segment $__bobthefish_dk_grey $__bobthefish_med_grey
   else
     __bobthefish_start_segment $__bobthefish_dk_red $__bobthefish_lt_red
@@ -159,7 +159,7 @@ function __bobthefish_path_segment -d 'Display a shortened form of a directory'
       set directory (basename "$argv[1]")
   end
 
-  test "$parent"; and echo -n -s "$parent"
+  [ "$parent" ]; and echo -n -s "$parent"
   set_color fff --bold
   echo -n "$directory "
   set_color normal
@@ -203,7 +203,7 @@ function __bobthefish_prompt_status -d 'Display symbols for a non zero exit stat
 
   set -l status_flags "$nonzero$superuser$bg_jobs"
 
-  if test "$nonzero" -o "$superuser" -o "$bg_jobs"
+  if [ "$nonzero" -o "$superuser" -o "$bg_jobs" ]
     __bobthefish_start_segment fff 000
     if [ "$nonzero" ]
       set_color $__bobthefish_med_red --bold
@@ -237,11 +237,11 @@ function __bobthefish_prompt_hg -d 'Display the actual hg state'
   set -l dirty (command hg stat; or echo -n '*')
 
   set -l flags "$dirty"
-  test "$flags"; and set flags ""
+  [ "$flags" ]; and set flags ""
 
   set -l flag_bg $__bobthefish_lt_green
   set -l flag_fg $__bobthefish_dk_green
-  if test "$dirty"
+  if [ "$dirty" ]
     set flag_bg $__bobthefish_med_red
     set flag_fg fff
   end
@@ -256,8 +256,8 @@ function __bobthefish_prompt_hg -d 'Display the actual hg state'
   set_color normal
 
   set -l project_pwd  (__bobthefish_project_pwd $argv[1])
-  if test "$project_pwd"
-    if test -w "$PWD"
+  if [ "$project_pwd" ]
+    if [ -w "$PWD" ]
       __bobthefish_start_segment 333 999
     else
       __bobthefish_start_segment $__bobthefish_med_red $__bobthefish_lt_red
@@ -274,21 +274,19 @@ function __bobthefish_prompt_git -d 'Display the actual git state'
   set -l ahead   (command git rev-list --left-right '@{upstream}...HEAD' ^/dev/null | awk '/>/ {a += 1} /</ {b += 1} {if (a > 0) nextfile} END {if (a > 0 && b > 0) print "±"; else if (a > 0) print "+"; else if (b > 0) print "-"}')
 
   set -l new (command git ls-files --other --exclude-standard);
-  test "$new"; and set new '…'
+  [ "$new" ]; and set new '…'
 
   set -l flags   "$dirty$staged$stashed$ahead$new"
-  test "$flags"; and set flags " $flags"
+  [ "$flags" ]; and set flags " $flags"
 
   set -l flag_bg $__bobthefish_lt_green
   set -l flag_fg $__bobthefish_dk_green
-  if test "$dirty" -o "$staged"
+  if [ "$dirty" -o "$staged" ]
     set flag_bg $__bobthefish_med_red
     set flag_fg fff
-  else
-    if test "$stashed"
-      set flag_bg $__bobthefish_lt_orange
-      set flag_fg $__bobthefish_dk_orange
-    end
+  else if [ "$stashed" ]
+    set flag_bg $__bobthefish_lt_orange
+    set flag_fg $__bobthefish_dk_orange
   end
 
   __bobthefish_path_segment $argv[1]
@@ -298,8 +296,8 @@ function __bobthefish_prompt_git -d 'Display the actual git state'
   set_color normal
 
   set -l project_pwd  (__bobthefish_project_pwd $argv[1])
-  if test "$project_pwd"
-    if test -w "$PWD"
+  if [ "$project_pwd" ]
+    if [ -w "$PWD" ]
       __bobthefish_start_segment 333 999
     else
       __bobthefish_start_segment $__bobthefish_med_red $__bobthefish_lt_red
@@ -328,7 +326,7 @@ end
 function __bobthefish_prompt_virtualfish -d "Display activated virtual environment (only for virtualfish, virtualenv's activate.fish changes prompt by itself)"
   set -q VIRTUAL_ENV; or return
   set -l version_glyph (__bobthefish_virtualenv_python_version)
-  if test "$version_glyph"
+  if [ "$version_glyph" ]
     __bobthefish_start_segment $__bobthefish_med_blue $__bobthefish_lt_grey
     echo -n -s $__bobthefish_virtualenv_glyph $version_glyph
   end
@@ -346,7 +344,7 @@ function __bobthefish_prompt_rubies -d 'Display current Ruby (rvm/rbenv)'
     # Don't show global ruby version...
     [ "$ruby_version" = (rbenv global) ]; and return
   end
-  test -w "$ruby_version"; and return
+  [ -w "$ruby_version" ]; and return
 
   __bobthefish_start_segment $__bobthefish_ruby_red $__bobthefish_lt_grey --bold
   echo -n -s $ruby_version ' '
@@ -366,9 +364,9 @@ function fish_prompt -d 'bobthefish, a fish theme optimized for awesome'
 
   set -l git_root (__bobthefish_git_project_dir)
   set -l hg_root  (__bobthefish_hg_project_dir)
-  if test (echo "$hg_root" | wc -c) -gt (echo "$git_root" | wc -c)
+  if [ (echo "$hg_root" | wc -c) -gt (echo "$git_root" | wc -c) ]
     __bobthefish_prompt_hg $hg_root
-  else if test "$git_root"
+  else if [ "$git_root" ]
     __bobthefish_prompt_git $git_root
   else
     __bobthefish_prompt_dir
