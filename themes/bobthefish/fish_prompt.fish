@@ -107,7 +107,7 @@ function __bobthefish_hg_project_dir -d 'Print the current hg project base direc
   [ "$theme_display_hg" = 'no' ]; and return
   set d (pwd)
   while not [ $d = / ]
-    if test -e $d/.hg
+    if [ -e $d/.hg ]
       command hg root ^/dev/null
       return
     end
