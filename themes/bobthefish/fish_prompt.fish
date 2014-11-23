@@ -108,7 +108,7 @@ function __bobthefish_hg_project_dir -d 'Print the current hg project base direc
   set d (pwd)
   while not [ $d = / ]
     if [ -e $d/.hg ]
-      command hg root ^/dev/null
+      command hg root --cwd "$d" ^/dev/null
       return
     end
     set d (dirname $d)
