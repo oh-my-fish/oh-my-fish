@@ -85,8 +85,8 @@ function __bobthefish_git_branch -d 'Get the current git branch (or commitish)'
 end
 
 function __bobthefish_hg_branch -d 'Get the current hg branch'
-  set -l branch (hg branch ^/dev/null)
-  set -l book " @ "(hg book | grep \* | cut -d\  -f3)
+  set -l branch (command hg branch ^/dev/null)
+  set -l book " @ "(command hg book | grep \* | cut -d\  -f3)
   echo "$__bobthefish_branch_glyph $branch$book"
 end
 
@@ -234,7 +234,7 @@ function __bobthefish_prompt_user -d 'Display actual user if different from $def
 end
 
 function __bobthefish_prompt_hg -d 'Display the actual hg state'
-  set -l dirty   (command hg stat; or echo -n '*')
+  set -l dirty (command hg stat; or echo -n '*')
 
   set -l flags "$dirty"
   test "$flags"; and set flags ""
