@@ -76,9 +76,9 @@ set __bobthefish_lt_brown   BF5E00
 # end
 
 function __bobthefish_git_branch -d 'Get the current git branch (or commitish)'
-  set -l ref (command git symbolic-ref HEAD 2> /dev/null)
+  set -l ref (command git symbolic-ref HEAD ^/dev/null)
   if [ $status -gt 0 ]
-    set -l branch (command git show-ref --head -s --abbrev |head -n1 2> /dev/null)
+    set -l branch (command git show-ref --head -s --abbrev | head -n1 ^/dev/null)
     set ref "$__bobthefish_detached_glyph $branch"
   end
   echo $ref | sed  "s-refs/heads/-$__bobthefish_branch_glyph -"
@@ -95,11 +95,11 @@ function __bobthefish_pretty_parent -d 'Print a parent directory, shortened to f
 end
 
 function __bobthefish_git_project_dir -d 'Print the current git project base directory'
-  command git rev-parse --show-toplevel 2>/dev/null
+  command git rev-parse --show-toplevel ^/dev/null
 end
 
 function __bobthefish_hg_project_dir -d 'Print the current hg project base directory'
-  command hg root 2>/dev/null
+  command hg root ^/dev/null
 end
 
 function __bobthefish_project_pwd -d 'Print the working directory relative to project root'
@@ -270,7 +270,7 @@ end
 function __bobthefish_prompt_git -d 'Display the actual git state'
   set -l dirty   (command git diff --no-ext-diff --quiet --exit-code; or echo -n '*')
   set -l staged  (command git diff --cached --no-ext-diff --quiet --exit-code; or echo -n '~')
-  set -l stashed (command git rev-parse --verify refs/stash > /dev/null 2>&1; and echo -n '$')
+  set -l stashed (command git rev-parse --verify --quiet refs/stash >/dev/null; and echo -n '$')
   set -l ahead   (command git rev-list --left-right '@{upstream}...HEAD' ^/dev/null | awk '/>/ {a += 1} /</ {b += 1} {if (a > 0) nextfile} END {if (a > 0 && b > 0) print "±"; else if (a > 0) print "+"; else if (b > 0) print "-"}')
 
   set -l new (command git ls-files --other --exclude-standard);
