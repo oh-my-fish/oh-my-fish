@@ -28,6 +28,8 @@ This theme is based loosely on [agnoster][agnoster].
      * Background jobs (%)
      * You currently have superpowers ($)
  * User@Host (unless you're the default user)
+ * Current RVM or rbenv (Ruby) version
+ * Current virtualenv (Python) version
  * Abbreviated parent directory
  * Current directory, or Git or Mercurial project name
  * Current project's repo branch ( master) or detached head (➦ d0dfd9b)

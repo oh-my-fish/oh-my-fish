@@ -46,6 +46,7 @@ set __bobthefish_dk_green   0c4801
 set __bobthefish_lt_red     C99
 set __bobthefish_med_red    ce000f
 set __bobthefish_dk_red     600
+set __bobthefish_ruby_red   af0000
 
 set __bobthefish_slate_blue 255e87
 set __bobthefish_med_blue   005faf
@@ -337,6 +338,22 @@ function __bobthefish_prompt_virtualfish -d "Display activated virtual environme
   set_color normal
 end
 
+function __bobthefish_prompt_rubies -d 'Display current Ruby (rvm/rbenv)'
+  set -l ruby_version
+  if type rvm-prompt >/dev/null
+    set ruby_version (rvm-prompt i v g)
+  else if type rbenv >/dev/null
+    set ruby_version (rbenv version-name)
+    # Don't show global ruby version...
+    [ "$ruby_version" = (rbenv global) ]; and return
+  end
+  test -w "$ruby_version"; and return
+
+  __bobthefish_start_segment $__bobthefish_ruby_red $__bobthefish_lt_grey --bold
+  echo -n -s $ruby_version ' '
+  set_color normal
+end
+
 
 # ===========================
 # Apply theme
@@ -345,6 +362,7 @@ end
 function fish_prompt -d 'bobthefish, a fish theme optimized for awesome'
   __bobthefish_prompt_status
   __bobthefish_prompt_user
+  __bobthefish_prompt_rubies
   __bobthefish_prompt_virtualfish
 
   set -l git_root (__bobthefish_git_project_dir)
