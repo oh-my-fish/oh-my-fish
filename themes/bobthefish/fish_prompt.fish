@@ -111,24 +111,30 @@ end
 # ===========================
 
 function __bobthefish_start_segment -d 'Start a prompt segment'
-  set_color -b $argv[1]
-  set_color $argv[2]
+  set -l bg $argv[1]
+  set -e argv[1]
+  set -l fg $argv[1]
+  set -e argv[1]
+
+  set_color normal # clear out anything bold or underline...
+  set_color -b $bg
+  set_color $fg $argv
   if [ "$__bobthefish_current_bg" = 'NONE' ]
     # If there's no background, just start one
     echo -n ' '
   else
     # If there's already a background...
-    if [ "$argv[1]" = "$__bobthefish_current_bg" ]
+    if [ "$bg" = "$__bobthefish_current_bg" ]
       # and it's the same color, draw a separator
       echo -n "$__bobthefish_right_arrow_glyph "
     else
       # otherwise, draw the end of the previous segment and the start of the next
       set_color $__bobthefish_current_bg
       echo -n "$__bobthefish_right_black_arrow_glyph "
-      set_color $argv[2]
+      set_color $fg $argv
     end
   end
-  set __bobthefish_current_bg $argv[1]
+  set __bobthefish_current_bg $bg
 end
 
 function __bobthefish_path_segment -d 'Display a shortened form of a directory'
@@ -244,8 +250,7 @@ function __bobthefish_prompt_hg -d 'Display the actual hg state'
   __bobthefish_start_segment $flag_bg $flag_fg
   echo -n -s $__bobthefish_hg_glyph ' '
 
-  __bobthefish_start_segment $flag_bg $flag_fg
-  set_color $flag_fg --bold
+  __bobthefish_start_segment $flag_bg $flag_fg --bold
   echo -n -s (__bobthefish_hg_branch) $flags ' '
   set_color normal
 
@@ -288,8 +293,7 @@ function __bobthefish_prompt_git -d 'Display the actual git state'
 
   __bobthefish_path_segment $argv[1]
 
-  __bobthefish_start_segment $flag_bg $flag_fg
-  set_color $flag_fg --bold
+  __bobthefish_start_segment $flag_bg $flag_fg --bold
   echo -n -s (__bobthefish_git_branch) $flags ' '
   set_color normal
 
@@ -328,8 +332,7 @@ function __bobthefish_prompt_virtualfish -d "Display activated virtual environme
     __bobthefish_start_segment $__bobthefish_med_blue $__bobthefish_lt_grey
     echo -n -s $__bobthefish_virtualenv_glyph $version_glyph
   end
-  __bobthefish_start_segment $__bobthefish_med_blue $__bobthefish_lt_grey
-  set_color $__bobthefish_lt_grey --bold
+  __bobthefish_start_segment $__bobthefish_med_blue $__bobthefish_lt_grey --bold
   echo -n -s (basename "$VIRTUAL_ENV") ' '
   set_color normal
 end
