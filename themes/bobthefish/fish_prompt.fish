@@ -81,7 +81,7 @@ function __bobthefish_git_branch -d 'Get the current git branch (or commitish)'
     set -l branch (command git show-ref --head -s --abbrev | head -n1 ^/dev/null)
     set ref "$__bobthefish_detached_glyph $branch"
   end
-  echo $ref | sed  "s-refs/heads/-$__bobthefish_branch_glyph -"
+  echo $ref | sed  "s#refs/heads/#$__bobthefish_branch_glyph #"
 end
 
 function __bobthefish_hg_branch -d 'Get the current hg branch'
@@ -91,7 +91,7 @@ function __bobthefish_hg_branch -d 'Get the current hg branch'
 end
 
 function __bobthefish_pretty_parent -d 'Print a parent directory, shortened to fit the prompt'
-  echo -n (dirname $argv[1]) | sed -e 's|/private||' -e "s|^$HOME|~|" -e 's-/\(\.\{0,1\}[^/]\)\([^/]*\)-/\1-g' -e 's|/$||'
+  echo -n (dirname $argv[1]) | sed -e 's#/private##' -e "s#^$HOME#~#" -e 's#/\(\.\{0,1\}[^/]\)\([^/]*\)#/\1#g' -e 's#/$##'
 end
 
 function __bobthefish_git_project_dir -d 'Print the current git project base directory'
@@ -103,7 +103,7 @@ function __bobthefish_hg_project_dir -d 'Print the current hg project base direc
 end
 
 function __bobthefish_project_pwd -d 'Print the working directory relative to project root'
-  echo "$PWD" | sed -e "s*$argv[1]**g" -e 's*^/**'
+  echo "$PWD" | sed -e "s#$argv[1]##g" -e 's#^/##'
 end
 
 
