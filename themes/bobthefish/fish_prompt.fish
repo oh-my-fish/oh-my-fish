@@ -15,12 +15,9 @@
 #     set -g theme_display_git no
 #     set -g theme_display_hg no
 #     set -g theme_display_virtualenv no
+#     set -g theme_display_ruby no
 #     set -g theme_display_user yes
 #     set -g default_user your_normal_user
-
-set -q theme_display_git; or set -g theme_display_git yes
-set -q theme_display_hg; or set -g theme_display_hg yes
-set -q theme_display_virtualenv; or set -g theme_display_virtualenv yes
 
 set -g __bobthefish_current_bg NONE
 
@@ -102,12 +99,12 @@ function __bobthefish_pretty_parent -d 'Print a parent directory, shortened to f
 end
 
 function __bobthefish_git_project_dir -d 'Print the current git project base directory'
-  [ "$theme_display_git" = 'yes' ]; or return
+  [ "$theme_display_git" = 'no' ]; and return
   command git rev-parse --show-toplevel ^/dev/null
 end
 
 function __bobthefish_hg_project_dir -d 'Print the current hg project base directory'
-  [ "$theme_display_hg" = 'yes' ]; or return
+  [ "$theme_display_hg" = 'no' ]; and return
   set d (pwd)
   while not [ $d = / ]
     if test -e $d/.hg
@@ -340,8 +337,7 @@ function __bobthefish_virtualenv_python_version -d 'Get current python version'
 end
 
 function __bobthefish_prompt_virtualfish -d "Display activated virtual environment (only for virtualfish, virtualenv's activate.fish changes prompt by itself)"
-  [ "$theme_display_virtualenv" = 'yes' ]; or return
-  set -q VIRTUAL_ENV; or return
+  [ "$theme_display_virtualenv" = 'no' -o -z "$VIRTUAL_ENV" ]; and return
   set -l version_glyph (__bobthefish_virtualenv_python_version)
   if [ "$version_glyph" ]
     __bobthefish_start_segment $__bobthefish_med_blue $__bobthefish_lt_grey
@@ -353,6 +349,7 @@ function __bobthefish_prompt_virtualfish -d "Display activated virtual environme
 end
 
 function __bobthefish_prompt_rubies -d 'Display current Ruby (rvm/rbenv)'
+  [ "$theme_display_ruby" = 'no' ]; and return
   set -l ruby_version
   if type rvm-prompt >/dev/null
     set ruby_version (rvm-prompt i v g)
