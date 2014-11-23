@@ -267,12 +267,11 @@ function __bobthefish_prompt_hg -d 'Display the actual hg state'
   end
 end
 
-# TODO: clean up the fugly $ahead business
 function __bobthefish_prompt_git -d 'Display the actual git state'
   set -l dirty   (command git diff --no-ext-diff --quiet --exit-code; or echo -n '*')
   set -l staged  (command git diff --cached --no-ext-diff --quiet --exit-code; or echo -n '~')
   set -l stashed (command git rev-parse --verify refs/stash > /dev/null 2>&1; and echo -n '$')
-  set -l ahead   (command git branch -v 2> /dev/null | grep -Eo '^\* [^ ]* *[^ ]* *\[[^]]*\]' | grep -Eo '\[[^]]*\]$' | awk 'ORS="";/ahead/ {print "+"} /behind/ {print "-"}' | sed -e 's/+-/±/')
+  set -l ahead   (command git rev-list --left-right '@{upstream}...HEAD' ^/dev/null | awk '/>/ {a += 1} /</ {b += 1} {if (a > 0) nextfile} END {if (a > 0 && b > 0) print "±"; else if (a > 0) print "+"; else if (b > 0) print "-"}')
 
   set -l new (command git ls-files --other --exclude-standard);
   test "$new"; and set new '…'
