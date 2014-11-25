@@ -1,3 +1,7 @@
+#!/usr/bin/env fish
+# vim: ai ts=2 sw=2 et sts=2
+
+
 # Just a dpaste (https://github.com/bartTC/dpaste) wrapper for fish-shell
 # Roman Inflianskas (rominf) <infroma@gmail.com>
 # Based on fish-sprunge plugin:
@@ -6,27 +10,33 @@
 # Based on oh-my-zsh's sprunge plugin
 
 
-set __dpaste_expires_choises '(onetime|never|hour|week|month)'
+set __dpaste_expires_choises '(onetime|1|twotimes|2|hour|week|month|never)'
 
 function __dpaste_set_defaults
-  if [ -z $dpaste_keyword ]
-    set -g dpaste_keyword 'content'
-  end
-  if [ -z $dpaste_url ]
-    set -g dpaste_url 'https://dpaste.de/api/?format=url'
-  end
+  set -g __dpaste_url_dpaste_de 'https://dpaste.de/api/?format=url'
+  set -q dpaste_keyword; or set -g dpaste_keyword 'content'
+  set -q dpaste_url; or set -g dpaste_url $__dpaste_url_dpaste_de
   set -g __dpaste_send_url $dpaste_url
 end
 
 function __dpaste_send
-  curl -F "$dpaste_keyword=<-" $__dpaste_send_url
+  function curl
+    command curl --silent $argv
+  end
+
+  curl -F "$dpaste_keyword=<-" $__dpaste_send_url | read -l url
+  if [ $__dpaste_eat_once = 1 ]
+    curl $url >/dev/null
+  end
+  echo $url
 end
 
 function __dpaste_parse_expires
   set expires_spec "-t $__dpaste_expires_choises"
   set expires (echo $argv | sed -E "s/.*$expires_spec.*/\1/")
   if [ -z (echo $expires | sed -E "s/$__dpaste_expires_choises//") ]
-    set expires (echo $expires | sed 's/hour/3600/' | sed 's/week/604800/' | sed 's/month/2592000/')
+    echo $expires | grep -qE '(onetime|1)'; set -g __dpaste_eat_once (and echo 1; or echo 0)
+    set expires (echo $expires | sed -E 's/(1|2|twotimes)/onetime/;s/hour/3600/;s/week/604800/;s/month/2592000/')
     set __dpaste_send_url "$__dpaste_send_url&expires=$expires"
   end
   echo $argv | sed -E "s/$expires_spec//" | xargs

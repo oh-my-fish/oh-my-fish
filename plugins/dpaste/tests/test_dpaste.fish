@@ -21,9 +21,6 @@ end
 
 function test_dpaste_system
   set url (eval $argv[1])/raw
-  # everything is correct:
-  # one time snippets are available twice if you use curl
-  curl_and_check $url (echo_text)
   curl_and_check $url (echo_text)
   # now it shouldn't be available
   curl_and_fail $url
@@ -44,20 +41,30 @@ function dpaste_teardown
 end
 
 function suite_dpaste
+
   function setup
     __dpaste_set_defaults
+    set -g __dpaste_send_url $__dpaste_url_dpaste_de
   end
 
   function test_dpaste_parse_expires
     assert_equal text (__dpaste_parse_expires text)
     assert_equal "https://dpaste.de/api/?format=url" $__dpaste_send_url
-    set -g __dpaste_send_url $dpaste_url
-    assert_equal text (__dpaste_parse_expires -t never text)
-    assert_equal "https://dpaste.de/api/?format=url&expires=never" $__dpaste_send_url
-    set -g __dpaste_send_url $dpaste_url
+  end
+
+  function test_dpaste_parse_expires_1
+    assert_equal text (__dpaste_parse_expires -t 1 text)
+    assert_equal "https://dpaste.de/api/?format=url&expires=onetime" $__dpaste_send_url
+  end
+
+  function test_dpaste_parse_expires_hour
     assert_equal text (__dpaste_parse_expires -t hour text)
     assert_equal "https://dpaste.de/api/?format=url&expires=3600" $__dpaste_send_url
-    set -g __dpaste_send_url $dpaste_url
+  end
+
+  function test_dpaste_parse_expires_never
+    assert_equal text (__dpaste_parse_expires -t never text)
+    assert_equal "https://dpaste.de/api/?format=url&expires=never" $__dpaste_send_url
   end
 
   function test_dpaste_system_file_redirect
@@ -87,6 +94,7 @@ function suite_dpaste
     end
     test_dpaste_system dpaste_text
   end
+
 end
 
 
@@ -99,4 +107,3 @@ if not set -q tank_running
   tank_run
   dpaste_teardown
 end
-
