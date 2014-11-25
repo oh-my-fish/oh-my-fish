@@ -1,3 +1,6 @@
+#!/usr/bin/env fish
+
+
 function suite_bak
   function setup
     return 0
@@ -104,5 +107,4 @@ if not set -q tank_running
   tank_run
 
   popd
-  set -e test_dir
 end
