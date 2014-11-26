@@ -13,7 +13,7 @@
 # You can override some default options in your config.fish:
 #
 #     set -g theme_display_git no
-#     set -g theme_display_hg no
+#     set -g theme_display_hg yes
 #     set -g theme_display_virtualenv no
 #     set -g theme_display_ruby no
 #     set -g theme_display_user yes
@@ -104,7 +104,7 @@ function __bobthefish_git_project_dir -d 'Print the current git project base dir
 end
 
 function __bobthefish_hg_project_dir -d 'Print the current hg project base directory'
-  [ "$theme_display_hg" = 'no' ]; and return
+  [ "$theme_display_hg" = 'yes' ]; or return
   set d (pwd)
   while not [ $d = / ]
     if [ -e $d/.hg ]
