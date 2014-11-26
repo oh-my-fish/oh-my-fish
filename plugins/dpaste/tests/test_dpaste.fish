@@ -43,8 +43,8 @@ end
 function suite_dpaste
 
   function setup
+    set dpaste_site 'dpaste.de'
     __dpaste_set_defaults
-    set -g __dpaste_send_url $__dpaste_url_dpaste_de
   end
 
   function test_dpaste_parse_expires

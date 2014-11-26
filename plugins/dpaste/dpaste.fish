@@ -14,9 +14,18 @@ set __dpaste_expires_choises '(onetime|1|twotimes|2|hour|week|month|never)'
 
 function __dpaste_set_defaults
   set -g __dpaste_url_dpaste_de 'https://dpaste.de/api/?format=url'
-  set -q dpaste_keyword; or set -g dpaste_keyword 'content'
-  set -q dpaste_url; or set -g dpaste_url $__dpaste_url_dpaste_de
-  set -g __dpaste_send_url $dpaste_url
+  set -g __dpaste_keyword_dpaste_de 'content'
+  set -g __dpaste_url_sprunge_us 'http://sprunge.us/'
+  set -g __dpaste_keyword_sprunge_us 'sprunge'
+
+  set -q dpaste_site; or set -g dpaste_site 'dpaste.de'
+  set suffix (echo $dpaste_site | sed "s/\./_/g")
+
+  set -g __dpaste_keyword (eval 'echo $__dpaste_keyword_'$suffix)
+  set -q __dpaste_keyword; or set -g __dpaste_keyword $__dpaste_keyword_dpaste_de
+  set -g __dpaste_send_url (eval 'echo $__dpaste_url_'$suffix)
+  set -q __dpaste_send_url; or set -g __dpaste_send_url $__dpaste_url_dpaste_de
+  set -g __dpaste_eat_once 0
 end
 
 function __dpaste_send
@@ -24,7 +33,7 @@ function __dpaste_send
     command curl --silent $argv
   end
 
-  curl -F "$dpaste_keyword=<-" $__dpaste_send_url | read -l url
+  curl -F "$__dpaste_keyword=<-" $__dpaste_send_url | read -l url
   if [ $__dpaste_eat_once = 1 ]
     curl $url >/dev/null
   end
@@ -51,7 +60,18 @@ function __dpaste_help
   dpaste [-t EXPIRES] \"I \<3 to paste\"
 
 Options:
-  -t EXPIRES  set snippet expiration time: $__dpaste_expires_choises [default: month]"
+  -t EXPIRES  set snippet expiration time: $__dpaste_expires_choises [default: month]
+
+Configuration:
+  You can use this plugin with other dpaste instances.
+  If you have a dpaste instance on 'example.com' just insert those lines
+  into your config.fish file:
+    set __dpaste_url_example_com 'https://example.com/api/?format=url'
+    set dpaste_site 'example.com'
+
+  You can even use this plugin with sprunge.us.
+  Note, that sprunge.us doesn't support '-t' option.
+    set dpaste_site 'sprunge.us'"
 end
 
 function __dpaste_parse_help

@@ -4,6 +4,7 @@
 # Based on oh-my-zsh's sprunge plugin
 
 function sprunge
+  echo -e 'This plugin is obsolete.\nConsider using dpaste, it is tested, has more features, and supports different sites, including sprunge.\nFor more information, enable dpaste plugin and execute it:\n$ dpaste\n' >&2
   if isatty
     if [ (count $argv) -gt 0 ]
       if [ -f $argv ]
