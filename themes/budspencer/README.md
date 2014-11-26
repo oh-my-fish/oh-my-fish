@@ -171,7 +171,8 @@ It makes the commandline as powerful as your editor. If `$EDITOR` is not set,
 vi is used.
 
 The following shortcut needs vi mode:
-- Type `.` in NORMAL mode to edit commandline in editor.
+- Type `.` in NORMAL mode or `\cv` in NORMAL/INSERT mode to edit commandline in
+  editor.
 
 ## Sessions
 
