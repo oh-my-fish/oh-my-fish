@@ -28,7 +28,8 @@ set -l execs annotate      \
              unicorn       \
              unicorn_rails
 
-set -l do_eval (function --help | grep -q '‐‐inherit‐variable'; and echo false)
+# Fish 2.1.1+ has support for --inherit-variable
+set -l do_eval (echo $FISH_VERSION | grep 2.1.1-)
 
 for executable in $execs
   if test -z "$do_eval"
