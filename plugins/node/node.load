@@ -1,4 +1,4 @@
 ### Main program
-_append_path /usr/local/share/npm/bin
+_prepend_path /usr/local/share/npm/bin
 
 set PATH ./node_modules/.bin $PATH

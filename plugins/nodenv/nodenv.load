@@ -1,7 +1,7 @@
 if test -n "$NODENV_ROOT"
-  _append_path $NODENV_ROOT/bin
+  _prepend_path $NODENV_ROOT/bin
 else
-  _append_path $HOME/.nodenv/bin
+  _prepend_path $HOME/.nodenv/bin
 end
 
 status --is-interactive; and source (nodenv init - | psub)

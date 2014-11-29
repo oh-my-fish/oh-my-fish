@@ -1,7 +1,7 @@
 if test -n "$RBENV_ROOT"
-  _append_path $RBENV_ROOT/bin
-  _append_path $RBENV_ROOT/shims
+  _prepend_path $RBENV_ROOT/bin
+  _prepend_path $RBENV_ROOT/shims
 else
-  _append_path $HOME/.rbenv/bin
-  _append_path $HOME/.rbenv/shims
+  _prepend_path $HOME/.rbenv/bin
+  _prepend_path $HOME/.rbenv/shims
 end
