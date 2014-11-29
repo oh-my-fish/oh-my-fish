@@ -1,5 +1,5 @@
 # Load custom settings for current hostname
-set -l HOST (hostname | sed 's/\(-[0-9]\{1,\}\)\{0,1\}\(\.local\)\{0,1\}$//')
+set -l HOST (hostname | sed -E 's/(-[0-9]+)?(\.(local|home))?$//')
 set -l HOST_SPECIFIC_FILE $fish_custom/hosts/$HOST.fish
 if test -f $HOST_SPECIFIC_FILE
   . $HOST_SPECIFIC_FILE
