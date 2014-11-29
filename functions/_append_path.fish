@@ -1,6 +1,10 @@
 # Appends the path to the specified path list. If no list specified,
 #  defaults to $PATH
 function _append_path
+  set_color red
+  echo '_append_path function deprecated. Rename to _prepend_path.'
+  set_color normal
+
   set -l path PATH
 
   if test (echo $argv | wc -w) -eq 2

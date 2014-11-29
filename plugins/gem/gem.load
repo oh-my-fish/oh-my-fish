@@ -1,4 +1,4 @@
 if test -n "$GEM_ROOT"
   set -gx GEM_HOME $GEM_ROOT
-  _append_path $GEM_ROOT/bin
+  _prepend_path $GEM_ROOT/bin
 end

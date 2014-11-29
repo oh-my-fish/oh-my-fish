@@ -1,2 +1,2 @@
-_append_path $HOME/.plenv/bin
-_append_path $HOME/.plenv/shims
+_prepend_path $HOME/.plenv/bin
+_prepend_path $HOME/.plenv/shims

@@ -3,7 +3,7 @@
 set -gx USE_CCACHE 1
 
 if test -n "$CCACHE_ROOT"
-  _append_path $CCACHE_ROOT
+  _prepend_path $CCACHE_ROOT
 else
-  _append_path /usr/lib/ccache/bin
+  _prepend_path /usr/lib/ccache/bin
 end
