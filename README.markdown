@@ -81,7 +81,7 @@ Substitute /bin/bash with /bin/tcsh or /bin/zsh as appropriate.
     rm -rf ~/.oh-my-fish
 
 
-###. Oh My ZSH
+### Oh My ZSH
 
 This project is heavily inspired by [oh-my-zsh][oh-my-zsh]
 
