@@ -1,7 +1,33 @@
-if test -n "$RBENV_ROOT"
-  _prepend_path $RBENV_ROOT/bin
-  _prepend_path $RBENV_ROOT/shims
+set -l rbenv_dir "$RBENV_ROOT"
+if [ ! $rbenv_dir ]
+  set rbenv_dir $HOME/.rbenv
+end
+
+set -l supports_fish
+set -l supports_fish_version '0.4.0'
+set -l user_version (eval $rbenv_dir/bin/rbenv --version | sed -E 's/^rbenv ([[:digit:]\.]{2,}).*$/\1/g')
+
+if [ $user_version = $supports_fish_version ]
+  set -l supports_fish_commits '56'
+  set -l user_commits (eval $rbenv_dir/bin/rbenv --version | sed -E 's/^.+-([[:digit:]]{1,}).+$/\1/g')
+  if [ $user_commits -ge $supports_fish_commits ]
+    set supports_fish true
+  end
 else
-  _prepend_path $HOME/.rbenv/bin
-  _prepend_path $HOME/.rbenv/shims
+  set -l higher_version (echo -e "$supports_fish_version\n$user_version" | \
+                          sort --field-separator . \
+                            --key 1,1 --numeric-sort --reverse \
+                            --key 2,2 --numeric-sort --reverse \
+                            --key 3,3 --numeric-sort --reverse | \
+                          head -n 1)
+  if [ $user_version = $higher_version ]
+    set supports_fish true
+  end
+end
+
+_prepend_path $rbenv_dir/bin
+if [ $supports_fish ]
+  status --is-interactive; and source (eval $rbenv_dir/bin/rbenv init - | psub)
+else
+  _prepend_path $rbenv_dir/shims
 end

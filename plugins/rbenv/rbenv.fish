@@ -9,4 +9,3 @@ function rbenv
     command rbenv "$command" $argv
   end
 end
-
