@@ -10,7 +10,7 @@ end
 # ONLY checked on OSX! Please add for other OS's...
 if test -z $JAVA_HOME
    if test -e "/usr/libexec/java_home" -a -f "/usr/libexec/java_home"
-      set -gx JAVA_HOME "/usr/libexec/java_home"
+      set -gx JAVA_HOME (/usr/libexec/java_home)
    end
    set java_homes "/Library/Java/Home" "/System/Library/Frameworks/JavaVM.framework/Home"
    if test -z $JAVA_HOME
