@@ -13,6 +13,10 @@
 #      files. Return 1 if the source path is not specified.
 #
 # OPTIONS
+#      -P --preview
+#          Use to skip adding anything to the path and echo all matched
+#          directories to stdout. Useful for debugging/testing.
+#
 #      <SOURCE PATH>
 #          Required. Specify the path to find glob matches to prepend
 #          to the destination path.
@@ -25,7 +29,6 @@
 #          It is also possible to use logical OR / AND operators to list
 #          multiple globs. If none is used, OR is assumed by default.
 #          The OR operator
-
 #
 #          The following operators are available:
 #
@@ -79,10 +82,16 @@ function _prepend_tree -d "Load a dependency tree, matching `.fish` files by def
   set -l glob
   set -l depth 1
   set -l len (count $argv)
+  set -l preview false
 
-  [ $len -gt 0 ]
-    and set source $argv[1]
-    or return 1
+  if [ $len -gt 0 ]
+    switch $argv[1]
+      case -P --preview
+        set preview true
+        set -e argv[1]
+        set len (count $argv)
+    end
+  end
 
   [ $len -gt 0 ]
     and set source $argv[1]
@@ -123,7 +132,10 @@ function _prepend_tree -d "Load a dependency tree, matching `.fish` files by def
     and set glob -name \*.fish
 
   for directory in $source/**/
-    [ -z (find $directory $glob -maxdepth $depth | head -1) ]
-      or _prepend_path $directory $destination
+    if not [ -z (find $directory $glob -maxdepth $depth | head -1) ]
+      eval $preview # skip when on preview mode
+        and printf "%s " $directory
+        or _prepend_path $directory $destination
+    end
   end
 end
