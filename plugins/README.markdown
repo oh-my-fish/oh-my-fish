@@ -31,6 +31,7 @@
 * __rbenv__ – [rbenv](https://github.com/sstephenson/rbenv) Ruby environment/version manager.
 * __replace__ – A port of [replace](https://github.com/thoughtbot/dotfiles/blob/master/bin/replace).
 * __rvm__ – [RVM](http://rvm.io) Ruby version manager.
+* __ssh__ – ssh conservative $TERM value helper.
 * __sublime__ – Creates `subl` command line shortcut to launch [Sublime Text editor](http://sublimetext.com/).
 * __tmux__ – Plugin to start tmux with support for 256 colours.
 * __vi-mode__ – Basic vi key bindings emulation for fish.
