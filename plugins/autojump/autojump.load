@@ -1,3 +1,3 @@
 set_color red
-echo 'Autojump plugin deprecated.'
+echo 'Autojump plugin deprecated.' >&2
 set_color normal

@@ -2,7 +2,7 @@
 #  defaults to $PATH
 function _append_path
   set_color red
-  echo '_append_path function deprecated. Rename to _prepend_path.'
+  echo '_append_path function deprecated. Rename to _prepend_path.' >&2
   set_color normal
 
   set -l path PATH
