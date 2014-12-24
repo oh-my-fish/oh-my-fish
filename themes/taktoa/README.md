@@ -9,4 +9,4 @@ A theme by taktoa
 * Show current terminal multiplexer status (screen/tmux pane name and number)
 * Arrow is a lambda
 
-![taktoa theme](https://taktoa.me/oh-my-fish/images/taktoa-screenshot.png)
+![taktoa theme](http://taktoa.me/oh-my-fish/images/taktoa-screenshot.png)
