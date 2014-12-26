@@ -9,22 +9,22 @@ end
 
 # ONLY checked on OSX! Please add for other OS's...
 if test -z $JAVA_HOME
-   if test -e "/usr/libexec/java_home" -a -f "/usr/libexec/java_home"
-      set -gx JAVA_HOME (/usr/libexec/java_home)
-   end
-   set java_homes "/Library/Java/Home" "/System/Library/Frameworks/JavaVM.framework/Home"
-   if test -z $JAVA_HOME
-      for file in $java_homes
-          echo $file
-      	  if test -e $file -a -d $file
-   	     set -gx JAVA_HOME $file
-   	     break
-   	  end
+  if test -f "/usr/libexec/java_home"
+    set -gx JAVA_HOME (/usr/libexec/java_home)
+  end
+
+  if test -z $JAVA_HOME
+    set -l java_homes "/Library/Java/Home" "/System/Library/Frameworks/JavaVM.framework/Home"
+    for file in $java_homes
+      if test -d $file
+        set -gx JAVA_HOME $file
+        break
       end
-   end
+    end
+  end
 end
 
 if test -z $JAVA_HOME
-   echo "GVM: JAVA_HOME not set please set JAVA_HOME."
+  echo "GVM: JAVA_HOME not set please set JAVA_HOME."
 end
 
