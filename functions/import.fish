@@ -15,8 +15,7 @@
 #      in ~/.config/fish/config.fish
 #
 # EXAMPLES
-#      import plugins/dpaste themes/bobthefish
-#      import plugins/{cask,brew,django}
+#      import dpaste cask themes/bobthefish
 #
 # AUTHORS
 #      Jorge Bucaran <jbucaran@me.com>
