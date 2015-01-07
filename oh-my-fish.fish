@@ -20,7 +20,7 @@ end
 # a directory under $fish_path/custom/themes with the same name as
 # the theme and override any functions/variables there. Rinse and
 # repeat for plugins.
-import $fish_plugins themes/$fish_theme
+import plugins/$fish_plugins themes/$fish_theme
 
 # Source all files inside custom directory.
 for load in $fish_custom/*.load
