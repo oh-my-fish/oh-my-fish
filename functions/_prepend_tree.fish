@@ -2,17 +2,17 @@
 #      _prepend_tree - add a dependency tree to fish_function_path
 #
 # SYNOPSIS
-#      _prepend_tree [-p --preview] <path> [<glob>..]
+#      _prepend_tree [-v --verbose] <path> [<glob>..]
 #
 # DESCRIPTION
-#      Search a path tree and prepend directories with fish files
-#      printing any matches by default. Use a glob list to include
-#      or exclude other file extensions. Use -p --preview to just
-#      print matches withouth modifying the path.
+#      Search a path tree and prepend directories with fish files. Use a glob
+#      list to include or exclude other file extensions. Use -v --verbose to
+#      output directories to be added to the path.
 #
 # OPTIONS
-#      [-p --preview]
-#          Do not modify the path. Print directories that match the glob.
+#      [-v --verbose]
+#          Optional. Print directories that match the glob. Must be the
+#          first argument if used.
 #
 #      <path>
 #          Required. Specify the path to search for glob patterns.
@@ -46,15 +46,21 @@
 # SEE ALSO
 #      .oh-my-fish/functions/_prepend_path.fish
 #
-# v.0.2.1
+# v.0.2.0
 #/
 function _prepend_tree -d "Add a dependency tree to the Fish path."
   # Match directories with .fish files always.
   set -l glob -name \*.fish
+  set -l verbose ""
+
+  # Retrieve first argument, either the path or the -v option.
   set -l path $argv[1]
-  if contains -- $path -p --preview
+  if contains -- $path -v --verbose
+    set verbose -v
+    # Option first, path should be next.
     set path $argv[2]
   end
+
   # Parse glob options to create the main glob pattern.
   if [ (count $argv) -gt 2 ]
     set -l operator -o
@@ -82,16 +88,22 @@ function _prepend_tree -d "Add a dependency tree to the Fish path."
   # $subs will become an empty list for directories without sub directories
   # which is safe to use in the loop.
   set -l subs $path/**/
-  
+
   # Traverse $path and $subs prepending only directories with matches.
   for dir in $path $subs
-    # Use head to retrieve at least the first match.
-    if [ -z (find $dir $glob -maxdepth 1 | head -1) ]
+    # Use head to retrieve at least one match. Ignore errors for non
+    # existing directories
+    if [ -z (find "$dir" $glob -maxdepth 1 ^/dev/null | head -1) ]
       continue
     end
-    printf "%s" $dir
-    if not contains -- $argv[1] -p --preview
-      _prepend_path $dir -d fish_function_path
+
+    # Print matched directories if the -v option is set.
+    if not [ -z $verbose ]
+      printf "%s\n" $dir
     end
+
+    # Prepend matched directory to the the global fish function path.
+    # Note path duplicates are already handled by _prepend_path.
+    _prepend_path $dir -d fish_function_path
   end
 end
