@@ -1,74 +1,34 @@
-###
-# Helper functions
-###
-
-function _fish_add_plugin
-  set -l plugin $argv[1]
-  set -l plugin_path "plugins/$plugin"
-
-  _prepend_path $fish_path/$plugin_path -d fish_function_path
-  _prepend_path $fish_custom/$plugin_path -d fish_function_path
-end
-
-function _fish_add_completion
-  set -l plugin $argv[1]
-  set -l completion_path "plugins/$plugin/completions"
-
-  _prepend_path $fish_path/$completion_path -d fish_complete_path
-  _prepend_path $fish_custom/$completion_path -d fish_complete_path
-end
-
-function _fish_source_plugin_load_file
-  set -l plugin $argv[1]
-  set -l load_file_path "plugins/$plugin/$plugin.load"
-
-  if test -e $fish_path/$load_file_path
-    . $fish_path/$load_file_path
-  end
-
-  if test -e $fish_custom/$load_file_path
-    . $fish_custom/$load_file_path
-  end
-end
-
-function _fish_load_theme
-  _prepend_path $fish_path/themes/$fish_theme -d fish_function_path
-  _prepend_path $fish_custom/themes/$fish_theme -d fish_function_path
-end
-
-###
-# Configuration
-###
-
 # Set fish_custom to the path where your custom config files
-# and plugins exists, or else we will use the default custom.
+# and plugins exist, or use the default custom instead.
 if not set -q fish_custom
-  set -g fish_custom  $fish_path/custom
+  set -g fish_custom $fish_path/custom
 end
 
-# Extracting user's functions – will be added later.
+# Extract user defined functions from path and prepend later to
+# avoid collisions with oh-my-fish internal functions and allow
+# users to override/customize plugins, themes, etc.
 set user_function_path $fish_function_path[1]
 set -e fish_function_path[1]
 
-# Add all functions
+# Add functions defined in oh-my-fish/functions to path.
 if not contains $fish_path/functions/ $fish_function_path
   set fish_function_path $fish_path/functions/ $fish_function_path
 end
 
-# Add all defined plugins
-for plugin in $fish_plugins
-  _fish_add_plugin $plugin
-  _fish_add_completion $plugin
-  _fish_source_plugin_load_file $plugin
+# Add required plugins, completions and themes. Imported commands can be
+# customized via the $fish_path/custom directory. To customize a theme,
+# create a directory under $fish_path/custom/themes with the same name
+# as the theme. Use the same approach for plugins, etc.
+import plugins/$fish_plugins themes/$fish_theme
+
+# Prepend all user custom paths to the fish path and source load files.
+for custom_file in $fish_custom/**
+  _prepend_path $custom_file -d fish_function_path
+  switch $custom_file
+    case \*.load
+      . $custom_file
+  end
 end
 
-# Load user defined theme
-_fish_load_theme $fish_theme
-
-# Source all files inside custom folder
-for config_file in $fish_custom/*.load
-  . $config_file
-end
-
-# Re-adding user's functions so they have the highest priority
+# Prepend extracted user functions so they have the highest priority.
 set fish_function_path $user_function_path $fish_function_path
