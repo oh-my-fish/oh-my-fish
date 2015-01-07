@@ -1,72 +1,44 @@
-#
 # NAME
-#      _prepend_tree - add a dependency tree to a path
+#      _prepend_tree - add a dependency tree to fish_function_path
 #
 # SYNOPSIS
-#      _prepend_tree [-P --preview] <source path> [<glob>..]
-#                    [-d --destination <destination path>]
+#      _prepend_tree [-v --verbose] <path> [<glob>..]
 #
 # DESCRIPTION
-#      Traverse the source path and prepend each directory matching the
-#      glob list to the destination path or to the FISH function path.
-#      If no globs are specified, match any directories with `.fish`
-#      files. Return 1 if the source path is not specified.
+#      Search a path tree and prepend directories with fish files. Use a glob
+#      list to include or exclude other file extensions. Use -v --verbose to
+#      output directories to be added to the path.
 #
 # OPTIONS
-#      -P --preview
-#          Use to skip adding anything to the path and echo all matched
-#          directories to stdout. Useful for debugging/testing.
+#      [-v --verbose]
+#          Optional. Print directories that match the glob. Must be the
+#          first argument if used.
 #
-#      <SOURCE PATH>
-#          Required. Specify the path to find glob matches to prepend
-#          to the destination path.
+#      <path>
+#          Required. Specify the path to search for glob patterns.
 #
-#      <glob>...
-#          Glob pattern to match when traversing the source path. If a
-#          directory is found, it is prepended to the destination path.
-#          `.fish` is assumed by default if not globs are specified.
+#      [<glob> [<operator> <glob>..]]
+#          Glob pattern to match when traversing the path path.
 #
-#          It is also possible to use logical OR / AND operators to list
-#          multiple globs. If none is used, OR is assumed by default.
-#          The OR operator
+# OPERATORS
+#      [! -not glob]
+#          Negates the following glob.
 #
-#          The following operators are available:
+#      [<glob> -o -or <glob>..]
+#          Default. Must meet at least one listed criteria.
 #
-#             ! -not
-#                 Negates the following exression.
-#
-#                     ! glob1 glob2   →  NOT glob1 or glob2
-#
-#             -o -or
-#                 Any matches should meet at least one listed criteria.
-#
-#                     glob1 -o glob2  →  glob1 OR glob2
-#
-#             -a -and
-#                 Any matches must meet all listed criteria.
-#
-#                     glob1 -a glob2  →  glob1 AND glob2
-#
-#      -d <DESTINATION PATH>
-#          Should appear at the end if used. Specifies the name of the
-#          global path variable to prepend the matched directories to.
-#          If not used, the $fish_function_path is assumed by default.
+#      [<glob> [-a -and <glob>..]]
+#          Must meet *all* listed criteria.
 #
 # EXAMPLES
-#      _prepend_tree $lib_path
-#          Prepends all directories inside $lib_path containing `.fish`
-#          files to $fish_function_path.
+#      _prepend_tree $path
+#          Match directories in $path containing `.fish` files.
 #
-#      _prepend_tree $lib_path -d PATH
-#          Prepends all directories inside $lib_path containing .fish
-#          files to a global variable named PATH.
+#      _prepend_tree $path \*.fish \*.sh
+#          Match directories in $path with either `.fish` OR `.sh` files.
 #
-#      _prepend_tree $lib_path \*.fish \*.sh
-#          Prepends sub directories with either `.fish` OR `.sh` files.
-#
-#      _prepend_tree $lib_path \*.css -a ! _\*.\* -d PATH
-#          Prepends sub directories that have `.css` extension, but do
-#          not start with `_`.
+#      _prepend_tree $path \*.fish -a ! _\*.\*
+#          Match directories with `.fish` files that do not start with `_`.
 #
 # AUTHORS
 #      Jorge Bucaran <jbucaran@me.com>
@@ -74,68 +46,64 @@
 # SEE ALSO
 #      .oh-my-fish/functions/_prepend_path.fish
 #
-# v.0.1.0
+# v.0.2.0
 #/
-function _prepend_tree -d "Load a dependency tree, matching `.fish` files by default."
-  set -l source
-  set -l destination fish_function_path
-  set -l glob
-  set -l depth 1
-  set -l len (count $argv)
-  set -l preview false
+function _prepend_tree -d "Add a dependency tree to the Fish path."
+  # Match directories with .fish files always.
+  set -l glob -name \*.fish
+  set -l verbose ""
 
-  if [ $len -gt 0 ]
-    switch $argv[1]
-      case -P --preview
-        set preview true
-        set -e argv[1]
-        set len (count $argv)
-    end
+  # Retrieve first argument, either the path or the -v option.
+  set -l path $argv[1]
+  if contains -- $path -v --verbose
+    set verbose -v
+    # Option first, path should be next.
+    set path $argv[2]
   end
 
-  [ $len -gt 0 ]
-    and set source $argv[1]
-    or return 1
-
-  if [ $len -gt 2 ]
-  # At least 3 arguments must exist
-  # to use the destination path.
-    switch $argv[-2]
-      case -d --destination
-        set destination $argv[-1]
-    end
-  end
-
-  if [ $len -gt 1 ]
-    set -l operator
-    for match in $argv[2..-1]
-      switch $match
+  # Parse glob options to create the main glob pattern.
+  if [ (count $argv) -gt 2 ]
+    set -l operator -o
+    for option in $argv[3..-1]
+      switch $option
         case ! -not
           set operator $operator !
         case -o -or
           set operator -o
         case -a -and
           set operator -a
-        case -d --destination
-          break # No more globs after this point.
         case "*"
-          [ operator = ! ]
-            and set glob $operator $glob
-            or set glob $glob $operator
-          set glob $glob -name $match
-          set operator -o
+          if [ operator = ! ]
+            set glob $operator $glob
+          else
+            set glob $glob $operator
+          end
+          set glob $glob -name $option
+          set operator -o # Default
       end
     end
   end
 
-  [ -z "$glob" ]
-    and set glob -name \*.fish
+  # Null wildcard expansion will break the for loop even if $path is valid.
+  # $subs will become an empty list for directories without sub directories
+  # which is safe to use in the loop.
+  set -l subs $path/**/
 
-  for directory in $source/**/
-    if not [ -z (find $directory $glob -maxdepth $depth | head -1) ]
-      eval $preview # skip when on preview mode
-        and printf "%s " $directory
-        or _prepend_path $directory $destination
+  # Traverse $path and $subs prepending only directories with matches.
+  for dir in $path $subs
+    # Use head to retrieve at least one match. Skip not found errors
+    # for directories that do not exist.
+    if [ -z (find "$dir" $glob -maxdepth 1 ^/dev/null | head -1) ]
+      continue
     end
+
+    # Print matched directories if the -v option is set.
+    if not [ -z $verbose ]
+      printf "%s\n" $dir
+    end
+
+    # Prepend matched directory to the the global fish function path.
+    # Note path duplicates are already handled by _prepend_path.
+    _prepend_path $dir -d fish_function_path
   end
 end
