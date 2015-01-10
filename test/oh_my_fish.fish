@@ -1,11 +1,13 @@
 function describe_oh_my_fish
-  function before_all
+  function before_each
     set -g fish_custom_bak $fish_custom
     set -g fish_function_path_bak $fish_function_path
     set -g fish_plugins_bak $fish_plugins
+
+    set -e fish_custom
   end
 
-  function after_all
+  function after_each
     set fish_custom $fish_custom_bak
     set fish_function_path $fish_function_path_bak
     set fish_plugins $fish_plugins_bak
@@ -18,13 +20,13 @@ function describe_oh_my_fish
   end
 
   function it_allows_the_custom_folder_location_to_be_customized
-    set fish_custom /tmp
+    set -g fish_custom /tmp
     load_oh_my_fish
     expect $fish_custom to_equal '/tmp'
   end
 
   function it_loads_all_custom_files
-    set fish_custom /tmp
+    set -g fish_custom /tmp
     echo 'set -gx TEST_LOAD_CUSTOM_FILE file_loaded' > $fish_custom/test.load
 
     load_oh_my_fish
@@ -46,6 +48,14 @@ function describe_oh_my_fish
     load_oh_my_fish
     expect $fish_function_path to_include $fish_path/plugins/bak and
       expect $fish_function_path to_include $fish_path/plugins/z
+  end
+
+  function it_loads_plugins_from_custom_folder
+    array.delete "$fish_custom/plugins/example" fish_function_path
+
+    set fish_plugins example
+    load_oh_my_fish
+    expect $fish_function_path to_include $fish_custom/plugins/example
   end
 
   function it_loads_the_selected_theme

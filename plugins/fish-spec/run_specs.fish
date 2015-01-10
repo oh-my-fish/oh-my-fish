@@ -5,7 +5,7 @@ function run_specs
   end
 
   # Run before all block
-  eval "before_all"
+  functions -q before_all; and before_all
 
   # Run tests
   for test in (functions -n | grep it_)
@@ -13,5 +13,5 @@ function run_specs
   end
 
   # Run after all block
-  eval "after_all"
+  functions -q after_all; and after_all
 end
