@@ -32,13 +32,16 @@ function describe_oh_my_fish
   end
 
   function it_loads_all_oh_my_fish_functions
-    remove_from_array "$fish_path/functions/" fish_function_path
+    array.delete "$fish_path/functions/" fish_function_path
+
     load_oh_my_fish
     expect $fish_function_path to_include $fish_path/functions/
   end
 
   function it_loads_all_selected_plugins
-    remove_from_array "$fish_path/plugins/z" fish_function_path
+    array.delete "$fish_path/plugins/bak" fish_function_path
+    array.delete "$fish_path/plugins/z" fish_function_path
+
     set fish_plugins bak z
     load_oh_my_fish
     expect $fish_function_path to_include $fish_path/plugins/bak and
@@ -46,7 +49,8 @@ function describe_oh_my_fish
   end
 
   function it_loads_the_selected_theme
-    remove_from_array "$fish_path/themes/l" fish_function_path
+    array.delete "$fish_path/themes/l" fish_function_path
+
     set fish_theme l
     load_oh_my_fish
     expect $fish_function_path to_include $fish_path/themes/l
@@ -55,17 +59,6 @@ end
 
 function load_oh_my_fish
   . $fish_path/oh-my-fish.fish
-end
-
-function remove_from_array
-  set -l element $argv[1]
-
-  for i in (seq (count $$argv[2]))
-    if test $$argv[2][$i] = $element
-      set -e $argv[2][$i]
-      break
-    end
-  end
 end
 
 import plugins/fish-spec
