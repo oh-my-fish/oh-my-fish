@@ -34,15 +34,15 @@ function describe_oh_my_fish
   end
 
   function it_loads_all_oh_my_fish_functions
-    array.delete "$fish_path/functions/" fish_function_path
+    list.erase "$fish_path/functions/" fish_function_path
 
     load_oh_my_fish
     expect $fish_function_path to_include $fish_path/functions/
   end
 
   function it_loads_all_selected_plugins
-    array.delete "$fish_path/plugins/bak" fish_function_path
-    array.delete "$fish_path/plugins/z" fish_function_path
+    list.erase "$fish_path/plugins/bak" fish_function_path
+    list.erase "$fish_path/plugins/z" fish_function_path
 
     set fish_plugins bak z
     load_oh_my_fish
@@ -59,7 +59,7 @@ function describe_oh_my_fish
   end
 
   function it_loads_the_selected_theme
-    array.delete "$fish_path/themes/l" fish_function_path
+    list.erase "$fish_path/themes/l" fish_function_path
 
     set fish_theme l
     load_oh_my_fish
