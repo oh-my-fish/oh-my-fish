@@ -20,5 +20,15 @@ function expect
       else
         emit assertion_failure "Expected \"$list\" to include \"$item\""
       end
+
+    case 'to_not_include'
+      set -l item $actual
+      set -l list $expected
+
+      if not contains -- "$item" $list
+        emit assertion_success
+      else
+        emit assertion_failure "Expected \"$list\" to not include \"$item\""
+      end
   end
 end
