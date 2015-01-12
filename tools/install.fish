@@ -33,7 +33,7 @@
 #/
 
 set fish_path    ~/.oh-my-fish
-set config_path  ~/.config/fish/
+set config_path  ~/.config/fish
 
 # Log a color message.
 #   log <color> <string>...
