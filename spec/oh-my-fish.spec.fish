@@ -69,6 +69,13 @@ function describe_oh_my_fish -d "Oh-My-Fish test spec..."
     load_oh_my_fish
     expect $fish_function_path --to-contain $fish_path/themes/l
   end
+
+  function it_reloads_with_status_of_0 \
+    -d "It should reload the framework with \$status of 0"
+
+    load_oh_my_fish
+    expect $status --to-equal 0
+  end
 end
 
 function load_oh_my_fish
