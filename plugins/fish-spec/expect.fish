@@ -21,6 +21,12 @@
 #   spec.run
 #/
 function expect
+  # Abort if last call to `expect` finished with $status 1. This allows to
+  # stop individual tests from running if at least one expect call fails.
+  if [ $status -eq 1 ]
+    return 1
+  end
+
   set -l expected  $argv[1..-3]
   set -l condition $argv[-2]
   set -l actual    $argv[-1]
