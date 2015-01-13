@@ -4,9 +4,11 @@
 # SYNOPSIS
 #   expect <expected>...
 #          <condition>
-#            --to-equal         <actual> value equals <expected> value
+#            --to-be-false      exit status is falsy
+#            --to-be-true       exit status is truthy
 #            --to-contain       <actual> value exists in <expected> list
 #            --to-no-contain    <actual> value does not exist in <expected> list
+#            --to-equal         <actual> value equals <expected> value
 #          <actual>
 #
 # EXAMPLE
@@ -31,16 +33,27 @@ function expect
   set -l condition $argv[-2]
   set -l actual    $argv[-1]
   set -l result    0
+
+  if [ (echo "$actual" | grep '\-\-') ]
+    set expected $argv[1..-2]
+    set condition $actual
+    set actual ""
+  end
+
   # Test conditions and save success/fail $status to return later.
   switch $condition
-    case --to-eq\*
-      test "$expected" = "$actual"
+    case --to-be-false
+      eval "$expected"
+      test $status -ne 0
+    case --to-be-true
+      eval "$expected"
+      test $status -eq 0
     case --to-contain
-      set actual_text "To contain"
       contains -- "$actual" $expected
     case --to-not-contain
-      set actual_text "To not contain"
       not contains -- "$actual" $expected
+    case --to-eq\*
+      test "$expected" = "$actual"
   end
   set result $status
   if [ $result -eq 0 ]
