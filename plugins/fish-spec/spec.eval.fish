@@ -81,6 +81,7 @@ function spec.eval -d "Eval a function by name and echo its description field."
     end
   end
 
+  set -l result 0
   for test in $tests
     if [ -z "$silent" ]
       set -l info (spec.get.info $tests)
@@ -91,6 +92,7 @@ function spec.eval -d "Eval a function by name and echo its description field."
       spec.log --message $default_color "$info"
     end
     eval $test
-      or return 1
+      or set result 1
   end
+  return $result
 end

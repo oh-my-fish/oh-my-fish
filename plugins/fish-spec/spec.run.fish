@@ -47,17 +47,14 @@ function spec.run
   spec.eval before_all $output
   for test in (spec.functions "it_")
     spec.eval before_each $output
-    # Stop test execution if an expectation fails.
+
+    # Flunk test if any single test fails, but do not stop the suite.
     if not spec.eval $test --unit --depth 1 $output
-      set result 1 # Flunk
+      set result 1
     end
 
-    # Make sure to run after_each if test fails.
+    # Make sure to run after_each even if a test fails.
     spec.eval after_each $output
-    if [ $result -eq 1 ]
-    # We can safely exit the loop if test fails.
-      break
-    end
   end
   spec.eval after_all $output
 

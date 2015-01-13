@@ -57,7 +57,7 @@ function describe_oh_my_fish -d "Oh-My-Fish test spec..."
     set -g fish_plugins bak z
     load_oh_my_fish
     expect $fish_function_path --to-contain $fish_path/plugins/bak
-      and expect $fish_function_path --to-contain $fish_path/plugins/z
+    expect $fish_function_path --to-contain $fish_path/plugins/z
   end
 
   function it_loads_the_selected_theme \
