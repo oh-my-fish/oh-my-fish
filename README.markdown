@@ -1,5 +1,7 @@
 # Oh My Fish!
 
+[![Build Status](https://travis-ci.org/bpinto/oh-my-fish.svg?branch=master)](https://travis-ci.org/bpinto/oh-my-fish)
+
 ### Why?
   Developing on a shell should be a pleasure. Our goal is to help developers that don't want to spend time configuring their own computer to spend time doing what they want.
 
