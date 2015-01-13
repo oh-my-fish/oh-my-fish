@@ -102,11 +102,6 @@ function _prepend_tree -d "Add a dependency tree to the Fish path."
       printf "%s\n" $dir
     end
 
-    # Do not add test/spec files to function path.
-    if contains -- (basename $dir) "test" "tests" "spec"
-      continue
-    end
-
     # Prepend matched directory to the the global fish function path.
     # Note path duplicates are already handled by _prepend_path.
     _prepend_path $dir -d fish_function_path

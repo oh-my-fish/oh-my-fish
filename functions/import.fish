@@ -12,7 +12,8 @@
 # NOTES
 #      $fish_path and $fish_custom point to oh-my-fish home and the user
 #      dotfiles folder respectively. Both globals are usually configured
-#      in ~/.config/fish/config.fish
+#      in ~/.config/fish/config.fish. Also, import is clever enough to
+#      skip directories with *.spec.fish files.
 #
 # EXAMPLES
 #      import plugins/<plugin>
@@ -25,14 +26,17 @@
 #      functions/_prepend_path.fish
 #      functions/_prepend_tree.fish
 #
-# v.0.1.0
+# v.0.1.1
 #/
 function import -d "Load libraries, plugins, themes, etc."
+  # Do not add spec files to function path.
+  set -l skip_spec \*.fish -a ! \*.spec.fish
+
   for library in $argv
     # Prepend plugins, themes and completions, traversing library
     # trees and prepending directories with fish code.
-    _prepend_tree $fish_path/$library
-    _prepend_tree $fish_custom/$library
+    _prepend_tree $fish_path/$library     $skip_spec
+    _prepend_tree $fish_custom/$library   $skip_spec
     _prepend_path $fish_path/$library/completions -d fish_complete_path
 
     # Set path to load files.
