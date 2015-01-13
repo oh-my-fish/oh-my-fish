@@ -6,8 +6,8 @@
 #          <condition>
 #            --to-be-false      exit status is falsy
 #            --to-be-true       exit status is truthy
-#            --to-contain       <actual> value exists in <expected> list
-#            --to-no-contain    <actual> value does not exist in <expected> list
+#            --to-contain       <actual> values exist in <expected> list
+#            --to-no-contain    <actual> values does not exist in <expected> list
 #            --to-equal         <actual> value equals <expected> value
 #          <actual>
 #
@@ -29,15 +29,18 @@ function expect
     return 1
   end
 
-  set -l expected  $argv[1..-3]
-  set -l condition $argv[-2]
-  set -l actual    $argv[-1]
-  set -l result    0
+  for i in (seq (count $argv))
+    if [ (echo $argv[$i] | grep '\-\-') ] # Expectation argument found
+      set -g condition $argv[$i]
+      set -g expected  $argv[1..(math "$i - 1")]
 
-  if [ (echo "$actual" | grep '\-\-') ]
-    set expected $argv[1..-2]
-    set condition $actual
-    set actual ""
+      # No comparison required e.g. --to-be-true
+      if not [ (count $argv) = $i ]
+        set -g actual $argv[(math "$i + 1")..-1]
+      end
+
+      break
+    end
   end
 
   # Test conditions and save success/fail $status to return later.
@@ -49,9 +52,19 @@ function expect
       eval "$expected"
       test $status -eq 0
     case --to-contain
-      contains -- "$actual" $expected
+      set result 0
+      for item in $actual
+        contains -- "$item" $expected
+          or set result $status
+      end
+      test $result -eq 0
     case --to-not-contain
-      not contains -- "$actual" $expected
+      set result 0
+      for item in $actual
+        not contains -- "$item" $expected
+          or set result $status
+      end
+      test $result -eq 0
     case --to-eq\*
       test "$expected" = "$actual"
   end
