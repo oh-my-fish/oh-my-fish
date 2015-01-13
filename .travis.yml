@@ -6,4 +6,4 @@ env:
 before_install:
   - script/bootstrap.sh
 
-script: fish ./spec/oh-my-fish.spec.fish
+script: script/run-tests.fish
