@@ -1,5 +1,5 @@
 # NAME
-#   list.erase - erase items from lists
+#   list.erase - erase any items from one or more lists
 #
 # SYNOPSIS
 #   <item> [<item>...] [--from] <list>
@@ -13,10 +13,9 @@
 #   While items are basically any valid sequence of symbols, lists refer
 #   to any global variable or local variable in the scope of the calling
 #   function by name.
-#
 #/
 function -S list.erase
-  # List to erase from is last item by default.
+  # List to erase from is at last index by default.
   set -l items $argv[1..-2]
   set -l lists $argv[-1]
   if set -l index (contains -i -- --from $argv)
