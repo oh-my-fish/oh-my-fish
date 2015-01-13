@@ -5,12 +5,10 @@ function __bak_help
 end
 
 function __bak_parse_help
-  function has_help_arg
-    # non implemented
-  end
-
-  if [ (count $argv) -lt 3 ]; or has_help_arg $argv
+  if [ (count $argv) -lt 3 ]
     __bak_help $argv[1]
+  else
+    return 1
   end
 end
 
