@@ -65,7 +65,7 @@ function describe_bak -d 'Testing bak plugin'
     touch a
     cpbak a
 
-    expect (ls | sort) --to-equal (echo -e 'a' (__bak_name a) | sort)
+    expect (ls -p) --to-contain (echo 'a'\n(__bak_name a))
   end
 
   function it_copies_multiple_files
@@ -77,7 +77,7 @@ function describe_bak -d 'Testing bak plugin'
       set files_bak $files_bak (__bak_name $f)
     end
 
-    expect (ls | sort) --to-contain $files $file_bak
+    expect (ls) --to-contain $files $file_bak
   end
 
   function it_uncopies_a_single_file
@@ -86,7 +86,7 @@ function describe_bak -d 'Testing bak plugin'
     rm a
     uncpbak (ls)
 
-    expect (ls | sort) --to-equal (echo -e 'a' (__bak_name a) | sort)
+    expect (ls) --to-contain (printf 'a' (__bak_name a))
   end
 
   function it_uncopies_multiple_files
@@ -104,7 +104,7 @@ function describe_bak -d 'Testing bak plugin'
     rmdir a
     uncpbak (ls -p)
 
-    expect (ls -p | sort) --to-equal (echo -e (__bak_name a)'/' 'a/')
+    expect (ls -p) --to-contain (echo 'a/'\n(__bak_name a)'/')
   end
 end
 
