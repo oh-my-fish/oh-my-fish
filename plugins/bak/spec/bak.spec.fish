@@ -86,7 +86,7 @@ function describe_bak -d 'Testing bak plugin'
     rm a
     uncpbak (ls)
 
-    expect (ls) --to-contain (printf 'a' (__bak_name a))
+    expect (ls) --to-contain (echo 'a'\n(__bak_name a))
   end
 
   function it_uncopies_multiple_files
