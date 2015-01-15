@@ -61,10 +61,10 @@ function expect
     case --to-not-contain
       set result 0
       for item in $actual
-        not contains -- "$item" $expected
+        contains -- "$item" $expected
           or set result $status
       end
-      test $result -eq 0
+      test $result -ne 0
     case --to-eq\*
       test "$expected" = "$actual"
   end
