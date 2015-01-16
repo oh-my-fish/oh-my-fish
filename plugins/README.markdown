@@ -22,6 +22,7 @@
 * __node__ – Adds locally installed NodeJS `npm` binary executable modules to the path.
 * __percol__ – Browse your fish history with [percol](https://github.com/mooz/percol).
 * __peco__ – Browse your fish history with [peco](https://github.com/peco/peco).
+* __osx__ - Integration with Finder and iTunes.
 * __php__ – Manage phphttp server.
 * __plenv__ – [plenv](https://github.com/tokuhirom/plenv) Perl binary manager integration.
 * __pyenv__ – [Simple Python Version Management](https://github.com/yyuu/pyenv) integration.
