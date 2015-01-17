@@ -16,7 +16,7 @@
 # The installation process is split up in the following steps:
 #
 #   1. Resolve source repository to default or get from environment variable.
-#      This allows installers curl -L ..install.fish | FORK=<fork> fish in
+#      This allows installers curl -L ..install.fish | TRAVIS_REPO_SLUG=<fork> fish in
 #      order to test forks of the framework.
 #
 #   2. Check for already installed copies of Oh-My-Fish. Do not reinstall.
@@ -44,8 +44,8 @@ end
 log white "Installing Oh My Fish..."
 
 # Allow installers to specify the source repository.
-if not set -q FORK
-  set FORK bpinto
+if not set -q TRAVIS_REPO_SLUG
+  set TRAVIS_REPO_SLUG bpinto/oh-my-fish
 end
 
 # Abort installation if oh-my-fish is already installed.
@@ -58,12 +58,12 @@ end
 # Either git clone or curl GET repository.
 log blue "Cloning Oh My Fish from remote repository..."
 if type git >/dev/null
-  git clone "https://github.com/$FORK/oh-my-fish.git" $fish_path
+  git clone "https://github.com/$TRAVIS_REPO_SLUG.git" $fish_path
 else
   log yellow "Install git to pull Oh-My-Fish updates"
   log white "Downloading remote zip from Github..."
-  
-  if curl -sLo $fish_path.zip "https://github.com/$FORK/oh-my-fish/archive/master.zip"
+
+  if curl -sLo $fish_path.zip "https://github.com/$TRAVIS_REPO_SLUG/archive/master.zip"
     unzip -q $fish_path.zip
     mv "oh-my-fish-master" $fish_path
       and log green "Oh-My-Fish succesfully downloaded and extracted to $fish_path"
