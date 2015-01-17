@@ -16,13 +16,13 @@ function describe_oh_my_fish
   function it_has_a_default_custom_directory
     set -e fish_custom
     load_oh_my_fish
-    expect $fish_custom --to-eq "$HOME/.oh-my-fish/custom"
+    expect $fish_custom --to-equal "$HOME/.oh-my-fish/custom"
   end
 
   function it_allows_the_custom_folder_location_to_be_customized
     set -g fish_custom /tmp
     load_oh_my_fish
-    expect $fish_custom --to-eq '/tmp'
+    expect $fish_custom --to-equal '/tmp'
   end
 
   function it_loads_all_custom_files
@@ -30,7 +30,7 @@ function describe_oh_my_fish
     echo 'set -gx TEST_LOAD_CUSTOM_FILE file_loaded' > $fish_custom/test.load
 
     load_oh_my_fish
-    expect $TEST_LOAD_CUSTOM_FILE --to-eq 'file_loaded'
+    expect $TEST_LOAD_CUSTOM_FILE --to-equal 'file_loaded'
   end
 
   function it_loads_all_oh_my_fish_functions

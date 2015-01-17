@@ -78,6 +78,8 @@ function expect
       test "$expected" = "$actual"
     case --to-not-equal
       test "$expected" != "$actual"
+    case \*
+      test true = false
   end
 
   set result $status
