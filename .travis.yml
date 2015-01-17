@@ -11,3 +11,8 @@ before_install:
   - script/bootstrap.sh
 
 script: script/run-tests.fish
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change
