@@ -85,10 +85,10 @@ function expect
   set result $status
   if [ $result -eq 0 ]
     # Return a non-empty string to indicate success.
-    printf "$result"
+    set -g _spec_current_test_ouput (printf "$result")
   else
     # Return error information separated by \t and tested condition.
-    printf "%s\n" $expected \t $condition $actual
+    set -g _spec_current_test_ouput (printf "%s\n" $expected \t $condition $actual)
   end
   return $result
 end

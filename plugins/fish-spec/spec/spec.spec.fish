@@ -12,40 +12,31 @@ function describe_fish-spec
   function it_has_an_output_if_there_are_no_tests
     set -l suite "
         import plugins/fish-spec
+
         function describe_blank_suite
         end
+
         spec.run
       "
     expect (run_nested_suite $suite) --to-equal "No tests found."
   end
 
   function it_runs_all_describe_blocks
-    set -l describe_one     0 1 0
-    set -l describe_two     1 0 0
-    set -l describe_expects 1 1 0
-    set -l suites
+    set -l suite "
+        import plugins/fish-spec
 
-    for return_code_index in (seq (count $describe_one))
-      set suites $suites "
-          import plugins/fish-spec
-          function describe_blank_suite
-            function it_returns_0_1_0_1_in_that_order
-              return $describe_one[$return_code_index]
-            end
-          end
-          function describe_another_blank_suite
-            function it_returns_1_0_0_1_in_that_order
-              return $describe_two[$return_code_index]
-            end
-          end
-          spec.run
-        "
-    end
-    for index in (seq (count $suites))
-      run_nested_suite $suites[$index]
-      expect $status --to-equal $describe_expects[$index]
-        or return 1
-    end
+        function describe_blank_suite
+          echo 'first describe'
+        end
+
+        function describe_another_blank_suite
+          echo 'second describe'
+        end
+
+        spec.run
+      "
+
+    expect (run_nested_suite $suite) --to-contain-all 'first describe' 'second describe'
   end
 
   function it_runs_all_it_blocks
@@ -53,23 +44,21 @@ function describe_fish-spec
         import plugins/fish-spec
 
         function describe_suite
-          function it_is_executed
-            return 0
+          function it_a_test
+            echo 'first test'
           end
+        end
 
-          function it_is_also_executed
-            return 0
-          end
-
-          function it_is_also_executed
-            return 1
+        function describe_another_suite
+          function it_another_test
+            echo 'second test'
           end
         end
 
         spec.run
       "
-    run_nested_suite $suite
-    expect $status --to-equal 1
+
+    expect (run_nested_suite $suite) --to-contain-all 'first test' 'second test'
   end
 
   function it_adds_a_dot_for_a_successful_expectation
@@ -84,9 +73,8 @@ function describe_fish-spec
 
         spec.run
       "
-    set -l output (run_nested_suite $suite)
-    set -l dot    (echo -ne (set_color 00FF7F).)
-    expect "$output" --to-equal $dot
+
+    expect (run_nested_suite $suite) --to-equal (dot)
   end
 
   function it_adds_a_dot_for_each_successful_test
@@ -97,6 +85,7 @@ function describe_fish-spec
           function it_is_executed
             expect 'success' --to-equal 'success'
           end
+
           function it_is_executed_again
             expect 'success' --to-equal 'success'
           end
@@ -104,9 +93,8 @@ function describe_fish-spec
 
         spec.run
       "
-    set -l output (run_nested_suite $suite)
-    set -l dot    (echo -ne (set_color 00FF7F).)
-    expect "$output" --to-equal $dot$dot
+
+    expect (run_nested_suite $suite) --to-equal (dot)(dot)
   end
 
   function it_only_adds_a_dot_once_for_each_successful_test
@@ -122,9 +110,24 @@ function describe_fish-spec
 
         spec.run
       "
+
+    expect (run_nested_suite $suite) --to-equal (dot)
+  end
+
+  function it_allows_debugging_messages_to_be_echoed_inside_a_test
+    set -l suite "
+        import plugins/fish-spec
+
+        function describe_suite
+          function it_is_executed
+            echo 'I can see this'
+          end
+        end
+
+        spec.run
+      "
     set -l output (run_nested_suite $suite)
-    set -l dot    (echo -ne (set_color 00FF7F).)
-    expect "$output" --to-equal $dot
+    expect "$output" --to-contain-all 'I can see this'
   end
 end
 
@@ -143,6 +146,10 @@ function run_nested_suite -a suite
   spec.functions -re backup.
 
   return $result
+end
+
+function dot
+  echo -ne (set_color 00FF7F).
 end
 
 spec.run $argv

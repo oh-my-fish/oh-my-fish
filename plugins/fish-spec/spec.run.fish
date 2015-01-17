@@ -88,6 +88,6 @@ function spec.run
   end
 
   spec.functions -e describe_
-  
+
   return $result
 end

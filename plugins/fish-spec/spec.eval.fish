@@ -19,11 +19,16 @@ function spec.eval
   set -e argv[1]
 
   if functions -q $test
+    # Erase previous test output
+    set -e _spec_current_test_ouput
+
     # Run the test yielding control to the user defined spec.
-    set -l output (eval $test)
+    eval $test
     set result $status
+
     # Display test results.
-    spec.view $test $result $argv -- $output
+    spec.view $test $result $argv -- $_spec_current_test_ouput
   end
+
   return $result
 end
