@@ -7,13 +7,13 @@
 # OPTIONS
 #   <expected>...
 #   <condition>
-#     --to-equal         <actual> value equals <expected> value
-#     --to-not-equal     <actual> value does not equals <expected> value
+#     --to-equal             <actual> value equals <expected> value
+#     --to-not-equal         <actual> value does not equals <expected> value
 #
-#     --to-contain       <actual> values exist in <expected> list
-#     --to-not-contain   <actual> values does not exist in <expected> list
-#     --to-be-true       exit status should be truthy
-#     --to-be-false      exit status should be falsy
+#     --to-contain-all       all <actual> values exist in <expected> list
+#     --to-not-contain-all   all <actual> values does not exist in <expected> list
+#     --to-be-true           exit status should be truthy
+#     --to-be-false          exit status should be falsy
 #   <actual>...
 #
 # EXAMPLE
@@ -60,14 +60,14 @@ function expect
     case --to-be-true
       eval "$expected"
       test $status -eq 0
-    case --to-contain
+    case --to-contain-all
       set result 0
       for item in $actual
         contains -- "$item" $expected
           or set result $status
       end
       test $result -eq 0
-    case --to-not-contain
+    case --to-not-contain-all
       set result 0
       for item in $actual
         contains -- "$item" $expected

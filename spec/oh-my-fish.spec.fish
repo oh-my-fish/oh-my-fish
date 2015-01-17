@@ -37,7 +37,7 @@ function describe_oh_my_fish
     list.erase "$fish_path/functions/" --from fish_function_path
 
     load_oh_my_fish
-    expect $fish_function_path --to-contain $fish_path/functions/
+    expect $fish_function_path --to-contain-all $fish_path/functions/
   end
 
   function it_loads_all_selected_plugins
@@ -46,8 +46,8 @@ function describe_oh_my_fish
 
     set -g fish_plugins bak z
     load_oh_my_fish
-    expect $fish_function_path --to-contain $fish_path/plugins/bak
-    expect $fish_function_path --to-contain $fish_path/plugins/z
+    expect $fish_function_path --to-contain-all $fish_path/plugins/bak
+    expect $fish_function_path --to-contain-all $fish_path/plugins/z
   end
 
   function it_loads_the_selected_theme
@@ -55,7 +55,7 @@ function describe_oh_my_fish
 
     set fish_theme l
     load_oh_my_fish
-    expect $fish_function_path --to-contain $fish_path/themes/l
+    expect $fish_function_path --to-contain-all $fish_path/themes/l
   end
 
   function it_reloads_with_status_of_0

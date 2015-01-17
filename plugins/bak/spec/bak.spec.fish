@@ -65,7 +65,7 @@ function describe_bak_plugin
     touch a
     cpbak a
 
-    expect (ls -p) --to-contain (echo 'a'\n(__bak_name a))
+    expect (ls -p) --to-contain-all (echo 'a'\n(__bak_name a))
   end
 
   function it_copies_multiple_files
@@ -77,7 +77,7 @@ function describe_bak_plugin
       set files_bak $files_bak (__bak_name $f)
     end
 
-    expect (ls) --to-contain $files $file_bak
+    expect (ls) --to-contain-all $files $file_bak
   end
 
   function it_undo_copies_of_a_single_file
@@ -86,7 +86,7 @@ function describe_bak_plugin
     rm a
     uncpbak (ls)
 
-    expect (ls) --to-contain (echo 'a'\n(__bak_name a))
+    expect (ls) --to-contain-all (echo 'a'\n(__bak_name a))
   end
 
   function it_undo_copies_of_multiple_files
@@ -104,7 +104,7 @@ function describe_bak_plugin
     rmdir a
     uncpbak (ls -p)
 
-    expect (ls -p) --to-contain (echo 'a/'\n(__bak_name a)'/')
+    expect (ls -p) --to-contain-all (echo 'a/'\n(__bak_name a)'/')
   end
 end
 
