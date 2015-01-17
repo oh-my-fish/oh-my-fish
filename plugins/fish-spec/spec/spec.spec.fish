@@ -108,6 +108,24 @@ function describe_fish-spec
     set -l dot    (echo -ne (set_color 00FF7F).)
     expect "$output" --to-equal $dot$dot
   end
+
+  function it_only_adds_a_dot_once_for_each_successful_test
+    set -l suite "
+        import plugins/fish-spec
+
+        function describe_suite
+          function it_is_executed
+            expect 'success' --to-equal 'success'
+            expect 'success' --to-equal 'success'
+          end
+        end
+
+        spec.run
+      "
+    set -l output (run_nested_suite $suite)
+    set -l dot    (echo -ne (set_color 00FF7F).)
+    expect "$output" --to-equal $dot
+  end
 end
 
 function run_nested_suite -a suite
