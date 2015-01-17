@@ -1,6 +1,6 @@
 import plugins/fish-spec
 
-function describe_to_be_true -d 'expect --to-be-true'
+function describe_expect_to_be_true
   function before_each
     set -e result
   end

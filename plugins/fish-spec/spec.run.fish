@@ -1,22 +1,36 @@
 # NAME
-#   spec.run - run suite of tests
+#   spec.run - run a suite of tests
 #
 # SYNOPSIS
-#   spec.run [-v --verbose]
+#   spec.run [OPTIONS]
+#
+# OPTIONS
+#   -v --verbose
+#     Print full test output.
 #
 # DESCRIPTION
 #   In order to run tests create the test file, import plugins/spec at
 #   before adding any of the functions described above and call spec.run.
 #
 # FUNCTIONS
-#   import plugins/spec
-#
 #   function before_all     Run before any tests are run.
 #   function before_each    Run before each test.
 #   function describe_*     Use to organize different specs.
 #   function it_*           Use to test your library/plugin.
 #   function after_each     Run after each test.
 #   function after_all      Run after all tests are finished.
+#
+# NOTES
+#   After each test is evaluated, the function is erased from the scope by
+#   spec.eval to guarantee that subsequent describe blocks will not end up
+#   calling the previous describe's batch of tests.
+#
+#   The fish-spec library is no different from other Oh-My-Fish plugins.
+#   Use `import plugins/fish-spec` at the top of your spec file and call
+#
+#     spec.run $argv
+#
+#   After your suite of tests.
 #
 # EXAMPLES
 #     import plugins/fish-spec
@@ -36,27 +50,44 @@
 #   Jorge Bucaran <@bucaran>
 #/
 function spec.run
-  set -l result 0 # Optimism
-  set -l output "--silent"
-  if contains -- $argv[1] -v --verbose
-    set output ""
-  end
-  # Run 1 or more topmost describe blocks causing fish to load inmediately
-  # scoped functions, i.e, those inside any invoked describe_ blocks.
-  spec.eval describe_ --depth 0 $output
-  spec.eval before_all $output
-  for test in (spec.functions "it_")
-    spec.eval before_each $output
+  set -l result  0
+  set -l tests  ""
+  set -l describes (spec.functions describe_)
 
-    # Flunk test if any single test fails, but do not stop the suite.
-    if not spec.eval $test --unit --depth 1 $output
-      set result 1
+  # Load this suite unique set of tests.
+  for describe in $describes
+    spec.eval $describe --header $argv
+    spec.eval before_all $argv
+
+    set tests (spec.functions it_)
+    set -l failed 0
+
+    for test in $tests
+      spec.eval before_each $argv
+
+      if not spec.eval $test --tab 1 $argv
+        set result 1 # Flunk!
+        set failed (math 1+$failed)
+      end
+
+      spec.eval after_each $argv
+    end
+    spec.eval after_all $argv
+
+    if contains -- $argv[1] -v --verbose
+      spec.view --report (count $tests) $failed
     end
 
-    # Make sure to run after_each even if a test fails.
-    spec.eval after_each $output
+    # Clean up methods after all tests are finished.
+    spec.functions -e it_ before_ after_
   end
-  spec.eval after_all $output
 
+  if [ -z "$describes" -o -z "$tests" ]
+    echo "No tests found."
+    return 1
+  end
+
+  spec.functions -e describe_
+  
   return $result
 end
