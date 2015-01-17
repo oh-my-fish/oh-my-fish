@@ -127,4 +127,4 @@ function run_nested_suite -a suite
   return $result
 end
 
-# spec.run $argv
+spec.run $argv
