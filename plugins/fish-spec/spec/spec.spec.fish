@@ -1,6 +1,6 @@
 import plugins/fish-spec
 
-function describe_fish-spec -d "Fish-Spec"
+function describe_fish-spec
   function it_has_an_output_if_suite_is_blank
     set -l suite "
         import plugins/fish-spec

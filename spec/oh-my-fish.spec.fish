@@ -1,6 +1,6 @@
 import plugins/fish-spec
 
-function describe_oh_my_fish -d "Oh-My-Fish test spec..."
+function describe_oh_my_fish
   function before_all
     set -g fish_custom_bak          $fish_custom
     set -g fish_plugins_bak         $fish_plugins

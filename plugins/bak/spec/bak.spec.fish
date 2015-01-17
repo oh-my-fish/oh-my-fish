@@ -1,7 +1,7 @@
 import plugins/bak
 import plugins/fish-spec
 
-function describe_bak -d 'Testing bak plugin'
+function describe_bak_plugin
   function before_all
     set -g test_dir /tmp/bak_test
     mkdir -p $test_dir
@@ -18,13 +18,13 @@ function describe_bak -d 'Testing bak plugin'
     popd
   end
 
-  function it_checks_bak_filename_pattern_is_followed
+  function it_checks_if_bak_filename_pattern_is_followed
     expect __is_bak '.ccnet.20140817_234302.bak' --to-be-true
     expect __is_bak 'file\ with\ spaces.20140817_234302.bak' --to-be-true
     expect __is_bak '.ccnet.bak' --to-be-false
   end
 
-  function it_normalizes_file_name
+  function it_normalizes_the_file_name
     expect (__bak_normalized '.ccnet.20140817_234302.bak') --to-equal '.ccnet'
     expect (__bak_normalized 'file with spaces.20140817_234302.bak') --to-equal 'file with spaces'
   end
@@ -44,7 +44,7 @@ function describe_bak -d 'Testing bak plugin'
     end
   end
 
-  function it_unmoves_a_single_file
+  function it_undo_moves_of_a_single_file
     touch a
     mvbak a
     unmvbak (ls)
@@ -52,7 +52,7 @@ function describe_bak -d 'Testing bak plugin'
     expect (ls) --to-equal a
   end
 
-  function it_unmoves_multiple_files
+  function it_undo_moves_of_multiple_files
     set files (seq 4)
     touch $files
     mvbak $files
@@ -80,7 +80,7 @@ function describe_bak -d 'Testing bak plugin'
     expect (ls) --to-contain $files $file_bak
   end
 
-  function it_uncopies_a_single_file
+  function it_undo_copies_of_a_single_file
     touch a
     cpbak a
     rm a
@@ -89,7 +89,7 @@ function describe_bak -d 'Testing bak plugin'
     expect (ls) --to-contain (echo 'a'\n(__bak_name a))
   end
 
-  function it_uncopies_multiple_files
+  function it_undo_copies_of_multiple_files
     set files (seq 4)
     touch $files
     mvbak $files
@@ -98,7 +98,7 @@ function describe_bak -d 'Testing bak plugin'
     expect (ls) --to-equal "$files"
   end
 
-  function it_uncopies_a_directory
+  function it_undo_copies_of_a_directory
     mkdir a
     cpbak a/
     rmdir a
