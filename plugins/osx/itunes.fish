@@ -1,12 +1,9 @@
 # Play, pause etc. iTunes
 
-function itunes
-  if count $argv >/dev/null
+function itunes -d "Play, pause etc. iTunes. Use -h or --help for a more detailed description."
+  if [ (count $argv) -gt 0 ]
     set -l opt $argv[1]
     switch $opt
-      case -d --description
-        echo "Play, pause etc. iTunes. Use -h or --help for a more detailed description."
-        return 0
       case launch play pause stop rewind resume quit      
       case mute
         set opt "set mute to true"      

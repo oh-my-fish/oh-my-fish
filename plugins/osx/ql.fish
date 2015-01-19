@@ -1,14 +1,9 @@
 # Quick Look a specified file
 
-function ql
-  if count $argv >/dev/null
-    switch $argv[1]
-      case -d --description
-        echo "Quick Look a specified file"
-        return 0
-    end
-  end
-  if count $argv > 0
+function ql -d "Quick Look a specified file"
+  if [ (count $argv) -gt 0 ]
     qlmanage >/dev/null ^/dev/null -p Applications/ &
+  else
+    echo "No file or folder as argument given"
   end
 end

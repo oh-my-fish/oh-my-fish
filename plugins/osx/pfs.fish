@@ -1,13 +1,6 @@
 # Return the path of the frontmost Finder window
 
-function pfs
-  if count $argv >/dev/null
-    switch $argv[1]
-      case -d --description
-        echo "Return the path of the frontmost Finder window"
-        return 0
-    end
-  end
+function pfs -d "Return the path of the frontmost Finder window"
   osascript 2>/dev/null -e '
       set output to ""
       tell application "Finder" to set the_selection to selection
