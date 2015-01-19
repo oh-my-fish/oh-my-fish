@@ -83,10 +83,12 @@ function describe_bak_plugin
   function it_undo_copies_of_a_single_file
     touch a
     cpbak a
+    set -l bak_filename (__bak_name a)
+
     rm a
     uncpbak (ls)
 
-    expect (ls) --to-contain-all (echo 'a'\n(__bak_name a))
+    expect (ls) --to-contain-all (echo 'a'\n$bak_filename)
   end
 
   function it_undo_copies_of_multiple_files
