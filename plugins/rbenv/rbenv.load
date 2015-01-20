@@ -1,15 +1,28 @@
-set -l rbenv_dir "$RBENV_ROOT"
-if [ ! $rbenv_dir ]
-  set rbenv_dir $HOME/.rbenv
+# Try to find rbenv by:
+# * Looking for $RBENV_BIN_ROOT/rbenv. This environment variable is specific to this plugin
+# * Looking for rbenv on $PATH
+# * Looking for rbenv in the user's home directory
+# When necessary, prepend the bin/ directory containing rbenv to our $PATH.
+if [ -e "$RBENV_BIN_ROOT/rbenv" ]
+  set rbenv_binary "$RBENV_BIN_ROOT/rbenv"
+  _prepend_path "$RBENV_BIN_ROOT"
+else if [ (command command -v rbenv) ]
+  set rbenv_binary (command command -v rbenv)
+else if [ -e "$HOME/.rbenv/bin/rbenv" ]
+  set rbenv_binary "$HOME/.rbenv/bin/rbenv"
+  _prepend_path "$HOME/.rbenv/bin"
+else
+  echo "Could not find rbenv. Make sure it's on your system path, in your home directory or set the RBENV_BIN_ROOT environment variable pointing to the directory where you unpacked rbenv."
+  exit 1
 end
 
 set -l supports_fish
 set -l supports_fish_version '0.4.0'
-set -l user_version (eval $rbenv_dir/bin/rbenv --version | sed -E 's/^rbenv ([[:digit:]\.]{2,}).*$/\1/g')
+set -l user_version (eval $rbenv_binary --version | sed -E 's/^rbenv ([[:digit:]\.]{2,}).*$/\1/g')
 
 if [ $user_version = $supports_fish_version ]
   set -l supports_fish_commits '56'
-  set -l user_commits (eval $rbenv_dir/bin/rbenv --version | sed -E 's/^.+-([[:digit:]]{1,}).+$/\1/g')
+  set -l user_commits (eval $rbenv_binary --version | sed -E 's/^.+-([[:digit:]]{1,}).+$/\1/g')
   if [ $user_commits -ge $supports_fish_commits ]
     set supports_fish true
   end
@@ -25,9 +38,12 @@ else
   end
 end
 
-_prepend_path $rbenv_dir/bin
 if [ $supports_fish ]
-  status --is-interactive; and source (eval $rbenv_dir/bin/rbenv init - | psub)
+  status --is-interactive; and source (eval $rbenv_binary init - | psub)
 else
-  _prepend_path $rbenv_dir/shims
+  if [ "$RBENV_ROOT" ]
+    _prepend_path "$RBENV_ROOT/shims"
+  else
+    _prepend_path "$HOME/.rbenv/shims"
+  end
 end
