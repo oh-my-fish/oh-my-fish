@@ -1,5 +1,6 @@
-# name: iden
+# fish theme: edan
 # Display the following bits on the left:
+# * User & host (hidden by default, execute `edan-remote`to show, `edan-local` to hide)
 # * Virtualenv name (if applicable, see https://github.com/adambrenecki/virtualfish)
 # * Current directory name
 # * Git branch and dirty state (if inside a git repo)
@@ -12,8 +13,17 @@ function _is_git_dirty
   echo (command git status -s --ignore-submodules=dirty ^/dev/null)
 end
 
+function _user_host
+  if [ (id -u) = "0" ];
+    echo -n (set_color -o red)
+  else
+    echo -n (set_color -o blue)
+  end
+  echo -n $USER°(hostname|cut -d . -f 1) (set color normal)
+end
+
 function fish_prompt
-  set fish_greeting ""
+  set fish_greeting
   set -l cyan (set_color -o cyan)
   set -l yellow (set_color -o yellow)
   set -l red (set_color -o red)
@@ -30,7 +40,12 @@ function fish_prompt
 
   # Display [venvname] if in a virtualenv
   if set -q VIRTUAL_ENV
-      echo -n -s (set_color -b cyan black) '[' (basename "$VIRTUAL_ENV") ']' $normal ' '
+    echo -n -s (set_color -b cyan black) '[' (basename "$VIRTUAL_ENV") ']' $normal ' '
+  end
+
+  # Display [user & host] when on remote host
+  if [ "$EDAN_HOST_TYPE" = "remote" ]
+    _user_host; echo -n ': '
   end
 
   # Display the current directory name
