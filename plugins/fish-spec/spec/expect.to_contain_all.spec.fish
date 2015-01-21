@@ -1,64 +1,52 @@
 import plugins/fish-spec
 
 function describe_expect_to_contain_all
-  function before_each
-    set -e result
-  end
-
   function it_returns_0_when_lists_are_the_same
-    set -l array 1 2
+    expect 1 2 --to-contain-all 1 2
 
-    echo (expect $array --to-contain-all $array; set result $status) >/dev/null
-    expect $result --to-equal 0
+    expect $status --to-equal 0
   end
 
   function it_returns_1_when_lists_are_different
-    set -l array 1 2
+    expect 1 2 --to-contain-all 8 9
 
-    echo (expect $array --to-contain-all 8 9; set result $status) >/dev/null
-    expect $result --to-equal 1
+    expect $status --to-equal 1
   end
 
   function it_returns_0_when_lists_have_the_same_item_but_in_different_order
-    set -l array 1 2
+    expect 1 2 --to-contain-all 2 1
 
-    echo (expect $array --to-contain-all 2 1; set result $status) >/dev/null
-    expect $result --to-equal 0
+    expect $status --to-equal 0
   end
 
   function it_returns_0_when_expected_list_contains_the_item
-    set -l array 1 2
+    expect 1 2 --to-contain-all 1
 
-    echo (expect $array --to-contain-all 1; set result $status) >/dev/null
-    expect $result --to-equal 0
+    expect $status --to-equal 0
   end
 
   function it_returns_1_when_expected_list_does_not_contain_the_item
-    set -l array 1 2
+    expect 1 2 --to-contain-all 9
 
-    echo (expect $array --to-contain-all 9; set result $status) >/dev/null
-    expect $result --to-equal 1
+    expect $status --to-equal 1
   end
 
   function it_returns_0_when_expected_list_contains_all_items
-    set -l array 1 2 3
+    expect 1 2 3 --to-contain-all 1 2
 
-    echo (expect $array --to-contain-all 1 2; set result $status) >/dev/null
-    expect $result --to-equal 0
+    expect $status --to-equal 0
   end
 
   function it_returns_1_when_expected_list_does_not_contain_all_items
-    set -l array 1 2 3
+    expect 1 2 3 --to-contain-all 1 2 9
 
-    echo (expect $array --to-contain-all 1 2 9; set result $status) >/dev/null
-    expect $result --to-equal 1
+    expect $status --to-equal 1
   end
 
   function it_returns_1_when_expected_list_contains_less_items
-    set -l array 1 2
+    expect 1 2 --to-contain-all 1 2 9
 
-    echo (expect $array --to-contain-all 1 2 9; set result $status) >/dev/null
-    expect $result --to-equal 1
+    expect $status --to-equal 1
   end
 end
 
