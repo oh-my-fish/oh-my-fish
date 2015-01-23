@@ -277,7 +277,7 @@ function getopts
           set -l tokens (printf $substring | tr : \n)
 
           # Start last to first to avoid mistaking long w/ short options.
-          for index in (seq (count $tokens) 1)
+          for index in (seq (count $tokens) -1 1)
             set -l last_token (printf $substring | tail -c1)
 
             # Find options with optional argument in long-style and
