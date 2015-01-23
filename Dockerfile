@@ -9,12 +9,11 @@ ENV FISH_PPA=nightly-master \
 
 # Cache script folder
 ADD script /src/script
-WORKDIR /src
 
-# Install fish
-RUN ./script/bootstrap.sh
+# Install fish and oh-my-fish
+RUN /src/script/bootstrap.sh
 
-ADD . /src
+WORKDIR /root/.oh-my-fish
 
 CMD ["fish", "./script/run-tests.fish", "--verbose"]
 
