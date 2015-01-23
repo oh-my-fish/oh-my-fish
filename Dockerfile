@@ -16,4 +16,3 @@ RUN /src/script/bootstrap.sh
 WORKDIR /root/.oh-my-fish
 
 CMD ["fish", "./script/run-tests.fish", "--verbose"]
-
