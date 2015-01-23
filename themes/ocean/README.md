@@ -24,3 +24,6 @@ This theme is based loosely on [agnoster](https://gist.github.com/agnoster/37128
     set -g theme display_user yes
     set -g default_user your_default_username
     ```
+
+#### Troubleshooting in iTerm
+If you see a colored anchor icon instead of the white one, this is because your system font is lacking the anchor icon, and iTerm defaults to the Apple Emoji Font. To get the right icon, either add it to your current font, or chose a powerline font that has it (like Meslo for Powerline, available in https://github.com/powerline/fonts), and select it for your Non-ASCII font.
