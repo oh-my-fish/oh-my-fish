@@ -58,7 +58,7 @@ end
 # Either git clone or curl GET repository.
 log blue "Cloning Oh My Fish from remote repository..."
 if type git >/dev/null
-  git clone "https://github.com/$TRAVIS_REPO_SLUG.git" $fish_path
+  git clone -b $TRAVIS_BRANCH "https://github.com/$TRAVIS_REPO_SLUG.git" $fish_path
 else
   log yellow "Install git to pull Oh-My-Fish updates"
   log white "Downloading remote zip from Github..."
