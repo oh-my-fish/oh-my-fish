@@ -46,6 +46,7 @@ log white "Installing Oh My Fish..."
 # Allow installers to specify the source repository.
 if not set -q TRAVIS_REPO_SLUG
   set TRAVIS_REPO_SLUG bpinto/oh-my-fish
+  set TRAVIS_BRANCH master
 end
 
 # Abort installation if oh-my-fish is already installed.
