@@ -10,14 +10,17 @@
 * __ec2__ – Exports env variables for Amazon's EC2 management.
 * __emoji-clock__ – The current time with half hour accuracy as an emoji symbol.
 * __extract__ – Plugin to expand or extract bundled & compressed files.
+* __fish-spec__ - Unit testing as simple as fish. See the [README](fish-spec/README.markdown) for usage instructions.
 * __fry__ – Starts [fry](https://github.com/terlar/fry), a simple Ruby version manager for fish.
 * __gem__ – Ruby gem integration.
+* __getopts__ - A [Unix compliant](http://pubs.opengroup.org/onlinepubs/7908799/xbd/utilconv.html) implementation of [`getopts`](http://en.wikipedia.org/wiki/Getopts) for fish.
 * __gi__ – [gitignore.io](http://gitignore.io) CLI for fish.
 * __git-flow__ – [git-flow](https://github.com/nvie/gitflow) Completion support for git-flow.
 * __jump__ – A port of [Jeroen Janssens’ “jump” utility](http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html).
 * __local-config__ – Support per-user, per-host and per-platform custom config files.
 * __localhost__ – Opens `http://localhost:3000` (and other ports) in the default browser.
 * __mc__ – Plugin to start mc with a shell compliant (Bash).
+* __msg__ - A technicolor message printer. A colorful alternative to echo.
 * __ndenv__ – Helpers for [another node.js version manager](https://github.com/riywo/ndenv).
 * __node__ – Adds locally installed NodeJS `npm` binary executable modules to the path.
 * __percol__ – Browse your fish history with [percol](https://github.com/mooz/percol).
