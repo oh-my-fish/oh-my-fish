@@ -27,8 +27,11 @@ If you want to install it manually, keep reading.
 Enabling a new plugin or theme is as easy as it should be. Open your fish configuration file
 `~/.config/fish/config.fish` and specify the theme and the plugins you want to use.
 
-As an example, to enable rails and git plugins add this line `set fish_plugins git rails` 
+As an example, to enable rails and git plugins add this line `set fish_plugins git rails`
 to your configuration file.
+
+## Tests
+Oh-My-Fish comes fully tested via `fish-spec`, a plugin bundled with the framework. To learn how to use `fish-spec` in your own projects, check out the [usage guide](plugins/fish-spec/README.markdown).
 
 ## Customization
 
