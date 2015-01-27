@@ -1,8 +1,8 @@
 ## Gianu
 
-Original theme made by gianu for oh-my-zsh, converted to oh-my-fish by JBarberU
+Original theme made by [gianu](https://github.com/gianu) for oh-my-zsh, converted to oh-my-fish by [JBarberU](https://github.com/JBarberU)
 
-![gianu theme](http://jbarber.se/images/gianu.png)
+![gianu theme](http://static.laserkitten.se/oh-my-fish_gianu.png)
 
 
 #### Characteristics
