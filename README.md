@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/bpinto/oh-my-fish.svg?branch=master)](https://travis-ci.org/bpinto/oh-my-fish)
 
 ### Why?
-  Developing on a shell should be a pleasure. Our goal is to help developers that don't want to spend time configuring their own computer to spend time doing what they want.
+  Developing on a shell should be a pleasure. Our goal is to help developers that do not want to spend time configuring their own computer to spend time doing what they want.
 
 ### How?
   With the power of our community, we take the already awesome [fish shell][fish] to another level by creating simple-to-use plugins and themes.
@@ -13,12 +13,13 @@
 ### What?
   Oh-my-fish is a user-friendly framework for managing your fish-shell configuration. It includes optional plugins (brew, git, rails, python, node, etc) and themes.
 
-
 ## Installation
 
 Oh-my-fish is built for recent versions of the fish shell, namely "fish 2.0".
 
-    curl -L https://github.com/bpinto/oh-my-fish/raw/master/tools/install.fish | fish
+```fish
+curl -L https://github.com/bpinto/oh-my-fish/raw/master/tools/install.fish | fish
+```
 
 If you want to install it manually, keep reading.
 
@@ -29,9 +30,6 @@ Enabling a new plugin or theme is as easy as it should be. Open your fish config
 
 As an example, to enable rails and git plugins add this line `set fish_plugins git rails`
 to your configuration file.
-
-## Tests
-Oh-My-Fish comes fully tested via `fish-spec`, a plugin bundled with the framework. To learn how to use `fish-spec` in your own projects, check out the [usage guide](plugins/fish-spec/README.markdown).
 
 ## Customization
 
@@ -50,7 +48,9 @@ just add a new file (ending in .load) into the `custom/` directory.
 
 ## Send us your theme!
 
-I'm hoping to collect a bunch of themes for our command prompts. You can see existing ones in the [themes](themes/) directory.
+We are hoping to collect a bunch of themes for our command prompts. You can see existing ones in the [themes](themes/) directory.
+
+> __Note__: Theme authors, make sure to include a screenshot in your pull request.
 
 ## Switching to fish
 
@@ -84,7 +84,6 @@ Substitute /bin/bash with /bin/tcsh or /bin/zsh as appropriate.
 ## Uninstall
 
     rm -rf ~/.oh-my-fish
-
 
 ## Oh My ZSH
 

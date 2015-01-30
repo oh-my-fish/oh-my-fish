@@ -1,16 +1,11 @@
 # getopts
 > friendly [`getopts`](http://en.wikipedia.org/wiki/Getopts) for [fish](https://fishshell.com) :fish:
 
-## Install
+## Usage
 
 ```fish
-git clone https://github.com/bucaran/getopts
-mv getopts/getopts.fish custom/functions/path
+Add `getopts` to your `$fish_plugins` or import directly into your library via `import plugins/getopts`.
 ```
-
-## Tests
-
-Tests are implemented via [Oh-My-Fish](https://github.com/bpinto/oh-my-fish) spec runner _fish-spec_.
 
 ## Premise
 Every utility / function needs to handle arguments. What usually happens is that every function does all the grunt work to parse `$argv` itself, and while some patterns do tend to recur, it's different almost every time. Enter fish `getopts`.
