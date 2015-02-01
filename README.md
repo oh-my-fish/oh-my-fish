@@ -13,6 +13,7 @@
 ### What?
   Oh-my-fish is a user-friendly framework for managing your fish-shell configuration. It includes optional plugins (brew, git, rails, python, node, etc) and themes.
 
+<br>
 ## Installation
 
 Oh-my-fish is built for recent versions of the fish shell, namely "fish 2.0".
@@ -21,7 +22,7 @@ Oh-my-fish is built for recent versions of the fish shell, namely "fish 2.0".
 curl -L https://github.com/bpinto/oh-my-fish/raw/master/tools/install.fish | fish
 ```
 
-If you want to install it manually, keep reading.
+If you want to install it manually, [keep reading](#manual-installation).
 
 ## Usage
 
@@ -52,31 +53,16 @@ We are hoping to collect a bunch of themes for our command prompts. You can see 
 
 > __Note__: Theme authors, make sure to include a screenshot in your pull request.
 
-## Switching to fish
-
-If you wish to use fish as your default shell, use the following command:
-
-    grep -q '^/usr/local/bin/fish$' /etc/shells; or echo '/usr/local/bin/fish' | sudo tee -a /etc/shells
-    chsh -s /usr/local/bin/fish
-
-chsh will prompt you for your password, and change your default shell.
-
-To switch your default shell back, you can run:
-
-    chsh -s /bin/bash
-
-Substitute /bin/bash with /bin/tcsh or /bin/zsh as appropriate.
-
 ### Manual installation
 
 1. Clone the repository
-```
-    git clone git://github.com/bpinto/oh-my-fish.git ~/.oh-my-fish
+```fish
+git clone git://github.com/bpinto/oh-my-fish.git ~/.oh-my-fish
 ```
 
 2. Create a new fish config by copying the fish template we've provided.
-```
-    cp ~/.oh-my-fish/templates/config.fish ~/.config/fish/config.fish
+```fish
+cp ~/.oh-my-fish/templates/config.fish ~/.config/fish/config.fish
 ```
 
 3. Start / restart fish (just open a new terminal)
@@ -84,9 +70,3 @@ Substitute /bin/bash with /bin/tcsh or /bin/zsh as appropriate.
 ## Uninstall
 
     rm -rf ~/.oh-my-fish
-
-## Oh My ZSH
-
-This project is heavily inspired by [oh-my-zsh][oh-my-zsh]
-
-[oh-my-zsh]: https://github.com/robbyrussell/oh-my-zsh/
