@@ -6,9 +6,9 @@ set fish_theme robbyrussell
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-fish/plugins/*)
 # Custom plugins may be added to ~/.oh-my-fish/custom/plugins/
-# Example format: set fish_plugins autojump bundler
+# Example format: set fish_plugins bundler z
 
-# Path to your custom folder (default path is $FISH/custom)
+# Path to your custom folder (default path is ~/.oh-my-fish/custom)
 #set fish_custom $HOME/dotfiles/oh-my-fish
 
 # Load oh-my-fish configuration.
