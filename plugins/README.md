@@ -22,6 +22,7 @@
 * [__msg__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/msg) - A technicolor message printer. A colorful alternative to echo.
 * [__ndenv__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/ndenv) – Helpers for [another node.js version manager](https://github.com/riywo/ndenv).
 * [__node__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/node) – Adds locally installed NodeJS `npm` binary executable modules to the path.
+* [__pbcopy__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/pbcopy) – OSX's pbcopy and pbpaste for Linux.
 * [__percol__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/percol) – Browse your fish history with [percol](https://github.com/mooz/percol).
 * [__peco__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/peco) – Browse your fish history with [peco](https://github.com/peco/peco).
 * [__osx__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/osx) - Integration with Finder and iTunes.
