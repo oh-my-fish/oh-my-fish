@@ -13,7 +13,8 @@ function __check_rvm --on-variable PWD --description 'Setup rvm on directory cha
         break
       else
         if begin ; test -s ".rvmrc" ; or test -s ".ruby-version" ; or test -s ".ruby-gemset" ; or test -s ".versions.conf" ; end
-          rvm reload 1>/dev/null 2>&1
+          rvm reload 1> /dev/null 2>&1
+          rvm rvmrc load 1>/dev/null 2>&1
           break
         else
           set cwd (dirname "$cwd")
