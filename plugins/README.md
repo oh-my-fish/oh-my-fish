@@ -12,7 +12,7 @@
 * [__fish-spec__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/fish-spec) - Unit testing as simple as fish. See the [README](fish-spec/README.markdown) for usage instructions.
 * [__fry__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/fry) – Starts [fry](https://github.com/terlar/fry), a simple Ruby version manager for fish.
 * [__gem__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/gem) – Ruby gem integration.
-* [__getopts__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/getopts) [(issues)](https://github.com/bucaran/getopts) - A [Unix compliant](http://pubs.opengroup.org/onlinepubs/7908799/xbd/utilconv.html) implementation of [`getopts`](http://en.wikipedia.org/wiki/Getopts) for fish. 
+* [__getopts__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/getopts) [(issues)](https://github.com/bucaran/getopts) - A [Unix compliant](http://pubs.opengroup.org/onlinepubs/7908799/xbd/utilconv.html) implementation of [`getopts`](http://en.wikipedia.org/wiki/Getopts) for fish.
 * [__gi__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/gi) – [gitignore.io](http://gitignore.io) CLI for fish.
 * [__git-flow__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/git-flow) – [git-flow](https://github.com/nvie/gitflow) Completion support for git-flow.
 * [__jump__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/jump) – A port of [Jeroen Janssens’ “jump” utility](http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html).
@@ -36,6 +36,7 @@
 * [__rvm__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/rvm) – [RVM](http://rvm.io) Ruby version manager.
 * [__ssh__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/ssh) – ssh conservative $TERM value helper.
 * [__sublime__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/sublime) – Creates `subl` command line shortcut to launch [Sublime Text editor](http://sublimetext.com/).
+* [__tiny__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/tiny) - tap into github's git.io URL shortener.
 * [__tmux__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/tmux) – Plugin to start tmux with support for 256 colours.
 * [__vi-mode__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/vi-mode) – Basic vi key bindings emulation for fish.
 * [__xdg__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/xdg) – Setup [xdg](http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html) environment on Linux.
