@@ -1,7 +1,20 @@
 # Budspencer theme
 
-A theme for the 70s, makes fish even more powerful. It's equipped with a few
-nice functions and key bindings to speed up your workflow.
+A theme for the 70s, makes fish even more powerful. It's equipped with a hell
+of a lot of nice functions and key bindings to speed up your workflow.
+
+The philosophy behind budspencer theme:
+
+* Delimit the prompt lines clearly to the output.
+* Produce output only if it contains relevant information.
+* Show useful notifications within the prompt.
+* Equip the prompt with toggle commands in order to change its style
+  interactively.
+* Store sessions in order to make frequently used commands quickly accessible.
+* Make navigation within the directory tree as easy as possible using
+  bookmarks and a directory history without duplicates.
+* Make histories quickly accessible with menus.
+* Don't stress your eyes. Use different colors in dark and bright environments.
 
 ## Demonstration video
 
@@ -25,11 +38,12 @@ Non standard tools:
 ### General configuration
 
 The theme behaves similar to vim's airline/powerline plugins. Thus, it needs a
-[powerline font][font]. Although it works with emacs mode, it's more powerful
-with vi mode. In order to enable vi mode, execute:
+[powerline font][font].
+It's also crucial to have vi mode enabled. Thus, execute
 ```
 set -U fish_key_bindings fish_vi_key_bindings
 ```
+before enabling the theme.
 
 ### Colors
 
@@ -88,8 +102,8 @@ set -e budspencer_nogreeting
     * ⚙: there are background jobs, can be toggled with `#` to show the amount of
         background jobs
     * : no write permissions in present working directory
-    * ⚔: there are tasks scheduled due today, can be toggled with `#` to
-        show the amount of tasks
+    * ⚔: there are tasks scheduled for this week, can be toggled with `#` to
+        show the amount of weekly tasks
     * ⚑: there are appointments for today, can be toggled with `#` to
         show the amount of appointments
     * ✔: last command succeeded, can be toggled with `#` to show the status value
@@ -128,17 +142,24 @@ The following shortcuts need vi-mode:
       `short long none`); note that changes to `$budspencer_pwdstyle` keep persistant as it's
       a universal variable.
 
+![pwd style][pwdstyle]
+
 - Style of symbols can be toggled in NORMAL and in VISUAL mode with `#`
     * styles implemented:
         - `symbols` (shows status symbols)
         - `numbers` (shows numbers instead of symbols in left prompt as well as amount of changes in
           right git prompt)
 
+Note, the format is _username@hostname:pathname_. Thus, you can cut
+the whole string with your mouse and paste it into `ssh` commands.
+
 ## Quickly navigate in history of working directories
 
-The function `d` shows the history as enumerated list. Unlike fish's builtin
-`dirh`, `d` does not show any duplicates. Enter a number to jump to a directory
-within the list.
+The function `d` drops down a menu showing the history as enumerated list. Unlike
+fish's builtin `dirh`, `d` does not show any duplicates. Enter a number to jump
+to a directory within the list.
+
+![dir menu][dirmenu]
 
 The following shortcuts need vi-mode:
 - Press `H` in NORMAL mode to change present working directory to previous
@@ -148,8 +169,8 @@ The following shortcuts need vi-mode:
 
 ## Quickly navigate in command history
 
-The function `c` shows the command history as enumerated list similarly to
-the `d` function. Selections are also paste into the X clipboard. It's possible
+The function `c` drops down a menu showing the command history as enumerated list similarly to
+the `d` function. Selections are also pasted into the X clipboard. It's possible
 to load a command of a former prompt by giving the prompt line number as
 argument.
 
@@ -158,7 +179,8 @@ argument.
 A bookmark can be created with `mark`. It can be removed with `unmark`.
 Bookmarks are universal and thus persistant.
 A new shell automatically changes working directory on startup to newest bookmark.
-`m` is a function that shows the bookmarks as enumerated list equivalently to `d`.
+`m` is a function that drops down a menu showing the bookmarks as enumerated list
+equivalently to `d`.
 
 The following shortcuts need vi mode:
 - Create a bookmark for present working directory with `m` in NORMAL mode.
@@ -171,8 +193,7 @@ It makes the commandline as powerful as your editor. If `$EDITOR` is not set,
 vi is used.
 
 The following shortcut needs vi mode:
-- Type `.` in NORMAL mode or `\cv` in NORMAL/INSERT mode to edit commandline in
-  editor.
+- Type `.` in NORMAL mode to edit commandline in editor.
 
 ## Sessions
 
@@ -195,6 +216,13 @@ Just type `wt <title>`.
 
 - vi REPLACE mode, as soon as REPLACE mode is implemented within fish
 
+## Feedback
+
+Give me feedback if you ...
+* ... have ideas how I could improve budspencer.
+* ... have problems with budspencer. 
+* ... have questions concerning budspencer.
+
 [font]: https://github.com/Lokaltog/powerline-fonts
 [ranger]: http://ranger.nongnu.org/
 [taskwarrior]: http://taskwarrior.org/
@@ -203,3 +231,5 @@ Just type `wt <title>`.
 [fish-nightly]: https://github.com/fish-shell/fish-shell/wiki/Nightly-builds
 [screenshot]: https://raw.githubusercontent.com/tannhuber/media/master/budspencer.jpg
 [colors]: https://raw.githubusercontent.com/tannhuber/media/master/budspencer_replace_colors.jpg
+[dirmenu]: https://raw.githubusercontent.com/tannhuber/media/master/budspencer_dir_menu.jpg
+[pwdstyle]: https://raw.githubusercontent.com/tannhuber/media/master/budspencer_pwd_style.jpg
