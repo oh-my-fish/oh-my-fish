@@ -12,12 +12,14 @@ function tab -d 'Open the current directory (or any other directory) in a new ta
   set -l cmd ''
   set -l cdto $PWD
 
-  if test (count $argv) -gt 0 -a -d $argv[1]
-    pushd . >/dev/null
-    cd $argv[1]
-    set cdto $PWD
-    set -e argv[1]
-    popd >/dev/null
+  if test (count $argv) -gt 0
+    if test -d $argv[1]
+      pushd . >/dev/null
+      cd $argv[1]
+      set cdto $PWD
+      set -e argv[1]
+      popd >/dev/null
+    end
   end
 
   if test (count $argv) -gt 0
