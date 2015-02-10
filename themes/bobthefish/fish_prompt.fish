@@ -358,7 +358,7 @@ function __bobthefish_prompt_rubies -d 'Display current Ruby (rvm/rbenv)'
     # Don't show global ruby version...
     [ "$ruby_version" = (rbenv global) ]; and return
   end
-  [ -w "$ruby_version" ]; and return
+  [ -z "$ruby_version" ]; and return
 
   __bobthefish_start_segment $__bobthefish_ruby_red $__bobthefish_lt_grey --bold
   echo -n -s $ruby_version ' '
