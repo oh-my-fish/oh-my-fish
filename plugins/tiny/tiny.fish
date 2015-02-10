@@ -51,12 +51,6 @@
 
 import plugins/getopts
 
-set -g __GITHUB_URL         "https://github.com"
-set -g __GITHUB_USER        (git config github.user)
-
-set -g __TINY_ERR_BAD_URL   1
-set -g __TINY_ERR_BAD_INPUT 2
-
 function github.io -a url code
   if test -n "$code"
     set code -F code=$code
@@ -68,6 +62,12 @@ function github.io -a url code
 end
 
 function tiny -d "get a git.io short URL"
+  set -l __github_url         "https://github.com"
+  set -l __github_user        (git config github.user)
+
+  set -l __TINY_ERR_BAD_URL   1
+  set -l __TINY_ERR_BAD_INPUT 2
+
   while set opts (getopts ":o:open u:user: r:repo: c:code: h:help" $argv)
     switch $opts[1]
       case o
@@ -101,7 +101,7 @@ function tiny -d "get a git.io short URL"
         return $__TINY_ERR_BAD_INPUT
       end
 
-      set user $__GITHUB_USER
+      set user $__github_user
       if test -z "$user"
         echo "Specify a username via the -u option or save it to your git config."
         echo -sn (set_color ccc) "e.g., git config --global github.user"
@@ -110,7 +110,7 @@ function tiny -d "get a git.io short URL"
       end
     end
 
-    set url "$__GITHUB_URL/$user/$repo" "$code"
+    set url "$__github_url/$user/$repo" "$code"
   end
 
   set url (github.io $url)
