@@ -122,7 +122,7 @@
 #   → http://pubs.opengroup.org/onlinepubs/7908799/xbd/utilconv.html
 #
 # AUTHORS
-#   Jorge Bucaran <@bucaran>
+#   Jorge Bucaran <jbucaran@me.com>
 #/
 function getopts
   # Currently supported return success/error conditions.
@@ -154,7 +154,7 @@ function getopts
 
     # Trim option string and collect required / optional options.
     if [ -n "$__getopts_optstr" ]
-      set __getopts_optstr (printf $__getopts_optstr | tr '[:space:]' \n)
+      set __getopts_optstr (printf $__getopts_optstr | tr -s '[:space:]' \n)
 
       # Setting the first token of the option string to `:` enables
       # strict mode. This causes getopts to abort the process if an

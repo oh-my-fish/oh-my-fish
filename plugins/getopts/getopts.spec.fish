@@ -137,6 +137,14 @@ function describe_getotps -d "fish getopts"
     expect (__getopts $options $args) --to-equal \
       "xyz(777)Abc(100)longlong-req(32)long-opt(!!!)D O N E"
   end
+
+  function it_handles_multiline_option_strings
+    set -l multiline_options "a:aaa
+                              b:bbb
+                              c:ccc
+                              d:ddd"
+    expect (__getopts $multiline_options -dcbabcd) --to-equal "dcbabcd"
+  end
 end
 
 spec.run $argv
