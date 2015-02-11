@@ -201,7 +201,7 @@ function getopts
           case --\* # Skip!
           case -\*
             # Split each token into single characters with `.`
-            for char in (printf $token | cut -c2- | grep --only-matching .)
+            for char in (printf "%s" $token | cut -c2- | grep --only-matching .)
               # Do not split short option characters if this option can
               # take optional required arguments.
               if [ -z "$suspend_break" ]
@@ -269,7 +269,7 @@ function getopts
           and set -l is_long_option
 
         # Trim leading dashes and prepare to match with valid options.
-        set option (printf $option | sed 's/^-*//g')
+        set option (printf "%s" $option | sed 's/^-*//g')
 
         for substring in $__getopts_optstr
           # Split up by token separator `:`. The resulting list contains
@@ -288,7 +288,7 @@ function getopts
 
             if [ $last_token = \^ ]
               if set -q is_long_option
-                set -l option_value (printf $option | tr = \n)
+                set -l option_value (printf "%s" $option | tr = \n)
 
                 if set -q option_value[2]
                   # Check if it is a valid option match.
@@ -350,7 +350,7 @@ function getopts
                     # Check if next argument exists.
                     if set -q argv[$__getopts_index]
                       # Sanitize the option-argument.
-                      set -l value (printf $argv[$__getopts_index])
+                      set -l value (printf "%s" $argv[$__getopts_index])
                       if [ -z "$value" ]
                         # Print any non-empty list character.
                         printf "\n"
