@@ -14,6 +14,8 @@ function _git_is_dirty
 end
 
 function fish_prompt
+  set -l last_status $status
+
   set -l cyan (set_color cyan)
   set -l yellow (set_color yellow)
   set -l red (set_color red)
@@ -48,7 +50,12 @@ function fish_prompt
     echo -n -s ' · ' $git_info $normal
   end
 
+  set -l prompt_color $red
+  if test $last_status = 0
+    set prompt_color $normal
+  end
+
   # Terminate with a nice prompt char
   echo -e ''
-  echo -e -n -s '⟩ ' $normal
+  echo -e -n -s $prompt_color '⟩ ' $normal
 end
