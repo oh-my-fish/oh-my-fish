@@ -19,7 +19,7 @@ function _user_host
   else
     echo -n (set_color -o blue)
   end
-  echo -n $USER°(hostname|cut -d . -f 1) (set color normal)
+  echo -n (hostname|cut -d . -f 1)ˇ$USER (set color normal)
 end
 
 function fish_prompt
@@ -57,7 +57,7 @@ function fish_prompt
     set -l git_branch '[' (_git_branch_name) ']'
 
     if [ (_is_git_dirty) ]
-      set git_info $red $git_branch " ★"
+      set git_info $red $git_branch "×"
     else
       set git_info $green $git_branch
     end
