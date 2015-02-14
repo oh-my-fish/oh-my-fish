@@ -26,11 +26,11 @@ If you want to install it manually, [keep reading](#manual-installation).
 
 ## Usage
 
-Enabling a new plugin or theme is as easy as it should be. Open your fish configuration file
-`~/.config/fish/config.fish` and specify the theme and the plugins you want to use.
+Enabling a new plugin or theme is as easy as it should be. Open your fish configuration file `~/.config/fish/config.fish` and specify the theme and the plugins you want to use.
 
-As an example, to enable rails and git plugins add this line `set fish_plugins git rails`
-to your configuration file.
+As an example, to enable rails and git plugins add this line `set fish_plugins git rails` to your configuration file.
+
+Before setting down on a theme, you might want to have a go with all themes using our quick [theme switcher](https://github.com/bpinto/oh-my-fish/blob/master/plugins/theme/README.md) by typing `theme --help` on your shell.
 
 ## Customization
 
