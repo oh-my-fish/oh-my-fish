@@ -84,13 +84,9 @@ function _prepend_tree -d "Add a dependency tree to the Fish path."
     end
   end
 
-  # Null wildcard expansion will break the for loop even if $path is valid.
-  # $subs will become an empty list for directories without sub directories
-  # which is safe to use in the loop.
-  set -l subs $path/**/
-
-  # Traverse $path and $subs prepending only directories with matches.
-  for dir in $path $subs
+  # Traverse $path prepending only directories with matches. Excludes completions folder.
+  test -d $path
+  and for dir in (find $path \! -name "completions" -type d)
     # Use head to retrieve at least one match. Skip not found errors
     # for directories that do not exist.
     if [ -z (find "$dir" $glob -maxdepth 1 ^/dev/null | head -1) ]
