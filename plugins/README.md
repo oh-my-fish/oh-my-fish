@@ -37,6 +37,7 @@
 * [__ssh__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/ssh) – ssh conservative $TERM value helper.
 * [__sublime__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/sublime) – Creates `subl` command line shortcut to launch [Sublime Text editor](http://sublimetext.com/).
 * [__tab__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/tab) – Open the current directory (or any other directory) in a new tab.
+* [__theme__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/theme) – Quick theme switcher.
 * [__tiny__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/tiny) - tap into github's git.io URL shortener.
 * [__tmux__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/tmux) – Plugin to start tmux with support for 256 colours.
 * [__vi-mode__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/vi-mode) – Basic vi key bindings emulation for fish.
