@@ -1,6 +1,10 @@
 # These methods override the default calls to append `bundle exec` if this gem
 # is available within the context of bundler.
 #
+# You can add more bundled executables in your config.fish:
+#
+#     set bundler_plugin_execs jekyll mustache
+#
 set -l execs annotate      \
              cap           \
              capify        \
@@ -27,6 +31,10 @@ set -l execs annotate      \
              thor          \
              unicorn       \
              unicorn_rails
+
+if set -q bundler_plugin_execs
+  set execs $execs $bundler_plugin_execs
+end
 
 # Fish 2.1.1+ has support for --inherit-variable
 set -l do_eval (echo $FISH_VERSION | grep 2.1.1-)
