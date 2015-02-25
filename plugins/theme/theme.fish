@@ -63,9 +63,10 @@ function theme -d "quick theme switcher"
           set regex "\b($fish_theme)\b"
         end
         set -l color green
-        basename -a (theme.util.get.themes) \
-          | column \
-          | sed -E "s/$regex/"(set_color $color)"\1*"(set_color normal)"/"
+        for theme in (theme.util.get.themes)
+          basename $theme \
+            | sed -E "s/$regex/"(set_color $color)"\1*"(set_color normal)"/"
+        end | column
         set_color normal
 
       case -r --restore
