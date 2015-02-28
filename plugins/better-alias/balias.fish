@@ -1,6 +1,6 @@
 function balias --argument alias command
   eval 'alias $alias $command'
-  if expr match $command '^sudo '>/dev/null
+  if expr $command : '^sudo '>/dev/null
     set command (expr substr + $command 6 (expr length $command))
   end
   complete -c $alias -xa "(
