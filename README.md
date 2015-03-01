@@ -56,12 +56,12 @@ We are hoping to collect a bunch of themes for our command prompts. You can see 
 ### Manual installation
 
 1. Clone the repository
-```fish
+       ```fish
 git clone git://github.com/bpinto/oh-my-fish.git ~/.oh-my-fish
 ```
 
 2. Create a new fish config by copying the fish template we've provided.
-```fish
+       ```fish
 cp ~/.oh-my-fish/templates/config.fish ~/.config/fish/config.fish
 ```
 
