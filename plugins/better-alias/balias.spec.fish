@@ -5,6 +5,7 @@ function describe_library -d "better-alias"
 
   function after_all
     functions -e changedir
+    functions -e ls_as_root
   end
 
   function it_doesnt_fail
@@ -23,6 +24,11 @@ function describe_library -d "better-alias"
     expect test $status --to-be-true
     cd ..
     rmdir testdir
+  end
+
+  function it_chops_off_sudo
+    balias ls_as_root 'sudo ls'
+    expect test $status --to-be-true
   end
 
 end
