@@ -502,6 +502,7 @@ end
 function __budspencer_edit_commandline -d 'Open current commandline with your editor'
   commandline > $budspencer_tmpfile
   eval $EDITOR $budspencer_tmpfile
+  set -l IFS ''
   if [ -s $budspencer_tmpfile ]
     commandline (sed 's|^\s*||' $budspencer_tmpfile)
   else
