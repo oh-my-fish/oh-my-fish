@@ -11,7 +11,7 @@
 [fish]: http://fishshell.com/
 
 ### What?
-  Oh-my-fish is a user-friendly framework for managing your fish-shell configuration. It includes optional plugins (brew, git, rails, python, node, etc) and themes.
+  Oh-my-fish is a user-friendly framework for managing your fish-shell configuration. It includes optional plugins (brew, git-flow, rails, python, node, etc) and themes.
 
 <br>
 ## Installation
@@ -28,7 +28,7 @@ If you want to install it manually, [keep reading](#manual-installation).
 
 Enabling a new plugin or theme is as easy as it should be. Open your fish configuration file `~/.config/fish/config.fish` and specify the theme and the plugins you want to use.
 
-As an example, to enable rails and git plugins add this line `set fish_plugins git rails` to your configuration file.
+As an example, to enable rails and git-flow plugins add this line `set fish_plugins git-flow rails` to your configuration file.
 
 Before setting down on a theme, you might want to have a go with all themes using our quick [theme switcher](https://github.com/bpinto/oh-my-fish/blob/master/plugins/theme/README.md) by typing `theme --help` on your shell.
 
