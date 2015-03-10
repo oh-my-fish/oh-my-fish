@@ -15,7 +15,8 @@ A theme inspired by [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/blob/m
 Only if fish_theme_l_right_prompt variable is set true within config.fish
 
 ```fish
-set fish_theme_l_right_prompt true
+set theme_display_rbenv 'yes'
+set theme_display_rbenv_gemset 'yes'
 ```
 
 * Rbenv Ruby Version
