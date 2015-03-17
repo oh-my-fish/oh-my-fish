@@ -4,3 +4,5 @@ custom/*
 *.pyc
 *~
 *.sw?
+
+plugins/ta/data/*
