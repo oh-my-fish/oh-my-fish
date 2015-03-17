@@ -1,0 +1,46 @@
+set -g __ta_error            1
+set -g __ta_error_bad_input  2
+set -g __ta_error_no_tasks   3
+
+# Standalone installation.
+if set -q ta_path
+  for file in $ta_path/**
+    switch $file
+      case \*.fish
+        set -l dir (dirname $file)
+        # Skip completions and spec directories.
+        if test (basename $dir) != "completions" -a \
+                (basename $dir) != "spec"
+          if not contains -- "$dir" $fish_function_path
+            set fish_function_path "$dir" $fish_function_path
+          end
+        end
+    end
+  end
+
+# Oh-my-fish installation.
+else if set -q fish_path
+  set -g ta_path $fish_path/plugins/ta
+  # Oh-my-fish lets you import modules easily. For standalone fish
+  # installations, fish getopts is already included in the path.
+  import plugins/getopts
+else
+  # Neither $INSTALL_PATH or $fish_path exists.
+  echo "Please review the installation instructions and try again." ^&2
+  exit $__ta_error
+end
+
+set -g __ta_file_info  $ta_path/config/tafile
+set -g __ta_file_data  $ta_path/data/tasks
+
+# Regular expression used to extract tags from tasks.
+set -g __ta_regex "#\S*"
+
+# Seconds elapsed between last and current task to commit.
+set -g __ta_delta 0
+
+# Flag to track whether the undo stack is locked. Tasks are usually
+# inmutable except for the most recent task to allow simple mistake
+# correction.
+set -q __ta_undo_lock
+  or set -g __ta_undo_lock false
