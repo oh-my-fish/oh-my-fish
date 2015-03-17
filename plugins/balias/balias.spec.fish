@@ -1,7 +1,7 @@
 import plugins/fish-spec
 import plugins/balias
 
-function describe_library -d "better-alias"
+function describe_library -d "balias: better-alias"
 
   function after_all
     functions -e changedir
@@ -10,12 +10,13 @@ function describe_library -d "better-alias"
 
   function it_doesnt_fail
     balias changedir cd
-    expect test $status --to-be-true
+    expect $status --to-equal 0
   end
 
   function it_defines_an_alias
-    functions changedir
-    expect test $status --to-be-true
+    balias changedir cd
+    set -l ignore_output (functions changedir)
+    expect $status --to-equal 0
   end
 
   function you_can_use_the_alias
@@ -30,7 +31,6 @@ function describe_library -d "better-alias"
     balias ls_as_root 'sudo ls'
     expect test $status --to-be-true
   end
-
 end
 
 spec.run $argv
