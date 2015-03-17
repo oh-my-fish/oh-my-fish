@@ -8,8 +8,10 @@ function describe_ta -d "ta: to-done task manager"
     function after_all
     end
 
-    # function it_does_something
-    # end
+    function it_does_something
+      ta -h
+      expect $status --to-equal 0
+    end
 
 end
 
