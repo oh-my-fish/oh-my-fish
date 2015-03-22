@@ -1,7 +1,7 @@
 # Plugins
 * [__android-sdk__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/android-sdk) – [Android SDK](http://developer.android.com/sdk/index.html) integration.
 * [__archlinux__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/archlinux) – Provides a number of plugins to make using Arch Linux easier.
-* [__better-alias__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/better-alias) - Provide alias with auto completion.
+* [__better-alias__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/balias) - Provide alias with auto completion.
 * [__brew__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/brew) – [Homebrew](http://brew.sh/) integration.
 * [__bundler__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/bundler) – Use Ruby's [Bundler](http://bundler.io/) automatically for some commands.
 * [__ccache__](https://github.com/bpinto/oh-my-fish/tree/master/plugins/ccache) – Enable [ccache](http://ccache.samba.org/) to speed up compilation.
