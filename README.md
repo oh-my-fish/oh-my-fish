@@ -1,14 +1,10 @@
 <a name="omf"></a>
-[![Build Status](https://travis-ci.org/bpinto/oh-my-fish.svg?branch=master)](https://travis-ci.org/bpinto/oh-my-fish) ![](https://img.shields.io/badge/Framework-Oh My Fish-blue.svg?style=flat)
+[![Build Status](https://travis-ci.org/bpinto/oh-my-fish.svg?branch=master)](https://travis-ci.org/bpinto/oh-my-fish) ![](https://img.shields.io/badge/Framework-Oh My Fish-blue.svg?style=flat) ![](https://img.shields.io/cocoapods/l/AFNetworking.svg)
 # Oh My Fish!
 
 <p align="center">
 
-<b><a href="#why">Why?</a></b>
-|
-<b><a href="#how">How?</a></b>
-|
-<b><a href="#what">What?</a></b>
+<b><a href="#about">About</a></b>
 |
 <b><a href="https://github.com/bucaran/darwin/wiki/Copy-&-Paste-Recipes">Recipes</a></b>
 |
@@ -30,6 +26,8 @@
 </a>
 
 </p>
+
+## About
 
 ### Why?
   Developing on a shell should be a pleasure. Our goal is to help developers that do not want to spend time configuring their own computer to spend time doing what they want.
