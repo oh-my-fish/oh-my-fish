@@ -1,11 +1,9 @@
 <a name="omf"></a>
-# Oh My Fish!
-
-[![Build Status](https://travis-ci.org/bpinto/oh-my-fish.svg?branch=master)](https://travis-ci.org/bpinto/oh-my-fish) ![](https://img.shields.io/badge/Framework-Oh My Fish-blue.svg?style=flat)
+# Oh My Fish! [![Build Status](https://travis-ci.org/bpinto/oh-my-fish.svg?branch=master)](https://travis-ci.org/bpinto/oh-my-fish) ![](https://img.shields.io/badge/Framework-Oh My Fish-blue.svg?style=flat)
 
 <p align="center">
 
-<b><a href="#why&#63;">Why?</a></b>
+<b><a href="#why">Why?</a></b>
 |
 <b><a href="#how">How?</a></b>
 |
