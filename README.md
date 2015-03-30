@@ -1,6 +1,11 @@
+<p align="center">
+<a href="https://github.com/bpinto/oh-my-fish">
+<img width=20% src="https://cloud.githubusercontent.com/assets/958723/6883431/9beb62b0-d58b-11e4-902c-2f716859a7ad.png">
+</a>
+
+</p>
+
 <a name="omf"></a>
-[![Build Status](https://travis-ci.org/bpinto/oh-my-fish.svg?branch=master)](https://travis-ci.org/bpinto/oh-my-fish) ![](https://img.shields.io/badge/Framework-Oh My Fish-blue.svg?style=flat) ![](https://img.shields.io/cocoapods/l/AFNetworking.svg)
-# Oh My Fish!
 
 <p align="center">
 
@@ -19,13 +24,16 @@
 <b><a href="#license">License</a></b>
 </p>
 
+[![Build Status](https://travis-ci.org/bpinto/oh-my-fish.svg?branch=master)](https://travis-ci.org/bpinto/oh-my-fish) ![](https://img.shields.io/badge/Framework-Oh My Fish-blue.svg?style=flat) ![](https://img.shields.io/cocoapods/l/AFNetworking.svg)
 
-<p align="center">
-<a href="https://github.com/bpinto/oh-my-fish">
-<img width=40% src="https://cloud.githubusercontent.com/assets/958723/6883431/9beb62b0-d58b-11e4-902c-2f716859a7ad.png">
-</a>
+# Oh My Fish!
 
-</p>
+
+
+
+
+
+
 
 ## About
 
