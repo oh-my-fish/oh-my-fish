@@ -11,8 +11,6 @@
 
 <b><a href="#about">About</a></b>
 |
-<b><a href="https://github.com/bucaran/darwin/wiki/Copy-&-Paste-Recipes">Recipes</a></b>
-|
 <b><a href="#installation">Installation</a></b>
 |
 <b><a href="#usage">Usage</a></b>
