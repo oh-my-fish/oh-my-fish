@@ -7,6 +7,5 @@ function ecd
     echo $dir
   else
     echo 'cannot deduce current buffer filename.' >/dev/stderr
-    return 1
   end
 end
