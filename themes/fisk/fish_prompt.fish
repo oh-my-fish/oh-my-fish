@@ -22,7 +22,7 @@ function fish_prompt --description 'Write out the prompt'
   end
 
   if set -q VIRTUAL_ENV
-    set venv (concat " " (set_color $c_magenta) "(" (basename "$VIRTUAL_ENV") ")" (set_color normal))
+    set venv (_fisk_concat " " (set_color $c_magenta) "(" (basename "$VIRTUAL_ENV") ")" (set_color normal))
   else
     set venv ""
   end
@@ -33,24 +33,24 @@ function fish_prompt --description 'Write out the prompt'
     set ret_color $c_error
   end
 
-  set -l ret_part (concat \
+  set -l ret_part (_fisk_concat \
     (set_color $base03) '[' \
     (set_color $ret_color) $last_ret \
     (set_color $base03) ']' \
   )
 
-  set -l user_part (concat \
+  set -l user_part (_fisk_concat \
     (set_color $base01) $USER \
     (set_color $base02) @ \
     (set_color $base01) $__fish_prompt_hostname \
   )
 
   # Virtualenv, git, &c.
-  set -l context_part (concat \
+  set -l context_part (_fisk_concat \
     $__fish_prompt_cwd (prompt_pwd) $venv (set_color -o $c_yellow) (__fish_git_prompt) \
   )
 
-  set -l prompt_end (concat (set_color $base01) '➞')
+  set -l prompt_end (_fisk_concat (set_color $base01) '➞')
 
-  echo -n (concat $ret_part " " $user_part " " $context_part " " $prompt_end (set_color normal) " ")
+  echo -n (_fisk_concat $ret_part " " $user_part " " $context_part " " $prompt_end (set_color normal) " ")
 end
