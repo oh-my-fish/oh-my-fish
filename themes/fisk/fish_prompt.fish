@@ -1,5 +1,17 @@
 function fish_prompt --description 'Write out the prompt'
   set last_ret $status
+  
+  # Palette
+  set -l base01 55f
+  set -l base02 55a
+  set -l base03 777
+  
+  set -l c_error f77
+  set -l c_success 7f7
+  
+  set -l c_yellow ff5
+  set -l c_magenta f0d
+  
   # Just calculate these once, to save a few cycles when displaying the prompt
   if not set -q __fish_prompt_hostname
     set -g __fish_prompt_hostname (hostname|cut -d . -f 1)
@@ -10,41 +22,34 @@ function fish_prompt --description 'Write out the prompt'
   end
 
   if set -q VIRTUAL_ENV
-    set venv (echo -n -s " " (set_color ff00de) "(" (basename "$VIRTUAL_ENV") ")" (set_color normal))
+    set venv (concat " " (set_color $c_magenta) "(" (basename "$VIRTUAL_ENV") ")" (set_color normal))
   else
     set venv ""
   end
 
-  git branch >  /dev/null ^ /dev/null
-  if [ $status = 0 ]
-    set branch (concat (set_color -o blue) "(" (basename (git rev-parse --show-toplevel)) ")")
-  else
-    set branch ""
-  end
+  set ret_color $c_success
 
-  set ret_color 7f7
-
-  if [ $last_ret -gt 0 ]
-    set ret_color f77
+  if test $last_ret -gt 0
+    set ret_color $c_error
   end
 
   set -l ret_part (concat \
-    (set_color 777) '[' \
+    (set_color $base03) '[' \
     (set_color $ret_color) $last_ret \
-    (set_color 777) ']' \
+    (set_color $base03) ']' \
   )
 
   set -l user_part (concat \
-    (set_color 55f) $USER \
-    (set_color 55a) @ \
-    (set_color 55f) $__fish_prompt_hostname \
+    (set_color $base01) $USER \
+    (set_color $base02) @ \
+    (set_color $base01) $__fish_prompt_hostname \
   )
 
   set -l _context_part (concat \
-    "$__fish_prompt_cwd" (prompt_pwd) "$venv" (set_color -o yellow) (__fish_git_prompt) \
+    $__fish_prompt_cwd (prompt_pwd) $venv (set_color -o $c_yellow) (__fish_git_prompt) \
   )
 
-  set -l prompt_end (concat (set_color 55f) '➞')
+  set -l prompt_end (concat (set_color $base01) '➞')
 
   echo -n (concat $ret_part " " $user_part " " $_context_part " " $prompt_end (set_color normal) " ")
 end
