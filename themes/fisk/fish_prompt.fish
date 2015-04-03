@@ -9,7 +9,7 @@ function fish_prompt --description 'Write out the prompt'
     set -g __fish_prompt_cwd (set_color $fish_color_cwd)
   end
 
-   /if set -q VIRTUAL_ENV
+  if set -q VIRTUAL_ENV
     set venv (echo -n -s " " (set_color ff00de) "(" (basename "$VIRTUAL_ENV") ")" (set_color normal))
   else
     set venv ""
