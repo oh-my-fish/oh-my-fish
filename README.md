@@ -2,14 +2,13 @@
 <a href="https://github.com/bpinto/oh-my-fish">
 <img width=20% src="https://cloud.githubusercontent.com/assets/958723/6883431/9beb62b0-d58b-11e4-902c-2f716859a7ad.png">
 </a>
-
 </p>
 
 <a name="omf"></a>
 
 <p align="center">
 
-<b><a href="#about">About</a></b>
+<b><a href="#oh-my-fish">About</a></b>
 |
 <b><a href="#installation">Installation</a></b>
 |
@@ -24,16 +23,8 @@
 
 [![Build Status](https://travis-ci.org/bpinto/oh-my-fish.svg?branch=master)](https://travis-ci.org/bpinto/oh-my-fish) ![](https://img.shields.io/badge/Framework-Oh My Fish-blue.svg?style=flat) ![](https://img.shields.io/cocoapods/l/AFNetworking.svg) [![Join the chat at https://gitter.im/bpinto/oh-my-fish](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/bpinto/oh-my-fish?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+
 # Oh My Fish!
-
-
-
-
-
-
-
-
-## About
 
 ### Why?
   Developing on a shell should be a pleasure. Our goal is to help developers that do not want to spend time configuring their own computer to spend time doing what they want.
