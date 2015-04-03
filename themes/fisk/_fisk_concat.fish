@@ -1,4 +1,4 @@
-function concat
+function _fisk_concat
   for i in $argv
     echo -n $i;
   end
