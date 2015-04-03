@@ -45,11 +45,12 @@ function fish_prompt --description 'Write out the prompt'
     (set_color $base01) $__fish_prompt_hostname \
   )
 
-  set -l _context_part (concat \
+  # Virtualenv, git, &c.
+  set -l context_part (concat \
     $__fish_prompt_cwd (prompt_pwd) $venv (set_color -o $c_yellow) (__fish_git_prompt) \
   )
 
   set -l prompt_end (concat (set_color $base01) '➞')
 
-  echo -n (concat $ret_part " " $user_part " " $_context_part " " $prompt_end (set_color normal) " ")
+  echo -n (concat $ret_part " " $user_part " " $context_part " " $prompt_end (set_color normal) " ")
 end
