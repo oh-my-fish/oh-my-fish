@@ -13,6 +13,7 @@
 # You can override some default options in your config.fish:
 #
 #     set -g theme_display_git no
+#     set -g theme_display_git_untracked no
 #     set -g theme_display_hg yes
 #     set -g theme_display_virtualenv no
 #     set -g theme_display_ruby no
@@ -286,8 +287,12 @@ function __bobthefish_prompt_git -d 'Display the actual git state'
   set -l stashed (command git rev-parse --verify --quiet refs/stash >/dev/null; and echo -n '$')
   set -l ahead   (command git rev-list --left-right '@{upstream}...HEAD' ^/dev/null | awk '/>/ {a += 1} /</ {b += 1} {if (a > 0) nextfile} END {if (a > 0 && b > 0) print "±"; else if (a > 0) print "+"; else if (b > 0) print "-"}')
 
-  set -l new (command git ls-files --other --exclude-standard);
-  [ "$new" ]; and set new '…'
+  set -l new ''
+  set -l show_untracked (git config --bool bash.showUntrackedFiles)
+  if [ "$theme_display_git_untracked" != 'no' -a "$show_untracked" != 'false' ]
+    set new (command git ls-files --other --exclude-standard)
+    [ "$new" ]; and set new '…'
+  end
 
   set -l flags   "$dirty$staged$stashed$ahead$new"
   [ "$flags" ]; and set flags " $flags"
