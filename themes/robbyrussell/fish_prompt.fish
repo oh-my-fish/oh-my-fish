@@ -1,10 +1,18 @@
 # name: RobbyRussel
+#
+# You can override some default options in your config.fish:
+#   set -g theme_disable_untracked_files_dirty yes
+
 function _git_branch_name
   echo (command git symbolic-ref HEAD ^/dev/null | sed -e 's|^refs/heads/||')
 end
 
 function _is_git_dirty
-  echo (command git status -s --ignore-submodules=dirty ^/dev/null)
+  if [ "$theme_disable_untracked_files_dirty" = 'yes' ]
+    echo (command git status -s --ignore-submodules=dirty --untracked-files=no ^/dev/null)
+  else
+    echo (command git status -s --ignore-submodules=dirty ^/dev/null)
+  end
 end
 
 function fish_prompt
