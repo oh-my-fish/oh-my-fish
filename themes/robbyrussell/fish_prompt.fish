@@ -9,11 +9,11 @@ end
 
 function _is_git_dirty
   set -l show_untracked (git config --bool bash.showUntrackedFiles)
-  set dirty ''
+  set untracked ''
   if [ "$theme_display_git_untracked" = 'no' -o "$show_untracked" = 'false' ]
-    set dirty '--untracked-files=no'
+    set untracked '--untracked-files=no'
   end
-  echo (command git status -s --ignore-submodules=dirty $dirty ^/dev/null)
+  echo (command git status -s --ignore-submodules=dirty $untracked ^/dev/null)
 end
 
 function fish_prompt
