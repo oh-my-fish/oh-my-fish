@@ -46,6 +46,8 @@ Oh-my-fish is built for recent versions of the fish shell, namely "fish 2.0".
 curl -L https://github.com/bpinto/oh-my-fish/raw/master/tools/install.fish | fish
 ```
 
+**NOTE**: The installation script renames your existing `config.fish` to `config.orig`, and replaces it with [the default oh-my-fish config](https://github.com/bpinto/oh-my-fish/blob/master/templates/config.fish). If you have existing customizations to your fish config, you will need to manually include those customizations after the install.
+
 If you want to install it manually, [keep reading](#manual-installation).
 
 ## Usage
