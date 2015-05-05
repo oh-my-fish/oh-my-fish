@@ -6,11 +6,11 @@
 if [ -e "$RBENV_BIN_ROOT/rbenv" ]
   set rbenv_binary "$RBENV_BIN_ROOT/rbenv"
   _prepend_path "$RBENV_BIN_ROOT"
-else if [ (command command -v rbenv) ]
-  set rbenv_binary (command command -v rbenv)
 else if [ -e "$HOME/.rbenv/bin/rbenv" ]
   set rbenv_binary "$HOME/.rbenv/bin/rbenv"
   _prepend_path "$HOME/.rbenv/bin"
+else if [ (command command -v rbenv) ]
+  set rbenv_binary (command command -v rbenv)
 else
   echo "Could not find rbenv. Make sure it's on your system path, in your home directory or set the RBENV_BIN_ROOT environment variable pointing to the directory where you unpacked rbenv."
   exit 1
