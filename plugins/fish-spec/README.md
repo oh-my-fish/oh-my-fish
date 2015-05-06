@@ -82,7 +82,7 @@ expect $elements --to-contain-all "earth" "fire" "water" "air"
 
 * __--to-not-contain-all__ no `<actual>` values exist in `<expected>` list
 ```fish
-expect $our_planets --to-not-not-contain-all "golomo" "borg prime" "rigel" "terra"
+expect $our_planets --to-not-contain-all "golomo" "borg prime" "rigel" "terra"
 ```
 
 * __--to-be-true__ the exit status should be _truthy_
