@@ -28,32 +28,29 @@ function _is_git_dirty
   echo (command git status -s --ignore-submodules=dirty ^/dev/null)
 end
 
-function _git_ahead_count -a branch_name
-  echo (command git log origin/$branch_name..HEAD ^/dev/null | \
+function _git_ahead_count -a remote -a branch_name
+  echo (command git log $remote/$branch_name..HEAD ^/dev/null | \
     grep '^commit' | wc -l | tr -d ' ')
 end
 
-function _git_dirty_remotes -a ahead_color
+function _git_dirty_remotes -a remote_color -a ahead_color
   set current_branch (git rev-parse --abbrev-ref HEAD)
   set current_ref (git rev-parse HEAD)
 
-  set -l git_ahead_count (_git_ahead_count $current_branch)
-
-  if [ $git_ahead_count != 0 ]
-    set ahead_count "$ahead_color+$git_ahead_count$normal"
-  end
-
   for remote in (git remote)
-      # if test $remote != 'origin'
-        set remote_ref_branch "refs/remotes/$remote/$current_branch"
-        set remote_ref (git for-each-ref --format='%(objectname)' $remote_ref_branch)
-        if test "$remote_ref" != ''
-          if test "$remote_ref" != $current_ref
-            echo !
-            echo "$ahead_count"
-          end
+
+    set -l git_ahead_count (_git_ahead_count $remote $current_branch)
+
+    set remote_branch "refs/remotes/$remote/$current_branch"
+    set remote_ref (git for-each-ref --format='%(objectname)' $remote_branch)
+    if test "$remote_ref" != ''
+      if test "$remote_ref" != $current_ref
+        echo -n "$remote_color!"
+        if [ $git_ahead_count != 0 ]
+          echo -n "$ahead_color+$git_ahead_count$normal"
         end
-      # end
+      end
+    end
   end
 end
 
@@ -90,7 +87,7 @@ function fish_prompt
   if [ (_git_branch_name) ]
     set -l git_branch (_git_branch_name)
 
-    set dirty_remotes (_git_dirty_remotes $orange)
+    set dirty_remotes (_git_dirty_remotes $red $orange)
 
     if [ (_is_git_dirty) ]
       echo -n -s $gray '‹' $yellow $git_branch $red '*' $dirty_remotes $gray '›' $normal
