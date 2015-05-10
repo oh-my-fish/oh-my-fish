@@ -55,6 +55,8 @@ function _git_dirty_remotes -a remote_color -a ahead_color
 end
 
 function fish_prompt
+  set -l exit_code $status
+
   set_color -o 666
   printf '['
   set_color -o blue
@@ -72,9 +74,9 @@ function fish_prompt
 
   set_color -o 666
   if set -q SCORPHISH_GIT_INFO_ON_FIRST_LINE
-    printf "]"
+    printf ']'
   else
-    printf "]\n"
+    printf ']\n'
   end
 
   set -l gray (set_color 666)
@@ -100,18 +102,24 @@ function fish_prompt
     end
   end
 
-  set_color 060
-  if set -q SCORPHISH_GIT_INFO_ON_FIRST_LINE
-    printf "\n»"
+  if test $exit_code -ne 0
+    set arrow_colors 600 900 c00 f00
   else
-    printf " »"
+    set arrow_colors 060 090 0c0 0f0
   end
-  set_color 090
-  printf '»'
-  set_color 0c0
-  printf '»'
-  set_color 0f0
-  printf '» '
+
+  if set -q SCORPHISH_GIT_INFO_ON_FIRST_LINE
+    printf '\n'
+  else
+    printf ' '
+  end
+
+  for arrow_color in $arrow_colors
+    set_color $arrow_color
+    printf '»'
+  end
+
+  printf ' '
 
   set_color normal
 end
