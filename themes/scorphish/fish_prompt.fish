@@ -71,7 +71,11 @@ function fish_prompt
   _prompt_virtualfish
 
   set_color -o 666
-  echo ']'
+  if set -q SCORPHISH_GIT_INFO_ON_FIRST_LINE
+    printf "]"
+  else
+    printf "]\n"
+  end
 
   set -l gray (set_color 666)
   set -l cyan (set_color cyan)
@@ -97,7 +101,11 @@ function fish_prompt
   end
 
   set_color 060
-  printf ' »'
+  if set -q SCORPHISH_GIT_INFO_ON_FIRST_LINE
+    printf "\n»"
+  else
+    printf " »"
+  end
   set_color 090
   printf '»'
   set_color 0c0
