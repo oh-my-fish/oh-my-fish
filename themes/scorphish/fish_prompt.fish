@@ -57,14 +57,24 @@ end
 function fish_prompt
   set -l exit_code $status
 
+  set -l gray (set_color 666)
+  set -l cyan (set_color cyan)
+  set -l red (set_color red)
+  set -l normal (set_color normal)
+  set -l yellow (set_color ffcc00)
+  set -l orange (set_color ffb300)
+  set -l green (set_color green)
+  set -l pink (set_color ff99ff)
+  set -l dark_pink (set_color cc99ff)
+
   set_color -o 666
   printf '['
   set_color -o blue
   printf '%s' (prompt_pwd)
 
-  _prompt_rubies (set_color -o 666) (set_color -o red)
+  _prompt_rubies $gray $red
 
-  _prompt_virtualfish (set_color -o 666) (set_color -o green)
+  _prompt_virtualfish $gray $green
 
   set_color -o 666
   if set -q SCORPHISH_GIT_INFO_ON_FIRST_LINE
@@ -72,16 +82,6 @@ function fish_prompt
   else
     printf ']\n'
   end
-
-  set -l gray (set_color 666)
-  set -l cyan (set_color cyan)
-  set -l red (set_color red)
-  set -l normal (set_color normal)
-  set -l yellow (set_color ffcc00)
-  set -l orange (set_color ffb300)
-  set -l green (set_color 80ff00)
-  set -l pink (set_color ff99ff)
-  set -l dark_pink (set_color cc99ff)
 
   # Show git branch and dirty state
   if [ (_git_branch_name) ]
