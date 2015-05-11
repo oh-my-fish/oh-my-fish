@@ -1,6 +1,6 @@
 # name: scorphish
 
-function _prompt_rubies -d 'Display current Ruby (rvm/rbenv)'
+function _prompt_rubies -a sep_color -a ruby_color -d 'Display current Ruby (rvm/rbenv)'
   [ "$theme_display_ruby" = 'no' ]; and return
   set -l ruby_version
   if type rvm-prompt >/dev/null 2>&1
@@ -8,16 +8,16 @@ function _prompt_rubies -d 'Display current Ruby (rvm/rbenv)'
   else if type rbenv >/dev/null 2>&1
     set ruby_version (rbenv version-name)
     # Don't show global ruby version...
-    [ "$ruby_version" = (rbenv global) ]; and echo -n -s '--'; and return
+    [ "$ruby_version" = (rbenv global) ]; and return
   end
   [ -z "$ruby_version" ]; and return
 
-  echo -n -s $ruby_version
+  echo -n -s $sep_color '|' $ruby_color $ruby_version
 end
 
-function _prompt_virtualfish -d "Display activated virtual environment (only for virtualfish, virtualenv's activate.fish changes prompt by itself)"
-  [ "$theme_display_virtualenv" = 'no' -o -z "$VIRTUAL_ENV" ]; and echo -n -s '--'; and return
-  echo -n -s (basename "$VIRTUAL_ENV")
+function _prompt_virtualfish -a sep_color -a venv_color -d "Display activated virtual environment (only for virtualfish, virtualenv's activate.fish changes prompt by itself)"
+  [ "$theme_display_virtualenv" = 'no' -o -z "$VIRTUAL_ENV" ]; and return
+  echo -n -s $sep_color '|' $venv_color (basename "$VIRTUAL_ENV")
 end
 
 function _git_branch_name
@@ -62,15 +62,9 @@ function fish_prompt
   set_color -o blue
   printf '%s' (prompt_pwd)
 
-  set_color -o 666
-  printf '|'
-  set_color -o red
-  _prompt_rubies
+  _prompt_rubies (set_color -o 666) (set_color -o red)
 
-  set_color -o 666
-  printf '|'
-  set_color -o green
-  _prompt_virtualfish
+  _prompt_virtualfish (set_color -o 666) (set_color -o green)
 
   set_color -o 666
   if set -q SCORPHISH_GIT_INFO_ON_FIRST_LINE
