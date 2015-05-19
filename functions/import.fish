@@ -38,6 +38,7 @@ function import -d "Load libraries, plugins, themes, etc."
     _prepend_tree $fish_path/$library     $skip_spec
     _prepend_tree $fish_custom/$library   $skip_spec
     _prepend_path $fish_path/$library/completions -d fish_complete_path
+    _prepend_path $fish_custom/$library/completions -d fish_complete_path
 
     # Set path to load files.
     set -l path $library/(basename $library).load

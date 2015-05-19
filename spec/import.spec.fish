@@ -37,6 +37,11 @@ function describe_import
     import plugins/git-flow
     expect $fish_complete_path --to-contain-all $fish_path/plugins/git-flow/completions
   end
+
+  function it_adds_completion_files_for_custom_plugins_to_completion_path
+    import plugins/example
+    expect $fish_complete_path --to-contain-all $fish_custom/plugins/example/completions
+  end
 end
 
 spec.run $argv
