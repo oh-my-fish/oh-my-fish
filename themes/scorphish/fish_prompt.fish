@@ -34,8 +34,8 @@ function _git_ahead_count -a remote -a branch_name
 end
 
 function _git_dirty_remotes -a remote_color -a ahead_color
-  set current_branch (git rev-parse --abbrev-ref HEAD)
-  set current_ref (git rev-parse HEAD)
+  set current_branch (command git rev-parse --abbrev-ref HEAD ^/dev/null)
+  set current_ref (command git rev-parse HEAD ^/dev/null)
 
   for remote in (git remote)
 
