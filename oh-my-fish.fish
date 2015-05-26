@@ -9,6 +9,18 @@ if not contains $fish_path/functions/ $fish_function_path
   set fish_function_path $fish_path/functions/ $fish_function_path
 end
 
+if set -q fish_plugins
+  set_color red
+  echo '$fish_plugins usage has been deprecated. Please see https://asciinema.org/a/20802.'
+  set_color normal
+end
+
+if set -q fish_theme
+  set_color red
+  echo '$fish_theme usage has been deprecated. Please see https://asciinema.org/a/20802.'
+  set_color normal
+end
+
 # Add imported plugins, completions and themes. Customize imported
 # commands via the $fish_path/custom directory, for example create
 # a directory under $fish_path/custom/themes with the same name as
