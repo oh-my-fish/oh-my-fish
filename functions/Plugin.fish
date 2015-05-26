@@ -1,4 +1,6 @@
 function Plugin --argument-names name
+  set -g fish_plugins $fish_plugins $name
+
   if [ -e $fish_path/plugins/$name -o -e $fish_custom/plugins/$name ]
     import plugins/$name
   else
