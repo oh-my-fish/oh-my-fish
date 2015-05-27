@@ -6,7 +6,7 @@
 if [ -e "$RBENV_BIN_ROOT/rbenv" ]
   set rbenv_binary "$RBENV_BIN_ROOT/rbenv"
   _prepend_path "$RBENV_BIN_ROOT"
-else if [ (command command -v rbenv) ]
+else if [ (which command; and command command -v rbenv) ]
   set rbenv_binary (command command -v rbenv)
 else if [ -e "$HOME/.rbenv/bin/rbenv" ]
   set rbenv_binary "$HOME/.rbenv/bin/rbenv"
