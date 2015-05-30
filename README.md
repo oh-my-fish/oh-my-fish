@@ -14,6 +14,8 @@
 |
 <b><a href="#usage">Usage</a></b>
 |
+<b><a href="#upgrading-from-previous-version">Upgrading from previous version</a></b>
+|
 <b><a href="#contributing">Contributing</a></b>
 |
 <b><a href="#uninstall">Uninstall</a></b>
@@ -55,6 +57,10 @@ If you want to install it manually, [keep reading](#manual-installation).
 Open your fish configuration file `~/.config/fish/config.fish` and specify the theme and the plugins you want to use. And then run `fish install` on your terminal to install them.
 
 Before setting down on a theme, you might want to have a go with all themes using our quick [theme switcher](https://github.com/bpinto/oh-my-fish/blob/master/plugins/theme/README.md) by typing `theme --help` on your shell.
+
+## Upgrading from previous version
+
+[![asciicast](https://asciinema.org/a/20802.png)](https://asciinema.org/a/20802)
 
 ## Customization
 
