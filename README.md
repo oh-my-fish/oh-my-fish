@@ -50,7 +50,7 @@ curl -L https://github.com/bpinto/oh-my-fish/raw/master/tools/install.fish | fis
 
 **NOTE**: The installation script renames your existing `config.fish` to `config.orig`, and replaces it with [the default oh-my-fish config](https://github.com/bpinto/oh-my-fish/blob/master/templates/config.fish). If you have existing customizations to your fish config, you will need to manually include those customizations after the install.
 
-If you want to install it manually, [keep reading](#manual-installation).
+If you want to install it manually, [click here](https://github.com/bpinto/oh-my-fish/wiki/Manual-Installation).
 
 ## Usage
 
@@ -76,20 +76,6 @@ just add a new file (ending in .load) into the `custom/` directory.
 ## Contributing
 
 Create an [issue](https://github.com/bpinto/oh-my-fish/issues) linking to your repository and we will move it to the [oh-my-fish](https://github.com/oh-my-fish) organization.
-
-### Manual installation
-
-1. Clone the repository
-   ```fish
-   git clone git://github.com/bpinto/oh-my-fish.git ~/.oh-my-fish
-   ```
-
-2. Create a new fish config by copying the fish template we've provided.
-   ```fish
-   cp ~/.oh-my-fish/templates/config.fish ~/.config/fish/config.fish
-   ```
-
-3. Start / restart fish (just open a new terminal)
 
 ## Uninstall
 
