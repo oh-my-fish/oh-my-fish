@@ -45,14 +45,11 @@ Before setting down on a theme, you might want to have a go with all themes usin
 
 ## Customization
 
-If you have many functions which go well together, you can create custom plugin in the `custom/plugins/PLUGIN_NAME`
-directory and add to it as many functions as you want.
+If you have many functions which go well together, you can create custom plugin in the `custom/plugins/PLUGIN_NAME` directory and add to it as many functions as you want.
 
-If you would like to use your custom theme, move it with the same name in the `custom/themes/` directory
-and it will override the original theme in `themes/`.
+If you would like to use your custom theme, move it with the same name in the `custom/themes/` directory and it will override the original theme in `themes/`.
 
-If you just want to override any of the default behavior or add some environment variables,
-just add a new file (ending in .load) into the `custom/` directory.
+If you just want to override any of the default behavior or add some environment variables, just add a new file (ending in .load) into the `custom/` directory.
 
 ## Contributing
 
