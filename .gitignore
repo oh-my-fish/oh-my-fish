@@ -1,4 +1,6 @@
 custom/*
+plugins/*
+themes/*
 
 .DS_Store
 *.pyc
