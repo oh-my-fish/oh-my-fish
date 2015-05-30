@@ -14,7 +14,7 @@
 |
 <b><a href="#usage">Usage</a></b>
 |
-<b><a href="#send-us-your-theme">Contribute</a></b>
+<b><a href="#contributing">Contributing</a></b>
 |
 <b><a href="#uninstall">Uninstall</a></b>
 |
@@ -52,9 +52,7 @@ If you want to install it manually, [keep reading](#manual-installation).
 
 ## Usage
 
-Enabling a new plugin or theme is as easy as it should be. Open your fish configuration file `~/.config/fish/config.fish` and specify the theme and the plugins you want to use.
-
-As an example, to enable rails and git-flow plugins add this line `set fish_plugins git-flow rails` to your configuration file.
+Open your fish configuration file `~/.config/fish/config.fish` and specify the theme and the plugins you want to use. And then run `fish install` on your terminal to install them.
 
 Before setting down on a theme, you might want to have a go with all themes using our quick [theme switcher](https://github.com/bpinto/oh-my-fish/blob/master/plugins/theme/README.md) by typing `theme --help` on your shell.
 
@@ -63,21 +61,15 @@ Before setting down on a theme, you might want to have a go with all themes usin
 If you have many functions which go well together, you can create custom plugin in the `custom/plugins/PLUGIN_NAME`
 directory and add to it as many functions as you want.
 
-If you would like to override the functionality of a plugin distributed with oh-my-fish,
-create a plugin of the same name in the `custom/plugins/` directory and it will be loaded
-instead of the one shipped with oh-my-fish.
-
 If you would like to use your custom theme, move it with the same name in the `custom/themes/` directory
 and it will override the original theme in `themes/`.
 
 If you just want to override any of the default behavior or add some environment variables,
 just add a new file (ending in .load) into the `custom/` directory.
 
-## Send us your theme!
+## Contributing
 
-We are hoping to collect a bunch of themes for our command prompts. You can see existing ones in the [themes](themes/) directory.
-
-> __Note__: Theme authors, make sure to include a screenshot in your pull request.
+Create an [issue](https://github.com/bpinto/oh-my-fish/issues) linking to your repository and we will move it to the [oh-my-fish](https://github.com/oh-my-fish) organization.
 
 ### Manual installation
 
