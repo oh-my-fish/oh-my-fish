@@ -6,23 +6,6 @@
 
 <a name="omf"></a>
 
-<p align="center">
-
-<b><a href="#oh-my-fish">About</a></b>
-|
-<b><a href="#installation">Installation</a></b>
-|
-<b><a href="#usage">Usage</a></b>
-|
-<b><a href="#upgrading-from-previous-version">Upgrading from previous version</a></b>
-|
-<b><a href="#contributing">Contributing</a></b>
-|
-<b><a href="#uninstall">Uninstall</a></b>
-|
-<b><a href="#license">License</a></b>
-</p>
-
 [![Build Status](https://travis-ci.org/bpinto/oh-my-fish.svg?branch=master)](https://travis-ci.org/bpinto/oh-my-fish) ![](https://img.shields.io/badge/Framework-Oh My Fish-blue.svg?style=flat) ![](https://img.shields.io/cocoapods/l/AFNetworking.svg) [![Join the chat at https://gitter.im/bpinto/oh-my-fish](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/bpinto/oh-my-fish?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 
@@ -41,8 +24,6 @@
 
 <br>
 ## Installation
-
-Oh-my-fish is built for recent versions of the fish shell, namely "fish 2.0".
 
 ```fish
 curl -L https://github.com/bpinto/oh-my-fish/raw/master/tools/install.fish | fish
