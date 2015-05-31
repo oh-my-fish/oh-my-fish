@@ -11,6 +11,8 @@ function omf -d "Oh My Fish helper"
         omf.packages --install
       case 'update'
         omf.packages --update
+      case 'list' 'ls'
+        omf.packages --list
       case '*'
         omf.helper
     end

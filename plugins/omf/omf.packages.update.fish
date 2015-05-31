@@ -1,53 +1,52 @@
 # NAME
-#   omf.packages.update - Update all plugins and themes
+#   omf.packages.update - Update a plugin or theme
+#
+# SYNOPSIS
+#   --plugin <plugin_name>
+#   --theme  <theme_name>
 #
 # DESCRIPTION
-#   Update all plugins and themes specified on the $fish_plugins
-#   and $fish_theme variables
+#   Update a plugin or theme
 #
-function omf.packages.update -d "Update all plugins and themes"
-  set -l installed_packages 0
-  pushd
+function omf.packages.update --argument-names type name -d "Update a plugin or theme"
+  pushd # Save current dir
 
-  # Plugins
-  for plugin in $fish_plugins
-    if [ -e $fish_path/plugins/$plugin -a -e $fish_path/plugins/$plugin/.git ]
-      omf.log -n white "Updating $plugin... "
-      echo (cd $fish_path/plugins/$plugin; and git pull --rebase > /dev/null) >/dev/null
-      omf.log green  "√"
-      set -l installed_packages 1
-    else
-      if [ -e $fish_custom/plugins/$plugin -a -e $fish_custom/plugins/$plugin/.git ]
-        omf.log -n white "Updating $plugin... "
-        echo (cd $fish_custom/plugins/$plugin; and git pull --rebase > /dev/null) >/dev/null
+  switch $type
+    case '--plugin'
+      if [ -e $fish_path/plugins/$name -a -e $fish_path/plugins/$name/.git ]
+        omf.log -n white "Updating $name "
+        echo (cd $fish_path/plugins/$name; and git pull --rebase > /dev/null) >/dev/null
         omf.log green  "√"
-        set -l installed_packages 1
+        emit omf_package_updated
       else
-        #echo "$plugin is not installed or not a git repo. Skipping."
+        if [ -e $fish_custom/plugins/$name -a -e $fish_custom/plugins/$name/.git ]
+          omf.log -n white "Updating $name "
+          echo (cd $fish_custom/plugins/$name; and git pull --rebase > /dev/null) >/dev/null
+          omf.log green  "√"
+          emit omf_package_updated
+        else
+          #echo "Plugin is not installed or not a git repo. Skipping."
+        end
       end
-    end
+    case '--theme'
+      if [ -e $fish_path/themes/$name -a -e $fish_path/themes/$name/.git ]
+        omf.log -n white "Updating $name "
+        echo (cd $fish_path/themes/$name; and git pull --rebase > /dev/null) >/dev/null
+        omf.log green  "√"
+        emit omf_package_updated
+      else
+        if [ -e $fish_custom/themes/$name -a -e $fish_custom/themes/$name/.git ]
+          omf.log -n white "Updating $name "
+          echo (cd $fish_custom/themes/$name; and git pull --rebase > /dev/null) >/dev/null
+          omf.log green  "√"
+          emit omf_package_updated
+        else
+          #echo "Theme is not installed or not a git repo. Skipping."
+        end
+      end
+    case '*'
+      omf.log red 'Unknown option'
   end
 
-  # Theme
-  if [ -e $fish_path/themes/$fish_theme -a -e $fish_path/themes/$fish_theme/.git ]
-    omf.log -n white "Updating $fish_theme... "
-    echo (cd $fish_path/themes/$fish_theme; and git pull --rebase > /dev/null) >/dev/null
-    omf.log green  "√"
-    set -l installed_packages 1
-  else
-    if [ -e $fish_custom/themes/$fish_theme -a -e $fish_custom/themes/$fish_theme/.git ]
-      omf.log -n white "Updating $fish_theme... "
-      echo (cd $fish_custom/themes/$fish_theme; and git pull --rebase > /dev/null) >/dev/null
-      omf.log green  "√"
-      set -l installed_packages 1
-    else
-      #echo "$fish_theme is not installed or not a git repo. Skipping."
-    end
-  end
-
-  if [ $installed_packages -eq 0 ]
-    omf.log green 'No plugins to update.'
-  end
-
-  popd
+  popd # Restore current dir
 end

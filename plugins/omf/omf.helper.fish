@@ -11,5 +11,6 @@ function omf.helper -d 'Prints all functions supported by Oh My Fish helper'
   omf.log normal '  Examples:'
   omf.log normal '    omf install'
   omf.log normal '    omf update'
+  omf.log normal '    omf list'
 end
 
