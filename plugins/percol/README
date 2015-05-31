@@ -1,7 +1,0 @@
-Please bind percol_select_history in your favorite key.
-
-If you'd like to bind CTRL+R
-
-function fish_user_key_bindings
-  bind \cr percol_select_history
-end
