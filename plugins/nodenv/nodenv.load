@@ -1,7 +1,0 @@
-if test -n "$NODENV_ROOT"
-  _prepend_path $NODENV_ROOT/bin
-else
-  _prepend_path $HOME/.nodenv/bin
-end
-
-status --is-interactive; and source (nodenv init - | psub)
