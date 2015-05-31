@@ -60,7 +60,17 @@ function omf.packages.report.updating -e omf_package_updating
   omf.log -n white "Updating $argv... "
 end
 
+function omf.packages.report.failed -e omf_package_install_failed -e omf_package_update_failed
+  omf.log red "✖"
+
+  set_color yellow
+  cat /tmp/oh-my-fish.clone.log
+  set_color normal
+
+  set __omf_packages_modified (expr $__omf_packages_modified + 1)
+end
+
 function omf.packages.report.finished -e omf_package_installed -e omf_package_updated
-  omf.log green  "√"
+  omf.log green "✔"
   set __omf_packages_modified (expr $__omf_packages_modified + 1)
 end

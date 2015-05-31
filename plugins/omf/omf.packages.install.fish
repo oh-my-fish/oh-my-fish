@@ -15,16 +15,26 @@ function omf.packages.install --argument-names type name -d "Install a plugin or
         # Plugin is already installed. Skipping.
       else
         emit omf_package_installing $name
-        git clone "https://github.com/oh-my-fish/plugin-$name" $fish_path/plugins/$name ^ /dev/null
-        emit omf_package_installed $name
+        git clone --quiet "https://github.com/oh-my-fish/plugin-$name" $fish_path/plugins/$name ^ /tmp/oh-my-fish.clone.log
+
+        if [ $status -eq 0 ]
+          emit omf_package_installed $name
+        else
+          emit omf_package_install_failed $name
+        end
       end
     case '--theme'
       if [ -e $fish_path/themes/$name -o -e $fish_custom/themes/$name ]
         # Theme is already installed. Skipping.
       else
         emit omf_package_installing $name
-        git clone "https://github.com/oh-my-fish/theme-$name" $fish_path/themes/$name ^ /dev/null
-        emit omf_package_installed $name
+        git clone --quiet "https://github.com/oh-my-fish/theme-$name" $fish_path/themes/$name ^ /tmp/oh-my-fish.clone.log
+
+        if [ $status -eq 0 ]
+          emit omf_package_installed $name
+        else
+          emit omf_package_install_failed $name
+        end
       end
     case '*'
       omf.log red 'Unknown option'
