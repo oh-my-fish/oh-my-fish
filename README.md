@@ -35,7 +35,7 @@ If you want to install it manually, [click here](https://github.com/bpinto/oh-my
 
 ## Usage
 
-Open your fish configuration file `~/.config/fish/config.fish` and specify the theme and the plugins you want to use. And then run `fish install` on your terminal to install them.
+Open your fish configuration file `~/.config/fish/config.fish` and specify the theme and the plugins you want to use. And then run `omf install` on your terminal to install them.
 
 Before setting down on a theme, you might want to have a go with all themes using our quick [theme switcher](https://github.com/bpinto/oh-my-fish/blob/master/plugins/theme/README.md) by typing `theme --help` on your shell.
 

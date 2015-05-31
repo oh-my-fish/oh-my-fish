@@ -1,5 +1,5 @@
 # NAME
-#   fish.log - simple log with color
+#   omf.log - simple log with color
 #
 # SYNOPSIS
 #   <string> [<string>...]
@@ -7,7 +7,7 @@
 # DESCRIPTION
 #   Simply log a message with a specified color.
 #
-function fish.log -d "Simple log with color"
+function omf.log -d "Simple log with color"
   switch $argv[1]
     case '-*'
       echo $argv[1] (set_color $argv[2])$argv[3..-1](set_color normal)

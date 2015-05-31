@@ -5,7 +5,7 @@ function Plugin --argument-names name
     import plugins/$name
   else
     set_color red
-    echo "Plugin '$name' is not installed. Run 'fish install' to download and install it."
+    echo "Plugin '$name' is not installed. Run 'omf install' to download and install it."
     set_color normal
   end
 end

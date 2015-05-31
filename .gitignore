@@ -8,3 +8,6 @@ themes/*
 *.sw?
 
 plugins/ta/data/*
+
+# Track oh-my-fish plugin
+!plugins/omf/

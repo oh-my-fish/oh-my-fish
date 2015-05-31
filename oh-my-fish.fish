@@ -28,6 +28,9 @@ end
 # repeat for plugins.
 import plugins/$fish_plugins themes/$fish_theme
 
+# Always load oh-my-fish plugin
+import plugins/omf
+
 # Source all files inside custom directory.
 for load in $fish_custom/*.load
   . $load

@@ -5,7 +5,7 @@ function Theme --argument-names name
     import themes/$name
   else
     set_color red
-    echo "Theme '$name' is not installed. Run 'fish install' to download and install it."
+    echo "Theme '$name' is not installed. Run 'omf install' to download and install it."
     set_color normal
   end
 end
