@@ -28,7 +28,7 @@ function omf.packages.install --argument-names type name -d "Install a plugin or
         # Theme is already installed. Skipping.
       else
         emit omf_package_installing $name
-        omf.git --clone "https://github.com/oh-my-fish/plugin-$name" $fish_path/themes/$name
+        omf.git --clone "https://github.com/oh-my-fish/theme-$name" $fish_path/themes/$name
 
         if [ $status -eq 0 ]
           emit omf_package_installed $name
