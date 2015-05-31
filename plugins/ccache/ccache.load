@@ -1,9 +1,0 @@
-# Use ccache for building Android
-# See: https://source.android.com/source/initializing.html#setting-up-ccache
-set -gx USE_CCACHE 1
-
-if test -n "$CCACHE_ROOT"
-  _prepend_path $CCACHE_ROOT
-else
-  _prepend_path /usr/lib/ccache/bin
-end
