@@ -1,7 +1,0 @@
-if test -n "$ANDROID_SDK_ROOT"
-  _prepend_path $ANDROID_SDK_ROOT/tools
-  _prepend_path $ANDROID_SDK_ROOT/platform-tools
-else
-  _prepend_path /opt/android-sdk/tools
-  _prepend_path /opt/android-sdk/platform-tools
-end

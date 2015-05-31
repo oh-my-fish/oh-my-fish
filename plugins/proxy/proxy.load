@@ -1,5 +1,0 @@
-# Initial proxy setup (no username/password)
-if set -q proxy_host
-  _proxy_set "http://$proxy_host"
-end
-

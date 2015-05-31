@@ -1,7 +1,0 @@
-if test -n "$PLENV_ROOT"
-  _prepend_path $PLENV_ROOT/bin
-  _prepend_path $PLENV_ROOT/shims
-else
-  _prepend_path $HOME/.plenv/bin
-  _prepend_path $HOME/.plenv/shims
-end

@@ -1,6 +1,0 @@
-
-
-set -l current_dir (dirname $argv)
-
-# add pacman related functions
-set fish_function_path $current_dir/pacman $fish_function_path

@@ -1,7 +1,0 @@
-if test -n "$PYENV_ROOT"
-  _prepend_path $PYENV_ROOT/bin
-  _prepend_path $PYENV_ROOT/shims
-else
-  _prepend_path $HOME/.pyenv/bin
-  _prepend_path $HOME/.pyenv/shims
-end

@@ -1,4 +1,0 @@
-### Main program
-_prepend_path /usr/local/share/npm/bin
-
-set PATH ./node_modules/.bin $PATH
