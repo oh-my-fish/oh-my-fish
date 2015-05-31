@@ -65,6 +65,7 @@ function omf.packages.report.failed -e omf_package_install_failed -e omf_package
 
   set_color yellow
   cat /tmp/oh-my-fish.clone.log
+  echo -e ''
   set_color normal
 
   set __omf_packages_modified (expr $__omf_packages_modified + 1)

@@ -13,6 +13,12 @@ function omf -d "Oh My Fish helper"
         omf.packages --update
       case 'list' 'ls'
         omf.packages --list
+      case 'self-update'
+        omf.git --update $fish_path
+
+        if [ $status -eq 0 ]
+          omf.log 'green' 'Oh My Fish has been successfully updated.'
+        end
       case '*'
         omf.helper
     end
