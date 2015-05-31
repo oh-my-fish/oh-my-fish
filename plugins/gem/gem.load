@@ -1,4 +1,0 @@
-if test -n "$GEM_ROOT"
-  set -gx GEM_HOME $GEM_ROOT
-  _prepend_path $GEM_ROOT/bin
-end
