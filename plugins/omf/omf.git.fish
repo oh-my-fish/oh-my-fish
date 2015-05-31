@@ -7,7 +7,7 @@ function omf.git
       git clone --quiet $repo_url $path ^ /tmp/oh-my-fish.clone.log
     case '--update'
       set -l path $argv[2]
-      return (cd $path; and git pull --rebase > /dev/null; echo $status)
+      return (cd $path; and git pull --quiet --rebase > /dev/null; echo $status)
     case '*'
       omf.log red 'Unknown option'
   end
