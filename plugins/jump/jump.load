@@ -1,5 +1,0 @@
-set -gx MARKPATH $HOME/.marks
-command mkdir -p $MARKPATH
-
-complete -c jump -f -a '(ls ~/.marks)'
-complete -c unmark -f -a '(ls ~/.marks)'
