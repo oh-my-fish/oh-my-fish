@@ -86,7 +86,7 @@ function _prepend_tree -d "Add a dependency tree to the Fish path."
 
   # Traverse $path prepending only directories with matches. Excludes completions folder.
   test -d $path
-  and for dir in (find $path \! -name "completions" -type d)
+  and for dir in (find $path ! -name "completions" ! -path "*.git*" -type d)
     # Use head to retrieve at least one match. Skip not found errors
     # for directories that do not exist.
     if [ -z (find "$dir" $glob -maxdepth 1 ^/dev/null | head -1) ]
