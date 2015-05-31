@@ -52,8 +52,12 @@ function omf.packages --argument-names options -d 'Manage all plugins and themes
   end
 end
 
-function omf.packages.report.started -e omf_package_installing -e omf_package_updating
+function omf.packages.report.installing -e omf_package_installing
   omf.log -n white "Installing $argv... "
+end
+
+function omf.packages.report.updating -e omf_package_updating
+  omf.log -n white "Updating $argv... "
 end
 
 function omf.packages.report.finished -e omf_package_installed -e omf_package_updated

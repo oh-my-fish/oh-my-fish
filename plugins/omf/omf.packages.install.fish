@@ -12,7 +12,7 @@ function omf.packages.install --argument-names type name -d "Install a plugin or
   switch $type
     case '--plugin'
       if [ -e $fish_path/plugins/$name -o -e $fish_custom/plugins/$name ]
-        #echo "$plugin is already installed. Skipping."
+        # Plugin is already installed. Skipping.
       else
         emit omf_package_installing $name
         git clone "https://github.com/oh-my-fish/plugin-$name" $fish_path/plugins/$name ^ /dev/null
@@ -20,7 +20,7 @@ function omf.packages.install --argument-names type name -d "Install a plugin or
       end
     case '--theme'
       if [ -e $fish_path/themes/$name -o -e $fish_custom/themes/$name ]
-        #echo "$fish_theme is already installed. Skipping."
+        # Theme is already installed. Skipping.
       else
         emit omf_package_installing $name
         git clone "https://github.com/oh-my-fish/theme-$name" $fish_path/themes/$name ^ /dev/null

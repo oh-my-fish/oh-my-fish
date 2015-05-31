@@ -14,34 +14,30 @@ function omf.packages.update --argument-names type name -d "Update a plugin or t
   switch $type
     case '--plugin'
       if [ -e $fish_path/plugins/$name -a -e $fish_path/plugins/$name/.git ]
-        omf.log -n white "Updating $name "
+        emit omf_package_updating $name
         echo (cd $fish_path/plugins/$name; and git pull --rebase > /dev/null) >/dev/null
-        omf.log green  "√"
-        emit omf_package_updated
+        emit omf_package_updated $name
       else
         if [ -e $fish_custom/plugins/$name -a -e $fish_custom/plugins/$name/.git ]
-          omf.log -n white "Updating $name "
+          emit omf_package_updating $name
           echo (cd $fish_custom/plugins/$name; and git pull --rebase > /dev/null) >/dev/null
-          omf.log green  "√"
-          emit omf_package_updated
+          emit omf_package_updated $name
         else
-          #echo "Plugin is not installed or not a git repo. Skipping."
+          # Plugin is not installed or not a git repo. Skipping.
         end
       end
     case '--theme'
       if [ -e $fish_path/themes/$name -a -e $fish_path/themes/$name/.git ]
-        omf.log -n white "Updating $name "
+        emit omf_package_updating $name
         echo (cd $fish_path/themes/$name; and git pull --rebase > /dev/null) >/dev/null
-        omf.log green  "√"
-        emit omf_package_updated
+        emit omf_package_updated $name
       else
         if [ -e $fish_custom/themes/$name -a -e $fish_custom/themes/$name/.git ]
-          omf.log -n white "Updating $name "
+          emit omf_package_updating $name
           echo (cd $fish_custom/themes/$name; and git pull --rebase > /dev/null) >/dev/null
-          omf.log green  "√"
-          emit omf_package_updated
+          emit omf_package_updated $name
         else
-          #echo "Theme is not installed or not a git repo. Skipping."
+          # Theme is not installed or not a git repo. Skipping.
         end
       end
     case '*'
