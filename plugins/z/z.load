@@ -1,9 +1,0 @@
-if test -z "$Z_SCRIPT_PATH"
-  set -gx Z_SCRIPT_PATH /usr/local/etc/profile.d/z.sh
-end
-
-function __check_z --on-variable PWD --description 'Setup z on directory change'
-  status --is-command-substitution; and return
-
-  bash -c "source $Z_SCRIPT_PATH; _z --add `pwd -P`"
-end
