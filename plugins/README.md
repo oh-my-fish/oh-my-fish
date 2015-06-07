@@ -16,6 +16,7 @@
 * [__getopts__](https://github.com/oh-my-fish/plugin-getopts) [(issues)](https://github.com/bucaran/getopts) - A [Unix compliant](http://pubs.opengroup.org/onlinepubs/7908799/xbd/utilconv.html) implementation of [`getopts`](http://en.wikipedia.org/wiki/Getopts) for fish.
 * [__gi__](https://github.com/oh-my-fish/plugin-gi) – [gitignore.io](http://gitignore.io) CLI for fish.
 * [__git-flow__](https://github.com/oh-my-fish/plugin-git-flow) – [git-flow](https://github.com/nvie/gitflow) Completion support for git-flow.
+* [__grc__](https://github.com/oh-my-fish/plugin-grc) – [grc](http://kassiopeia.juls.savba.sk/~garabik/software/grc.html) Colourizer for some commands.
 * [__jump__](https://github.com/oh-my-fish/plugin-jump) – A port of [Jeroen Janssens’ “jump” utility](http://jeroenjanssens.com/2013/08/16/quickly-navigate-your-filesystem-from-the-command-line.html).
 * [__local-config__](https://github.com/oh-my-fish/plugin-local-config) – Support per-user, per-host and per-platform custom config files.
 * [__localhost__](https://github.com/oh-my-fish/plugin-localhost) – Opens `http://localhost:3000` (and other ports) in the default browser.
