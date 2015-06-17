@@ -5,7 +5,7 @@ RUN apt-get -y install curl git software-properties-common
 
 # Set bootstrap script environment variables
 ENV FISH_PPA=nightly-master \
-  TRAVIS_OS_NAME=linux TRAVIS_REPO_SLUG=bpinto/oh-my-fish TRAVIS_BRANCH=master
+  TRAVIS_OS_NAME=linux TRAVIS_REPO_SLUG=oh-my-fish/oh-my-fish TRAVIS_BRANCH=master
 
 # Cache script folder
 ADD script /src/script

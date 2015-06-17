@@ -4,10 +4,10 @@
 The following guide describes how to use the `fish-spec` plugin bundled with Oh-My-Fish.
 
 ## Install
-Before you can use `fish-spec`, you need to install [Oh-My-Fish](https://github.com/bpinto/oh-my-fish).
+Before you can use `fish-spec`, you need to install [Oh-My-Fish](https://github.com/oh-my-fish/oh-my-fish).
 
 ## Usage
-Import the library into your fish file via [import](https://github.com/bpinto/oh-my-fish/blob/master/functions/import.fish).
+Import the library into your fish file via [import](https://github.com/oh-my-fish/oh-my-fish/blob/master/functions/import.fish).
 
 Inside your project's directory create a new `spec` folder and add all your _spec_ files inside. _Spec_ files are regular fish files that shall look like `*.spec.fish` and contain your tests.
 
@@ -57,7 +57,7 @@ spec.run $argv
 
 ## API
 
-As of now, there is only one method you should be aware of, [expect](https://github.com/bpinto/oh-my-fish/blob/master/plugins/fish-spec/expect.fish):
+As of now, there is only one method you should be aware of, [expect](https://github.com/oh-my-fish/oh-my-fish/blob/master/plugins/fish-spec/expect.fish):
 
 > Assert a list of expected values match an actual value/s.
 
