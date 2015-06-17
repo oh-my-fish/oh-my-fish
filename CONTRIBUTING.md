@@ -30,7 +30,7 @@ If your plugin is complex, make sure to include tests, we suggest using [fish-sp
 Make sure to include a screenshot in your pull request, but don't commit the file to git. A nifty way is too post a comment with the image and link directly to it.
 
 
-[pr]: https://github.com/bpinto/oh-my-fish/compare/
-[fish-spec]: https://github.com/bpinto/oh-my-fish/tree/master/plugins/fish-spec
+[pr]: https://github.com/oh-my-fish/oh-my-fish/compare/
+[fish-spec]: https://github.com/oh-my-fish/oh-my-fish/tree/master/plugins/fish-spec
 [commit]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
 [style]: #style-guide
