@@ -42,11 +42,15 @@ function omf.packages --argument-names options -d 'Manage all plugins and themes
       end
     case '--list'
       omf.log yellow 'Plugins: '
-      omf.log normal $fish_plugins
+      if test -n "$fish_plugins"
+        omf.log normal $fish_plugins
+      end
 
       omf.log normal ''
       omf.log yellow 'Theme: '
-      omf.log normal $fish_theme
+      if test -n "$fish_theme"
+        omf.log normal $fish_theme
+      end
     case '*'
       omf.log red 'Unknown option'
   end
