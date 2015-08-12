@@ -11,12 +11,20 @@
 #     Update all packages
 #   --list
 #     List all active packages
+#   --available-plugins
+#     List all plugins available from the oh-my-fish Github repository
+#   --available-themes
+#     List all themes available from the oh-my-fish Github repository
+#   --download-plugin [PLUGIN]
+#     Download and install PLUGIN
+#   --download-theme [THEME]
+#     Download and install THEME
 #
 # DESCRIPTION
 #   Manage all plugins and themes specified on the $fish_plugins
 #   and $fish_theme variables
 #
-function omf.packages --argument-names options -d 'Manage all plugins and themes'
+function omf.packages --argument-names options arg -d 'Manage all plugins and themes'
   set -g __omf_packages_modified 0
 
   switch $options
@@ -51,8 +59,30 @@ function omf.packages --argument-names options -d 'Manage all plugins and themes
       if test -n "$fish_theme"
         omf.log normal $fish_theme
       end
+    case '--available-plugins'
+      get_all_repos | grep "plugin-" | cut -d "-" -f 2- | sort | paste -sd ' ' -
+    case '--available-themes'
+      get_all_repos | grep "theme-"  | cut -d "-" -f 2- | sort | paste -sd ' ' -
+    case '--download-plugin'
+      omf.packages.install --plugin $arg
+    case '--download-theme'
+      omf.packages.install --theme $arg
     case '*'
       omf.log red 'Unknown option'
+  end
+end
+
+function get_all_repos
+  set url "https://api.github.com/orgs/oh-my-fish/repos"
+  set page_count (curl -sI "$url?page=1&per_page=100" | sed -nr 's/^Link:.*page=([0-9]+)&per_page=100>; rel="last".*/\1/p')
+
+  if echo $page_count | grep -vE '^[0-9]+$'
+    echo "Could not access Github API" >&2
+    exit 1
+  end
+
+  for i in (seq $page_count)
+    curl -s "$url?page=$i&per_page=100" | grep \"name\" | tr \": " " | awk '{print $2}'
   end
 end
 
