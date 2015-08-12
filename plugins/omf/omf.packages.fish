@@ -65,9 +65,9 @@ function omf.packages --argument-names options arg1 arg2 -d 'Manage all plugins 
         omf.log normal $fish_theme
       end
     case '--plugins'
-      omf.remote --plugins | paste -sd ' ' -
+      omf.remote --plugins
     case '--themes'
-      omf.remote --themes  | paste -sd ' ' -
+      omf.remote --themes
     case '*'
       omf.log red 'Unknown option'
   end
