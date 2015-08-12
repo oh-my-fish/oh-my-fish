@@ -8,7 +8,11 @@ function omf -d "Oh My Fish helper"
   if test (count $argv) -gt 0
     switch $argv[1]
       case 'install'
-        omf.packages --install
+        if test (count $argv) -gt 2
+          omf.packages --install $argv[2] $argv[3]
+        else
+          omf.packages --install
+        end
       case 'update'
         omf.packages --update
       case 'list' 'ls'
@@ -19,14 +23,10 @@ function omf -d "Oh My Fish helper"
         if [ $status -eq 0 ]
           omf.log 'green' 'Oh My Fish has been successfully updated.'
         end
-      case 'available-plugins'
-        omf.packages --available-plugins
-      case 'available-themes'
-        omf.packages --available-themes
-      case 'download-plugin'
-        omf.packages --download-plugin $argv[2]
-      case 'download-theme'
-        omf.packages --download-theme $argv[2]
+      case 'plugins'
+        omf.packages --plugins
+      case 'themes'
+        omf.packages --themes
       case '*'
         omf.helper
     end

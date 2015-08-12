@@ -10,12 +10,9 @@ function omf.helper -d 'Prints all functions supported by Oh My Fish helper'
   omf.log normal ''
   omf.log normal '  Examples:'
   omf.log normal '    omf install'
+  omf.log normal '    omf install --plugin|--theme NAME'
   omf.log normal '    omf update'
   omf.log normal '    omf list'
   omf.log normal '    omf self-update'
-  omf.log normal '    omf available-plugins'
-  omf.log normal '    omf available-themes'
-  omf.log normal '    omf download-plugin'
-  omf.log normal '    omf download-theme'
 end
 
