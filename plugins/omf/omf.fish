@@ -8,11 +8,7 @@ function omf -d "Oh My Fish helper"
   if test (count $argv) -gt 0
     switch $argv[1]
       case 'install'
-        if test (count $argv) -gt 2
-          omf.packages --install $argv[2] $argv[3]
-        else
-          omf.packages --install
-        end
+        omf.packages --install
       case 'update'
         omf.packages --update
       case 'list' 'ls'
