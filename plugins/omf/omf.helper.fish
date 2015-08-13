@@ -13,5 +13,6 @@ function omf.helper -d 'Prints all functions supported by Oh My Fish helper'
   omf.log normal '    omf update'
   omf.log normal '    omf list'
   omf.log normal '    omf self-update'
+  omf.log normal '    omf plugins'
+  omf.log normal '    omf themes'
 end
-

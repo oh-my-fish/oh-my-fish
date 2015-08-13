@@ -19,6 +19,10 @@ function omf -d "Oh My Fish helper"
         if [ $status -eq 0 ]
           omf.log 'green' 'Oh My Fish has been successfully updated.'
         end
+      case 'plugins'
+        omf.packages --plugins
+      case 'themes'
+        omf.packages --themes
       case '*'
         omf.helper
     end
