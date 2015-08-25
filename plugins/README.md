@@ -11,6 +11,7 @@
 * [__emoji-clock__](https://github.com/oh-my-fish/plugin-emoji-clock) – The current time with half hour accuracy as an emoji symbol.
 * [__extract__](https://github.com/oh-my-fish/plugin-extract) – Plugin to expand or extract bundled & compressed files.
 * [__fish-spec__](https://github.com/oh-my-fish/plugin-fish-spec) - Unit testing as simple as fish. See the [README](fish-spec/README.markdown) for usage instructions.
+* [__foreign-env__](https://github.com/oh-my-fish/plugin-foreign-env) – Run foreign applications (like nvm) and capture environment variable changes.
 * [__fry__](https://github.com/oh-my-fish/plugin-fry) – Starts [fry](https://github.com/terlar/fry), a simple Ruby version manager for fish.
 * [__gem__](https://github.com/oh-my-fish/plugin-gem) – Ruby gem integration.
 * [__getopts__](https://github.com/oh-my-fish/plugin-getopts) [(issues)](https://github.com/bucaran/getopts) - A [Unix compliant](http://pubs.opengroup.org/onlinepubs/7908799/xbd/utilconv.html) implementation of [`getopts`](http://en.wikipedia.org/wiki/Getopts) for fish.
@@ -41,6 +42,7 @@
 * [__tab__](https://github.com/oh-my-fish/plugin-tab) – Open the current directory (or any other directory) in a new tab.
 * [__theme__](https://github.com/oh-my-fish/plugin-theme) – Quick theme switcher.
 * [__tiny__](https://github.com/oh-my-fish/plugin-tiny) - tap into github's git.io URL shortener.
+* [__title__](https://github.com/oh-my-fish/plugin-title) – Change your terminal title!
 * [__tmux__](https://github.com/oh-my-fish/plugin-tmux) – Plugin to start tmux with support for 256 colours.
 * [__vi-mode__](https://github.com/oh-my-fish/plugin-vi-mode) – Basic vi key bindings emulation for fish.
 * [__xdg__](https://github.com/oh-my-fish/plugin-xdg) – Setup [xdg](http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html) environment on Linux.
