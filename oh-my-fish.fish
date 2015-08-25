@@ -9,16 +9,26 @@ if not contains $fish_path/functions/ $fish_function_path
   set fish_function_path $fish_path/functions/ $fish_function_path
 end
 
-if set -q fish_plugins
-  set_color red
-  echo '$fish_plugins usage has been deprecated. Please see https://asciinema.org/a/20802.'
-  set_color normal
-end
+if not set -q __omf_loaded
+  if set -q fish_plugins
+    set_color red
+    echo '$fish_plugins usage has been deprecated; please use the \'Plugin\' command.'
+    set_color normal
+  end
 
-if set -q fish_theme
-  set_color red
-  echo '$fish_theme usage has been deprecated. Please see https://asciinema.org/a/20802.'
-  set_color normal
+  if set -q fish_theme
+    set_color red
+    echo '$fish_theme usage has been deprecated; please use the \'Theme\' command.'
+    set_color normal
+  end
+
+  if set -q fish_plugins; or set -q fish_theme
+      set_color yellow
+      echo 'See https://asciinema.org/a/20802 for info on updating config.fish.'
+      set_color normal
+  end
+
+  set -g __omf_loaded "true"
 end
 
 # Add imported plugins, completions and themes. Customize imported
