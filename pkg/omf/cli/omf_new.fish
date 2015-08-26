@@ -23,7 +23,7 @@ function omf_new -a option name
     set -l user (git config user.name)
     test -z "$user"; and set user "{{USERNAME}}"
 
-    omf_new_from_template "$OMF_PATH/pkg/wa/templates/$option" \
+    omf_new_from_template "$OMF_PATH/pkg/omf/templates/$option" \
       $github $user $name
 
     echo (omf::em)"Switched to $dir"(omf::off)

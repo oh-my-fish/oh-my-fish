@@ -2,7 +2,7 @@ pkg/**
 !pkg/omf
 !pkg/omf/**
 
-themes/
+themes/**
 
 .DS_Store
 **/.DS_Store

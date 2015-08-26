@@ -76,7 +76,7 @@ function omf -d "Oh My Fish"
         return $OMF_INVALID_ARG
       end
 
-    case "r" "rm" "remove" "uninstall"
+    case "r" "rem" "rm" "remove" "uninstall"
       if test (count $argv) -ne 2
         echo (omf::err)"Invalid number of arguments"(omf::off) 1^&2
         echo "Usage: $_ "(omf::em)"$argv[1]"(omf::off)" <[package|theme] name>" 1^&2

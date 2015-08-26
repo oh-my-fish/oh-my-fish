@@ -13,12 +13,8 @@ function omf_remove_package
       emit uninstall_$pkg
       rm -rf $OMF_PATH/pkg/$pkg
     else if test -d $OMF_PATH/themes/$pkg
-      if test $pkg = default
-        echo (omf::err)"You can't remove the default theme"(omf::off) 1^&2
-        return $OMF_INVALID_ARG
-      end
       if test $pkg = (cat $OMF_CONFIG/theme)
-        omf_theme "default"
+        echo "" > $OMF_CONFIG/theme
       end
       rm -rf $OMF_PATH/themes/$pkg
     end
