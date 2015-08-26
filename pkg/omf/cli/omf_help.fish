@@ -5,10 +5,10 @@ function omf_help
 
   "(omf::dim)"Actions"(omf::off)"
        "(omf::em)"l"(omf::off)"ist  List local packages.
-        "(omf::em)"g"(omf::off)"et  Install one or more packages.
+    "(omf::em)"i"(omf::off)"nstall  Install one or more packages.
       "(omf::em)"t"(omf::off)"heme  List / Use themes.
      "(omf::em)"r"(omf::off)"emove  Remove a theme or package.
-     u"(omf::em)"p"(omf::off)"date  Update Oh My Fish.
+     "(omf::em)"u"(omf::off)"pdate  Update Oh My Fish.
         "(omf::em)"n"(omf::off)"ew  Create a new package from a template.
      "(omf::em)"s"(omf::off)"ubmit  Submit a package to the registry.
       "(omf::em)"q"(omf::off)"uery  Query environment variables.

@@ -52,11 +52,11 @@ function omf -d "Oh My Fish"
     case "l" "li" "lis" "lst" "list"
       omf_list_local_packages | column
 
-    case "g" "ge" "get" "install"
+    case "i" "install" "get"
       if test (count $argv) -eq 1
         omf_list_db_packages | column
       else
-        omf_get_package $argv[2..-1]
+        omf_install_package $argv[2..-1]
       end
 
     case "t" "theme"
@@ -84,7 +84,7 @@ function omf -d "Oh My Fish"
       end
       omf_remove_package $argv[2..-1]
 
-    case "p" "up" "upd" "update"
+    case "u" "up" "upd" "update"
       pushd $OMF_PATH
       echo (omf::em)"Updating Oh My Fish..."(omf::off)
       if omf_update
@@ -94,7 +94,7 @@ function omf -d "Oh My Fish"
         echo "Please open a new issue here → "(omf::em)"git.io/omf-issues"(omf::off)
       end
       omf_theme (cat $OMF_CONFIG/theme)
-      omf_get_package (omf_list_installed_packages)
+      omf_install_package (omf_list_installed_packages)
       popd
       refresh
 

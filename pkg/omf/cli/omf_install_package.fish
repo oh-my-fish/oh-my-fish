@@ -1,4 +1,4 @@
-function omf_get_package
+function omf_install_package
   for search in $argv
     if test -e $OMF_PATH/db/pkg/$search
       set target pkg/$search
