@@ -1,0 +1,16 @@
+language: c
+os:
+  - linux
+#  - osx # currently not supported
+sudo: false
+addons:
+  apt:
+    packages:
+    - tree
+    - fish
+before_script:
+  - pwd; tree -h
+  - curl -L git.io/omf | sh
+script:
+  - omf g {{NAME}}
+  - cat $OMF_PATH/pkg/{{NAME}}/test/{{NAME}}.fish

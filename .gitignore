@@ -1,13 +1,9 @@
-custom/*
-plugins/*
-themes/*
+pkg/**
+!pkg/omf
+!pkg/omf/**
+
+themes/**
+!themes/default/*
 
 .DS_Store
-*.pyc
-*~
-*.sw?
-
-plugins/ta/data/*
-
-# Track oh-my-fish plugin
-!plugins/omf/
+**/.DS_Store
