@@ -1,24 +1,13 @@
 language: c
-
 os:
   - linux
-  - osx
-
-env:
-  - FISH_PPA=nightly-master BREW_OPTIONS=--HEAD
-
-before_install:
-  - script/bootstrap.sh
-
-script: script/run-tests.fish
-
-notifications:
-  email:
-    on_success: never
-    on_failure: change
-  webhooks:
-    urls:
-      - https://webhooks.gitter.im/e/16e8638d3a0deeaf317d
-    on_success: change
-    on_failure: always
-    on_start: false
+sudo: false
+addons:
+  apt:
+    packages:
+    - tree
+    - fish
+before_script: pwd; tree -h
+script: /bin/sh bin/install
+after_script:
+  - cd ~/.config/fish; tree -h; find . -type f | xargs cat

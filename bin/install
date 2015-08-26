@@ -1,0 +1,120 @@
+#!/bin/sh
+#
+# USAGE
+#   #1: curl -L git.io/omf | sh
+#   #2: curl -L git.io/omf > install && chmod +x install && ./install
+#   #3: OMF_CUSTOM=~/.dotfiles curl -L git.io/omf | sh
+#
+# ENV
+#   XDG_DATA_HOME       Base directory (~/.local/share)
+#   XDG_CONFIG_HOME     Base configuration directory (~/.config)
+#
+#   ↑ See XDG Base Directory Specification
+#   → https://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
+#
+#   OMF_PATH          Oh My Fish directory
+#   OMF_CONFIG        Oh My Fish configuration
+#   OMF_CUSTOM        Custom dotfiles directory
+#
+#   OMF_REPO_URI      Source git repository
+#   OMF_REPO_BRANCH   Source repository default branch (master)
+#
+# FUNCTIONS
+#   die
+#   is_installed
+#   omf_create_fish_config <path/to/fish.config>
+#   omf_install
+
+test -z ${XDG_DATA_HOME+_}      && XDG_DATA_HOME="${HOME}/.local/share"
+test -z ${XDG_CONFIG_HOME+_}    && XDG_CONFIG_HOME="${HOME}/.config"
+
+test -z ${OMF_PATH+_}         && OMF_PATH="${XDG_DATA_HOME}/omf"
+test -z ${OMF_CUSTOM+_}       && OMF_CUSTOM="${HOME}/.dotfiles"
+test -z ${OMF_CONFIG+_}       && OMF_CONFIG="${XDG_CONFIG_HOME}/omf"
+
+test -z ${OMF_REPO_URI+_}     && OMF_REPO_URI="https://github.com/fish-shell/omf"
+test -z ${OMF_REPO_BRANCH+_}  && OMF_REPO_BRANCH="master"
+
+die() {
+  echo "$1" && exit 1
+}
+
+is_installed() {
+  type "$1" >/dev/null 2>&1
+}
+
+omf_create_fish_config() {
+  local fish_config_file=$1
+  mkdir -p $(dirname "${fish_config_file}")
+  touch "${fish_config_file}"
+}
+
+omf_install() {
+  echo "Resolving Oh My Fish path → ${OMF_PATH}"
+  test -d "${OMF_PATH}" && die "Existing installation detected, aborting"
+  local git_uri="$(echo ${OMF_REPO_URI} | sed 's/\.git//').git"
+
+  echo "Cloning Oh My Fish → ${git_uri}"
+  if ! git clone -q --depth 1 -b "${OMF_REPO_BRANCH}" "${git_uri}" "${OMF_PATH}"; then
+    echo "Is 'git' installed?"
+    die "Could not clone the repository → ${OMF_PATH}:${OMF_REPO_BRANCH}"
+  fi
+
+  pushd ${OMF_PATH} >/dev/null 2>&1
+
+  local git_rev=$(git rev-parse HEAD) >/dev/null 2>&1
+  local git_upstream=$(git config remote.upstream.url)
+
+  if [ -z "${git_upstream}" ]; then
+    git remote add upstream ${git_uri}
+  else
+    git remote set-url upstream ${git_uri}
+  fi
+
+  echo "Oh My Fish revision id → ${git_rev}"
+  popd >/dev/null 2>&1
+  test -z ${FISH_CONFIG+_} && FISH_CONFIG="${XDG_CONFIG_HOME}/fish"
+
+  local fish_config_file="${FISH_CONFIG}/config.fish"
+
+  if [ -e "${FISH_CONFIG}/config.fish" ]; then
+    local timestamp=$(date +%s)
+    local fish_config_bk="${FISH_CONFIG}/config.${timestamp}.copy"
+
+    echo "Found existing 'fish' configuration → ${fish_config_file}"
+    echo "Writing back-up copy → ${fish_config_bk}"
+
+    cp "${fish_config_file}" "${fish_config_bk}" >/dev/null 2>&1
+    test $? -ne 0 && die "Writing back-up copy failed, error code → ${?}"
+  else
+    omf_create_fish_config $fish_config_file
+  fi
+
+  echo "Adding Oh My Fish bootstrap → ${fish_config_file}"
+  touch ${fish_config_file} >/dev/null 2>&1
+  test ! -w ${fish_config_file} && die "Fish configuration file is not writable, aborting."
+
+
+  echo "set -g OMF_PATH $(echo "${OMF_PATH}" | sed -e "s|$HOME|\$HOME|")" > ${fish_config_file}
+  echo "set -g OMF_CUSTOM $(echo "${OMF_CUSTOM}" | sed -e "s|$HOME|\$HOME|")" >> ${fish_config_file}
+  echo "set -g OMF_CONFIG $(echo "${OMF_CONFIG}" | sed -e "s|$HOME|\$HOME|")" >> ${fish_config_file}
+  echo "source \$OMF_PATH/init.fish" >> ${fish_config_file}
+
+  if [ ! -d "${OMF_CONFIG}" ]; then
+    echo "Writing Oh My Fish configuration → ${OMF_CONFIG}"
+    mkdir -p "${OMF_CONFIG}"
+    test -f "${OMF_CONFIG}/theme"     || echo default > "${OMF_CONFIG}/theme"
+    test -f "${OMF_CONFIG}/revision"  || echo ${git_rev} > "${OMF_CONFIG}/revision"
+  fi
+}
+
+echo "Installing Oh My Fish..."
+! is_installed "fish" && die "Please install fish to continue → http://fishshell.com/"
+if omf_install; then
+  echo "Oh My Fish successfully installed."
+  cd $HOME
+  # Do not swap process if running in a CI environment.
+  [ -z ${CI+_} ] || exit 0 && exec "fish" < /dev/tty
+else
+  die "Oh My Fish couldn't install, but you can complain here → git.io/omf-issues"
+fi

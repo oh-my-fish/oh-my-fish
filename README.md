@@ -1,66 +1,247 @@
-<p align="center">
-<a href="https://github.com/oh-my-fish/oh-my-fish">
-<img width=20% src="https://cloud.githubusercontent.com/assets/958723/6883431/9beb62b0-d58b-11e4-902c-2f716859a7ad.png">
-</a>
-</p>
+
+> The [Fishshell][fishshell] Framework
+
+[![Fish Version][fish-badge]][fishshell]
+[![Build Status][travis-badge]][travis-url]
+[![License][license-badge]](#LICENSE)
 
 <a name="omf"></a>
+<br>
 
-[![Build Status](https://travis-ci.org/oh-my-fish/oh-my-fish.svg?branch=master)](https://travis-ci.org/oh-my-fish/oh-my-fish) [![](https://img.shields.io/badge/Framework-Oh My Fish-blue.svg?style=flat)](https://github.com/oh-my-fish/oh-my-fish) ![](https://img.shields.io/cocoapods/l/AFNetworking.svg) [![Join the chat at https://gitter.im/oh-my-fish/oh-my-fish](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/oh-my-fish/oh-my-fish?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+<p align="center">
+<h1 align="center">:warning: Important :warning:</h1>
+<h4 align="center">
+<a href="https://github.com/wa/wahoo">Wahoo</a> and <a href="https://github.com/oh-my-fish/oh-my-fish">Oh My Fish!</a> are now one project. See this page and <a href="FAQ.md">FAQ</a> to learn what's new.
+</h4>
+</p>
 
+<hr>
 
-# Oh My Fish!
-
-### Why?
-  Developing on a shell should be a pleasure. Our goal is to help developers that do not want to spend time configuring their own computer to spend time doing what they want.
-
-### How?
-  With the power of our community, we take the already awesome [fish shell][fish] to another level by creating simple-to-use plugins and themes.
-
-[fish]: http://fishshell.com/
-
-### What?
-  Oh-my-fish is a user-friendly framework for managing your fish-shell configuration. It includes optional plugins (brew, git-flow, rails, python, node, etc) and themes.
 
 <br>
-## Installation
+
+<p align="center">
+  <a href="https://github.com/fish-shell/oh-my-fish/blob/master/README.md">
+  <img width="160px" src="https://cloud.githubusercontent.com/assets/8317250/8510172/f006f0a4-230f-11e5-98b6-5c2e3c87088f.png">
+  </a>
+</p>
+
+<br>
+
+<p align="center">
+<b><a href="#about">About</a></b>
+|
+<b><a href="#install">Install</a></b>
+|
+<b><a href="#getting-started">Getting Started</a></b>
+|
+<b><a href="#advanced">Advanced</a></b>
+|
+<b><a href="https://github.com/fish-shell/oh-my-fish/wiki/Screencasts">Screencasts</a></b>
+|
+<b><a href="/CONTRIBUTING.md">Contributing</a></b>
+|
+<b><a href="/FAQ.md">FAQ</a></b>
+
+  <p align="center">
+    <a href="https://gitter.im/fish-shell/oh-my-fish?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
+      <img src="https://badges.gitter.im/Join%20Chat.svg">
+    </a>
+  </p>
+</p>
+
+<br>
+
+# About
+
+Oh My Fish is an all-purpose framework for the [fishshell][Fishshell]. It looks after your configuration, themes and packages. It's lightning fast and easy to use.
+
+We love contributions, [fork and send us a PR](https://github.com/fish-shell/oh-my-fish/fork).
+
+# Install
 
 ```fish
-curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/tools/install.fish | fish
+curl -L git.io/omf | sh
+omf help
 ```
 
-**NOTE**: The installation script renames your existing `config.fish` to `config.orig`, and replaces it with [the default oh-my-fish config](https://github.com/oh-my-fish/oh-my-fish/blob/master/templates/config.fish). If you have existing customizations to your fish config, you will need to manually include those customizations after the install.
+Or _download_ and run it yourself:
 
-If you want to install it manually, [click here](https://github.com/oh-my-fish/oh-my-fish/wiki/Manual-Installation).
+```fish
+curl -L git.io/omf > install
+chmod +x install
+./install
+```
 
-## Usage
+# :beginner: Getting Started
 
-Open your fish configuration file `~/.config/fish/config.fish` and specify the theme and the plugins you want to use. And then run `omf install` on your terminal to install them.
+Oh My Fish includes a small utility `omf` to fetch and install new packages and themes.
 
-Before setting down on a theme, you might want to have a go with all themes using our quick [theme switcher](https://github.com/oh-my-fish/plugin-theme) by typing `theme --help` on your shell.
+## `omf update`
 
-## Upgrading from previous version
+Update framework and installed packages.
 
-[![asciicast](https://asciinema.org/a/20802.png)](https://asciinema.org/a/20802)
+## `omf get` _`<package> ...`_
 
-## Customization
+Install one _or more_ themes or packages. To list available packages type `omf use`.
 
-If you have many functions which go well together, you can create custom plugin in the `custom/plugins/PLUGIN_NAME` directory and add to it as many functions as you want.
+> You can fetch packages by URL as well via `omf get URL`
 
-If you would like to use your custom theme, move it with the same name in the `custom/themes/` directory and it will override the original theme in `themes/`.
+## `omf list`
 
-If you just want to override any of the default behavior or add some environment variables, just add a new file (ending in .load) into the `custom/` directory.
+List installed packages.
 
-## Contributing
+> To list packages available for download use `omf get`.
 
-Create an [issue](https://github.com/oh-my-fish/oh-my-fish/issues) linking to your repository and we will move it to the [oh-my-fish](https://github.com/oh-my-fish) organization.
+## `omf use` _`<theme>`_
 
-## Uninstall
+Apply a theme. To list available themes type `omf use`.
 
-    rm -rf ~/.oh-my-fish
-    
-## License
+## `omf remove` _`<name>`_
 
-[MIT](http://mit-license.org) © [Contributors](https://github.com/oh-my-fish/oh-my-fish/graphs/contributors)
+Remove a theme or package.
 
-[Logo](https://cloud.githubusercontent.com/assets/958723/6847746/8d1b95b0-d3a7-11e4-866a-6bdc1eea0fe6.png) by [marcker](https://github.com/marcker):small_blue_diamond: [Attribution CC 4.0](http://creativecommons.org/licenses/by/4.0/)
+> Packages subscribed to `uninstall_<pkg>` events are notified before the package is removed to allow custom cleanup of resources. See [Uninstall](#uninstall).
+
+## `omf new pkg | theme` _`<name>`_
+
+Scaffold out a new package or theme.
+
+> This creates a new directory under `$OMF_CUSTOM/{pkg | themes}/` with a template.
+
+## `omf submit` _`pkg/<name>`_ _`[<url>]`_
+
+Add a new package. To add a theme use `omf submit` _`themes/<name>`_ _`<url>`_.
+
+Make sure to [send us a PR][omf-pulls-link] to update the registry.
+
+## `omf query` _`<variable name>`_
+
+Use to inspect all session variables. Useful to  dump _path_ variables like `$fish_function_path`, `$fish_complete_path`, `$PATH`, etc.
+
+## `omf destroy`
+
+Uninstall Oh My Fish. See [uninstall](#uninstall) for more information.
+
+# :triangular_flag_on_post: Advanced
++ [Startup](#startup)
++ [Core Library](#core-library)
++ [Packages](#packages)
+  + [Creating](#creating)
+  + [Submitting](#submitting)
+  + [Initialization](#initialization)
+  + [Uninstall](#uninstall)
+  + [Ignoring](#ignoring)
+
+## Startup
+
+This script runs each time a new session begins, autoloading packages, themes and your _custom_ path (dotfiles) in that order.
+
+The _custom_ path (`$HOME/.dotfiles` by default) is defined by `$OMF_CUSTOM` in `$HOME/.config/fish/config.fish`. Modify this to load your own dotfiles if you have any.
+
+## Core Library
+
+The core library is a minimum set of basic utility functions that extend your shell.
+
++ [See the documentation](/lib/README.md).
+
+
+## Packages
+
+### Creating
+
+> A package name may only contain lowercase letters and hyphens to separate words.
+
+To scaffold out a new package:
+
+```fish
+$ omf new pkg my_package
+
+my_package/
+  README.md
+  my_package.fish
+  completions/my_package.fish
+```
+
+> Use `omf new theme my_theme` for themes.
+
+Please provide [auto completion](http://fishshell.com/docs/current/commands.html#complete) for your utilities if applicable and describe how your package works in the `README.md`.
+
+
+`my_package.fish` defines a single function:
+
+```fish
+function my_package -d "My package"
+end
+```
+
+> Bear in mind that fish lacks a private scope so consider the following options to avoid polluting the global namespace:
+
++ Prefix functions: `my_package_my_func`.
++ Using [blocks](http://fishshell.com/docs/current/commands.html#block).
+
+
+### Submitting
+
+Oh My Fish keeps a registry of packages under `$OMF_PATH/db/`.
+
+To create a new entry run:
+
+```fish
+omf submit pkg/my_package .../my_package.git
+```
+
+Similarly for themes use:
+
+```fish
+omf submit theme/my_theme .../my_theme.git
+```
+
+This will add a new entry to your local copy of the registry. Please [send us a PR][omf-pulls-link] to update the global registry.
+
+
+### Initialization
+
+If you want to be [notified](http://fishshell.com/docs/current/commands.html#emit) when your package loads, declare the following function in your `my_package.fish`:
+
+```fish
+function init -a path --on-event init_mypkg
+end
+```
+
+Use this event to modify the environment, load resources, autoload functions, etc. If your package does not export any functions, you can still use this event to add functionality to your package.
+
+### Uninstall
+
+Oh My Fish emits `uninstall_<pkg>` events before a package is removed via `omf remove <pkg>`. Subscribers can use the event to clean up custom resources, etc.
+
+```fish
+function uninstall --on-event uninstall_pkg
+end
+```
+
+### Ignoring
+
+Remove any packages you wish to turn off using `omf remove <package name>`. Alternatively, you can set a global env variable `$OMF_IGNORE` in your `~/.config/fish/config.fish` with the packages you wish to ignore. For example:
+
+```fish
+set -g OMF_IGNORE skip this that ...
+```
+
+
+# License
+
+MIT © [Oh My Fish][contributors] :metal:
+
+[fishshell]: http://fishshell.com
+
+[contributors]: https://github.com/fish-shell/oh-my-fish/graphs/contributors
+
+[travis-badge]: http://img.shields.io/travis/fish-shell/oh-my-fish.svg?style=flat-square
+[travis-url]: https://travis-ci.org/fish-shell/oh-my-fish
+
+[fish-badge]: https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square
+
+[license-badge]: https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
+
+[omf-pulls-link]: https://github.com/fish-shell/oh-my-fish/pulls
