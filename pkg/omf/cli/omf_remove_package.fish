@@ -1,8 +1,8 @@
 function omf_remove_package
   for pkg in $argv
     if not omf_util_valid_package $pkg
-      if test $pkg = "wa"
-        echo (omf::err)"You can't remove wa"(omf::off) 1^&2
+      if test $pkg = "omf"
+        echo (omf::err)"You can't remove `omf`"(omf::off) 1^&2
       else
         echo (omf::err)"$pkg is not a valid package/theme name"(omf::off) 1^&2
       end
