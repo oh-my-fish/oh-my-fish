@@ -83,7 +83,7 @@ Update framework and installed packages.
 
 ## `omf get` _`<package> ...`_
 
-Install one _or more_ themes or packages. To list available packages type `omf use`.
+Install one _or more_ themes or packages. To list available packages type `omf theme`.
 
 > You can fetch packages by URL as well via `omf get URL`
 
@@ -93,9 +93,9 @@ List installed packages.
 
 > To list packages available for download use `omf get`.
 
-## `omf use` _`<theme>`_
+## `omf theme` _`<theme>`_
 
-Apply a theme. To list available themes type `omf use`.
+Apply a theme. To list available themes type `omf theme`.
 
 ## `omf remove` _`<name>`_
 

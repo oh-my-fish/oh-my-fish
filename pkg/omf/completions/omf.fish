@@ -15,11 +15,11 @@ complete --no-files -c omf -d "Oh My Fish"
 complete -c omf -n "__omf_opt_is q query"      -a (printf "%s " (set | awk '{ printf $1"\n"; }'))
 complete -c omf -n "__omf_opt_is r rm remove"  -a (printf "%s " (omf_list_local_packages) (omf_list_installed_themes))
 complete -c omf -n "__omf_opt_is g get"        -a (printf "%s " (omf_list_db_packages))
-complete -c omf -n "__omf_opt_is u use"        -a (printf "%s " (omf_list_themes))
+complete -c omf -n "__omf_opt_is t theme"      -a (printf "%s " (omf_list_themes))
 
 complete -c omf -a list    -n "__omf_is_single_opt" -d "List local packages"
 complete -c omf -a get     -n "__omf_is_single_opt" -d "Install one or more packages"
-complete -c omf -a use     -n "__omf_is_single_opt" -d "List / Apply themes"
+complete -c omf -a theme   -n "__omf_is_single_opt" -d "List / Use themes"
 complete -c omf -a remove  -n "__omf_is_single_opt" -d "Remove a theme or package"
 complete -c omf -a update  -n "__omf_is_single_opt" -d "Update Oh My Fish"
 complete -c omf -a new     -n "__omf_is_single_opt" -d "Create a new package from a template"

@@ -6,7 +6,7 @@ function omf_help
   "(omf::dim)"Actions"(omf::off)"
        "(omf::em)"l"(omf::off)"ist  List local packages.
         "(omf::em)"g"(omf::off)"et  Install one or more packages.
-        "(omf::em)"u"(omf::off)"se  List / Apply themes.
+      "(omf::em)"t"(omf::off)"heme  List / Use themes.
      "(omf::em)"r"(omf::off)"emove  Remove a theme or package.
      u"(omf::em)"p"(omf::off)"date  Update Oh My Fish.
         "(omf::em)"n"(omf::off)"ew  Create a new package from a template.
