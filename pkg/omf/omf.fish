@@ -59,7 +59,7 @@ function omf -d "Oh My Fish"
         omf_get_package $argv[2..-1]
       end
 
-    case "u" "use"
+    case "t" "theme"
       if test (count $argv) -eq 1
         set -l theme (cat $OMF_CONFIG/theme)
         set -l regex "[[:<:]]($theme)[[:>:]]"
@@ -69,7 +69,7 @@ function omf -d "Oh My Fish"
         omf::off
 
       else if test (count $argv) -eq 2
-        omf_use $argv[2]
+        omf_theme $argv[2]
       else
         echo (omf::err)"Invalid number of arguments"(omf::off) 1^&2
         echo "Usage: $_ "(omf::em)"$argv[1]"(omf::off)" [<theme name>]" 1^&2
@@ -93,7 +93,7 @@ function omf -d "Oh My Fish"
         echo (omf::err)"Oh My Fish failed to update."(omf::off)
         echo "Please open a new issue here → "(omf::em)"git.io/omf-issues"(omf::off)
       end
-      omf_use (cat $OMF_CONFIG/theme)
+      omf_theme (cat $OMF_CONFIG/theme)
       omf_get_package (omf_list_installed_packages)
       popd
       refresh
