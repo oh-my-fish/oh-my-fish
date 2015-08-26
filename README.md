@@ -1,3 +1,4 @@
+
 > The [Fishshell][fishshell] Framework
 
 [![Fish Version][fish-badge]][fishshell]
@@ -7,18 +8,21 @@
 <a name="omf"></a>
 <br>
 
-> :warning: **Important** :warning: [Wahoo](https://github.com/wa/wahoo) and [Oh My Fish!](https://github.com/oh-my-fish/oh-my-fish) are now one project. Please read this page and [FAQ](#FAQ) to learn what's new.
+<p align="center">
+<h1 align="center">:warning: Important :warning:</h1>
+<h4 align="center">
+<a href="https://github.com/wa/wahoo">Wahoo</a> and <a href="https://github.com/oh-my-fish/oh-my-fish">Oh My Fish!</a> are now one project. See this page and <a href="#FAQ">FAQ</a> to learn what's new.
+</h4>
+</p>
 
-> To upgrade:
-```fish
-curl -L git.io/omf | sh
-```
+<hr>
+
 
 <br>
 
 <p align="center">
   <a href="https://github.com/fish-shell/oh-my-fish/blob/master/README.md">
-  <img width="200px" src="https://cloud.githubusercontent.com/assets/8317250/8510172/f006f0a4-230f-11e5-98b6-5c2e3c87088f.png">
+  <img width="160px" src="https://cloud.githubusercontent.com/assets/8317250/8510172/f006f0a4-230f-11e5-98b6-5c2e3c87088f.png">
   </a>
 </p>
 
@@ -50,23 +54,20 @@ curl -L git.io/omf | sh
 
 # About
 
-> :warning: You need [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-and [Fish][fishshell] to install Oh My Fish!.
-
 Oh My Fish is an all-purpose framework for the [fishshell][Fishshell]. It looks after your configuration, themes and packages. It's lightning fast and easy to use.
 
 We love contributions, [fork and send us a PR](https://github.com/fish-shell/oh-my-fish/fork).
 
 # Install
 
-```sh
+```fish
 curl -L git.io/omf | sh
 omf help
 ```
 
 Or _download_ and run it yourself:
 
-```sh
+```fish
 curl -L git.io/omf > install
 chmod +x install
 ./install
