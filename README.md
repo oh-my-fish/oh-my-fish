@@ -53,7 +53,7 @@ curl -L git.io/omf | sh
 > :warning: You need [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 and [Fish][fishshell] to install Oh My Fish!.
 
-Oh My Fish is an all-purpose framework for the [fishshell][Fishshell]. It looks after your configuration, themes and packages. It's lightining fast and easy to use.
+Oh My Fish is an all-purpose framework for the [fishshell][Fishshell]. It looks after your configuration, themes and packages. It's lightning fast and easy to use.
 
 We love contributions, [fork and send us a PR](https://github.com/fish-shell/oh-my-fish/fork).
 
@@ -123,7 +123,6 @@ Use to inspect all session variables. Useful to  dump _path_ variables like `$fi
 Uninstall Oh My Fish. See [uninstall](#uninstall) for more information.
 
 # :triangular_flag_on_post: Advanced
-+ [Bootstrap](#bootstrap)
 + [Startup](#startup)
 + [Core Library](#core-library)
 + [Packages](#packages)
@@ -132,10 +131,6 @@ Uninstall Oh My Fish. See [uninstall](#uninstall) for more information.
   + [Initialization](#initialization)
   + [Uninstall](#uninstall)
   + [Ignoring](#ignoring)
-
-## Bootstrap
-
-Oh My Fish's bootstrap script will install `git` and `fish` if not available, switch your default shell and modify `$HOME/.config/fish/config.fish` to source Oh My Fish's `init.fish` script.
 
 ## Startup
 
@@ -206,7 +201,7 @@ This will add a new entry to your local copy of the registry. Please [send us a 
 
 ### Initialization
 
-If you want to be [notified](http://fishshell.com/docs/current/commands.html#emit) when your package is loads, declare the following function in your `my_package.fish`:
+If you want to be [notified](http://fishshell.com/docs/current/commands.html#emit) when your package loads, declare the following function in your `my_package.fish`:
 
 ```fish
 function init -a path --on-event init_mypkg
