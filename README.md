@@ -228,8 +228,8 @@ MIT © [Oh My Fish][contributors] :metal:
 
 [contributors]: https://github.com/fish-shell/omf/graphs/contributors
 
-[travis-badge]: http://img.shields.io/travis/fish-shell/omf.svg?style=flat-square
-[travis-url]: https://travis-ci.org/fish-shell/omf
+[travis-badge]: http://img.shields.io/travis/fish-shell/oh-my-fish.svg?style=flat-square
+[travis-url]: https://travis-ci.org/fish-shell/oh-my-fish
 
 [fish-badge]: https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square
 
