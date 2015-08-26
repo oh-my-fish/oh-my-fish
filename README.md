@@ -5,11 +5,19 @@
 [![License][license-badge]](#LICENSE)
 
 <a name="omf"></a>
+<br>
+
+> :warning: **Important** :warning: [Wahoo](https://github.com/wa/wahoo) and [Oh My Fish!](https://github.com/oh-my-fish/oh-my-fish) are now one project. Please read this page and [FAQ](#FAQ) to learn what's new.
+
+> To upgrade:
+```fish
+curl -L git.io/omf | sh
+```
 
 <br>
 
 <p align="center">
-  <a href="https://github.com/fish-shell/omf/blob/master/README.md">
+  <a href="https://github.com/fish-shell/oh-my-fish/blob/master/README.md">
   <img width="200px" src="https://cloud.githubusercontent.com/assets/8317250/8510172/f006f0a4-230f-11e5-98b6-5c2e3c87088f.png">
   </a>
 </p>
@@ -25,14 +33,14 @@
 |
 <b><a href="#advanced">Advanced</a></b>
 |
-<b><a href="https://github.com/fish-shell/omf/wiki/Screencasts">Screencasts</a></b>
+<b><a href="https://github.com/fish-shell/oh-my-fish/wiki/Screencasts">Screencasts</a></b>
 |
 <b><a href="/CONTRIBUTING.md">Contributing</a></b>
 |
 <b><a href="/FAQ.md">FAQ</a></b>
 
   <p align="center">
-    <a href="https://gitter.im/fish-shell/omf?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
+    <a href="https://gitter.im/fish-shell/oh-my-fish?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
       <img src="https://badges.gitter.im/Join%20Chat.svg">
     </a>
   </p>
@@ -47,7 +55,7 @@ and [Fish][fishshell] to install Oh My Fish!.
 
 Oh My Fish is an all-purpose framework for the [fishshell][Fishshell]. It looks after your configuration, themes and packages. It's lightining fast and easy to use.
 
-We love contributions, [fork and send us a PR](https://github.com/fish-shell/omf/fork).
+We love contributions, [fork and send us a PR](https://github.com/fish-shell/oh-my-fish/fork).
 
 # Install
 
@@ -231,13 +239,13 @@ MIT © [Oh My Fish][contributors] :metal:
 
 [fishshell]: http://fishshell.com
 
-[contributors]: https://github.com/fish-shell/omf/graphs/contributors
+[contributors]: https://github.com/fish-shell/oh-my-fish/graphs/contributors
 
-[travis-badge]: http://img.shields.io/travis/fish-shell/omf.svg?style=flat-square
-[travis-url]: https://travis-ci.org/fish-shell/omf
+[travis-badge]: http://img.shields.io/travis/fish-shell/oh-my-fish.svg?style=flat-square
+[travis-url]: https://travis-ci.org/fish-shell/oh-my-fish
 
 [fish-badge]: https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square
 
 [license-badge]: https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 
-[omf-pulls-link]: https://github.com/fish-shell/omf/pulls
+[omf-pulls-link]: https://github.com/fish-shell/oh-my-fish/pulls
