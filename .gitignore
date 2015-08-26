@@ -3,7 +3,6 @@ pkg/**
 !pkg/omf/**
 
 themes/**
-!themes/default/*
 
 .DS_Store
 **/.DS_Store

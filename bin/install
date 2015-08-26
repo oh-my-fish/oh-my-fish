@@ -103,7 +103,7 @@ omf_install() {
   if [ ! -d "${OMF_CONFIG}" ]; then
     echo "Writing Oh My Fish configuration → ${OMF_CONFIG}"
     mkdir -p "${OMF_CONFIG}"
-    test -f "${OMF_CONFIG}/theme"     || echo default > "${OMF_CONFIG}/theme"
+    touch "${OMF_CONFIG}/theme"
     test -f "${OMF_CONFIG}/revision"  || echo ${git_rev} > "${OMF_CONFIG}/revision"
   fi
 }
