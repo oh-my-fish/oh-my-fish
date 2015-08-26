@@ -53,8 +53,13 @@ There are roughly 3 kinds of packages:
 > :warning: Remember to backup your dotfiles and other sensitive data first.
 
 ```
-rm -rf "$fish_path"
 curl -L git.io/omf | sh
+```
+
+You can now safely remove `$fish_path`.
+
+```fish
+rm -rf "$fish_path"
 ```
 
 
