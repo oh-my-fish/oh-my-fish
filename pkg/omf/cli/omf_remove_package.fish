@@ -18,7 +18,7 @@ function omf_remove_package
         return $OMF_INVALID_ARG
       end
       if test $pkg = (cat $OMF_CONFIG/theme)
-        omf_use "default"
+        omf_theme "default"
       end
       rm -rf $OMF_PATH/themes/$pkg
     end
