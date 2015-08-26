@@ -18,7 +18,7 @@ Oh My Fish is a _framework_ for the [fishshell](https://fishshell.org). It helps
 
 ## What do I need to know to use Oh My Fish?
 
-_Nothing_. You can install Oh My Fish and keep using Fish as usual. When you are ready to learn more just type `wa help`.
+_Nothing_. You can install Oh My Fish and keep using Fish as usual. When you are ready to learn more just type `omf help`.
 
 
 ## What are Oh My Fish packages?
