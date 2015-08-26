@@ -19,12 +19,12 @@ function omf.remote --argument-names options -d 'List remote plugins and themes'
 
   if echo $page_count | grep -vE '^[0-9]+$'
     echo "Could not access Github API" >&2
-    exit 1
+    return 1
   end
 
   set repos ""
   for i in (seq $page_count)
-    set answer (curl -s "$url?page=$i&per_page=100" | grep \"name\" | tr \": " " | awk '{print $2}')
+    set answer (curl -s "$url?page=$i&per_page=100" | grep '"name"' | tr '":' " " | awk '{print $2}')
     set repos "$answer $repos"
   end
 
