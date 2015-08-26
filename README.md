@@ -11,7 +11,7 @@
 <p align="center">
 <h1 align="center">:warning: Important :warning:</h1>
 <h4 align="center">
-<a href="https://github.com/wa/wahoo">Wahoo</a> and <a href="https://github.com/oh-my-fish/oh-my-fish">Oh My Fish!</a> are now one project. See this page and <a href="#FAQ">FAQ</a> to learn what's new.
+<a href="https://github.com/wa/wahoo">Wahoo</a> and <a href="https://github.com/oh-my-fish/oh-my-fish">Oh My Fish!</a> are now one project. See this page and <a href="#FAQ.md">FAQ</a> to learn what's new.
 </h4>
 </p>
 
