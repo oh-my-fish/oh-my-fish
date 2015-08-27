@@ -57,6 +57,7 @@ function omf -d "Oh My Fish"
         omf_list_db_packages | column
       else
         omf_install_package $argv[2..-1]
+        refresh
       end
 
     case "t" "theme"
@@ -70,6 +71,7 @@ function omf -d "Oh My Fish"
 
       else if test (count $argv) -eq 2
         omf_theme $argv[2]
+        refresh
       else
         echo (omf::err)"Invalid number of arguments"(omf::off) 1^&2
         echo "Usage: $_ "(omf::em)"$argv[1]"(omf::off)" [<theme name>]" 1^&2
