@@ -5,7 +5,7 @@
 #   name  Name of the package.
 #   [url] URL to the package repository.
 
-function omf_submit -a name url -d "Submit a package to the registry"
+function omf.submit -a name url -d "Submit a package to the registry"
   switch (dirname $name)
     case pkg
     case themes
@@ -15,7 +15,7 @@ function omf_submit -a name url -d "Submit a package to the registry"
   end
 
   set -l pkg (basename $name)
-  if not omf_util_valid_package $pkg
+  if not omf.util_valid_package $pkg
     echo (omf::err)"$pkg is not a valid package/theme name"(omf::off) 1^&2
     return $OMF_INVALID_ARG
   end

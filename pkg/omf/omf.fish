@@ -27,19 +27,19 @@ end
 
 function omf -d "Oh My Fish"
   if test (count $argv) -eq 0
-    omf_help; and return 0
+    omf.help; and return 0
   end
 
   switch $argv[1]
     case "v" "ver" "version"
-      omf_version
+      omf.version
 
     case "q" "query"
       switch (count $argv)
         case 1
-          omf_query_env
+          omf.query_env
         case 2
-          omf_query_env "$argv[2]"
+          omf.query_env "$argv[2]"
         case "*"
           echo (omf::err)"Invalid number of arguments"(omf::off) 1^&2
           echo "Usage: $_ "(omf::em)"$argv[1]"(omf::off)" [<variable name>]" 1^&2
@@ -47,16 +47,16 @@ function omf -d "Oh My Fish"
       end
 
     case "h" "help"
-      omf_help
+      omf.help
 
     case "l" "li" "lis" "lst" "list"
-      omf_list_local_packages | column
+      omf.list_local_packages | column
 
     case "i" "install" "get"
       if test (count $argv) -eq 1
-        omf_list_db_packages | column
+        omf.list_db_packages | column
       else
-        omf_install_package $argv[2..-1]
+        omf.install_package $argv[2..-1]
         refresh
       end
 
@@ -66,11 +66,11 @@ function omf -d "Oh My Fish"
         set -l regex "[[:<:]]($theme)[[:>:]]"
         test "$OSTYPE" != "Darwin"; and set regex "\b($theme)\b"
 
-        omf_list_themes | column | sed -E "s/$regex/"(omf::em)"\1"(omf::off)"/"
+        omf.list_themes | column | sed -E "s/$regex/"(omf::em)"\1"(omf::off)"/"
         omf::off
 
       else if test (count $argv) -eq 2
-        omf_theme $argv[2]
+        omf.theme $argv[2]
         refresh
       else
         echo (omf::err)"Invalid number of arguments"(omf::off) 1^&2
@@ -84,26 +84,26 @@ function omf -d "Oh My Fish"
         echo "Usage: $_ "(omf::em)"$argv[1]"(omf::off)" <[package|theme] name>" 1^&2
         return $OMF_INVALID_ARG
       end
-      omf_remove_package $argv[2..-1]
+      omf.remove_package $argv[2..-1]
 
     case "u" "up" "upd" "update"
       pushd $OMF_PATH
       echo (omf::em)"Updating Oh My Fish..."(omf::off)
-      if omf_update
+      if omf.update
         echo (omf::em)"Oh My Fish is up to date."(omf::off)
       else
         echo (omf::err)"Oh My Fish failed to update."(omf::off)
         echo "Please open a new issue here → "(omf::em)"git.io/omf-issues"(omf::off)
       end
-      omf_theme (cat $OMF_CONFIG/theme)
-      omf_install_package (omf_list_installed_packages)
+      omf.theme (cat $OMF_CONFIG/theme)
+      omf.install_package (omf.list_installed_packages)
       popd
       refresh
 
     case "s" "su" "sub" "submit"
       switch (count $argv)
         case 3
-          omf_submit $argv[2] $argv[3]
+          omf.submit $argv[2] $argv[3]
         case "*"
           echo (omf::err)"Argument missing"(omf::off) 1^&2
           echo "Usage: $_ "(omf::em)"$argv[1]"(omf::off)" "(omf::em)"pkg|themes"(omf::off)"/<name> <url>" 1^&2
@@ -116,10 +116,10 @@ function omf -d "Oh My Fish"
         echo "Usage: $_ "(omf::em)"$argv[1]"(omf::off)" "(omf::em)"pkg|theme"(omf::off)" <name>" 1^&2
         return $OMF_MISSING_ARG
       end
-      omf_new $argv[2..-1]
+      omf.new $argv[2..-1]
 
     case "destroy"
-      omf_destroy
+      omf.destroy
 
     case "*"
       echo (omf::err)"$argv[1] option not recognized"(omf::off) 1^&2

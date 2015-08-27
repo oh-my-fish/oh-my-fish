@@ -1,4 +1,4 @@
-function omf_util_sync -a remote
+function omf.util_sync -a remote
   set -l repo $remote
   set -q argv[1]; and set repo $argv[1]
 

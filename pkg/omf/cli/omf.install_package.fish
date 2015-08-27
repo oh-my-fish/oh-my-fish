@@ -1,4 +1,4 @@
-function omf_install_package
+function omf.install_package
   for search in $argv
     if test -e $OMF_PATH/db/pkg/$search
       set target pkg/$search
@@ -20,7 +20,7 @@ function omf_install_package
     if test -e $OMF_PATH/$target
       echo (omf::dim)"Updating $search..."(omf::off)
       pushd $OMF_PATH/$target
-      omf_util_sync "origin" >/dev/null ^&1
+      omf.util_sync "origin" >/dev/null ^&1
       popd
       echo (omf::em)"✔ $search up to date."(omf::off)
     else

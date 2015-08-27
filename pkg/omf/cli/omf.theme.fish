@@ -1,4 +1,4 @@
-function omf_theme
+function omf.theme
   if not test -e $OMF_CONFIG/themes/$argv[1]
     if not test -e $OMF_PATH/themes/$argv[1]
       set -l theme $OMF_PATH/db/themes/$argv[1]

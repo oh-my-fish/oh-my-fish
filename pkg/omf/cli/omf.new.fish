@@ -1,4 +1,4 @@
-function omf_new -a option name
+function omf.new -a option name
   switch $option
     case "p" "pkg" "pack" "packg" "package"
       set option "pkg"
@@ -9,12 +9,12 @@ function omf_new -a option name
       return $OMF_INVALID_ARG
   end
 
-  if not omf_util_valid_package "$name"
+  if not omf.util_valid_package "$name"
     echo (omf::err)"$name is not a valid package/theme name"(omf::off) 1^&2
     return $OMF_INVALID_ARG
   end
 
-  if set -l dir (omf_util_mkdir "$option/$name")
+  if set -l dir (omf.util_mkdir "$option/$name")
     cd $dir
 
     set -l github (git config github.user)
@@ -23,7 +23,7 @@ function omf_new -a option name
     set -l user (git config user.name)
     test -z "$user"; and set user "{{USER}}"
 
-    omf_new_from_template "$OMF_PATH/pkg/omf/templates/$option" \
+    omf.new_from_template "$OMF_PATH/pkg/omf/templates/$option" \
       $github $user $name
 
     echo (omf::em)"Switched to $dir"(omf::off)

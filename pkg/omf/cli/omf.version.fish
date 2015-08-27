@@ -1,3 +1,3 @@
-function omf_version
+function omf.version
   echo "Oh My Fish! $OMF_VERSION"
 end

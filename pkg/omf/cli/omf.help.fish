@@ -1,4 +1,4 @@
-function omf_help
+function omf.help
   echo \n"\
   "(omf::dim)"Usage"(omf::off)"
     omf "(omf::em)"action"(omf::off)" [options]

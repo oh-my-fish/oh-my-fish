@@ -1,6 +1,6 @@
-function omf_remove_package
+function omf.remove_package
   for pkg in $argv
-    if not omf_util_valid_package $pkg
+    if not omf.util_valid_package $pkg
       if test $pkg = "omf"
         echo (omf::err)"You can't remove `omf`"(omf::off) 1^&2
       else

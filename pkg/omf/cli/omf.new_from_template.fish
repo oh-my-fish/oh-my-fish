@@ -1,9 +1,9 @@
-function omf_new_from_template -a path github user name
+function omf.new_from_template -a path github user name
   for file in $path/*
     if test -d $file
       mkdir (basename $file)
       pushd (basename $file)
-      omf_new_from_template $file $github $user $name
+      omf.new_from_template $file $github $user $name
     else
       set -l target (begin
         if test (basename $file) = "{{NAME}}.fish"

@@ -59,7 +59,7 @@ The following syntax is more concise, but arguably less transparent.
 > You still may use `and` / `or` statements if you consider `if..else..then` to be overkill.
 
 ```fish
-set -q VAR; set -g VAR 42
+set -q VAR; or set -g VAR 42
 ```
 
 ### Functions
@@ -80,16 +80,9 @@ function greet -a message -d "Display a greeting message"
 end
 ```
 
-`fish` does not have private functions, so in order to avoid polluting the global namespace, use a prefix based in the scope of your code. For example, if you are writing a `ninja` plugin using `__ninja_function_name`.
+In order to avoid name collision, name your functions using a prefix based on the name of your package. For example, if you are writing a `ninja` package use `ninja.function_name`.
 
-If you are writing a function inside another function, prefix the inner one with the parent's name.
-
-```fish
-function parent
-  function parent_child
-  end
-end
-```
+`fish` does not have private functions, so in order to avoid polluting the global namespace, use double underscore before your function name. For example, if you are writing a `ninja` plugin using `__ninja.function_name`.
 
 Note that it's still possible to mimic private functions in `fish` by deleting the function before returning using `functions -e function_name`
 

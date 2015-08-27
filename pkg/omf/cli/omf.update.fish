@@ -1,4 +1,4 @@
-function omf_update
+function omf.update
   set -l repo "upstream"
   test -z (git config --get remote.upstream.url)
     and set -l repo "origin"
@@ -10,7 +10,7 @@ function omf_update
     if git pull --rebase $repo master >/dev/null ^&1
       git stash apply >/dev/null ^&1
     else
-      omf_util_sync "origin"
+      omf.util_sync "origin"
     end
   end
 end

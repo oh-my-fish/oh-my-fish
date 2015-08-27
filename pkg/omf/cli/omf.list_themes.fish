@@ -1,4 +1,4 @@
-function omf_list_themes
+function omf.list_themes
   set -l seen ""
   for theme in (basename $OMF_PATH/db/themes/*) \
                (basename {$OMF_PATH,$OMF_CONFIG}/themes/*)
