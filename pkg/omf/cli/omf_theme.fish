@@ -14,5 +14,4 @@ function omf_theme
     end
   end
   echo "$argv[1]" > $OMF_CONFIG/theme
-  refresh
 end
