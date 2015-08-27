@@ -30,5 +30,4 @@ function omf_install_package
         or echo (omf::err)"Could not install package."(omf::off) 1^&2
     end
   end
-  refresh
 end
