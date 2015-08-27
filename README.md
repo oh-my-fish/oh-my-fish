@@ -107,7 +107,7 @@ Remove a theme or package.
 
 Scaffold out a new package or theme.
 
-> This creates a new directory under `$OMF_CUSTOM/{pkg | themes}/` with a template.
+> This creates a new directory under `$OMF_CONFIG/{pkg | themes}/` with a template.
 
 ## `omf submit` _`pkg/<name>`_ _`[<url>]`_
 
@@ -135,9 +135,9 @@ Uninstall Oh My Fish. See [uninstall](#uninstall) for more information.
 
 ## Startup
 
-This script runs each time a new session begins, autoloading packages, themes and your _custom_ path (dotfiles) in that order.
+This script runs each time a new session begins, autoloading packages, themes and your _config_ path in that order.
 
-The _custom_ path (`$HOME/.dotfiles` by default) is defined by `$OMF_CUSTOM` in `$HOME/.config/fish/config.fish`. Modify this to load your own dotfiles if you have any.
+The _config_ path (`~/.config/omf` by default) is defined by `$OMF_CONFIG` in `~/.config/fish/config.fish`. Modify this to load your own configuration if you have any.
 
 ## Core Library
 

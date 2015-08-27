@@ -28,7 +28,7 @@ function omf_new -a option name
 
     echo (omf::em)"Switched to $dir"(omf::off)
   else
-    echo (omf::err)"\$OMF_CUSTOM and/or \$OMF_PATH undefined."(omf::off) 1^&2
+    echo (omf::err)"\$OMF_CONFIG and/or \$OMF_PATH undefined."(omf::off) 1^&2
     exit $OMF_UNKNOWN_ERR
   end
 end

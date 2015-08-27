@@ -41,11 +41,11 @@ There are roughly 3 kinds of packages:
 
 + Autoload installed packages and themes under `$OMF_PATH/`.
 
-+ Autoload your custom path. `$OMF_PATH/custom` by default, but configurable via `$OMF_CUSTOM`.
++ Autoload your config path. `~/.config/omf` by default, but configurable via `$OMF_CONFIG`.
 
-+ Autoload any `functions` directory under `$OMF_PATH` and `$OMF_CUSTOM`
++ Autoload any `functions` directory under `$OMF_PATH` and `$OMF_CONFIG`
 
-+ Run `$OMF_CUSTOM/init.fish` if available.
++ Run `$OMF_CONFIG/init.fish` if available.
 
 
 ## How can I upgrade from an existing Oh My Fish installation?

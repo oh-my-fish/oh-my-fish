@@ -7,10 +7,6 @@ function omf_destroy -d "Remove Oh My Fish"
     mv "$HOME/.config/fish/config".{copy,fish}
   end
 
-  if test (basename "$OMF_CONFIG") = "omf"
-    rm -rf "$OMF_CONFIG"
-  end
-
   if test "$OMF_PATH" != "$HOME"
     rm -rf "$OMF_PATH"
   end
