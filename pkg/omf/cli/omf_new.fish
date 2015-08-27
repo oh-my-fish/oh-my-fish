@@ -18,10 +18,10 @@ function omf_new -a option name
     cd $dir
 
     set -l github (git config github.user)
-    test -z "$github"; and set github "{{USERNAME}}"
+    test -z "$github"; and set github "{{USER}}"
 
     set -l user (git config user.name)
-    test -z "$user"; and set user "{{USERNAME}}"
+    test -z "$user"; and set user "{{USER}}"
 
     omf_new_from_template "$OMF_PATH/pkg/omf/templates/$option" \
       $github $user $name
