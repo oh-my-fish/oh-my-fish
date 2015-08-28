@@ -137,7 +137,7 @@ Uninstall Oh My Fish. See [uninstall](#uninstall) for more information.
 
 This script runs each time a new session begins, autoloading packages, themes and your _config_ path in that order.
 
-The _config_ path (`~/.config/omf` by default) is defined by `$OMF_CONFIG` in `~/.config/fish/config.fish`. Modify this to load your own configuration if you have any as discussed in the [FAQ](FAQ.md#what-does-oh-my-fish-do-exactly).
+The _config_ path (`~/.config/omf` by default) is defined by `$OMF_CONFIG` in `~/.config/fish/config.fish`. Modify this to load your own configuration, if you have any, as discussed in the [FAQ](FAQ.md#what-does-oh-my-fish-do-exactly).
 
 ## Core Library
 
