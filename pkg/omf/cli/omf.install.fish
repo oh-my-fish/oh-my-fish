@@ -10,7 +10,7 @@ function omf.install -a type_flag name_or_url
       echo (omf::err)"Argument to omf.install must be --theme [name|URL] or --pkg [name|URL]"(omf::off)
       return $OMF_INVALID_ARG
   end
-  
+
   if test -e $OMF_PATH/db/$parent_path/$name_or_url
     set target $parent_path/$name_or_url
   else
