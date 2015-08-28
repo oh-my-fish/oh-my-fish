@@ -80,20 +80,28 @@ function greet -a message -d "Display a greeting message"
 end
 ```
 
-In order to avoid name collision, name your functions using a prefix based on the name of your package. For example, if you are writing a `ninja` package use `ninja.function_name`.
+In order to avoid name collisions, use a prefix based on the name of your package. For example, if you are writing a `ninja` package use `ninja.function_name`.
 
-`fish` does not have private functions, so in order to avoid polluting the global namespace, use double underscore before your function name. For example, if you are writing a `ninja` plugin using `__ninja.function_name`.
 
-Note that it's still possible to mimic private functions in `fish` by deleting the function before returning using `functions -e function_name`
+### Private Functions
 
-```fish
-function public_func
-  function private_func
-    # ...
-    functions -e private_func
+`fish` does not have private functions, so in order to avoid polluting the global namespace you have a few options:
+
+
++ Use double underscore before your function name. For example, if you are writing a `ninja` package using `__ninja.function_name`.
+
++ Delete the function before returning using `functions -e function_name`
+
+  ```fish
+  function public_func
+    function private_func
+      # ...
+      functions -e private_func
+    end
   end
-end
-```
+  ```
+
++ Use blocks
 
 ### Blocks
 
