@@ -16,10 +16,30 @@ set -g OMF_UNKNOWN_ERR   4
 
 set -g OMF_VERSION "1.0.0"
 
-function omf::em;  set_color -o $fish_color_match; end
-function omf::dim; set_color -o $fish_color_autosuggestion; end
-function omf::err; set_color -o $fish_color_error; end
-function omf::off; set_color normal; end
+function omf::em
+  if set -q fish_color_match
+    set_color $fish_color_match
+  else
+    set_color cyan
+  end
+end
+function omf::dim
+  if set -q fish_color_autosuggestion
+    set_color $fish_color_autosuggestion
+  else
+    set_color 555 yellow
+  end
+end
+function omf::err
+  if set -q fish_color_error
+    set_color $fish_color_error
+  else
+    set_color red --bold
+  end
+end
+function omf::off
+  set_color normal
+end
 
 function init -a path --on-event init_omf
   autoload $path/cli $path/util
