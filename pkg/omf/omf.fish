@@ -1,9 +1,8 @@
 # SYNOPSIS
-#   Oh My Fish CLI
+#   Oh My Fish! CLI
 #
 # ENV
-#   OMF_VERSION   Version
-#   OMF_CONFIG    Oh My Fish configuration
+#   OMF_CONFIG    Oh My Fish! configuration
 #
 # OVERVIEW
 #   Provides options to list, download and remove packages, update
@@ -14,29 +13,18 @@ set -g OMF_UNKNOWN_OPT   2
 set -g OMF_INVALID_ARG   3
 set -g OMF_UNKNOWN_ERR   4
 
-set -g OMF_VERSION "1.0.0"
-
 function omf::em
-  if set -q fish_color_match
-    set_color $fish_color_match
-  else
-    set_color cyan
-  end
+  set_color $fish_color_match ^/dev/null; or set_color cyan
 end
+
 function omf::dim
-  if set -q fish_color_autosuggestion
-    set_color $fish_color_autosuggestion
-  else
-    set_color 555
-  end
+  set_color $fish_color_match ^/dev/null; or set_color 555
 end
+
 function omf::err
-  if set -q fish_color_error
-    set_color $fish_color_error
-  else
-    set_color red --bold
-  end
+  set_color $fish_color_error ^/dev/null; or set_color red --bold
 end
+
 function omf::off
   set_color normal
 end
