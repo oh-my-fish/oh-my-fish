@@ -30,7 +30,7 @@ test -z ${XDG_CONFIG_HOME+_}  && XDG_CONFIG_HOME="${HOME}/.config"
 test -z ${OMF_PATH+_}         && OMF_PATH="${XDG_DATA_HOME}/omf"
 test -z ${OMF_CONFIG+_}       && OMF_CONFIG="${XDG_CONFIG_HOME}/omf"
 
-test -z ${OMF_REPO_URI+_}     && OMF_REPO_URI="https://github.com/fish-shell/omf"
+test -z ${OMF_REPO_URI+_}     && OMF_REPO_URI="https://github.com/fish-shell/oh-my-fish"
 test -z ${OMF_REPO_BRANCH+_}  && OMF_REPO_BRANCH="master"
 
 die() {
