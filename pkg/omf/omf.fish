@@ -27,7 +27,7 @@ function omf::dim
   if set -q fish_color_autosuggestion
     set_color $fish_color_autosuggestion
   else
-    set_color 555 yellow
+    set_color 555
   end
 end
 function omf::err
