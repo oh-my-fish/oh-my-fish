@@ -1,13 +1,6 @@
 # SYNOPSIS
 #   Initialize Oh My Fish.
 #
-# ENV
-#   OSTYPE        Operating system.
-#   RESET_PATH    Original $PATH preseved across Oh My Fish refreshes.
-#   OMF_PATH      Set in ~/.config/fish/config.fish
-#   OMF_IGNORE    List of packages to ignore.
-#   OMF_CONFIG    Same as OMF_PATH. ~/.config/omf by default.
-#
 # OVERVIEW
 #   + Autoload Oh My Fish packages, themes and config path
 #   + For each <pkg> inside {$OMF_PATH,$OMF_CONFIG}
@@ -16,8 +9,16 @@
 #     + Emit init_<pkg> event
 #
 #   + Autoload {$OMF_PATH,$OMF_CONFIG}/functions
-#   + Source {$OMF_PATH,$OMF_CONFIG} → fish-shell/fish-shell/issues/845
+#   + Source {$OMF_PATH,$OMF_CONFIG}/events → fish-shell/fish-shell/issues/845
 #   + Source $OMF_CONFIG/init.fish
+#
+# ENV
+#   OSTYPE        Operating system.
+#   RESET_PATH    Original $PATH preseved across Oh My Fish reloads.
+#   OMF_PATH      Set in ~/.config/fish/config.fish
+#   OMF_IGNORE    List of packages to ignore.
+#   OMF_CONFIG    Same as OMF_PATH. ~/.dotfiles by default.
+#   OMF_VERSION   Oh My Fish! version
 
 if set -q RESET_PATH
   set PATH $RESET_PATH
@@ -27,7 +28,7 @@ end
 
 set -q OSTYPE; or set -g OSTYPE (uname)
 
-# Save the head of function path and autoload Oh My Fish core functions
+# Save the head of function path and autoload core functions
 set -l user_function_path $fish_function_path[1]
 set fish_function_path[1] $OMF_PATH/lib
 
@@ -51,5 +52,7 @@ autoload $OMF_CONFIG/functions
 autoload $user_function_path
 
 for path in {$OMF_PATH,$OMF_CONFIG}/events.fish $OMF_CONFIG/init.fish
-  source "$path" ^/dev/null
+  source $path ^/dev/null
 end
+
+set -g OMF_VERSION "1.0.0"
