@@ -18,7 +18,7 @@ function omf::em
 end
 
 function omf::dim
-  set_color $fish_color_match ^/dev/null; or set_color 555
+  set_color $fish_color_autosuggestion ^/dev/null; or set_color 555
 end
 
 function omf::err
