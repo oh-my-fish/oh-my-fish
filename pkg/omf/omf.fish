@@ -39,7 +39,7 @@ function omf -d "Oh My Fish"
   end
 
   switch $argv[1]
-    case "v" "ver" "version"
+    case "-v*" "--v*"
       omf.version
 
     case "q" "query"
@@ -54,7 +54,7 @@ function omf -d "Oh My Fish"
           return $OMF_INVALID_ARG
       end
 
-    case "h" "help"
+    case "-h*" "--h*" "help"
       omf.help
 
     case "l" "li" "lis" "lst" "list"
