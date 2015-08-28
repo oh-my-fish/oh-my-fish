@@ -27,6 +27,11 @@ function omf.new -a option name
       $github $user $name
 
     echo (omf::em)"Switched to $dir"(omf::off)
+
+    if test "$option" = themes
+      omf.theme $name
+      refresh
+    end
   else
     echo (omf::err)"\$OMF_CONFIG and/or \$OMF_PATH undefined."(omf::off) 1^&2
     exit $OMF_UNKNOWN_ERR
