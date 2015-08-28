@@ -43,12 +43,13 @@ end
 for path in $OMF_PATH/lib $OMF_PATH/lib/git $paths $theme $config
   contains -- (basename $path) $ignore; and continue
   autoload $path $path/completions
-  source $path/(basename $path).fish
+  source $path/(basename $path).fish ^/dev/null
     and emit init_(basename $path) $path
 end
 
 autoload $OMF_CONFIG/functions
 autoload $user_function_path
 
-source {$OMF_PATH,$OMF_CONFIG}/events.fish
-source $OMF_CONFIG/init.fish
+for path in {$OMF_PATH,$OMF_CONFIG}/events.fish $OMF_CONFIG/init.fish
+  source "$path" ^/dev/null
+end
