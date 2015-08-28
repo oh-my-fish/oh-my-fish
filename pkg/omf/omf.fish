@@ -57,6 +57,18 @@ function omf -d "Oh My Fish"
     case "-h*" "--h*" "help"
       omf.help
 
+    case "c" "cd"
+      switch (count $argv)
+        case 1
+          omf.cd
+        case 2
+          omf.cd $argv[2]
+        case "*"
+          echo (omf::err)"Invalid number of arguments"(omf::off) 1^&2
+          echo "Usage: $_ "(omf::em)"$argv[1]"(omf::off)" <name>" 1^&2
+          return $OMF_INVALID_ARG
+      end
+
     case "l" "li" "lis" "lst" "list"
       omf.list_local_packages | column
 
