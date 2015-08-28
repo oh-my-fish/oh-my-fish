@@ -92,10 +92,8 @@ omf_install() {
   touch ${fish_config_file} >/dev/null 2>&1
   test ! -w ${fish_config_file} && die "Fish configuration file is not writable, aborting."
 
-
-  echo "set -g OMF_PATH $(echo "${OMF_PATH}" | sed -e "s|$HOME|\$HOME|")" > ${fish_config_file}
-  echo "set -g OMF_CONFIG $(echo "${OMF_CONFIG}" | sed -e "s|$HOME|\$HOME|")" >> ${fish_config_file}
-  echo "source \$OMF_PATH/init.fish" >> ${fish_config_file}
+  sed "s|{{OMF_PATH}}|$OMF_PATH|;s|{{OMF_CONFIG}}|$OMF_CONFIG|" \
+    "${OMF_PATH}/templates/config.fish" > "${fish_config_file}"
 
   if [ ! -d "${OMF_CONFIG}" ]; then
     echo "Writing Oh My Fish configuration → ${OMF_CONFIG}"
