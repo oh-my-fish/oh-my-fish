@@ -1,5 +1,7 @@
 function omf.remove_package
   for pkg in $argv
+    set -l remove_status 1
+
     if not omf.util_valid_package $pkg
       if test $pkg = "omf"
         echo (omf::err)"You can't remove `omf`"(omf::off) 1^&2
@@ -9,20 +11,31 @@ function omf.remove_package
       return $OMF_INVALID_ARG
     end
 
-    if test -d $OMF_PATH/pkg/$pkg
+    for path in {$OMF_PATH,$OMF_CONFIG}/{pkg}/$pkg
+      not test -d $path; and continue
+
       emit uninstall_$pkg
-      rm -rf $OMF_PATH/pkg/$pkg
-    else if test -d $OMF_PATH/themes/$pkg
+      rm -rf $path
+      set remove_status $status
+    end
+
+    for path in {$OMF_PATH,$OMF_CONFIG}/{themes}/$pkg
+      not test -d $path; and continue
+
       if test $pkg = (cat $OMF_CONFIG/theme)
         echo "" > $OMF_CONFIG/theme
       end
-      rm -rf $OMF_PATH/themes/$pkg
+
+      rm -rf $path
+      set remove_status $status
     end
-    if test $status -eq 0
+
+    if test $remove_status -eq 0
       echo (omf::em)"$pkg succesfully removed."(omf::off)
     else
       echo (omf::err)"$pkg could not be found"(omf::off) 1^&2
     end
   end
+
   refresh
 end
