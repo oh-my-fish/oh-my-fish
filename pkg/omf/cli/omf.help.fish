@@ -5,6 +5,7 @@ function omf.help
 
   "(omf::dim)"Actions"(omf::off)"
          "(omf::em)"l"(omf::off)"ist  List local packages.
+     "(omf::em)"d"(omf::off)"escribe  Get information about what packages do.
       "(omf::em)"i"(omf::off)"nstall  Install one or more packages.
         "(omf::em)"t"(omf::off)"heme  List / Use themes.
        "(omf::em)"r"(omf::off)"emove  Remove a theme or package.

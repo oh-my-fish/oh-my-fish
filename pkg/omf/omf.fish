@@ -72,6 +72,13 @@ function omf -d "Oh My Fish"
     case "l" "li" "lis" "lst" "list"
       omf.list_local_packages | column
 
+    case "d" "desc" "describe"
+      if test (count $argv) -eq 1
+        omf.describe
+      else
+        omf.describe $argv[2..-1]
+      end
+
     case "i" "install" "get"
       if test (count $argv) -eq 1
         omf.list_db_packages | column
