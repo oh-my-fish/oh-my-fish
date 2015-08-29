@@ -35,7 +35,11 @@ end
 
 function omf -d "Oh My Fish"
   if test (count $argv) -eq 0
-    omf.help; and return 0
+    omf.help "main"; and return 0
+  else
+    if test $argv[-1] = "--help" -a (count $argv) = 2
+      omf.help $argv[1..-2]; and return 0
+    end
   end
 
   switch $argv[1]
@@ -55,7 +59,11 @@ function omf -d "Oh My Fish"
       end
 
     case "-h*" "--h*" "help"
-      omf.help
+      if test (count $argv) -eq 1
+        omf.help "main"
+      else
+        omf.help $argv[2]
+      end
 
     case "c" "cd"
       switch (count $argv)
