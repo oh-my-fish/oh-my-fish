@@ -81,17 +81,16 @@ Oh My Fish includes a small utility `omf` to fetch and install new packages and 
 
 Update framework and installed packages.
 
-## `omf install` _`<package> ...`_
+## `omf install` _`[package|url ...]`_
 
-Install one _or more_ themes or packages. To list available packages type `omf theme`.
+Install one _or more_ packages.
 
-> You can fetch packages by URL as well via `omf install URL`
+- You can install packages directly by URL via `omf install URL`
+- When called without arguments, install missing packages from [bundles](#dotfiles).
 
 ## `omf list`
 
 List installed packages.
-
-> To list packages available for download use `omf install`.
 
 ## `omf theme` _`<theme>`_
 
