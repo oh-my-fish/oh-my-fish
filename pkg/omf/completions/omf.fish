@@ -16,7 +16,7 @@ complete -c omf -n "__omf.opt_is q query"         -a (printf "%s " (set | awk '{
 complete -c omf -n "__omf.opt_is r rm remove"     -a (printf "%s " (omf.list_local_packages) (omf.list_installed_themes))
 complete -c omf -n "__omf.opt_is d desc describe" -a (printf "%s " (omf.list_db_packages))
 complete -c omf -n "__omf.opt_is c cd"            -a (printf "%s " (omf.list_db_packages))
-complete -c omf -n "__omf.opt_is i install"       -a (printf "%s " (omf.list_db_packages))
+complete -c omf -n "__omf.opt_is i install"       -a (printf "%s " (omf.list_db_packages "skip installed packages"))
 complete -c omf -n "__omf.opt_is t theme"         -a (printf "%s " (omf.list_themes))
 complete -c omf -n "__omf.opt_is help"            -a "install theme remove update list describe cd new submit query destroy"
 
