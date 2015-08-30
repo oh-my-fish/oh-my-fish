@@ -18,6 +18,7 @@ complete -c omf -n "__omf.opt_is d desc describe" -a (printf "%s " (omf.list_db_
 complete -c omf -n "__omf.opt_is c cd"            -a (printf "%s " (omf.list_db_packages))
 complete -c omf -n "__omf.opt_is i install"       -a (printf "%s " (omf.list_db_packages))
 complete -c omf -n "__omf.opt_is t theme"         -a (printf "%s " (omf.list_themes))
+complete -c omf -n "__omf.opt_is help"            -a "install theme remove update list describe cd new submit query destroy"
 
 complete -c omf -a list     -n "__omf.is_single_opt" -d "List local packages"
 complete -c omf -a describe -n "__omf.is_single_opt" -d "Get information about what packages do"
