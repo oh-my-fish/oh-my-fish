@@ -89,7 +89,7 @@ function omf -d "Oh My Fish"
 
     case "i" "install" "get"
       if test (count $argv) -eq 1
-        omf.list_db_packages | column
+        omf.list_db_packages "skip installed packages" | column
       else
         omf.install_package $argv[2..-1]
         refresh
