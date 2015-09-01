@@ -27,8 +27,8 @@ function omf.remove_package
     set -l remove_status 1
 
     if not omf.util_valid_package $pkg
-      if test $pkg = "omf"
-        echo (omf::err)"You can't remove `omf`"(omf::off) 1^&2
+      if test $pkg = "omf" -o $pkg = "default"
+        echo (omf::err)"You can't remove `$pkg`"(omf::off) 1^&2
       else
         echo (omf::err)"$pkg is not a valid package/theme name"(omf::off) 1^&2
       end
@@ -49,7 +49,7 @@ function omf.remove_package
       not test -d $path; and continue
 
       if test $pkg = (cat $OMF_CONFIG/theme)
-        echo "" > $OMF_CONFIG/theme
+        echo default > $OMF_CONFIG/theme
       end
 
       _remove_from_bundle "theme" $pkg
