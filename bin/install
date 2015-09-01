@@ -100,7 +100,10 @@ omf_install() {
     echo "Writing Oh My Fish configuration → ${OMF_CONFIG}"
     mkdir -p "${OMF_CONFIG}"
     touch "${OMF_CONFIG}/theme"
+    touch "${OMF_CONFIG}/bundle"
     test -f "${OMF_CONFIG}/revision"  || echo ${git_rev} > "${OMF_CONFIG}/revision"
+  else
+    fish -c "omf install"
   fi
 }
 

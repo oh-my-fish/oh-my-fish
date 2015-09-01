@@ -81,17 +81,16 @@ Oh My Fish includes a small utility `omf` to fetch and install new packages and 
 
 Update framework and installed packages.
 
-## `omf install` _`<package> ...`_
+## `omf install` _`[package|url ...]`_
 
-Install one _or more_ themes or packages. To list available packages type `omf theme`.
+Install one _or more_ packages.
 
-> You can fetch packages by URL as well via `omf install URL`
+- You can install packages directly by URL via `omf install URL`
+- When called without arguments, install missing packages from [bundles](#dotfiles).
 
 ## `omf list`
 
 List installed packages.
-
-> To list packages available for download use `omf install`.
 
 ## `omf theme` _`<theme>`_
 
@@ -125,6 +124,7 @@ Uninstall Oh My Fish. See [uninstall](#uninstall) for more information.
 
 # :triangular_flag_on_post: Advanced
 + [Startup](#startup)
++ [Dotfiles](#dotfiles)
 + [Core Library](#core-library)
 + [Packages](#packages)
   + [Creating](#creating)
@@ -138,6 +138,18 @@ Uninstall Oh My Fish. See [uninstall](#uninstall) for more information.
 This script runs each time a new session begins, autoloading packages, themes and your _config_ path in that order.
 
 The _config_ path (`~/.config/omf` by default) is defined by `$OMF_CONFIG` in `~/.config/fish/config.fish`. Modify this to load your own configuration, if you have any, as discussed in the [FAQ](FAQ.md#what-does-oh-my-fish-do-exactly).
+
+## Dotfiles
+
+The `$OMF_CONFIG` directory represents the user state of Oh My Fish, and is the perfect
+candidate for being added to your dotfiles and/or checked out to version control. There are two important files:
+
+- __`theme`__ - The current theme
+- __`bundle`__ - List of currently installed packages/themes
+
+### About the bundle
+
+Everytime a package/theme is installed or removed the `bundle` file is updated. You can also edit it manually and run `omf install` afterwards to satisfy the changes. Please note that while packages/themes added to the bundle gets automagically installed, a package/theme removed from bundle isn't removed from user installation.
 
 ## Core Library
 

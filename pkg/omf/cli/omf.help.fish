@@ -2,10 +2,10 @@ function omf.help -a type_flag
   switch $type_flag
     case "i" "install" "get"
       echo \n"\
-      Install and list packages.
+      Install packages.
 
       "(omf::dim)"Usage:"(omf::off)"
-        omf install                 List available packages to install
+        omf install                 Install missing packages from bundle
         omf install "(omf::em)"<name>"(omf::off)" | "(omf::em)"<url>"(omf::off)"  Install package by name or URL
 
       "(omf::dim)"Examples:"(omf::off)"
