@@ -78,7 +78,10 @@ function omf -d "Oh My Fish"
       if test (count $argv) -eq 1
         omf.bundle.install
       else
-        omf.install_package $argv[2..-1]
+        for package in $argv[2..-1]
+          omf.install $package
+        end
+
         refresh
       end
 
@@ -121,9 +124,6 @@ function omf -d "Oh My Fish"
         omf.packages.list --database --theme | column | sed -E "s/$regex/"(omf::em)"\1"(omf::off)"/"
         omf::off
       else if test (count $argv) -eq 2
-        if not contains -- $argv[2] (omf.packages.list --installed)
-          omf.install --theme $argv[2]; or return 1
-        end
         omf.theme $argv[2]
       else
         echo (omf::err)"Invalid number of arguments"(omf::off) 1^&2
