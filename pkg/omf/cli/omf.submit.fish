@@ -35,7 +35,7 @@ function omf.submit -a name url -d "Submit a package to the registry"
     else
       echo "$url" > $OMF_PATH/db/$name
       echo (omf::em)"$pkg added to the local "(dirname $name)" registry."(omf::off)
-      echo "Want to contribute? Send us a PR → github.com/fish-shell/omf"
+      echo "Want to contribute? Send us a PR → github.com/oh-my-fish/oh-my-fish"
       return 0
     end
   end

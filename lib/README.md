@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/fish-shell/omf/blob/master/README.md">
+  <a href="https://github.com/oh-my-fish/oh-my-fish/blob/master/README.md">
   <img width="100px" src="https://cloud.githubusercontent.com/assets/8317250/8510172/f006f0a4-230f-11e5-98b6-5c2e3c87088f.png">
   </a>
 </p>

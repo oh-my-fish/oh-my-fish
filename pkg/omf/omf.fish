@@ -128,7 +128,7 @@ function omf -d "Oh My Fish"
         echo (omf::em)"Oh My Fish is up to date."(omf::off)
       else
         echo (omf::err)"Oh My Fish failed to update."(omf::off)
-        echo "Please open a new issue here → "(omf::em)"git.io/omf-issues"(omf::off)
+        echo "Please open a new issue here → "(omf::em)"github.com/oh-my-fish/oh-my-fish/issues"(omf::off)
       end
       omf.theme (cat $OMF_CONFIG/theme)
       omf.install_package (omf.list_installed_packages)

@@ -1,9 +1,9 @@
 #!/bin/sh
 #
 # USAGE
-#   #1: curl -L git.io/omf | sh
-#   #2: curl -L git.io/omf > install && chmod +x install && ./install
-#   #3: OMF_CONFIG=~/.omf curl -L git.io/omf | sh
+#   #1: curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | sh
+#   #2: curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install > install && chmod +x install && ./install
+#   #3: OMF_CONFIG=~/.omf curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | sh
 #
 # ENV
 #   XDG_DATA_HOME       Base directory (~/.local/share)
@@ -30,7 +30,7 @@ test -z ${XDG_CONFIG_HOME+_}  && XDG_CONFIG_HOME="${HOME}/.config"
 test -z ${OMF_PATH+_}         && OMF_PATH="${XDG_DATA_HOME}/omf"
 test -z ${OMF_CONFIG+_}       && OMF_CONFIG="${XDG_CONFIG_HOME}/omf"
 
-test -z ${OMF_REPO_URI+_}     && OMF_REPO_URI="https://github.com/fish-shell/oh-my-fish"
+test -z ${OMF_REPO_URI+_}     && OMF_REPO_URI="https://github.com/oh-my-fish/oh-my-fish"
 test -z ${OMF_REPO_BRANCH+_}  && OMF_REPO_BRANCH="master"
 
 die() {
@@ -115,5 +115,5 @@ if omf_install; then
   # Do not swap process if running in a CI environment.
   [ -z ${CI+_} ] || exit 0 && exec "fish" < /dev/tty
 else
-  die "Oh My Fish couldn't install, but you can complain here → git.io/omf-issues"
+  die "Oh My Fish couldn't install, but you can complain here → github.com/oh-my-fish/oh-my-fish/issues"
 fi

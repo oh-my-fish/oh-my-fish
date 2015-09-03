@@ -9,7 +9,7 @@
 #     + Emit init_<pkg> event
 #
 #   + Autoload {$OMF_PATH,$OMF_CONFIG}/functions
-#   + Source {$OMF_PATH,$OMF_CONFIG}/events → fish-shell/fish-shell/issues/845
+#   + Source {$OMF_PATH,$OMF_CONFIG}/events
 #   + Source $OMF_CONFIG/init.fish
 #
 # ENV

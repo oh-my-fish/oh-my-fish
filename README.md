@@ -9,7 +9,7 @@
 <br>
 
 <p align="center">
-  <a href="https://github.com/fish-shell/oh-my-fish/blob/master/README.md">
+  <a href="https://github.com/oh-my-fish/oh-my-fish/blob/master/README.md">
   <img width="160px" src="https://cloud.githubusercontent.com/assets/8317250/8510172/f006f0a4-230f-11e5-98b6-5c2e3c87088f.png">
   </a>
 </p>
@@ -25,14 +25,14 @@
 |
 <b><a href="#advanced">Advanced</a></b>
 |
-<b><a href="https://github.com/fish-shell/oh-my-fish/wiki/Screencasts">Screencasts</a></b>
+<b><a href="https://github.com/oh-my-fish/oh-my-fish/wiki/Screencasts">Screencasts</a></b>
 |
 <b><a href="/CONTRIBUTING.md">Contributing</a></b>
 |
 <b><a href="/FAQ.md">FAQ</a></b>
 
   <p align="center">
-    <a href="https://gitter.im/fish-shell/oh-my-fish?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
+    <a href="https://gitter.im/oh-my-fish/oh-my-fish?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge">
       <img src="https://badges.gitter.im/Join%20Chat.svg">
     </a>
   </p>
@@ -44,19 +44,19 @@
 
 Oh My Fish is an all-purpose framework for the [fishshell][Fishshell]. It looks after your configuration, themes and packages. It's lightning fast and easy to use.
 
-We love contributions, [fork and send us a PR](https://github.com/fish-shell/oh-my-fish/fork).
+We love contributions, [fork and send us a PR](https://github.com/oh-my-fish/oh-my-fish/fork).
 
 # Install
 
 ```fish
-curl -L git.io/omf | sh
+curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | sh
 omf help
 ```
 
 Or _download_ and run it yourself:
 
 ```fish
-curl -L git.io/omf > install
+curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install > install
 chmod +x install
 ./install
 ```
@@ -235,13 +235,13 @@ MIT © [Oh My Fish][contributors] :metal:
 
 [fishshell]: http://fishshell.com
 
-[contributors]: https://github.com/fish-shell/oh-my-fish/graphs/contributors
+[contributors]: https://github.com/oh-my-fish/oh-my-fish/graphs/contributors
 
-[travis-badge]: http://img.shields.io/travis/fish-shell/oh-my-fish.svg?style=flat-square
-[travis-url]: https://travis-ci.org/fish-shell/oh-my-fish
+[travis-badge]: http://img.shields.io/travis/oh-my-fish/oh-my-fish.svg?style=flat-square
+[travis-url]: https://travis-ci.org/oh-my-fish/oh-my-fish
 
 [fish-badge]: https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square
 
 [license-badge]: https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 
-[omf-pulls-link]: https://github.com/fish-shell/oh-my-fish/pulls
+[omf-pulls-link]: https://github.com/oh-my-fish/oh-my-fish/pulls

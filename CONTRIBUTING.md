@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="http://github.com/fish-shell/omf">
+  <a href="http://github.com/oh-my-fish/oh-my-fish">
     <img width=120px  src="https://cloud.githubusercontent.com/assets/8317250/8510172/f006f0a4-230f-11e5-98b6-5c2e3c87088f.png">
   </a>
 </div>
@@ -22,7 +22,7 @@ Thanks for taking the time to read this guide and please _do_ contribute to Oh M
 
 ## Issues
 
-Please [open an issue](https://github.com/fish-shell/omf/issues) for bug reports / patches. Include your OS version, code examples, stack traces and everything you can to help you debug your problem.
+Please [open an issue](https://github.com/oh-my-fish/oh-my-fish/issues) for bug reports / patches. Include your OS version, code examples, stack traces and everything you can to help you debug your problem.
 
 If you have a new feature or large change in mind, please open a new issue with your suggestion to discuss the idea together.
 
