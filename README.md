@@ -9,18 +9,6 @@
 <br>
 
 <p align="center">
-<h1 align="center">:warning: Important :warning:</h1>
-<h4 align="center">
-<a href="https://github.com/wa/wahoo">Wahoo</a> and <a href="https://github.com/oh-my-fish/oh-my-fish">Oh My Fish!</a> are now one project. See this page and <a href="FAQ.md">FAQ</a> to learn what's new.
-</h4>
-</p>
-
-<hr>
-
-
-<br>
-
-<p align="center">
   <a href="https://github.com/fish-shell/oh-my-fish/blob/master/README.md">
   <img width="160px" src="https://cloud.githubusercontent.com/assets/8317250/8510172/f006f0a4-230f-11e5-98b6-5c2e3c87088f.png">
   </a>
