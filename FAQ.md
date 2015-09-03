@@ -53,7 +53,7 @@ There are roughly 3 kinds of packages:
 > :warning: Remember to backup your dotfiles and other sensitive data first.
 
 ```
-curl -L git.io/omf | sh
+curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | sh
 ```
 
 You can now safely remove `$fish_path`.
