@@ -31,17 +31,11 @@ set -q OSTYPE; or set -g OSTYPE (uname)
 set -l user_function_path $fish_function_path[1]
 set fish_function_path[1] $OMF_PATH/lib
 
-set -l theme  {$OMF_PATH,$OMF_CONFIG}/themes/(cat $OMF_CONFIG/theme)
-set -l paths  $OMF_PATH/pkg/*
-set -l config $OMF_CONFIG/pkg/*
-set -l ignore $OMF_IGNORE
+set -l theme {$OMF_PATH,$OMF_CONFIG}/themes/(cat $OMF_CONFIG/theme)
 
-for path in $paths
-  set config $OMF_CONFIG/(basename $path) $config
-end
+for path in $OMF_PATH/lib $OMF_PATH/lib/git {$OMF_PATH,$OMF_CONFIG}/pkg/* $theme
+  contains -- (basename $path) $OMF_IGNORE; and continue
 
-for path in $OMF_PATH/lib $OMF_PATH/lib/git $paths $theme $config
-  contains -- (basename $path) $ignore; and continue
   autoload $path $path/completions
   source $path/(basename $path).fish ^/dev/null
     and emit init_(basename $path) $path
