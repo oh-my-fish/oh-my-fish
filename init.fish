@@ -9,15 +9,14 @@
 #     + Emit init_<pkg> event
 #
 #   + Autoload {$OMF_PATH,$OMF_CONFIG}/functions
-#   + Source {$OMF_PATH,$OMF_CONFIG}/events
 #   + Source $OMF_CONFIG/init.fish
 #
 # ENV
 #   OSTYPE        Operating system.
 #   RESET_PATH    Original $PATH preseved across Oh My Fish reloads.
-#   OMF_PATH      Set in ~/.config/fish/config.fish
+#   OMF_PATH      ~/.local/share/omf by default.
 #   OMF_IGNORE    List of packages to ignore.
-#   OMF_CONFIG    Same as OMF_PATH. ~/.dotfiles by default.
+#   OMF_CONFIG    ~/.config/omf by default.
 #   OMF_VERSION   Oh My Fish! version
 
 if set -q RESET_PATH
@@ -51,8 +50,7 @@ end
 autoload $OMF_CONFIG/functions
 autoload $user_function_path
 
-for path in {$OMF_PATH,$OMF_CONFIG}/events.fish $OMF_CONFIG/init.fish
-  source $path ^/dev/null
-end
+# Source custom init.fish file
+source $OMF_CONFIG/init.fish ^/dev/null
 
 set -g OMF_VERSION "1.0.0"
