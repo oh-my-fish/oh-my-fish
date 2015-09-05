@@ -30,7 +30,7 @@ Oh My Fish includes a small utility `omf` to fetch and install new packages and 
 
 ## `omf update`
 
-Update framework and installed packages.
+Update the framework and installed packages.
 
 ## `omf install` _`[package|url ...]`_
 
