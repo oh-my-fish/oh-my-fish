@@ -26,8 +26,6 @@ else
   set -gx ORIGINAL_PATH $PATH
 end
 
-set -q OSTYPE; or set -g OSTYPE (uname)
-
 # Save the head of function path and autoload core functions
 set -l user_function_path $fish_function_path[1]
 set fish_function_path[1] $OMF_PATH/lib

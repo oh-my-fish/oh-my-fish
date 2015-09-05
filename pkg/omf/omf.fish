@@ -97,9 +97,10 @@ function omf -d "Oh My Fish"
 
     case "t" "theme"
       if test (count $argv) -eq 1
+        set -l ostype (uname)
         set -l theme (cat $OMF_CONFIG/theme)
         set -l regex "[[:<:]]($theme)[[:>:]]"
-        test "$OSTYPE" != "Darwin"; and set regex "\b($theme)\b"
+        test "$ostype" != "Darwin"; and set regex "\b($theme)\b"
 
         omf.list_themes | column | sed -E "s/$regex/"(omf::em)"\1"(omf::off)"/"
         omf::off
