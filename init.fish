@@ -13,16 +13,17 @@
 #
 # ENV
 #   OSTYPE        Operating system.
-#   RESET_PATH    Original $PATH preseved across Oh My Fish reloads.
+#   ORIGINAL_PATH Original $PATH preseved across Oh My Fish reloads.
 #   OMF_PATH      ~/.local/share/omf by default.
 #   OMF_IGNORE    List of packages to ignore.
 #   OMF_CONFIG    ~/.config/omf by default.
 #   OMF_VERSION   Oh My Fish! version
 
-if set -q RESET_PATH
-  set PATH $RESET_PATH
+# Save PATH before oh my fish for reseting the PATH when we reload OMF.
+if set -q ORIGINAL_PATH
+  set PATH $ORIGINAL_PATH
 else
-  set -gx RESET_PATH $PATH
+  set -gx ORIGINAL_PATH $PATH
 end
 
 set -q OSTYPE; or set -g OSTYPE (uname)
