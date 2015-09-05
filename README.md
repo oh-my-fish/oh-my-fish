@@ -37,7 +37,7 @@ Update the framework and installed packages.
 Install one _or more_ packages.
 
 - You can install packages directly by URL via `omf install URL`
-- When called without arguments, install missing packages from [bundles](#dotfiles).
+- When called without arguments, install missing packages from [bundle](#dotfiles).
 
 ## `omf list`
 
