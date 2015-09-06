@@ -24,7 +24,7 @@ chmod +x install
 ./install
 ```
 
-# :beginner: Getting Started
+# Getting Started
 
 Oh My Fish includes a small utility `omf` to fetch and install new packages and themes.
 
