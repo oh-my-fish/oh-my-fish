@@ -125,7 +125,7 @@ function omf -d "Oh My Fish"
     case "u" "up" "upd" "update"
       pushd $OMF_PATH
       echo (omf::em)"Updating Oh My Fish..."(omf::off)
-      if omf.update
+      if omf.repo.pull
         echo (omf::em)"Oh My Fish is up to date."(omf::off)
       else
         echo (omf::err)"Oh My Fish failed to update."(omf::off)

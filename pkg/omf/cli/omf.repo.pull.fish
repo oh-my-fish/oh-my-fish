@@ -1,4 +1,10 @@
 function omf.repo.pull
+  if test (command git config --get remote.upstream.url)
+    set repository upstream
+  else
+    set repository origin
+  end
+
   set initial_branch (command git symbolic-ref -q --short HEAD); or return $OMF_UNKNOWN_ERR
   set initial_revision (command git rev-parse -q --verify HEAD); or return $OMF_UNKNOWN_ERR
 
@@ -14,8 +20,8 @@ function omf.repo.pull
     command git checkout master --quiet
   end
 
-  # the refspec ensures that 'origin/master' gets updated
-  command git pull --rebase --quiet origin "refs/heads/master:refs/remotes/origin/master"
+  # the refspec ensures that '$repository/master' gets updated
+  command git pull --rebase --quiet $repository "refs/heads/master:refs/remotes/$repository/master"
   if test $status -eq 2 #SIGINT
     command git checkout $initial_branch
     command git reset --hard $initial_revision
@@ -32,4 +38,6 @@ function omf.repo.pull
     echo (omf::em)"Restored your changes:"(omf::off)
     command git status --short --untracked-files
   end
+
+  return 0
 end
