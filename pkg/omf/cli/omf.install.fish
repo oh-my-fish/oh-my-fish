@@ -28,7 +28,7 @@ function omf.install -a type_flag name_or_url
       echo (omf::err)"Error: $local_name $install_type already installed."(omf::off) 1^&2
     else
       echo (omf::dim)"Trying to clone from URL..."(omf::off)
-      if git clone -q $name_or_url $OMF_PATH/$parent_path/$local_name
+      if omf.repo.clone $name_or_url $OMF_PATH/$parent_path/$local_name
         omf.persist $install_type $name_or_url
         _display_success "$install_type $name_or_url"
       else
@@ -46,7 +46,7 @@ function omf.install -a type_flag name_or_url
     echo (omf::em)"✔ $name_or_url $install_type up to date."(omf::off)
   else
     echo (omf::dim)"Installing $name_or_url $install_type..."(omf::off)
-    if git clone (cat $OMF_PATH/db/$target) $OMF_PATH/$target >/dev/null ^&1
+    if omf.repo.clone (cat $OMF_PATH/db/$target) $OMF_PATH/$target
       omf.persist $install_type $name_or_url
       _display_success "$install_type $name_or_url"
     else
