@@ -93,6 +93,10 @@ candidate for being added to your dotfiles and/or checked out to version control
 
 Everytime a package/theme is installed or removed the `bundle` file is updated. You can also edit it manually and run `omf install` afterwards to satisfy the changes. Please note that while packages/themes added to the bundle gets automagically installed, a package/theme removed from bundle isn't removed from user installation.
 
+## Creating Packages
+
+Oh My Fish uses an advanced and well defined plugin architecture to ease plugin development, including init/uninstall events and function autoloading. [See the documentation](docs/Packages.md) for more details.
+
 # License
 
 MIT © [Oh My Fish][contributors] :metal:
