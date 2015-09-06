@@ -10,7 +10,7 @@ function omf.update
     if git pull --rebase $repo master >/dev/null ^&1
       git stash apply >/dev/null ^&1
     else
-      omf.util_sync "origin"
+      omf.repo.sync
     end
   end
 end
