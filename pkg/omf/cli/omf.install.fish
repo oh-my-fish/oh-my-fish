@@ -1,17 +1,4 @@
 function omf.install -a type_flag name_or_url
-  function _write_bundle
-    set bundle $OMF_CONFIG/bundle
-    set record $argv
-
-    if test -f $bundle
-      if not grep $record $bundle > /dev/null 2>&1
-        echo $record >> $bundle
-      end
-    else
-      echo $record > $bundle
-    end
-  end
-
   function _display_success
     echo (omf::em)"✔ $argv successfully installed."(omf::off)
   end
@@ -42,7 +29,7 @@ function omf.install -a type_flag name_or_url
     else
       echo (omf::dim)"Trying to clone from URL..."(omf::off)
       if git clone -q $name_or_url $OMF_PATH/$parent_path/$local_name
-        _write_bundle "$install_type $name_or_url"
+        omf.persist $install_type $name_or_url
         _display_success "$install_type $name_or_url"
       else
         _display_error "$install_type $name_or_url"
@@ -60,7 +47,7 @@ function omf.install -a type_flag name_or_url
   else
     echo (omf::dim)"Installing $name_or_url $install_type..."(omf::off)
     if git clone (cat $OMF_PATH/db/$target) $OMF_PATH/$target >/dev/null ^&1
-      _write_bundle "$install_type $name_or_url"
+      omf.persist $install_type $name_or_url
       _display_success "$install_type $name_or_url"
     else
       _display_error "$install_type $name_or_url"
