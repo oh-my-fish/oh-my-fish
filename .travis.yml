@@ -1,13 +1,24 @@
 language: c
+
 os:
   - linux
+  
 sudo: false
+
 addons:
   apt:
     packages:
     - tree
     - fish
+    
 before_script: pwd; tree -h
+
 script: /bin/sh bin/install
+
 after_script:
   - cd ~/.config/fish; tree -h; find . -type f | xargs cat
+  
+notifications:
+  email:
+    on_success: never
+    on_failure: change
