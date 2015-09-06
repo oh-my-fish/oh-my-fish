@@ -73,10 +73,7 @@ Use to inspect all session variables. Useful to  dump _path_ variables like `$fi
 
 Uninstall Oh My Fish. See [uninstall](#uninstall) for more information.
 
-# :triangular_flag_on_post: Advanced
-+ [Startup](#startup)
-+ [Dotfiles](#dotfiles)
-+ [Core Library](#core-library)
+# Advanced
 
 ## Startup
 
