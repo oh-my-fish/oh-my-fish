@@ -13,7 +13,7 @@ function omf.install -a type_flag name_or_url
   end
 
   function _display_success
-    echo (omf::em)"✔ $argv succesfully installed."(omf::off)
+    echo (omf::em)"✔ $argv successfully installed."(omf::off)
   end
 
   function _display_error
