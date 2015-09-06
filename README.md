@@ -28,48 +28,48 @@ chmod +x install
 
 Oh My Fish includes a small utility `omf` to fetch and install new packages and themes.
 
-## `omf update`
+#### `omf update`
 
 Update the framework and installed packages.
 
-## `omf install` _`[<name>|<url>]`_
+#### `omf install` _`[<name>|<url>]`_
 
 Install one _or more_ packages.
 
 - You can install packages directly by URL via `omf install URL`
 - When called without arguments, install missing packages from [bundle](#dotfiles).
 
-## `omf list`
+#### `omf list`
 
 List installed packages.
 
-## `omf theme` _`<theme>`_
+#### `omf theme` _`<theme>`_
 
 Apply a theme. To list available themes type `omf theme`.
 
-## `omf remove` _`<name>`_
+#### `omf remove` _`<name>`_
 
 Remove a theme or package.
 
 > Packages subscribed to `uninstall_<pkg>` events are notified before the package is removed, so custom cleanup of resources can be done. See [Uninstall](/docs/Packages.md#uninstall) for more information.
 
-## `omf new pkg | theme` _`<name>`_
+#### `omf new pkg | theme` _`<name>`_
 
 Scaffold out a new package or theme.
 
 > This creates a new directory under `$OMF_CONFIG/{pkg | themes}/` with a template.
 
-## `omf submit` _`pkg/<name>`_ _`[<url>]`_
+#### `omf submit` _`pkg/<name>`_ _`[<url>]`_
 
 Add a new package. To add a theme use `omf submit` _`themes/<name>`_ _`<url>`_.
 
 Make sure to [send us a PR][omf-pulls-link] to update the registry.
 
-## `omf query` _`<variable name>`_
+#### `omf query` _`<variable name>`_
 
 Use to inspect all session variables. Useful to  dump _path_ variables like `$fish_function_path`, `$fish_complete_path`, `$PATH`, etc.
 
-## `omf destroy`
+#### `omf destroy`
 
 Uninstall Oh My Fish.
 
