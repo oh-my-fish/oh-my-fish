@@ -59,7 +59,7 @@ function omf.remove_package
     end
 
     if test $remove_status -eq 0
-      echo (omf::em)"$pkg succesfully removed."(omf::off)
+      echo (omf::em)"$pkg successfully removed."(omf::off)
       refresh
     else
       echo (omf::err)"$pkg could not be found"(omf::off) 1^&2
