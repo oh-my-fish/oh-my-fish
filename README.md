@@ -71,7 +71,7 @@ Use to inspect all session variables. Useful to  dump _path_ variables like `$fi
 
 ## `omf destroy`
 
-Uninstall Oh My Fish. See [uninstall](#uninstall) for more information.
+Uninstall Oh My Fish.
 
 # Advanced
 
@@ -104,7 +104,5 @@ MIT © [Oh My Fish][contributors] :metal:
 [fishshell]: http://fishshell.com
 
 [contributors]: https://github.com/oh-my-fish/oh-my-fish/graphs/contributors
-
-
 
 [omf-pulls-link]: https://github.com/oh-my-fish/oh-my-fish/pulls
