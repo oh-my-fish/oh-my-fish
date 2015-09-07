@@ -99,7 +99,7 @@ Oh My Fish uses an advanced and well defined plugin architecture to ease plugin 
 
 # License
 
-MIT © [Oh My Fish][contributors] :metal:
+Copyright (c) 2015 Bruno Ferreira Pinto. See [License](LICENSE).
 
 [fishshell]: http://fishshell.com
 
