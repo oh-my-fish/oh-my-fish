@@ -1,28 +1,5 @@
 function omf.remove_package
 
-  function _remove_from_bundle
-    set bundle $OMF_CONFIG/bundle
-
-    if test -f $bundle
-      set type $argv[1]
-      set name $argv[2]
-      set bundle_contents (cat $bundle)
-
-      rm -f $bundle
-
-      for record in $bundle_contents
-        set record_type (echo $record | cut -d' ' -f1)
-        set record_name (echo $record | cut -d' ' -f2-)
-        set record_basename (basename (echo $record_name | sed -e 's/\.git$//'))
-
-        if not test "$type" = "$record_type" -a "$name" = "$record_basename"
-          echo "$record_type $record_name" >> $bundle
-        end
-
-      end
-    end
-  end
-
   for pkg in $argv
     set -l remove_status 1
 
@@ -39,7 +16,7 @@ function omf.remove_package
       not test -d $path; and continue
 
       emit uninstall_$pkg
-      _remove_from_bundle "package" $pkg
+      omf.bundle.remove "package" $pkg
 
       rm -rf $path
       set remove_status $status
@@ -52,7 +29,7 @@ function omf.remove_package
         echo default > $OMF_CONFIG/theme
       end
 
-      _remove_from_bundle "theme" $pkg
+      omf.bundle.remove "theme" $pkg
 
       rm -rf $path
       set remove_status $status

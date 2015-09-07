@@ -89,7 +89,7 @@ function omf -d "Oh My Fish"
 
     case "i" "install" "get"
       if test (count $argv) -eq 1
-        omf.install_bundle
+        omf.bundle.install
       else
         omf.install_package $argv[2..-1]
         refresh
