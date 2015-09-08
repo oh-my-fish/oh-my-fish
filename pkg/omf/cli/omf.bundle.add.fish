@@ -1,4 +1,4 @@
-function omf.persist -a type name_or_url
+function omf.bundle.add -a type name_or_url
   function __omf.write_bundle
     set -l bundle $OMF_CONFIG/bundle
     set -l record $argv

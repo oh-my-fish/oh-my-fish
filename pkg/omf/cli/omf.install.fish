@@ -29,7 +29,7 @@ function omf.install -a type_flag name_or_url
     else
       echo (omf::dim)"Trying to clone from URL..."(omf::off)
       if omf.repo.clone $name_or_url $OMF_PATH/$parent_path/$local_name
-        omf.persist $install_type $name_or_url
+        omf.bundle.add $install_type $name_or_url
         _display_success "$install_type $name_or_url"
       else
         _display_error "$install_type $name_or_url"
@@ -47,7 +47,7 @@ function omf.install -a type_flag name_or_url
   else
     echo (omf::dim)"Installing $name_or_url $install_type..."(omf::off)
     if omf.repo.clone (cat $OMF_PATH/db/$target) $OMF_PATH/$target
-      omf.persist $install_type $name_or_url
+      omf.bundle.add $install_type $name_or_url
       _display_success "$install_type $name_or_url"
     else
       _display_error "$install_type $name_or_url"
