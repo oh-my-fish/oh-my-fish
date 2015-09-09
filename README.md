@@ -24,6 +24,22 @@ chmod +x install
 ./install
 ```
 
+## Update Instructions
+
+We just moved Oh My Fish repository back to our own organization. Since then, you need to update your Oh My Fish remotes. A clean install is highly recommended for users of old Oh My Fish, and you can follow the steps described below:
+
+1. __BACKUP ALL YOUR CUSTOM STUFF__
+2. `mv ~/.config/fish/config{,_old}.fish`
+3. `rm -rf ~/.oh-my-fish`
+4. Do a [clean Oh My Fish install](#install)
+5. Copy all lines starting with `Plugin` and `Theme` from `~/.config/fish/config_old.fish`
+6. Paste them it into `$OMF_CONFIG/bundle` file. If it doesn't exist, create it
+7. Convert all `Plugin "name"` lines to `package name`
+8. Convert all `Theme "name"` lines to `theme name`
+9. `omf install`
+
+If you find any trouble in the upgrade process join us in [Gitter](https://gitter.im/oh-my-fish/oh-my-fish) and we will be happy to help.
+
 # Getting Started
 
 Oh My Fish includes a small utility `omf` to fetch and install new packages and themes.
