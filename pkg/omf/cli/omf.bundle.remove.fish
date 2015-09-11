@@ -19,4 +19,6 @@ function omf.bundle.remove
         end
       end
     end
+
+    return 0
   end
