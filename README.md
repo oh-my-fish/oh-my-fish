@@ -10,6 +10,11 @@ Oh My Fish provides core infrastructure to allow you to install packages which e
 
 <br><br>
 
+<p align="center">
+  <b>English</b> &bull;
+  <a href="docs/zh-CN">简体中文</a>
+</p>
+
 # Install
 
 ```fish

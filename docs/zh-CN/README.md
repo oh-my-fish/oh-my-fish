@@ -1,13 +1,18 @@
-<img src="docs/logo.png" align="left" width="192px" height="192px"/>
+<img src="../logo.png" align="left" width="192px" height="192px"/>
 <img src="" align="left" width="0" height="192px" hspace="10"/>
 
 > The <a href="http://fishshell.com">Fishshell</a> Framework
 
-[![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE.md) [![Fish Shell Version](https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square)](http://fishshell.com) [![Travis Build Status](http://img.shields.io/travis/oh-my-fish/oh-my-fish.svg?style=flat-square)](https://travis-ci.org/oh-my-fish/oh-my-fish) [![Travis Build Status](https://img.shields.io/badge/gitter-join_chat-brightgreen.svg?style=flat-square)](https://gitter.im/oh-my-fish/oh-my-fish?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](../../LICENSE.md) [![Fish Shell Version](https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square)](http://fishshell.com) [![Travis Build Status](http://img.shields.io/travis/oh-my-fish/oh-my-fish.svg?style=flat-square)](https://travis-ci.org/oh-my-fish/oh-my-fish) [![Travis Build Status](https://img.shields.io/badge/gitter-join_chat-brightgreen.svg?style=flat-square)](https://gitter.im/oh-my-fish/oh-my-fish?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Oh My Fish 提供核心基础设施的配置，允许每个人可以轻松安装插件或随心所欲更换 Shell 外观样式，它的速度敏捷和可扩展性让你**如鱼得水**。
 
 <br><br>
+
+<p align="center">
+  <a href="../../README.md">English</a> &bull;
+  <b>简体中文</b>
+</p>
 
 # 安装
 
@@ -81,8 +86,8 @@ Oh My Fish 安装脚本会把自身启动代码加载到 fish 的配置文件 (`
 
 ## 启动脚本
 
-每次你新打开 Shell 都会从 _配置文件_ (默认：`~/.config/omf`) 加载 Oh My Fish 的启动脚本([`init.fish`](../init.fish)) 进行初始化：
-自动加载插件，主题和你自定义的配置文件。更多信息请查看[FAQ](docs/FAQ.md#what-does-oh-my-fish-do-exactly).
+每次你新打开 Shell 都会从 _配置文件_ (默认：`~/.config/omf`) 加载 Oh My Fish 的启动脚本([`init.fish`](../../init.fish)) 进行初始化：
+自动加载插件，主题和你自定义的配置文件。更多信息请查看[FAQ](FAQ.md#oh-my-fish-包大概包含哪些类型).
 
 ## Dotfiles
 
@@ -99,11 +104,11 @@ Oh My Fish 安装脚本会把自身启动代码加载到 fish 的配置文件 (`
 
 ## 创建插件
 
-Oh My Fish 使用了友好的插件架构能够简化插件的开发，其中包括初始化、卸载事件和函数的自动加载。[查看相关文档](docs/Packages.md) 获取更多信息。
+Oh My Fish 使用了友好的插件架构能够简化插件的开发，其中包括初始化、卸载事件和函数的自动加载。[查看相关文档](Packages.md) 获取更多信息。
 
 # 开源协议
 
-Copyright (c) 2015 Bruno Ferreira Pinto. 详见 [开源协议文件](LICENSE).
+Copyright (c) 2015 Bruno Ferreira Pinto. 详见 [开源协议文件](../../LICENSE).
 
 [fishshell]: http://fishshell.com
 
