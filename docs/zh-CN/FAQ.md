@@ -6,6 +6,11 @@
 
 <br>
 
+<p align="center">
+  <a href="../en-US/FAQ.md">English</a> &bull;
+  <b>简体中文</b>
+</p>
+
 # FAQ
 
 感谢您花一些时间来阅读 FAQ。如果没有从下面找到你想问的问题欢迎给我们提交新的问题(Issue)。
@@ -30,11 +35,11 @@ Oh My Fish 包是使用 fish 编写的一系列主题和插件用于扩展 Shell
 
 目前粗略分类可以定义 3 中类型：
 
-1. 配置增强。比如 [`pkg-pyenv`](https://github.com/oh-my-fish/pkg-pyenv) checks whether `pyenv` exists in your system and runs `(pyenv init - | psub)` for you during startup.
+1. 配置增强。比如 [`pkg-pyenv`](https://github.com/oh-my-fish/pkg-pyenv) 检测 `pyenv` 是否安装并运行 `(pyenv init - | psub)`。
 
 2. 主题. 查看我们的[主题目录](https://github.com/oh-my-fish).
 
-3. Traditional shell utilities. For example [`pkg-copy`](https://github.com/oh-my-fish/pkg-copy), a clipboard utility compatible across Linux and OSX.
+3. 系统增强。比如 [`pkg-copy`](https://github.com/oh-my-fish/pkg-copy)，可同时支持 Linux 和 Mac OS X 的剪切工具。
 
 
 ## Oh My Fish 主要都干了什么?
