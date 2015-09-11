@@ -6,6 +6,12 @@
 
 <br>
 
+<p align="center">
+  <b>English</b> &bull;
+  <a href="docs/zh-CN/FAQ.md">简体中文</a>
+</p>
+
+
 # FAQ
 
 Thanks for taking the time to read this FAQ. Feel free to create a new issue if your question is not answered here.
