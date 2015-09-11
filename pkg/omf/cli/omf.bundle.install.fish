@@ -23,6 +23,8 @@ function omf.bundle.install
         end
       end
     end
+
+    sort -u $bundle -o $bundle
   end
 
   return 0
