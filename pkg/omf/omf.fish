@@ -120,7 +120,7 @@ function omf -d "Oh My Fish"
         echo "Usage: $_ "(omf::em)"$argv[1]"(omf::off)" <[package|theme] name>" 1^&2
         return $OMF_INVALID_ARG
       end
-      omf.remove_package $argv[2..-1]
+      omf.remove_package $argv[2] ; and refresh
 
     case "u" "up" "upd" "update"
       pushd $OMF_PATH

@@ -1,7 +1,9 @@
 function omf.destroy -d "Remove Oh My Fish"
   echo (omf::dim)"Removing Oh My Fish..."(omf::off)
 
-  omf.remove_package (basename $OMF_PATH/pkg/*) >/dev/null ^&1
+  for pkg in (basename $OMF_PATH/pkg/*)
+    omf.remove_package $pkg >/dev/null ^&1
+  end
 
   if test -e "$HOME/.config/fish/config.copy"
     mv "$HOME/.config/fish/config".{copy,fish}
