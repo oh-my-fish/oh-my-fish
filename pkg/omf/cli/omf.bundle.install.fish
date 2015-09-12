@@ -14,12 +14,12 @@ function omf.bundle.install
       switch $type
       case "package"
         if not contains $name $packages
-          omf.install --pkg $name
+          omf.install --pkg $name_or_url
         end
 
       case "theme"
         if not contains $name $themes
-          omf.install --theme $name
+          omf.install --theme $name_or_url
         end
       end
     end
