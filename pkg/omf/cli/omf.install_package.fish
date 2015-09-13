@@ -1,4 +1,5 @@
-function omf.install_package -d "Return success for at least one successful install."
+# Return success for at least one successful install.
+function omf.install_package 
   set -l return_code $OMF_UNKNOWN_ERR
   for search in $argv
     omf.install --pkg $search
