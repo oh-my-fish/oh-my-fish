@@ -1,5 +1,7 @@
 function omf.bundle.install
 
+  omf.util.migrate_old_bundle
+
   if test -f $OMF_CONFIG/bundle
     set packages (omf.list_local_packages)
     set themes (omf.list_installed_themes)
