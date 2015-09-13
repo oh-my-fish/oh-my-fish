@@ -10,6 +10,8 @@ function omf.bundle.add -a type name_or_url
     else
       echo $record > $bundle
     end
+
+    sort -u $bundle -o $bundle
   end
 
   function __omf.write_theme

@@ -1,10 +1,12 @@
 function omf.bundle.install
+  set bundle $OMF_CONFIG/bundle
 
-  if test -f $OMF_CONFIG/bundle
+  if test -f $bundle
     set packages (omf.list_local_packages)
     set themes (omf.list_installed_themes)
+    set bundle_contents (cat $bundle | sort -u)
 
-    for record in (cat $OMF_CONFIG/bundle | uniq)
+    for record in $bundle_contents
       set type (echo $record | cut -d' ' -f1)
       set name_or_url (echo $record | cut -d' ' -f2-)
       set name (basename $name_or_url | sed 's/\.git//;s/^pkg-//;s/^plugin-//;s/^theme-//')
@@ -20,8 +22,9 @@ function omf.bundle.install
           omf.install --theme $name
         end
       end
-
     end
+
+    sort -u $bundle -o $bundle
   end
 
   return 0

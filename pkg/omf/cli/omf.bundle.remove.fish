@@ -4,7 +4,7 @@ function omf.bundle.remove
     if test -f $bundle
       set type $argv[1]
       set name $argv[2]
-      set bundle_contents (cat $bundle | uniq)
+      set bundle_contents (cat $bundle | sort -u)
 
       rm -f $bundle
 
@@ -17,7 +17,8 @@ function omf.bundle.remove
         if not test "$type" = "$record_type" -a "$name" = "$record_basename"
           echo "$record_type $record_name" >> $bundle
         end
-
       end
     end
+
+    return 0
   end
