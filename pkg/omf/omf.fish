@@ -91,8 +91,9 @@ function omf -d "Oh My Fish"
       if test (count $argv) -eq 1
         omf.bundle.install
       else
-        omf.install_package $argv[2..-1]
-        refresh
+        if omf.install_package $argv[2..-1]
+          refresh
+        end
       end
 
     case "t" "theme"
