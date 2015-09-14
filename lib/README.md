@@ -35,13 +35,11 @@ Wrap basename so it can handle multiple arguments.
 
 #### `refresh`
 
-Extract the root (top-most parent directory), dirname and basename from [`fish_prompt`](http://fishshell.com/docs/current/faq.html#faq-prompt).
-
+Replace the running instance of fishshell with a new one causing Oh My Fish to reload as well.
 
 #### `prompt_segments`
 
-Replace the running instance of fishshell with a new one causing Oh My Fish to reload as well.
-
+Extract the root (top-most parent directory), dirname and basename from [`fish_prompt`](http://fishshell.com/docs/current/faq.html#faq-prompt).
 
 ## Git Functions
 #### `git_ahead`
