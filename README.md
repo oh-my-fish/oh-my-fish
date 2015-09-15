@@ -61,7 +61,7 @@ List installed packages.
 
 #### `omf theme` _`<theme>`_
 
-Apply a theme. To list available themes type `omf theme`.
+Apply a theme. To list available themes type `omf theme`. You can also [preview available Themes](./docs/Themes.md) before installing.
 
 #### `omf remove` _`<name>`_
 
