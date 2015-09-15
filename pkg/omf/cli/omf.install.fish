@@ -1,4 +1,4 @@
-function omf.install -a name_or_url
+function omf.install -a type_flag name_or_url
   function __omf.install.success
     echo (omf::em)"✔ $argv successfully installed."(omf::off)
   end
@@ -8,12 +8,16 @@ function omf.install -a name_or_url
     return $OMF_UNKNOWN_ERR
   end
 
-  if test \( -e $OMF_PATH/db/themes/$name_or_url \) -o (echo $name_or_url | grep theme-)
-    set install_type "theme"
-    set parent_path "themes"
-  else
-    set install_type "package"
-    set parent_path "pkg"
+  switch $type_flag
+    case "--theme"
+      set install_type "theme"
+      set parent_path "themes"
+    case "--pkg"
+      set install_type "package"
+      set parent_path "pkg"
+    case "*"
+      echo (omf::err)"Argument to omf.install must be --theme [name|URL] or --pkg [name|URL]"(omf::off)
+      return $OMF_INVALID_ARG
   end
 
   if test -e $OMF_PATH/db/$parent_path/$name_or_url

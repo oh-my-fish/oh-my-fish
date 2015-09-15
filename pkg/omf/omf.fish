@@ -92,7 +92,7 @@ function omf -d "Oh My Fish"
         omf.bundle.install
       else
         for package in $argv[2..-1]
-          omf.install $package
+          omf.install --pkg $package
         end
 
         refresh
@@ -109,7 +109,7 @@ function omf -d "Oh My Fish"
         omf::off
 
       else if test (count $argv) -eq 2
-        omf.install $argv[2]
+        omf.install --theme $argv[2]
         refresh
       else
         echo (omf::err)"Invalid number of arguments"(omf::off) 1^&2
