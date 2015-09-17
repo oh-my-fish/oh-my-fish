@@ -22,7 +22,10 @@ before_install:
   - tests/install_fish.sh
 
 before_script: pwd; tree -h
-script: "/bin/sh bin/install"
+
+script:
+  - /bin/sh tests/travis_install_omf.sh
+
 after_script:
   - cd ~/.config/fish; tree -h; find . -type f | xargs cat
 
