@@ -40,9 +40,7 @@ function omf.install -a type_flag name_or_url
 
   if test -e $OMF_PATH/$target
     echo (omf::dim)"Updating $name_or_url $install_type..."(omf::off)
-    pushd $OMF_PATH/$target
-    omf.repo.pull
-    popd
+    omf.repo.pull $OMF_PATH/$target
     echo (omf::em)"✔ $name_or_url $install_type up to date."(omf::off)
   else
     echo (omf::dim)"Installing $name_or_url $install_type..."(omf::off)
