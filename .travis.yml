@@ -15,6 +15,8 @@ addons:
 env:
   global:
     - PATH="$HOME/fish/bin:$PATH"
+    - OMF_REPO_URI="https://github.com/$TRAVIS_REPO_SLUG"
+    - OMF_REPO_BRANCH="$TRAVIS_BRANCH"
 
 before_install:
   - tests/install_fish.sh
