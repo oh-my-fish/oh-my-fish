@@ -20,11 +20,13 @@ env:
 
 before_install:
   - tests/install_fish.sh
+  - fish -c 'ln -sf $TRAVIS_BUILD_DIR/tests/fish_user_function $fish_function_path[1]'
 
 before_script: pwd; tree -h
 
 script:
   - /bin/sh tests/travis_install_omf.sh
+  - tests/travis_tests.fish
 
 after_script:
   - cd ~/.config/fish; tree -h; find . -type f | xargs cat
