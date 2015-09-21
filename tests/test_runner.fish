@@ -1,5 +1,7 @@
 #!/usr/bin/env fish
 
+# TODO: This is only a basic draft.
+
 set -l return_code 0
 
 set commands "omf help" "omf query PATH" "omf query fish_function_path" "omf install apt"
