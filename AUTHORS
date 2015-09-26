@@ -1,0 +1,18 @@
+# This file lists all individuals having contributed content to the repository.
+# git log --format='%aN <%aE>' | env LC_ALL=C.UTF-8 sort -uf
+
+Bruno Pinto <brunoferreirapinto@gmail.com>
+Jorge Bucaran <jbucaran@me.com>
+Justin Hileman <github@0x7f.us>
+Daniel Banck <daniel@dbanck.de>
+Derek Stavis <dekestavis@gmail.com>
+jeremiejig <me@jeremiejig.fr>
+Nathan Wykes <nwykes@gmail.com>
+Natrim <maly@kinet.cz>
+Pablo Santiago Blum de Aguiar <scorphus@gmail.com>
+Pyry-Samuli Lahti <pyppe@iki.fi>
+Stephen Coakley <me@stephencoakley.com>
+Tom Hensel <github@jitter.eu>
+Twan Coenraad <twan@coenraad.at>
+Wild Kat <wk@futureinquestion.net>
+
