@@ -1,24 +1,21 @@
 language: c
-
 os:
-  - linux
-  
+- linux
 sudo: false
-
 addons:
   apt:
     packages:
     - tree
     - fish
-    
+
 before_script: pwd; tree -h
-
-script: /bin/sh bin/install
-
+script: "/bin/sh bin/install"
 after_script:
-  - cd ~/.config/fish; tree -h; find . -type f | xargs cat
-  
+- cd ~/.config/fish; tree -h; find . -type f | xargs cat
+
 notifications:
   email:
     on_success: never
     on_failure: change
+  slack:
+    secure: fHR34H901zaBpUdm9BECQfocnPki8HdigH9CQxopvJ6Rm0WCLzCst4zPESAlO/Jb1t6OYtU6Goqmdq3yqzo8+moCrygrpMUtzIel/TDhkLzC2SIlmMdnw2/Xdwzisd/8QBVwu9ns8xJ2C4eegolNazNsc1Ow/wULaLwA7vUJrfcSmvYBepfe3MPSX/KLU3BBRhiTr3RhuzV+D1qQcSrAiWGVr4zWUiRAar6WD1D4athZO9OX33upBYpraGEa3sRWrUJjVv7KWMH566Y2MSAtd0NBgsF9dn3S5nKTXtfyGXt2gkykZ9Ag1B7B9AR9BHpn5UcvDdn7FZpEREfrllkDU8iG67RD7owyRl/T5jyWQecU2Q9Rlco5esEpbkY7sXmzwj2RVBGzsaVjxajZ+C7Ns2ogMcP8o+xqfcUASXjlJM2kJQRSenwx82Vq6uQ0vbhgKWBTQE1qsEkLDCthUxQ9eJ0/exoBp95wrZinilmEyps00oqmS40HEhB+JmuN2sGVWhpSczVDvVmdV+XSewLqfRnWtr2yhL8dR1sfVm2lJh3Dzik4BFUASByeBJnViU4dDilLlb4S3Dwk0XZh9HGwLs9ujNA3PT23uoRu4VRBQkIwXZE8v/qvf4/7w8IowofzezYcjwxkaqu1hNgTKNOkbgopV9RdwrUxy4f53S0l2jY=
