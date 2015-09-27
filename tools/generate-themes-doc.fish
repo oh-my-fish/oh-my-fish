@@ -1,7 +1,11 @@
 #!/usr/bin/env fish
 
 set -l project_dir (status -f|xargs dirname|xargs dirname)
-set -l theme_doc "$project_dir/docs/Themes.md"
+if [ $argv ]
+  set theme_doc $argv
+else
+  set theme_doc "$project_dir/docs/Themes.md"
+end
 set temp_theme_contents (mktemp /tmp/fish.Themes.Content.XXXXX.md)
 set temp_theme_toc (mktemp /tmp/fish.Themes.TOC.XXXXX.md)
 
@@ -25,7 +29,7 @@ function __find_readme -a raw_content
   end
 end
 
-echo "Generating Themes documentation ..."
+echo "Generating Themes documentation to $theme_doc ..."
 echo "# Available themes" > $temp_theme_toc
 
 for theme in (command find $project_dir/db/themes/ -type f|sort)
@@ -47,7 +51,7 @@ end
 
 echo "" >> $temp_theme_toc
 cat $temp_theme_contents >> $temp_theme_toc
-rm $theme_doc
+rm -f $theme_doc
 cat $temp_theme_toc >> $theme_doc
 echo "All done: $theme_doc"
 

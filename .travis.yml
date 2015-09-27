@@ -27,6 +27,7 @@ before_script: pwd; tree -h
 script:
   - /bin/sh tools/travis_install_omf.sh
   - tests/test_runner.fish
+  - tests/test-generate-themes-doc.fish
 
 after_script:
   - cd ~/.config/fish; tree -h; find . -type f | xargs cat
