@@ -45,6 +45,8 @@ There are roughly 3 kinds of packages:
 
 ## What does Oh My Fish do exactly?
 
++ Run `$OMF_CONFIG/before.init.fish` if available.
+
 + Autoload installed packages and themes under `$OMF_PATH/`.
 
 + Autoload your config path. `~/.config/omf` by default, but configurable via `$OMF_CONFIG`.

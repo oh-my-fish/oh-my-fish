@@ -92,10 +92,16 @@ Oh My Fish 安装脚本会把自身启动代码加载到 fish 的配置文件 (`
 ## Dotfiles
 
 `$OMF_CONFIG` 目录存储用户使用 Oh My Fish 的重要配置参数，这是最完美的方式把该目录的所有文件加入你的 dotfiles 或加入到版本控制。
-这里有两个重要的文件：
+有四个重要文件：
 
 - __`theme`__ - 当前主题
 - __`bundle`__ - 显示当前已安装的插件/主题列表
+- __`init.fish`__ - 壳开始后执行的自定义脚本
+- __`before.init.fish`__ - 壳开始前执行的自定义脚本
+
+它强烈建议您自定义的启动命令进入 `init.fish` 文件而不是 `~/.config/omf/config.fish`，因为这可以让你保持在版本控制整个 `$OMF_CONFIG` 目录。
+
+如果你需要的Starup命令来运行*之前*噢，我的鱼开始加载插件，将它们放置在 `before.init.fish` 代替。如果你不确定，通常最好把东西 `init.fish` 。
 
 ### 关于 bundle
 
