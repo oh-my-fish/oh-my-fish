@@ -5,13 +5,35 @@ sudo: false
 addons:
   apt:
     packages:
+    - bc
+    - doxygen
+    - expect
+    - gettext
+    - libncurses5-dev
     - tree
-    - fish
+
+env:
+  global:
+    - PATH="$HOME/fish/bin:$PATH"
+    - OMF_REPO_URI="https://github.com/$TRAVIS_REPO_SLUG"
+    - OMF_REPO_BRANCH="$TRAVIS_BRANCH"
+
+before_install:
+  - tools/travis_install_fish.sh
+  - fish -c 'ln -sf $TRAVIS_BUILD_DIR/tests/functions_override $fish_function_path[1]'
 
 before_script: pwd; tree -h
-script: "/bin/sh bin/install"
+
+script:
+  - /bin/sh tools/travis_install_omf.sh
+  - tests/test_runner.fish
+
 after_script:
-- cd ~/.config/fish; tree -h; find . -type f | xargs cat
+  - cd ~/.config/fish; tree -h; find . -type f | xargs cat
+
+cache:
+  directories:
+    - $HOME/fish
 
 notifications:
   email:

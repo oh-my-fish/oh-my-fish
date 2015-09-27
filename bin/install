@@ -58,19 +58,16 @@ omf_install() {
     die "Could not clone the repository → ${OMF_PATH}:${OMF_REPO_BRANCH}"
   fi
 
-  pushd ${OMF_PATH} >/dev/null 2>&1
-
-  local git_rev=$(git rev-parse HEAD) >/dev/null 2>&1
-  local git_upstream=$(git config remote.upstream.url)
+  local git_rev=$(git -C ${OMF_PATH} rev-parse HEAD) >/dev/null 2>&1
+  local git_upstream=$(git -C ${OMF_PATH} config remote.upstream.url)
 
   if [ -z "${git_upstream}" ]; then
-    git remote add upstream ${git_uri}
+    git -C ${OMF_PATH} remote add upstream ${git_uri}
   else
-    git remote set-url upstream ${git_uri}
+    git -C ${OMF_PATH} remote set-url upstream ${git_uri}
   fi
 
   echo "Oh My Fish revision id → ${git_rev}"
-  popd >/dev/null 2>&1
   test -z ${FISH_CONFIG+_} && FISH_CONFIG="${XDG_CONFIG_HOME}/fish"
 
   local fish_config_file="${FISH_CONFIG}/config.fish"
