@@ -1,5 +1,5 @@
 <img src="docs/logo.png" align="left" width="192px" height="192px"/>
-<img src="" align="left" width="0" height="192px" hspace="10"/>
+<img align="left" width="0" height="192px" hspace="10"/>
 
 > The <a href="http://fishshell.com">Fishshell</a> Framework
 
