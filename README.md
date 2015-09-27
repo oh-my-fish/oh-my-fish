@@ -101,10 +101,13 @@ Everytime you open a new shell the startup code initializes Oh My Fish installat
 ## Dotfiles
 
 The `$OMF_CONFIG` directory represents the user state of Oh My Fish, and is the perfect
-candidate for being added to your dotfiles and/or checked out to version control. There are two important files:
+candidate for being added to your dotfiles and/or checked out to version control. There are three important files:
 
 - __`theme`__ - The current theme
 - __`bundle`__ - List of currently installed packages/themes
+- __`init.fish`__ - Custom script sourced at shell start
+
+It's highly recommended that your custom startup commands go into `init.fish` file instead of `~/.config/fish/config.fish`, as this allows you to keep the whole `$OMF_CONFIG` directory under version control.
 
 ### About the bundle
 
