@@ -123,9 +123,8 @@ function omf -d "Oh My Fish"
       omf.remove_package $argv[2] ; and refresh
 
     case "u" "up" "upd" "update"
-      pushd $OMF_PATH
       echo (omf::em)"Updating Oh My Fish..."(omf::off)
-      if omf.repo.pull
+      if omf.repo.pull $OMF_PATH
         echo (omf::em)"Oh My Fish is up to date."(omf::off)
       else
         echo (omf::err)"Oh My Fish failed to update."(omf::off)
@@ -133,7 +132,6 @@ function omf -d "Oh My Fish"
       end
       omf.theme (cat $OMF_CONFIG/theme)
       omf.install_package (omf.list_installed_packages)
-      popd
       refresh
 
     case "s" "su" "sub" "submit"
