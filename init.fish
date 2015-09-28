@@ -26,6 +26,12 @@ else
   set -gx ORIGINAL_PATH $PATH
 end
 
+# Set OMF_CONFIG if not set.
+if not set -q OMF_CONFIG
+  set -q XDG_CONFIG_HOME; or set -l XDG_CONFIG_HOME "$HOME/.config"
+  set -gx OMF_CONFIG "$XDG_CONFIG_HOME/omf"
+end
+
 # Save the head of function path and autoload core functions
 set -l user_function_path $fish_function_path[1]
 set fish_function_path[1] $OMF_PATH/lib
