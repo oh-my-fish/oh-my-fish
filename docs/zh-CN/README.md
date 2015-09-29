@@ -106,10 +106,6 @@ Oh My Fish 安装脚本会把自身启动代码加载到 fish 的配置文件 (`
 
 Oh My Fish 使用了友好的插件架构能够简化插件的开发，其中包括初始化、卸载事件和函数的自动加载。[查看相关文档](Packages.md) 获取更多信息。
 
-# 开源协议
-
-Copyright (c) 2015 Bruno Ferreira Pinto. 详见 [开源协议文件](../../LICENSE).
-
 [fishshell]: http://fishshell.com
 
 [contributors]: https://github.com/oh-my-fish/oh-my-fish/graphs/contributors
