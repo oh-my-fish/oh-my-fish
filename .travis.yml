@@ -20,7 +20,6 @@ env:
 
 before_install:
   - tools/travis_install_fish.sh
-  - fish -c 'ln -sf $TRAVIS_BUILD_DIR/tests/functions_override $fish_function_path[1]'
 
 before_script: pwd; tree -h
 

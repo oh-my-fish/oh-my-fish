@@ -5,5 +5,5 @@
 #   Refresh (reload) the current fish session.
 
 function refresh -d "refresh the fish session"
-  exec fish < /dev/tty
+  set -q CI; or exec fish < /dev/tty
 end

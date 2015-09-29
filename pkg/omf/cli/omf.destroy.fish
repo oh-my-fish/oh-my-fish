@@ -20,5 +20,5 @@ function omf.destroy -d "Remove Oh My Fish"
     rm -rf "$OMF_PATH"
   end
 
-  exec fish < /dev/tty
+  set -q CI; or exec fish < /dev/tty
 end
