@@ -47,8 +47,12 @@ for path in $OMF_PATH/lib $OMF_PATH/lib/git {$OMF_PATH,$OMF_CONFIG}/pkg/* $theme
   contains -- (basename $path) $OMF_IGNORE; and continue
 
   autoload $path $path/completions
-  source $path/(basename $path).fish ^/dev/null
-    and emit init_(basename $path) $path
+
+  if source $path/init.fish ^/dev/null
+  else
+    source $path/(basename $path).fish ^/dev/null;
+    #and echo "Plugin '"(basename $path)"' has a deprecated structure. Run `omf update`."
+  end; and emit init_(basename $path) $path
 end
 
 autoload $OMF_CONFIG/functions
