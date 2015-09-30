@@ -29,10 +29,6 @@ function omf::off
   set_color normal
 end
 
-function init -a path --on-event init_omf
-  autoload $path/cli $path/util
-end
-
 function omf -d "Oh My Fish"
   if test (count $argv) -eq 0
     omf.help "main"; and return 0
