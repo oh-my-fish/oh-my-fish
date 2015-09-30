@@ -16,9 +16,9 @@ function omf.repo.pull
 
   if not command git --git-dir "$repo_dir"/.git --work-tree "$repo_dir" diff --quiet
     echo (omf::em)"Stashing your changes:"(omf::off)
-    command git --git-dir "$repo_dir"/.git --work-tree "$repo_dir" status --short --untracked-files
+    command git -C "$repo_dir" status --short --untracked-files
 
-    command git --git-dir "$repo_dir"/.git --work-tree "$repo_dir" stash save --include-untracked --quiet
+    command git -C "$repo_dir" stash save --include-untracked --quiet
     set stashed true
   end
 
@@ -31,7 +31,7 @@ function omf.repo.pull
   if test $status -eq 2 #SIGINT
     command git --git-dir "$repo_dir"/.git --work-tree "$repo_dir" checkout $initial_branch
     command git --git-dir "$repo_dir"/.git --work-tree "$repo_dir" reset --hard $initial_revision
-    test "$stashed" = true; and command git --git-dir "$repo_dir"/.git --work-tree "$repo_dir" stash pop
+    test "$stashed" = true; and command git -C "$repo_dir" stash pop
   end
 
   if test "$initial_branch" != master
@@ -39,10 +39,10 @@ function omf.repo.pull
   end
 
   if test "$stashed" = true
-    command git --git-dir "$repo_dir"/.git --work-tree "$repo_dir" stash pop --quiet
+    command git -C "$repo_dir" stash pop --quiet
 
     echo (omf::em)"Restored your changes:"(omf::off)
-    command git --git-dir "$repo_dir"/.git --work-tree "$repo_dir" status --short --untracked-files
+    command git -C "$repo_dir" status --short --untracked-files
   end
 
   return 0
