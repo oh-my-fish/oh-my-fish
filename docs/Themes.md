@@ -37,6 +37,7 @@
 - [nelsonjchen](#nelsonjchen)
 - [numist](#numist)
 - [ocean](#ocean)
+- [pastfish](#pastfish)
 - [perryh](#perryh)
 - [red-snapper](#red-snapper)
 - [robbyrussell](#robbyrussell)
@@ -61,6 +62,8 @@ A fish theme optimized for people who use:
 
 * Solarized
 * Git
+* Mercurial (requires 'hg prompt')
+* SVN
 * Unicode-compatible fonts and terminals (I use iTerm2 + Menlo)
 
 For Mac users, I highly recommend iTerm 2 + Solarized Dark
@@ -72,7 +75,7 @@ For Mac users, I highly recommend iTerm 2 + Solarized Dark
 
 * If the previous command failed (✘)
 * User @ Hostname (if user is not DEFAULT_USER, which can then be set in your profile)
-* Git status
+* Git/HG/SVN status
 * Branch () or detached head (➦)
 * Current branch / SHA1 in detached head state
 * Dirty working directory (±, color change)
@@ -84,7 +87,11 @@ Ported from https://gist.github.com/agnoster/3712874.
 
 
 # agnoster-mercurial
-#### agnoster
+#### [DEPRECATED] agnoster-mercurial
+
+> Deprecation notice: Since mercurial support has been merged into [theme-agnoster](https://github.com/oh-my-fish/theme-agnoster/) directly, this repository will be discontinued.
+
+---
 
 A ZSH theme optimized for people who use:
 
@@ -1423,6 +1430,50 @@ This theme is based loosely on [agnoster](https://gist.github.com/agnoster/37128
 
 ###### Troubleshooting in iTerm
 If you see a colored anchor icon instead of the white one, this is because your system font is lacking the anchor icon, and iTerm defaults to the Apple Emoji Font. To get the right icon, either add it to your current font, or chose a powerline font that has it (like Meslo for Powerline, available in https://github.com/powerline/fonts), and select it for your Non-ASCII font.
+
+
+# pastfish
+<div align="center">
+  <a href="http://github.com/oh-my-fish/oh-my-fish">
+  <img width=90px  src="https://cloud.githubusercontent.com/assets/8317250/8510172/f006f0a4-230f-11e5-98b6-5c2e3c87088f.png">
+  </a>
+</div>
+<br>
+
+> pastfish theme for [Oh My Fish][omf-link].
+
+#### Install
+
+
+```fish
+$ omf u pastfish
+```
+
+#### Features
+
+* Random greeting message
+* Command prompts colored based on time (morning is blue, afternoon is green, midnight is red ...)
+* The `>` at the end of each prompt will turn yellow if the git repo is dirty, red if current location is not writable
+
+#### Screenshot
+
+<p align="center">
+<img src="http://i.imgur.com/YVM1Xo2.png">
+</p>
+
+### License
+
+[MIT][mit] © [chgu82837][author] et [al][contributors]
+
+
+[mit]:            http://opensource.org/licenses/MIT
+[author]:         http://github.com/chgu82837
+[contributors]:   https://github.com/chgu82837/pastfish/graphs/contributors
+[omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
+
+[license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
+[travis-badge]:   http://img.shields.io/travis/chgu82837/pastfish.svg?style=flat-square
+[travis-link]:    https://travis-ci.org/chgu82837/pastfish
 
 
 # perryh
