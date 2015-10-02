@@ -9,7 +9,7 @@ env:
     - OMF_REPO_BRANCH="$TRAVIS_BRANCH"
 
 before_install:
-  - export OMF_REPO_BRANCH=`tools/branch-name.sh`
+  - source tools/travis-github-pr-integration.sh
   - docker build -t fish . < Dockerfile
 
 before_script:
