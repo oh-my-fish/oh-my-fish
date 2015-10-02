@@ -1,40 +1,25 @@
-language: c
-os:
-- linux
-sudo: false
-addons:
-  apt:
-    packages:
-    - bc
-    - doxygen
-    - expect
-    - gettext
-    - libncurses5-dev
-    - tree
+sudo: required
+
+services:
+  - docker
 
 env:
   global:
-    - PATH="$HOME/fish/bin:$PATH"
     - OMF_REPO_URI="https://github.com/$TRAVIS_REPO_SLUG"
     - OMF_REPO_BRANCH="$TRAVIS_BRANCH"
 
 before_install:
-  - tools/travis_install_fish.sh
-  - fish -c 'ln -sf $TRAVIS_BUILD_DIR/tests/functions_override $fish_function_path[1]'
+  - export OMF_REPO_BRANCH=`tools/branch-name.sh`
+  - docker build -t fish . < Dockerfile
 
-before_script: pwd; tree -h
+before_script:
+  - docker run -e 'CI=WORKAROUND' -e "OMF_REPO_URI=$OMF_REPO_URI" -e "OMF_REPO_BRANCH=$OMF_REPO_BRANCH" -t -v $PWD:/src/oh-my-fish fish /usr/bin/fish -c "/src/oh-my-fish/bin/install"
+  - docker ps -a -q | xargs -i docker commit {} oh-my-fish
+  - docker run -t -w "/root/.local/share/omf" oh-my-fish /usr/bin/fish -c "export; tree -h"
 
 script:
-  - /bin/sh tools/travis_install_omf.sh
-  - tests/test_runner.fish
-  - tests/test-generate-themes-doc.fish
-
-after_script:
-  - cd ~/.config/fish; tree -h; find . -type f | xargs cat
-
-cache:
-  directories:
-    - $HOME/fish
+  - docker run -t -w "/root/.local/share/omf" oh-my-fish /usr/bin/fish "tests/test_runner.fish"
+  - docker run -t -w "/root/.local/share/omf" oh-my-fish /usr/bin/fish "tests/test-generate-themes-doc.fish"
 
 notifications:
   email:
