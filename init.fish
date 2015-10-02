@@ -41,16 +41,20 @@ source $OMF_CONFIG/before.init.fish ^/dev/null
 set -l user_function_path $fish_function_path[1]
 set fish_function_path[1] $OMF_PATH/lib
 
-set -l theme {$OMF_PATH,$OMF_CONFIG}/themes/(cat $OMF_CONFIG/theme)
+# Autoload util functions
+autoload $OMF_PATH/lib $OMF_PATH/lib/git
 
-for path in $OMF_PATH/lib $OMF_PATH/lib/git {$OMF_PATH,$OMF_CONFIG}/pkg/* $theme
-  contains -- (basename $path) $OMF_IGNORE; and continue
+for path in {$OMF_PATH,$OMF_CONFIG}/pkg/*
+  set -l name (basename $path)
 
-  autoload $path $path/completions
-  source $path/(basename $path).fish ^/dev/null
-    and emit init_(basename $path) $path
+  contains -- $name $OMF_IGNORE; and continue
+  require $name
 end
 
+# Autoload theme
+autoload {$OMF_PATH,$OMF_CONFIG}/themes/(cat $OMF_CONFIG/theme)
+
+# Autoload custom functions
 autoload $OMF_CONFIG/functions
 autoload $user_function_path
 
