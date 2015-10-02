@@ -73,15 +73,15 @@ function omf -d "Oh My Fish"
           return $OMF_INVALID_ARG
       end
 
-    case "l" "li" "lis" "lst" "list"
-      omf.list_local_packages | column
-
-    case "d" "desc" "describe"
+    case "d" "describe"
       if test (count $argv) -eq 1
         omf.describe
       else
         omf.describe $argv[2..-1]
       end
+
+    case "destroy"
+      omf.destroy
 
     case "i" "install" "get"
       if test (count $argv) -eq 1
@@ -89,6 +89,35 @@ function omf -d "Oh My Fish"
       else
         omf.install_package $argv[2..-1]
         refresh
+      end
+
+    case "l" "ls" "list"
+      omf.list_local_packages | column
+
+    case "n" "new"
+      if test (count $argv) -ne 3
+        echo (omf::err)"Package type or name missing"(omf::off) 1^&2
+        echo "Usage: $_ "(omf::em)"$argv[1]"(omf::off)" "(omf::em)"pkg|theme"(omf::off)" <name>" 1^&2
+        return $OMF_MISSING_ARG
+      end
+      omf.new $argv[2..-1]
+
+    case "r" "rm" "remove" "uninstall"
+      if test (count $argv) -ne 2
+        echo (omf::err)"Invalid number of arguments"(omf::off) 1^&2
+        echo "Usage: $_ "(omf::em)"$argv[1]"(omf::off)" <[package|theme] name>" 1^&2
+        return $OMF_INVALID_ARG
+      end
+      omf.remove_package $argv[2] ; and refresh
+
+    case "s" "submit"
+      switch (count $argv)
+        case 3
+          omf.submit $argv[2] $argv[3]
+        case "*"
+          echo (omf::err)"Argument missing"(omf::off) 1^&2
+          echo "Usage: $_ "(omf::em)"$argv[1]"(omf::off)" "(omf::em)"pkg|themes"(omf::off)"/<name> <url>" 1^&2
+          return $OMF_MISSING_ARG
       end
 
     case "t" "theme"
@@ -110,15 +139,7 @@ function omf -d "Oh My Fish"
         return $OMF_INVALID_ARG
       end
 
-    case "r" "rem" "rm" "remove" "uninstall"
-      if test (count $argv) -ne 2
-        echo (omf::err)"Invalid number of arguments"(omf::off) 1^&2
-        echo "Usage: $_ "(omf::em)"$argv[1]"(omf::off)" <[package|theme] name>" 1^&2
-        return $OMF_INVALID_ARG
-      end
-      omf.remove_package $argv[2] ; and refresh
-
-    case "u" "up" "upd" "update"
+    case "u" "update"
       echo (omf::em)"Updating Oh My Fish..."(omf::off)
       if omf.repo.pull $OMF_PATH
         echo (omf::em)"Oh My Fish is up to date."(omf::off)
@@ -129,27 +150,6 @@ function omf -d "Oh My Fish"
       omf.theme (cat $OMF_CONFIG/theme)
       omf.install_package (omf.list_installed_packages)
       refresh
-
-    case "s" "su" "sub" "submit"
-      switch (count $argv)
-        case 3
-          omf.submit $argv[2] $argv[3]
-        case "*"
-          echo (omf::err)"Argument missing"(omf::off) 1^&2
-          echo "Usage: $_ "(omf::em)"$argv[1]"(omf::off)" "(omf::em)"pkg|themes"(omf::off)"/<name> <url>" 1^&2
-          return $OMF_MISSING_ARG
-      end
-
-    case "n" "nw" "new"
-      if test (count $argv) -ne 3
-        echo (omf::err)"Package type or name missing"(omf::off) 1^&2
-        echo "Usage: $_ "(omf::em)"$argv[1]"(omf::off)" "(omf::em)"pkg|theme"(omf::off)" <name>" 1^&2
-        return $OMF_MISSING_ARG
-      end
-      omf.new $argv[2..-1]
-
-    case "destroy"
-      omf.destroy
 
     case "*"
       echo (omf::err)"$argv[1] option not recognized"(omf::off) 1^&2
