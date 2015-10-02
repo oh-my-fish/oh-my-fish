@@ -4,7 +4,7 @@
 
 set -l return_code 0
 
-set commands "omf help" "omf query PATH" "omf query fish_function_path" "omf install apt"
+set commands "omf help" "omf doctor" "omf install apt"
 for cmd in $commands
   echo \$ $cmd
   if not eval $cmd

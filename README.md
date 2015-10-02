@@ -86,9 +86,9 @@ Add a new package. To add a theme use `omf submit` _`themes/<name>`_ _`<url>`_.
 
 Make sure to [send us a PR][omf-pulls-link] to update the registry.
 
-#### `omf query` _`<variable name>`_
+#### `omf doctor`
 
-Use to inspect all session variables. Useful to  dump _path_ variables like `$fish_function_path`, `$fish_complete_path`, `$PATH`, etc.
+Use to troubleshoot before [opening an  issue][omf-issues-new].
 
 #### `omf destroy`
 
@@ -129,3 +129,5 @@ Oh My Fish uses an advanced and well defined plugin architecture to ease plugin 
 [contributors]: https://github.com/oh-my-fish/oh-my-fish/graphs/contributors
 
 [omf-pulls-link]: https://github.com/oh-my-fish/oh-my-fish/pulls
+
+[omf-issues-new]: https://github.com/oh-my-fish/oh-my-fish/issues/new
