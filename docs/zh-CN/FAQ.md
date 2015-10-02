@@ -44,6 +44,8 @@ Oh My Fish 包是使用 fish 编写的一系列主题和插件用于扩展 Shell
 
 ## Oh My Fish 主要都干了什么?
 
++ 如果存在 `$OMF_CONFIG/before.init.fish`。
+
 + 自动加载 `$OMF_PATH/` 目录下已安装的插件和主题。
 
 + 自动加载你的配置。默认路径 `~/.config/omf`，除非你自定义了 `$OMF_CONFIG` 变量。

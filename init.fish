@@ -2,6 +2,8 @@
 #   Initialize Oh My Fish.
 #
 # OVERVIEW
+#   + Source $OMF_CONFIG/before.init.fish
+#
 #   + Autoload Oh My Fish packages, themes and config path
 #   + For each <pkg> inside {$OMF_PATH,$OMF_CONFIG}
 #     + Autoload <pkg> directory
@@ -31,6 +33,9 @@ if not set -q OMF_CONFIG
   set -q XDG_CONFIG_HOME; or set -l XDG_CONFIG_HOME "$HOME/.config"
   set -gx OMF_CONFIG "$XDG_CONFIG_HOME/omf"
 end
+
+# Source custom before.init.fish file
+source $OMF_CONFIG/before.init.fish ^/dev/null
 
 # Save the head of function path and autoload core functions
 set -l user_function_path $fish_function_path[1]

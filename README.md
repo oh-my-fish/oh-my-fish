@@ -101,18 +101,21 @@ Oh My Fish installer places its startup code in your fish config file (`~/.confi
 
 ## Startup
 
-Everytime you open a new shell the startup code initializes Oh My Fish installation path and the _config_ path (`~/.config/omf` by default), sourcing the [`init.fish`](init.fish) script afterwards, which autoload packages, themes and your custom init file. For more information check the [FAQ](docs/FAQ.md#what-does-oh-my-fish-do-exactly).
+Everytime you open a new shell the startup code initializes Oh My Fish installation path and the _config_ path (`~/.config/omf` by default), sourcing the [`init.fish`](init.fish) script afterwards, which autoload packages, themes and your custom init files. For more information check the [FAQ](docs/FAQ.md#what-does-oh-my-fish-do-exactly).
 
 ## Dotfiles
 
 The `$OMF_CONFIG` directory represents the user state of Oh My Fish, and is the perfect
-candidate for being added to your dotfiles and/or checked out to version control. There are three important files:
+candidate for being added to your dotfiles and/or checked out to version control. There are four important files:
 
 - __`theme`__ - The current theme
 - __`bundle`__ - List of currently installed packages/themes
-- __`init.fish`__ - Custom script sourced at shell start
+- __`init.fish`__ - Custom script sourced after shell start
+- __`before.init.fish`__ - Custom script sourced before shell start
 
 It's highly recommended that your custom startup commands go into `init.fish` file instead of `~/.config/fish/config.fish`, as this allows you to keep the whole `$OMF_CONFIG` directory under version control.
+
+If you need startup commands to be run *before* Oh My Fish begins loading plugins, place them in `before.init.fish` instead. If you're unsure, it is usually best to put things in `init.fish`.
 
 ### About the bundle
 
