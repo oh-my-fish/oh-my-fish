@@ -17,7 +17,7 @@ Oh My Fish 提供核心基础设施的配置，允许每个人可以轻松安装
 # 安装
 
 ```fish
-curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | sh
+curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | source - 
 omf help
 ```
 
@@ -25,8 +25,7 @@ omf help
 
 ```fish
 curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install > install
-chmod +x install
-./install
+source install
 ```
 
 # 快速入门

@@ -18,7 +18,7 @@ Oh My Fish provides core infrastructure to allow you to install packages which e
 # Install
 
 ```fish
-curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | sh
+curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | source - 
 omf help
 ```
 
@@ -26,8 +26,7 @@ Or _download_ and run it yourself:
 
 ```fish
 curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install > install
-chmod +x install
-./install
+source install
 ```
 
 ## Update Instructions
