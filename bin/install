@@ -1,9 +1,9 @@
 #!/usr/bin/env fish
 #
 # USAGE
-#   #1: curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | source -
-#   #2: curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install > install; and source install
-#   #3: env OMF_CONFIG=~/.omf curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | source -
+#   #1: curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish 
+#   #2: curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install > install; and fish install
+#   #3: env OMF_CONFIG=~/.omf curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
 #
 # ENV
 #   XDG_DATA_HOME       Base directory (~/.local/share)
@@ -113,8 +113,7 @@ function install_omf
   test -f "$OMF_CONFIG/bundle"; or echo "theme default" > "$OMF_CONFIG/bundle"
   test -f "$OMF_CONFIG/theme";  or echo "default" > "$OMF_CONFIG/theme"
 
-  source "$OMF_PATH/init.fish"
-  omf.bundle.install
+  fish -c "omf install"
 end
 
 function main
@@ -135,6 +134,7 @@ function main
 
   if install_omf
     report success "Installation successful! Reload your shell to start using Oh My Fish."
+    set -q CI; or exec fish < /dev/tty
   else
     report error "Oh My Fish installation failed.\n\nIf you think that it's a bug, please open an\nissue with the complete installation log here:\n\nhttp://github.com/oh-my-fish/oh-my-fish/issues"
   end
