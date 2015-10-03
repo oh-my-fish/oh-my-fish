@@ -42,17 +42,8 @@ function omf -d "Oh My Fish"
     case "-v*" "--v*"
       omf.version
 
-    case "q" "query"
-      switch (count $argv)
-        case 1
-          omf.query_env
-        case 2
-          omf.query_env "$argv[2]"
-        case "*"
-          echo (omf::err)"Invalid number of arguments"(omf::off) 1^&2
-          echo "Usage: $_ "(omf::em)"$argv[1]"(omf::off)" [<variable name>]" 1^&2
-          return $OMF_INVALID_ARG
-      end
+    case "doctor"
+      omf.doctor
 
     case "-h*" "--h*" "help"
       if test (count $argv) -eq 1

@@ -35,6 +35,14 @@ function omf.help -a command
         omf destroy
       "
 
+    case "doctor"
+      echo \n"\
+      Troubleshoot Oh My Fish.
+
+      "(omf::dim)"Usage:"(omf::off)"
+        omf doctor
+      "
+
     case "i" "install" "get"
       echo \n"\
       Install packages.
@@ -67,19 +75,6 @@ function omf.help -a command
       "(omf::dim)"Examples:"(omf::off)"
         omf new pkg mypkg
         omf new theme mytheme
-      "
-
-    case "q" "query"
-      echo \n"\
-      Query environment variables.
-
-      "(omf::dim)"Usage:"(omf::off)"
-        omf query ["(omf::em)"<name>"(omf::off)"]  Query environment variables
-
-      "(omf::dim)"Examples:"(omf::off)"
-        omf query
-        omf query path
-        omf query version
       "
 
     case "r" "rm" "remove" "uninstall"
@@ -148,8 +143,8 @@ function omf.help -a command
         "(omf::em)"c"(omf::off)"d        Change directory to plugin/theme directory.
         "(omf::em)"n"(omf::off)"ew       Create a new package from a template.
         "(omf::em)"s"(omf::off)"ubmit    Submit a package to the registry.
-        "(omf::em)"q"(omf::off)"uery     Query environment variables.
         "(omf::em)"destroy"(omf::off)"   Uninstall Oh My Fish.
+        "(omf::em)"doctor"(omf::off)"    Troubleshoot Oh My Fish.
         "(omf::em)"help"(omf::off)"      Shows help about a specific action.
 
       "(omf::dim)"Options:"(omf::off)"

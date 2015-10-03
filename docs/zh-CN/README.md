@@ -71,9 +71,9 @@ Oh My Fish 自带的辅助命令工具 `omf` 可以帮助你快速获取安装�
 新插件或新主题需要托管于 Git 仓库，上面命令 url 需要输入 git 仓库的 url 地址。
 此命令仅仅是把 git 仓库地址保存与 Oh My Fish 的 db 数据库，同时还需要[提交 PR][omf-pulls-link]让组织把你的插件或主题归于框架。
 
-#### `omf query` _`<variable name>`_
+#### `omf doctor`
 
-用于查看所有会话的变量。用于查看调试类似 _PATH_ 变量，比如 `$fish_function_path`，`$fish_complete_path` 等。
+使用前[开馆问题][omf-issues-new] 解决。
 
 #### `omf destroy`
 
@@ -116,3 +116,5 @@ Oh My Fish 使用了友好的插件架构能够简化插件的开发，其中包
 [contributors]: https://github.com/oh-my-fish/oh-my-fish/graphs/contributors
 
 [omf-pulls-link]: https://github.com/oh-my-fish/oh-my-fish/pulls
+
+[omf-issues-new]: https://github.com/oh-my-fish/oh-my-fish/issues/new

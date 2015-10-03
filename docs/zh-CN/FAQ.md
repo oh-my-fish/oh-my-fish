@@ -70,16 +70,6 @@ rm -rf "$fish_path"
 ```
 
 
-## 我使用 `fish_config` 修改了自己的 prompt，现在我无法恢复 Oh My Fish 主题的 prompt，我该怎么办？
-
-`fish_config` 默认会使用 `~/.config/fish/functions/fish_prompt.fish` 设置 prompt，该文件在 Oh My Fish 主题启用后加载，
-它拥有高优先级来覆盖 Oh My Fish 主题的 prompt，如果你要恢复主题的 prompt，最简单的方法就是删除该文件：
-
-```
-rm ~/.config/fish/functions/fish_prompt.fish
-```
-
-
 ## 如何把 fish 设置为我默认的 shell?
 
 添加 Fish 到  `/etc/shells`:
