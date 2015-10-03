@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 #
 # USAGE
-#   #1: curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish 
+#   #1: curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
 #   #2: curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install > install; and fish install
 #   #3: env OMF_CONFIG=~/.omf curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
 #
@@ -133,7 +133,7 @@ function main
   end
 
   if install_omf
-    report success "Installation successful! Reload your shell to start using Oh My Fish."
+    report success "Installation successful!"
     set -q CI; or exec fish < /dev/tty
   else
     report error "Oh My Fish installation failed.\n\nIf you think that it's a bug, please open an\nissue with the complete installation log here:\n\nhttp://github.com/oh-my-fish/oh-my-fish/issues"
