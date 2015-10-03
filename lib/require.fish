@@ -16,7 +16,7 @@ function require -a name
     and return 0
 
   for path in {$OMF_PATH,$OMF_CONFIG}/pkg/$name
-    if autoload $path $path/completions
+    if autoload $path $path/functions $path/completions
 
       source $path/init.fish ^/dev/null;
         or source $path/$name.fish ^/dev/null;
