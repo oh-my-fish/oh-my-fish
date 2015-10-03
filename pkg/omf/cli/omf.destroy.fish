@@ -2,7 +2,7 @@ function omf.destroy -d "Remove Oh My Fish"
   echo (omf::dim)"Removing Oh My Fish..."(omf::off)
 
   for pkg in (basename $OMF_PATH/pkg/*)
-    omf.remove_package $pkg >/dev/null ^&1
+    emit uninstall_$pkg
   end
 
   set -l fish_config $XDG_CONFIG_HOME/fish
