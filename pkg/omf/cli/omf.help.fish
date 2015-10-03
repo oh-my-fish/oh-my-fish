@@ -1,68 +1,5 @@
-function omf.help -a type_flag
-  switch $type_flag
-    case "i" "install" "get"
-      echo \n"\
-      Install packages.
-
-      "(omf::dim)"Usage:"(omf::off)"
-        omf install                 Install missing packages from bundle
-        omf install "(omf::em)"<name>"(omf::off)" | "(omf::em)"<url>"(omf::off)"  Install package by name or URL
-
-      "(omf::dim)"Examples:"(omf::off)"
-        omf install
-        omf install brew
-        omf install https://github.com/oh-my-fish/plugin-brew
-      "
-
-    case "u" "up" "upd" "update"
-      echo \n"\
-      Update Oh My Fish.
-
-      "(omf::dim)"Usage:"(omf::off)"
-        omf update
-      "
-
-    case "destroy"
-      echo \n"\
-      Uninstall Oh My Fish.
-
-      "(omf::dim)"Usage:"(omf::off)"
-        omf destroy
-      "
-
-    case "l" "li" "lis" "lst" "list"
-      echo \n"\
-      List local packages.
-
-      "(omf::dim)"Usage:"(omf::off)"
-        omf list
-      "
-
-    case "t" "theme"
-      echo \n"\
-      Install and list themes.
-
-      "(omf::dim)"Usage:"(omf::off)"
-        omf theme         List available themes to install
-        omf theme "(omf::em)"<name>"(omf::off)"  Install theme by name
-
-      "(omf::dim)"Examples:"(omf::off)"
-        omf theme
-        omf theme l
-      "
-
-    case "r" "rem" "rm" "remove" "uninstall"
-      echo \n"\
-      Remove a theme or package.
-
-      "(omf::dim)"Usage:"(omf::off)"
-        omf remove "(omf::em)"<package name>"(omf::off)" | "(omf::em)"<theme name>"(omf::off)"  Removes a theme or package by name
-
-      "(omf::dim)"Examples:"(omf::off)"
-        omf remove brew
-        omf remove l
-      "
-
+function omf.help -a command
+  switch $command
     case "c" "cd"
       echo \n"\
       Change directory to root or plugin/theme directory.
@@ -77,7 +14,50 @@ function omf.help -a type_flag
         omf cd l
       "
 
-    case "n" "nw" "new"
+    case "d" "describe"
+      echo \n"\
+      Get information about what packages do.
+
+      "(omf::dim)"Usage:"(omf::off)"
+        omf describe                 Get information from all available packages
+        omf describe "(omf::em)"<name>"(omf::off)"  Get information from package by name
+
+      "(omf::dim)"Examples:"(omf::off)"
+        omf describe
+        omf describe brew
+      "
+
+    case "destroy"
+      echo \n"\
+      Uninstall Oh My Fish.
+
+      "(omf::dim)"Usage:"(omf::off)"
+        omf destroy
+      "
+
+    case "i" "install" "get"
+      echo \n"\
+      Install packages.
+
+      "(omf::dim)"Usage:"(omf::off)"
+        omf install                 Install missing packages from bundle
+        omf install "(omf::em)"<name>"(omf::off)" | "(omf::em)"<url>"(omf::off)"  Install package by name or URL
+
+      "(omf::dim)"Examples:"(omf::off)"
+        omf install
+        omf install brew
+        omf install https://github.com/oh-my-fish/plugin-brew
+      "
+
+    case "l" "ls" "list"
+      echo \n"\
+      List local packages.
+
+      "(omf::dim)"Usage:"(omf::off)"
+        omf list
+      "
+
+    case "n" "new"
       echo \n"\
       Create a new package from a template.
 
@@ -87,18 +67,6 @@ function omf.help -a type_flag
       "(omf::dim)"Examples:"(omf::off)"
         omf new pkg mypkg
         omf new theme mytheme
-      "
-
-    case "s" "su" "sub" "submit"
-      echo \n"\
-      Submit a package to the registry.
-
-      "(omf::dim)"Usage:"(omf::off)"
-        omf submit ("(omf::dim)"pkg"(omf::off)" | "(omf::dim)"theme"(omf::off)") "(omf::em)"<url>"(omf::off)"  Submit a package or theme to the registry
-
-      "(omf::dim)"Examples:"(omf::off)"
-        omf submit pkg https://github.com/oh-my-fish/plugin-mypkg
-        omf submit theme https://github.com/oh-my-fish/plugin-mythemes
       "
 
     case "q" "query"
@@ -114,17 +82,49 @@ function omf.help -a type_flag
         omf query version
       "
 
-    case "d" "desc" "describe"
+    case "r" "rm" "remove" "uninstall"
       echo \n"\
-      Get information about what packages do.
+      Remove a theme or package.
 
       "(omf::dim)"Usage:"(omf::off)"
-        omf describe                 Get information from all available packages
-        omf describe "(omf::em)"<name>"(omf::off)"  Get information from package by name
+        omf remove "(omf::em)"<package name>"(omf::off)" | "(omf::em)"<theme name>"(omf::off)"  Removes a theme or package by name
 
       "(omf::dim)"Examples:"(omf::off)"
-        omf describe
-        omf describe brew
+        omf remove brew
+        omf remove l
+      "
+
+    case "s" "submit"
+      echo \n"\
+      Submit a package to the registry.
+
+      "(omf::dim)"Usage:"(omf::off)"
+        omf submit ("(omf::dim)"pkg"(omf::off)" | "(omf::dim)"theme"(omf::off)") "(omf::em)"<url>"(omf::off)"  Submit a package or theme to the registry
+
+      "(omf::dim)"Examples:"(omf::off)"
+        omf submit pkg https://github.com/oh-my-fish/plugin-mypkg
+        omf submit theme https://github.com/oh-my-fish/plugin-mythemes
+      "
+
+    case "t" "theme"
+      echo \n"\
+      Install and list themes.
+
+      "(omf::dim)"Usage:"(omf::off)"
+        omf theme         List available themes to install
+        omf theme "(omf::em)"<name>"(omf::off)"  Install theme by name
+
+      "(omf::dim)"Examples:"(omf::off)"
+        omf theme
+        omf theme l
+      "
+
+    case "u" "update"
+      echo \n"\
+      Update Oh My Fish.
+
+      "(omf::dim)"Usage:"(omf::off)"
+        omf update
       "
 
     case "*"
