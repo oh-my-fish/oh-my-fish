@@ -1,28 +1,64 @@
 # SYNOPSIS
 #   autoload <path>...
+#   autoload -e <path>...
 #
 # OVERVIEW
-#   Autoload a function or completion path. Add the specified list of
-#   directories to $fish_function_path. Any `completions` directories
-#   are correctly added to the $fish_complete_path.
+#   Manipulate autoloading path components.
 #
-#   Returns 0 if one of the paths exist.
-#   Returns != 0 if all paths are missing.
+#   If called without options, the paths passed as arguments are added to
+#   $fish_function_path. All paths ending with `completions` are correctly
+#   added to $fish_complete_path. Returns 0 if one or more paths exist. If all
+#   paths are missing, returns != 0.
+#
+#   When called with -e, the paths passed as arguments are removed from
+#   $fish_function_path. All arguments ending with `completions` are correctly
+#   removed from $fish_complete_path. Returns 0 if one or more paths erased. If
+#   no paths were erased, returns != 0.
 
-function autoload -d "autoload a function or completion path"
-  for path in $argv
+function autoload -d "Manipulate autoloading path components"
+  set -l paths $argv
+
+  switch "$argv[1]"
+  case '-e' '--erase'
+    set erase
+
+    if test (count $argv) -ge 2
+      set paths $argv[2..-1]
+    else
+      echo "usage: autoload $argv[1] <path>..." 1>&2
+      return 1
+    end
+  case "-*" "--*"
+    echo "autoload: invalid option $argv[1]"
+    return 1
+  end
+
+  for path in $paths
+    not test -d "$path"; and continue
+
     set -l dest fish_function_path
 
-    if test -d "$path"
-      set path_exist
+    if test (basename "$path") = completions
+      set dest fish_complete_path
+    end
 
-      if test (basename "$path") = completions
-        set dest fish_complete_path
-      end
+    if set -q erase
+      not contains -- "$path" $$dest; and continue
+      # Make a copy of function path selected above
+      set -l function_path $$dest
 
-      contains "$path" $$dest; or set $dest "$path" $$dest
+      set -l index (contains -i -- $path $function_path)
+      set -e function_path[$index]
+
+      # Set function path to modified copy
+      set $dest $function_path
+      set return_success
+    else
+      set return_success
+      contains -- "$path" $$dest; and continue
+      set $dest "$path" $$dest
     end
   end
 
-  set -q path_exist
+  set -q return_success
 end

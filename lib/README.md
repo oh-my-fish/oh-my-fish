@@ -8,13 +8,23 @@
 
 ## Basic Functions
 
-#### `autoload` _`<path [path...]>`_
-Autoload a function or completion path. Add the specified list of directories to `$fish_function_path`.
+#### `autoload` _`[-e] <path>...`_
 
-Any `completions` directories are correctly added to the `$fish_complete_path`.
+Manipulate [autoloading](http://fishshell.com/docs/current/index.html#syntax-function-autoloading) path components.
+
+All paths ending with `completions` are correctly added to or erased from
+`$fish_complete_path`.
+
+To add paths to autoload:
 
 ```fish
 autoload $mypath $mypath/completions
+```
+
+To erase paths from autoload:
+
+```fish
+autoload -e $mypath $mypath/completions
 ```
 
 #### `available` _`<name>`_
