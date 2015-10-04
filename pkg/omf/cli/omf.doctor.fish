@@ -1,5 +1,5 @@
 function __omf.doctor.theme
-  if test -e ~/.config/fish/functions/fish_prompt.fish
+  if not omf.check.fish_prompt
     echo (omf::err)"Warning: "(omf::off)(omf::em)"fish_prompt.fish"(omf::off)" is overridden."
     echo (omf::em)"  fish_config"(omf::off)" command persists the prompt to "(omf::em)"~/.config/fish/functions/fish_prompt.fish"(omf::off)
     echo "  That file takes precedence over Oh My Fish's themes. Remove the file to fix it:"

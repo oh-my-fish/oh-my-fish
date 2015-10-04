@@ -120,10 +120,11 @@ function omf -d "Oh My Fish"
 
         omf.list_themes | column | sed -E "s/$regex/"(omf::em)"\1"(omf::off)"/"
         omf::off
-
       else if test (count $argv) -eq 2
+        if not contains -- $argv[2] (omf.list_installed_themes)
+          omf.install --theme $argv[2]; or return 1
+        end
         omf.theme $argv[2]
-        refresh
       else
         echo (omf::err)"Invalid number of arguments"(omf::off) 1^&2
         echo "Usage: $_ "(omf::em)"$argv[1]"(omf::off)" [<theme name>]" 1^&2
