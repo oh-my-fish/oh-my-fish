@@ -5,7 +5,6 @@ function omf.install -a type_flag name_or_url
 
   function _display_error
     echo (omf::err)"Could not install $argv."(omf::off) 1^&2
-    return $OMF_UNKNOWN_ERR
   end
 
   switch $type_flag
@@ -31,8 +30,10 @@ function omf.install -a type_flag name_or_url
       if omf.repo.clone $name_or_url $OMF_PATH/$parent_path/$local_name
         omf.bundle.add $install_type $name_or_url
         _display_success "$install_type $name_or_url"
+
       else
         _display_error "$install_type $name_or_url"
+        return $OMF_UNKNOWN_ERR
       end
     end
     return 0
@@ -49,6 +50,9 @@ function omf.install -a type_flag name_or_url
       _display_success "$install_type $name_or_url"
     else
       _display_error "$install_type $name_or_url"
+      return $OMF_UNKNOWN_ERR
     end
   end
+
+  return 0
 end
