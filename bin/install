@@ -60,6 +60,27 @@ function fish_version_compatible
   return (test $major = $OMF_FISH_MIN_VER[1] -a $minor -ge $OMF_FISH_MIN_VER[2])
 end
 
+
+function backup_file -a file_path
+  test -e "$file_path"; or return 1
+
+  set -l path (dirname $file_path)
+  set -l file (basename $file_path)
+  set -l name (echo $file | cut -d. -f1)
+
+  set -l timestamp (date +%s)
+  set -l backup_file "$path/$name.$timestamp.copy"
+
+  report progress "Existent $file found at $path"
+  report progress "↳ Moving to $backup_file"
+
+  if not mv "$file_path" $backup_file 2>/dev/null
+    report error "Aborting: Could not backup $file_path"
+  end
+
+  return 0
+end
+
 function install_omf
   # Grant repository URL ends with .git
   set git_uri (echo $OMF_REPO_URI | sed 's/\.git//').git
@@ -79,19 +100,10 @@ function install_omf
 
   set fish_config_file "$FISH_CONFIG/config.fish"
 
-  if test -e "$fish_config_file"
-    set -l timestamp (date +%s)
-    set -l original_fish_config_file "$FISH_CONFIG/config.$timestamp.copy"
+  backup_file "$FISH_CONFIG/config.fish";
+    or mkdir -p "$FISH_CONFIG"
 
-    report progress "Existent fish config file found at $fish_config_file"
-    report progress "↳ Moving file to $original_fish_config_file"
-
-    if not mv "$fish_config_file" "$original_fish_config_file" 2>/dev/null
-      report error "Aborting: Could not backup fish config file"
-    end
-  else
-    mkdir -p "$FISH_CONFIG"
-  end
+  backup_file "$FISH_CONFIG/functions/fish_prompt.fish"
 
   report progress "Adding startup code to fish config file..."
 
