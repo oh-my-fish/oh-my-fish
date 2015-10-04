@@ -1,3 +1,16 @@
+function __omf.destroy.restore_backup -a file_path
+  set -l path (dirname $file_path)
+  set -l file (basename $file_path)
+  set -l name (echo $file | cut -d. -f1)
+  set -l backup_file_path (echo $path/$name.*.copy | tr ' ' '\n' | sort -r | head -1)
+
+  if test -e "$backup_file_path"
+    mv "$backup_file_path" "$path/$file" ^/dev/null
+  else
+    rm -f "$path/$file" ^/dev/null
+  end
+end
+
 function omf.destroy -d "Remove Oh My Fish"
   echo (omf::dim)"Removing Oh My Fish..."(omf::off)
 
@@ -5,16 +18,14 @@ function omf.destroy -d "Remove Oh My Fish"
     emit uninstall_$pkg
   end
 
-  set -l fish_config $XDG_CONFIG_HOME/fish
-  if test "$fish_config" = "/fish"
-    set fish_config $HOME/.config/fish
-  end
+  set -q XDG_CONFIG_HOME;
+    or set -l XDG_CONFIG_HOME "$HOME/.config"
 
-  set -l localbackup (find $fish_config -regextype posix-extended -regex '^.*fish/config\.[[:digit:]]+\.copy$' |\
-    sort -r |head -1)
-  if test -n $localbackup
-    mv $localbackup "$fish_config/config.fish"
-  end
+  set -l fish_config_home $XDG_CONFIG_HOME/fish
+  set -l fish_prompt_home $fish_config_home/functions
+
+  __omf.destroy.restore_backup "$fish_config_home/config.fish"
+  __omf.destroy.restore_backup "$fish_prompt_home/fish_prompt.fish"
 
   if test "$OMF_PATH" != "$HOME"
     rm -rf "$OMF_PATH"
