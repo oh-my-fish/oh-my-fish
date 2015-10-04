@@ -15,7 +15,7 @@ function omf.remove_package
   for path in {$OMF_PATH,$OMF_CONFIG}/{pkg}/$pkg
     not test -d $path; and continue
 
-    source $path/uninstall.fish; and emit uninstall_$pkg
+    source $path/uninstall.fish ^/dev/null; and emit uninstall_$pkg
     omf.bundle.remove "package" $pkg
 
     rm -rf $path
