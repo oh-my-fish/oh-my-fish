@@ -2,8 +2,8 @@ function omf.bundle.install
   set bundle $OMF_CONFIG/bundle
 
   if test -f $bundle
-    set packages (omf.list_local_packages)
-    set themes (omf.list_installed_themes)
+    set packages (omf.packages.list --installed --plugin)
+    set themes (omf.packages.list --installed --theme)
     set bundle_contents (cat $bundle | sort -u)
 
     for record in $bundle_contents

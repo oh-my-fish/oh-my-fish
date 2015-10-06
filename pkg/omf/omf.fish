@@ -83,7 +83,7 @@ function omf -d "Oh My Fish"
       end
 
     case "l" "ls" "list"
-      omf.list_local_packages | column
+      omf.packages.list --installed | column
 
     case "n" "new"
       if test (count $argv) -ne 3
@@ -118,10 +118,10 @@ function omf -d "Oh My Fish"
         set -l regex "[[:<:]]($theme)[[:>:]]"
         test "$ostype" != "Darwin"; and set regex "\b($theme)\b"
 
-        omf.list_themes | column | sed -E "s/$regex/"(omf::em)"\1"(omf::off)"/"
+        omf.packages.list --database --theme | column | sed -E "s/$regex/"(omf::em)"\1"(omf::off)"/"
         omf::off
       else if test (count $argv) -eq 2
-        if not contains -- $argv[2] (omf.list_installed_themes)
+        if not contains -- $argv[2] (omf.packages.list --installed)
           omf.install --theme $argv[2]; or return 1
         end
         omf.theme $argv[2]
@@ -140,7 +140,7 @@ function omf -d "Oh My Fish"
         echo "Please open a new issue here → "(omf::em)"github.com/oh-my-fish/oh-my-fish/issues"(omf::off)
       end
       omf.theme (cat $OMF_CONFIG/theme)
-      omf.install_package (omf.list_installed_packages)
+      omf.install_package (omf.packages.list --installed --plugin)
       refresh
 
     case "*"
