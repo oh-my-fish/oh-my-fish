@@ -1,5 +1,5 @@
 function omf.install_package
   for search in $argv
-    omf.install --pkg $search
+    omf.install $search
   end
 end

@@ -78,7 +78,10 @@ function omf -d "Oh My Fish"
       if test (count $argv) -eq 1
         omf.bundle.install
       else
-        omf.install_package $argv[2..-1]
+        for package in $argv[2..-1]
+          omf.install $package
+        end
+
         refresh
       end
 
@@ -122,7 +125,7 @@ function omf -d "Oh My Fish"
         omf::off
 
       else if test (count $argv) -eq 2
-        omf.theme $argv[2]
+        omf.install $argv[2]
         refresh
       else
         echo (omf::err)"Invalid number of arguments"(omf::off) 1^&2
@@ -138,8 +141,10 @@ function omf -d "Oh My Fish"
         echo (omf::err)"Oh My Fish failed to update."(omf::off)
         echo "Please open a new issue here → "(omf::em)"github.com/oh-my-fish/oh-my-fish/issues"(omf::off)
       end
-      omf.theme (cat $OMF_CONFIG/theme)
-      omf.install_package (omf.list_installed_packages)
+      omf.update --theme (cat $OMF_CONFIG/theme)
+      for package in (omf.list_installed_packages)
+        omf.update --pkg $package
+      end
       refresh
 
     case "*"
