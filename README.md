@@ -122,7 +122,7 @@ Everytime a package/theme is installed or removed the `bundle` file is updated. 
 
 ## Creating Packages
 
-Oh My Fish uses an advanced and well defined plugin architecture to ease plugin development, including init/uninstall events and function autoloading. [See the documentation](docs/Packages.md) for more details.
+Oh My Fish uses an advanced and well defined plugin architecture to ease plugin development, including init/uninstall events and function autoloading. [See the documentation](docs/en-US/Packages.md) for more details.
 
 [fishshell]: http://fishshell.com
 
