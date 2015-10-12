@@ -1,10 +1,11 @@
 function omf.describe -a name
   if test (count $argv) -eq 0
-    for package in (omf.list_db_packages)
+    for package in (omf.packages.list --database)
       echo $package - (omf.describe $package)
     end
   else
     set package_path $OMF_PATH/db/pkg/$name
+
     if test -e $package_path
       set url (cat $package_path)
       set repo (basename (dirname $url))/(basename $url)
