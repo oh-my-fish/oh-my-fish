@@ -19,7 +19,7 @@ function omf.install -a name_or_url
     set name $name_or_url
     set url (cat $OMF_PATH/db/$parent_path/$name_or_url)
   else
-    set name (basename $name_or_url | sed "s/^pkg-//;s/^plugin-//;s/^theme-//")
+    set name (basename $name_or_url | sed 's/^pkg-//;s/^plugin-//;s/^theme-//;s/\.git$//')
     set url $name_or_url
   end
 
