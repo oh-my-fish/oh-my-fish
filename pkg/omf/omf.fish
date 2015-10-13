@@ -79,10 +79,12 @@ function omf -d "Oh My Fish"
         omf.bundle.install
       else
         for package in $argv[2..-1]
-          omf.install $package
+          if omf.install $package
+            set refresh
+          end
         end
 
-        refresh
+        set -q refresh; and refresh
       end
 
     case "l" "ls" "list"
