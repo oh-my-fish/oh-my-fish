@@ -13,22 +13,6 @@ set -g OMF_UNKNOWN_OPT   2
 set -g OMF_INVALID_ARG   3
 set -g OMF_UNKNOWN_ERR   4
 
-function omf::em
-  set_color $fish_color_match ^/dev/null; or set_color cyan
-end
-
-function omf::dim
-  set_color $fish_color_autosuggestion ^/dev/null; or set_color 555
-end
-
-function omf::err
-  set_color $fish_color_error ^/dev/null; or set_color red --bold
-end
-
-function omf::off
-  set_color normal
-end
-
 function omf -d "Oh My Fish"
   if test (count $argv) -eq 0
     omf.help "main"; and return 0
