@@ -78,8 +78,13 @@ function omf -d "Oh My Fish"
       if test (count $argv) -eq 1
         omf.bundle.install
       else
-        omf.install_package $argv[2..-1]
-        refresh
+        for package in $argv[2..-1]
+          if omf.install $package
+            set refresh
+          end
+        end
+
+        set -q refresh; and refresh
       end
 
     case "l" "ls" "list"
@@ -121,9 +126,6 @@ function omf -d "Oh My Fish"
         omf.packages.list --database --theme | column | sed -E "s/$regex/"(omf::em)"\1"(omf::off)"/"
         omf::off
       else if test (count $argv) -eq 2
-        if not contains -- $argv[2] (omf.packages.list --installed)
-          omf.install --theme $argv[2]; or return 1
-        end
         omf.theme $argv[2]
       else
         echo (omf::err)"Invalid number of arguments"(omf::off) 1^&2
@@ -139,10 +141,12 @@ function omf -d "Oh My Fish"
         echo (omf::err)"Oh My Fish failed to update."(omf::off)
         echo "Please open a new issue here → "(omf::em)"github.com/oh-my-fish/oh-my-fish/issues"(omf::off)
       end
-      omf.theme (cat $OMF_CONFIG/theme)
-      omf.install_package (omf.packages.list --installed --plugin)
-      refresh
 
+      for package in (omf.packages.list --installed)
+        omf.update $package
+      end
+
+      refresh
     case "*"
       echo (omf::err)"$argv[1] option not recognized"(omf::off) 1^&2
       return $OMF_UNKNOWN_OPT
