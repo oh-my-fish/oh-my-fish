@@ -2,11 +2,15 @@ function __omf.packages.sort
   for package in (echo $argv | tr ' ' '\n' | sort); echo $package; end
 end
 
+function __omf.packages.builtin
+  echo "omf"
+end
+
 function __omf.packages.list -a type
   set -l list
 
   test "$type" = "--theme"; or for package in (basename {$OMF_CONFIG,$OMF_PATH/db}/pkg/*)
-    set list $list $package
+    contains $package (__omf.packages.builtin); or set list $list $package
   end
 
   test "$type" = "--plugin"; or for package in (basename {$OMF_CONFIG,$OMF_PATH/db}/themes/*)
@@ -48,7 +52,7 @@ function __omf.packages.list.installed -a type
   set -l list
 
   test "$type" = "--theme"; or for package in (basename {$OMF_CONFIG,$OMF_PATH}/pkg/*)
-    set list $list $package
+    contains $package (__omf.packages.builtin); or set list $list $package
   end
 
   test "$type" = "--plugin"; or for package in (basename {$OMF_CONFIG,$OMF_PATH}/themes/*)

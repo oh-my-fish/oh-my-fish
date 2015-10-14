@@ -22,9 +22,11 @@ function omf.install -a type_flag name_or_url
   if test -e $OMF_PATH/db/$parent_path/$name_or_url
     set target $parent_path/$name_or_url
   else
-    set -l local_name (basename $name_or_url | sed "s/^pkg-//;s/^plugin-//;s/^theme-//")
+    set -l local_name (basename $name_or_url | sed "s/^pkg-//;s/^plugin-//;s/^theme-//;s/\.git\$//")
     if test -e $OMF_PATH/$parent_path/$local_name
-      echo (omf::err)"Error: $local_name $install_type already installed."(omf::off) 1^&2
+      echo (omf::dim)"Updating $local_name $install_type..."(omf::off)
+      omf.repo.pull $OMF_PATH/$parent_path/$local_name
+      echo (omf::em)"✔ $local_name $install_type up to date."(omf::off)
     else
       echo (omf::dim)"Trying to clone from URL..."(omf::off)
       if omf.repo.clone $name_or_url $OMF_PATH/$parent_path/$local_name
