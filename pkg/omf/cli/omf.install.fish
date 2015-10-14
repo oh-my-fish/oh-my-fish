@@ -22,7 +22,7 @@ function omf.install -a type_flag name_or_url
   if test -e $OMF_PATH/db/$parent_path/$name_or_url
     set target $parent_path/$name_or_url
   else
-    set -l local_name (basename $name_or_url | sed "s/^pkg-//;s/^plugin-//;s/^theme-//")
+    set -l local_name (basename $name_or_url | sed "s/^pkg-//;s/^plugin-//;s/^theme-//;s/\.git\$//")
     if test -e $OMF_PATH/$parent_path/$local_name
       echo (omf::err)"Error: $local_name $install_type already installed."(omf::off) 1^&2
     else
