@@ -23,4 +23,8 @@ function require -a name
         and emit init_$name $path
     end
   end
+
+  functions -e init  # Cleanup previously sourced function
+
+  return 0
 end
