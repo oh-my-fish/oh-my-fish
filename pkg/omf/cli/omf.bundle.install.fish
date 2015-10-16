@@ -2,30 +2,28 @@ function omf.bundle.install
   set bundle $OMF_CONFIG/bundle
 
   if test -f $bundle
-    set packages (omf.packages.list --installed --plugin)
-    set themes (omf.packages.list --installed --theme)
+    set packages (omf.packages.list --installed)
     set bundle_contents (cat $bundle | sort -u)
 
     for record in $bundle_contents
-      set type (echo $record | cut -d' ' -f1)
-      set name_or_url (echo $record | cut -d' ' -f2-)
+      test -n "$record"; or continue
+
+      set type (echo $record | cut -s -d' ' -f1 | sed 's/ //g')
+      contains $type theme package; or continue
+
+      set name_or_url (echo $record | cut -s -d' ' -f2- | sed 's/ //g')
+      test -n "$name_or_url"; or continue
+
       set name (basename $name_or_url | sed 's/\.git//;s/^pkg-//;s/^plugin-//;s/^theme-//')
 
-      switch $type
-      case "package"
-        if not contains $name $packages
-          omf.install --pkg $name_or_url
-        end
-
-      case "theme"
-        if not contains $name $themes
-          omf.install --theme $name_or_url
-        end
+      if not contains $name $packages
+        omf.install $name_or_url;
+          and set installed
       end
     end
 
     sort -u $bundle -o $bundle
   end
 
-  return 0
+  set -q installed
 end

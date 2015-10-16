@@ -76,16 +76,17 @@ function omf -d "Oh My Fish"
 
     case "i" "install" "get"
       if test (count $argv) -eq 1
-        omf.bundle.install
+        omf.bundle.install;
+          and set installed
       else
         for package in $argv[2..-1]
-          if omf.install $package
-            set refresh
-          end
+          omf.install $package;
+            and set installed
         end
-
-        set -q refresh; and refresh
       end
+
+      set -q installed; and refresh
+      return 0
 
     case "l" "ls" "list"
       omf.packages.list --installed | column
