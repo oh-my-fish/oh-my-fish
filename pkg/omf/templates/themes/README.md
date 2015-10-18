@@ -36,5 +36,3 @@ $ omf u {{NAME}}
 [omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
 
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
-[travis-badge]:   http://img.shields.io/travis/{{USER}}/{{NAME}}.svg?style=flat-square
-[travis-link]:    https://travis-ci.org/{{USER}}/{{NAME}}
