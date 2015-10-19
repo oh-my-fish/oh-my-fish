@@ -44,6 +44,7 @@
 - [russell](#russell)
 - [scorphish](#scorphish)
 - [simplevi](#simplevi)
+- [sushi](#sushi)
 - [syl20bnr](#syl20bnr)
 - [taktoa](#taktoa)
 - [technopagan](#technopagan)
@@ -1580,6 +1581,35 @@ Screenshots:
 
 ![insert mode](https://raw.github.com/syl20bnr/fish_prompt-simplevi/master/prompt_fish-simplevi-i.png)
 
+# Sushi
+> 🍣 Sushi theme for [Fishshell](http://fishshell.com).
+
+#### Install
+
+```fish
+$ omf install sushi
+```
+
+#### Features
+
+* Minimal Prompt.
+* Git Support.
+* Displays `^` when there are stashed changes.
+* Displays `*` when there are any changes to files already being tracked in the repo.
+* Displays current branch name.
+* Branch name color changes when there are staged changes.
+* Displays number of commits current branch is ahead/behind from origin.
+* By default it shows only the name of the current directory but it provides a flag `theme_complete_path` to display abbreviated current working directory instead.
+* Displays Time.
+
+#### Screenshot
+
+<div align="center">
+  <img alt="Screenshot for Sushi Theme"src="https://camo.githubusercontent.com/98de9526e48e3ad03e761893c539891563e41276/68747470733a2f2f6769746875622d636c6f75642e73332e616d617a6f6e6177732e636f6d2f6173736574732f333037313934382f31303536353038362f66383463326432632d373565312d313165352d383234382d3364386262623965636565392e706e67" />
+</div>
+
+#### License
+[MIT](http://opensource.org/licenses/MIT) © [Umayr Shahid](http://github.com/umayr) et [al](https://github.com/umayr/sushi/graphs/contributors)
 
 
 # syl20bnr
