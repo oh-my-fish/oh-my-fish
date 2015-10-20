@@ -18,14 +18,14 @@ Oh My Fish provides core infrastructure to allow you to install packages which e
 # Install
 
 ```fish
-curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish 
+curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish 
 omf help
 ```
 
 Or _download_ and run it yourself:
 
 ```fish
-curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install > install
+curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install > install
 fish install
 ```
 
