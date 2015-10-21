@@ -1,9 +1,9 @@
 #!/usr/bin/env fish
 #
 # USAGE
-#   #1: curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
-#   #2: curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install > install; and fish install
-#   #3: env OMF_CONFIG=~/.omf curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
+#   #1: curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
+#   #2: curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install > install; and fish install
+#   #3: env OMF_CONFIG=~/.omf curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
 #
 # ENV
 #   XDG_DATA_HOME       Base directory (~/.local/share)
