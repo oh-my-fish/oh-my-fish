@@ -19,6 +19,9 @@ function omf.update -a name
     not test -e "$path/.git"; and continue
 
     omf.repo.pull $path; and set return_success
+
+    set -q return_success;
+      and omf.bundle.install $path/bundle
   end
 
   set -q return_success; and __omf.update.success "$name"

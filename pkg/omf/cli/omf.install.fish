@@ -34,6 +34,7 @@ function omf.install -a name_or_url
     echo (omf::dim)"Installing $install_type $name"(omf::off)
 
     if omf.repo.clone $url $OMF_PATH/$parent_path/$name
+      omf.bundle.install $OMF_PATH/$parent_path/$name/bundle
       omf.bundle.add $install_type $name_or_url
       __omf.install.success "$install_type $name"
 
