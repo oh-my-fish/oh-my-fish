@@ -43,16 +43,10 @@ function autoload -d "Manipulate autoloading path components"
     end
 
     if set -q erase
-      not contains -- "$path" $$dest; and continue
-      # Make a copy of function path selected above
-      set -l function_path $$dest
-
-      set -l index (contains -i -- $path $function_path)
-      set -e function_path[$index]
-
-      # Set function path to modified copy
-      set $dest $function_path
-      set return_success
+      if set -l index (contains -i -- $path $$dest)
+        set -e {$dest}[$index]
+        set return_success
+      end
     else
       set return_success
       contains -- "$path" $$dest; and continue
