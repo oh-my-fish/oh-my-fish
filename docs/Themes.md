@@ -123,7 +123,7 @@ Ported from https://gist.github.com/agnoster/3712874.
 
 
 # batman
-[![](https://img.shields.io/badge/Themes-Wahoo-00b0ff.svg?style=flat-square)][Wahoo]
+[![](https://img.shields.io/badge/Themes-Wahoo-00b0ff.svg?style=flat-square)][THEMES-NAMESPACE-batman-Wahoo]
 ![](https://img.shields.io/badge/License-MIT-707070.svg?style=flat-square)
 
 ###  _Batman_ <img width="20px" src="https://cloud.githubusercontent.com/assets/8317250/7785620/0059f784-01d3-11e5-8a01-8edf6c4e2af7.png">
@@ -155,9 +155,9 @@ _From left to right:_
 > __Disclaimer:__ This work is not intended to infringe on any rights by and of the companies and/or individuals involved in the production of any series mentioned here. I don't own Batman.
 
 
-[MIT](http://opensource.org/licenses/MIT) © [Jorge Bucaran][Author] et [al](https://github.com/bucaran/batman/graphs/contributors)
-[Author]: http://about.bucaran.me
-[Wahoo]: https://github.com/bucaran/wahoo
+[MIT](http://opensource.org/licenses/MIT) © [Jorge Bucaran][THEMES-NAMESPACE-batman-Author] et [al](https://github.com/bucaran/batman/graphs/contributors)
+[THEMES-NAMESPACE-batman-Author]: http://about.bucaran.me
+[THEMES-NAMESPACE-batman-Wahoo]: https://github.com/bucaran/wahoo
 
 
 # beloglazov
@@ -198,21 +198,19 @@ bobthefish is a Powerline-style, Git-aware fish theme optimized for awesome.
 
 [![](https://img.shields.io/badge/Framework-Oh My Fish-blue.svg?style=flat)](https://github.com/oh-my-fish/oh-my-fish) ![](https://img.shields.io/cocoapods/l/AFNetworking.svg) [![Join the chat at https://gitter.im/oh-my-fish/oh-my-fish](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/oh-my-fish/oh-my-fish?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-![bobthefish][screenshot]
+![bobthefish][THEMES-NAMESPACE-bobthefish-screenshot]
 
 
 ##### Installation
 
-Add it to your `~/.config/fish/config.fish` file:
+Be sure to have Oh My Fish installed. Then just:
 
-    Theme bobthefish
+    omf install bobthefish
 
-Open a new terminal session and run `omf install`.
+You will probably need a [Powerline-patched font][THEMES-NAMESPACE-bobthefish-patching] for this to work.
+[I recommend picking one of these][THEMES-NAMESPACE-bobthefish-fonts].
 
-You will probably need a [Powerline-patched font][patching] for this to work.
-[I recommend picking one of these][fonts].
-
-This theme is based loosely on [agnoster][agnoster].
+This theme is based loosely on [agnoster][THEMES-NAMESPACE-bobthefish-agnoster].
 
 
 ##### Features
@@ -263,14 +261,18 @@ set -g theme_display_hg yes
 set -g theme_display_virtualenv no
 set -g theme_display_ruby no
 set -g theme_display_user yes
+set -g theme_title_display_process yes
+set -g theme_title_display_path no
+set -g theme_date_format "+%a %H:%M"
+set -g theme_avoid_ambiguous_glyphs yes
 set -g default_user your_normal_user
 ```
 
 
-[screenshot]: http://i.0x7f.us/bobthefish.png
-[patching]:   https://powerline.readthedocs.org/en/latest/fontpatching.html
-[fonts]:      https://github.com/Lokaltog/powerline-fonts
-[agnoster]:   https://gist.github.com/agnoster/3712874
+[THEMES-NAMESPACE-bobthefish-screenshot]: http://i.0x7f.us/bobthefish.png
+[THEMES-NAMESPACE-bobthefish-patching]:   https://powerline.readthedocs.org/en/latest/fontpatching.html
+[THEMES-NAMESPACE-bobthefish-fonts]:      https://github.com/Lokaltog/powerline-fonts
+[THEMES-NAMESPACE-bobthefish-agnoster]:   https://gist.github.com/agnoster/3712874
 
 
 # budspencer
@@ -294,7 +296,7 @@ The philosophy behind budspencer theme:
 
 #### Demonstration video
 
-[![video][screenshot]](http://vimeo.com/105546618)
+[![video][THEMES-NAMESPACE-budspencer-screenshot]](http://vimeo.com/105546618)
 
 #### Requirements
 
@@ -306,15 +308,26 @@ Non standard tools:
 * xsel
 * wmctrl
 * git
-* [taskwarrior][taskwarrior] (optional)
-* [remind][remind] (optional)
+* [taskwarrior][THEMES-NAMESPACE-budspencer-taskwarrior] (optional)
+* [remind][THEMES-NAMESPACE-budspencer-remind] (optional)
+
+##### Note for OS X users
+
+The theme uses advanced `sed` and `expr` features. The OS X tools have
+restricted functionality.
+
+Try `expr` from `coreutils` package if you see `expr: syntax error` in
+budspencer prompt.
+
+Execute `brew install --with-default-names gnu-sed` if there are
+`Array index out of bounds` messages in your prompt.
 
 #### Configuration
 
 ##### General configuration
 
 The theme behaves similar to vim's airline/powerline plugins. Thus, it needs a
-[powerline font][font].
+[powerline font][THEMES-NAMESPACE-budspencer-font].
 It's also crucial to have vi mode enabled. Thus, execute
 ```
 set -U fish_key_bindings fish_vi_key_bindings
@@ -332,7 +345,7 @@ set budspencer_colors 000000 333333 666666 ffffff ffff00 ff6600 ff0000 ff0033 33
 00ff00
 ```
 will result in a prompt like this:
-![color replace example][colors]
+![color replace example][THEMES-NAMESPACE-budspencer-colors]
 
 Two color schemes for bright and dark environments are predefined. You can
 enable them with `day` and `night`, respectively.
@@ -374,7 +387,7 @@ set -e budspencer_nogreeting
     * ⌘: present working directory is in bookmark list, can be toggled with `#` to
         show the number of the bookmark
     * V: vi is parent process
-    * R: [ranger][ranger] is parent process
+    * R: [ranger][THEMES-NAMESPACE-budspencer-ranger] is parent process
     * ⚙: there are background jobs, can be toggled with `#` to show the amount of
         background jobs
     * : no write permissions in present working directory
@@ -419,7 +432,7 @@ The following shortcuts need vi-mode:
       `short long none`); note that changes to `$budspencer_pwdstyle` keep persistant as it's
       a universal variable.
 
-![pwd style][pwdstyle]
+![pwd style][THEMES-NAMESPACE-budspencer-pwdstyle]
 
 - Style of symbols can be toggled in NORMAL and in VISUAL mode with `#`
     * styles implemented:
@@ -436,7 +449,7 @@ The function `d` drops down a menu showing the history as enumerated list. Unlik
 fish's builtin `dirh`, `d` does not show any duplicates. Enter a number to jump
 to a directory within the list.
 
-![dir menu][dirmenu]
+![dir menu][THEMES-NAMESPACE-budspencer-dirmenu]
 
 The following shortcuts need vi-mode:
 - Press `H` in NORMAL mode to change present working directory to previous
@@ -500,16 +513,16 @@ Give me feedback if you ...
 * ... have problems with budspencer. 
 * ... have questions concerning budspencer.
 
-[font]: https://github.com/Lokaltog/powerline-fonts
-[ranger]: http://ranger.nongnu.org/
-[taskwarrior]: http://taskwarrior.org/
-[remind]: http://www.roaringpenguin.com/products/remind
+[THEMES-NAMESPACE-budspencer-font]: https://github.com/Lokaltog/powerline-fonts
+[THEMES-NAMESPACE-budspencer-ranger]: http://ranger.nongnu.org/
+[THEMES-NAMESPACE-budspencer-taskwarrior]: http://taskwarrior.org/
+[THEMES-NAMESPACE-budspencer-remind]: http://www.roaringpenguin.com/products/remind
 [fish-git]: https://github.com/fish-shell/fish-shell.git
 [fish-nightly]: https://github.com/fish-shell/fish-shell/wiki/Nightly-builds
-[screenshot]: https://raw.githubusercontent.com/tannhuber/media/master/budspencer.jpg
-[colors]: https://raw.githubusercontent.com/tannhuber/media/master/budspencer_replace_colors.jpg
-[dirmenu]: https://raw.githubusercontent.com/tannhuber/media/master/budspencer_dir_menu.jpg
-[pwdstyle]: https://raw.githubusercontent.com/tannhuber/media/master/budspencer_pwd_style.jpg
+[THEMES-NAMESPACE-budspencer-screenshot]: https://raw.githubusercontent.com/tannhuber/media/master/budspencer.jpg
+[THEMES-NAMESPACE-budspencer-colors]: https://raw.githubusercontent.com/tannhuber/media/master/budspencer_replace_colors.jpg
+[THEMES-NAMESPACE-budspencer-dirmenu]: https://raw.githubusercontent.com/tannhuber/media/master/budspencer_dir_menu.jpg
+[THEMES-NAMESPACE-budspencer-pwdstyle]: https://raw.githubusercontent.com/tannhuber/media/master/budspencer_pwd_style.jpg
 
 
 # cbjohnson
@@ -616,7 +629,7 @@ The philosophy behind dangerous theme:
 
 #### Screenshot
 
-![screenshot][screenshot]
+![screenshot][THEMES-NAMESPACE-dangerous-screenshot]
 
 #### Requirements
 
@@ -628,8 +641,8 @@ Non standard tools:
 * xsel
 * wmctrl
 * git
-* [taskwarrior][taskwarrior] (optional)
-* [remind][remind] (optional)
+* [taskwarrior][THEMES-NAMESPACE-dangerous-taskwarrior] (optional)
+* [remind][THEMES-NAMESPACE-dangerous-remind] (optional)
 
 #### Configuration
 
@@ -692,7 +705,7 @@ set -e dangerous_nogreeting
     * ⌘: present working directory is in bookmark list, can be toggled with `#` to
         show the number of the bookmark
     * V: vi is parent process
-    * R: [ranger][ranger] is parent process
+    * R: [ranger][THEMES-NAMESPACE-dangerous-ranger] is parent process
     * ⚙: there are background jobs, can be toggled with `#` to show the amount of
         background jobs
     * : no write permissions in present working directory
@@ -813,12 +826,12 @@ Give me feedback if you ...
 * ... have problems with dangerous. 
 * ... have questions concerning dangerous.
 
-[ranger]: http://ranger.nongnu.org/
-[taskwarrior]: http://taskwarrior.org/
-[remind]: http://www.roaringpenguin.com/products/remind
+[THEMES-NAMESPACE-dangerous-ranger]: http://ranger.nongnu.org/
+[THEMES-NAMESPACE-dangerous-taskwarrior]: http://taskwarrior.org/
+[THEMES-NAMESPACE-dangerous-remind]: http://www.roaringpenguin.com/products/remind
 [fish-git]: https://github.com/fish-shell/fish-shell.git
 [fish-nightly]: https://github.com/fish-shell/fish-shell/wiki/Nightly-builds
-[screenshot]: https://raw.githubusercontent.com/tannhuber/media/master/dangerous.gif
+[THEMES-NAMESPACE-dangerous-screenshot]: https://raw.githubusercontent.com/tannhuber/media/master/dangerous.gif
 
 
 # default
@@ -858,12 +871,12 @@ Only display the folder name:
 
 ### License
 
-[MIT][mit] © [bpinto][author] et [al][contributors]
+[MIT][mit] © [bpinto][author] et [al][THEMES-NAMESPACE-default-contributors]
 
 
-[mit]:            http://opensource.org/licenses/MIT
-[author]:         http://github.com/bpinto
-[contributors]:   https://github.com/oh-my-fish/theme-default/graphs/contributors
+[THEMES-NAMESPACE-default-mit]:            http://opensource.org/licenses/MIT
+[THEMES-NAMESPACE-default-author]:         http://github.com/bpinto
+[THEMES-NAMESPACE-default-contributors]:   https://github.com/oh-my-fish/theme-default/graphs/contributors
 [omf-link]:       https://www.github.com/fish-shell/oh-my-fish
 
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
@@ -948,7 +961,7 @@ By [joar](https://github.com/joar), thanks to
 
 
 # flash
-[![](https://img.shields.io/badge/Themes-Wahoo-00b0ff.svg?style=flat-square)][Wahoo]
+[![](https://img.shields.io/badge/Themes-Wahoo-00b0ff.svg?style=flat-square)][THEMES-NAMESPACE-flash-Wahoo]
 ![](https://img.shields.io/badge/License-MIT-707070.svg?style=flat-square)
 
 
@@ -993,9 +1006,9 @@ _From left to right:_
 > __Disclaimer:__ This work is not intended to infringe on any rights by and of the companies and/or individuals involved in the production of any series mentioned here. I don't own the Flash.
 
 
-[MIT](http://opensource.org/licenses/MIT) © [Jorge Bucaran][Author] et [al](https://github.com/bucaran/batman/graphs/contributors)
-[Author]: http://about.bucaran.me
-[Wahoo]: https://github.com/bucaran/wahoo
+[MIT](http://opensource.org/licenses/MIT) © [Jorge Bucaran][THEMES-NAMESPACE-flash-Author] et [al](https://github.com/bucaran/batman/graphs/contributors)
+[THEMES-NAMESPACE-flash-Author]: http://about.bucaran.me
+[THEMES-NAMESPACE-flash-Wahoo]: https://github.com/bucaran/wahoo
 
 
 # fox
@@ -1075,7 +1088,7 @@ Colors and git functions taken from [amio](https://github.com/amio)'s
 
 
 # hogan
-[![](https://img.shields.io/badge/Wahoo-Theme-00b0ff.svg?style=flat-square)][Wahoo]
+[![](https://img.shields.io/badge/Wahoo-Theme-00b0ff.svg?style=flat-square)][THEMES-NAMESPACE-hogan-Wahoo]
 ![](https://img.shields.io/badge/License-MIT-707070.svg?style=flat-square)
 
 ### :hurtrealbad: _Hogan_
@@ -1101,13 +1114,13 @@ Colors and git functions taken from [amio](https://github.com/amio)'s
 
 ### License
 
-[MIT](http://opensource.org/licenses/MIT) © [Jorge Bucaran][Author] et [al](https://github.com/bucaran/batman/graphs/contributors)
-[Author]: http://about.bucaran.me
-[Wahoo]: https://github.com/bucaran/wahoo
+[MIT](http://opensource.org/licenses/MIT) © [Jorge Bucaran][THEMES-NAMESPACE-hogan-Author] et [al](https://github.com/bucaran/batman/graphs/contributors)
+[THEMES-NAMESPACE-hogan-Author]: http://about.bucaran.me
+[THEMES-NAMESPACE-hogan-Wahoo]: https://github.com/bucaran/wahoo
 
 
 # hulk
-[![](https://img.shields.io/badge/Themes-Wahoo-00b0ff.svg?style=flat-square)][Wahoo]
+[![](https://img.shields.io/badge/Themes-Wahoo-00b0ff.svg?style=flat-square)][THEMES-NAMESPACE-hulk-Wahoo]
 ![](https://img.shields.io/badge/License-MIT-33CC33.svg?style=flat-square)
 
 ### :anger: _Hulk_
@@ -1137,9 +1150,9 @@ _From left to right:_
 
 > __Disclaimer:__ This work is not intended to infringe on any rights by and of the companies and/or individuals involved in the production of any series mentioned here. I don't own the Hulk.
 
-[MIT](http://opensource.org/licenses/MIT) © [Jorge Bucaran][Author] et [al](https://github.com/bucaran/batman/graphs/contributors)
-[Author]: http://about.bucaran.me
-[Wahoo]: https://github.com/bucaran/wahoo
+[MIT](http://opensource.org/licenses/MIT) © [Jorge Bucaran][THEMES-NAMESPACE-hulk-Author] et [al](https://github.com/bucaran/batman/graphs/contributors)
+[THEMES-NAMESPACE-hulk-Author]: http://about.bucaran.me
+[THEMES-NAMESPACE-hulk-Wahoo]: https://github.com/bucaran/wahoo
 
 
 # idan
@@ -1272,12 +1285,12 @@ set theme_display_rbenv_with_gemfile_only 'yes'
 
 ### License
 
-[MIT][mit] © [bpinto][author] et [al][contributors]
+[MIT][mit] © [bpinto][author] et [al][THEMES-NAMESPACE-l-contributors]
 
 
-[mit]:            http://opensource.org/licenses/MIT
-[author]:         http://github.com/bpinto
-[contributors]:   https://github.com/oh-my-fish/theme-default/graphs/contributors
+[THEMES-NAMESPACE-l-mit]:            http://opensource.org/licenses/MIT
+[THEMES-NAMESPACE-l-author]:         http://github.com/bpinto
+[THEMES-NAMESPACE-l-contributors]:   https://github.com/oh-my-fish/theme-default/graphs/contributors
 [omf-link]:       https://www.github.com/fish-shell/oh-my-fish
 
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
@@ -1287,7 +1300,7 @@ set theme_display_rbenv_with_gemfile_only 'yes'
 
 
 # led
-[![](https://img.shields.io/badge/Themes-Wahoo-00b0ff.svg?style=flat-square)][Wahoo]
+[![](https://img.shields.io/badge/Themes-Wahoo-00b0ff.svg?style=flat-square)][THEMES-NAMESPACE-led-Wahoo]
 ![](https://img.shields.io/badge/License-MIT-33CC33.svg?style=flat-square)
 
 ### _led_
@@ -1310,9 +1323,9 @@ set theme_display_rbenv_with_gemfile_only 'yes'
 
 ### License
 
-[MIT](http://opensource.org/licenses/MIT) © [Jorge Bucaran][Author] et [al](https://github.com/bucaran/wahoo/graphs/contributors)
-[Author]: http://about.bucaran.me
-[Wahoo]: https://github.com/bucaran/wahoo
+[MIT](http://opensource.org/licenses/MIT) © [Jorge Bucaran][THEMES-NAMESPACE-led-Author] et [al](https://github.com/bucaran/wahoo/graphs/contributors)
+[THEMES-NAMESPACE-led-Author]: http://about.bucaran.me
+[THEMES-NAMESPACE-led-Wahoo]: https://github.com/bucaran/wahoo
 
 
 # mtahmed
@@ -1374,7 +1387,9 @@ $ omf u nelsonjchen
   * re5et: 24 hour clock
 * MM DD YY date format
   * re5et: YY MM DD date format
-  
+* Title Setting to the `prompt_pwd` function in fish for screen, tmux, and non-terminal multiplexer.
+  * This is derived from [@chgu82837's theme](https://github.com/chgu82837/theme-PastFish/blob/39af8e2885e308501bb0afa9dedab193a8722cfe/fish_prompt.fish#L82-L90)
+
 #### Omissions from the re5et version
 
 * Trimming down the working directory display only works on `~`. The original re5et prompt would also trim based on the current environment variables set. For example, if you had the environment variable `FOO` set to `/usr/local` and you did `cd /usr/local`, you would see `$FOO/` in the prompt as the current working directory. I'm not sure how I would get this working. `fish` does appear to have a condensation function but it goes beyond simple environment variable replacement and I can't figure out how to turn it off.
@@ -1387,12 +1402,12 @@ $ omf u nelsonjchen
 
 ### License
 
-[MIT][mit] © [Nelson Chen][author] et [al][contributors]
+[MIT][mit] © [Nelson Chen][author] et [al][THEMES-NAMESPACE-nelsonjchen-contributors]
 
 
-[mit]:            http://opensource.org/licenses/MIT
-[author]:         http://github.com/nelsonjchen
-[contributors]:   https://github.com/nelsonjchen/omf-theme-nelsonjchen/graphs/contributors
+[THEMES-NAMESPACE-nelsonjchen-mit]:            http://opensource.org/licenses/MIT
+[THEMES-NAMESPACE-nelsonjchen-author]:         http://github.com/nelsonjchen
+[THEMES-NAMESPACE-nelsonjchen-contributors]:   https://github.com/nelsonjchen/omf-theme-nelsonjchen/graphs/contributors
 [omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
 
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
@@ -1464,12 +1479,12 @@ $ omf u pastfish
 
 ### License
 
-[MIT][mit] © [chgu82837][author] et [al][contributors]
+[MIT][mit] © [chgu82837][author] et [al][THEMES-NAMESPACE-pastfish-contributors]
 
 
-[mit]:            http://opensource.org/licenses/MIT
-[author]:         http://github.com/chgu82837
-[contributors]:   https://github.com/chgu82837/pastfish/graphs/contributors
+[THEMES-NAMESPACE-pastfish-mit]:            http://opensource.org/licenses/MIT
+[THEMES-NAMESPACE-pastfish-author]:         http://github.com/chgu82837
+[THEMES-NAMESPACE-pastfish-contributors]:   https://github.com/chgu82837/pastfish/graphs/contributors
 [omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
 
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
@@ -1523,7 +1538,7 @@ The default theme – cloned from oh-my-zsh.
 
 
 # russell
-[![](https://img.shields.io/badge/Themes-Wahoo-00b0ff.svg?style=flat-square)][Wahoo]
+[![](https://img.shields.io/badge/Themes-Wahoo-00b0ff.svg?style=flat-square)][THEMES-NAMESPACE-russell-Wahoo]
 ![](https://img.shields.io/badge/License-MIT-33CC33.svg?style=flat-square)
 
 ### _russel_
@@ -1544,9 +1559,9 @@ The default theme – cloned from oh-my-zsh.
 
 ### License
 
-[MIT](http://opensource.org/licenses/MIT) © [Jorge Bucaran][Author] et [al](https://github.com/bucaran/wahoo/graphs/contributors)
-[Author]: http://about.bucaran.me
-[Wahoo]: https://github.com/bucaran/wahoo
+[MIT](http://opensource.org/licenses/MIT) © [Jorge Bucaran][THEMES-NAMESPACE-russell-Author] et [al](https://github.com/bucaran/wahoo/graphs/contributors)
+[THEMES-NAMESPACE-russell-Author]: http://about.bucaran.me
+[THEMES-NAMESPACE-russell-Wahoo]: https://github.com/bucaran/wahoo
 
 
 # scorphish
@@ -1581,8 +1596,17 @@ Screenshots:
 
 ![insert mode](https://raw.github.com/syl20bnr/fish_prompt-simplevi/master/prompt_fish-simplevi-i.png)
 
-# Sushi
-> 🍣 Sushi theme for [Fishshell](http://fishshell.com).
+
+
+# sushi
+<div align="center">
+  <a href="http://github.com/oh-my-fish/oh-my-fish">
+  <img width=90px  src="https://cloud.githubusercontent.com/assets/8317250/8510172/f006f0a4-230f-11e5-98b6-5c2e3c87088f.png">
+  </a>
+</div>
+<br>
+
+> 🍣 Sushi theme for [Oh My Fish][omf-link].
 
 #### Install
 
@@ -1604,12 +1628,19 @@ $ omf install sushi
 
 #### Screenshot
 
-<div align="center">
-  <img alt="Screenshot for Sushi Theme"src="https://camo.githubusercontent.com/98de9526e48e3ad03e761893c539891563e41276/68747470733a2f2f6769746875622d636c6f75642e73332e616d617a6f6e6177732e636f6d2f6173736574732f333037313934382f31303536353038362f66383463326432632d373565312d313165352d383234382d3364386262623965636565392e706e67" />
-</div>
+![Screenshot for Sushi Theme](https://camo.githubusercontent.com/98de9526e48e3ad03e761893c539891563e41276/68747470733a2f2f6769746875622d636c6f75642e73332e616d617a6f6e6177732e636f6d2f6173736574732f333037313934382f31303536353038362f66383463326432632d373565312d313165352d383234382d3364386262623965636565392e706e67)
 
 #### License
-[MIT](http://opensource.org/licenses/MIT) © [Umayr Shahid](http://github.com/umayr) et [al](https://github.com/umayr/sushi/graphs/contributors)
+
+[MIT][mit] © [Umayr Shahid][author] et [al][THEMES-NAMESPACE-sushi-contributors]
+
+
+[THEMES-NAMESPACE-sushi-mit]:            http://opensource.org/licenses/MIT
+[THEMES-NAMESPACE-sushi-author]:         http://github.com/umayr
+[THEMES-NAMESPACE-sushi-contributors]:   https://github.com/umayr/sushi/graphs/contributors
+[omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
+
+[license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 
 
 # syl20bnr
@@ -1659,7 +1690,7 @@ Outside the home directory:
 
 ##### git
 
-If the current directory is a [git][git] repository then the `pwd` segment is
+If the current directory is a [git][THEMES-NAMESPACE-syl20bnr-git] repository then the `pwd` segment is
 replaced by the `git` segment (I should know where I am).
 
 The `git` segment format is `X:YI@Z:P(N)` where:
@@ -1716,7 +1747,7 @@ The color of the end of the prompt depends on the `$status` value of the
 last executed command. It is `green` or `red` depending on the success or
 failure of the last command.
 
-Since I often use [ranger][ranger] and its `shift+s` key binding to bring
+Since I often use [ranger][THEMES-NAMESPACE-syl20bnr-ranger] and its `shift+s` key binding to bring
 a new child shell session, there is a discreet indicator when the parent
 process of the current shell is a `ranger` process: the end of the prompt
 is written twice (ie: `>>` instead of just `>`).
@@ -1744,15 +1775,15 @@ install the following packages via MacPorts or Homebrew:
 
 #### Cygwin compatibility
 
-In order to make this theme work on [Cygwin][cygwin], make sure to install the following
+In order to make this theme work on [Cygwin][THEMES-NAMESPACE-syl20bnr-cygwin], make sure to install the following
 packages:
 - `bc` for `math` fish function
 - `psmisc` for `pstree` (used in ranger detection)
 - `git` if you want to use the `git` segment.
 
-[git]: http://git-scm.com/
-[ranger]: http://ranger.nongnu.org/
-[cygwin]: http://cygwin.com/
+[THEMES-NAMESPACE-syl20bnr-git]: http://git-scm.com/
+[THEMES-NAMESPACE-syl20bnr-ranger]: http://ranger.nongnu.org/
+[THEMES-NAMESPACE-syl20bnr-cygwin]: http://cygwin.com/
 
 
 # taktoa
@@ -1885,7 +1916,7 @@ Characteristics:
 - Indicates Git work-in-progress (gwip/gunwip) if detected
 - Prompt character is colored red if previous command had a non-zero exit
   status
-- Includes completmentary `LS_COLORS`
+- Includes complementary `LS_COLORS`
 
 
 # zish
