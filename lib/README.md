@@ -39,10 +39,6 @@ if available battery
 end
 ```
 
-#### `basename` _`<path> ...`_
-
-Wrap basename so it can handle multiple arguments.
-
 #### `refresh`
 
 Replace the running instance of fishshell with a new one causing Oh My Fish to reload as well.
