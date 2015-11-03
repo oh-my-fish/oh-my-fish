@@ -14,7 +14,9 @@ function __write_theme_readme -a name raw_content readme
   curl -s "$raw_content/$readme" | \
     sed -r 's/^#(.*)$/###\1/gi' | \
     sed -r 's/^=+$//gi' | \
-    sed -r 's/^!\[(.*)\]\(([^h][^t][^t].*)\)$/![\1]('$escaped_raw_content'\/\2)/gi' \
+    sed -r 's/^!\[(.*)\]\(([^h][^t][^t].*)\)$/![\1]('$escaped_raw_content'\/\2)/gi' | \
+    sed -r 's/\[([^\]+)\]\[([a-zA-Z0-9]+)\]/[\1][THEMES-NAMESPACE-'"$name"'-\2]/gi' | \
+    sed -r 's/\[([a-zA-Z0-9]+)\]: (.+)/[THEMES-NAMESPACE-'"$name"'-\1]: \2/gi' \
     >> $temp_theme_contents
   echo "" >> $temp_theme_contents
   echo "" >> $temp_theme_contents
