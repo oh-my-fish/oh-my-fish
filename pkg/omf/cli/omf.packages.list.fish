@@ -23,11 +23,11 @@ end
 function __omf.packages.list.available -a type
   set -l list
 
-  test "$type" = "--theme"; or for package in (basename $OMF_PATH/db/pkg/*)
+  test "$type" = "--theme"; or for package in (basename -a $OMF_PATH/db/pkg/*)
     contains $package (basename -a {$OMF_CONFIG,$OMF_PATH}/pkg/*); or set list $list $package
   end
 
-  test "$type" = "--plugin"; or for package in (basename $OMF_PATH/db/themes/*)
+  test "$type" = "--plugin"; or for package in (basename -a $OMF_PATH/db/themes/*)
     contains $package (basename -a {$OMF_CONFIG,$OMF_PATH}/themes/*); or set list $list $package
   end
 
