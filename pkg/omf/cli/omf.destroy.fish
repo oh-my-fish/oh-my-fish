@@ -14,7 +14,7 @@ end
 function omf.destroy -d "Remove Oh My Fish"
   echo (omf::dim)"Removing Oh My Fish..."(omf::off)
 
-  for pkg in (basename $OMF_PATH/pkg/*)
+  for pkg in (basename -a $OMF_PATH/pkg/*)
     emit uninstall_$pkg
   end
 
