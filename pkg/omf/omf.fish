@@ -33,7 +33,7 @@ function omf -d "Oh My Fish"
   if test (count $argv) -eq 0
     omf.help "main"; and return 0
   else
-    if test $argv[-1] = "--help" -a (count $argv) = 2
+    if test "--help" = "$argv[-1]" -a (count $argv) = 2
       omf.help $argv[1..-2]; and return 0
     end
   end
