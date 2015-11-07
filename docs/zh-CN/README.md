@@ -28,6 +28,22 @@ curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install > install
 fish install
 ```
 
+## 更新方法
+
+我们最近把Oh My Fish代码仓库移到了我们自己组织的帐号下。所以，你们也需要更新一下你们Oh My Fish代码仓的remote设置。对于Oh My Fish的早期用户，非常推荐你按照以下步骤干净地重新安装一次：
+
+1. __首先备份所有你自定义的东西__
+2. `mv ~/.config/fish/config{,_old}.fish`
+3. `rm -rf ~/.oh-my-fish`
+4. [重新安装Oh My Fish](#install)
+5. 复制文件`~/.config/fish/config_old.fish`中所有以`Plugin`和`Theme`开始的行
+6. 把它们粘贴到文件`$OMF_CONFIG/bundle`中。如果这个文件不存在，就自己创建一下
+7. 把所有`Plugin "name"`这样的行转换成`package name`这种形式，其中"name"是包名字
+8. 把所有`Theme "name"`这样的行转换成`theme name`这种形式，其中"name"是主题名字
+9. `omf install`
+
+如果你在更新过程中遇到困难，可以到[Slack](https://oh-my-fish-slack.herokuapp.com)上来寻求我们的帮助。
+
 # 快速入门
 
 Oh My Fish 自带的辅助命令工具 `omf` 可以帮助你快速获取安装新插件和主题。
@@ -49,7 +65,7 @@ Oh My Fish 自带的辅助命令工具 `omf` 可以帮助你快速获取安装�
 
 #### `omf theme` _`<theme>`_
 
-应用一个主题。查看全部可用主题执行 `omf theme`.
+应用一个主题。查看全部可用主题执行 `omf theme`。安装之前你也可以[预览现有主题](../Themes.md)。
 
 #### `omf remove` _`<name>`_
 
