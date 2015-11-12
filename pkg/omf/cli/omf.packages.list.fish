@@ -55,7 +55,7 @@ function __omf.packages.list.installed -a type
     contains $package (__omf.packages.builtin); or set list $list $package
   end
 
-  test "$type" = "--plugin"; or for package in (basename -a {$OMF_CONFIG,$OMF_PATH}/themes/*)
+  test "$type" = "--plugin"; or for package in (basename -a {$OMF_CONFIG,$OMF_PATH}/themes/* 2>/dev/null)
     set list $list $package
   end
 
