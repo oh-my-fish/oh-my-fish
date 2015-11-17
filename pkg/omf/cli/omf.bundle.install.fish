@@ -1,5 +1,7 @@
 function omf.bundle.install
-  set bundle $OMF_CONFIG/bundle
+  test -n "$argv";
+    and set bundle $argv
+    or set bundle $OMF_CONFIG/bundle
 
   if test -f $bundle
     set packages (omf.packages.list --installed)

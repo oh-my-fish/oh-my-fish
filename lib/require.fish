@@ -4,6 +4,7 @@
 # OVERVIEW
 #   Require a plugin:
 #     - Autoload its functions and completions.
+#     - Require bundle dependencies.
 #     - Source its initialization file.
 #     - Emit its initialization event.
 #
@@ -16,7 +17,17 @@ function require -a name
     and return 0
 
   for path in {$OMF_PATH,$OMF_CONFIG}/pkg/$name
+    test -d $path; or continue
+
     if autoload $path $path/functions $path/completions
+
+      if test -f $path/bundle
+        for line in (cat $path/bundle)
+          test (echo $line | cut -d' ' -f1) = package;
+            and set dependency (basename (echo $line | cut -d' ' -f2));
+              and require $dependency
+        end
+      end
 
       source $path/init.fish ^/dev/null;
         or source $path/$name.fish ^/dev/null;
