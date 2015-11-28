@@ -100,7 +100,7 @@ Oh My Fish installer places its startup code in your fish config file (`~/.confi
 
 ## Startup
 
-Everytime you open a new shell the startup code initializes Oh My Fish installation path and the _config_ path (`~/.config/omf` by default), sourcing the [`init.fish`](init.fish) script afterwards, which autoload packages, themes and your custom init files. For more information check the [FAQ](docs/FAQ.md#what-does-oh-my-fish-do-exactly).
+Everytime you open a new shell the startup code initializes Oh My Fish installation path and the _config_ path (`~/.config/omf` by default), sourcing the [`init.fish`](init.fish) script afterwards, which autoload packages, themes and your custom init files. For more information check the [FAQ](docs/en-US/FAQ.md#what-does-oh-my-fish-do-exactly).
 
 ## Dotfiles
 
