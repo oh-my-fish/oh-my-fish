@@ -10,16 +10,17 @@ env:
 
 before_install:
   - source tools/travis-github-pr-integration.sh
-  - docker build -t fish . < Dockerfile
 
 before_script:
-  - docker run -e 'CI=WORKAROUND' -e "OMF_REPO_URI=$OMF_REPO_URI" -e "OMF_REPO_BRANCH=$OMF_REPO_BRANCH" -t -v $PWD:/src/oh-my-fish fish /usr/bin/fish -c "/src/oh-my-fish/bin/install"
-  - docker ps -a -q | xargs -i docker commit {} oh-my-fish
-  - docker run -t -w "/root/.local/share/omf" oh-my-fish /usr/bin/fish -c "export; tree -h"
+  - docker build --build-arg OMF_REPO_BRANCH=$OMF_REPO_BRANCH --build-arg OMF_REPO_URI=$OMF_REPO_URI -t oh-my-fish . < Dockerfile
+  - docker run -t oh-my-fish /usr/bin/fish -c "export; tree -h"
 
 script:
-  - docker run -t -w "/root/.local/share/omf" oh-my-fish /usr/bin/fish "tests/test_runner.fish"
-  - docker run -t -w "/root/.local/share/omf" oh-my-fish /usr/bin/fish "tests/test-generate-themes-doc.fish"
+  - docker run -t oh-my-fish /usr/bin/fish "tests/run.fish"
+  - docker run -t oh-my-fish /usr/bin/fish "tests/test-generate-themes-doc.fish"
+
+after_failure:
+  - docker ps -a
 
 notifications:
   email:
