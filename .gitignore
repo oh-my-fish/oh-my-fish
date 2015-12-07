@@ -1,6 +1,8 @@
 pkg/**
 !pkg/omf
 !pkg/omf/**
+!pkg/fish-spec
+!pkg/fish-spec/**
 
 themes/**
 
