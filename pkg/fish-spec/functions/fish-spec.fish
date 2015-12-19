@@ -1,7 +1,8 @@
 function fish-spec
+  set -g __fish_spec_dir (dirname (dirname (status -f)))
+
   # Source formatter
-  set -l fish_spec_dir (dirname (dirname (status -f)))
-  source $fish_spec_dir/basic_formatter.fish
+  source $__fish_spec_dir/basic_formatter.fish
 
   # Reset internal variables
   set -e __any_spec_failed
@@ -14,8 +15,12 @@ function fish-spec
   # Load helper file
   source spec/helper.fish ^/dev/null
 
+  emit all_specs_init
+
   # Run all specs
   __fish-spec.run_all_specs
+
+  emit all_specs_finished
 
   not set -q __any_spec_failed
 end
@@ -49,4 +54,14 @@ function __fish-spec.run_suite -a suite_name
   functions -q after_all; and after_all
 
   functions -e before_all before_each after_each after_all
+end
+
+function __fish-spec.current_time
+  if test (uname) = 'Darwin'
+    set filename 'epoch.osx'
+  else
+    set filename 'epoch.linux'
+  end
+
+  eval $__fish_spec_dir/utils/$filename
 end
