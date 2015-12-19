@@ -1,4 +1,6 @@
 function __fish-spec.spec_init -e spec_init -a spec
+  set -g __current_spec_name (echo $spec | sed 's/^[0-9]*_//;s/_/ /g;s/^it/It/')
+  set -e __current_spec_output
   set -e __current_spec_status
 end
 
@@ -20,7 +22,12 @@ function __fish-spec.spec_success -e spec_success
 end
 
 function __fish-spec.spec_error -e spec_error
-  echo -n 'F'
+  echo -e "\n\nFailure: $__current_spec_name"
+
+  if not set -q __current_spec_quiet
+    echo (omf::em)  $__current_spec_output(omf::off)
+  end
+
   set -g __any_spec_failed true
 end
 
@@ -34,11 +41,6 @@ end
 
 function __fish-spec_assertion_error -e assertion_error -a error_message
   # Mimics output redirect inside an event handler
-  if set -q __fish_spec_output
-    set __fish_spec_output $error_message
-  else
-    echo $error_message
-  end
-
+  set -g __current_spec_output $error_message
   set -g __current_spec_status error
 end
