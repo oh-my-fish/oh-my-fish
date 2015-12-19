@@ -17,6 +17,8 @@ before_script:
 
 script:
   - docker run -t oh-my-fish /usr/bin/fish "tests/run.fish"
+  - docker run -t oh-my-fish /usr/bin/fish -c "cd pkg/fish-spec; fish-spec"
+  - docker run -t oh-my-fish /usr/bin/fish -c "cd pkg/omf; fish-spec"
   - docker run -t oh-my-fish /usr/bin/fish "tests/test-generate-themes-doc.fish"
 
 after_failure:
