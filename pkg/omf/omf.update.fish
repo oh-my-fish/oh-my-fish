@@ -1,0 +1,1 @@
+functions/core/omf.update.fish

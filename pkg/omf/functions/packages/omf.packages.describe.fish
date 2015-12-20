@@ -1,4 +1,4 @@
-function omf.describe -a name
+function omf.packages.describe -a name
   if test (count $argv) -eq 0
     for package in (omf.packages.list --database)
       echo $package - (omf.describe $package)

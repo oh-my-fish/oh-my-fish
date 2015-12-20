@@ -11,7 +11,7 @@ function omf.bundle.remove
       for record in $bundle_contents
         set record_type (echo $record | cut -d' ' -f1)
         set record_name_or_url (echo $record | cut -d' ' -f2-)
-        set record_name (omf.package_name $record_name_or_url)
+        set record_name (omf.packages.name $record_name_or_url)
 
         if not test "$type" = "$record_type" -a "$name" = "$record_name"
           echo "$record_type $record_name_or_url" >> $bundle
