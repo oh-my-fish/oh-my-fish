@@ -1,4 +1,4 @@
-function omf.util_valid_package -a package
+function omf.packages.valid_name -a package
   test (echo "$package" | tr "[:upper:]" "[:lower:]") = "omf"; and return 10
   test (echo "$package" | tr "[:upper:]" "[:lower:]") = "default"; and return 10
   switch $package

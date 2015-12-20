@@ -1,5 +1,5 @@
-function omf.help -a command
-  switch $command
+function omf.cli.help -a command
+  switch "$command"
     case "c" "cd"
       echo \n"\
       Change directory to root or plugin/theme directory.

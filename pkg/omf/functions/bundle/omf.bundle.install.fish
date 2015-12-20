@@ -16,10 +16,10 @@ function omf.bundle.install
       set name_or_url (echo $record | cut -s -d' ' -f2- | sed 's/ //g')
       test -n "$name_or_url"; or continue
 
-      set name (omf.package_name $name_or_url)
+      set name (omf.packages.name $name_or_url)
 
       if not contains $name $packages
-        omf.install $name_or_url;
+        omf.packages.install $name_or_url;
           and set installed
       end
     end
