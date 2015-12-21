@@ -21,6 +21,10 @@ function omf::dim
   set_color $fish_color_autosuggestion ^/dev/null; or set_color 555
 end
 
+function omf::under
+  set_color --underline
+end
+
 function omf::err
   set_color $fish_color_error ^/dev/null; or set_color red --bold
 end
@@ -119,13 +123,14 @@ function omf -d "Oh My Fish"
 
     case "t" "theme"
       if test (count $argv) -eq 1
-        set -l ostype (uname)
         set -l theme (cat $OMF_CONFIG/theme)
-        set -l regex "[[:<:]]($theme)[[:>:]]"
-        test "$ostype" != "Darwin"; and set regex "\b($theme)\b"
+        set -l highlight_current "(^|[[:space:]])($theme)([[:space:]]|\$)"
 
-        omf.packages.list --database --theme | column | sed -E "s/$regex/"(omf::em)"\1"(omf::off)"/"
-        omf::off
+        echo (omf::under)"Installed:"(omf::off)
+        omf.packages.list --installed --theme | column | sed -E s/"$highlight_current"/"\1"(omf::em)"\2"(omf::off)"\3"/g
+        echo
+        echo (omf::under)"Available:"(omf::off)
+        omf.packages.list --available --theme | column
       else if test (count $argv) -eq 2
         omf.theme $argv[2]
       else
