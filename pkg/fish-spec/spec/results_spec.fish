@@ -1,8 +1,4 @@
 function describe_results
-  function after_each
-    set -e __fish_spec_quiet
-  end
-
   function it_succeeds_when_single_assertion_succeeds
     assert 1 = 1
 
