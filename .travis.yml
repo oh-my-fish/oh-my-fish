@@ -32,8 +32,9 @@ before_script:
 
 script:
   - tests/run.fish
-  - pushd pkg/fish-spec; fish -c 'fish-spec'; popd
-  - pushd pkg/omf; fish -c 'fish-spec'; popd
+  - cd $TRAVIS_BUILD_DIR/pkg/fish-spec; fish -c 'fish-spec'
+  - cd $TRAVIS_BUILD_DIR/pkg/omf; fish -c 'fish-spec'
+  - cd $TRAVIS_BUILD_DIR; tests/test-generate-themes-doc.fish
 
 after_failure:
   - pwd
