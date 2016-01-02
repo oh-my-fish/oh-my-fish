@@ -1,4 +1,4 @@
-<img src="docs/logo.png" align="left" width="192px" height="192px"/>
+<img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="192px" height="192px"/>
 <img align="left" width="0" height="192px" hspace="10"/>
 
 > The <a href="http://fishshell.com">Fishshell</a> Framework
@@ -100,7 +100,7 @@ Oh My Fish installer places its startup code in your fish config file (`~/.confi
 
 ## Startup
 
-Everytime you open a new shell the startup code initializes Oh My Fish installation path and the _config_ path (`~/.config/omf` by default), sourcing the [`init.fish`](init.fish) script afterwards, which autoload packages, themes and your custom init files. For more information check the [FAQ](docs/FAQ.md#what-does-oh-my-fish-do-exactly).
+Everytime you open a new shell the startup code initializes Oh My Fish installation path and the _config_ path (`~/.config/omf` by default), sourcing the [`init.fish`](init.fish) script afterwards, which autoload packages, themes and your custom init files. For more information check the [FAQ](docs/en-US/FAQ.md#what-does-oh-my-fish-do-exactly).
 
 ## Dotfiles
 

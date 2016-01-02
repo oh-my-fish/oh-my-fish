@@ -1,7 +1,20 @@
+language: c
+dist: trusty
 sudo: required
 
-services:
-  - docker
+os:
+  - linux
+  - osx
+
+addons:
+  apt:
+    packages:
+    - bc
+    - doxygen
+    - expect
+    - gettext
+    - libncurses5-dev
+    - tree
 
 env:
   global:
@@ -10,16 +23,22 @@ env:
 
 before_install:
   - source tools/travis-github-pr-integration.sh
-  - docker build -t fish . < Dockerfile
+  - tools/travis-install-fish.sh
 
 before_script:
-  - docker run -e 'CI=WORKAROUND' -e "OMF_REPO_URI=$OMF_REPO_URI" -e "OMF_REPO_BRANCH=$OMF_REPO_BRANCH" -t -v $PWD:/src/oh-my-fish fish /usr/bin/fish -c "/src/oh-my-fish/bin/install"
-  - docker ps -a -q | xargs -i docker commit {} oh-my-fish
-  - docker run -t -w "/root/.local/share/omf" oh-my-fish /usr/bin/fish -c "export; tree -h"
+  - tree -h
+  - export
+  - fish $TRAVIS_BUILD_DIR/bin/install
 
 script:
-  - docker run -t -w "/root/.local/share/omf" oh-my-fish /usr/bin/fish "tests/test_runner.fish"
-  - docker run -t -w "/root/.local/share/omf" oh-my-fish /usr/bin/fish "tests/test-generate-themes-doc.fish"
+  - tests/run.fish
+  - pushd pkg/fish-spec; fish -c 'fish-spec'; popd
+  - pushd pkg/omf; fish -c 'fish-spec'; popd
+  - tests/test-generate-themes-doc.fish
+
+after_failure:
+  - pwd
+  - cd ~/.config/fish; tree -h; find . -type f | xargs cat
 
 notifications:
   email:

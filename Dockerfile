@@ -1,11 +1,14 @@
-FROM ubuntu
+FROM ohmyfish/fish:2.2.0
 
-RUN echo "Installing fish"
-RUN sudo apt-get install -y software-properties-common && \
-  sudo apt-add-repository ppa:fish-shell/release-2 && \
-  sudo apt-get -y update && \
-  sudo apt-get -y install fish
+COPY . /src/oh-my-fish
 
-RUN echo "Installing dependencies"
-RUN sudo apt-get -y install curl git tree
+# Prevent install from opening a new fish shell
+ENV CI WORKAROUND
 
+# Replace this when offline installation is supported
+ARG OMF_REPO_BRANCH=master
+ARG OMF_REPO_URI=https://github.com/oh-my-fish/oh-my-fish
+
+RUN fish /src/oh-my-fish/bin/install
+
+WORKDIR /root/.local/share/omf
