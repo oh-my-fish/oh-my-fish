@@ -84,7 +84,7 @@ Oh My Fish installer places its startup code in your fish config file (`~/.confi
 
 ## Startup
 
-Everytime you open a new shell the startup code initializes Oh My Fish installation path and the _config_ path (`~/.config/omf` by default), sourcing the [`init.fish`](init.fish) script afterwards, which autoload packages, themes and your custom init files. For more information check the [FAQ](docs/en-US/FAQ.md#what-does-oh-my-fish-do-exactly).
+Every time you open a new shell, the startup code initializes Oh My Fish installation path and the _config_ path (`~/.config/omf` by default), sourcing the [`init.fish`](init.fish) script afterwards, which autoload packages, themes and your custom init files. For more information check the [FAQ](docs/en-US/FAQ.md#what-does-oh-my-fish-do-exactly).
 
 ## Dotfiles
 
@@ -102,7 +102,7 @@ If you need startup commands to be run *before* Oh My Fish begins loading plugin
 
 ### About the bundle
 
-Everytime a package/theme is installed or removed the `bundle` file is updated. You can also edit it manually and run `omf install` afterwards to satisfy the changes. Please note that while packages/themes added to the bundle gets automagically installed, a package/theme removed from bundle isn't removed from user installation.
+Every time a package/theme is installed or removed, the `bundle` file is updated. You can also edit it manually and run `omf install` afterwards to satisfy the changes. Please note that while packages/themes added to the bundle get automagically installed, a package/theme removed from bundle isn't removed from user installation.
 
 ## Creating Packages
 
