@@ -39,10 +39,13 @@
 - [ocean](#ocean)
 - [pastfish](#pastfish)
 - [perryh](#perryh)
+- [plain](#plain)
 - [red-snapper](#red-snapper)
 - [robbyrussell](#robbyrussell)
 - [russell](#russell)
 - [scorphish](#scorphish)
+- [shellder](#shellder)
+- [simple-ass-prompt](#simple-ass-prompt)
 - [simplevi](#simplevi)
 - [sushi](#sushi)
 - [syl20bnr](#syl20bnr)
@@ -82,6 +85,10 @@ For Mac users, I highly recommend iTerm 2 + Solarized Dark
 * Dirty working directory (±, color change)
 * Working directory
 * Elevated (root) privileges (⚡)
+* Current virtualenv (Python)
+You will probably want to disable the default virtualenv prompt. Add to your [`init.fish`](https://github.com/oh-my-fish/oh-my-fish#dotfiles):
+`set --export VIRTUAL_ENV_DISABLE_PROMPT 1`
+* Indicate vi mode. (If you've set `fish_vi_mode` in your config and don't like the ugly left prompt indicator you can solve this by replacing it with `set -g fish_key_bindings fish_vi_key_bindings` and then removing the `if set -q __fish_vi_mode` check at the bottom of the `fish_right_prompt.fish`)
 
 
 Ported from https://gist.github.com/agnoster/3712874.
@@ -123,11 +130,16 @@ Ported from https://gist.github.com/agnoster/3712874.
 
 
 # batman
-[![](https://img.shields.io/badge/Themes-Wahoo-00b0ff.svg?style=flat-square)][THEMES-NAMESPACE-batman-Wahoo]
-![](https://img.shields.io/badge/License-MIT-707070.svg?style=flat-square)
+<img src="https://dl.dropboxusercontent.com/u/56336/omf/omf-logo-optimised.svg" align="left" width="144px" height="144px"/>
 
-###  _Batman_ <img width="20px" src="https://cloud.githubusercontent.com/assets/8317250/7785620/0059f784-01d3-11e5-8a01-8edf6c4e2af7.png">
-> Theme for [Fishshell](fishshell.com) inspired by Batman.
+###### Batman
+> A [Oh My Fish][omf-link] theme inspired by Batman.
+
+[![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
+[![Fish Shell Version](https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square)](http://fishshell.com)
+[![Oh My Fish Framework](https://img.shields.io/badge/Oh%20My%20Fish-Framework-007EC7.svg?style=flat-square)](https://www.github.com/oh-my-fish/oh-my-fish)
+
+<br/>
 
 #### Features
 
@@ -152,12 +164,15 @@ _From left to right:_
 
 ### License
 
+[MIT][mit] © [Jorge Bucaran][author] et [al][THEMES-NAMESPACE-batman-contributors]
+
 > __Disclaimer:__ This work is not intended to infringe on any rights by and of the companies and/or individuals involved in the production of any series mentioned here. I don't own Batman.
 
 
-[MIT](http://opensource.org/licenses/MIT) © [Jorge Bucaran][THEMES-NAMESPACE-batman-Author] et [al](https://github.com/bucaran/batman/graphs/contributors)
-[THEMES-NAMESPACE-batman-Author]: http://about.bucaran.me
-[THEMES-NAMESPACE-batman-Wahoo]: https://github.com/bucaran/wahoo
+[THEMES-NAMESPACE-batman-mit]:            http://opensource.org/licenses/MIT
+[THEMES-NAMESPACE-batman-author]:         http://about.bucaran.me
+[omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
+[THEMES-NAMESPACE-batman-contributors]:   https://github.com/oh-my-fish/oh-my-fish/graphs/contributors
 
 
 # beloglazov
@@ -194,12 +209,11 @@ TODO:
 # bobthefish
 ### bobthefish
 
-bobthefish is a Powerline-style, Git-aware fish theme optimized for awesome.
+`bobthefish` is a Powerline-style, Git-aware [fish][THEMES-NAMESPACE-bobthefish-fish] theme optimized for awesome.
 
 [![](https://img.shields.io/badge/Framework-Oh My Fish-blue.svg?style=flat)](https://github.com/oh-my-fish/oh-my-fish) ![](https://img.shields.io/cocoapods/l/AFNetworking.svg) [![Join the chat at https://gitter.im/oh-my-fish/oh-my-fish](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/oh-my-fish/oh-my-fish?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ![bobthefish][THEMES-NAMESPACE-bobthefish-screenshot]
-
 
 ##### Installation
 
@@ -212,7 +226,6 @@ You will probably need a [Powerline-patched font][THEMES-NAMESPACE-bobthefish-pa
 
 This theme is based loosely on [agnoster][THEMES-NAMESPACE-bobthefish-agnoster].
 
-
 ##### Features
 
  * A helpful, but not too distracting, greeting.
@@ -223,13 +236,14 @@ This theme is based loosely on [agnoster][THEMES-NAMESPACE-bobthefish-agnoster].
  * All the things you need to know about Git in a glance.
  * Visual indication that you can't write to the current directory.
 
-
 ##### The Prompt
 
  * Flags:
-     * Previous command failed (`!`)
-     * Background jobs (`%`)
-     * You currently have superpowers (`$`)
+     * Previous command failed (**`!`**)
+     * Background jobs (**`%`**)
+     * You currently have superpowers (**`$`**)
+ * Current vi mode
+     * _You'll need to `set -g theme_display_vi yes` to enable_
  * `User@Host` (unless you're the default user)
  * Current RVM or rbenv (Ruby) version
  * Current virtualenv (Python) version
@@ -238,20 +252,19 @@ This theme is based loosely on [agnoster][THEMES-NAMESPACE-bobthefish-agnoster].
  * Current directory, or Git or Mercurial project name
  * Current project's repo branch (<img width="16" alt="branch-glyph" src="https://cloud.githubusercontent.com/assets/53660/8768360/53ee9b58-2e32-11e5-9977-cee0063936fa.png"> master) or detached head (`➦` d0dfd9b)
  * Git or Mercurial status, via colors and flags:
-     * Dirty working directory (`*`)
-     * Untracked files (`…`)
-     * Staged changes (`~`)
-     * Stashed changes (`$`)
-     * Unpulled commits (`-`)
-     * Unpushed commits (`+`)
-     * Unpulled _and_ unpushed commits (`±`)
+     * Dirty working directory (**`*`**)
+     * Untracked files (**`…`**)
+     * Staged changes (**`~`**)
+     * Stashed changes (**`$`**)
+     * Unpulled commits (**`-`**)
+     * Unpushed commits (**`+`**)
+     * Unpulled _and_ unpushed commits (**`±`**)
      * _Note that not all of these have been implemented for hg yet :)_
  * Abbreviated project-relative path
 
-
 ##### Configuration
 
-You can override some default options in your `config.fish`:
+You can override some of the following default options in your `config.fish`:
 
 ```fish
 set -g theme_display_git no
@@ -261,14 +274,26 @@ set -g theme_display_hg yes
 set -g theme_display_virtualenv no
 set -g theme_display_ruby no
 set -g theme_display_user yes
+set -g theme_display_vi yes
+set -g theme_display_vi_hide_mode default
 set -g theme_title_display_process yes
 set -g theme_title_display_path no
+set -g theme_title_use_abbreviated_path no
 set -g theme_date_format "+%a %H:%M"
 set -g theme_avoid_ambiguous_glyphs yes
 set -g default_user your_normal_user
 ```
 
+**Title options**
 
+- `theme_title_display_process`. By default theme doesn't show current process name in terminal title. If you want to show it, just set to `yes`.
+- `theme_title_display_path`. Use `no` to hide current working directory from title.
+- `theme_title_use_abbreviated_path`. Default is `yes`. This means your home directory will be displayed as `~` and `/usr/local` as `/u/local`. Set it to `no` if you prefer full paths in title.
+
+**Prompt options**
+- `theme_display_ruby`. Use `no` to completely hide all information about Ruby version. By default Ruby version displayed if there is the difference from default settings.
+
+[THEMES-NAMESPACE-bobthefish-fish]:       https://github.com/fish-shell/fish-shell
 [THEMES-NAMESPACE-bobthefish-screenshot]: http://i.0x7f.us/bobthefish.png
 [THEMES-NAMESPACE-bobthefish-patching]:   https://powerline.readthedocs.org/en/latest/fontpatching.html
 [THEMES-NAMESPACE-bobthefish-fonts]:      https://github.com/Lokaltog/powerline-fonts
@@ -278,8 +303,8 @@ set -g default_user your_normal_user
 # budspencer
 ### Budspencer theme
 
-A theme for the 70s, makes fish even more powerful. It's equipped with a hell
-of a lot of nice functions and key bindings to speed up your workflow.
+A theme for nerds, makes fish even more powerful. It's equipped with a hell of a
+lot of nice functions and key bindings to speed up your workflow.
 
 The philosophy behind budspencer theme:
 
@@ -501,6 +526,18 @@ Type `s -d` to detach current session.
 #### Set window title
 
 Just type `wt <title>`.
+
+#### Ring the bell in order to set the urgency hint flag
+
+If you have configured your terminal application to use the visual bell, your
+window manager will tell you when a job running in your shell has finished. You
+don't need to check manually whether it's done.
+
+If you have still activated the acoustic bell, you probably hate that feature.
+Switch it off in that case:
+```
+set -U budspencer_nobell
+```
 
 #### TODO
 
@@ -1056,7 +1093,7 @@ Displays:
 # gnuykeaj
 ### Fish Theme: gnuykeaj
 
-Super minimal one line version of [clearance](https://github.com/bpinto/oh-my-fish/tree/master/themes/clearance) theme. Balance between need to know information and space. Has git branch and dirty state information based on the color of the branch name.
+Super minimal one line version of [clearance](https://github.com/oh-my-fish/theme-clearance) theme. Balance between need to know information and space. Has git branch and dirty state information based on the color of the branch name.
 
 ![gnuykjeatheme](https://raw.githubusercontent.com/andyklimczak/oh-my-fish/gnuykeaj-screenshot/themes/gnuykeaj/gnuykeaj-preview.png)
 
@@ -1500,6 +1537,43 @@ This is similar to godfat's gitstatus theme, but mainly includes red, white, cya
 ![perryh](http://perryhuang.com/stuff/perryh_fish.png)
 
 
+# plain
+<div align="center">
+  <a href="http://github.com/oh-my-fish/oh-my-fish">
+  <img width=90px  src="https://cloud.githubusercontent.com/assets/8317250/8510172/f006f0a4-230f-11e5-98b6-5c2e3c87088f.png">
+  </a>
+</div>
+<br>
+
+> plain theme for [Oh My Fish][omf-link].
+
+#### Features
+
+* No need to use a patched font
+* Colorful
+* Not folding path
+* Detecting remote logged in and UID
+* Integrates Git
+
+#### Screenshot
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/changyuheng/fish-theme-plain/master/screenshot.png">
+</p>
+
+### License
+
+[MIT][mit] © [changyuheng][author] et [al][THEMES-NAMESPACE-plain-contributors]
+
+
+[THEMES-NAMESPACE-plain-mit]:            http://opensource.org/licenses/MIT
+[THEMES-NAMESPACE-plain-author]:         http://github.com/changyuheng
+[THEMES-NAMESPACE-plain-contributors]:   https://github.com/changyuheng/fish-theme-plain/graphs/contributors
+[omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
+
+[license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
+
+
 # red-snapper
 ### RED SNAPPER
 ![Red Snapper](https://raw.githubusercontent.com/ZuraGuerra/theme-red-snapper/master/redsnapper.jpg)
@@ -1581,6 +1655,119 @@ Last command's exit code and current time
 This theme is based on Zish and Coffeandcode themes, many thanks to their authors!
 
 Enjoy!
+
+
+# shellder
+shellder
+
+> Things are beautiful if you love them. *[Jean Anouilh]*
+
+![](http://i.imgur.com/xZJHgq8.png)
+
+1. **Speed** ― Carefully optimized with slow environment like msys2
+2. **No solarized** ― xterm256 colors are beautiful enough, inspired by [seoul256.vim]
+3. **zsh** + **fish** support
+
+###### Installation
+[zplug] for zsh user, [oh my fish] for fish user
+```shell
+### For zsh user
+zplug "simnalamburt/shellder"
+
+### For fish user
+omf install https://github.com/simnalamburt/theme-shellder
+```
+
+You'll need powerline patched font.
+
+--------
+
+[MIT License] © [simnalamburt] et [al]
+
+[Jean Anouilh]:   https://en.wikipedia.org/wiki/Jean_Anouilh
+[seoul256.vim]:   https://github.com/junegunn/seoul256.vim
+[THEMES-NAMESPACE-shellder-zplug]:          https://github.com/b4b4r07/
+[oh my fish]:     https://github.com/oh-my-fish/oh-my-fish
+[MIT License]:    https://opensource.org/licenses/MIT
+[THEMES-NAMESPACE-shellder-simnalamburt]:   https://github.com/simnalamburt
+[THEMES-NAMESPACE-shellder-al]:             https://github.com/simnalamburt/shellder/graphs/contributors
+
+
+# simple-ass-prompt
+<img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="144px" height="144px"/>
+
+###### simple-ass-prompt
+> A theme for [Oh My Fish][omf-link].
+
+[![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
+[![Fish Shell Version](https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square)](http://fishshell.com)
+[![Oh My Fish Framework](https://img.shields.io/badge/Oh%20My%20Fish-Framework-007EC7.svg?style=flat-square)](https://www.github.com/oh-my-fish/oh-my-fish)
+
+<br/>
+
+#### Install
+
+:warning:This theme uses the string built-in which isn't available in fish 2.2.0. If you want to use this theme please consider building fish from master:warning:
+
+```fish
+$ omf install simple-ass-prompt
+```
+
+#### Features
+This is [Mathias Bynens][THEMES-NAMESPACE-simple-ass-prompt-mths] Bash prompt ported to Fish with a few changed icons and added functionalities. As he put it:
+
+
+> Shell prompt based on the Solarized Dark theme.
+> Screenshot: http://i.imgur.com/EkEtphC.png
+
+> Heavily inspired by @necolas’s prompt: https://github.com/necolas/dotfiles
+
+> iTerm → Profiles → Text → use 13pt Monaco with 1.1 vertical spacing.
+
+Features:
+
+- A dirty state of the branch is displayed by `!`
+- Untracked files are displayed by `☡`
+- The existence of a stash is displayed by `↩`
+- A clean branch is displayed by `✓`
+- The branch is ahead with `+`
+- The branch is behind with `-`
+- The branch has diverged from upstream `±`
+- Support for Pythons virtual environments
+- When in a git repo only the path relative to that repo is shown
+
+Right side:
+- The last command failed is displayed by `✘`
+
+#### Screenshot
+Git Usage
+<p align="center">
+<img src="http://cl.ly/1G0Z2j3A0C1Q/Screen%20Recording%202015-12-16%20at%2010.09%20pm.gif">
+</p>
+
+[VirtualFish][THEMES-NAMESPACE-simple-ass-prompt-vf] Usage
+<p align="center">
+<img src="http://cl.ly/image/1Y36043M2U3M/simple_ass_prompt_virtual.png">
+</p>
+
+#### Configuration
+You can change the greeting message with:
+```fish
+set -g simple_ass_prompt_greeting MyGreeting
+```
+
+### License
+
+[MIT][mit] © [lfiolhais][author] et [al][THEMES-NAMESPACE-simple-ass-prompt-contributors]
+
+
+[THEMES-NAMESPACE-simple-ass-prompt-mit]:            http://opensource.org/licenses/MIT
+[THEMES-NAMESPACE-simple-ass-prompt-author]:         http://github.com/lfiolhais
+[THEMES-NAMESPACE-simple-ass-prompt-contributors]:   https://github.com/lfiolhais/simple_ass_prompt/graphs/contributors
+[omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
+[THEMES-NAMESPACE-simple-ass-prompt-mths]: https://github.com/mathiasbynens/dotfiles
+[license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
+[THEMES-NAMESPACE-simple-ass-prompt-vf]: https://github.com/adambrenecki/virtualfish
 
 
 # simplevi
@@ -1833,11 +2020,20 @@ A minimal, aesthetically pleasing fish theme.
 
 #### Prompt
 
-    <abbreviated path> (<current git branch>) [<vi mode>] ⏛ 
+    <abbreviated path> (<current git branch>) [<vi mode>] ⋊>
 
 * Working directory
 * Current git branch
-* vi mode, if the oh-my-fish `vi-mode` plugin is enabled
+* vi mode (requires fish 2.2+)
+
+> This theme includes a custom vi mode indicator which is built into `fish_prompt`. If you'd like to use vi mode, I recommend adding the following lines to your config.fish:
+>
+>     # note: this erases the default fish_mode_prompt, which adds a vi mode
+>     # indicator to the left of your prompt
+>     function fish_mode_prompt; end
+>
+>     # turn on vi mode when the shell starts
+>     fish_vi_mode
 
 #### Screenshots
 
