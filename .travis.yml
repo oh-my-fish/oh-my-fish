@@ -34,7 +34,6 @@ script:
   - tests/run.fish
   - pushd pkg/fish-spec; fish -c 'fish-spec'; popd
   - pushd pkg/omf; fish -c 'fish-spec'; popd
-  - tests/test-generate-themes-doc.fish
 
 after_failure:
   - pwd
