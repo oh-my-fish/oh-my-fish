@@ -35,9 +35,9 @@ echo "Generating Themes documentation to $theme_doc ..."
 echo "# Available themes" > $temp_theme_toc
 
 for theme in (command find $project_dir/db/themes/ -type f|sort)
-  set -l name (echo $theme|xargs basename)
+  set -l name (basename $theme)
   set -l url (cat $theme)
-  set -l raw_content (echo $url|sed -r 's#https://github.com/([-.a-z0-9]+)/([-.a-z0-9]+)#https://raw.githubusercontent.com/\1/\2/master#gi')
+  set -l raw_content (echo $url|sed -r 's#https://github.com/([-.a-z0-9]+)/([-.a-z0-9]+)#https://raw.githubusercontent.com/\1/\2/master#gi' | sed 's#\.git/#/#gi')
   set -l readme (__find_readme $raw_content)
 
   echo "- [$name](#$name)" >> $temp_theme_toc
