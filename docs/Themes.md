@@ -40,6 +40,7 @@
 - [pastfish](#pastfish)
 - [perryh](#perryh)
 - [plain](#plain)
+- [pure](#pure)
 - [red-snapper](#red-snapper)
 - [robbyrussell](#robbyrussell)
 - [russell](#russell)
@@ -1434,7 +1435,8 @@ $ omf u nelsonjchen
 #### Screenshot
 
 <p align="center">
-<img src="nelsonjchen.png">
+<img
+src="https://cloud.githubusercontent.com/assets/5363/12106487/fe8b3c30-b314-11e5-9cbe-8b0e57dde741.png">
 </p>
 
 ### License
@@ -1574,6 +1576,67 @@ This is similar to godfat's gitstatus theme, but mainly includes red, white, cya
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 
 
+# pure
+### Pure
+
+> Port of the [`pure`](https://github.com/sindresorhus/pure) ZSH theme to Fish.
+
+[![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
+[![Fish Shell Version](https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square)](http://fishshell.com)
+[![Oh My Fish Framework](https://img.shields.io/badge/Oh%20My%20Fish-Framework-007EC7.svg?style=flat-square)](https://www.github.com/oh-my-fish/oh-my-fish)
+
+<br/>
+
+#### Screenshot
+
+<p align="center">
+<img width="572" src="screenshot.png">
+</p>
+
+#### Install
+
+##### Oh-My-Fish
+
+```fish
+omf install pure
+```
+
+##### Manually
+```sh
+set -l ffns (echo $HOME/.config/fish/functions)
+curl -Ls https://raw.github.com/rafaelrinaldi/pure/master/fish_prompt.fish > $ffns/fish_prompt.fish
+. $ffns/fish_prompt.fish
+```
+
+#### Features
+
+- [x] Display current directory tail
+- [x] Display Git branch name
+- [x] Display whether or not the working copy is dirty
+- [x] Display an up arrow if there are stuff to be pushed
+- [x] Display an down arrow if there are stuff to be pulled
+- [x] Display prompt symbol in red if previous command has failed
+- [x] Display the current folder and command when a process is running
+- [x] Display username and host when in an SSH session
+- [x] Display duration of failed commands
+
+#### Contributors
+
+* [Rafael Rinaldi](https://github.com/rafaelrinaldi/pure) ;
+* [Édouard Lopez](https://github.com/edouard-lopez/).
+
+#### License
+
+[MIT][mit] © [Rafael Rinaldi][author] et [al][THEMES-NAMESPACE-pure-contributors].
+
+[THEMES-NAMESPACE-pure-mit]:            http://opensource.org/licenses/MIT
+[THEMES-NAMESPACE-pure-author]:         http://rinaldi.io
+[THEMES-NAMESPACE-pure-contributors]:   https://github.com/rafaelrinaldi/pure/graphs/contributors
+[omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
+
+[license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
+
+
 # red-snapper
 ### RED SNAPPER
 ![Red Snapper](https://raw.githubusercontent.com/ZuraGuerra/theme-red-snapper/master/redsnapper.jpg)
@@ -1658,9 +1721,15 @@ Enjoy!
 
 
 # shellder
+<img src="http://cdn.bulbagarden.net/upload/4/40/090Shellder.png"
+  align=left width=175px height=175px>
+
 shellder
 
-> Things are beautiful if you love them. *[Jean Anouilh]*
+> Things are beautiful if you love them. ― *[Jean Anouilh]*<br>
+[![i-license]](/LICENSE)
+
+<br>
 
 ![](http://i.imgur.com/xZJHgq8.png)
 
@@ -1671,11 +1740,11 @@ shellder
 ###### Installation
 [zplug] for zsh user, [oh my fish] for fish user
 ```shell
-### For zsh user
+### zsh
 zplug "simnalamburt/shellder"
 
-### For fish user
-omf install https://github.com/simnalamburt/theme-shellder
+### fish
+omf install shellder
 ```
 
 You'll need powerline patched font.
@@ -1691,6 +1760,8 @@ You'll need powerline patched font.
 [MIT License]:    https://opensource.org/licenses/MIT
 [THEMES-NAMESPACE-shellder-simnalamburt]:   https://github.com/simnalamburt
 [THEMES-NAMESPACE-shellder-al]:             https://github.com/simnalamburt/shellder/graphs/contributors
+
+[i-license]:      https://img.shields.io/badge/license-MIT-blue.svg
 
 
 # simple-ass-prompt
