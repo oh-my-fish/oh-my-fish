@@ -31,6 +31,7 @@
 - [jacaetevha](#jacaetevha)
 - [krisleech](#krisleech)
 - [l](#l)
+- [lambda](#lambda)
 - [led](#led)
 - [mtahmed](#mtahmed)
 - [nai](#nai)
@@ -548,7 +549,7 @@ set -U budspencer_nobell
 
 Give me feedback if you ...
 * ... have ideas how I could improve budspencer.
-* ... have problems with budspencer. 
+* ... have problems with budspencer.
 * ... have questions concerning budspencer.
 
 [THEMES-NAMESPACE-budspencer-font]: https://github.com/Lokaltog/powerline-fonts
@@ -861,7 +862,7 @@ Just type `wt <title>`.
 
 Give me feedback if you ...
 * ... have ideas how I could improve dangerous.
-* ... have problems with dangerous. 
+* ... have problems with dangerous.
 * ... have questions concerning dangerous.
 
 [THEMES-NAMESPACE-dangerous-ranger]: http://ranger.nongnu.org/
@@ -1250,7 +1251,7 @@ theme](http://jacaetevha.github.io/oh-my-fish/screenshot.png)
 * Left-hand prompt:
 ```
     <user> at <host> in <abbreviated path> <total size of files in dir> (<current Git branch>)
-    ↪ 
+    ↪
 ```
 * Right-hand prompt:
 ```
@@ -1335,6 +1336,28 @@ set theme_display_rbenv_with_gemfile_only 'yes'
 [travis-badge]:   http://img.shields.io/travis/oh-my-fish/theme-default.svg?style=flat-square
 [travis-link]:    https://travis-ci.org/oh-my-fish/theme-default
 
+
+# lambda
+### Lambda
+
+[![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
+[![Fish Shell Version](https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square)](http://fishshell.com)
+
+<br/>
+
+#### Screenshot
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/hasanozgan/theme-lambda/master/screenshot.png">
+</p>
+
+#### Install
+
+##### Oh-My-Fish
+
+```fish
+omf install lambda
+```
 
 
 # led
@@ -1477,7 +1500,7 @@ This theme is based loosely on [agnoster](https://gist.github.com/agnoster/37128
 * Full path of current working directory
 * Show the Git branch and dirty state (if applicable)
 * Show **User@Hostname** if user is not the default user. Set the following two lines in your config.fish to turn on this feature:
-    
+
     ```fish
     set -g theme display_user yes
     set -g default_user your_default_username
@@ -2199,5 +2222,3 @@ User, host, abbreviated path, and git branch info
 Time and exit code
 
 Enjoy!
-
-
