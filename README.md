@@ -56,7 +56,7 @@ Apply a theme. To list available themes type `omf theme`. You can also [preview 
 
 Remove a theme or package.
 
-> Packages subscribed to `uninstall_<pkg>` events are notified before the package is removed, so custom cleanup of resources can be done. See [Uninstall](/docs/Packages.md#uninstall) for more information.
+> Packages subscribed to `uninstall_<pkg>` events are notified before the package is removed, so custom cleanup of resources can be done. See [Uninstall](/docs/en-US/Packages.md#uninstall) for more information.
 
 #### `omf new pkg | theme` _`<name>`_
 
