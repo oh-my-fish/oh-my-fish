@@ -32,7 +32,7 @@ $ ls -l
   completions/hello_world.fish
 ```
 
-Always describe how your package works in the `README.md`. Also read more about [auto completion](http://fishshell.com/docs/current/commands.html#complete) and also take care to provide it for your utilities when applicable.
+Always describe how your package works in the `README.md`. Also read more about [auto completion](http://fishshell.com/docs/current/commands.html#complete) and take care to provide it for your utilities when applicable.
 
 `hello_world.fish` defines a single function:
 
