@@ -33,6 +33,7 @@
 - [l](#l)
 - [lambda](#lambda)
 - [led](#led)
+- [lolfish](#lolfish)
 - [mtahmed](#mtahmed)
 - [nai](#nai)
 - [nelsonjchen](#nelsonjchen)
@@ -272,6 +273,7 @@ You can override some of the following default options in your `config.fish`:
 set -g theme_display_git no
 set -g theme_display_git_untracked no
 set -g theme_display_git_ahead_verbose yes
+set -g theme_display_vagrant yes
 set -g theme_display_hg yes
 set -g theme_display_virtualenv no
 set -g theme_display_ruby no
@@ -294,6 +296,7 @@ set -g default_user your_normal_user
 
 **Prompt options**
 - `theme_display_ruby`. Use `no` to completely hide all information about Ruby version. By default Ruby version displayed if there is the difference from default settings.
+- `theme_display_vagrant`. This feature is disabled by default, use `yes` to display Vagrant status in your prompt. Please note, only VirtualBox provider is supported.
 
 [THEMES-NAMESPACE-bobthefish-fish]:       https://github.com/fish-shell/fish-shell
 [THEMES-NAMESPACE-bobthefish-screenshot]: http://i.0x7f.us/bobthefish.png
@@ -1390,6 +1393,8 @@ omf install lambda
 [THEMES-NAMESPACE-led-Wahoo]: https://github.com/bucaran/wahoo
 
 
+# lolfish
+See https://github.com/er0/lolfish.git for details
 # mtahmed
 #### mtahmed
 
@@ -1617,6 +1622,12 @@ This is similar to godfat's gitstatus theme, but mainly includes red, white, cya
 </p>
 
 #### Install
+
+##### Fisherman
+
+```fish
+fisher install pure
+```
 
 ##### Oh-My-Fish
 
