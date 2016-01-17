@@ -7,8 +7,10 @@
 <br>
 
 <p align="center">
-  <b>English</b> &bull;
-  <a href="docs/zh-CN/FAQ.md">简体中文</a>
+  <a href="../en-US/FAQ.md">English</a> &bull;
+  <a href="../zh-CN/FAQ.md">简体中文</a> &bull;
+  <b>Русский</b>
+
 </p>
 
 

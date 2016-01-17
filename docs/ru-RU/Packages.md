@@ -7,8 +7,9 @@
 <br>
 
 <p align="center">
-  <b>English</b> &bull;
-  <a href="docs/zh-CN/Packages.md">简体中文</a>
+  <a href="../en-US/Packages.md">English</a> &bull;
+  <a href="../zh-CN/Packages.md">简体中文</a> &bull;
+  <b>Русский</b>
 </p>
 
 # Создание
