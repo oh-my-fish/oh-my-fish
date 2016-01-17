@@ -8,7 +8,8 @@
 
 <p align="center">
   <a href="../en-US/Packages.md">English</a> &bull;
-  <b>简体中文</b>
+  <b>简体中文</b> &bull;
+  <a href="../ru-RU/Packages.md">Русский</a>
 </p>
 
 # 创建插件或主题

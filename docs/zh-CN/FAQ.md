@@ -8,7 +8,8 @@
 
 <p align="center">
   <a href="../en-US/FAQ.md">English</a> &bull;
-  <b>简体中文</b>
+  <b>简体中文</b> &bull;
+  <a href="../ru-RU/FAQ.md">Русский</a>
 </p>
 
 # FAQ
