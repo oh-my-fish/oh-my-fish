@@ -20,7 +20,7 @@ Thanks for taking the time to read this FAQ. Feel free to create a new issue if 
 
 ## What is Oh My Fish and why do I want it?
 
-Oh My Fish is a _framework_ for the [fishshell](https://fishshell.org). It helps you manage your configuration, themes and packages.
+Oh My Fish is a _framework_ for the [Fishshell](http://fishshell.com/). It helps you manage your configuration, themes and packages.
 
 
 ## What do I need to know to use Oh My Fish?

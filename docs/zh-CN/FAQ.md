@@ -19,7 +19,7 @@
 
 ## 什么是 Oh My Fish，我为什么会使用它？
 
-Oh My Fish 是基于 [fishshell](https://fishshell.org) 封装的高级 _框架_。它可以帮你管理你的配置，主题和插件。
+Oh My Fish 是基于 [Fishshell](http://fishshell.com/) 封装的高级 _框架_。它可以帮你管理你的配置，主题和插件。
 
 
 ## 使用 Oh My Fish 我需要注意什么？
