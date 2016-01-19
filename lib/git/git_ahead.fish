@@ -1,15 +1,22 @@
 function git_ahead -a ahead behind diverged none
-  git_is_repo; and begin
-    test -z "$ahead"; and set ahead "+"
-    test -z "$behind"; and set behind "-"
-    test -z "$diverged"; and set diverged "±"
-    test -z "$none"; and set none ""
-    command git rev-list --left-right "@{upstream}...HEAD" ^/dev/null \
-    | awk "/>/ {a += 1} /</ {b += 1} \
-      {if (a > 0) nextfile} END \
-      {if (a > 0 && b > 0) print \"$diverged\"; \
-      else if (a > 0) print \"$ahead\"; \
-      else if (b > 0) print \"$behind\";
-      else printf \"$none\"}"
+  not git_is_repo; and return
+
+  set -l commit_count (command git rev-list --count --left-right "@{upstream}...HEAD" ^/dev/null)
+
+  switch "$commit_count"
+  case ""
+    # no upstream
+  case "0"\t"0"
+    test -z "$ahead"; and echo "$ahead"
+      or echo ""
+  case "*"\t"0"
+    test -z "$behind"; and echo "$behind"
+      or echo "-"
+  case "0"\t"*"
+    test -z "$ahead"; and echo "$ahead"
+      or echo "+"
+  case "*"
+    test -z "$diverged"; and echo "$diverged"
+      or echo "±"
   end
 end
