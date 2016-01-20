@@ -6,7 +6,7 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE.md) [![Fish Shell Version](https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square)](http://fishshell.com) [![Travis Build Status](http://img.shields.io/travis/oh-my-fish/oh-my-fish.svg?style=flat-square)](https://travis-ci.org/oh-my-fish/oh-my-fish) [![Slack Status](https://oh-my-fish-slack.herokuapp.com/badge.svg)](https://oh-my-fish-slack.herokuapp.com)
 
 
-Oh My Fish provides core infrastructure to allow you to install packages which extend or modify the look of your shell. It's  fast, extensible and easy to use.
+Oh My Fish provides core infrastructure to allow you to install packages which extend or modify the look of your shell. It's fast, extensible and easy to use.
 
 <br><br>
 
@@ -15,7 +15,7 @@ Oh My Fish provides core infrastructure to allow you to install packages which e
   <a href="docs/zh-CN">简体中文</a>
 </p>
 
-# Install
+## Installation
 
 ```fish
 curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
@@ -50,13 +50,13 @@ List installed packages.
 
 #### `omf theme` _`<theme>`_
 
-Apply a theme. To list available themes type `omf theme`. You can also [preview available Themes](./docs/Themes.md) before installing.
+Apply a theme. To list available themes, type `omf theme`. You can also [preview available themes](./docs/Themes.md) before installing.
 
 #### `omf remove` _`<name>`_
 
 Remove a theme or package.
 
-> Packages subscribed to `uninstall_<pkg>` events are notified before the package is removed, so custom cleanup of resources can be done. See [Uninstall](/docs/Packages.md#uninstall) for more information.
+> Packages subscribed to `uninstall_<pkg>` events are notified before the package is removed, so custom cleanup of resources can be done. See [Uninstall](/docs/en-US/Packages.md#uninstall) for more information.
 
 #### `omf new pkg | theme` _`<name>`_
 
@@ -66,29 +66,31 @@ Scaffold out a new package or theme.
 
 #### `omf submit` _`pkg/<name>`_ _`[<url>]`_
 
-Add a new package. To add a theme use `omf submit` _`themes/<name>`_ _`<url>`_.
+Add a new package. To add a theme, use `omf submit` _`themes/<name>`_ _`<url>`_.
 
 Make sure to [send us a PR][omf-pulls-link] to update the registry.
 
 #### `omf doctor`
 
-Use to troubleshoot before [opening an  issue][omf-issues-new].
+Use to troubleshoot before [opening an issue][omf-issues-new].
 
 #### `omf destroy`
 
 Uninstall Oh My Fish.
 
-# Advanced
+## Advanced
 
 Oh My Fish installer places its startup code in your fish config file (`~/.config/fish/config.fish`).
 
-## Startup
+### Startup
 
-Everytime you open a new shell the startup code initializes Oh My Fish installation path and the _config_ path (`~/.config/omf` by default), sourcing the [`init.fish`](init.fish) script afterwards, which autoload packages, themes and your custom init files. For more information check the [FAQ](docs/en-US/FAQ.md#what-does-oh-my-fish-do-exactly).
+Every time you open a new shell, the startup code initializes Oh My Fish installation path and the _config_ path (`~/.config/omf` by default), sourcing the [`init.fish`](init.fish) script afterwards, which autoloads packages, themes and your custom init files.
 
-## Dotfiles
+For more information check the [FAQ](docs/en-US/FAQ.md#what-does-oh-my-fish-do-exactly).
 
-The `$OMF_CONFIG` directory represents the user state of Oh My Fish, and is the perfect
+### Dotfiles
+
+The `$OMF_CONFIG` directory represents the user state of Oh My Fish. It is the perfect
 candidate for being added to your dotfiles and/or checked out to version control. There are four important files:
 
 - __`theme`__ - The current theme
@@ -100,9 +102,9 @@ It's highly recommended that your custom startup commands go into `init.fish` fi
 
 If you need startup commands to be run *before* Oh My Fish begins loading plugins, place them in `before.init.fish` instead. If you're unsure, it is usually best to put things in `init.fish`.
 
-### About the bundle
+#### About the bundle
 
-Everytime a package/theme is installed or removed the `bundle` file is updated. You can also edit it manually and run `omf install` afterwards to satisfy the changes. Please note that while packages/themes added to the bundle gets automagically installed, a package/theme removed from bundle isn't removed from user installation.
+Every time a package/theme is installed or removed, the `bundle` file is updated. You can also edit it manually and run `omf install` afterwards to satisfy the changes. Please note that while packages/themes added to the bundle get automatically installed, a package/theme removed from bundle isn't removed from user installation.
 
 ## Creating Packages
 

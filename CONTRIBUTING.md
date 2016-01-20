@@ -36,7 +36,7 @@ If your issue is related to a specific package, we still may be able to help, bu
 
 + Use the [present tense](https://simple.wikipedia.org/wiki/Present_tense) ("add awesome-package" not "added ...")
 
-+ Less than 72 characters or less for the first line of your commit.
++ Use 72 characters or less for the first line of your commit.
 
 + Use of [emoji](http://www.emoji-cheat-sheet.com/) is definitely encouraged. :lollipop:
 
@@ -80,7 +80,7 @@ function greet -a message -d "Display a greeting message"
 end
 ```
 
-In order to avoid name collisions, use a prefix based on the name of your package. For example, if you are writing a `ninja` package use `ninja.function_name`.
+In order to avoid name collisions, use a prefix based on the name of your package. For example, if you are writing a `ninja` package, use `ninja.function_name`.
 
 
 ### Private Functions
