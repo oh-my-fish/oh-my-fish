@@ -7,6 +7,7 @@
 - [bobthefish](#bobthefish)
 - [budspencer](#budspencer)
 - [cbjohnson](#cbjohnson)
+- [chain](#chain)
 - [clearance](#clearance)
 - [cmorrell](#cmorrell)
 - [coffeeandcode](#coffeeandcode)
@@ -576,6 +577,46 @@ A minimal theme forked from the [yimmy][yimmy-commit] theme (thanks [jhillyerd][
 
 [yimmy-commit]: https://github.com/bpinto/oh-my-fish/tree/3a4b7de689cabf3522227f51177a489d915c8b4d/themes/yimmy
 [yimmy-author]: https://github.com/jhillyerd
+
+
+# chain
+### chain
+A thin, classy theme composed of a chain of information.
+
+[![asciicast](https://asciinema.org/a/129cyab1j0ou83fhaofg8hs2n.png)](https://asciinema.org/a/129cyab1j0ou83fhaofg8hs2n)
+
+
+#### Installation
+Install with [Oh My Fish][THEMES-NAMESPACE-chain-omf]:
+
+```fish
+$ omf install chain
+```
+
+
+#### Features
+- Displays current Git branch and dirty state.
+- If the last command fails, the exit code is displayed.
+- An abbreviated path.
+
+
+#### Links
+Your prompt in chain consists of a series of *links*, with each link displaying a single piece of information. Not all links are always visible and only show up when you need them. Below are all the possible links (in order from left to right):
+
+- Superuser privileges (`⚡`)
+- The current working directory
+- The current Git branch (`⎇`)
+- Git working directory dirty (`±`)
+- Exit status of the last command
+
+
+#### License
+[MIT][mit] © [coderstephen][author] et [al][THEMES-NAMESPACE-chain-contributors]
+
+[THEMES-NAMESPACE-chain-mit]:            http://opensource.org/licenses/MIT
+[THEMES-NAMESPACE-chain-author]:         https://github.com/coderstephen
+[THEMES-NAMESPACE-chain-contributors]:   https://github.com/coderstephen/theme-chain/graphs/contributors
+[THEMES-NAMESPACE-chain-omf]:            https://github.com/oh-my-fish/oh-my-fish
 
 
 # clearance
