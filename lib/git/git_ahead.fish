@@ -7,16 +7,12 @@ function git_ahead -a ahead behind diverged none
   case ""
     # no upstream
   case "0"\t"0"
-    test -z "$none"; and echo "$none"
-      or echo ""
+    test -n "$none"; and echo "$none"; or echo ""
   case "*"\t"0"
-    test -z "$behind"; and echo "$behind"
-      or echo "-"
+    test -n "$behind"; and echo "$behind"; or echo "-"
   case "0"\t"*"
-    test -z "$ahead"; and echo "$ahead"
-      or echo "+"
+    test -n "$ahead"; and echo "$ahead"; or echo "+"
   case "*"
-    test -z "$diverged"; and echo "$diverged"
-      or echo "±"
+    test -n "$diverged"; and echo "$diverged"; or echo "±"
   end
 end
