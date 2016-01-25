@@ -33,7 +33,7 @@ set -l user_function_path $fish_function_path[1]
 set fish_function_path[1] $OMF_PATH/lib
 
 # Autoload util functions
-autoload $OMF_PATH/lib $OMF_PATH/lib/git
+autoload $OMF_PATH/lib/git
 
 for path in {$OMF_PATH,$OMF_CONFIG}/pkg/*
   set -l name (basename $path)
