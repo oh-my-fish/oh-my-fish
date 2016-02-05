@@ -1,55 +1,43 @@
-# SYNOPSIS
-#   Initialize Oh My Fish.
-#
-# OVERVIEW
-#   + Source $OMF_CONFIG/before.init.fish
-#
-#   + Autoload Oh My Fish packages, themes and config path
-#   + For each <pkg> inside {$OMF_PATH,$OMF_CONFIG}
-#     + Autoload <pkg> directory
-#     + Source <pkg>.fish
-#     + Emit init_<pkg> event
-#
-#   + Autoload {$OMF_PATH,$OMF_CONFIG}/functions
-#   + Source $OMF_CONFIG/init.fish
-#
-# ENV
-#   OMF_PATH      ~/.local/share/omf by default.
-#   OMF_IGNORE    List of packages to ignore.
-#   OMF_CONFIG    ~/.config/omf by default.
-#   OMF_VERSION   Oh My Fish! version
-
 # Set OMF_CONFIG if not set.
 if not set -q OMF_CONFIG
   set -q XDG_CONFIG_HOME; or set -l XDG_CONFIG_HOME "$HOME/.config"
   set -gx OMF_CONFIG "$XDG_CONFIG_HOME/omf"
 end
-
 # Source custom before.init.fish file
-source $OMF_CONFIG/before.init.fish ^/dev/null
-
-# Save the head of function path and autoload core functions
-set -l user_function_path $fish_function_path[1]
-set fish_function_path[1] $OMF_PATH/lib
-
-# Autoload util functions
-autoload $OMF_PATH/lib $OMF_PATH/lib/git
-
-for path in {$OMF_PATH,$OMF_CONFIG}/pkg/*
-  set -l name (basename $path)
-
-  contains -- $name $OMF_IGNORE; and continue
-  require $name
+test -f $OMF_CONFIG/before.init.fish
+  and source $OMF_CONFIG/before.init.fish ^/dev/null
+emit perf:timer:start "Oh My Fish initialisation"
+# Read current theme
+read -l theme < $OMF_CONFIG/theme
+# Prepare Oh My Fish paths
+set -l core_function_path $OMF_PATH/lib{,/git}
+set -l theme_function_path {$OMF_CONFIG,$OMF_PATH}/themes*/$theme{,/functions}
+# Autoload core library
+set fish_function_path $fish_function_path[1] \
+                       $core_function_path \
+                       $theme_function_path \
+                       $fish_function_path[2..-1]
+# Require all packages
+emit perf:timer:start "Oh My Fish init installed packages"
+require --path {$OMF_PATH,$OMF_CONFIG}/pkg/*
+emit perf:timer:finish "Oh My Fish init installed packages"
+# Backup key bindings
+functions -q fish_user_key_bindings
+  and functions -c fish_user_key_bindings __original_fish_user_key_bindings
+# Override key bindings, calling original if existent
+function fish_user_key_bindings
+  # Read packages key bindings
+  for file in {$OMF_CONFIG,$OMF_PATH}/{,pkg,theme}/*/key_bindings.fish
+    source $file
+  end
+  # Read custom key bindings file
+  source $OMF_CONFIG/key_bindings.fish ^/dev/null
+  # Call original key bindings if existent
+  functions -q __original_fish_user_key_bindings
+    and __original_fish_user_key_bindings
 end
-
-# Autoload theme
-autoload {$OMF_PATH,$OMF_CONFIG}/themes/(cat $OMF_CONFIG/theme)
-
-# Autoload custom functions
-autoload $OMF_CONFIG/functions
-autoload $user_function_path
-
-# Source custom init.fish file
-source $OMF_CONFIG/init.fish ^/dev/null
-
-set -g OMF_VERSION "2"
+emit perf:timer:start "Oh My Fish init user config path"
+require --no-bundle --path $OMF_CONFIG
+emit perf:timer:finish "Oh My Fish init user config path"
+set -g OMF_VERSION "1.1.0-dev"
+emit perf:timer:finish "Oh My Fish initialisation"
