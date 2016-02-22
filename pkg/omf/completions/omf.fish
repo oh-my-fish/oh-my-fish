@@ -3,11 +3,23 @@
 
 complete -c omf -f -d "Oh My Fish"
 
-complete -c omf -f -n "__fish_seen_subcommand_from r rm remove"     -a (printf "%s " (omf.packages.list --installed))
+set -l installed_themes (omf.packages.list --installed --theme)
+set -l installed_plugins (omf.packages.list --installed --plugin)
+set -l installed $installed_themes $installed_plugins
+for subcommand in "r rm remove" "c cd"
+  complete -c omf -f -n "__fish_seen_subcommand_from $subcommand" -a "$installed_themes" -d theme
+  complete -c omf -f -n "__fish_seen_subcommand_from $subcommand" -a "$installed_plugins" -d plugin
+end
+
+set -l available_themes (omf.packages.list --available --theme)
+set -l available_plugins (omf.packages.list --available --plugin)
+for subcommand in "i install"
+  complete -c omf -f -n "__fish_seen_subcommand_from $subcommand" -a "$available_themes" -d theme
+  complete -c omf -f -n "__fish_seen_subcommand_from $subcommand" -a "$available_plugins" -d plugin
+end
+
 complete -c omf -f -n "__fish_seen_subcommand_from d desc describe" -a (printf "%s " (omf.packages.list --database --plugin))
-complete -c omf -f -n "__fish_seen_subcommand_from c cd"            -a (printf "%s " (omf.packages.list --installed))
-complete -c omf -f -n "__fish_seen_subcommand_from i install"       -a (printf "%s " (omf.packages.list --available --plugin))
-complete -c omf -f -n "__fish_seen_subcommand_from t theme"         -a (printf "%s " (omf.packages.list --database --theme))
+complete -c omf -f -n "__fish_seen_subcommand_from t theme"         -a "$installed_themes"
 complete -c omf -f -n "__fish_seen_subcommand_from help"            -a "install theme remove update list describe cd new submit destroy doctor"
 
 complete -c omf -f -a list     -n "__fish_use_subcommand" -d "List local packages"
