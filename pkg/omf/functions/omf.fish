@@ -40,6 +40,9 @@ function omf -d "Oh My Fish"
     case "doctor"
       omf.cli.doctor
 
+    case "reload"
+      omf.cli.reload $arguments
+
     case "i" "install" "get"
       omf.cli.install $arguments
 

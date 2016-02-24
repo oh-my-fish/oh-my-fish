@@ -64,6 +64,12 @@ Remove a theme or package.
 
 > Packages subscribed to `uninstall_<pkg>` events are notified before the package is removed, so custom cleanup of resources can be done. See [Uninstall](/docs/en-US/Packages.md#uninstall) for more information.
 
+#### `omf reload`
+
+Reload Oh My Fish and all plugins by using `exec` to replace current shell process with a brand new.
+
+> This command try to be as safe as possible, mitigating side-effects caused by `exec` and preventing the reload in case of background processes.
+
 #### `omf new pkg | theme` _`<name>`_
 
 Scaffold out a new package or theme.

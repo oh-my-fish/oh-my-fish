@@ -23,4 +23,8 @@ function omf.cli.update
   for package in $packages
     omf.packages.update $package
   end
+
+  # Opt-in flag for testing
+  set -q OMF_AUTO_RELOAD
+    and omf.cli.reload
 end
