@@ -54,24 +54,26 @@ end
 
 ## 初始化
 
-如果你想在插件被加载时收到[通知](http://fishshell.com/docs/current/commands.html#emit)，你可以在 `hello_world.fish` 添加下面的代码：
+如果要执行的代码包时加载，可以为`init.fish`文件在包的根目录下添加代码：
 
 ```fish
-function init -a path --on-event init_hello_world
-  echo "hello_world initialized"
-end
+echo "hello_world initialized"
 ```
 
-该事件可以用于修改环境变量、加载资源和自动加载函数等。如果你的插件没有输出任何的函数，你仍然可以使用该事件加载其他的函数。
+这里面挂机运行，您可以访问包相关的变量：
+
+* `$package`：包名称
+* `$path`：软件包的安装路径
+* `$dependencies`：软件包依赖
+
+使用这个钩子来修改环境，资源负载，自动加载的功能，等等。如果你的包不出口任何功能，您仍可以使用此事件将功能添加到您的包，还是动态创建功能。
 
 ## 卸载
 
-Oh My Fish 通过 `omf remove <pkg>` 移除已安装的插件前会发送 `uninstall_<pkg>` 事件。订阅者可以使用该事件清理自定义的资源等操作。
+哦，我的鱼还设有`uninstall.fish`挂钩，通过 `omf remove <pkg>`被删除软件包之前被调用。包可以使用这个钩子清理自定义的资源，等等。
 
-```fish
-function uninstall --on-event uninstall_hello_world
-end
-```
+本书中，你可以访问一个包相关的变量：
+* `$path`：软件包的安装路径
 
 
 # 发布插件
