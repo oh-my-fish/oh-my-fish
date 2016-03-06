@@ -1,3 +1,3 @@
 function fish_right_prompt
-  set -l code $status
+  # Customize the right prompt
 end
