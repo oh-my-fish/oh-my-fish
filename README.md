@@ -33,9 +33,14 @@ fish install
 
 Oh My Fish includes a small utility `omf` to fetch and install new packages and themes.
 
-#### `omf update`
+#### `omf update` _`[omf]`_ _`[<package>...]`_
 
 Update the framework and installed packages.
+
+- When called without arguments, update core and all installed packages.
+- You can choose to update only the core, by running `omf update omf`.
+- For selective package update, list only the names of packages you wish to
+  update. You may still include "omf" in the list to update the core as well.
 
 #### `omf install` _`[<name>|<url>]`_
 
