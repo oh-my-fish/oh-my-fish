@@ -59,7 +59,7 @@ function omf -d "Oh My Fish"
       omf.cli.theme $arguments
 
     case "u" "update"
-      omf.cli.update
+      omf.cli.update $arguments
 
     case "*"
       echo (omf::err)"$argv[1] option not recognized"(omf::off) 1^&2
