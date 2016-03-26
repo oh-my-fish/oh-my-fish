@@ -15,6 +15,8 @@ function omf.packages.remove -a pkg
       and set found;
       or continue
 
+    # Run uninstall hook first.
+    omf.packages.run_hook $path uninstall
     source $path/uninstall.fish ^/dev/null;
       and emit uninstall_$pkg
 
