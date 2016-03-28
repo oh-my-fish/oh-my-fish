@@ -12,7 +12,8 @@ function omf.cli.update
   end
 
   if set -q update_core
-    if omf.core.update
+    omf.core.update
+    if test $status -ne 1
       echo (omf::em)"Oh My Fish is up to date."(omf::off)
     else
       echo (omf::err)"Oh My Fish failed to update."(omf::off)
