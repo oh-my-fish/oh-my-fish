@@ -100,6 +100,12 @@ Please note that the _`[<url>]`_ portion of the command should be the url to you
 
 Make sure to [send us a PR][omf-pulls-link] to update the registry.
 
+#### `omf channel`
+
+Gets or changes the update channel.
+
+Two channels are available by default: the `stable` channel provides stable updates with the latest tagged version of Oh My Fish, and `dev` which provides the latest changes under development. The update channel currently set determines what version `omf update` will upgrade to.
+
 #### `omf doctor`
 
 Use to troubleshoot before [opening an issue][omf-issues-new].

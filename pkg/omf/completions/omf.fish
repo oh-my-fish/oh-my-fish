@@ -20,6 +20,7 @@ end
 
 complete -c omf -f -n "__fish_seen_subcommand_from d desc describe" -a (printf "%s " (omf.packages.list --database --plugin))
 complete -c omf -f -n "__fish_seen_subcommand_from t theme"         -a "$installed_themes"
+complete -c omf -f -n "__fish_seen_subcommand_from channel"         -a "stable dev"
 complete -c omf -f -n "__fish_seen_subcommand_from help"            -a "install theme remove update list describe cd new submit destroy doctor"
 
 complete -c omf -f -a list     -n "__fish_use_subcommand" -d "List local packages"
@@ -35,3 +36,4 @@ complete -c omf -f -a submit   -n "__fish_use_subcommand" -d "Submit a package t
 complete -c omf -f -a help     -n "__fish_use_subcommand" -d "Display this help"
 complete -c omf -f -a destroy  -n "__fish_use_subcommand" -d "Remove Oh My Fish"
 complete -c omf -f -a doctor   -n "__fish_use_subcommand" -d "Troubleshoot Oh My Fish"
+complete -c omf -f -a channel  -n "__fish_use_subcommand" -d "Gets or changes the update channel"
