@@ -1,5 +1,5 @@
 function omf.bundle.remove
-    if test -h $OMF_CONFIG/bundle
+    if test -L $OMF_CONFIG/bundle
       set bundle (readlink $OMF_CONFIG/bundle)
      else
       set bundle $OMF_CONFIG/bundle
