@@ -1,7 +1,7 @@
 function omf.packages.describe -a name
   if test (count $argv) -eq 0
     for package in (omf.packages.list --database)
-      echo $package - (omf.describe $package)
+      echo $package - (omf.packages.describe $package)
     end
   else
     set package_path $OMF_PATH/db/pkg/$name
