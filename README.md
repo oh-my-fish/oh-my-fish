@@ -68,7 +68,7 @@ Remove a theme or package.
 
 Reload Oh My Fish and all plugins by using `exec` to replace current shell process with a brand new.
 
-> This command try to be as safe as possible, mitigating side-effects caused by `exec` and preventing the reload in case of background processes.
+> This command tries to be as safe as possible, mitigating side-effects caused by `exec` and preventing the reload in case of background processes.
 
 #### `omf new pkg | theme` _`<name>`_
 
@@ -79,6 +79,7 @@ Scaffold out a new package or theme.
 #### `omf submit` _`pkg/<name>`_ _`[<url>]`_
 
 Add a new package. To add a theme, use `omf submit` _`themes/<name>`_ _`<url>`_.
+Please note that the _`[<url>]`_ portion of the command should be the url to your repo on github. For example, with the `example` plugin, the command run should be `omf submit pkg/example https://github.com/oh-my-fish/example`. 
 
 Make sure to [send us a PR][omf-pulls-link] to update the registry.
 
