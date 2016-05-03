@@ -23,8 +23,11 @@ function omf.repo.pull
 
   # the refspec ensures that '$remote/master' gets updated
   set -l refspec "refs/heads/master:refs/remotes/$remote/master"
-  __omf.repo.git fetch --quiet $remote $refspec ^/dev/null;
-    or return 1
+  set -l omf_repo_pull (__omf.repo.git fetch --quiet $remote $refspec 2>&1)
+  if test $status -ne 0;
+    set omf_repo_pull_error (echo $omf_repo_pull  | cut -d':' -f{{2-}})
+    return 1
+  end
 
   if test (__omf.repo.git rev-list --count master...FETCH_HEAD) -eq 0
     return 2

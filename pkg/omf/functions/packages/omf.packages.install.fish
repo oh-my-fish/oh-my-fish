@@ -3,7 +3,7 @@ function __omf.packages.install.success
 end
 
 function __omf.packages.install.error
-  echo (omf::err)"Could not install $argv."(omf::off) 1^&2
+  echo (omf::err)"Could not install $argv:$omf_repo_clone_error"(omf::off) 1^&2
 end
 
 function __omf.packages.install.error.already
@@ -37,6 +37,7 @@ function omf.packages.install -a name_or_url
     end
   else
     echo (omf::dim)"Installing $install_type $name"(omf::off)
+    set -g omf_repo_clone_error
 
     if omf.repo.clone $url $OMF_PATH/$parent_path/$name
       omf.bundle.install $OMF_PATH/$parent_path/$name/bundle
@@ -48,8 +49,10 @@ function omf.packages.install -a name_or_url
       end
     else
       __omf.packages.install.error "$install_type $name"
+      set -e omf_repo_clone_error
       return $OMF_UNKNOWN_ERR
     end
+    set -e omf_repo_clone_error
   end
 
   return 0
