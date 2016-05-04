@@ -76,6 +76,10 @@ Scaffold out a new package or theme.
 
 > This creates a new directory under `$OMF_CONFIG/{pkg | themes}/` with a template.
 
+#### `omf search` `-t|--theme / -pkg|--package` `<name>`
+
+Searches Oh My Fish's database for a given package, theme or both. It also supports fuzzy search, so if you are not sure of the name you can simply `omf search simple`.
+
 #### `omf submit` _`pkg/<name>`_ _`[<url>]`_
 
 Add a new package. To add a theme, use `omf submit` _`themes/<name>`_ _`<url>`_.
