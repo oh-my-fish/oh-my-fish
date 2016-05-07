@@ -30,6 +30,7 @@ complete -c omf -f -a remove   -n "__fish_use_subcommand" -d "Remove a theme or 
 complete -c omf -f -a update   -n "__fish_use_subcommand" -d "Update Oh My Fish"
 complete -c omf -f -a cd       -n "__fish_use_subcommand" -d "Change directory to plugin/theme directory"
 complete -c omf -f -a new      -n "__fish_use_subcommand" -d "Create a new package from a template"
+complete -c omf -f -a search   -n "__fish_use_subcommand" -d "Search the database for a theme, package or both"
 complete -c omf -f -a submit   -n "__fish_use_subcommand" -d "Submit a package to the registry"
 complete -c omf -f -a help     -n "__fish_use_subcommand" -d "Display this help"
 complete -c omf -f -a destroy  -n "__fish_use_subcommand" -d "Remove Oh My Fish"
