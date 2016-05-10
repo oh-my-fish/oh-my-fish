@@ -12,10 +12,10 @@ function omf.cli.search -d "CLI parser for the search command"
         case "-t" "--theme";
           omf.search.theme $argv[2]
         case '*';
-          __omf.search.usage
+          __omf.cli.search.usage
       end
     case '*';
-      __omf.search.usage
+      __omf.cli.search.usage
   end
 end
 
