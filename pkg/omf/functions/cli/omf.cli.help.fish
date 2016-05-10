@@ -19,7 +19,7 @@ function omf.cli.help -a command
       Get information about what packages do.
 
       "(omf::dim)"Usage:"(omf::off)"
-        omf describe                 Get information from all available packages
+        omf describe         Get information from all available packages
         omf describe "(omf::em)"<name>"(omf::off)"  Get information from package by name
 
       "(omf::dim)"Examples:"(omf::off)"
