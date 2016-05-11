@@ -89,6 +89,19 @@ function omf.cli.help -a command
         omf remove l
       "
 
+    case "search"
+      echo \n"\
+      Search for a package or theme.
+
+      "(omf::dim)"Usage:"(omf::off)"
+        omf search ("(omf::dim)"-pkg/--package"(omf::off)" | "(omf::dim)"-t/--theme"(omf::off)") "(omf::em)"<name>"(omf::off)"  Search for a package or theme
+
+      "(omf::dim)"Examples:"(omf::off)"
+        omf search -pkg nvm
+        omf search -t bobthefish
+        omf search vi
+      "
+
     case "s" "submit"
       echo \n"\
       Submit a package to the registry.
@@ -130,6 +143,7 @@ function omf.cli.help -a command
         omf "(omf::em)"install"(omf::off)" [<name>|<url>]
         omf "(omf::em)"theme"(omf::off)" [<name>]
         omf "(omf::em)"remove"(omf::off)" [<name>]
+        omf "(omf::em)"search"(omf::off)" [<name>]
         omf "(omf::em)"update"(omf::off)"
         omf "(omf::em)"help"(omf::off)" [<command>]
 
@@ -142,6 +156,7 @@ function omf.cli.help -a command
         "(omf::em)"u"(omf::off)"pdate    Update Oh My Fish.
         "(omf::em)"c"(omf::off)"d        Change directory to plugin/theme directory.
         "(omf::em)"n"(omf::off)"ew       Create a new package from a template.
+        "(omf::em)"search"(omf::off)"    Search for a package or theme.
         "(omf::em)"s"(omf::off)"ubmit    Submit a package to the registry.
         "(omf::em)"destroy"(omf::off)"   Uninstall Oh My Fish.
         "(omf::em)"doctor"(omf::off)"    Troubleshoot Oh My Fish.

@@ -24,5 +24,5 @@ function init -a path --on-event init_omf
     set_color normal
   end
 
-  autoload $path/functions/{compat,core,packages,themes,bundle,util,repo,cli}
+  autoload $path/functions/{compat,core,packages,themes,bundle,util,repo,cli,search}
 end
