@@ -32,7 +32,7 @@ set -q OMF_CONFIG;      or set OMF_CONFIG "$XDG_CONFIG_HOME/omf"
 set -q OMF_REPO_URI;    or set OMF_REPO_URI "https://github.com/oh-my-fish/oh-my-fish"
 set -q OMF_REPO_BRANCH; or set OMF_REPO_BRANCH "master"
 
-set OMF_FISH_MIN_VER 2 1 0
+set OMF_FISH_MIN_VER 2 2 0
 
 function available -a name
   type "$name" >/dev/null 2>&1
