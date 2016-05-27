@@ -52,4 +52,4 @@ autoload $user_function_path
 # Source custom init.fish file
 source $OMF_CONFIG/init.fish ^/dev/null
 
-set -g OMF_VERSION "1.0.0"
+set -g OMF_VERSION "2.0.0"
