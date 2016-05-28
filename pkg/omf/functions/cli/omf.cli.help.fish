@@ -62,7 +62,9 @@ function omf.cli.help -a command
       List local packages.
 
       "(omf::dim)"Usage:"(omf::off)"
-        omf list
+        omf list [ --available | -a ]
+        omf list [ --installed | -i ]
+        omf list [ --database  | -d ]
       "
 
     case "n" "new"
