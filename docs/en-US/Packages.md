@@ -53,24 +53,27 @@ Packages were designed to take advantages of fish events. There are currently tw
 
 ## Initialization
 
-If you want to be [notified](http://fishshell.com/docs/current/commands.html#emit) when your package loads, declare the following function in your `hello_world.fish`:
+If you want code to be executed when the package loads, you can add code to `init.fish` file at package's root directory:
 
 ```fish
-function init -a path --on-event init_hello_world
-  echo "hello_world initialized"
-end
+echo "hello_world initialized"
 ```
 
-Use this event to modify the environment, load resources, autoload functions, etc. If your package does not export any functions, you can still use this event to add functionality to your package.
+Inside this hook runs you can access three package-related variables:
+
+* `$package`: Package name
+* `$path`: Package installation path
+* `$dependencies` : Package dependencies
+
+Use this hook to modify the environment, load resources, autoload functions, etc. If your package does not export any function, you can still use this event to add functionality to your package, or dynamically create functions.
 
 ## Uninstall
 
-Oh My Fish emits `uninstall_<pkg>` events before a package is removed via `omf remove <pkg>`. Subscribers can use the event to clean up custom resources, etc.
+Oh My Fish also features `uninstall.fish` hook, which is called before a package is removed via `omf remove <pkg>`. Packages can use this hook to clean up custom resources, etc.
 
-```fish
-function uninstall --on-event uninstall_hello_world
-end
-```
+Inside this hook you can access one package-related variable:
+
+* `$path`: Package installation path
 
 
 # Make it public

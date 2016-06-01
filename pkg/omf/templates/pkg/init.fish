@@ -1,3 +1,6 @@
-function init -a path --on-event init_{{NAME}}
-end
-
+# {{NAME}} initialization hook
+#
+# You can use the following variables in this file:
+# * $package       package name
+# * $path          package path
+# * $dependencies  package dependencies

@@ -56,8 +56,7 @@ Oh My Fish 自带的辅助命令工具 `omf` 可以帮助你快速获取安装�
 
 移除主题或插件。
 
-> 插件如果注册(subscribed)过 `uninstall_<pkg>` 事件将会在插件移除前触发，因此你可以自定义自身清理和扫尾的工作以保证插件干净移除。
-详见[卸载部分](Packages.md#uninstall)获取更多信息。
+> 包可以使用卸载挂钩，所以资源的自定义清理可以做到卸载时。有关更多信息，请参见 [卸载](Packages.md#uninstall) 。
 
 #### `omf new pkg | theme` _`<name>`_
 

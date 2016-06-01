@@ -1,4 +1,3 @@
 function fish_prompt
-  set -l code $status
-  prompt_pwd
+  # Customize fish prompt
 end

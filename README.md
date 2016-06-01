@@ -62,7 +62,7 @@ Apply a theme. To list available themes, type `omf theme`. You can also [preview
 
 Remove a theme or package.
 
-> Packages subscribed to `uninstall_<pkg>` events are notified before the package is removed, so custom cleanup of resources can be done. See [Uninstall](/docs/en-US/Packages.md#uninstall) for more information.
+> Packages can use uninstall hooks, so custom cleanup of resources can be done when uninstalling it. See [Uninstall](/docs/en-US/Packages.md#uninstall) for more information.
 
 #### `omf reload`
 
@@ -125,7 +125,7 @@ Every time a package/theme is installed or removed, the `bundle` file is updated
 
 ## Creating Packages
 
-Oh My Fish uses an advanced and well defined plugin architecture to ease plugin development, including init/uninstall events and function autoloading. [See the documentation](docs/en-US/Packages.md) for more details.
+Oh My Fish uses an advanced and well defined plugin architecture to ease plugin development, including init/uninstall hooks, function and completion autoloading. [See the packages documentation](docs/en-US/Packages.md) for more details.
 
 [fishshell]: http://fishshell.com
 

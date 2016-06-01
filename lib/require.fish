@@ -1,41 +1,82 @@
-# SYNOPSIS
-#   require [name]
-#
-# OVERVIEW
-#   Require a plugin:
-#     - Autoload its functions and completions.
-#     - Require bundle dependencies.
-#     - Source its initialization file.
-#     - Emit its initialization event.
-#
-#   If the required plugin has already been loaded, does nothing.
+function require
+  set packages $argv
 
-function require -a name
-  # Skip if plugin has already been loaded.
-  contains -- $OMF_PATH/pkg/$name $fish_function_path;
-    or contains -- $OMF_CONFIG/pkg/$name $fish_function_path;
-    and return 0
-
-  for path in {$OMF_PATH,$OMF_CONFIG}/pkg/$name
-    test -d $path; or continue
-
-    if autoload $path $path/functions $path/completions
-
-      if test -f $path/bundle
-        for line in (cat $path/bundle)
-          test (echo $line | cut -d' ' -f1) = package;
-            and set dependency (basename (echo $line | cut -d' ' -f2));
-              and require $dependency
-        end
-      end
-
-      source $path/init.fish ^/dev/null;
-        or source $path/$name.fish ^/dev/null;
-        and emit init_$name $path
-    end
+  if test -z "$packages"
+    echo 'usage: require <name>...'
+    echo '       require --path <path>...'
+    echo '       require --no-bundle --path <path>...'
+    return 1
   end
 
-  functions -e init  # Cleanup previously sourced function
+  # If bundle should be
+  if set index (contains -i -- --no-bundle $packages)
+    set -e packages[$index]
+    set ignore_bundle
+  end
+
+  # Requiring absolute paths
+  if set index (contains -i -- --path $packages)
+    set -e packages[$index]
+    set package_path $packages
+
+  # Requiring specific packages from default paths
+  else
+    set package_path {$OMF_PATH,$OMF_CONFIG}/pkg*/$packages
+
+    # Exit with error if no package paths were generated
+    test -z "$package_path"
+      and return 1
+  end
+
+  set function_path $package_path/functions*
+  set completion_path $package_path/completions*
+  set init_path $package_path/init.fish*
+
+  # Autoload functions
+  test -n "$function_path"
+    and set fish_function_path $fish_function_path[1] \
+                               $function_path \
+                               $fish_function_path[2..-1]
+
+  # Autoload completions
+  test -n "$complete_path"
+    and set fish_complete_path $fish_complete_path[1] \
+                               $complete_path \
+                               $fish_complete_path[2..-1]
+
+  for init in $init_path
+    emit perf:timer:start $init
+    set -l IFS '/'
+    echo $init | read -la components
+
+    set path (printf '/%s' $components[1..-2])
+
+    contains $path $omf_init_path
+      and continue
+
+    set package $components[-2]
+
+    if not set -q ignore_bundle
+      set bundle $path/bundle
+      set dependencies
+
+      if test -f $bundle
+        set -l IFS ' '
+        while read -l type dependency
+          test "$type" != package
+            and continue
+          require "$dependency"
+          set dependencies $dependencies $dependency
+        end < $bundle
+      end
+    end
+
+    source $init $path
+    emit init_$package $path
+
+    set -g omf_init_path $omf_init_path $path
+    emit perf:timer:finish $init
+  end
 
   return 0
 end
