@@ -54,8 +54,9 @@ function report -a what message
 end
 
 function fish_version_compatible
-  set -l major (echo $version | cut -d. -f1)
-  set -l minor (echo $version | cut -d. -f2)
+  set -q FISH_VERSION; or set -l FISH_VERSION $version
+  set -l major (echo $FISH_VERSION | cut -d. -f1)
+  set -l minor (echo $FISH_VERSION | cut -d. -f2)
 
   return (test $major = $OMF_FISH_MIN_VER[1] -a $minor -ge $OMF_FISH_MIN_VER[2])
 end
