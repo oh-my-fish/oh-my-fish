@@ -37,7 +37,7 @@ $ omf install {{NAME}}
 
 [mit]:            https://opensource.org/licenses/MIT
 [author]:         https://github.com/{{USER}}
-[contributors]:   https://github.com/{{USER}}/{{NAME}}/graphs/contributors
+[contributors]:   https://github.com/{{USER}}/theme-{{NAME}}/graphs/contributors
 [omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
 
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
