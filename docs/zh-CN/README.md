@@ -12,7 +12,8 @@ Oh My Fish 提供核心基础设施的配置，允许每个人可以轻松安装
 <p align="center">
   <a href="../../README.md">English</a> &bull;
   <b>简体中文</b> &bull;
-  <a href="../ru-RU/README.md">Русский</a>
+  <a href="../ru-RU/README.md">Русский</a> &bull;
+  <a href="../ja-JPN/README.md">日本語</a>
 </p>
 
 # 安装

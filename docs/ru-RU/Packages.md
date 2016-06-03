@@ -9,7 +9,8 @@
 <p align="center">
   <a href="../en-US/Packages.md">English</a> &bull;
   <a href="../zh-CN/Packages.md">简体中文</a> &bull;
-  <b>Русский</b>
+  <b>Русский</b> &bull;
+  <a href="../ja-JPN/Packages.md">日本語</a>
 </p>
 
 # Создание

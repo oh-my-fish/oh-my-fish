@@ -9,7 +9,8 @@
 <p align="center">
   <b>English</b> &bull;
   <a href="../zh-CN/Packages.md">简体中文</a> &bull;
-  <a href="../ru-RU/Packages.md">Русский</a>
+  <a href="../ru-RU/Packages.md">Русский</a> &bull;
+  <a href="../ja-JPN/Packages.md">日本語</a>
 </p>
 
 # Creating
@@ -24,7 +25,7 @@ $ omf new pkg hello_world
 
 > Use `omf new theme my_theme_name` for themes.
 
-The utily changes the current directory to the newly created package:
+The utility changes the current directory to the newly created package:
 
 ```
 $ ls -l

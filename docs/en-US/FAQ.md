@@ -9,7 +9,8 @@
 <p align="center">
   <b>English</b> &bull;
   <a href="../zh-CN/FAQ.md">简体中文</a> &bull;
-  <a href="../ru-RU/FAQ.md">Русский</a>
+  <a href="../ru-RU/FAQ.md">Русский</a> &bull;
+  <a href="../ja-JPN/FAQ.md">日本語</a>
 </p>
 
 

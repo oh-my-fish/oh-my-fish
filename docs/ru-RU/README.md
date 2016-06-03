@@ -13,7 +13,8 @@ Oh My Fish обеспечивает базовую инфраструктуру,
 <p align="center">
   <a href="../../README.md">English</a> &bull;
   <a href="../zh-CN">简体中文</a> &bull;
-  <b>Русский</b>
+  <b>Русский</b> &bull;
+  <a href="../ja-JPN/README.md">日本語</a>
 </p>
 
 # Установка

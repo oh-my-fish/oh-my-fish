@@ -13,7 +13,8 @@ Oh My Fish provides core infrastructure to allow you to install packages which e
 <p align="center">
   <b>English</b> &bull;
   <a href="docs/zh-CN">简体中文</a> &bull;
-  <a href="docs/ru-RU">Русский</a>
+  <a href="docs/ru-RU">Русский</a> &bull;
+  <a href="docs/ja-JPN">日本語</a>
 </p>
 
 ## Installation
@@ -83,7 +84,7 @@ Searches Oh My Fish's database for a given package, theme or both. It also suppo
 #### `omf submit` _`pkg/<name>`_ _`[<url>]`_
 
 Add a new package. To add a theme, use `omf submit` _`themes/<name>`_ _`<url>`_.
-Please note that the _`[<url>]`_ portion of the command should be the url to your repo on github. For example, with the `example` plugin, the command run should be `omf submit pkg/example https://github.com/oh-my-fish/example`. 
+Please note that the _`[<url>]`_ portion of the command should be the url to your repo on github. For example, with the `example` plugin, the command run should be `omf submit pkg/example https://github.com/oh-my-fish/example`.
 
 Make sure to [send us a PR][omf-pulls-link] to update the registry.
 
