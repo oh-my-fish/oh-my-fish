@@ -25,13 +25,15 @@ emit perf:timer:finish "Oh My Fish init installed packages"
 functions -q fish_user_key_bindings
   and functions -c fish_user_key_bindings __original_fish_user_key_bindings
 # Override key bindings, calling original if existent
-function fish_user_key_bindings
-  # Read packages key bindings
-  for file in {$OMF_CONFIG,$OMF_PATH}/{,pkg,theme}/*/key_bindings.fish
+function fish_user_key_bindings -V theme
+  # Prepare packages key bindings paths
+  set -l key_bindings $OMF_CONFIG/key_binding?.fish \
+                      {$OMF_CONFIG,$OMF_PATH}/pkg/*/key_bindings.fish \
+                      {$OMF_CONFIG,$OMF_PATH}/themes/$theme/key_binding?.fish
+  # Source all keybindings collected
+  for file in $key_bindings
     source $file
   end
-  # Read custom key bindings file
-  source $OMF_CONFIG/key_bindings.fish ^/dev/null
   # Call original key bindings if existent
   functions -q __original_fish_user_key_bindings
     and __original_fish_user_key_bindings
