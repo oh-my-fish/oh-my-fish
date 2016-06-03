@@ -9,23 +9,26 @@
 
 <br/>
 
-## Install
 
+## Install
 
 ```fish
 $ omf install {{NAME}}
 ```
+
 
 ## Features
 
 * Lorem ipsum dolor sit amet.
 * Consectetur adipisicing elit.
 
+
 ## Screenshot
 
 <p align="center">
 <img src="{{SCREENSHOT_URL}}">
 </p>
+
 
 # License
 
