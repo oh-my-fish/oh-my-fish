@@ -2,7 +2,8 @@ function __omf.destroy.restore_backup -a file_path
   set -l path (dirname $file_path)
   set -l file (basename $file_path)
   set -l name (echo $file | cut -d. -f1)
-  set -l backup_file_path (echo $path/$name.*.copy | tr ' ' '\n' | sort -r | head -1)
+  set -l backup_file_list $path/$name.*.copy
+  set -l backup_file_path (echo $backup_file_list | tr ' ' '\n' | sort -r | head -1)
 
   if test -e "$backup_file_path"
     mv "$backup_file_path" "$path/$file" ^/dev/null
@@ -14,7 +15,9 @@ end
 function omf.destroy -d "Remove Oh My Fish"
   echo (omf::dim)"Removing Oh My Fish..."(omf::off)
 
-  for pkg in (basename -a $OMF_PATH/pkg/*)
+  set -l installed_package_path $OMF_PATH/pkg/*
+
+  for pkg in (basename -a $installed_package_path)
     emit uninstall_$pkg
   end
 
