@@ -90,7 +90,7 @@ Oh My Fishには新しいテーマやパッケージをフェッチやインス�
 コマンドの<url>部分はあなたのgithub上のレポジトリの _`[<url>]`_ にすべきです。
 例えば、`example`プラグインを使う場合は,`omf submit pkg/example https://github.com/oh-my-fish/example`というコマンドになります。
 
-記載のアップグレードをするには、[send us a PR][omf-pulls-link]を参考にしてください。
+記載のアップグレードをするには、[私たちにプルリクを投げる][omf-pulls-link]を参考にしてください。
 
 #### `omf doctor`
 

@@ -89,7 +89,7 @@ omf submit pkg/hello_world .../hello_world.git
 omf submit theme/my_theme .../my_theme_name.git
 ```
 
-これはローカルにコピーしたレジストリに対して新しいエントリを加えます。グローバルレジストリにアップデートしたい場合は、[私たちへPRを送る][omf-pulls-link] 必要があります。
+これはローカルにコピーしたレジストリに対して新しいエントリを加えます。グローバルレジストリにアップデートしたい場合は、[私たちへプルリクを投げる][omf-pulls-link] 必要があります。
 
 
 [omf-pulls-link]: https://github.com/oh-my-fish/oh-my-fish/pulls
