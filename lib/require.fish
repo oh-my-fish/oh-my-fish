@@ -29,7 +29,7 @@ function require
   end
 
   set function_path $package_path/functions*
-  set completion_path $package_path/completions*
+  set complete_path $package_path/completions*
   set init_path $package_path/init.fish*
 
   # Autoload functions
