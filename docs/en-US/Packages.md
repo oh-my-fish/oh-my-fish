@@ -29,13 +29,17 @@ The utily changes the current directory to the newly created package:
 ```
 $ ls -l
   README.md
-  hello_world.fish
+  init.fish
+  functions/hello_world.fish
   completions/hello_world.fish
 ```
 
-Always describe how your package works in the `README.md`. Also read more about [auto completion](http://fishshell.com/docs/current/commands.html#complete) and take care to provide it for your utilities when applicable.
+>Always describe how your package works in the `README.md`.
 
-`hello_world.fish` defines a single function:
+
+>Also read more about [auto completion](http://fishshell.com/docs/current/commands.html#complete) and take care to provide it for your utilities when applicable.
+
+`functions/hello_world.fish` defines a single function:
 
 ```fish
 function hello_world -d "Prints hello world"
@@ -43,13 +47,15 @@ function hello_world -d "Prints hello world"
 end
 ```
 
-Each function in your package must be declared in its own file. This is required by fish autoloading mechanism, which loads functions on demand, avoiding loading unused functions.
+Each function in your package must be declared in its own file under `functions` directory. This is required by fish autoloading mechanism, which loads functions on demand, avoiding loading unused functions at startup time.
 
-Bear in mind that fish lacks a private scope, so if you need to split your package into functions, consider prefixing private functions like this: `__hello_world.my_extra_function`, to avoid both name clashes and global namespace pollution.
+Bear in mind that fish lacks a private scope, so if you need to split your package into functions,  avoid name clashes prefixing your functions with something unique -- like your package name (e.g. `hello_world_print_help`). To avoid polluting command namespace, consider prefixing private functions with two underscores (e.g. `__function_name_print_help`).
 
-# Events
+# Hooks
 
-Packages were designed to take advantages of fish events. There are currently two events that Oh My Fish will emit to your package:
+Oh My Fish package API offer some lifecycle hooks, which are completely optional. When using `omf new` command some of them are created with sample code.
+
+>Hooks that are called at startup time (`init.fish` and `key_bindings.fish`) can slow down shell startup. Be sure to avoid slow code at startup time! Also, if your package doesn't need a hook file, be sure to remove it.
 
 ## Initialization
 
@@ -67,14 +73,21 @@ Inside this hook runs you can access three package-related variables:
 
 Use this hook to modify the environment, load resources, autoload functions, etc. If your package does not export any function, you can still use this event to add functionality to your package, or dynamically create functions.
 
+## Key Bindings
+
+If your package or theme need to use key bindings, be sure to set them up in `key_bindings.fish`.
+
+>Themes can define key bindings too! Oh My Fish will reload key bindings when you switch themes.
+
 ## Uninstall
 
-Oh My Fish also features `uninstall.fish` hook, which is called before a package is removed via `omf remove <pkg>`. Packages can use this hook to clean up custom resources, etc.
+Code inside `uninstall.fish` hook will be called before a package is removed via `omf remove <pkg>`. 
+
+>Packages can use this hook to clean up custom resources, etc.
 
 Inside this hook you can access one package-related variable:
 
 * `$path`: Package installation path
-
 
 # Make it public
 
@@ -84,13 +97,15 @@ To add your package to the registry you need to:
 
 ```fish
 # For packages:
-omf submit pkg/hello_world .../hello_world.git
+omf submit pkg/hello_world https://github.com/oh-my-fish/plugin-hello_world.git
 
 # For themes
-omf submit theme/my_theme .../my_theme_name.git
+omf submit theme/my_theme https://github.com/oh-my-fish/theme-my_theme.git
 ```
 
 This will add a new entry to your local copy of the registry. Now you just need to [send us a PR][omf-pulls-link] to update the global registry.
+
+>When sending pull requests with package URL under Oh My Fish organization (https://github.com/oh-my-fish) we will allocate a repository inside the organization so you can push your work and join the community! :tada:
 
 
 [omf-pulls-link]: https://github.com/oh-my-fish/oh-my-fish/pulls
