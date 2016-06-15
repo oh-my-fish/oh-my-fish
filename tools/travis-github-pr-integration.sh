@@ -1,5 +1,9 @@
 # Return if we are not in a Pull Request
-[[ "$TRAVIS_PULL_REQUEST" = "false" ]] && return
+if [[ "$TRAVIS_PULL_REQUEST" = "false" ]]; then
+  export OMF_REPO_URI="https://github.com/$TRAVIS_REPO_SLUG"
+  export OMF_REPO_BRANCH="$TRAVIS_BRANCH"
+  return
+fi
 
 GITHUB_PR_URL=https://api.github.com/repos/$TRAVIS_REPO_SLUG/pulls/$TRAVIS_PULL_REQUEST
 GITHUB_PR_BODY=$(curl -s $GITHUB_PR_URL 2>/dev/null)

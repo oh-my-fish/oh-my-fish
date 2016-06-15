@@ -16,11 +16,6 @@ addons:
     - libncurses5-dev
     - tree
 
-env:
-  global:
-    - OMF_REPO_URI="https://github.com/$TRAVIS_REPO_SLUG"
-    - OMF_REPO_BRANCH="$TRAVIS_BRANCH"
-
 before_install:
   - source tools/travis-github-pr-integration.sh
   - tools/travis-install-fish.sh
