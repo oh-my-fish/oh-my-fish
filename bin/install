@@ -109,7 +109,7 @@ function install_omf
   report progress "Adding startup code to fish config file..."
 
   set template "templates/config.fish"
-  set replacements "s|{{OMF_PATH}}|$OMF_PATH|;s|{{OMF_CONFIG}}|$OMF_CONFIG|"
+  set replacements "s|{{OMF_CONFIG}}|$OMF_CONFIG|"
 
   if test "$OMF_CONFIG" != "$XDG_CONFIG_HOME/omf"
     set replacements "$replacements;s|#set|set|"
