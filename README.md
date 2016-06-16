@@ -16,19 +16,34 @@ Oh My Fish provides core infrastructure to allow you to install packages which e
 
 ## Installation
 
-```fish
-curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
-omf help
-```
-
-Or _download_ and run it yourself:
+You can get started right away with the default setup by running this in your terminal:
 
 ```fish
-curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install > install
-fish install
+curl -L http://get.oh-my.fish | fish
 ```
 
-# Getting Started
+This will download the installer script and start the installation. Alternatively, you can download the installer and customize your install:
+
+```fish
+curl -L http://get.oh-my.fish > install
+fish install --path=data/oh-my-fish --config=$HOME/.my-omf-config
+```
+
+You can also install Oh My Fish with Git or with an offline source tarball downloaded from the [releases page][releases]:
+
+```fish
+# with git
+$ git clone https://github.com/oh-my-fish/oh-my-fish
+$ cd oh-my-fish
+$ bin/install --offline
+# with a tarball
+$ curl -L http://get.oh-my.fish > install
+$ fish install --offline=omf.tar.gz
+```
+
+Run `install --help` for a complete list of install options you can customize.
+
+## Getting Started
 
 Oh My Fish includes a small utility `omf` to fetch and install new packages and themes.
 
@@ -126,10 +141,9 @@ Every time a package/theme is installed or removed, the `bundle` file is updated
 
 Oh My Fish uses an advanced and well defined plugin architecture to ease plugin development, including init/uninstall hooks, function and completion autoloading. [See the packages documentation](docs/en-US/Packages.md) for more details.
 
+
 [fishshell]: http://fishshell.com
-
 [contributors]: https://github.com/oh-my-fish/oh-my-fish/graphs/contributors
-
 [omf-pulls-link]: https://github.com/oh-my-fish/oh-my-fish/pulls
-
 [omf-issues-new]: https://github.com/oh-my-fish/oh-my-fish/issues/new
+[releases]: https://github.com/oh-my-fish/oh-my-fish/releases
