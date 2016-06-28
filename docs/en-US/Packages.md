@@ -24,7 +24,7 @@ $ omf new pkg hello_world
 
 > Use `omf new theme my_theme_name` for themes.
 
-The utily changes the current directory to the newly created package:
+The utility changes the current directory to the newly created package:
 
 ```
 $ ls -l
