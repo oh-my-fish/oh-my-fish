@@ -23,6 +23,7 @@ require --path {$OMF_PATH,$OMF_CONFIG}/pkg/*
 emit perf:timer:finish "Oh My Fish init installed packages"
 # Backup key bindings
 functions -q fish_user_key_bindings
+  and not functions -q __original_fish_user_key_bindings
   and functions -c fish_user_key_bindings __original_fish_user_key_bindings
 # Override key bindings, calling original if existent
 function fish_user_key_bindings -V theme
