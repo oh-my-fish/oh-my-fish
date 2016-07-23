@@ -30,8 +30,9 @@ function omf.theme.set -a target_theme
     end
   end
 
-  # If key bindings file found, reload fish key bindings
-  test (count {$OMF_CONFIG,$OMF_PATH}/key_binding?.fish) -gt 0
+  # Reload fish key bindings if reload is available and needed
+  functions -q __fish_reload_key_bindings
+    and test (count {$OMF_CONFIG,$OMF_PATH}/key_binding?.fish) -gt 0
     and __fish_reload_key_bindings
 
   # Persist the changes
