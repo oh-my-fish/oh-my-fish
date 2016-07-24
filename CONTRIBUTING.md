@@ -1,22 +1,18 @@
-<div align="center">
-  <a href="http://github.com/oh-my-fish/oh-my-fish">
-    <img width=120px  src="https://cloud.githubusercontent.com/assets/8317250/8510172/f006f0a4-230f-11e5-98b6-5c2e3c87088f.png">
-  </a>
-</div>
+<img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="128px" height="128px"/>
+<img align="left" width="0" height="128px"/>
+
+# Contributing
+
+> Oh My Fish Documentation
 
 <br>
 
-<p align="center">
-<b><a href="#issues">Issues</a></b>
-|
-<b><a href="#package-repositories">Packages</a></b>
-|
-<b><a href="#commit-messages">Commit Messages</a></b>
-|
-<b><a href="#code-style">Code Style</a></b>
-</p>
+## Summary
 
-# Contributing
+* [Issues](#issues)
+* [Packages](#package-repositories)
+* [Commit Messages](#commit-messages)
+* [Code Style](#code-style)
 
 Thanks for taking the time to read this guide and please _do_ contribute to Oh My Fish. This is an open initiative and _everyone_ is welcome. :metal:
 
