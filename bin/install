@@ -126,7 +126,8 @@ function install_omf
   test -f "$OMF_CONFIG/bundle"; or echo "theme default" > "$OMF_CONFIG/bundle"
   test -f "$OMF_CONFIG/theme";  or echo "default" > "$OMF_CONFIG/theme"
 
-  fish -c "omf install"
+  source "$fish_config_file"
+  omf install
 end
 
 function main
