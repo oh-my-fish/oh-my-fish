@@ -1,16 +1,43 @@
-<p align="center">
-  <a href="https://github.com/oh-my-fish/oh-my-fish/blob/master/README.md">
-  <img width="100px" src="https://cloud.githubusercontent.com/assets/8317250/8510172/f006f0a4-230f-11e5-98b6-5c2e3c87088f.png">
-  </a>
-</p>
+<img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="128px" height="128px"/>
+<img align="left" width="0" height="128px"/>
+
+> Oh My Fish Documentation
 
 # Core Library
 
-## Basic Functions
+<br>
+
+#### `require` _`[--no-bundle] <name>...`_
+#### `require` _`[--no-bundle] --path <path>...`_
+
+Does initialization of Oh My Fish compatible packages:
+
+* Autoload function and completion paths
+* Source key bindings
+* Require dependencies from `bundle`
+* Source `init.fish` file
+
+`require` support packages in the following directory structure:
+
+```
+functions/
+completions/
+bundle
+init.fish
+key_bindings.fish
+```
+
+When using the form `require <name>...`, the search path for packages is
+`$OMF_CONFIG` and `$OMF_PATH`. It's also possible to require directories
+using `--path` switch. To ignore dependency loading you can also use
+`--no-bundle` switch
+
+This function is the base of Oh My Fish framework, being responsible for
+the major part of framework's own startup code.
 
 #### `autoload` _`[-e] <path>...`_
 
-Manipulate [autoloading](http://fishshell.com/docs/current/index.html#syntax-function-autoloading) path components.
+Manipulate [autoloading] path components.
 
 All paths ending with `completions` are correctly added to or erased from
 `$fish_complete_path`.
@@ -27,56 +54,4 @@ To erase paths from autoload:
 autoload -e $mypath $mypath/completions
 ```
 
-#### `available` _`<name>`_
-
-Check if a program is available to run. Sets `$status` to `0` if the program is available.
-
-Use this function to check if a plugin is available before using it:
-
-```fish
-if available battery
-  battery
-end
-```
-
-#### `refresh`
-
-Replace the running instance of fishshell with a new one causing Oh My Fish to reload as well.
-
-#### `prompt_segments`
-
-Extract the root (top-most parent directory), dirname and basename from [`fish_prompt`](http://fishshell.com/docs/current/faq.html#faq-prompt).
-
-## Git Functions
-#### `git_ahead`
-
-Echo a character that represents whether the current repo is ahead, behind or has diverged from its upstream.
-
-##### Default values:
-
-+ ahead: `+`
-+ behind: `-`
-+ diverged: `±`
-+ none: ` `
-
-#### `git_is_repo`
-Set `$status` to `0` if the current working directory belongs to a git repo.
-
-#### `git_branch_name`
-Echo the currently checked out branch name of the current repo.
-
-#### `git_is_dirty`
-Set `$status` to `0` if there are any changes to files already being tracked in the repo.
-
-#### `git_is_staged`
-Set `$status` to `0` if there [staged](http://programmers.stackexchange.com/questions/119782/what-does-stage-mean-in-git) changes.
-
-#### `git_is_stashed`
-Set `$status` to `0` if there are items in the [stash](https://git-scm.com/book/en/v1/Git-Tools-Stashing).
-
-#### `git_is_touched`
-
-Set `$status` to `0` if the repo has any changes whatsoever, including [tracked or untracked](http://stackoverflow.com/questions/9663507/what-is-tracked-files-and-untracked-files-in-the-context-of-git) files.
-
-#### `git_untracked`
-Echo a `\n` separated list of untracked files.
+[autoloading]: http://fishshell.com/docs/current/index.html#syntax-function-autoloading
