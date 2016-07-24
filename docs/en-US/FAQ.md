@@ -1,19 +1,13 @@
-<div align="center">
-  <a href="http://github.com/oh-my-fish/oh-my-fish">
-    <img width=120px  src="https://cloud.githubusercontent.com/assets/8317250/8510172/f006f0a4-230f-11e5-98b6-5c2e3c87088f.png">
-  </a>
-</div>
-
-<br>
-
-<p align="center">
-  <b>English</b> &bull;
-  <a href="../zh-CN/FAQ.md">简体中文</a> &bull;
-  <a href="../ru-RU/FAQ.md">Русский</a>
-</p>
-
+<img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="128px" height="128px"/>
+<img align="left" width="0" height="128px"/>
 
 # FAQ
+
+> Oh My Fish Documentation&nbsp;&bull;&nbsp;Also in
+> <a href="../ru-RU/FAQ.md">🇷🇺</a>
+> <a href="../zh-CN/FAQ.md">🇨🇳</a>
+
+<br>
 
 Thanks for taking the time to read this FAQ. Feel free to create a new issue if your question is not answered here.
 
