@@ -9,6 +9,24 @@
 
 <br/>
 
+## Enables short git aliases
+
+ga="git add"
+gc="git commit -m"
+gitit='git add -A && git commit -m'
+gs='git status -sb'
+gpo="git push origin"
+gpg="git push github"
+gpb="git push bitbucket"
+gpa="git push gogs"
+gf="git fetch"
+gco="git checkout"
+gcb="git checkout -b"
+gbd="git branch -D" # definitely delete. no fucking around.
+gbl="git branch --list"
+gm="git merge"
+greb="git rebase"
+
 
 ## Install
 
