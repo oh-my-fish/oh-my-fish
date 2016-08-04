@@ -81,7 +81,7 @@ Searches Oh My Fish's database for a given package, theme or both. It also suppo
 #### `omf submit` _`pkg/<name>`_ _`[<url>]`_
 
 Add a new package. To add a theme, use `omf submit` _`themes/<name>`_ _`<url>`_.
-Please note that the _`[<url>]`_ portion of the command should be the url to your repo on github. For example, with the `example` plugin, the command run should be `omf submit pkg/example https://github.com/oh-my-fish/example`. 
+Please note that the _`[<url>]`_ portion of the command should be the url to your repo on github. For example, with the `example` plugin, the command run should be `omf submit pkg/example https://github.com/oh-my-fish/example`.
 
 Make sure to [send us a PR][omf-pulls-link] to update the registry.
 
@@ -112,6 +112,7 @@ candidate for being added to your dotfiles and/or checked out to version control
 - __`bundle`__ - List of currently installed packages/themes
 - __`init.fish`__ - Custom script sourced after shell start
 - __`before.init.fish`__ - Custom script sourced before shell start
+- __`key_bindings.fish`__ - Custom key bindings where you can use the `bind` command freely
 
 It's highly recommended that your custom startup commands go into `init.fish` file instead of `~/.config/fish/config.fish`, as this allows you to keep the whole `$OMF_CONFIG` directory under version control.
 
