@@ -26,7 +26,7 @@ This will download the installer script and start the installation. Alternativel
 
 ```fish
 curl -L http://get.oh-my.fish > install
-fish install --path=$HOME/.local/share/omf --config=$HOME/.config/omf
+fish install --path=~/.local/share/omf --config=~/.config/omf
 ```
 
 You can also install Oh My Fish with Git or with an offline source tarball downloaded from the [releases page][releases]:

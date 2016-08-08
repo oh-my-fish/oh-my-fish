@@ -44,7 +44,7 @@ Options:
         return 0
 
       case '--config=*'
-        echo "$argv[1]" | command cut -d= -f2 | read -g OMF_CONFIG
+        echo "$argv[1]" | command cut -d= -f2 | command sed -e "s#~#$HOME#" | read -g OMF_CONFIG
 
       case --noninteractive
         set -g NONINTERACTIVE
@@ -54,10 +54,10 @@ Options:
 
       case '--offline=*'
         set -g OFFLINE
-        echo "$argv[1]" | command cut -d= -f2 | read -g OFFLINE_PATH
+        echo "$argv[1]" | command cut -d= -f2 | command sed -e "s#~#$HOME#" | read -g OFFLINE_PATH
 
       case '--path=*'
-        echo "$argv[1]" | command cut -d= -f2 | read -g OMF_PATH
+        echo "$argv[1]" | command cut -d= -f2 | command sed -e "s#~#$HOME#" | read -g OMF_PATH
 
       case --uninstall
         set -g UNINSTALL
@@ -131,8 +131,9 @@ function install_omf
     install_from_github
   end
 
-  # Bootstrap step
+  # Config step
   install_bootstrap
+  install_config
 end
 
 
@@ -260,8 +261,12 @@ function install_bootstrap
 
   # Backup the user's theme settings. This can be removed when OMF no longer touches this file to switch themes.
   backup_file "$FISH_CONFIG/functions/fish_prompt.fish"
+end
 
-  say "Building Oh My Fish configuration..."
+
+# Sets up the configuration directory.
+function install_config
+  say "Setting up Oh My Fish configuration..."
 
   # Set up the Oh My Fish configuration directory.
   if not test -d "$OMF_CONFIG"
