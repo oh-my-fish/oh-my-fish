@@ -17,13 +17,14 @@ addons:
     - tree
 
 before_install:
+  - tools/travis-install-git.sh
   - source tools/travis-github-pr-integration.sh
   - tools/travis-install-fish.sh
 
 before_script:
   - tree -h
   - export
-  - fish $TRAVIS_BUILD_DIR/bin/install
+  - fish $TRAVIS_BUILD_DIR/bin/install --offline --noninteractive --yes
 
 script:
   - tests/run.fish
