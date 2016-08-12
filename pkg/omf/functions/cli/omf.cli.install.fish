@@ -10,6 +10,11 @@ function omf.cli.install
       omf.packages.install $package;
         and require $package
 
+      # If package is a theme, set it to active.
+      if contains "$package" (omf.packages.list --installed --theme)
+        omf.theme.set "$package"
+      end
+
       test $status != 0;
         and set fail_count (math $fail_count + 1)
     end
