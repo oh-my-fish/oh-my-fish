@@ -7,13 +7,11 @@
 
 Oh My Fish 提供核心基础设施的配置，允许每个人可以轻松安装插件或随心所欲更换 Shell 外观样式，它的速度敏捷和可扩展性让你**如鱼得水**。
 
-<br><br>
+> Also in&nbsp;
+> <a href="../../README.md">🇺🇸</a>
+> <a href="../ru-RU/README.md">🇷🇺</a>
 
-<p align="center">
-  <a href="../../README.md">English</a> &bull;
-  <b>简体中文</b> &bull;
-  <a href="../ru-RU/README.md">Русский</a>
-</p>
+<br>
 
 # 安装
 

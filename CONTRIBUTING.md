@@ -1,30 +1,33 @@
-<div align="center">
-  <a href="http://github.com/oh-my-fish/oh-my-fish">
-    <img width=120px  src="https://cloud.githubusercontent.com/assets/8317250/8510172/f006f0a4-230f-11e5-98b6-5c2e3c87088f.png">
-  </a>
-</div>
-
-<br>
-
-<p align="center">
-<b><a href="#issues">Issues</a></b>
-|
-<b><a href="#package-repositories">Packages</a></b>
-|
-<b><a href="#commit-messages">Commit Messages</a></b>
-|
-<b><a href="#code-style">Code Style</a></b>
-</p>
+<img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="128px" height="128px"/>
+<img align="left" width="0" height="128px"/>
 
 # Contributing
 
-Thanks for taking the time to read this guide and please _do_ contribute to Oh My Fish. This is an open initiative and _everyone_ is welcome. :metal:
+> Oh My Fish Documentation
 
-## Issues
+<br>
 
-Please [open an issue](https://github.com/oh-my-fish/oh-my-fish/issues) for bug reports / patches. Include your OS version, code examples, stack traces and everything you can to help you debug your problem.
+## Summary
 
-If you have a new feature or large change in mind, please open a new issue with your suggestion to discuss the idea together.
+* [Issues](#issues)
+* [Packages](#package-repositories)
+* [Commit Messages](#commit-messages)
+* [Code Style](#code-style)
+
+Thanks for taking the time to read this guide! Oh My Fish is an open initiative and everyone is welcome to contribute!
+
+## Bugs and discussions
+
+Feel free to [open an issue](https://github.com/oh-my-fish/oh-my-fish/issues) for bug reports and discussing ideas.
+
+When reporting bugs be sure to always fill the checklist below with data from your environment to help us debug your issue:
+
+* Operating System: Arch Linux
+* Fish Version: 2.3 (get using `fish --version`)
+* Oh My Fish Version: 2  (get using `omf --version`)
+* Git version: 1.9.5 (get using `git --version`)
+
+When you have a new feature or large change in mind, please open a new issue with your suggestion to discuss the idea together.
 
 ## Package Repositories
 
@@ -34,32 +37,22 @@ If your issue is related to a specific package, we still may be able to help, bu
 
 ## Commit Messages
 
-+ Use the [present tense](https://simple.wikipedia.org/wiki/Present_tense) ("add awesome-package" not "added ...")
-
-+ Use 72 characters or less for the first line of your commit.
-
-+ Use of [emoji](http://www.emoji-cheat-sheet.com/) is definitely encouraged. :lollipop:
++ Use [present tense](https://simple.wikipedia.org/wiki/Present_tense): "add awesome-package", not "added ..."
++ Use preceding subsystem when applicable: "registry: add theme foobar"
++ 50 characters or less for the first line of your commit
++ Use of [emoji](http://www.emoji-cheat-sheet.com/) is free
 
 ## Code Style
 
-> These rules are not set in stone. Feel free to open an issue with suggestions and/or feedback.
+Different from Fish's code style, Oh My Fish uses 2 spaces for indentation. As fish language is very clean it's possible to use 2 spaces without making hard work with the code. Here goes some other styles we are using:
 
 ### Control Flow
 
-Using `if..else..end` blocks is preferred.
+When using `and` / `or` statements be sure to always break and indent.
 
 ```fish
-if not set -q ENV_VARIABLE
-  set -g ENV_VARIABLE 42
-end
-```
-
-The following syntax is more concise, but arguably less transparent.
-
-> You still may use `and` / `or` statements if you consider `if..else..then` to be overkill.
-
-```fish
-set -q VAR; or set -g VAR 42
+set -q VAR
+  or set -g VAR 42
 ```
 
 ### Functions
@@ -100,36 +93,4 @@ In order to avoid name collisions, use a prefix based on the name of your packag
     end
   end
   ```
-
-+ Use blocks
-
-### Blocks
-
-Blocks allow you to write code resembling macro expressions composed of smaller blocks without relying on variables.
-
-Compare the following _without_ blocks:
-
-```fish
-set -l colors green1 green2 green3
-if test $error -ne 0
-  set colors red1 red2 red3
-end
-
-for color in $colors
-  printf "%s"(set_color $color)">"
-end
-```
-
-and _using_ blocks:
-
-```fish
-for color in (begin
-  if test $error -ne 0
-    and printf "%s\n" red1 red2 red3
-    or printf "%s\n" green1 green2 green3
-  end)
-  printf "%s"(set_color $color)">"
-end
-```
-
-The second example does not use a `colors` variable.
+  

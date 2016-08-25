@@ -1,16 +1,13 @@
-<div align="center">
-  <a href="http://github.com/oh-my-fish/oh-my-fish">
-    <img width=120px  src="https://cloud.githubusercontent.com/assets/8317250/8510172/f006f0a4-230f-11e5-98b6-5c2e3c87088f.png">
-  </a>
-</div>
+<img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="128px" height="128px"/>
+<img align="left" width="0" height="128px"/>
+
+# Packages
+
+> Oh My Fish Documentation&nbsp;&bull;&nbsp;Also in
+> <a href="../ru-RU/Packages.md">🇷🇺</a>
+> <a href="../zh-CN/Packages.md">🇨🇳</a>
 
 <br>
-
-<p align="center">
-  <b>English</b> &bull;
-  <a href="../zh-CN/Packages.md">简体中文</a> &bull;
-  <a href="../ru-RU/Packages.md">Русский</a>
-</p>
 
 # Creating
 
@@ -53,41 +50,72 @@ Bear in mind that fish lacks a private scope, so if you need to split your packa
 
 # Hooks
 
-Oh My Fish package API offer some lifecycle hooks, which are completely optional. When using `omf new` command some of them are created with sample code.
+Oh My Fish provides a "hooks" system that allows you to write scripts for your package that run when other interesting events occur. Packages can use these hooks to provide advanced installation, custom resource management, etc. Hooks are ordinary Fish scripts named after the event they are triggered by. Most hooks reside in a `hooks` directory inside a package's project directory.
 
 >Hooks that are called at startup time (`init.fish` and `key_bindings.fish`) can slow down shell startup. Be sure to avoid slow code at startup time! Also, if your package doesn't need a hook file, be sure to remove it.
 
-## Initialization
+The working directory inside a hook is always set to the root directory of the package. The hooks Oh My Fish currently supports are listed below:
 
-If you want code to be executed when the package loads, you can add code to `init.fish` file at package's root directory:
+## `init`
+
+The `init` hook is run once when the shell first loads. Scripts to handle this hook should be located at `init.fish` at package's root directory.
+
+Inside this hook, you can access three package-related variables:
+
+* `$package`: Package name
+* `$path`: Package installation path
+* `$dependencies`: Package dependencies
+
+For example, with an `init.fish` script containing the following code:
 
 ```fish
 echo "hello_world initialized"
 ```
 
-Inside this hook runs you can access three package-related variables:
-
-* `$package`: Package name
-* `$path`: Package installation path
-* `$dependencies` : Package dependencies
+you will see the line `hello_world initialized` at the top of the terminal when it is first opened.
 
 Use this hook to modify the environment, load resources, autoload functions, etc. If your package does not export any function, you can still use this event to add functionality to your package, or dynamically create functions.
 
-## Key Bindings
+## `key_bindings`
 
-If your package or theme need to use key bindings, be sure to set them up in `key_bindings.fish`.
+If your package or theme need to use key bindings, be sure to set them up in the `key_bindings` hook. Key binding scripts must be located at `key_bindings.fish` at package's root directory. In this hook you can freely use the [`bind`][fish-bind] command to define custom key bindings.
 
 >Themes can define key bindings too! Oh My Fish will reload key bindings when you switch themes.
 
-## Uninstall
+## `install`
 
-Code inside `uninstall.fish` hook will be called before a package is removed via `omf remove <pkg>`. 
+The `install` hook is triggered when a package is first installed. Scripts for this hook must be located at `hooks/install.fish`.
 
->Packages can use this hook to clean up custom resources, etc.
+Inside this hook, you can access two package-related variables:
 
-Inside this hook you can access one package-related variable:
-
+* `$package`: Package name
 * `$path`: Package installation path
+
+This hook is useful for downloading additional resources, setting up Git submodules, or installing third-party dependencies like Bash scripts.
+
+## `update`
+
+As you might have guessed, the `update` hook is triggered for a package after it is updated. Scripts for this hook must be located at `hooks/update.fish`.
+
+Inside this hook, you can access two package-related variables:
+
+* `$package`: Package name
+* `$path`: Package installation path
+
+This hook is useful for updating Git submodules or checking for new versions of third-party dependencies.
+
+## `uninstall`
+
+The `uninstall` hook will be triggered before a package is removed via `omf remove <pkg>`. Scripts for this hook must be located at `hooks/uninstall.fish`.
+
+Inside this hook, you can access two package-related variables:
+
+* `$package`: Package name
+* `$path`: Package installation path
+
+Packages can use this hook to clean up custom resources, etc.
+
+>Note: for backwards-compatibility, uninstall hooks will also be run if they are located at `uninstall.fish` in the package root.
 
 # Make it public
 
@@ -108,4 +136,5 @@ This will add a new entry to your local copy of the registry. Now you just need 
 >When sending pull requests with package URL under Oh My Fish organization (https://github.com/oh-my-fish) we will allocate a repository inside the organization so you can push your work and join the community! :tada:
 
 
+[fish-bind]: http://fishshell.com/docs/current/commands.html#bind
 [omf-pulls-link]: https://github.com/oh-my-fish/oh-my-fish/pulls

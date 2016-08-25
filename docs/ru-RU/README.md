@@ -5,16 +5,13 @@
 
 [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE.md) [![Fish Shell Version](https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square)](http://fishshell.com) [![Travis Build Status](http://img.shields.io/travis/oh-my-fish/oh-my-fish.svg?style=flat-square)](https://travis-ci.org/oh-my-fish/oh-my-fish) [![Slack Status](https://oh-my-fish-slack.herokuapp.com/badge.svg)](https://oh-my-fish-slack.herokuapp.com)
 
-
 Oh My Fish обеспечивает базовую инфраструктуру, чтобы обеспечить установку пакетов которые расширяют и модифицируют внешний вид вашей оболочки. Он быстрый, расширяемый и легкий в использовании.
 
-<br><br>
+> Also in&nbsp;
+> <a href="../../README.md">🇺🇸</a>
+> <a href="../zh-CN/README.md">🇨🇳</a>
 
-<p align="center">
-  <a href="../../README.md">English</a> &bull;
-  <a href="../zh-CN">简体中文</a> &bull;
-  <b>Русский</b>
-</p>
+<br>
 
 # Установка
 

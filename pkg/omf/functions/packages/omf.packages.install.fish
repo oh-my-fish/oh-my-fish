@@ -41,6 +41,13 @@ function omf.packages.install -a name_or_url
     if omf.repo.clone $url $OMF_PATH/$parent_path/$name
       omf.bundle.install $OMF_PATH/$parent_path/$name/bundle
       omf.bundle.add $install_type $name_or_url
+
+      # Run the install hook.
+      if not omf.packages.run_hook $OMF_PATH/$parent_path/$name install
+        __omf.packages.install.error "$install_type $name"
+        return $OMF_UNKNOWN_ERR
+      end
+
       __omf.packages.install.success "$install_type $name"
 
       if test "$install_type" = theme
