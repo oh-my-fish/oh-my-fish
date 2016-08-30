@@ -11,7 +11,6 @@ function __omf.packages.install.error.already
 end
 
 function omf.packages.install -a name_or_url
-
   if test \( -e $OMF_PATH/db/themes/$name_or_url \) -o (echo $name_or_url | grep theme-)
     set install_type "theme"
     set parent_path "themes"
@@ -29,34 +28,26 @@ function omf.packages.install -a name_or_url
   end
 
   if test -e $OMF_PATH/$parent_path/$name
-    if test "$install_type" = theme
-      omf.theme.set $name
-    else
-      __omf.packages.install.error.already "$install_type $name_or_url"
-      return $OMF_INVALID_ARG
-    end
-  else
-    echo (omf::dim)"Installing $install_type $name"(omf::off)
+    __omf.packages.install.error.already "$install_type $name_or_url"
+    return $OMF_INVALID_ARG
+  end
 
-    if omf.repo.clone $url $OMF_PATH/$parent_path/$name
-      omf.bundle.install $OMF_PATH/$parent_path/$name/bundle
-      omf.bundle.add $install_type $name_or_url
+  echo (omf::dim)"Installing $install_type $name"(omf::off)
 
-      # Run the install hook.
-      if not omf.packages.run_hook $OMF_PATH/$parent_path/$name install
-        __omf.packages.install.error "$install_type $name"
-        return $OMF_UNKNOWN_ERR
-      end
+  if omf.repo.clone $url $OMF_PATH/$parent_path/$name
+    omf.bundle.install $OMF_PATH/$parent_path/$name/bundle
+    omf.bundle.add $install_type $name_or_url
 
-      __omf.packages.install.success "$install_type $name"
-
-      if test "$install_type" = theme
-        omf.theme.set $name
-      end
-    else
+    # Run the install hook.
+    if not omf.packages.run_hook $OMF_PATH/$parent_path/$name install
       __omf.packages.install.error "$install_type $name"
       return $OMF_UNKNOWN_ERR
     end
+
+    __omf.packages.install.success "$install_type $name"
+  else
+    __omf.packages.install.error "$install_type $name"
+    return $OMF_UNKNOWN_ERR
   end
 
   return 0
