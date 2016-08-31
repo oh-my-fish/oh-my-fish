@@ -25,6 +25,8 @@ function omf.packages.update -a name
     return 1
   end
 
-  echo $result
+  if set -q result
+    echo $result
+  end
   return 0
 end
