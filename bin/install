@@ -72,8 +72,8 @@ Options:
   end
 
   # Ensure the environment meets all of the requirements.
-  assert_cmds
   assert_fish_version_compatible 2.2.0
+  assert_cmds
   assert_git_version_compatible 1.9.5
   assert_interactive
 
