@@ -72,9 +72,9 @@ Options:
   end
 
   # Ensure the environment meets all of the requirements.
-  assert_cmds
   assert_fish_version_compatible 2.2.0
   assert_git_version_compatible 1.9.5
+  assert_cmds
   assert_interactive
 
   # If the user wants to uninstall, jump to uninstallation and exit.
@@ -441,17 +441,6 @@ function is_version_compatible -a lhs rhs
 end
 
 
-# Assert that all tools we need are available.
-function assert_cmds
-  set -l cmds basename cp cut date dirname fish fold git head mkdir mv rm sed sort tar tr
-
-  for cmd in $cmds
-    type -f -q $cmd
-      or abort "Command '$cmd' not found"
-  end
-end
-
-
 # Assert that a minimum required version of Fish is installed.
 function assert_fish_version_compatible -a required_version
   set -l installed_version (get_fish_version)
@@ -465,6 +454,17 @@ function assert_git_version_compatible -a required_version
   set -l installed_version (get_git_version)
     and is_version_compatible $required_version $installed_version
     or abort "Git version $required_version or greater required; you have $installed_version"
+end
+
+
+# Assert that all tools we need are available.
+function assert_cmds
+  set -l cmds basename cp cut date dirname fold head mkdir mv rm sed sort tar tr
+
+  for cmd in $cmds
+    type -f -q $cmd
+      or abort "Command '$cmd' not found"
+  end
 end
 
 
