@@ -26,7 +26,7 @@ $ {{NAME}}
 
 # License
 
-[MIT][mit] © [{{USER}}][author] et [al][contributors]
+[MIT][mit] © [{{USER_NAME}}][author] et [al][contributors]
 
 
 [mit]:            https://opensource.org/licenses/MIT
