@@ -26,12 +26,12 @@ $ {{NAME}}
 
 # License
 
-[MIT][mit] © [{{USER}}][author] et [al][contributors]
+[MIT][mit] © [{{USER_NAME}}][author] et [al][contributors]
 
 
 [mit]:            https://opensource.org/licenses/MIT
-[author]:         https://github.com/{{USER}}
-[contributors]:   https://github.com/{{USER}}/plugin-{{NAME}}/graphs/contributors
+[author]:         https://github.com/{{GITHUB_USER}}
+[contributors]:   https://github.com/{{GITHUB_USER}}/plugin-{{NAME}}/graphs/contributors
 [omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
 
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
