@@ -1,3 +1,3 @@
 function omf.cli.version
-  echo "Oh My Fish! $OMF_VERSION"
+  echo "Oh My Fish version "(omf.version)
 end

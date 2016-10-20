@@ -14,6 +14,25 @@ Change directory to root or plugin/theme directory.
   omf cd l
 "
 
+    case "channel"
+      echo \n"\
+Gets or changes the update channel.
+
+Two channels are available by default: the "(omf::em)"stable"(omf::off)" channel provides stable
+updates with the latest tagged version of Oh My Fish, and "(omf::em)"dev"(omf::off)" which provides
+the latest changes under development. The update channel currently set
+determines what version "(omf::em)"omf update"(omf::off)" will upgrade to.
+
+"(omf::dim)"Usage:"(omf::off)"
+  omf channel         Print the currently selected update channel
+  omf channel "(omf::em)"<name>"(omf::off)"  Switch to the given update channel
+
+"(omf::dim)"Examples:"(omf::off)"
+  omf channel
+  omf channel stable
+  omf channel dev
+"
+
     case "d" "describe"
       echo "\
 Get information about what packages do.

@@ -43,5 +43,4 @@ end
 emit perf:timer:start "Oh My Fish init user config path"
 require --no-bundle --path $OMF_CONFIG
 emit perf:timer:finish "Oh My Fish init user config path"
-set -g OMF_VERSION "2"
 emit perf:timer:finish "Oh My Fish initialisation"
