@@ -64,8 +64,14 @@ function omf -d "Oh My Fish"
     case "u" "update"
       omf.cli.update $arguments
 
+    case "channel"
+      omf.cli.channel $arguments
+
     case "search"
       omf.cli.search $arguments
+
+    case "version"
+      omf.cli.version $arguments
 
     case "*"
       echo (omf::err)"$argv[1] option not recognized"(omf::off) 1^&2
