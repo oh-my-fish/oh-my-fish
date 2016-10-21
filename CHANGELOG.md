@@ -7,6 +7,7 @@ Important changes to Oh My Fish are recorded here for each release.
 - Init process completely rewritten to improve performance and correctness. Using `on_{plugin}` events for plugin initialization is now deprecated and will eventually be removed. `init.fish` scripts will be sourced directly and are passed the variables `$path`, `$package`, and `$bundle`. [#343] [#335]
 - Revamped _hooks_ system that allows plugins to register scripts to be executed on certain events. Hooks are now located in `{plugin}/hooks` (except for `init` and `key_bindings`) and are regular Fish scripts named after the target hook event. Adds support for `install` and `update` hooks. See the [package docs](docs/en-US/Packages.md) for details. [#286]
 - Completely new interactive installer written for correctness that no longer overwrites any existing usr config files. Also supports offline installs. [#399] [#385] [#381] [#361] [#330]
+- The core framework updater now respects release versions and by default upgrades between tagged releases only. Run `omf channel dev` to receive updates from `master`. [#293]
 - Fixes for Fish 2.3.* compatibility. [#327] [#325]
 - `omf update` now returns the correct output and exit status. [#394] [#365]
 - Fix errors shown for the default theme when in a Git detached head. [#366]
@@ -106,6 +107,7 @@ Important changes to Oh My Fish are recorded here for each release.
 [#287]: https://github.com/oh-my-fish/oh-my-fish/pull/287
 [#289]: https://github.com/oh-my-fish/oh-my-fish/pull/289
 [#291]: https://github.com/oh-my-fish/oh-my-fish/pull/291
+[#293]: https://github.com/oh-my-fish/oh-my-fish/pull/293
 [#305]: https://github.com/oh-my-fish/oh-my-fish/pull/305
 [#310]: https://github.com/oh-my-fish/oh-my-fish/pull/310
 [#314]: https://github.com/oh-my-fish/oh-my-fish/pull/314
