@@ -116,25 +116,11 @@ Inside this hook, you can access two package-related variables:
 
 Packages can use this hook to clean up custom resources, etc.
 
->Note: for backwards-compatibility, uninstall hooks will also be run if they are located at `uninstall.fish` in the package root.
+> Note: for backwards-compatibility, uninstall hooks will also be run if they are located at `uninstall.fish` in the package root.
 
 # Make it public
 
-Oh My Fish keeps a registry of public packages under `$OMF_PATH/db/`.
-
-To add your package to the registry you need to:
-
-```fish
-# For packages:
-omf submit pkg/hello_world https://github.com/oh-my-fish/plugin-hello_world.git
-
-# For themes
-omf submit theme/my_theme https://github.com/oh-my-fish/theme-my_theme.git
-```
-
-This will add a new entry to your local copy of the registry. Now you just need to [send us a PR][omf-pulls-link] to update the global registry.
-
->When sending pull requests with package URL under Oh My Fish organization (https://github.com/oh-my-fish) we will allocate a repository inside the organization so you can push your work and join the community! :tada:
+The official registry of public packages is managed in the [oh-my-fish/db](https://github.com/oh-my-fish/db) repository. See the README of that repository for instructions on how to add your package to the official package database.
 
 
 [fish-bind]: http://fishshell.com/docs/current/commands.html#bind

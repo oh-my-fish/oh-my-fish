@@ -1,93 +1,31 @@
-set -l builtin_package_path {$OMF_PATH,$OMF_CONFIG}/pkg*/{omf,fish-spec}
+set -l builtin_packages {$OMF_PATH,$OMF_CONFIG}/pkg*/{omf,fish-spec}
 
-function __omf.packages.basename
-  set -l IFS /
-  for path in $argv
-    echo $path | read -la components
-    echo $components[-1]
-  end
-end
 
-function __omf.packages.list.available -a type
-  set -l database_package_path $OMF_PATH/db/pkg/*
-  set -l database_theme_path $OMF_PATH/db/themes/*
-  set -l installed_package_path {$OMF_CONFIG,$OMF_PATH}/pkg/*
-  set -l installed_theme_path {$OMF_CONFIG,$OMF_PATH}/themes/*
+function omf.packages.list -d 'List installed packages'
+  set -l show_plugins
+  set -l show_themes
 
-  set -l database_packages (__omf.packages.basename $database_package_path)
-  set -l database_themes (__omf.packages.basename $database_theme_path)
-  set -l installed_packages (__omf.packages.basename $installed_package_path)
-  set -l installed_themes (__omf.packages.basename $installed_theme_path)
-
-  test "$type" = "--theme"; or for package in $database_packages
-    contains $package $installed_packages; or echo $package
+  if begin; contains -- --plugin $argv; or contains -- -p $argv; end
+    set -e show_themes
   end
 
-  test "$type" = "--plugin"; or for theme in $database_themes
-    contains $path $installed_themes; or echo $theme
-  end
-end
-
-function __omf.packages.list.database -a type
-  set -l list
-  set -l database_package_path $OMF_PATH/db/pkg/*
-  set -l database_theme_path $OMF_PATH/db/themes/*
-
-  test "$type" = "--theme"; or for path in $database_package_path
-    set list $list $path
+  if begin; contains -- --theme $argv; or contains -- -t $argv; end
+    set show_themes
+    set -e show_plugins
   end
 
-  test "$type" = "--plugin"; or for path in $database_theme_path
-    set list $list $path
+  set -l plugins_paths $OMF_PATH/pkg/*
+  set -l themes_paths $OMF_PATH/themes/*
+
+  if set -q show_plugins
+    for path in $plugins_paths
+      contains $path $builtin_packages; or command basename $path
+    end
   end
 
-  __omf.packages.basename $list
-end
-
-function __omf.packages.list.installed -a type
-  set -l list
-  set -l installed_package_path $OMF_PATH/pkg/*
-  set -l installed_theme_path $OMF_PATH/themes/*
-
-  test "$type" = "--theme"; or for path in $installed_package_path
-    contains $path $builtin_package_path; or set list $list $path
-  end
-
-  test "$type" = "--plugin"; or for path in $installed_theme_path
-    set list $list $path
-  end
-
-  __omf.packages.basename $list
-end
-
-function omf.packages.list
-  set -l type_index (begin
-    contains -i -- --theme $argv
-    contains -i -- -t $argv
-    contains -i -- --plugin $argv
-    contains -i -- -p $argv
-  end)
-
-  set -l option_index (begin
-    contains -i -- --available $argv
-    contains -i -- -a $argv
-    contains -i -- --installed $argv
-    contains -i -- -i $argv
-    contains -i -- --database $argv
-    contains -i -- -d $argv
-  end)
-
-  set -l option $argv[$option_index]
-  set -l type $argv[$type_index]
-
-  switch "$option"
-  case "-a" "--available"
-    __omf.packages.list.available $type
-  case "-d" "--database"
-    __omf.packages.list.database $type
-  case "-i" "--installed"
-    __omf.packages.list.installed $type
-  case "*"
-    __omf.packages.list.installed $type
+  if set -q show_themes
+    for path in $themes_paths
+      command basename $path
+    end
   end
 end

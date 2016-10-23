@@ -38,8 +38,7 @@ determines what version "(omf::em)"omf update"(omf::off)" will upgrade to.
 Get information about what packages do.
 
 "(omf::dim)"Usage:"(omf::off)"
-  omf describe         Get information from all available packages
-  omf describe "(omf::em)"<name>"(omf::off)"  Get information from package by name
+  omf describe "(omf::em)"<name>"(omf::off)"  Show information about a package
 
 "(omf::dim)"Examples:"(omf::off)"
   omf describe
@@ -123,18 +122,6 @@ Search for a package or theme.
   omf search vi
 "
 
-    case "s" "submit"
-      echo "\
-Submit a package to the registry.
-
-"(omf::dim)"Usage:"(omf::off)"
-  omf submit ("(omf::dim)"pkg"(omf::off)" | "(omf::dim)"theme"(omf::off)") "(omf::em)"<url>"(omf::off)"  Submit a package or theme to the registry
-
-"(omf::dim)"Examples:"(omf::off)"
-  omf submit pkg https://github.com/oh-my-fish/plugin-mypkg
-  omf submit theme https://github.com/oh-my-fish/plugin-mythemes
-"
-
     case "t" "theme"
       echo "\
 Install and list themes.
@@ -177,8 +164,7 @@ Update Oh My Fish.
   "(omf::em)"u"(omf::off)"pdate    Update Oh My Fish.
   "(omf::em)"c"(omf::off)"d        Change directory to plugin/theme directory.
   "(omf::em)"n"(omf::off)"ew       Create a new package from a template.
-  "(omf::em)"search"(omf::off)"    Search for a package or theme.
-  "(omf::em)"s"(omf::off)"ubmit    Submit a package to the registry.
+  "(omf::em)"s"(omf::off)"earch    Search for a package or theme.
   "(omf::em)"destroy"(omf::off)"   Uninstall Oh My Fish.
   "(omf::em)"doctor"(omf::off)"    Troubleshoot Oh My Fish.
   "(omf::em)"help"(omf::off)"      Shows help about a specific action.

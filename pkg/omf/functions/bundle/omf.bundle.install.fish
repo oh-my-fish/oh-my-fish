@@ -4,7 +4,7 @@ function omf.bundle.install
     or set bundle $OMF_CONFIG/bundle
 
   if test -f $bundle
-    set packages (omf.packages.list --installed)
+    set packages (omf.packages.list)
     set bundle_contents (cat $bundle | sort -u)
 
     for record in $bundle_contents

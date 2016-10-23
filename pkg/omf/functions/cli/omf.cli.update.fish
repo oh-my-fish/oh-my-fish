@@ -8,7 +8,7 @@ function omf.cli.update
       and set -e packages[$index]
       or set -e update_core
   else
-    set packages (omf.packages.list --installed)
+    set packages (omf.packages.list)
   end
 
   if set -q update_core
@@ -26,6 +26,9 @@ function omf.cli.update
       echo "Please open a new issue here → "(omf::em)"github.com/oh-my-fish/oh-my-fish/issues"(omf::off)
     end
   end
+
+  omf.db.update
+    or return 1
 
   for package in $packages
     omf.packages.update $package

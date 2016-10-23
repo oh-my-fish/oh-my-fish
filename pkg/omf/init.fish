@@ -23,4 +23,4 @@ function omf::off
   set_color normal ^ /dev/null
 end
 
-autoload $path/functions/{compat,core,packages,themes,bundle,util,repo,cli,search}
+autoload $path/functions/{compat,core,db,packages,themes,bundle,util,repo,cli,search}
