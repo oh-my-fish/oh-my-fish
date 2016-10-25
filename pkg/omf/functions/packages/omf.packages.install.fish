@@ -43,7 +43,7 @@ function omf.packages.install -a name_or_url
   end
 
   omf.bundle.install $install_dir/bundle
-  omf.bundle.add $name_or_url
+  omf.bundle.add package $name_or_url
 
   # Run the install hook.
   if not omf.packages.run_hook $install_dir install

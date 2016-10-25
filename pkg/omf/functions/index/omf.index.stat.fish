@@ -30,8 +30,8 @@ function omf.index.stat -a name -d 'Get package properties'
   command awk '
     BEGIN {
       FS = "[ \t]*=[ \t]*";
-      for (i = 1; i < ARGC; i++) {
-        properties[i] = ARGV[i];
+      for (i = 2; i < ARGC; i++) {
+        properties[i - 1] = ARGV[i];
         delete ARGV[i];
         count++;
       }
@@ -48,5 +48,5 @@ function omf.index.stat -a name -d 'Get package properties'
         print values[i];
       }
     }
-  ' $properties < $package_file
+  ' - $properties < $package_file
 end
