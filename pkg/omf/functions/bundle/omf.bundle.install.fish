@@ -20,12 +20,12 @@ function omf.bundle.install
 
       if not contains $name $packages
         omf.packages.install $name_or_url;
-          and set installed
+          or set error
       end
     end
 
     sort -u $bundle -o $bundle
   end
 
-  set -q installed
+  not set -q error
 end
