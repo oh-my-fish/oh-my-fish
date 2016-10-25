@@ -1,0 +1,77 @@
+function omf.index.query -d 'Query packages in the index'
+  set -q XDG_CACHE_HOME
+    and set -l index_path "$XDG_CACHE_HOME/omf"
+    or set -l index_path "$HOME/.cache/omf"
+
+  set -lx q_type any
+  set -lx q_name ''
+  set -lx q_text ''
+
+  # Parse search terms.
+  for arg in $argv
+    switch "$arg"
+      case 'type:a*'
+        set q_type any
+      case 'type:p*'
+        set q_type package
+      case 'type:t*'
+        set q_type theme
+      case 'name:?*'
+        set -l IFS ':'
+        echo "$arg" | read dummy q_name
+      case 'text:?*'
+        set -l IFS ':'
+        echo "$arg" | read dummy q_text
+      case '*'
+        echo "Invalid search term: '$arg'" >&2
+        return 1
+    end
+  end
+
+  # Determine what files to search against based on type.
+  switch $q_type
+    case any
+      set packages $index_path/*/{packages,themes}/*
+    case package
+      set packages $index_path/*/packages/*
+    case theme
+      set packages $index_path/*/themes/*
+  end
+
+  # Perform a text search if any textual terms were given.
+  if test -n "$q_name" -o -n "$q_text"
+    set results (command awk '
+      BEGIN {
+        FS = "[ \t]*=[ \t]*";
+        q_name = tolower(ENVIRON["q_name"]);
+        q_text = tolower(ENVIRON["q_text"]);
+      }
+      FNR == 1 {
+        RSTART = 0;
+        package = parts[split(FILENAME, parts, "/")];
+        if ((q_name && match(package, q_name)) || (q_text && match(package, q_text))) {
+          print package;
+        }
+      }
+      !RSTART && $1 == "description" {
+        if (q_text && match(tolower($2), q_text)) {
+          print package;
+        }
+      }
+    ' $packages)
+  else
+    # No text terms, just list all package names of the given type.
+    set results (for package in $packages
+      command basename $package
+    end)
+  end
+
+  if not set -q results[1]
+    return 1
+  end
+
+  # Sort results alphabetically.
+  for result in $results
+    echo $result
+  end | command sort -d
+end

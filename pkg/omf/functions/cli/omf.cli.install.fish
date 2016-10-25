@@ -1,7 +1,7 @@
 function omf.cli.install
   set fail_count 0
 
-  omf.db.update
+  omf.index.update
     or return 1
 
   switch (count $argv)

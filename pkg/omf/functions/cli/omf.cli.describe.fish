@@ -1,5 +1,5 @@
 function omf.cli.describe -a package -d 'Show information about a package'
-  if set -l props (omf.db.info $package description repository)
+  if set -l props (omf.index.stat $package description repository)
     echo "Package: $package"
     echo "Description: $props[1]"
     echo "Repository: $props[2]"

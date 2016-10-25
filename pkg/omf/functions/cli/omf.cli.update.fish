@@ -27,7 +27,7 @@ function omf.cli.update
     end
   end
 
-  omf.db.update
+  omf.index.update
     or return 1
 
   for package in $packages

@@ -4,8 +4,8 @@ function omf.cli.themes.list
   set -l highlight_current s/"$regex_current"/"\1"(omf::em)"\2"(omf::off)"\3"/g
 
   echo (omf::under)"Installed:"(omf::off)
-  omf.packages.list --installed --theme | column | sed -E "$highlight_current"
+  omf.packages.list --theme | column | sed -E "$highlight_current"
   echo
   echo (omf::under)"Available:"(omf::off)
-  omf.packages.list --available --theme | column
+  omf.index.query type:theme | column
 end

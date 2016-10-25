@@ -11,14 +11,14 @@ for subcommand in "r rm remove" "c cd" "u update"
   complete -c omf -f -n "__fish_seen_subcommand_from $subcommand" -a "$installed_plugins" -d plugin
 end
 
-set -l available_themes (omf.db.query type:theme)
-set -l available_plugins (omf.db.query type:plugin)
+set -l available_themes (omf.index.query type:theme)
+set -l available_plugins (omf.index.query type:plugin)
 for subcommand in "i install" "d describe"
   complete -c omf -f -n "__fish_seen_subcommand_from $subcommand" -a "$available_themes" -d theme
   complete -c omf -f -n "__fish_seen_subcommand_from $subcommand" -a "$available_plugins" -d plugin
 end
 
-complete -c omf -f -n "__fish_seen_subcommand_from d desc describe" -a (printf "%s " (omf.db.query type:plugin))
+complete -c omf -f -n "__fish_seen_subcommand_from d desc describe" -a (printf "%s " (omf.index.query type:plugin))
 complete -c omf -f -n "__fish_seen_subcommand_from t theme"         -a "$installed_themes"
 complete -c omf -f -n "__fish_seen_subcommand_from channel"         -a "stable dev"
 complete -c omf -f -n "__fish_seen_subcommand_from help"            -a "install theme remove update list describe cd new destroy doctor"

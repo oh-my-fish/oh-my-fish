@@ -11,7 +11,7 @@ function __omf.packages.install.error.already
 end
 
 function omf.packages.install -a name_or_url
-  if set url (omf.db.info $name_or_url repository)
+  if set url (omf.index.stat $name_or_url repository)
     set name $name_or_url
   else
     set name (omf.packages.name $name_or_url)
