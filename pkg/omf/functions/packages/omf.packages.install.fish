@@ -35,6 +35,9 @@ function omf.packages.install -a name_or_url
 
   # Check if the package is a theme. If it is, move it to the themes directory.
   if test -f $install_dir/fish_prompt.fish
+    test -d $OMF_PATH/themes
+      or command mkdir -p $OMF_PATH/themes
+
     command mv $install_dir $OMF_PATH/themes/$name
     set install_dir $OMF_PATH/themes/$name
   end
