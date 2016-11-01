@@ -394,7 +394,7 @@ function backup_file -a file_path
   say "Existent $file found at $path"
   say "↳ Moving to $backup_file"
 
-  if not command mv "$file_path" $backup_file 2>/dev/null
+  if not command cp "$file_path" $backup_file 2>/dev/null
     abort "Could not backup $file_path"
   end
 
