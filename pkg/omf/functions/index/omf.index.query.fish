@@ -30,12 +30,17 @@ function omf.index.query -d 'Query packages in the index'
 
   # Determine what files to search against based on type.
   switch $q_type
-    case any
-      set packages $index_path/*/{packages,themes}/*
     case package
       set packages $index_path/*/packages/*
     case theme
       set packages $index_path/*/themes/*
+    case '*'
+      set packages $index_path/*/{packages,themes}/*
+  end
+
+  # If there are no packages, there is nothing to search.
+  if not set -q packages[1]
+    return 1
   end
 
   # Perform a text search if any textual terms were given.
