@@ -4,10 +4,10 @@ function omf.core.update
     # If the channel isn't explicitly set and we are currently tracking a branch instead of a version, the user probably
     # upgraded from an old version. Let them know that we will start updating to stable versions.
     if begin; not test -f $OMF_CONFIG/channel; and command git -C "$OMF_PATH" symbolic-ref -q HEAD > /dev/null; end
-      set_color $fish_color_quote ^/dev/null; or set_color yellow --bold
+      set_color yellow --bold ^ /dev/null
       echo ">> You have been switched to the stable release channel of Oh My Fish."
       echo ">> To switch back to the development channel, run `omf channel dev`."
-      set_color normal
+      set_color normal ^ /dev/null
     end
 
     # Determine the remote to fetch from.
