@@ -41,7 +41,7 @@ Oh My Fishには新しいテーマやパッケージをフェッチやインス�
 
 - 引数なしで実行した場合、コア(oh-my-fish)と全てのインストール済みのパッケージがアップデートされます。
 - コアのみをアップデートしたい場合、`%omf update omf`を実行してください。
-- 特定のパッケージを選んでアップデートする場合、アップデートしたいパッケージの名前を続けてください。
+- 特定のパッケージを選んでアップデートする場合、アップデートしたいパッケージの名前を列挙してください。
  コアもアップデートしたい場合は、リストの中に”omf”を加えてください。
 
 #### `omf install` _`[<name>|<url>]`_
@@ -106,10 +106,6 @@ Oh My Fishインストーラはスタートアップコードをあなたのfish
 
 ### Startup
 
-Every time you open a new shell, the startup code initializes Oh My Fish installation path and the _config_ path (`~/.config/omf` by default), sourcing the [`init.fish`](init.fish) script afterwards, which autoloads packages, themes and your custom init files.
-
-For more information check the [FAQ](FAQ.md#what-does-oh-my-fish-do-exactly).
-
 あなたが新しいシェルを開く度に、スタートアップコードがインストレーションパスとあなたのパッケージやテーマ、cutom init filesを自動でローディングしたあと[`init.fish`](init.fish) スクリプトを読みだした _config_ パス (`~/.config/omf` by default)を初期化します。
 
 より詳しい情報はFAQを確認してください。
@@ -137,7 +133,7 @@ Oh My Fishがプラグインをローディングする *前* にスタートア
 
 パッケージやテーマをインストールしたり、取り除いたりする度に、`bundle`ファイルはアップデートされます。
 変更を満足にするために、手動で編集したり`omf install`を行ったりできます。
-パッケージやテーマがbundleに自動的にインストールされた場合、bundleから取り除かれたパッケージやテーマはユーザインストレーションからは取り除かれない。
+パッケージやテーマがbundleに自動的にインストールされた場合、bundleから取り除かれたパッケージやテーマはユーザインストレーションからは取り除かれません。
 
 ## Creating Packages
 

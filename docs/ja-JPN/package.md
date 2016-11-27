@@ -47,7 +47,7 @@ end
 あなたのパッケージの中のどの機能もそれらが記述されたファイル内で宣言されていないといけません。
 オンデマンドで機能をロードしたり、使われない機能がローディングされるのを避けたりするオートローディングのメカニスムによって必須となります。
 
-fishはプライベートスコープを持たないということを覚えておいてください。なので、もしあなたのパッケージを機能毎に分割する必要がある場合は次のようにプライベートスコープをプレフィックシングすることを考えてみてください: `__hello_world.my_extra_function`, to avoid both name clashes and すでに存在する値への再定義(global namespace pollution).
+fishはプライベートスコープを持たないということを覚えておいてください。なので、もしあなたのパッケージを機能毎に分割する必要がある場合は次のようにプライベートスコープをプレフィックシングすることを考えてみてください: `__hello_world.my_extra_function`, すでに存在する値への再定義(global namespace pollution)を避けるためです.
 
 # イベント
 
@@ -55,7 +55,7 @@ fishはプライベートスコープを持たないということを覚えて�
 
 ## 初期化
 
-もしもあなたのパッケージのロード中にIf you want to be [notified](http://fishshell.com/docs/current/commands.html#emit), あなたの`hello_world.fish`の中に以下のファンクションを宣言してください:
+もしもあなたのパッケージがロードされる際に [通知を受け取りたいのなら](http://fishshell.com/docs/current/commands.html#emit), `hello_world.fish`の中に以下のファンクションを宣言してください:
 
 ```fish
 function init -a path --on-event init_hello_world
@@ -63,11 +63,11 @@ function init -a path --on-event init_hello_world
 end
 ```
 
-環境やロードリソース、オートロード機能などを修正するにはこのイベントを使ってください。もしあなたのパッケージがいかなる機能も出力しなかった場合は, まだパッケージに機能性を加えるためのこのイベントを使うことができます。
+環境やロードリソース、オートロード機能などを修正するにはこのイベントを使ってください。もしあなたのパッケージがいかなる機能も出力しなかったとしても, まだパッケージに機能性を加えるためのこのイベントを使うことができます。
 
 ## アンインストール
 
-Oh My Fish`omf remove <pkg>`を介してパッケージが取り除かれる前に、`uninstall_<pkg>`イベントを行います。任意でカスタムリソースを整理するためのイベントとして用いることができます。
+Oh My Fish`omf remove <pkg>`を介してパッケージが取り除かれる前に、`uninstall_<pkg>`イベントが起こります。任意でカスタムリソースを整理するためのイベントとして用いることができます。
 
 ```fish
 function uninstall --on-event uninstall_hello_world
@@ -79,7 +79,7 @@ end
 
 Oh My Fishでは`$OMF_PATH/db/`以下に公開パッケージのレジストリがあります。
 
-加える必要があるレジストリにあなたのパッケージを加えるには:
+以下のコマンドでレジストリにパッケージを追加できます:
 
 ```fish
 # For packages:
