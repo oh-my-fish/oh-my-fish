@@ -52,7 +52,6 @@
 - [shellder](#shellder)
 - [simple-ass-prompt](#simple-ass-prompt)
 - [simplevi](#simplevi)
-- [slavic-cat](#slavic-cat)
 - [sushi](#sushi)
 - [syl20bnr](#syl20bnr)
 - [taktoa](#taktoa)
@@ -555,7 +554,7 @@ set -U budspencer_nobell
 
 Give me feedback if you ...
 * ... have ideas how I could improve budspencer.
-* ... have problems with budspencer.
+* ... have problems with budspencer. 
 * ... have questions concerning budspencer.
 
 [THEMES-NAMESPACE-budspencer-font]: https://github.com/Lokaltog/powerline-fonts
@@ -908,7 +907,7 @@ Just type `wt <title>`.
 
 Give me feedback if you ...
 * ... have ideas how I could improve dangerous.
-* ... have problems with dangerous.
+* ... have problems with dangerous. 
 * ... have questions concerning dangerous.
 
 [THEMES-NAMESPACE-dangerous-ranger]: http://ranger.nongnu.org/
@@ -1346,7 +1345,7 @@ theme](http://jacaetevha.github.io/oh-my-fish/screenshot.png)
 * Left-hand prompt:
 ```
     <user> at <host> in <abbreviated path> <total size of files in dir> (<current Git branch>)
-    ↪
+    ↪ 
 ```
 * Right-hand prompt:
 ```
@@ -1598,7 +1597,7 @@ This theme is based loosely on [agnoster](https://gist.github.com/agnoster/37128
 * Full path of current working directory
 * Show the Git branch and dirty state (if applicable)
 * Show **User@Hostname** if user is not the default user. Set the following two lines in your config.fish to turn on this feature:
-
+    
     ```fish
     set -g theme display_user yes
     set -g default_user your_default_username
@@ -1981,30 +1980,6 @@ Screenshots:
 ![insert mode](https://raw.github.com/syl20bnr/fish_prompt-simplevi/master/prompt_fish-simplevi-i.png)
 
 
-# slavic-cat
-
-> ☭ Slavic Cat (^.\_.^)ﾉ彡ミ theme for Oh My Fish
-
-#### Screenshot
-
-![Screenshot for Slavic-cat Theme](https://github.com/yangwao/omf-theme-slavic-cat/blob/master/screenshot.png?raw=true)
-
-#### Install
-
-```fish
-$ omf install slavic-cat
-```
-
-#### Features
-
-* Minimal Prompt
-* Current short version pwd
-* Display current branch name
-* Git project dirty status indicator *meow (R,C,A,U,M,?) meow*
-* Fish shell vi mode indicator
-* Next line prompt
-* Two unicodes included!
-
 
 # sushi
 <div align="center">
@@ -2350,3 +2325,5 @@ User, host, abbreviated path, and git branch info
 Time and exit code
 
 Enjoy!
+
+
