@@ -4,23 +4,23 @@ set -g OMF_INVALID_ARG   3
 set -g OMF_UNKNOWN_ERR   4
 
 function omf::em
-  set_color $fish_color_match ^/dev/null; or set_color cyan
+  set_color cyan ^ /dev/null
 end
 
 function omf::dim
-  set_color $fish_color_autosuggestion ^/dev/null; or set_color 555
+  set_color 555 ^ /dev/null
 end
 
 function omf::err
-  set_color $fish_color_error ^/dev/null; or set_color red --bold
+  set_color red --bold ^ /dev/null
 end
 
 function omf::under
-  set_color --underline
+  set_color --underline ^ /dev/null
 end
 
 function omf::off
-  set_color normal
+  set_color normal ^ /dev/null
 end
 
 autoload $path/functions/{compat,core,packages,themes,bundle,util,repo,cli,search}
