@@ -1709,7 +1709,7 @@ This is similar to godfat's gitstatus theme, but mainly includes red, white, cya
 #### Screenshot
 
 <p align="center">
-<img width="572" src="screenshot.png">
+<img width="572" src="https://github.com/sindresorhus/pure/blob/master/screenshot.png?raw=true">
 </p>
 
 #### Install
