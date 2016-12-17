@@ -3,14 +3,14 @@ function autoload
   case '-e' '--erase'
     test (count $argv) -ge 2
       and __autoload_erase $argv[2..-1]
-      or echo "usage: autoload $argv[1] <path>..." 1>&2
+      or echo "usage: autoload $argv[1] <path>..." >&2
   case "-*" "--*"
     echo "autoload: invalid option $argv[1]"
     return 1
   case '*'
     test (count $argv) -ge 1
       and __autoload_insert $argv
-      or echo "usage: autoload <path>..." 1>&2
+      or echo "usage: autoload <path>..." >&2
   end
 end
 function __autoload_insert

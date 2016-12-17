@@ -4,7 +4,7 @@ function omf.update -a name
   end
 
   function __omf.update.error
-    echo (omf::err)"Could not update $argv."(omf::off) 1^&2
+    echo (omf::err)"Could not update $argv."(omf::off) >&2
   end
 
   if test \( -e $OMF_PATH/themes/$name \) -o \( -e $OMF_CONFIG/themes/$name \)

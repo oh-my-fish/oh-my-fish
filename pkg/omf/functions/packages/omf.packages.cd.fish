@@ -17,6 +17,6 @@ function omf.packages.cd -a name -d "Change the current working directory to plu
     end
   end
 
-  echo (omf::err)"$name is not a valid package/theme name"(omf::off) 1^&2
+  echo (omf::err)"$name is not a valid package/theme name"(omf::off) >&2
   return $OMF_INVALID_ARG
 end

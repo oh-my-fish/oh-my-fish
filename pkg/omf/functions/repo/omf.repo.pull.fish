@@ -1,7 +1,7 @@
 function omf.repo.pull
 
   if test (count $argv) -eq 0
-    echo (omf::err)"omf.repo.pull takes a repository path as an argument."(omf::off) 1>&2
+    echo (omf::err)"omf.repo.pull takes a repository path as an argument."(omf::off) >&2
     return $OMF_MISSING_ARG
   end
 

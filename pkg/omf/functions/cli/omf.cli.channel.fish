@@ -7,7 +7,7 @@ function omf.cli.channel
       omf.channel.set $argv
 
     case '*'
-      echo (omf::err)"Invalid number of arguments"(omf::off) 1^&2
+      echo (omf::err)"Invalid number of arguments"(omf::off) >&2
       omf help channel
       return $OMF_INVALID_ARG
   end

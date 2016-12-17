@@ -3,8 +3,8 @@ function omf.cli.submit
   case 2
     omf.packages.submit $argv
   case "*"
-    echo (omf::err)"Argument missing"(omf::off) 1^&2
-    echo "Usage: $_ "(omf::em)"submit"(omf::off)" "(omf::em)"pkg|themes"(omf::off)"/<name> <url>" 1^&2
+    echo (omf::err)"Argument missing"(omf::off) >&2
+    echo "Usage: $_ "(omf::em)"submit"(omf::off)" "(omf::em)"pkg|themes"(omf::off)"/<name> <url>" >&2
     return $OMF_MISSING_ARG
   end
 end

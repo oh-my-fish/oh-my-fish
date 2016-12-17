@@ -3,11 +3,11 @@ function __omf.packages.install.success
 end
 
 function __omf.packages.install.error
-  echo (omf::err)"Could not install $argv."(omf::off) 1^&2
+  echo (omf::err)"Could not install $argv."(omf::off) >&2
 end
 
 function __omf.packages.install.error.already
-  echo (omf::err)"Error: $argv already installed."(omf::off) 1^&2
+  echo (omf::err)"Error: $argv already installed."(omf::off) >&2
 end
 
 function omf.packages.install -a name_or_url

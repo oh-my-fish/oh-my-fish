@@ -34,7 +34,7 @@ function __omf.packages.new.from_template -a path github user name
       end)$target
     end
   end
-  popd >/dev/null ^&2
+  popd >/dev/null ^&1
 end
 
 
@@ -45,12 +45,12 @@ function omf.packages.new -a option name
     case "t" "th" "the" "thm" "theme" "themes"
       set option "themes"
     case "*"
-      echo (omf::err)"$option is not a valid option."(omf::off) 1^&2
+      echo (omf::err)"$option is not a valid option."(omf::off) >&2
       return $OMF_INVALID_ARG
   end
 
   if not omf.packages.valid_name "$name"
-    echo (omf::err)"$name is not a valid package/theme name"(omf::off) 1^&2
+    echo (omf::err)"$name is not a valid package/theme name"(omf::off) >&2
     return $OMF_INVALID_ARG
   end
 
@@ -72,7 +72,7 @@ function omf.packages.new -a option name
       omf.theme.set $name
     end
   else
-    echo (omf::err)"\$OMF_CONFIG and/or \$OMF_PATH undefined."(omf::off) 1^&2
+    echo (omf::err)"\$OMF_CONFIG and/or \$OMF_PATH undefined."(omf::off) >&2
     exit $OMF_UNKNOWN_ERR
   end
 end

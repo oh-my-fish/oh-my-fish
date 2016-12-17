@@ -1,7 +1,7 @@
 function omf.channel.set -a name
   # If an argument is specified, set the update channel.
   if begin; test -z "$name"; or not contains -- $name stable dev; end
-    echo (omf::err)"'$name' is not a valid channel."(omf::off) 1^&2
+    echo (omf::err)"'$name' is not a valid channel."(omf::off) >&2
     return 1
   end
 
