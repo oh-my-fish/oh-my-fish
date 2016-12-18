@@ -74,7 +74,7 @@ function omf -d "Oh My Fish"
       omf.cli.version $arguments
 
     case "*"
-      echo (omf::err)"$argv[1] option not recognized"(omf::off) 1^&2
+      echo (omf::err)"$argv[1] option not recognized"(omf::off) >&2
       return $OMF_UNKNOWN_OPT
   end
 end

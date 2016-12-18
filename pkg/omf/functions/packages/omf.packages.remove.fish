@@ -1,12 +1,12 @@
 function omf.packages.remove -a pkg
 
   if not omf.packages.valid_name $pkg
-    echo (omf::err)"$pkg is not a valid package/theme name"(omf::off) 1>&2
+    echo (omf::err)"$pkg is not a valid package/theme name"(omf::off) >&2
     return $OMF_INVALID_ARG
   end
 
   if test $pkg = "omf" -o $pkg = "default"
-    echo (omf::err)"You can't remove `$pkg`"(omf::off) 1>&2
+    echo (omf::err)"You can't remove `$pkg`"(omf::off) >&2
     return $OMF_INVALID_ARG
   end
 

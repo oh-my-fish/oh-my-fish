@@ -1,5 +1,6 @@
 function omf.cli.install
   set fail_count 0
+  echo hi
 
   switch (count $argv)
   case 0

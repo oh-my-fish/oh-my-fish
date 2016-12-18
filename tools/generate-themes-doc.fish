@@ -46,7 +46,7 @@ for theme in (command find $project_dir/db/themes/ -type f|sort)
     echo "Fetching readme for $name"
     __write_theme_readme $name $raw_content $readme
   else
-    echo "FAILED: No readme for $name" 1>&2
+    echo "FAILED: No readme for $name" >&2
     echo "See $url for details" >> $temp_theme_contents
   end
 end

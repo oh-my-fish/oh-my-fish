@@ -10,27 +10,27 @@ function omf.packages.submit -a name url -d "Submit a package to the registry"
     case pkg
     case themes
     case "*"
-      echo (omf::err)"Missing directory name: pkg/ or themes/"(omf::off) 1^&2
+      echo (omf::err)"Missing directory name: pkg/ or themes/"(omf::off) >&2
       return $OMF_INVALID_ARG
   end
 
   set -l pkg (basename $name)
   if not omf.packages.valid_name $pkg
-    echo (omf::err)"$pkg is not a valid package/theme name"(omf::off) 1^&2
+    echo (omf::err)"$pkg is not a valid package/theme name"(omf::off) >&2
     return $OMF_INVALID_ARG
   end
 
   if test -z "$url"
-    echo (omf::em)"URL not specified, looking for a remote origin..."(omf::off) 1^&2
+    echo (omf::em)"URL not specified, looking for a remote origin..."(omf::off) >&2
     set url (git config --get remote.origin.url)
     if test -z "$url"
-      echo (omf::em)"$pkg remote URL not found"(omf::off) 1^&2
-      echo "Try: git remote add <URL> or see Docs#Submitting" 1^&2
+      echo (omf::em)"$pkg remote URL not found"(omf::off) >&2
+      echo "Try: git remote add <URL> or see Docs#Submitting" >&2
       return $OMF_INVALID_ARG
     end
   else
     if test -e "$OMF_PATH/db/$name"
-      echo (omf::err)"Error: $pkg already exists in the registry!"(omf::off) 1^&2
+      echo (omf::err)"Error: $pkg already exists in the registry!"(omf::off) >&2
       return $OMF_INVALID_ARG
     else
       echo "$url" > $OMF_PATH/db/$name
