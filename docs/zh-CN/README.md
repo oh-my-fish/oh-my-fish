@@ -10,6 +10,7 @@ Oh My Fish 提供核心基础设施的配置，允许每个人可以轻松安装
 > Also in&nbsp;
 > <a href="../../README.md">🇺🇸</a>
 > <a href="../ru-RU/README.md">🇷🇺</a>
+> <a href="../uk-UA/README.md">🇺🇦</a>
 
 <br>
 
