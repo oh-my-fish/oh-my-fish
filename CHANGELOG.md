@@ -2,6 +2,44 @@
 Important changes to Oh My Fish are recorded here for each release.
 
 
+## [4] - 2017-01-04
+### Added
+- The Doctor (`omf doctor`) now prints some additional info for ease in troubleshooting common problems. [#456]
+- New script for generating the `AUTHORS` file automatically from Git history. [#426]
+- Translate documentation into Ukrainian. [#464]
+
+### Bugs fixed
+- Fix common issues we've had with platform line endings and Git `autocrlf` and other line-ending settings. [#217] [#379] [#444] [#458]
+- Compatibility fixes for Fish 2.4.0. [#459]
+- If there is an existing theme set up, do not replace it when installing Oh My Fish for the first time. [#274] [#435]
+- Do not use Fish color variables for the default theme. This helps ensure the theme looks correct under any version of Fish. [#440] [#446]
+- Documentation fixes. [#418] [#457]
+
+### New plugins
+- [bak](https://github.com/oh-my-fish/plugin-bak)
+- [dpaste](https://github.com/oh-my-fish/plugin-dpaste)
+- [marlin](https://github.com/oh-my-fish/marlin)
+- [pj](https://github.com/oh-my-fish/plugin-pj)
+- [pyenv](https://github.com/oh-my-fish/plugin-pyenv)
+
+### New themes
+- [kawasaki](https://github.com/hastinbe/theme-kawasaki)
+- [slavic-cat](https://github.com/yangwao/omf-theme-slavic-cat)
+
+### Contributors
+Thanks to the people who contributed to this release.
+
+- [Andrew Komarnitskyi](ticapac@gmail.com)
+- [Beau Hastings](beausy@gmail.com)
+- [Derek Willian Stavis](dekestavis@gmail.com)
+- [Espen Henriksen](esphen@users.noreply.github.com)
+- [hak8or](hak8or@users.noreply.github.com)
+- [Justin Hileman](github@0x7f.us)
+- [Matej Nemček](ybdaba@gmail.com)
+- [Roman Inflianskas](rominf@users.noreply.github.com)
+- [Stephen M. Coakley](me@stephencoakley.com)
+
+
 ## [3] - 2016-10-20
 - Key bindings are now fully supported in user config and in plugins. Bindings should be placed in a `key_bindings.fish` script and will be loaded automatically. [#368] [#355] [#334]
 - Init process completely rewritten to improve performance and correctness. Using `on_{plugin}` events for plugin initialization is now deprecated and will eventually be removed. `init.fish` scripts will be sourced directly and are passed the variables `$path`, `$package`, and `$bundle`. [#343] [#335]
@@ -94,6 +132,8 @@ Important changes to Oh My Fish are recorded here for each release.
 
 [2]: https://github.com/oh-my-fish/oh-my-fish/releases/tag/v2
 [3]: https://github.com/oh-my-fish/oh-my-fish/releases/tag/v3
+[4]: https://github.com/oh-my-fish/oh-my-fish/releases/tag/v4
+[#217]: https://github.com/oh-my-fish/oh-my-fish/pull/217
 [#235]: https://github.com/oh-my-fish/oh-my-fish/pull/235
 [#238]: https://github.com/oh-my-fish/oh-my-fish/pull/238
 [#242]: https://github.com/oh-my-fish/oh-my-fish/pull/242
@@ -101,6 +141,7 @@ Important changes to Oh My Fish are recorded here for each release.
 [#250]: https://github.com/oh-my-fish/oh-my-fish/pull/250
 [#266]: https://github.com/oh-my-fish/oh-my-fish/pull/266
 [#268]: https://github.com/oh-my-fish/oh-my-fish/pull/268
+[#274]: https://github.com/oh-my-fish/oh-my-fish/pull/274
 [#280]: https://github.com/oh-my-fish/oh-my-fish/pull/280
 [#285]: https://github.com/oh-my-fish/oh-my-fish/pull/285
 [#286]: https://github.com/oh-my-fish/oh-my-fish/pull/286
@@ -130,9 +171,21 @@ Important changes to Oh My Fish are recorded here for each release.
 [#371]: https://github.com/oh-my-fish/oh-my-fish/pull/371
 [#373]: https://github.com/oh-my-fish/oh-my-fish/pull/373
 [#378]: https://github.com/oh-my-fish/oh-my-fish/pull/378
+[#379]: https://github.com/oh-my-fish/oh-my-fish/pull/379
 [#380]: https://github.com/oh-my-fish/oh-my-fish/pull/380
 [#381]: https://github.com/oh-my-fish/oh-my-fish/pull/381
 [#385]: https://github.com/oh-my-fish/oh-my-fish/pull/385
 [#394]: https://github.com/oh-my-fish/oh-my-fish/pull/394
 [#399]: https://github.com/oh-my-fish/oh-my-fish/pull/399
 [#403]: https://github.com/oh-my-fish/oh-my-fish/pull/403
+[#418]: https://github.com/oh-my-fish/oh-my-fish/pull/418
+[#426]: https://github.com/oh-my-fish/oh-my-fish/pull/426
+[#435]: https://github.com/oh-my-fish/oh-my-fish/pull/435
+[#440]: https://github.com/oh-my-fish/oh-my-fish/pull/440
+[#444]: https://github.com/oh-my-fish/oh-my-fish/pull/444
+[#446]: https://github.com/oh-my-fish/oh-my-fish/pull/446
+[#456]: https://github.com/oh-my-fish/oh-my-fish/pull/456
+[#457]: https://github.com/oh-my-fish/oh-my-fish/pull/457
+[#458]: https://github.com/oh-my-fish/oh-my-fish/pull/458
+[#459]: https://github.com/oh-my-fish/oh-my-fish/pull/459
+[#464]: https://github.com/oh-my-fish/oh-my-fish/pull/464
