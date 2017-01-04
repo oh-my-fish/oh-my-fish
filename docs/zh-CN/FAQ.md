@@ -6,6 +6,7 @@
 > Oh My Fish Documentation&nbsp;&bull;&nbsp;Also in
 > <a href="../en-US/FAQ.md">🇺🇸</a>
 > <a href="../ru-RU/FAQ.md">🇷🇺</a>
+> <a href="../uk-UA/FAQ.md">🇺🇦</a>
 
 <br>
 

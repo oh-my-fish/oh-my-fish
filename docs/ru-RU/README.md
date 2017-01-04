@@ -10,6 +10,7 @@ Oh My Fish обеспечивает базовую инфраструктуру,
 > Also in&nbsp;
 > <a href="../../README.md">🇺🇸</a>
 > <a href="../zh-CN/README.md">🇨🇳</a>
+> <a href="../uk-UA/README.md">🇺🇦</a>
 
 <br>
 
