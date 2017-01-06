@@ -96,6 +96,21 @@ Create a new package from a template.
   omf new theme mytheme
 "
 
+    case "repo" "repositories"
+      echo "\
+Manage package repositories.
+
+"(omf::dim)"Usage:"(omf::off)"
+  omf repositories [list]                      List installed repositories
+  omf repositories add "(omf::em)"<url>"(omf::off)" ["(omf::em)"<branch>"(omf::off)"]        Add a package repository
+  omf repositories rm|remove "(omf::em)"<url>"(omf::off)" ["(omf::em)"<branch>"(omf::off)"]  Remove a package repository
+
+"(omf::dim)"Examples:"(omf::off)"
+  omf repositories
+  omf repositories add https://github.com/vendor/fish-packages
+  omf repositories rm https://github.com/vendor/fish-packages master
+"
+
     case "r" "rm" "remove" "uninstall"
       echo "\
 Remove a theme or package.

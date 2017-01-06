@@ -61,6 +61,9 @@ function omf -d "Oh My Fish"
     case "u" "update"
       omf.cli.update $arguments
 
+    case "repo" "repositories"
+      omf.index.repositories $arguments
+
     case "channel"
       omf.cli.channel $arguments
 
