@@ -37,6 +37,7 @@ function omf.index.stat -a name -d 'Get package properties'
         count++;
       }
     }
+
     !/^#/ {
       for (i = 1; i <= count; i++) {
         if ($1 == properties[i]) {
@@ -44,6 +45,7 @@ function omf.index.stat -a name -d 'Get package properties'
         }
       }
     }
+
     END {
       for (i = 1; i <= count; i++) {
         print values[i];

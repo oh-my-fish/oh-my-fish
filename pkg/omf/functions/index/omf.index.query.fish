@@ -51,29 +51,38 @@ function omf.index.query -d 'Query packages in the index'
           print package;
         }
       }
+
       BEGIN {
         FS = "[ \t]*=[ \t]*";
         q_name = tolower(q_name);
         q_text = tolower(q_text);
       }
+
       FNR == 1 {
         flush();
-        name_matches = text_matches = 0;
+
+        name_matches = 0;
+        text_matches = 0;
         package = parts[split(FILENAME, parts, "/")];
 
         if (match(package, q_name)) {
           name_matches = 1;
         }
+
         if (match(package, q_text)) {
           text_matches = 1;
         }
       }
+
       !text_matches {
         if (match(tolower($2), q_text)) {
           text_matches = 1;
         }
       }
-      END { flush(); }
+
+      END {
+        flush();
+      }
     ' $packages)
   else
     # No text terms, just list all package names of the given type.
