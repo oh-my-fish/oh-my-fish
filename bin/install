@@ -489,7 +489,7 @@ end
 
 # Assert that all tools we need are available.
 function assert_cmds
-  set -l cmds basename cp cut date dirname fold head mkdir mv rm sed sort tar tr
+  set -l cmds awk basename cp cut date dirname fold head mkdir mv rm sed sort tar tr
 
   for cmd in $cmds
     type -f -q $cmd
