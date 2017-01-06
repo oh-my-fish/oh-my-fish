@@ -7,5 +7,5 @@ function omf.cli.themes.list
   omf.packages.list --theme | column | sed -E "$highlight_current"
   echo
   echo (omf::under)"Available:"(omf::off)
-  omf.index.query type:theme | column
+  omf.index.query type=theme | column
 end

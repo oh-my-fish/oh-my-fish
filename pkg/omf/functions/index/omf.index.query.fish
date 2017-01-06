@@ -10,17 +10,17 @@ function omf.index.query -d 'Query packages in the index'
   # Parse search terms.
   for arg in $argv
     switch "$arg"
-      case 'type:a*'
+      case 'type=a*'
         set q_type any
-      case 'type:p*'
+      case 'type=p*'
         set q_type package
-      case 'type:t*'
+      case 'type=t*'
         set q_type theme
-      case 'name:?*'
-        set -l IFS ':'
+      case 'name=?*'
+        set -l IFS '='
         echo "$arg" | read dummy q_name
-      case 'text:?*'
-        set -l IFS ':'
+      case 'text=?*'
+        set -l IFS '='
         echo "$arg" | read dummy q_text
       case '*'
         echo "Invalid search term: '$arg'" >&2
@@ -46,23 +46,34 @@ function omf.index.query -d 'Query packages in the index'
   # Perform a text search if any textual terms were given.
   if test -n "$q_name" -o -n "$q_text"
     set results (command awk '
+      function flush() {
+        if (package && name_matches && text_matches) {
+          print package;
+        }
+      }
       BEGIN {
         FS = "[ \t]*=[ \t]*";
         q_name = tolower(ENVIRON["q_name"]);
         q_text = tolower(ENVIRON["q_text"]);
       }
       FNR == 1 {
-        RSTART = 0;
+        flush();
+        name_matches = text_matches = 0;
         package = parts[split(FILENAME, parts, "/")];
-        if ((q_name && match(package, q_name)) || (q_text && match(package, q_text))) {
-          print package;
+
+        if (match(package, q_name)) {
+          name_matches = 1;
+        }
+        if (match(package, q_text)) {
+          text_matches = 1;
         }
       }
-      !RSTART && $1 == "description" {
-        if (q_text && match(tolower($2), q_text)) {
-          print package;
+      !text_matches {
+        if (match(tolower($2), q_text)) {
+          text_matches = 1;
         }
       }
+      END { flush(); }
     ' $packages)
   else
     # No text terms, just list all package names of the given type.

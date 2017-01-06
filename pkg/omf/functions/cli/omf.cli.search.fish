@@ -2,17 +2,17 @@ function omf.cli.search -d 'Searches all available packages'
   switch (count $argv);
     case 1;
       echo (omf::under)"Packages"(omf::off)
-      __omf.cli.search.output type:package text:$argv[1]
+      __omf.cli.search.output type=package text=$argv[1]
       echo
       echo (omf::under)"Themes"(omf::off)
-      __omf.cli.search.output type:theme text:$argv[1]
+      __omf.cli.search.output type=theme text=$argv[1]
 
     case 2;
       switch "$argv[1]"
         case "-pkg" "--package";
-          __omf.cli.search.output type:package text:$argv[2]
+          __omf.cli.search.output type=package text=$argv[2]
         case "-t" "--theme";
-          __omf.cli.search.output type:theme text:$argv[2]
+          __omf.cli.search.output type=theme text=$argv[2]
         case '*';
           omf.cli.help search
           return 1
