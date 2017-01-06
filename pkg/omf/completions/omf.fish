@@ -21,7 +21,8 @@ end
 complete -c omf -f -n "__fish_seen_subcommand_from d desc describe" -a (printf "%s " (omf.index.query type=plugin))
 complete -c omf -f -n "__fish_seen_subcommand_from t theme"         -a "$installed_themes"
 complete -c omf -f -n "__fish_seen_subcommand_from channel"         -a "stable dev"
-complete -c omf -f -n "__fish_seen_subcommand_from help"            -a "install theme remove update list describe cd new destroy doctor"
+complete -c omf -f -n "__fish_seen_subcommand_from repo repositories" -a "list add remove"
+complete -c omf -f -n "__fish_seen_subcommand_from help"            -a "install theme remove update list describe cd new destroy doctor repositories"
 
 complete -c omf -f -a list     -n "__fish_use_subcommand" -d "List local packages"
 complete -c omf -f -a describe -n "__fish_use_subcommand" -d "Get information about what packages do"
@@ -29,6 +30,7 @@ complete -c omf -f -a install  -n "__fish_use_subcommand" -d "Install one or mor
 complete -c omf -f -a theme    -n "__fish_use_subcommand" -d "List / Use themes"
 complete -c omf -f -a remove   -n "__fish_use_subcommand" -d "Remove a theme or package"
 complete -c omf -f -a update   -n "__fish_use_subcommand" -d "Update Oh My Fish"
+complete -c omf -f -a repositories -n "__fish_use_subcommand" -d "Manage package repositories"
 complete -c omf -f -a cd       -n "__fish_use_subcommand" -d "Change directory to plugin/theme directory"
 complete -c omf -f -a new      -n "__fish_use_subcommand" -d "Create a new package from a template"
 complete -c omf -f -a search   -n "__fish_use_subcommand" -d "Search the database for a theme, package or both"
