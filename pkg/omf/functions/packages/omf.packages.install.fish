@@ -40,10 +40,13 @@ function omf.packages.install -a name_or_url
 
     command mv $install_dir $OMF_PATH/themes/$name
     set install_dir $OMF_PATH/themes/$name
+
+    omf.bundle.add theme $name_or_url
+  else
+    omf.bundle.add package $name_or_url
   end
 
   omf.bundle.install $install_dir/bundle
-  omf.bundle.add package $name_or_url
 
   # Run the install hook.
   if not omf.packages.run_hook $install_dir install
