@@ -44,7 +44,7 @@ function omf.index.repositories -d 'Manage package repositories'
       if test -f $OMF_CONFIG/repositories
         if command grep -q $repo $OMF_CONFIG/repositories
           command grep -v $repo $OMF_CONFIG/repositories > $OMF_CONFIG/repositories.swp
-            and command mv $OMF_CONFIG/repositories.swp $OMF_CONFIG/repositories
+          command mv $OMF_CONFIG/repositories.swp $OMF_CONFIG/repositories
 
           return
         end
