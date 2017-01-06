@@ -41,7 +41,6 @@ Get information about what packages do.
   omf describe "(omf::em)"<name>"(omf::off)"  Show information about a package
 
 "(omf::dim)"Examples:"(omf::off)"
-  omf describe
   omf describe brew
 "
 
