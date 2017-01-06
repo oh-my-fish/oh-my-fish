@@ -3,9 +3,9 @@ function omf.index.query -d 'Query packages in the index'
     and set -l index_path "$XDG_CACHE_HOME/omf"
     or set -l index_path "$HOME/.cache/omf"
 
-  set -lx q_type any
-  set -lx q_name ''
-  set -lx q_text ''
+  set -l q_type any
+  set -l q_name ''
+  set -l q_text ''
 
   # Parse search terms.
   for arg in $argv
@@ -45,7 +45,7 @@ function omf.index.query -d 'Query packages in the index'
 
   # Perform a text search if any textual terms were given.
   if test -n "$q_name" -o -n "$q_text"
-    set results (command awk '
+    set results (command awk -v "q_name=$q_name" -v "q_text=$q_text" '
       function flush() {
         if (package && name_matches && text_matches) {
           print package;
@@ -53,8 +53,8 @@ function omf.index.query -d 'Query packages in the index'
       }
       BEGIN {
         FS = "[ \t]*=[ \t]*";
-        q_name = tolower(ENVIRON["q_name"]);
-        q_text = tolower(ENVIRON["q_text"]);
+        q_name = tolower(q_name);
+        q_text = tolower(q_text);
       }
       FNR == 1 {
         flush();
