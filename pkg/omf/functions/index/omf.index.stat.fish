@@ -22,7 +22,8 @@ function omf.index.stat -a name -d 'Get package properties'
 
   # If no properties are specified, output all properties with names.
   if not set -q properties[1]
-    cat $package_file
+    read -z -l contents < $package_file
+    printf $contents
     return
   end
 
