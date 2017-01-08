@@ -1,8 +1,4 @@
 function omf.index.query -d 'Query packages in the index'
-  set -q XDG_CACHE_HOME
-    and set -l index_path "$XDG_CACHE_HOME/omf"
-    or set -l index_path "$HOME/.cache/omf"
-
   set -l q_type any
   set -l q_name ''
   set -l q_text ''
@@ -10,16 +6,16 @@ function omf.index.query -d 'Query packages in the index'
   # Parse search terms.
   for arg in $argv
     switch "$arg"
-      case 'type=a*'
+      case '--type=any'
         set q_type any
-      case 'type=p*'
-        set q_type package
-      case 'type=t*'
+      case '--type=plugin'
+        set q_type plugin
+      case '--type=theme'
         set q_type theme
-      case 'name=?*'
+      case '--name=?*'
         set -l IFS '='
         echo "$arg" | read dummy q_name
-      case 'text=?*'
+      case '--text=?*'
         set -l IFS '='
         echo "$arg" | read dummy q_text
       case '*'
@@ -30,12 +26,12 @@ function omf.index.query -d 'Query packages in the index'
 
   # Determine what files to search against based on type.
   switch $q_type
-    case package
-      set packages $index_path/*/packages/*
+    case plugin
+      set packages (omf.index.path)/*/packages/*
     case theme
-      set packages $index_path/*/themes/*
+      set packages (omf.index.path)/*/themes/*
     case '*'
-      set packages $index_path/*/{packages,themes}/*
+      set packages (omf.index.path)/*/{packages,themes}/*
   end
 
   # If there are no packages, there is nothing to search.

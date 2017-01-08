@@ -12,34 +12,41 @@ function omf.index.repositories -d 'Manage package repositories'
     case list
       for file in {$OMF_PATH,$OMF_CONFIG}/repositories
         if test -f $file
-          read -z -l contents < $file
-          printf "$contents"
+          command cat $file
         end
       end
 
     case add
-      if not set -q argv[2]
-        echo "Error: url not specified" >&2
+      if set -q argv[2]
+        set repo_url $argv[2]
+      else
+        echo "Url not specified" >&2
         return 1
       end
 
-      if not set -q argv[3]
-        set argv[3] master
+      if set -q argv[3]
+        set repo_branch $argv[3]
+      else
+        set repo_branch master
       end
 
-      echo "$argv[2] $argv[3]" >> $OMF_CONFIG/repositories
+      echo "$repo_url $repo_branch" >> $OMF_CONFIG/repositories
 
     case rm remove
-      if not set -q argv[2]
-        echo "Error: url not specified" >&2
+      if set -q argv[2]
+        set repo_url $argv[2]
+      else
+        echo "Url not specified" >&2
         return 1
       end
 
-      if not set -q argv[3]
-        set argv[3] master
+      if set -q argv[3]
+        set repo_branch $argv[3]
+      else
+        set repo_branch master
       end
 
-      set -l repo "$argv[2] $argv[3]"
+      set -l repo "$repo_url $repo_branch"
 
       if test -f $OMF_CONFIG/repositories
         if command grep -q $repo $OMF_CONFIG/repositories
@@ -50,11 +57,11 @@ function omf.index.repositories -d 'Manage package repositories'
         end
       end
 
-      echo "Error: could not find user repository '$repo'" >&2
+      echo "Could not find user repository '$repo'" >&2
       return 1
 
     case '*'
-      echo "Error: unknown command '$argv[1]'" >&2
+      echo "Unknown command '$argv[1]'" >&2
       return 1
   end
 end

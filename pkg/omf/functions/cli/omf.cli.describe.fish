@@ -8,5 +8,6 @@ function omf.cli.describe -a package -d 'Show information about a package'
     return 0
   end
 
+  echo "Unable to locate package '$package'." >&2
   return 1
 end

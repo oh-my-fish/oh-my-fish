@@ -1,8 +1,4 @@
 function omf.index.stat -a name -d 'Get package properties'
-  set -q XDG_CACHE_HOME
-    and set -l index_path "$XDG_CACHE_HOME/omf"
-    or set -l index_path "$HOME/.cache/omf"
-
   if test -z "$name"
     return 1
   end
@@ -12,7 +8,7 @@ function omf.index.stat -a name -d 'Get package properties'
   set -l package_file
 
   # Find the package definition file.
-  set -l package_files $index_path/*/{packages,themes}/$name
+  set -l package_files (omf.index.path)/*/{packages,themes}/$name
 
   if set -q package_files[1]
     set package_file $package_files[1]
@@ -22,8 +18,7 @@ function omf.index.stat -a name -d 'Get package properties'
 
   # If no properties are specified, output all properties with names.
   if not set -q properties[1]
-    read -z -l contents < $package_file
-    printf "$contents"
+    command cat $package_file
     return
   end
 

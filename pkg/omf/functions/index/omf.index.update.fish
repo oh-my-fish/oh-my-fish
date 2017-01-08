@@ -1,8 +1,4 @@
 function omf.index.update -d 'Update package indexes'
-  set -q XDG_CACHE_HOME
-    and set -l index_path "$XDG_CACHE_HOME/omf"
-    or set -l index_path "$HOME/.cache/omf"
-
   # Find repository lists.
   for list in {$OMF_PATH,$OMF_CONFIG}/repositories
     test -f $list
@@ -26,7 +22,7 @@ function omf.index.update -d 'Update package indexes'
   while set -q repositories[1]
     set -l url $repositories[1]
     set -l branch $repositories[2]
-    set -l path $index_path/$repositories[3]
+    set -l path (omf.index.path)/$repositories[3]
     set valid_paths $valid_paths $path
 
     echo -n "Updating $url $branch... "
@@ -47,7 +43,7 @@ function omf.index.update -d 'Update package indexes'
   end
 
   # Remove repositories not in the lists.
-  for path in $index_path/*
+  for path in (omf.index.path)/*
     if not contains -- $path $valid_paths
       command rm -rf $path
     end
