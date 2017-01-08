@@ -11,8 +11,10 @@ function __omf.packages.install.error.already
 end
 
 function omf.packages.install -a name_or_url
-  if set url (omf.index.stat $name_or_url repository)
+  if set -l props (omf.index.stat $name_or_url type repository)
+    set package_type $props[1]
     set name $name_or_url
+    set url $props[2]
   else
     set name (omf.packages.name $name_or_url)
     set url $name_or_url
@@ -33,8 +35,15 @@ function omf.packages.install -a name_or_url
     return $OMF_UNKNOWN_ERR
   end
 
-  # Check if the package is a theme. If it is, move it to the themes directory.
-  if test -f $install_dir/fish_prompt.fish
+  # If we don't know the package type yet, check if the package is a theme.
+  if not set -q package_type
+    test -f $install_dir/fish_prompt.fish
+      and set package_type theme
+      or set package_type plugin
+  end
+
+  # If the package is a theme, move it to the themes directory.
+  if test $package_type = theme
     test -d $OMF_PATH/themes
       or command mkdir -p $OMF_PATH/themes
 

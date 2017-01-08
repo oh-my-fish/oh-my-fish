@@ -24,26 +24,19 @@ function omf.index.query -d 'Query packages in the index'
     end
   end
 
-  # Determine what files to search against based on type.
-  switch $q_type
-    case plugin
-      set packages (omf.index.path)/*/packages/*
-    case theme
-      set packages (omf.index.path)/*/themes/*
-    case '*'
-      set packages (omf.index.path)/*/{packages,themes}/*
-  end
+  # Put all packages into a list.
+  set -l packages (omf.index.path)/*/packages/*
 
   # If there are no packages, there is nothing to search.
   if not set -q packages[1]
     return 1
   end
 
-  # Perform a text search if any textual terms were given.
-  if test -n "$q_name" -o -n "$q_text"
-    set results (command awk -v "q_name=$q_name" -v "q_text=$q_text" '
+  # Perform a text search if any filters were given.
+  if set -q argv[1]
+    set results (command awk -v "q_type=$q_type" -v "q_name=$q_name" -v "q_text=$q_text" '
       function flush() {
-        if (package && name_matches && text_matches) {
+        if (package && type_matches && name_matches && text_matches) {
           print package;
         }
       }
@@ -57,8 +50,14 @@ function omf.index.query -d 'Query packages in the index'
       FNR == 1 {
         flush();
 
+        if (q_type == "any") {
+          type_matches = 1;
+        } else {
+          type_matches = 0;
+        }
         name_matches = 0;
         text_matches = 0;
+
         package = parts[split(FILENAME, parts, "/")];
 
         if (match(package, q_name)) {
@@ -70,7 +69,11 @@ function omf.index.query -d 'Query packages in the index'
         }
       }
 
-      !text_matches {
+      !type_matches && !/^#/ && $1 == "type" && $2 == q_type {
+        type_matches = 1;
+      }
+
+      !text_matches && !/^#/ {
         if (match(tolower($2), q_text)) {
           text_matches = 1;
         }
@@ -81,7 +84,7 @@ function omf.index.query -d 'Query packages in the index'
       }
     ' $packages)
   else
-    # No text terms, just list all package names of the given type.
+    # No filters, just list all package names.
     set results (for package in $packages
       command basename $package
     end)
