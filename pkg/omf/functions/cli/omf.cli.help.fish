@@ -101,7 +101,7 @@ Create a new package from a template.
 Manage package repositories.
 
 "(omf::dim)"Usage:"(omf::off)"
-  omf repositories [list]                      List installed repositories
+  omf repositories [list|ls]                   List installed repositories
   omf repositories add "(omf::em)"<url>"(omf::off)" ["(omf::em)"<branch>"(omf::off)"]        Add a package repository
   omf repositories rm|remove "(omf::em)"<url>"(omf::off)" ["(omf::em)"<branch>"(omf::off)"]  Remove a package repository
 

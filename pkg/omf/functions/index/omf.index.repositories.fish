@@ -9,7 +9,7 @@ function omf.index.repositories -d 'Manage package repositories'
       omf help repositories
       return
 
-    case list
+    case list ls
       for file in {$OMF_PATH,$OMF_CONFIG}/repositories
         if test -f $file
           command cat $file
