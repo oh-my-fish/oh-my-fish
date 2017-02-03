@@ -140,6 +140,18 @@ It's highly recommended that your custom startup commands go into `init.fish` fi
 
 If you need startup commands to be run *before* Oh My Fish begins loading plugins, place them in `before.init.fish` instead. If you're unsure, it is usually best to put things in `init.fish`.
 
+#### Setting variables in `init.fish`
+
+One of the most common startup commands used in `init.fish` is variables definition. Quite likely, such variables need to be available in any shell session. To achieve this, define them globally. For example:
+
+```fish
+# Golang developers might need this one
+set -xg GOPATH $HOME/gocode
+
+# Python developers otherwise
+set -xg PYTHONDONTWRITEBYTECODE 1
+```
+
 #### About the bundle
 
 Every time a package/theme is installed or removed, the `bundle` file is updated. You can also edit it manually and run `omf install` afterwards to satisfy the changes. Please note that while packages/themes added to the bundle get automatically installed, a package/theme removed from bundle isn't removed from user installation.
