@@ -38,11 +38,9 @@ determines what version "(omf::em)"omf update"(omf::off)" will upgrade to.
 Get information about what packages do.
 
 "(omf::dim)"Usage:"(omf::off)"
-  omf describe         Get information from all available packages
-  omf describe "(omf::em)"<name>"(omf::off)"  Get information from package by name
+  omf describe "(omf::em)"<name>"(omf::off)"  Show information about a package
 
 "(omf::dim)"Examples:"(omf::off)"
-  omf describe
   omf describe brew
 "
 
@@ -98,6 +96,21 @@ Create a new package from a template.
   omf new theme mytheme
 "
 
+    case "repo" "repositories"
+      echo "\
+Manage package repositories.
+
+"(omf::dim)"Usage:"(omf::off)"
+  omf repositories [list|ls]                   List installed repositories
+  omf repositories add "(omf::em)"<url>"(omf::off)" ["(omf::em)"<branch>"(omf::off)"]        Add a package repository
+  omf repositories rm|remove "(omf::em)"<url>"(omf::off)" ["(omf::em)"<branch>"(omf::off)"]  Remove a package repository
+
+"(omf::dim)"Examples:"(omf::off)"
+  omf repositories
+  omf repositories add https://github.com/vendor/fish-packages
+  omf repositories rm https://github.com/vendor/fish-packages master
+"
+
     case "r" "rm" "remove" "uninstall"
       echo "\
 Remove a theme or package.
@@ -112,27 +125,15 @@ Remove a theme or package.
 
     case "search"
       echo "\
-Search for a package or theme.
+Search for a plugin or theme.
 
 "(omf::dim)"Usage:"(omf::off)"
-  omf search ("(omf::dim)"-pkg/--package"(omf::off)" | "(omf::dim)"-t/--theme"(omf::off)") "(omf::em)"<name>"(omf::off)"  Search for a package or theme
+  omf search ("(omf::dim)"-p/--plugin"(omf::off)" | "(omf::dim)"-t/--theme"(omf::off)") "(omf::em)"<name>"(omf::off)"  Search for a plugin or theme
 
 "(omf::dim)"Examples:"(omf::off)"
-  omf search -pkg nvm
+  omf search -p nvm
   omf search -t bobthefish
   omf search vi
-"
-
-    case "s" "submit"
-      echo "\
-Submit a package to the registry.
-
-"(omf::dim)"Usage:"(omf::off)"
-  omf submit ("(omf::dim)"pkg"(omf::off)" | "(omf::dim)"theme"(omf::off)") "(omf::em)"<url>"(omf::off)"  Submit a package or theme to the registry
-
-"(omf::dim)"Examples:"(omf::off)"
-  omf submit pkg https://github.com/oh-my-fish/plugin-mypkg
-  omf submit theme https://github.com/oh-my-fish/plugin-mythemes
 "
 
     case "t" "theme"
@@ -169,23 +170,23 @@ Update Oh My Fish.
   omf "(omf::em)"help"(omf::off)" [<command>]
 
 "(omf::dim)"Commands:"(omf::off)"
-  "(omf::em)"l"(omf::off)"ist      List local packages.
-  "(omf::em)"d"(omf::off)"escribe  Get information about what packages do.
-  "(omf::em)"i"(omf::off)"nstall   Install one or more packages.
-  "(omf::em)"t"(omf::off)"heme     List / Use themes.
-  "(omf::em)"r"(omf::off)"emove    Remove a theme or package.
-  "(omf::em)"u"(omf::off)"pdate    Update Oh My Fish.
-  "(omf::em)"c"(omf::off)"d        Change directory to plugin/theme directory.
-  "(omf::em)"n"(omf::off)"ew       Create a new package from a template.
-  "(omf::em)"search"(omf::off)"    Search for a package or theme.
-  "(omf::em)"s"(omf::off)"ubmit    Submit a package to the registry.
-  "(omf::em)"destroy"(omf::off)"   Uninstall Oh My Fish.
-  "(omf::em)"doctor"(omf::off)"    Troubleshoot Oh My Fish.
-  "(omf::em)"help"(omf::off)"      Shows help about a specific action.
+  "(omf::em)"c"(omf::off)"d            Change directory to plugin/theme directory.
+  "(omf::em)"d"(omf::off)"escribe      Get information about what packages do.
+  "(omf::em)"destroy"(omf::off)"       Uninstall Oh My Fish.
+  "(omf::em)"doctor"(omf::off)"        Troubleshoot Oh My Fish.
+  "(omf::em)"help"(omf::off)"          Shows help about a specific action.
+  "(omf::em)"i"(omf::off)"nstall       Install one or more packages.
+  "(omf::em)"l"(omf::off)"ist          List local packages.
+  "(omf::em)"n"(omf::off)"ew           Create a new package from a template.
+  "(omf::em)"r"(omf::off)"emove        Remove a theme or package.
+  "(omf::em)"repo"(omf::off)"sitories  Manage package repositories.
+  "(omf::em)"s"(omf::off)"earch        Search for a package or theme.
+  "(omf::em)"t"(omf::off)"heme         List / Use themes.
+  "(omf::em)"u"(omf::off)"pdate        Update Oh My Fish.
 
 "(omf::dim)"Options:"(omf::off)"
-  "(omf::em)"--h"(omf::off)"elp     Display this help.
-  "(omf::em)"--v"(omf::off)"ersion  Display version.
+  "(omf::em)"--h"(omf::off)"elp        Display this help.
+  "(omf::em)"--v"(omf::off)"ersion     Display version.
 
 For more information visit → "(omf::em)"git.io/oh-my-fish"(omf::off)\n
   end

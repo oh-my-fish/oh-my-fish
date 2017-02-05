@@ -55,19 +55,19 @@ function omf -d "Oh My Fish"
     case "r" "rm" "remove" "uninstall"
       omf.cli.remove $arguments
 
-    case "s" "submit"
-      omf.cli.submit $arguments
-
     case "t" "theme"
       omf.cli.theme $arguments
 
     case "u" "update"
       omf.cli.update $arguments
 
+    case "repo" "repositories"
+      omf.index.repositories $arguments
+
     case "channel"
       omf.cli.channel $arguments
 
-    case "search"
+    case "s" "search"
       omf.cli.search $arguments
 
     case "version"

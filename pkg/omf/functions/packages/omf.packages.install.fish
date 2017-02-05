@@ -11,44 +11,59 @@ function __omf.packages.install.error.already
 end
 
 function omf.packages.install -a name_or_url
-  if test \( -e $OMF_PATH/db/themes/$name_or_url \) -o (echo $name_or_url | grep theme-)
-    set install_type "theme"
-    set parent_path "themes"
-  else
-    set install_type "package"
-    set parent_path "pkg"
-  end
-
-  if test -e $OMF_PATH/db/$parent_path/$name_or_url
+  if set -l props (omf.index.stat $name_or_url type repository)
+    set package_type $props[1]
     set name $name_or_url
-    set url (cat $OMF_PATH/db/$parent_path/$name)
+    set url $props[2]
   else
     set name (omf.packages.name $name_or_url)
     set url $name_or_url
   end
 
-  if test -e $OMF_PATH/$parent_path/$name
-    __omf.packages.install.error.already "$install_type $name_or_url"
+  if contains -- $name (omf.packages.list)
+    __omf.packages.install.error.already "$name_or_url"
     return $OMF_INVALID_ARG
   end
 
-  echo (omf::dim)"Installing $install_type $name"(omf::off)
+  echo (omf::dim)"Installing package $name"(omf::off)
 
-  if omf.repo.clone $url $OMF_PATH/$parent_path/$name
-    omf.bundle.install $OMF_PATH/$parent_path/$name/bundle
-    omf.bundle.add $install_type $name_or_url
+  set -l install_dir $OMF_PATH/pkg/$name
 
-    # Run the install hook.
-    if not omf.packages.run_hook $OMF_PATH/$parent_path/$name install
-      __omf.packages.install.error "$install_type $name"
-      return $OMF_UNKNOWN_ERR
-    end
-
-    __omf.packages.install.success "$install_type $name"
-  else
-    __omf.packages.install.error "$install_type $name"
+  # Clone the package repository.
+  if not omf.repo.clone $url $install_dir
+    __omf.packages.install.error "$name"
     return $OMF_UNKNOWN_ERR
   end
+
+  # If we don't know the package type yet, check if the package is a theme.
+  if not set -q package_type
+    echo $url | grep -q theme-
+      and set package_type theme
+      or set package_type plugin
+  end
+
+  # If the package is a theme, move it to the themes directory.
+  if test $package_type = theme
+    test -d $OMF_PATH/themes
+      or command mkdir -p $OMF_PATH/themes
+
+    command mv $install_dir $OMF_PATH/themes/$name
+    set install_dir $OMF_PATH/themes/$name
+
+    omf.bundle.add theme $name_or_url
+  else
+    omf.bundle.add package $name_or_url
+  end
+
+  omf.bundle.install $install_dir/bundle
+
+  # Run the install hook.
+  if not omf.packages.run_hook $install_dir install
+    __omf.packages.install.error "$name"
+    return $OMF_UNKNOWN_ERR
+  end
+
+  __omf.packages.install.success "$name"
 
   return 0
 end

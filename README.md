@@ -50,7 +50,7 @@ Oh My Fish includes a small utility `omf` to fetch and install new packages and 
 
 #### `omf update` _`[omf]`_ _`[<package>...]`_
 
-Update the framework and installed packages.
+Update Oh My Fish, all package repositories, and all installed packages.
 
 - When called without arguments, update core and all installed packages.
 - You can choose to update only the core, by running `omf update omf`.
@@ -63,6 +63,10 @@ Install one _or more_ packages.
 
 - You can install packages directly by URL via `omf install URL`
 - When called without arguments, install missing packages from [bundle](#dotfiles).
+
+#### `omf repositories` _`[list|add|remove]`_
+
+Manage user-installed package repositories. Package repositories are where packages come from used by commands like `omf install`. By default the [official repository](https://github.com/oh-my-fish/packages-main) is always installed and available.
 
 #### `omf list`
 
@@ -93,13 +97,6 @@ Scaffold out a new package or theme.
 #### `omf search` _`-t|--theme / -pkg|--package`_ _`<name>`_
 
 Searches Oh My Fish's database for a given package, theme or both. It also supports fuzzy search, so if you are not sure of the name you can simply `omf search simple`.
-
-#### `omf submit` _`pkg/<name>`_ _`[<url>]`_
-
-Add a new package. To add a theme, use `omf submit` _`themes/<name>`_ _`<url>`_.
-Please note that the _`[<url>]`_ portion of the command should be the url to your repo on github. For example, with the `example` plugin, the command run should be `omf submit pkg/example https://github.com/oh-my-fish/example`.
-
-Make sure to [send us a PR][omf-pulls-link] to update the registry.
 
 #### `omf channel`
 
