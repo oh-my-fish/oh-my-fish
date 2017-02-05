@@ -2,6 +2,37 @@
 Important changes to Oh My Fish are recorded here for each release.
 
 
+## [5] - 2017-02-05
+### Added
+- Replace package database with new, independently installed package repository system. Packages are no longer stored in the framework repository tree. Instead packages are stored in a package repository, a Git repo with a list of available packages. Multiple sources are supported, with the old database contents moved to the [packages-main] repository. [#427]
+
+### Bugs fixed
+- Fix function paths when switching themes during runtime without a reload. Previously if a theme had a `functions` directory, it was only added to the function path at init time and not removed when switching themes. [#479] [#485]
+- Ignore ".git" suffix on theme URLs in the Themes document generator. [#472]
+- Documentation fixes and improvements. [#481]
+
+### New plugins
+- [blt](https://github.com/devert/plugin-blt)
+- [fish_logo](https://github.com/HenrikWL/plugin-fish_logo)
+
+### New themes
+- [gentoo](https://github.com/ribugent/theme-gentoo)
+- [emoji-powerline](https://github.com/wyqydsyq/emoji-powerline)
+- [one](https://github.com/fivepointseven/omf-theme-one)
+
+### Contributors
+Thanks to the people who contributed to this release.
+
+- [Damon Poole](mailto:pyrokinetiq@gmail.com)
+- [Dennis Evert](mailto:dennisevert@gmail.com)
+- [Gerard Ribugent Navarro](mailto:ribugent@gmail.com)
+- [Henrik W Lund](mailto:henrik.w.lund@gmail.com)
+- [Itzik Ephraim](mailto:oranja@gmail.com)
+- [Justin Hileman](mailto:github@0x7f.us)
+- [Pablo Santiago Blum de Aguiar](mailto:scorphus@gmail.com)
+- [Stephen M. Coakley](mailto:me@stephencoakley.com)
+
+
 ## [4] - 2017-01-04
 ### Added
 - The Doctor (`omf doctor`) now prints some additional info for ease in troubleshooting common problems. [#456]
@@ -29,15 +60,15 @@ Important changes to Oh My Fish are recorded here for each release.
 ### Contributors
 Thanks to the people who contributed to this release.
 
-- [Andrew Komarnitskyi](ticapac@gmail.com)
-- [Beau Hastings](beausy@gmail.com)
-- [Derek Willian Stavis](dekestavis@gmail.com)
-- [Espen Henriksen](esphen@users.noreply.github.com)
-- [hak8or](hak8or@users.noreply.github.com)
-- [Justin Hileman](github@0x7f.us)
-- [Matej Nemček](ybdaba@gmail.com)
-- [Roman Inflianskas](rominf@users.noreply.github.com)
-- [Stephen M. Coakley](me@stephencoakley.com)
+- [Andrew Komarnitskyi](mailto:ticapac@gmail.com)
+- [Beau Hastings](mailto:beausy@gmail.com)
+- [Derek Willian Stavis](mailto:dekestavis@gmail.com)
+- [Espen Henriksen](mailto:esphen@users.noreply.github.com)
+- [hak8or](mailto:hak8or@users.noreply.github.com)
+- [Justin Hileman](mailto:github@0x7f.us)
+- [Matej Nemček](mailto:ybdaba@gmail.com)
+- [Roman Inflianskas](mailto:rominf@users.noreply.github.com)
+- [Stephen M. Coakley](mailto:me@stephencoakley.com)
 
 
 ## [3] - 2016-10-20
@@ -130,9 +161,11 @@ Thanks to the people who contributed to this release.
 - szwathub
 
 
+[packages-main]: https://github.com/oh-my-fish/packages-main
 [2]: https://github.com/oh-my-fish/oh-my-fish/releases/tag/v2
 [3]: https://github.com/oh-my-fish/oh-my-fish/releases/tag/v3
 [4]: https://github.com/oh-my-fish/oh-my-fish/releases/tag/v4
+[5]: https://github.com/oh-my-fish/oh-my-fish/releases/tag/v5
 [#217]: https://github.com/oh-my-fish/oh-my-fish/pull/217
 [#235]: https://github.com/oh-my-fish/oh-my-fish/pull/235
 [#238]: https://github.com/oh-my-fish/oh-my-fish/pull/238
@@ -180,6 +213,7 @@ Thanks to the people who contributed to this release.
 [#403]: https://github.com/oh-my-fish/oh-my-fish/pull/403
 [#418]: https://github.com/oh-my-fish/oh-my-fish/pull/418
 [#426]: https://github.com/oh-my-fish/oh-my-fish/pull/426
+[#427]: https://github.com/oh-my-fish/oh-my-fish/pull/427
 [#435]: https://github.com/oh-my-fish/oh-my-fish/pull/435
 [#440]: https://github.com/oh-my-fish/oh-my-fish/pull/440
 [#444]: https://github.com/oh-my-fish/oh-my-fish/pull/444
@@ -189,3 +223,7 @@ Thanks to the people who contributed to this release.
 [#458]: https://github.com/oh-my-fish/oh-my-fish/pull/458
 [#459]: https://github.com/oh-my-fish/oh-my-fish/pull/459
 [#464]: https://github.com/oh-my-fish/oh-my-fish/pull/464
+[#472]: https://github.com/oh-my-fish/oh-my-fish/pull/472
+[#479]: https://github.com/oh-my-fish/oh-my-fish/pull/479
+[#481]: https://github.com/oh-my-fish/oh-my-fish/pull/481
+[#485]: https://github.com/oh-my-fish/oh-my-fish/pull/485
