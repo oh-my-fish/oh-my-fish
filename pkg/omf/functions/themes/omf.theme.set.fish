@@ -5,7 +5,7 @@ function omf.theme.set -a target_theme
     return $OMF_INVALID_ARG
   end
 
-  set -l current_theme (cat $OMF_CONFIG/theme)
+  read -l current_theme < $OMF_CONFIG/theme
   test "$target_theme" = "$current_theme"; and return 0
 
   set -l prompt_filename "fish_prompt.fish"
@@ -20,8 +20,9 @@ function omf.theme.set -a target_theme
   end
 
   # Replace autoload paths of current theme with the target one
-  autoload -e {$OMF_CONFIG,$OMF_PATH}/themes/$current_theme
-  autoload {$OMF_CONFIG,$OMF_PATH}/themes/$target_theme
+  autoload -e {$OMF_CONFIG,$OMF_PATH}/themes/$current_theme{,/functions}
+  set -l theme_path {$OMF_CONFIG,$OMF_PATH}/themes*/$target_theme{,/functions}
+  autoload $theme_path
 
   # Find target theme's fish_prompt and link to user function path
   for path in {$OMF_CONFIG,$OMF_PATH}/themes/$target_theme/$prompt_filename
