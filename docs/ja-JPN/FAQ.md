@@ -16,80 +16,79 @@
 
 # FAQ
 
-このFAQを読んでくださりありがとうございます。もしあなたが求めている回答がここで得られなかった場合、気軽に新しいissueを立ててみてください。
+FAQを読んで頂きありがとうございます。質問等ある場合は、お気軽にissueを立てて下さい。
 
 
-## Oh My Fishとはどんなもので、なぜそれが必要なのか
+## Oh My Fishとは？
 
-Oh My Fishは[Fishshell](http://fishshell.com/)のための _フレームワーク_ の１つです。
-あなたが設定やテーマ、パッケージを管理することを簡単にしてくれます。
+Oh My Fishは[Fishshell](http://fishshell.com/)の _フレームワーク_ の１つで、設定やテーマ、パッケージなどの管理を簡単に行うことができます。
 
 
-## Oh My Fishを使うために何を知る必要があるのか
+## Oh My Fishを使うのに必要なことは？
 
-_何もありません_。 Oh My Fishをインストールしても、これまでと同様にFishを使い続けることができます。あなたがOh My Fishについてより詳しく知りたい場合は、`omf help`と打ってみてください。
+_何もありません_。 Oh My Fishは導入後も、今まで通りFishシェルを使うことができます。詳細は、`omf help`で確認してください。
 
 
 ## Oh My Fishのパッケージにはどんなものがあるのか
 
-Oh My Fishのパッケージにはshellのコアの機能面を拡張したり、初期化の間にコードを走らせたり、既存のユーティリティのオートコンプリーションといったfishで書かれたテーマやプラグインがあります。
+Oh My Fishのパッケージには様々なテーマや、シェル機能の拡張、初期化時のコード実行、既存オートコンプリートに追加、等を利用できるプラグインがあります。
 
 
-## Oh My Fishにはどのような種類のパッケージがあるのか
+## どのような種類のパッケージがあるのか？
 
 Oh My Fishには、主に3種類のパッケージがあります:
 
-1. 設定ユーティリティ。例えば、[`pkg-pyenv`](https://github.com/oh-my-fish/pkg-pyenv)はあなたのシステム内に`pyenv`が存在するかどうかを確認し、スタートアップの間に`(pyenv init - | psub)`を走らせます。　
+1. ユーティリティ。例えば、[`pkg-pyenv`](https://github.com/oh-my-fish/pkg-pyenv)はスタートアップ時に`(pyenv init - | psub)`を実行し、システム上の`pyenv`の存在有無を確認します。　
 
-2. テーマ。ぜひとも[theme gallery](https://github.com/oh-my-fish)を覗いてみてください。
+2. テーマ。[theme gallery](https://github.com/oh-my-fish)を確認して下さい。
 
-3. お馴染みのシェルユーティリティ。例えば、[`pkg-copy`](https://github.com/oh-my-fish/pkg-copy)はLinuxとOSX間を互換するクリップボードユーティリティです。
+3. シェル。[`pkg-copy`](https://github.com/oh-my-fish/pkg-copy)はクリップボードユーティリティでLinuxとOSX間の互換をサポートします。
 
 
 ## 結局のところ、Oh My Fishは何をするのか
 
-+ 存在している場合、`$OMF_CONFIG/before.init.fish`を実行します。
++ 実行可能時、`$OMF_CONFIG/before.init.fish`を実行。
 
-+ `$OMF_PATH/`以下にあるインストール済みのパッケージやテーマをオートロードします。
++ `$OMF_PATH/`以下にあるインストール済みのパッケージやテーマのオートロード。
 
-+ 設定パスをオートロードします。デフォルト設定では`~/.config/omf`を読みますが、`$OMF_CONFIG`から設定可能です。
++ 設定されているパスのオートロード。デフォルトでは`~/.config/omf`を読みますが、`$OMF_CONFIG`から設定変更可。
 
-+ `$OMF_PATH`や`$OMF_CONFIG`以下にあるいかなる`functions`ディレクトリは直接オートロードされます。
++ `$OMF_PATH`と`$OMF_CONFIG`以下にある`functions`フォルダをオートロード。
 
-+ 存在している場合、`$OMF_CONFIG/init.fish`を実行します。
++ 実行可能時、`$OMF_CONFIG/init.fish`を実行。
 
 
-## どのようにして既存のOh My Fishインストレーションをアップグレードするか
+## Oh My Fishのアップデートするには？
 
-> :注意: まずはじめに、dotfilesや他の重要なデータをバックアップすることを忘れないでください。
+> :注意: アップデート前に、dotfilesや重要なデータのバックアップを忘れないでください。
 
 ```
 curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | sh
 ```
 
-これでやっと `$fish_path`を取り除くことができます.
+コマンドを実行後、`$fish_path`を削除できます。
 
 ```fish
 rm -rf "$fish_path"
 ```
 
 
-## どうすればfishをデフォルトのシェルとして使えるのか
+## fishシェルをデフォルトのシェルとして設定するには
 
-Fishに`/etc/shells`を加えてください:
+Fishに`/etc/shells`に追加して下さい:
 
 ```sh
 echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
 ```
 
-fishをあなたのデフォルトのシェルに変えます:
+fishをデフォルトのシェルにします:
 
 ```sh
 chsh -s /usr/local/bin/fish
 ```
 
-デフォルトのシェルを元に戻すには:
-> Substitute `/bin/bash` with `/bin/tcsh` or `/bin/zsh` as appropriate.
+元のシェルに戻すには:
+> 環境によって `/bin/bash` は `/bin/tcsh` や `/bin/zsh` 等に置き換えて下さい。
 
 ```sh
 chsh -s /bin/bash
