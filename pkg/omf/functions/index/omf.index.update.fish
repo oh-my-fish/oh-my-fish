@@ -1,4 +1,13 @@
 function omf.index.update -d 'Update package indexes'
+  # Only update if the index is missing.
+  if contains -- --if-missing $argv
+    set -l paths (omf.index.path)/*
+
+    if set -q paths[1]
+      return 0
+    end
+  end
+
   # Find repository lists.
   for list in {$OMF_PATH,$OMF_CONFIG}/repositories
     test -f $list

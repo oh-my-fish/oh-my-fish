@@ -125,13 +125,13 @@ Remove a theme or package.
 
     case "search"
       echo "\
-Search for a package or theme.
+Search for a plugin or theme.
 
 "(omf::dim)"Usage:"(omf::off)"
-  omf search ("(omf::dim)"-pkg/--package"(omf::off)" | "(omf::dim)"-t/--theme"(omf::off)") "(omf::em)"<name>"(omf::off)"  Search for a package or theme
+  omf search ("(omf::dim)"-p/--plugin"(omf::off)" | "(omf::dim)"-t/--theme"(omf::off)") "(omf::em)"<name>"(omf::off)"  Search for a plugin or theme
 
 "(omf::dim)"Examples:"(omf::off)"
-  omf search -pkg nvm
+  omf search -p nvm
   omf search -t bobthefish
   omf search vi
 "
