@@ -2,7 +2,7 @@
 Important changes to Oh My Fish are recorded here for each release.
 
 
-## [5] - 2017-02-05
+## [5] - 2017-02-11
 ### Added
 - Replace package database with new, independently installed package repository system. Packages are no longer stored in the framework repository tree. Instead packages are stored in a package repository, a Git repo with a list of available packages. Multiple sources are supported, with the old database contents moved to the [packages-main] repository. [#427]
 
