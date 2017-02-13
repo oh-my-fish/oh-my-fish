@@ -1,0 +1,16 @@
+Search for a plugin or theme.
+
+== USAGE
+  omf search [options] <name>
+
+== OPTIONS
+-p, --plugin::
+  Limit results to plugins.
+
+-t, --theme::
+  Limit results to themes.
+
+== EXAMPLES
+  omf search -p nvm
+  omf search -t bobthefish
+  omf search vi

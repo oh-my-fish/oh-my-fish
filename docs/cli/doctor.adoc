@@ -1,0 +1,4 @@
+Troubleshoot Oh My Fish.
+
+== USAGE
+  omf doctor

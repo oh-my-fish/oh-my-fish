@@ -9,10 +9,10 @@ function refresh -d "(deprecated) Refresh fish session by replacing current proc
   set -q CI
     and return 0
 
-  type -q omf.core.reload
-    and omf.core.reload
+  type -q omf.reload
+    and omf.reload
 
-  # If omf.core.reload exist, current fish will be replaced via exec, so
+  # If omf.reload exist, current fish will be replaced via exec, so
   # the code below will never be reached. When it doesn't exist, the code
   # below, the deprecated method, will be used as fallback.
 

@@ -1,0 +1,18 @@
+Install one or more packages.
+
+== USAGE
+  omf install                          Install missing packages from bundle
+  omf install (<name> | <url>)         Install package by name or URL
+
+== DESCRIPTION
+You can install packages directly by URL via omf install URL.
+
+When called without arguments, install missing packages from bundle.
+
+== EXAMPLES
+  omf install
+  omf install brew
+  omf install https://github.com/oh-my-fish/plugin-brew
+
+== ALIASES
+*omf i*, *omf in*, *omf get*

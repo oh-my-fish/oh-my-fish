@@ -1,0 +1,11 @@
+Remove a theme or package.
+
+== USAGE
+  omf remove _<package name>_ | _<theme name>_  Removes a theme or package by name
+
+== EXAMPLES
+  omf remove brew
+  omf remove l
+
+== ALIASES
+*omf rm*, *omf uninstall*

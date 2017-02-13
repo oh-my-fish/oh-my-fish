@@ -1,0 +1,10 @@
+Create a new package from a template.
+
+== USAGE
+  omf new (_pkg_ | _theme_) _<name>_  Create a new package from a template
+
+== OPTIONS
+
+== EXAMPLES
+  omf new pkg mypkg
+  omf new theme mytheme

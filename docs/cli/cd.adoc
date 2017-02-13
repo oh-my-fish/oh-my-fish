@@ -1,0 +1,10 @@
+Change directory to root or plugin/theme directory.
+
+== USAGE
+  omf cd                                Change to Oh My Fish root folder
+  omf cd <package name> | <theme name>  Change to plugin or theme directory by name
+
+== EXAMPLES
+  omf cd
+  omf cd brew
+  omf cd l
