@@ -7,7 +7,7 @@
 > <a href="../en-US/FAQ.md">🇺🇸</a>
 > <a href="../ru-RU/FAQ.md">🇷🇺</a>
 > <a href="../uk-UA/FAQ.md">🇺🇦</a>
-
+> <a href="../pt-BR/FAQ.md">🇧🇷</a>
 <br>
 
 感谢您花一些时间来阅读 FAQ。如果没有从下面找到你想问的问题欢迎给我们提交新的问题(Issue)。

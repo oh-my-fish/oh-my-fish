@@ -7,6 +7,7 @@
 > <a href="../en-US/FAQ.md">🇺🇸</a>
 > <a href="../zh-CN/FAQ.md">🇨🇳</a>
 > <a href="../uk-UA/FAQ.md">🇺🇦</a>
+> <a href="../pt-BR/FAQ.md">🇧🇷</a>
 
 <br>
 
