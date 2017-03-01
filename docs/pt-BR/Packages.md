@@ -4,6 +4,7 @@
 # Pacotes
 
 > Oh My Fish Documentação&nbsp;&bull;&nbsp;Também em
+> <a href="../en-US/Packages.md">🇺🇸</a>
 > <a href="../ru-RU/Packages.md">🇷🇺</a>
 > <a href="../zh-CN/Packages.md">🇨🇳</a>
 > <a href="../uk-UA/Packages.md">🇺🇦</a>

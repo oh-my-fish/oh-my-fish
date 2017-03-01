@@ -4,6 +4,7 @@
 # FAQ
 
 > Oh My Fish Documentação&nbsp;&bull;&nbsp;Também em
+> <a href="../en-US/FAQ.md">🇺🇸</a>
 > <a href="../ru-RU/FAQ.md">🇷🇺</a>
 > <a href="../zh-CN/FAQ.md">🇨🇳</a>
 > <a href="../uk-UA/FAQ.md">🇺🇦</a>
