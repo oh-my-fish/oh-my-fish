@@ -13,7 +13,7 @@ Oh My Fish fornece infra-estrutura básica para permitir que você instale pacot
 > <a href="docs/ru-RU/README.md">🇷🇺</a>
 > <a href="docs/zh-CN/README.md">🇨🇳</a>
 > <a href="docs/uk-UA/README.md">🇺🇦</a>
-🇱
+
 
 <br>
 

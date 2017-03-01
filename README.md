@@ -12,6 +12,7 @@ Oh My Fish provides core infrastructure to allow you to install packages which e
 > <a href="docs/ru-RU/README.md">🇷🇺</a>
 > <a href="docs/zh-CN/README.md">🇨🇳</a>
 > <a href="docs/uk-UA/README.md">🇺🇦</a>
+> <a href="docs/pt-BR/README.md">🇧🇷</a>
 
 <br>
 
