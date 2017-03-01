@@ -104,7 +104,7 @@ O instalador do Oh My Fish coloca seu código de inicialização no arquivo de c
 
 Toda vez que você abre um novo shell, o código de inicialização inicializa o arquivo de instalação do Oh My Fish e a _configuração_ com caminho `~/.config/omf` por padrão, obtendo o script [` init.fish`](init.fish) posteriormente, que carrega automaticamente pacotes, temas e seus arquivos de inicialização personalizados.
 
-Para mais informações confira a  [FAQ](FAQ.md#what-does-oh-my-fish-do-exactly).
+Para mais informações confira a  [FAQ](FAQ.md#o-que-exatamente-o-oh-my-fish-faz).
 
 ### Dotfiles (arquivos de configuração)
 
@@ -114,7 +114,7 @@ O diretório `$ OMF_CONFIG` representa o estado do usuário de Oh My Fish. É o 
 - __`bundle`__ - Lista atual dos  pacotes/temas instalados
 - __`init.fish`__ - Script personalizado que é executado depois de executar shell
 - __`before.init.fish`__ - Script personalizado que é executado antes de executar shell
-- __`key_bindings.fish`__ - Chave customizada de ligação onde você pode usar o comando `bind` livremente.
+- __`key_bindings.fish`__ - Teclas de atalho customizadas onde você pode usar o comando `bind` livremente.
 
 É altamente recomendado que customize os comandos de inicialização no arquivo `init.fish` invés do `~/.config/fish/config.fish`, com isso permite a você manter todo `$OMF_CONFIG` diretamente sobre o controle de versão.
 
