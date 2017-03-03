@@ -1,5 +1,8 @@
 function omf.cli.themes.list
-  set -l theme (cat $OMF_CONFIG/theme)
+  test -f $OMF_CONFIG/theme
+    and read -l theme < $OMF_CONFIG/theme
+    or set -l theme default
+
   set -l regex_current "(^|[[:space:]])($theme)([[:space:]]|\$)"
   set -l highlight_current s/"$regex_current"/"\1"(omf::em)"\2"(omf::off)"\3"/g
 
