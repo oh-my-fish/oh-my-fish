@@ -48,11 +48,11 @@ end
 
 Cada função no seu pacote deve ser declarada em seu próprio arquivo no diretório `functions`. Isso é exigido pelo mecanismo de carregamento automático do fish, que carrega funções sob demanda, evitando o carregamento de funções não utilizadas no momento da inicialização.
 
-Tenha em mente que o fish não tem um escopo privado, portanto, se você precisa dividir seu pacote em funções, evite conflitos de nomes prefixando suas funções com algo único -- como o nome do pacote (por exemplo, hello_world_print_help). Para evitar poluir o namespace do comando, considere prefixar as funções privadas com dois sublinhados (por exemplo, `__function_name_print_help`).
+Tenha em mente que o fish não tem um escopo privado, portanto, se você precisa dividir seu pacote em funções, evite conflitos de nomes prefixando suas funções com algo único -- como o nome do pacote (por exemplo, hello_world_print_help). Para evitar poluir o namespace de comandos, considere prefixar as funções privadas com dois sublinhados (por exemplo, `__function_name_print_help`).
 
 # Hooks
 
-Oh My Fish fornece um sistema de "hooks" que permite que você escreva scripts para seu pacote que são executados quando ocorrem outros eventos interessantes. Os pacotes podem usar esses ganchos para fornecer instalação avançada, gerenciamento de recursos personalizados, etc. Os ganchos são scripts do fish comuns, nomeados após o evento pelo qual são acionados. A maioria dos hooks residem em um diretório `hooks` dentro do diretório do projeto de um pacote.
+Oh My Fish fornece um sistema de "hooks" que permite que você escreva scripts para seu pacote que são executados quando ocorrem outros eventos interessantes. Os pacotes podem usar esses ganchos para fornecer instalação avançada, gerenciamento de recursos personalizados, etc. Os ganchos são scripts fish comuns, nomeados de acordo com o nome do evento pelo qual são acionados. A maioria dos hooks residem em um diretório `hooks` dentro do diretório do projeto de um pacote.
 
 >Os Hooks que são chamados no momento da inicialização (`init.fish` e` key_bindings.fish`) podem desacelerar a inicialização do shell. Certifique-se de evitar o código lento no momento da inicialização! Além disso, se seu pacote não precisa de um arquivo de Hook, certifique-se de removê-lo.
 
@@ -60,7 +60,7 @@ O diretório de trabalho dentro de um Hook é sempre definido para o diretório 
 
 ## `init`
 
-Ele `init` gancho é executado uma vez quando o shell primeiro carrega. Os scripts para lidar com este Hook devem estar localizados em `init.fish` no diretório raiz do pacote.
+O hook `init` é executado uma vez quando o shell primeiro carrega. Os scripts para lidar com este hook devem estar localizados em `init.fish` no diretório raiz do pacote.
 
 Dentro desse Hook, você pode acessar três variáveis relacionadas ao pacote:
 
@@ -82,7 +82,7 @@ Use esse Hook para modificar o ambiente, carregar recursos, funções de carrega
 
 Se o seu pacote ou tema precisar usar teclas de atalho, certifique-se de configurá-los no gancho `key_bindings`. Os scripts de teclas de atalho devem estar localizados em `key_bindings.fish` no diretório raiz do pacote. Neste gancho, você pode usar livremente o comando [`bind`][fish-bind] para definir ligações de teclas personalizadas.
 
->Os temas também podem definir teclas de atalho! Oh My Fish irá recarregar as teclas de atalho quando mudar de tema.
+>Os temas também podem definir teclas de atalho! O Oh My Fish irá recarregar as teclas de atalho quando mudar de tema.
 
 ## `install`
 
