@@ -8,7 +8,9 @@ test -f $OMF_CONFIG/before.init.fish
   and source $OMF_CONFIG/before.init.fish ^/dev/null
 emit perf:timer:start "Oh My Fish initialisation"
 # Read current theme
-read -l theme < $OMF_CONFIG/theme
+test -f $OMF_CONFIG/theme
+  and read -l theme < $OMF_CONFIG/theme
+  or set -l theme default
 # Prepare Oh My Fish paths
 set -l core_function_path $OMF_PATH/lib{,/git}
 set -l theme_function_path {$OMF_CONFIG,$OMF_PATH}/themes*/$theme{,/functions}
@@ -27,7 +29,9 @@ functions -q fish_user_key_bindings
   and functions -c fish_user_key_bindings __original_fish_user_key_bindings
 # Override key bindings, calling original if existent
 function fish_user_key_bindings
-  read -l theme < $OMF_CONFIG/theme
+  test -f $OMF_CONFIG/theme
+    and read -l theme < $OMF_CONFIG/theme
+    or set -l theme default
   # Prepare packages key bindings paths
   set -l key_bindings $OMF_CONFIG/key_binding?.fish \
                       {$OMF_CONFIG,$OMF_PATH}/pkg/*/key_bindings.fish \
