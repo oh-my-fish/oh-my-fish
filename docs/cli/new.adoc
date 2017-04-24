@@ -1,7 +1,7 @@
 Create a new package from a template.
 
 == USAGE
-  omf new (_pkg_ | _theme_) _<name>_  Create a new package from a template
+  omf new (_pkg_ | _theme_) <name>  Create a new package from a template
 
 == OPTIONS
 

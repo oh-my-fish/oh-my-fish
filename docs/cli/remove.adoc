@@ -1,7 +1,7 @@
-Remove a theme or package.
+Remove a package.
 
 == USAGE
-  omf remove _<package name>_ | _<theme name>_  Removes a theme or package by name
+  omf remove <package>
 
 == EXAMPLES
   omf remove brew
