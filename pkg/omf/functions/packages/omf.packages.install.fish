@@ -37,7 +37,7 @@ function omf.packages.install -a name_or_url
 
   # If we don't know the package type yet, check if the package is a theme.
   if not set -q package_type
-    echo $url | grep -q theme-
+    test -f $install_dir/fish_prompt.fish
       and set package_type theme
       or set package_type plugin
   end
