@@ -24,6 +24,7 @@ before_install:
 before_script:
   - tree -h
   - export
+  - cd bin; sha256sum -c install.sha256
   - fish $TRAVIS_BUILD_DIR/bin/install --offline --noninteractive --yes
 
 script:
