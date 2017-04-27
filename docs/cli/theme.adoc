@@ -7,3 +7,6 @@ Install and list themes.
 == EXAMPLES
   omf theme
   omf theme l
+
+== ALIASES
+*omf t*

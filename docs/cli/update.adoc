@@ -6,10 +6,9 @@ Update Oh My Fish.
 == DESCRIPTION
 Update Oh My Fish, all package repositories, and all installed packages.
 
-* When called without arguments, update core and all installed packages.
-* You can choose to update only the core, by running omf update omf.
-* For selective package update, list only the names of packages you wish to
-  update. You may still include "omf" in the list to update the core as well.
+* When called without arguments, updates the core framework and all installed packages.
+* You can choose to update only the core, by running `omf update omf`.
+* For selective package update, list only the names of packages you wish to update. You may still include "omf" in the list to update the core as well.
 
 == ALIASES
 *omf u*, *omf up*

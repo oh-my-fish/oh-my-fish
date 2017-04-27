@@ -24,12 +24,12 @@ function omf.command -d 'Lookup OMF command by name or alias' -a name
       echo remove
     case 'repo' 'repositories'
       echo repositories
-    case 't' 'theme'
-      echo theme
-    case 'u' 'update'
-      echo update
     case 's' 'search'
       echo search
+    case 't' 'theme'
+      echo theme
+    case 'u' 'up' 'update'
+      echo update
     case 'version'
       echo version
     case '*'

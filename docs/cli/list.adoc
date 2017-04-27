@@ -3,8 +3,6 @@ List installed packages.
 == USAGE
   omf list [options]
 
-== DESCRIPTION
-
 == OPTIONS
 -p, --plugin::
   Only list plugins.
@@ -13,4 +11,4 @@ List installed packages.
   Only list themes.
 
 == ALIASES
-*omf ls*
+*omf l*, *omf ls*

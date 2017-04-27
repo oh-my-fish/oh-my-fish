@@ -8,4 +8,4 @@ Remove a package.
   omf remove l
 
 == ALIASES
-*omf rm*, *omf uninstall*
+*omf r*, *omf rm*, *omf uninstall*

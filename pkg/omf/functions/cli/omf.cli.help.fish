@@ -19,7 +19,7 @@ function omf.cli.help
   set -l u (set_color --underline ^ /dev/null)
 
   # Format the help document for the terminal.
-  fold -s $doc | sed -e "
+  fold -s -w 78 $doc | sed -e "
     # Strip cross references.
     s/<<[^,]*,\([^>]*\)>>/\1/g
 
@@ -36,9 +36,11 @@ function omf.cli.help
     # Headers.
     s/^==* \(.*\)/$b\1$r/
 
-    # Bold.
+    # Highlight bold and monospace text.
     s/\*\*\([^\*]*\)\*\*/$c\1$r/g
     s/\*\([^\*]*\)\*/$c\1$r/g
+    s/``\([^`]*\)``/$c\1$r/g
+    s/`\([^`]*\)`/$c\1$r/g
 
     # Style italics as underline.
     s/__\([^_]*\)__/$u\1$r/g
@@ -46,9 +48,6 @@ function omf.cli.help
 
     # Underline links.
     s/\w\w*:\S\S*/$u&$r/g
-
-    # Since we're in the terminal anyway, just strip monospace backticks.
-    s/`\([^`]*\)`/\1/g
 
     # Underline variable names in angle brackets.
     s/<[^>]*>/$u&$r/g
