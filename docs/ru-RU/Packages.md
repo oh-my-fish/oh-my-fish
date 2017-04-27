@@ -7,6 +7,7 @@
 > <a href="../en-US/Packages.md">🇺🇸</a>
 > <a href="../zh-CN/Packages.md">🇨🇳</a>
 > <a href="../uk-UA/Packages.md">🇺🇦</a>
+> <a href="../pt-BR/Packages.md">🇧🇷</a>
 
 # Создание
 
