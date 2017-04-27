@@ -73,7 +73,7 @@ function omf.index.query -d 'Query packages in the index'
         type_matches = 1;
       }
 
-      !text_matches && !/^#/ {
+      !text_matches && !/^#/ && $1 == "description" {
         if (match(tolower($2), q_text)) {
           text_matches = 1;
         }
