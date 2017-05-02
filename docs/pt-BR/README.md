@@ -9,7 +9,7 @@
 
 O Oh My Fish fornece infra-estrutura básica para permitir que você instale pacotes que estendam ou modifiquem a aparência do seu shell. É rápido, extensível e fácil de usar.
 
-> Veja também em&nbsp;
+> Also in&nbsp;
 > <a href="../../README.md">🇺🇸</a>
 > <a href="../ru-RU/README.md">🇷🇺</a>
 > <a href="../zh-CN/README.md">🇨🇳</a>
