@@ -373,7 +373,6 @@ function uninstall_omf
   end
 
   # Restore backed-up files
-  restore_backup_file "$FISH_CONFIG/config.fish"
   restore_backup_file "$FISH_CONFIG/functions/fish_prompt.fish"
 
   say "Uninstall complete"
@@ -411,9 +410,13 @@ function restore_backup_file -a file_path
   set -l backup_file_path (echo $backup_file_list | command tr ' ' '\n' | command sort -r | command head -1)
 
   if test -e "$backup_file_path"
-    say "Restoring backup file to $path/$file"
-    command mv "$backup_file_path" "$path/$file" ^/dev/null
-      or abort "Could not restore backup $backup_file_path"
+    say "Found a backup of $file at $backup_file_path"
+
+    if confirm "Would you like to restore it (overwrite existing)?"
+      say "Restoring backup file to $path/$file"
+      command mv "$backup_file_path" "$path/$file" ^/dev/null
+        or abort "Could not restore backup $backup_file_path"
+    end
   end
 end
 
