@@ -12,7 +12,7 @@ test -f $OMF_CONFIG/theme
   and read -l theme < $OMF_CONFIG/theme
   or set -l theme default
 # Prepare Oh My Fish paths
-set -l core_function_path $OMF_PATH/lib{,/git}
+set -l core_function_path $OMF_PATH/lib{,/git,/hg}
 set -l theme_function_path {$OMF_CONFIG,$OMF_PATH}/themes*/$theme{,/functions}
 # Autoload core library
 set fish_function_path $fish_function_path[1] \
