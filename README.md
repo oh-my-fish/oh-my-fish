@@ -101,7 +101,7 @@ Scaffold out a new package or theme.
 
 > This creates a new directory under `$OMF_CONFIG/{pkg | themes}/` with a template.
 
-#### `omf search` _`-t|--theme / -pkg|--package`_ _`<name>`_
+#### `omf search` _`-t|--theme / -p|--package`_ _`<name>`_
 
 Searches Oh My Fish's database for a given package, theme or both. It also supports fuzzy search, so if you are not sure of the name you can simply `omf search simple`.
 
