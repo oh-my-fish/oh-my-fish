@@ -2,7 +2,7 @@ function omf.packages.check-updates
   set -l max_workers 8
   set -l fetch_cmd "omf.repo.fetch"
   set -l progress_indicator \u25cf
-  set -l error_log (mktemp -t omf_check-updates.log)
+  set -l error_log (mktemp -t omf_check-updates.XXXX.log)
 
   # Supress Git's attempt to find missing repositories with different credentials.
   # Git > 2.3
@@ -24,7 +24,7 @@ function omf.packages.check-updates
 
         # Error reporting here would be ugly because it clutters the display.
         # Save to log file instead.
-        fish -c "$fetch_cmd $package_path" ^$error_log &
+        fish -c "$fetch_cmd $package_path" ^^$error_log &
 
         printf "$progress_indicator"
       else
@@ -41,6 +41,6 @@ function omf.packages.check-updates
   end
   echo " done!"
 
-  test (wc -l <$error_log) -gt 0
+  test (wc -l < $error_log) -gt 0
     and echo (omf::err)"Please see "(omf::off)"$error_log"(omf::err)" for errors encountered while getting updates."(omf::off)
 end
