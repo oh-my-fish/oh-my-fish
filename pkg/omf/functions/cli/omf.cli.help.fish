@@ -24,8 +24,8 @@ function omf.cli.help
     s/<<[^,]*,\([^>]*\)>>/\1/g
 
     # Definition lists.
-    s/^\(\S.*\)::\(..*\)/\1\2/g
-    s/^\(\S.*\)::/$b\1$r/g
+    s/^\([^[:space:]].*\)::\(..*\)/\1\2/g
+    s/^\([^[:space:]].*\)::/$b\1$r/g
 
     # Nice bullets for unordered lists.
     s/^[*-] /· /g
@@ -47,7 +47,7 @@ function omf.cli.help
     s/_\([^_]*\)_/$u\1$r/g
 
     # Underline links.
-    s/\w\w*:\S\S*/$u&$r/g
+    s/[[:alnum:]_][[:alnum:]_]*:[^[:space:]][^[:space:]]*/$u&$r/g
 
     # Underline variable names in angle brackets.
     s/<[^>]*>/$u&$r/g
