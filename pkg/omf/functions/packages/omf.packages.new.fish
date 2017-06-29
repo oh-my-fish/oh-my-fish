@@ -40,7 +40,7 @@ end
 
 function omf.packages.new -a option name
   switch $option
-    case "p" "pkg" "pack" "packg" "package"
+    case "p" "plugin"
       set option "pkg"
     case "t" "th" "the" "thm" "theme" "themes"
       set option "themes"

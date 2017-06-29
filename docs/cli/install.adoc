@@ -1,0 +1,23 @@
+Install one or more packages.
+
+== USAGE
+  omf install <spec> [<spec> [...]]    Install package by name or URL
+  omf install                          Install missing packages from bundle
+
+== DESCRIPTION
+Installs packages identified by each <spec> given. A package can be specified either by name or by a URL.
+
+When specifying a package by name, the package name is searched for in each package repository currently installed. The first matching package is selected and downloaded. See `omf help repositories` for more information about repositories.
+
+When a package is specified by URL, OMF assumes the URL points to a Git repository and installs the package by cloning the repository.
+
+When called without arguments, any packages specified in your bundle file that are missing will be installed.
+
+== EXAMPLES
+  omf install brew
+  omf install https://github.com/oh-my-fish/plugin-brew
+  omf install brew spark
+  omf install
+
+== ALIASES
+*omf i*, *omf in*, *omf get*

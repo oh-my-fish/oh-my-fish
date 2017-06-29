@@ -1,0 +1,34 @@
+Oh My Fish! - the fish shell framework
+
+== USAGE
+  omf [options] [<command>] [arguments]
+
+== DESCRIPTION
+Provides options to list, download and remove packages, update the framework, create a new package, etc.
+
+== COMMANDS
+<<cd.adoc#,**cd**>>::            Change to root or package directory.
+<<channel.adoc#,**channel**>>::       Get or change the update channel.
+<<describe.adoc#,**d**escribe>>::      Show information about a package.
+<<destroy.adoc#,**destroy**>>::       Uninstall Oh My Fish.
+<<doctor.adoc#,**doctor**>>::        Troubleshoot Oh My Fish.
+<<help.adoc#,**help**>>::          Shows help about a command.
+<<install.adoc#,**i**nstall>>::       Install one or more packages.
+<<list.adoc#,**l**ist>>::          List installed packages.
+<<new.adoc#,**n**ew>>::           Create a new package from a template.
+<<reload.adoc#,**reload**>>::        Reload the current shell.
+<<remove.adoc#,**r**emove>>::        Remove a package.
+<<repositories.adoc#,**repo**sitories>>::  Manage package repositories.
+<<search.adoc#,**s**earch>>::        Search for a package or theme.
+<<theme.adoc#,**t**heme>>::         Install and list themes.
+<<update.adoc#,**u**pdate>>::        Update Oh My Fish.
+<<version.adoc#,**version**>>::       Display version and exit.
+
+== OPTIONS
+-h, --help::
+  Display this help.
+
+-v, --version::
+  Display version and exit.
+
+For more information visit → https://git.io/oh-my-fish

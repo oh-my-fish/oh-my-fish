@@ -1,0 +1,16 @@
+Get or change the update channel.
+
+== USAGE
+  omf channel         Print the currently selected update channel
+  omf channel <name>  Switch to the given update channel
+
+== DESCRIPTION
+Two channels are available by default: the _stable_ channel provides stable
+updates with the latest tagged version of Oh My Fish, and _dev_ which provides
+the latest changes under development. The update channel currently set
+determines what version *omf update* will upgrade to.
+
+== EXAMPLES
+  omf channel
+  omf channel stable
+  omf channel dev

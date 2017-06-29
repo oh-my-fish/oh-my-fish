@@ -1,0 +1,12 @@
+Install and list themes.
+
+== USAGE
+  omf theme         List available themes to install
+  omf theme <name>  Install theme by name
+
+== EXAMPLES
+  omf theme
+  omf theme l
+
+== ALIASES
+*omf t*

@@ -1,0 +1,29 @@
+Manage user-installed package repositories.
+
+== USAGE
+  omf repositories [list | ls]
+  omf repositories add <url> [<branch>]
+  omf repositories (rm | remove) <url> [<branch>]
+
+== DESCRIPTION
+Provides commands for viewing and managing package repositories for the current user.
+
+Package repositories are where named packages come from used by commands like `omf install`. By default the official repository is always installed and available.
+
+== SUBCOMMANDS
+list, ls::
+  List installed repositories.
+
+add::
+  Add a package repository located at <url>. If <branch> is not specified, the default branch of `master` is assumed.
+
+remove, rm::
+  Remove a package repository.
+
+== EXAMPLES
+  omf repositories
+  omf repositories add https://github.com/vendor/fish-packages
+  omf repositories rm https://github.com/vendor/fish-packages master
+
+== ALIASES
+*omf repo*
