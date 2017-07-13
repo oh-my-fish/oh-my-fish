@@ -67,10 +67,6 @@ function omf.packages.new -a option name
       $github $user $name
 
     echo (omf::em)"Switched to $dir"(omf::off)
-
-    if test "$option" = themes
-      omf.theme.set $name
-    end
   else
     echo (omf::err)"\$OMF_CONFIG and/or \$OMF_PATH undefined."(omf::off) >&2
     exit $OMF_UNKNOWN_ERR
