@@ -30,7 +30,7 @@ $ ls -l
   completions/hello_world.fish
 ```
 
-Завжди описуйте, як працює Ваш пакет в `README.md`. Також почитайте більше про [автодоповнення](http://fishshell.com/docs/current/commands.html#complete) і потурбуйтесь про те, щоб надати його для ваших утиліт, коли це можливо.
+Завжди описуйте, як працює Ваш пакет в `README.md`. Також почитайте більше про [автодоповнення](http://fish.sh/docs/current/commands.html#complete) і потурбуйтесь про те, щоб надати його для ваших утиліт, коли це можливо.
 
 `hello_world.fish` визначає одну функцію:
 
@@ -51,7 +51,7 @@ end
 
 ## Ініціалізація
 
-Якщо ви хочете бути [попереджені](http://fishshell.com/docs/current/commands.html#emit) коли ваш пакет завантажується, оголосіть наступну функцію у вашому `hello_world.fish`:
+Якщо ви хочете бути [попереджені](http://fish.sh/docs/current/commands.html#emit) коли ваш пакет завантажується, оголосіть наступну функцію у вашому `hello_world.fish`:
 
 ```fish
 function init -a path --on-event init_hello_world
