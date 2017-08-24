@@ -56,6 +56,13 @@ Run `install --help` for a complete list of install options you can customize.
 - **fish** shell, version 2.2 or later
 - **git**, version 1.9.5 or later
 
+#### Known Issues
+
+- Due to a regression bug in fish 2.6 with some terminal emulators, right prompts make the shell unusable.  
+  OMF's `default` theme features a right prompt, so it's necessary to use an alternative theme until a fix is released.  
+  (see [#541](https://github.com/oh-my-fish/oh-my-fish/issues/541))
+
+
 ## Getting Started
 
 Oh My Fish includes a small utility `omf` to fetch and install new packages and themes.
