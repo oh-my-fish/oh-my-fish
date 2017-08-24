@@ -51,6 +51,11 @@ $ fish install --offline=omf.tar.gz
 
 Run `install --help` for a complete list of install options you can customize.
 
+#### Requirements
+
+- **fish** shell, version 2.2 or later
+- **git**, version 1.9.5 or later
+
 ## Getting Started
 
 Oh My Fish includes a small utility `omf` to fetch and install new packages and themes.
