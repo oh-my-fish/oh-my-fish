@@ -16,7 +16,7 @@ Obrigado por dedicar algum tempo para ler este FAQ. Sinta-se livre para criar um
 
 ## O que é Oh My Fish e por que eu quero isso?
 
-Oh My Fish é um _framework_ para o [Fishshell](http://fish.sh/). Ele ajuda você a gerenciar sua configuração, temas e pacotes.
+Oh My Fish é um _framework_ para o [Fishshell](https://fish.sh/). Ele ajuda você a gerenciar sua configuração, temas e pacotes.
 
 
 ## O que eu preciso saber para usar o Oh My Fish?

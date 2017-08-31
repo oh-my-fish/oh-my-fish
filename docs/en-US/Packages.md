@@ -35,7 +35,7 @@ $ ls -l
 >Always describe how your package works in the `README.md`.
 
 
->Also read more about [auto completion](http://fish.sh/docs/current/commands.html#complete) and take care to provide it for your utilities when applicable.
+>Also read more about [auto completion](https://fish.sh/docs/current/commands.html#complete) and take care to provide it for your utilities when applicable.
 
 `functions/hello_world.fish` defines a single function:
 
@@ -123,5 +123,5 @@ Packages can use this hook to clean up custom resources, etc.
 The official registry of public packages is managed in the [oh-my-fish/packages-main](https://github.com/oh-my-fish/packages-main) repository. See the README of that repository for instructions on how to add your package to the official package database.
 
 
-[fish-bind]: http://fish.sh/docs/current/commands.html#bind
+[fish-bind]: https://fish.sh/docs/current/commands.html#bind
 [omf-pulls-link]: https://github.com/oh-my-fish/oh-my-fish/pulls

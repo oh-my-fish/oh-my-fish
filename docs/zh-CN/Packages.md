@@ -31,7 +31,7 @@ $ ls -l
   completions/hello_world.fish
 ```
 
-通常在 `README.md` 描述插件的工作原理，依据插件情况可以提供一些 [auto completion](http://fish.sh/docs/current/commands.html#complete)
+通常在 `README.md` 描述插件的工作原理，依据插件情况可以提供一些 [auto completion](https://fish.sh/docs/current/commands.html#complete)
 
 `hello_world.fish` 定义一个简单的 function：
 
