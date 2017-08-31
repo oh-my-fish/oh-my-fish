@@ -54,4 +54,4 @@ To erase paths from autoload:
 autoload -e $mypath $mypath/completions
 ```
 
-[autoloading]: http://fishshell.com/docs/current/index.html#syntax-function-autoloading
+[autoloading]: https://fish.sh/docs/current/index.html#syntax-function-autoloading

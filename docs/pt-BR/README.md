@@ -2,9 +2,9 @@
 <img align="left" width="0" height="192px" hspace="10"/>
 
 
-> The <a href="http://fishshell.com">Fishshell</a> Framework
+> The <a href="https://fish.sh">Fishshell</a> Framework
 
-[![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE.md) [![Fish Shell Version](https://img.shields.io/badge/fish-≥v2.2.0-007EC7.svg?style=flat-square)](http://fishshell.com) [![Travis Build Status](http://img.shields.io/travis/oh-my-fish/oh-my-fish.svg?style=flat-square)](https://travis-ci.org/oh-my-fish/oh-my-fish) [![Slack Status](https://oh-my-fish-slack.herokuapp.com/badge.svg)](https://oh-my-fish-slack.herokuapp.com)
+[![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE.md) [![Fish Shell Version](https://img.shields.io/badge/fish-≥v2.2.0-007EC7.svg?style=flat-square)](https://fish.sh) [![Travis Build Status](http://img.shields.io/travis/oh-my-fish/oh-my-fish.svg?style=flat-square)](https://travis-ci.org/oh-my-fish/oh-my-fish) [![Slack Status](https://oh-my-fish-slack.herokuapp.com/badge.svg)](https://oh-my-fish-slack.herokuapp.com)
 
 
 O Oh My Fish fornece infra-estrutura básica para permitir que você instale pacotes que estendam ou modifiquem a aparência do seu shell. É rápido, extensível e fácil de usar.
@@ -145,7 +145,7 @@ A todo momento pacotes/temas são instalados ou removidos, o arquivo `bundle` é
 O Oh My Fish usa uma arquitetura moderna e bem definida de plugins para facilitar o desenvolvimento de um plugin, incluindo eventos de inicialização/exclusão, funções de backup. [consulte a documentação](docs/en-US/Packages.md) para mais detalhes.
 
 
-[fishshell]: http://fishshell.com
+[fishshell]: https://fish.sh
 [contributors]: https://github.com/oh-my-fish/oh-my-fish/graphs/contributors
 [omf-pulls-link]: https://github.com/oh-my-fish/oh-my-fish/pulls
 [omf-issues-new]: https://github.com/oh-my-fish/oh-my-fish/issues/new
