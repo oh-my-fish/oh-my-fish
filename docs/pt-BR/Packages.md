@@ -35,7 +35,7 @@ $ ls -l
 >Sempre descreva como seu pacote trabalha em `README.md`.
 
 
->Também leia mais sobre [auto-complete](http://fishshell.com/docs/current/commands.html#complete) e tome cuidado para fornecê-lo para seus utilitários, quando aplicável.
+>Também leia mais sobre [auto-complete](http://fish.sh/docs/current/commands.html#complete) e tome cuidado para fornecê-lo para seus utilitários, quando aplicável.
 
 `functions/hello_world.fish` define uma
 simples função:
@@ -125,5 +125,5 @@ Os pacotes podem usar este gancho para limpar recursos personalizados, etc.
 O registro oficial de pacotes públicos é gerenciado no repositório [oh-my-fish/packages-main](https://github.com/oh-my-fish/packages-main). Consulte o README desse repositório para obter instruções sobre como adicionar seu pacote ao banco de dados oficial do pacote.
 
 
-[fish-bind]: http://fishshell.com/docs/current/commands.html#bind
+[fish-bind]: http://fish.sh/docs/current/commands.html#bind
 [omf-pulls-link]: https://github.com/oh-my-fish/oh-my-fish/pulls

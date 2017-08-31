@@ -109,7 +109,7 @@ Ported from https://gist.github.com/agnoster/3712874.
 > A [Oh My Fish][omf-link] theme inspired by Batman.
 
 [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
-[![Fish Shell Version](https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square)](http://fishshell.com)
+[![Fish Shell Version](https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square)](http://fish.sh)
 [![Oh My Fish Framework](https://img.shields.io/badge/Oh%20My%20Fish-Framework-007EC7.svg?style=flat-square)](https://www.github.com/oh-my-fish/oh-my-fish)
 
 <br/>
@@ -636,7 +636,7 @@ set -U budspencer_nobell
 
 Give me feedback if you ...
 * ... have ideas how I could improve budspencer.
-* ... have problems with budspencer. 
+* ... have problems with budspencer.
 * ... have questions concerning budspencer.
 
 [THEMES-NAMESPACE-budspencer-font]: https://github.com/Lokaltog/powerline-fonts
@@ -714,7 +714,7 @@ The glyphs used in the chain can be customized using global variables. Here is a
 # clearance
 ### Fish Theme: clearance
 
-A minimalist [fish shell](http://fishshell.com/) theme for people who use git
+A minimalist [fish shell](http://fish.sh/) theme for people who use git
 
 ![clearance theme](https://raw.github.com/cseelus/clearance-fish/master/clearance-fish_preview.png)
 
@@ -789,7 +789,7 @@ For this theme you need a emoji supporting terminal and the emoji-clock plugin
 > A theme for [Oh My Fish][omf-link].
 
 [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
-[![Fish Shell Version](https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square)](http://fishshell.com)
+[![Fish Shell Version](https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square)](http://fish.sh)
 [![Oh My Fish Framework](https://img.shields.io/badge/Oh%20My%20Fish-Framework-007EC7.svg?style=flat-square)](https://www.github.com/oh-my-fish/oh-my-fish)
 [![Join the chat at https://gitter.im/oh-my-fish/theme-qing](https://badges.gitter.im/oh-my-fish/theme-qing.svg)](https://gitter.im/oh-my-fish/theme-qing?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -1056,7 +1056,7 @@ Just type `wt <title>`.
 
 Give me feedback if you ...
 * ... have ideas how I could improve dangerous.
-* ... have problems with dangerous. 
+* ... have problems with dangerous.
 * ... have questions concerning dangerous.
 
 [THEMES-NAMESPACE-dangerous-ranger]: http://ranger.nongnu.org/
@@ -1164,7 +1164,7 @@ Check out [Anonymous Pro](http://www.marksimonson.com/fonts/view/anonymous-pro).
 > A theme for [fishshell][fish-link].
 
 [![MIT License][license-badge]](/LICENSE)
-[![Fish Shell Version][fish-badge]](http://fishshell.com)
+[![Fish Shell Version][fish-badge]](http://fish.sh)
 [![Oh My Fish Framework][omf-badge]][omf-link]
 
 <br/>
@@ -1210,7 +1210,7 @@ Font: [INCONSOLATA](https://www.google.com/fonts/specimen/Inconsolata)
 
 [THEMES-NAMESPACE-eden-mit]:            http://opensource.org/licenses/MIT
 [THEMES-NAMESPACE-eden-author]:         http://github.com/amio
-[fish-link]:      http://fishshell.com/
+[fish-link]:      http://fish.sh/
 [omf-link]:       https://github.com/oh-my-fish/oh-my-fish
 [fisher-link]:    https://github.com/fisherman/fisherman
 [omf-badge]:      https://img.shields.io/badge/Oh%20My%20Fish-Framework-007EC7.svg?style=flat-square
@@ -1224,7 +1224,7 @@ Font: [INCONSOLATA](https://www.google.com/fonts/specimen/Inconsolata)
 ###### es theme
 > A Powerline-style, Git-aware theme for [Oh My Fish][omf-link].
 
-[![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE) [![Fish Shell Version](https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square)](http://fishshell.com) [![Oh My Fish Framework](https://img.shields.io/badge/Oh%20My%20Fish-Framework-007EC7.svg?style=flat-square)](https://www.github.com/oh-my-fish/oh-my-fish)
+[![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE) [![Fish Shell Version](https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square)](http://fish.sh) [![Oh My Fish Framework](https://img.shields.io/badge/Oh%20My%20Fish-Framework-007EC7.svg?style=flat-square)](https://www.github.com/oh-my-fish/oh-my-fish)
 
 <br/>
 
@@ -1279,7 +1279,7 @@ $ omf install es
 <img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="144px" height="144px"/>
 
 ### fishbone
-A clean theme for [fish shell](https://fishshell.com) managed by [Oh my fish](https://github.com/oh-my-fish/oh-my-fish)
+A clean theme for [fish shell](https://fish.sh) managed by [Oh my fish](https://github.com/oh-my-fish/oh-my-fish)
 
 <br />
 <br />
@@ -1304,7 +1304,7 @@ omf install fishbone
 * For Python users, if there is an active virtualenv, it will be displayed at right between brackets;
 * Colon at left side becames red if last command fails;
 * At start up, shows user name, date, uptime, informations about OS, CPU, memory and network;
- 
+
 #### Project structure
 
 We have two branches:
@@ -1566,7 +1566,7 @@ theme](http://jacaetevha.github.io/oh-my-fish/screenshot.png)
 * Left-hand prompt:
 ```
     <user> at <host> in <abbreviated path> <total size of files in dir> (<current Git branch>)
-    ↪ 
+    ↪
 ```
 * Right-hand prompt:
 ```
@@ -1792,7 +1792,7 @@ set theme_display_rbenv_with_gemfile_only 'yes'
 ##### Lambda
 
 [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
-[![Fish Shell Version](https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square)](http://fishshell.com)
+[![Fish Shell Version](https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square)](http://fish.sh)
 
 <br/>
 
@@ -1995,7 +1995,7 @@ This theme is based loosely on [agnoster](https://gist.github.com/agnoster/37128
 * Full path of current working directory
 * Show the Git branch and dirty state (if applicable)
 * Show **User@Hostname** if user is not the default user. Set the following two lines in your config.fish to turn on this feature:
-    
+
     ```fish
     set -g theme display_user yes
     set -g default_user your_default_username
@@ -2090,7 +2090,7 @@ fisher i plain
 
 
 # pure
-### pure [![Fish Shell Version](https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square)](http://fishshell.com)
+### pure [![Fish Shell Version](https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square)](http://fish.sh)
 
 > Port of the [`pure`](https://github.com/sindresorhus/pure) ZSH theme to Fish
 
@@ -2305,7 +2305,7 @@ patch some fonts on you own.
 > A theme for [Oh My Fish][omf-link].
 
 [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
-[![Fish Shell Version](https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square)](http://fishshell.com)
+[![Fish Shell Version](https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square)](http://fish.sh)
 [![Oh My Fish Framework](https://img.shields.io/badge/Oh%20My%20Fish-Framework-007EC7.svg?style=flat-square)](https://www.github.com/oh-my-fish/oh-my-fish)
 
 <br/>
@@ -2407,7 +2407,7 @@ shell for OS X, Linux, and the rest of the family
 Once Oh My Fish is installed:
 
     omf install slavic-cat
-    
+
 [forked from Toaster](https://github.com/oh-my-fish/theme-toaster)
 
 #### Features
