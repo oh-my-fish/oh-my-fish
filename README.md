@@ -132,7 +132,7 @@ For more information check the [FAQ](docs/en-US/FAQ.md#what-does-oh-my-fish-do-e
 ### Dotfiles
 
 The `$OMF_CONFIG` directory represents the user state of Oh My Fish. It is the perfect
-candidate for being added to your dotfiles and/or checked out to version control. There are four important files:
+candidate for being added to your dotfiles and/or checked out to version control. There are five important files:
 
 - __`theme`__ - The current theme
 - __`bundle`__ - List of currently installed packages/themes
