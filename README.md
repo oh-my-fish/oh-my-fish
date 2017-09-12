@@ -3,7 +3,7 @@
 
 > The <a href="http://fishshell.com">Fishshell</a> Framework
 
-[![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE.md) [![Fish Shell Version](https://img.shields.io/badge/fish-≥v2.2.0-007EC7.svg?style=flat-square)](http://fishshell.com) [![Travis Build Status](http://img.shields.io/travis/oh-my-fish/oh-my-fish.svg?style=flat-square)](https://travis-ci.org/oh-my-fish/oh-my-fish) [![Slack Status](https://oh-my-fish-slack.herokuapp.com/badge.svg)](https://oh-my-fish-slack.herokuapp.com)
+[![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE) [![Fish Shell Version](https://img.shields.io/badge/fish-≥v2.2.0-007EC7.svg?style=flat-square)](http://fishshell.com) [![Travis Build Status](http://img.shields.io/travis/oh-my-fish/oh-my-fish.svg?style=flat-square)](https://travis-ci.org/oh-my-fish/oh-my-fish) [![Slack Status](https://oh-my-fish-slack.herokuapp.com/badge.svg)](https://oh-my-fish-slack.herokuapp.com)
 
 
 Oh My Fish provides core infrastructure to allow you to install packages which extend or modify the look of your shell. It's fast, extensible and easy to use.
@@ -50,6 +50,18 @@ $ fish install --offline=omf.tar.gz
 ```
 
 Run `install --help` for a complete list of install options you can customize.
+
+#### Requirements
+
+- **fish** shell, version 2.2 or later
+- **git**, version 1.9.5 or later
+
+#### Known Issues
+
+- Due to a regression bug in fish 2.6 with some terminal emulators, right prompts make the shell unusable.  
+  OMF's `default` theme features a right prompt, so it's necessary to use an alternative theme until a fix is released.  
+  (see [#541](https://github.com/oh-my-fish/oh-my-fish/issues/541))
+
 
 ## Getting Started
 
@@ -121,28 +133,38 @@ Uninstall Oh My Fish.
 
 ## Advanced
 
-Oh My Fish installer places its startup code in your fish config file (`~/.config/fish/config.fish`).
+Oh My Fish installer adds a snippet to fish's user config files (`~/.config/fish/conf.d/`) which calls OMF's startup code.
+
+Notice that the scripts in that directory are sourced in the order that the filesystem sees them,
+and so it may be necessary to prefix your script files with ordering numbers.
+
+For example: `a_script.fish` will take precedence over the `omf.fish` snippet.
+So if `a_script.fish` depends on plugins managed by OMF, consider renaming the script file to `xx_a_script.fish`.
+
+Similiarly, to make sure that a script runs before `omf.fish`, you may prefix it with `00_`.
+Alternatively, `~/.config/omf/before.init.fish` may be used.
 
 ### Startup
 
-Every time you open a new shell, the startup code initializes Oh My Fish installation path and the _config_ path (`~/.config/omf` by default), sourcing the [`init.fish`](init.fish) script afterwards, which autoloads packages, themes and your custom init files.
+Every time you open a new shell, the startup code initializes Oh My Fish installation path and the _config_ path (`~/.config/omf` by default),
+sourcing the [`init.fish`](init.fish) script afterwards, which autoloads packages, themes and your custom init files.
 
 For more information check the [FAQ](docs/en-US/FAQ.md#what-does-oh-my-fish-do-exactly).
 
 ### Dotfiles
 
 The `$OMF_CONFIG` directory represents the user state of Oh My Fish. It is the perfect
-candidate for being added to your dotfiles and/or checked out to version control. There are four important files:
+candidate for being added to your dotfiles and/or checked out to version control. There you can find three important files:
 
 - __`theme`__ - The current theme
 - __`bundle`__ - List of currently installed packages/themes
+- __`channel`__ - The channel from which OMF gets updates (stable / dev)
+
+And you may create and customize these special files:
+
 - __`init.fish`__ - Custom script sourced after shell start
 - __`before.init.fish`__ - Custom script sourced before shell start
 - __`key_bindings.fish`__ - Custom key bindings where you can use the `bind` command freely
-
-It's highly recommended that your custom startup commands go into `init.fish` file instead of `~/.config/fish/config.fish`, as this allows you to keep the whole `$OMF_CONFIG` directory under version control.
-
-If you need startup commands to be run *before* Oh My Fish begins loading plugins, place them in `before.init.fish` instead. If you're unsure, it is usually best to put things in `init.fish`.
 
 #### Setting variables in `init.fish`
 
@@ -159,6 +181,14 @@ set -xg PYTHONDONTWRITEBYTECODE 1
 #### About the bundle
 
 Every time a package/theme is installed or removed, the `bundle` file is updated. You can also edit it manually and run `omf install` afterwards to satisfy the changes. Please note that while packages/themes added to the bundle get automatically installed, a package/theme removed from bundle isn't removed from user installation.
+
+#### Older fish versions
+
+In fish 2.2, there is no `conf.d` directory, so the startup code has to be placed in the fish config file (`~/.config/fish/config.fish`).
+
+It's highly recommended that your custom startup commands go into `init.fish` file instead of `~/.config/fish/config.fish`, as this allows you to keep the whole `$OMF_CONFIG` directory under version control.
+
+If you need startup commands to be run *before* Oh My Fish begins loading plugins, place them in `before.init.fish` instead. If you're unsure, it is usually best to put things in `init.fish`.
 
 ## Creating Packages
 
