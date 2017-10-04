@@ -27,13 +27,6 @@ function omf.theme.set -a target_theme
   set -l theme_path {$OMF_CONFIG,$OMF_PATH}/themes*/$target_theme{,/functions}
   autoload $theme_path
 
-  # Find target theme's fish_prompt and link to user function path
-  for path in {$OMF_CONFIG,$OMF_PATH}/themes/$target_theme/$prompt_filename
-    if test -e $path
-      ln -sf $path $user_functions_path/$prompt_filename; and break
-    end
-  end
-
   # Reload fish key bindings if reload is available and needed
   functions -q __fish_reload_key_bindings
     and test (count {$OMF_CONFIG,$OMF_PATH}/key_binding?.fish) -gt 0
