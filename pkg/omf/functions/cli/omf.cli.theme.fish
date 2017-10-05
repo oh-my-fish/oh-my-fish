@@ -14,7 +14,11 @@ function omf.cli.theme -a name
     echo (omf::under)"Available:"(omf::off)
     omf.index.query --type=theme | column
   case 1
-    omf.theme.set $name
+    if not omf.theme.set $name
+      echo (omf::err)"Theme not installed!"(omf::off)
+      echo Install it using (omf::em)omf install $name(omf::off)
+      return $OMF_INVALID_ARG
+    end
   case '*'
     echo (omf::err)"Invalid number of arguments"(omf::off) >&2
     echo "Usage: $_ "(omf::em)"$argv[1]"(omf::off)" [<theme name>]" >&2

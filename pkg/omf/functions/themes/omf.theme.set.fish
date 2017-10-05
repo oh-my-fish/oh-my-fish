@@ -1,7 +1,5 @@
 function omf.theme.set -a target_theme
-  if not contains "$target_theme" (omf.packages.list --theme)
-    echo (omf::err)"Theme not installed!"(omf::off)
-    echo Install it using (omf::em)omf install $target_theme(omf::off)
+  if not test -d $OMF_PATH/themes/$target_theme
     return $OMF_INVALID_ARG
   end
 
