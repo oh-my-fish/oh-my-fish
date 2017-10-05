@@ -2,6 +2,41 @@
 Important changes to Oh My Fish are recorded here for each release.
 
 
+## [6] - 2017-10-05
+This release took far longer than we targeted for releasing, but we finally made it! Some notable fixes and improvements in this release, with some long-standing bugs eliminated.
+
+A big shiny improvement was made to the command-line help text, with more manpage-like output and descriptions. Check out `omf help -h` to see the brand new `help` command, which now supports shortened command names too! (Try running `omf help u`.) All of the help pages are also viewable online here: https://github.com/oh-my-fish/oh-my-fish/tree/master/docs/cli
+
+### Improvements
+- Revamp internal help text code and improve command-line help documentation. [#502]
+- Use HTTPS in all links to the installer. [#482] [#490]
+- Add a SHA-256 checksum for the installer. [#504]
+- Search results should only match name or description. [#505]
+
+### Bugs fixed
+- Scaffolding a new theme spits out weird error messages. [#401] [#529] [#530]
+- Handle backups and config files more carefully. [#509] [#512]
+- Themes should not require a `theme-` prefix in the URL. [#191] [#503]
+- Gracefully handle no theme being set. [#494] [#495]
+- Documentation fixes and improvements. [#493] [#507] [#508] [#520] [#543] [#546] [#548]
+
+### New plugins and themes
+- Plugins and themes are now tracked separately! Watch the [packages-main] repo for new plugins and themes.
+
+### Contributors
+Thanks to the people who contributed to this release.
+
+- [Dalton Duvio](mailto:thebigdalt@gmail.com)
+- [Gabriel César](mailto:gcal1@live.com)
+- [Itzik Ephraim](mailto:oranja@gmail.com)
+- [Justin Hileman](mailto:github@0x7f.us)
+- [Leonardo de Oliveira da Silva](mailto:los.oliveirasilva@gmail.com)
+- [Lucas Bordignon](mailto:lucaspbordignon99@gmail.com)
+- [Necmettin Karakaya](mailto:necmettin.karakaya@gmail.com)
+- [pwendelboe](mailto:pwendelboe.git@gmail.com)
+- [Stephen M. Coakley](mailto:me@stephencoakley.com)
+
+
 ## [5] - 2017-02-11
 ### Added
 - Replace package database with new, independently installed package repository system. Packages are no longer stored in the framework repository tree. Instead packages are stored in a package repository, a Git repo with a list of available packages. Multiple sources are supported, with the old database contents moved to the [packages-main] repository. [#427]
@@ -166,7 +201,9 @@ Thanks to the people who contributed to this release.
 [3]: https://github.com/oh-my-fish/oh-my-fish/releases/tag/v3
 [4]: https://github.com/oh-my-fish/oh-my-fish/releases/tag/v4
 [5]: https://github.com/oh-my-fish/oh-my-fish/releases/tag/v5
-[#217]: https://github.com/oh-my-fish/oh-my-fish/pull/217
+[6]: https://github.com/oh-my-fish/oh-my-fish/releases/tag/v6
+[#191]: https://github.com/oh-my-fish/oh-my-fish/issues/191
+[#217]: https://github.com/oh-my-fish/oh-my-fish/issues/217
 [#235]: https://github.com/oh-my-fish/oh-my-fish/pull/235
 [#238]: https://github.com/oh-my-fish/oh-my-fish/pull/238
 [#242]: https://github.com/oh-my-fish/oh-my-fish/pull/242
@@ -174,7 +211,7 @@ Thanks to the people who contributed to this release.
 [#250]: https://github.com/oh-my-fish/oh-my-fish/pull/250
 [#266]: https://github.com/oh-my-fish/oh-my-fish/pull/266
 [#268]: https://github.com/oh-my-fish/oh-my-fish/pull/268
-[#274]: https://github.com/oh-my-fish/oh-my-fish/pull/274
+[#274]: https://github.com/oh-my-fish/oh-my-fish/issues/274
 [#280]: https://github.com/oh-my-fish/oh-my-fish/pull/280
 [#285]: https://github.com/oh-my-fish/oh-my-fish/pull/285
 [#286]: https://github.com/oh-my-fish/oh-my-fish/pull/286
@@ -204,19 +241,20 @@ Thanks to the people who contributed to this release.
 [#371]: https://github.com/oh-my-fish/oh-my-fish/pull/371
 [#373]: https://github.com/oh-my-fish/oh-my-fish/pull/373
 [#378]: https://github.com/oh-my-fish/oh-my-fish/pull/378
-[#379]: https://github.com/oh-my-fish/oh-my-fish/pull/379
+[#379]: https://github.com/oh-my-fish/oh-my-fish/issues/379
 [#380]: https://github.com/oh-my-fish/oh-my-fish/pull/380
 [#381]: https://github.com/oh-my-fish/oh-my-fish/pull/381
 [#385]: https://github.com/oh-my-fish/oh-my-fish/pull/385
 [#394]: https://github.com/oh-my-fish/oh-my-fish/pull/394
 [#399]: https://github.com/oh-my-fish/oh-my-fish/pull/399
+[#401]: https://github.com/oh-my-fish/oh-my-fish/issues/401
 [#403]: https://github.com/oh-my-fish/oh-my-fish/pull/403
 [#418]: https://github.com/oh-my-fish/oh-my-fish/pull/418
 [#426]: https://github.com/oh-my-fish/oh-my-fish/pull/426
 [#427]: https://github.com/oh-my-fish/oh-my-fish/pull/427
 [#435]: https://github.com/oh-my-fish/oh-my-fish/pull/435
-[#440]: https://github.com/oh-my-fish/oh-my-fish/pull/440
-[#444]: https://github.com/oh-my-fish/oh-my-fish/pull/444
+[#440]: https://github.com/oh-my-fish/oh-my-fish/issues/440
+[#444]: https://github.com/oh-my-fish/oh-my-fish/issues/444
 [#446]: https://github.com/oh-my-fish/oh-my-fish/pull/446
 [#456]: https://github.com/oh-my-fish/oh-my-fish/pull/456
 [#457]: https://github.com/oh-my-fish/oh-my-fish/pull/457
@@ -224,6 +262,25 @@ Thanks to the people who contributed to this release.
 [#459]: https://github.com/oh-my-fish/oh-my-fish/pull/459
 [#464]: https://github.com/oh-my-fish/oh-my-fish/pull/464
 [#472]: https://github.com/oh-my-fish/oh-my-fish/pull/472
-[#479]: https://github.com/oh-my-fish/oh-my-fish/pull/479
+[#479]: https://github.com/oh-my-fish/oh-my-fish/issues/479
 [#481]: https://github.com/oh-my-fish/oh-my-fish/pull/481
+[#482]: https://github.com/oh-my-fish/oh-my-fish/issues/482
 [#485]: https://github.com/oh-my-fish/oh-my-fish/pull/485
+[#490]: https://github.com/oh-my-fish/oh-my-fish/pull/490
+[#493]: https://github.com/oh-my-fish/oh-my-fish/pull/493
+[#494]: https://github.com/oh-my-fish/oh-my-fish/issues/494
+[#495]: https://github.com/oh-my-fish/oh-my-fish/pull/495
+[#502]: https://github.com/oh-my-fish/oh-my-fish/pull/502
+[#503]: https://github.com/oh-my-fish/oh-my-fish/pull/503
+[#504]: https://github.com/oh-my-fish/oh-my-fish/pull/504
+[#505]: https://github.com/oh-my-fish/oh-my-fish/pull/505
+[#507]: https://github.com/oh-my-fish/oh-my-fish/pull/507
+[#508]: https://github.com/oh-my-fish/oh-my-fish/pull/508
+[#509]: https://github.com/oh-my-fish/oh-my-fish/issues/509
+[#512]: https://github.com/oh-my-fish/oh-my-fish/pull/512
+[#520]: https://github.com/oh-my-fish/oh-my-fish/pull/520
+[#529]: https://github.com/oh-my-fish/oh-my-fish/issues/529
+[#530]: https://github.com/oh-my-fish/oh-my-fish/pull/530
+[#543]: https://github.com/oh-my-fish/oh-my-fish/pull/543
+[#546]: https://github.com/oh-my-fish/oh-my-fish/pull/546
+[#548]: https://github.com/oh-my-fish/oh-my-fish/pull/548
