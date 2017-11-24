@@ -56,6 +56,9 @@ function omf.doctor
   __omf.doctor.git_version; or set -l doctor_failed
   __omf.doctor.theme; or set -l doctor_failed
 
+  fish "$OMF_PATH/bin/install" --check
+    or set -l doctor_failed
+
   if set -q doctor_failed
     echo "If everything you use Oh My Fish for is working fine, please don't worry and just ignore the warnings. Thanks!"
   else

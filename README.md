@@ -34,7 +34,7 @@ fish install --path=~/.local/share/omf --config=~/.config/omf
 You can verify the integrity of the downloaded installer by verifying the script against [this checksum](bin/install.sha256):
 
 ```
-92ca680df48640e744b361d376194c5f5f8d6b4f1ac775d22417a0d8a8108767  install
+79cb5ff876e4192b63391efda5a200beeac540cde6a56c8bcf63dc9c54c6bda4  install
 ```
 
 You can also install Oh My Fish with Git or with an offline source tarball downloaded from the [releases page][releases]:
@@ -58,8 +58,8 @@ Run `install --help` for a complete list of install options you can customize.
 
 #### Known Issues
 
-- Due to a regression bug in fish 2.6 with some terminal emulators, right prompts make the shell unusable.  
-  OMF's `default` theme features a right prompt, so it's necessary to use an alternative theme until a fix is released.  
+- Due to a regression bug in fish 2.6 with some terminal emulators, right prompts make the shell unusable.
+  OMF's `default` theme features a right prompt, so it's necessary to use an alternative theme until a fix is released.
   (see [#541](https://github.com/oh-my-fish/oh-my-fish/issues/541))
 
 
