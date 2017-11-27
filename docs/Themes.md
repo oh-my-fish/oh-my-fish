@@ -28,6 +28,7 @@
 - [gitstatus](#gitstatus)
 - [gnuykeaj](#gnuykeaj)
 - [godfather](#godfather)
+- [harleen](#harleen)
 - [hulk](#hulk)
 - [idan](#idan)
 - [integral](#integral)
@@ -636,7 +637,7 @@ set -U budspencer_nobell
 
 Give me feedback if you ...
 * ... have ideas how I could improve budspencer.
-* ... have problems with budspencer. 
+* ... have problems with budspencer.
 * ... have questions concerning budspencer.
 
 [THEMES-NAMESPACE-budspencer-font]: https://github.com/Lokaltog/powerline-fonts
@@ -1056,7 +1057,7 @@ Just type `wt <title>`.
 
 Give me feedback if you ...
 * ... have ideas how I could improve dangerous.
-* ... have problems with dangerous. 
+* ... have problems with dangerous.
 * ... have questions concerning dangerous.
 
 [THEMES-NAMESPACE-dangerous-ranger]: http://ranger.nongnu.org/
@@ -1304,7 +1305,7 @@ omf install fishbone
 * For Python users, if there is an active virtualenv, it will be displayed at right between brackets;
 * Colon at left side becames red if last command fails;
 * At start up, shows user name, date, uptime, informations about OS, CPU, memory and network;
- 
+
 #### Project structure
 
 We have two branches:
@@ -1483,6 +1484,59 @@ Colors and git functions taken from [amio](https://github.com/amio)'s
 [edan](https://github.com/bpinto/oh-my-fish/tree/master/themes/edan) theme.
 
 
+# harleen
+
+<img src="https://avatars1.githubusercontent.com/u/11728505?s=200&v=4" align="left" width="144px" height="144px" style="margin:10px 20px;"/>
+
+###### Harleen
+
+> A [Oh My Fish][omf-link] theme inspired by [Harleen Quinzel](http://dcextendeduniverse.wikia.com/wiki/Harley_Quinn).
+
+[![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
+[![Fish Shell Version](https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square)](https://fishshell.com)
+[![Oh My Fish Framework](https://img.shields.io/badge/Oh%20My%20Fish-Framework-007EC7.svg?style=flat-square)](https://www.github.com/oh-my-fish/oh-my-fish)
+
+#### Install
+
+```fish
+$ omf install harleen
+```
+
+*Please notice the theme requires [git](https://git-scm.com/) to work efficiently.*
+
+#### Description
+
+*Harleen* is a simple yet useful [Oh My Fish][omf-link] theme highly inspired by the [batman theme](https://github.com/gitter-badger/batman) and the [sushi theme](https://github.com/umayr/theme-sushi), but also from the [fish default theme](https://github.com/oh-my-fish/theme-default).
+
+It is meant to remain simple and bring some useful information when browsing a git repository.
+
+Huge thanks as well to [erikachristine](http://www.colourlovers.com/lover/erikachristine) for her beautiful [color palette](http://www.colourlovers.com/palette/4537580/lisa_frank_rainbow~) which I used for that theme.
+
+Also a huge thanks to @sagebind for his really nice and helpful comments :thumbsup:
+
+#### Features
+
+* Minimal prompt,
+* Displays status of last command as color,
+* Displays useful information when browsing a Git repository,
+* Displays number of ahead/behind commits between current and remote branch,
+* Displays time on the right.
+
+#### Screenshot
+
+[![screenshot](https://raw.githubusercontent.com/aneveux/theme-harleen/master/screen.png)](https://github.com/aneveux/theme-harleen/)
+
+### License
+
+[MIT][mit] © [Antoine Neveux][author] et [al][contributors]
+
+[mit]:            https://opensource.org/licenses/MIT
+[author]:         https://github.com/aneveux
+[contributors]:   https://github.com/aneveux/theme-harleen/graphs/contributors
+[omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
+
+[license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
+
 
 # hulk
 [![Slack Room][slack-badge]][slack-link]
@@ -1566,7 +1620,7 @@ theme](http://jacaetevha.github.io/oh-my-fish/screenshot.png)
 * Left-hand prompt:
 ```
     <user> at <host> in <abbreviated path> <total size of files in dir> (<current Git branch>)
-    ↪ 
+    ↪
 ```
 * Right-hand prompt:
 ```
@@ -1995,7 +2049,7 @@ This theme is based loosely on [agnoster](https://gist.github.com/agnoster/37128
 * Full path of current working directory
 * Show the Git branch and dirty state (if applicable)
 * Show **User@Hostname** if user is not the default user. Set the following two lines in your config.fish to turn on this feature:
-    
+
     ```fish
     set -g theme display_user yes
     set -g default_user your_default_username
@@ -2407,7 +2461,7 @@ shell for OS X, Linux, and the rest of the family
 Once Oh My Fish is installed:
 
     omf install slavic-cat
-    
+
 [forked from Toaster](https://github.com/oh-my-fish/theme-toaster)
 
 #### Features
@@ -2769,5 +2823,3 @@ User, host, abbreviated path, and git branch info
 Time and exit code
 
 Enjoy!
-
-
