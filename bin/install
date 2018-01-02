@@ -466,8 +466,9 @@ function sane_environment_check
     and test "$result[3]" = 1.2.3
     or abort (which sort)" is not a sane 'sort' implementation"
 
-  debug "Checking AWK version"
-  if not cmd awk -Wv | cmd grep -i -q AWK
+  debug "Checking for a working AWK interpreter"
+  cmd awk 'BEGIN{exit 42;}' < /dev/null ^ /dev/null
+  if not test $status -eq 42
     abort (which awk)" does not look like an AWK interpreter."
   end
 
@@ -581,7 +582,11 @@ end
 
 # A link-following `which` wrapper.
 function which
-  command readlink (command which $argv)
+  if type -q realpath
+    realpath (command which $argv)
+  else
+    command readlink (command which $argv)
+  end
 end
 
 
