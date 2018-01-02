@@ -581,7 +581,7 @@ end
 
 # A link-following `which` wrapper.
 function which
-  command readlink -f (command which $argv)
+  command readlink (command which $argv)
 end
 
 
