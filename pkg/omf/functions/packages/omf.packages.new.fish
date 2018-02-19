@@ -23,7 +23,7 @@ function __omf.packages.new.from_template -a path github user name
           echo (basename "$file")
         end
       end)
-      sed "s/{{USER_NAME}}/$user/;s/{{GITHUB_USER}}/$github/;s/{{NAME}}/$name/" \
+      sed "s/{{USER_NAME}}/$user/;s/{{GITHUB_USER}}/$github/;s/{{NAME}}/$name/;s/{{YEAR}}/${date +%y}/" \
         $file > $target
       echo (omf::em)" create "(omf::off)" "(begin
         if test (basename $PWD) = $name
