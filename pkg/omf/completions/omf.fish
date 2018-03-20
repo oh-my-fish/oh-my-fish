@@ -16,6 +16,7 @@ for subcommand in "r rm remove" "c cd" "u update"
   complete -c omf -f -n "__fish_seen_subcommand_from $subcommand; and __omf_assert_args_count 1" -a "$installed_themes" -d theme
   complete -c omf -f -n "__fish_seen_subcommand_from $subcommand; and __omf_assert_args_count 1" -a "$installed_plugins" -d plugin
 end
+complete -c omf -f -n "__fish_seen_subcommand_from functions; and __omf_assert_args_count 1" -a "$installed_plugins" -d plugin
 
 set -l available_themes (omf.index.query --type=theme)
 set -l available_plugins (omf.index.query --type=plugin)
