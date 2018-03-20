@@ -35,12 +35,14 @@ function main
 
 Options:
   --channel=<channel>     Download a specific release channel, either \"stable\" or \"dev\" (default is \"$OMF_CHANNEL\").
+  --check                 Do a system readiness check without installing.
   --config=<path>         Put config in a specific path (default is $OMF_CONFIG_DEFAULT).
   --help, -h              Show this help message.
   --noninteractive        Disable interactive questions (assume no, use with --yes to assume yes).
   --offline[=<path>]      Offline install, optionally specifying a tar or directory to use.
   --path=<path>           Use a specific install path (default is $OMF_PATH_DEFAULT).
   --uninstall             Uninstall existing installation instead of installing.
+  --verbose               Enable verbose debugging statements for the installer.
   --yes, -y               Assume yes for interactive questions.
 "
         return 0
@@ -53,6 +55,9 @@ Options:
 
       case '--channel=*'
         abort "Unknown release channel \""(echo "$argv[1]" | command cut -d= -f2)"\"."
+
+      case --check
+        set -g CHECK_ONLY
 
       case '--config=*'
         echo "$argv[1]" | command cut -d= -f2 | command sed -e "s#~#$HOME#" | read -g OMF_CONFIG
@@ -73,6 +78,10 @@ Options:
       case --uninstall
         set -g UNINSTALL
 
+      case --verbose
+        set -g VERBOSE
+        debug "verbose turned on"
+
       case --yes -y
         set -g ASSUME_YES
 
@@ -82,11 +91,18 @@ Options:
     set -e argv[1]
   end
 
-  # Ensure the environment meets all of the requirements.
-  assert_fish_version_compatible 2.2.0
-  assert_git_version_compatible 1.9.5
-  assert_cmds
+  # Do the check only.
+  if set -q CHECK_ONLY
+    sane_environment_check
+    return
+  end
+
   assert_interactive
+
+  # Ensure the environment meets all of the requirements.
+  if not sane_environment_check
+    abort "Environment does not meet the requirements."
+  end
 
   # If the user wants to uninstall, jump to uninstallation and exit.
   if set -q UNINSTALL
@@ -123,7 +139,18 @@ end
 # Add an exit hook to display a message if the installer aborts or errors.
 function on_exit -p %self
   if not contains $argv[3] 0 2
-    echo -e "\nOh My Fish installation failed.\n\nIf you think that it's a bug, please open an\nissue with the complete installation log here:\n\nhttp://github.com/oh-my-fish/oh-my-fish/issues"
+    echo "
+Oh My Fish installation failed.
+
+If you think that it's a bug, please open an
+issue with the complete installation log here:
+
+http://github.com/oh-my-fish/oh-my-fish/issues"
+
+    if not set -q VERBOSE
+      echo
+      echo "Try rerunning with --verbose to see additional output."
+    end
   end
 end
 
@@ -421,6 +448,45 @@ function restore_backup_file -a file_path
 end
 
 
+# Verify we have a sane environment that OMF can run in.
+function sane_environment_check
+  say "Checking for a sane environment..."
+  assert_cmds
+
+  debug "Checking for a sane 'head' implementation"
+  set -l result (printf 'a\nb\n' | cmd head -n 1)
+    and test "$result" = 'a'
+    or abort (which head)" is not a sane 'head' implementation"
+
+  debug "Checking for a sane 'sort' implementation"
+  set -l result (printf '1.2.3\n2.2.4\n1.2.4\n' | cmd sort -r -n -t '.' -k 1,1 -k 2,2 -k 3,3 -k 4,4)
+    and set -q result[3]
+    and test "$result[1]" = 2.2.4
+    and test "$result[2]" = 1.2.4
+    and test "$result[3]" = 1.2.3
+    or abort (which sort)" is not a sane 'sort' implementation"
+
+  debug "Checking for a working AWK interpreter"
+  cmd awk 'BEGIN{exit 42;}' < /dev/null ^ /dev/null
+  if not test $status -eq 42
+    abort (which awk)" does not look like an AWK interpreter."
+  end
+
+  assert_fish_version_compatible 2.2.0
+  assert_git_version_compatible 1.9.5
+
+  debug "Verifying Git implementation is not buggy Git for Windows"
+  if cmd git --version | cmd grep -i -q windows
+    abort (which git)" is Git for Windows which is not supported."
+  end
+
+  debug "Verifying Git autocrlf is not enabled"
+  if test (cmd git config --bool core.autocrlf; or echo false) = true
+    abort "Please disable core.autocrlf in your Git configuration."
+  end
+end
+
+
 # Gets the version of Fish installed.
 function get_fish_version
   if set -q FISH_VERSION
@@ -492,11 +558,13 @@ end
 
 # Assert that all tools we need are available.
 function assert_cmds
-  set -l cmds awk basename cp cut date dirname fold head mkdir mv rm sed sort tar tr
+  set -l cmds awk basename cp cut date dirname env fish fold head mkdir mv readlink rm sed sort tar tr which
 
   for cmd in $cmds
     type -f -q $cmd
-      or abort "Command '$cmd' not found"
+      or abort "Missing required command: $cmd"
+
+    debug "Command '$cmd' is "(which $cmd)
   end
 end
 
@@ -512,9 +580,37 @@ function assert_interactive
 end
 
 
+# A link-following `which` wrapper.
+function which
+  if type -q realpath
+    realpath (command which $argv)
+  else
+    command readlink (command which $argv)
+  end
+end
+
+
+# Execute an external command.
+function cmd
+  if set -q VERBOSE
+    command env $argv
+  else
+    command env $argv ^ /dev/null
+  end
+end
+
+
 # Print a message to the user.
 function say -a message
   printf "$message\n" | command fold -s -w 80
+end
+
+
+# Write a debug message.
+function debug -a message
+  if set -q VERBOSE
+    printf 'DEBUG: %s\n' "$message" >&2
+  end
 end
 
 

@@ -17,7 +17,7 @@ To learn package creation let's create a new package that will provide a `hello_
 Oh My Fish can scaffold a package structure for you. Use the command `omf new`:
 
 ```fish
-$ omf new pkg hello_world
+$ omf new plugin hello_world
 ```
 
 > Use `omf new theme my_theme_name` for themes.
