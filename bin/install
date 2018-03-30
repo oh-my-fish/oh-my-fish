@@ -501,7 +501,7 @@ end
 
 # Gets the version of Git installed.
 function get_git_version
-  type -f -q git
+  type -f git > /dev/null ^ /dev/null
     and command git --version | command cut -d' ' -f3
 end
 
@@ -561,7 +561,7 @@ function assert_cmds
   set -l cmds awk basename cp cut date dirname env fish fold head mkdir mv readlink rm sed sort tar tr which
 
   for cmd in $cmds
-    type -f -q $cmd
+    type -f $cmd > /dev/null ^ /dev/null
       or abort "Missing required command: $cmd"
 
     debug "Command '$cmd' is "(which $cmd)
@@ -582,7 +582,7 @@ end
 
 # A link-following `which` wrapper.
 function which
-  if type -q realpath
+  if type realpath > /dev/null ^ /dev/null
     realpath (command which $argv)
   else
     command readlink (command which $argv)
