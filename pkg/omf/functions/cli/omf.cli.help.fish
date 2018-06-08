@@ -13,10 +13,10 @@ function omf.cli.help
     set doc $doc_root/$command.adoc
   end
 
-  set -l r (set_color normal ^ /dev/null)
-  set -l c (set_color cyan ^ /dev/null)
-  set -l b (set_color --bold ^ /dev/null)
-  set -l u (set_color --underline ^ /dev/null)
+  set -l r (set_color normal 2> /dev/null)
+  set -l c (set_color cyan 2> /dev/null)
+  set -l b (set_color --bold 2> /dev/null)
+  set -l u (set_color --underline 2> /dev/null)
 
   # Format the help document for the terminal.
   fold -s -w 78 $doc | sed -e "
