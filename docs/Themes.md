@@ -2095,7 +2095,7 @@ fisher i plain
 > Port of the [`pure`](https://github.com/sindresorhus/pure) ZSH theme to Fish
 
 <p align="center">
-  <img width="572" src="screenshot.png">
+  <img src="https://raw.githubusercontent.com/sindresorhus/pure/master/screenshot.png">
 </p>
 
 #### Install
