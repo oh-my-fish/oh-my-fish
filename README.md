@@ -107,9 +107,9 @@ Reload Oh My Fish and all plugins by using `exec` to replace current shell proce
 
 > This command tries to be as safe as possible, mitigating side-effects caused by `exec` and preventing the reload in case of background processes.
 
-#### `omf new pkg | theme` _`<name>`_
+#### `omf new plugin | theme` _`<name>`_
 
-Scaffold out a new package or theme.
+Scaffold out a new plugin or theme.
 
 > This creates a new directory under `$OMF_CONFIG/{pkg | themes}/` with a template.
 
