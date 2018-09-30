@@ -178,6 +178,13 @@ set -xg GOPATH $HOME/gocode
 set -xg PYTHONDONTWRITEBYTECODE 1
 ```
 
+### To display branch name for master in shell ###
+Add the following line to config.fish
+```
+set theme_display_git_master_branch yes
+```
+
+
 #### About the bundle
 
 Every time a package/theme is installed or removed, the `bundle` file is updated. You can also edit it manually and run `omf install` afterwards to satisfy the changes. Please note that while packages/themes added to the bundle get automatically installed, a package/theme removed from bundle isn't removed from user installation.
