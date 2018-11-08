@@ -292,11 +292,11 @@ set -g theme_project_dir_length 1
 
 **Color scheme options**
 
-| ![dark][dark]           | ![light][THEMES-NAMESPACE-bobthefish-light]                     |
-|-------------------------|-------------------------------------|
-| ![solarized][THEMES-NAMESPACE-bobthefish-solarized] | ![solarized-light][solarized-light] |
-| ![base16][THEMES-NAMESPACE-bobthefish-base16]       | ![base16-light][base16-light]       |
-| ![zenburn][THEMES-NAMESPACE-bobthefish-zenburn]     | ![terminal-dark][terminal-dark]     |
+| ![dark][THEMES-NAMESPACE-bobthefish-dark]           | ![light][THEMES-NAMESPACE-bobthefish-light] |
+|-----------------------------------------------------|---------------------------------------------|
+| ![solarized][THEMES-NAMESPACE-bobthefish-solarized] | ![solarized-light][solarized-light]         |
+| ![base16][THEMES-NAMESPACE-bobthefish-base16]       | ![base16-light][base16-light]               |
+| ![zenburn][THEMES-NAMESPACE-bobthefish-zenburn]     | ![terminal-dark][terminal-dark]             |
 
 You can use the function `__bobthefish_display_colors` to preview the prompts in
 the current theme.
