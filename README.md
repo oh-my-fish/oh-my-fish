@@ -16,6 +16,14 @@ Oh My Fish provides core infrastructure to allow you to install packages which e
 
 <br>
 
+## Table of contents
+* [Installation](#installation)
+* [Getting Started (command descriptions)](#getting-started)
+* [Advanced](#advanced)
+  * [Startup](#startup)
+  * [Dotfiles](#dotfiles)
+* [Creating Packages](#creating-packages)
+
 ## Installation
 
 You can get started right away with the default setup by running this in your terminal:
