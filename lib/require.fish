@@ -74,14 +74,14 @@ function require
 
     source $init $path
 
-    for conf in $conf_path
-      source $conf
-    end
-
     emit init_$package $path
 
     set -g omf_init_path $omf_init_path $path
     emit perf:timer:finish $init
+  end
+
+  for conf in $conf_path
+    source $conf
   end
 
   return 0
