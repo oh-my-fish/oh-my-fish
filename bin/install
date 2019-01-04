@@ -186,7 +186,7 @@ function install_from_github
 
   if test $OMF_CHANNEL = stable
     # Get the commit for the latest release.
-    set -l hash (command git --git-dir "$OMF_PATH/.git" --work-tree "$OMF_PATH" rev-list --tags='v*' --max-count=1 ^ /dev/null)
+    set -l hash (command git --git-dir "$OMF_PATH/.git" --work-tree "$OMF_PATH" rev-list --tags='v*' --max-count=1 2> /dev/null)
       # Get the release tag.
       and set -l tag (command git --git-dir "$OMF_PATH/.git" --work-tree "$OMF_PATH" describe --tags $hash)
       # Checkout the release.
@@ -365,11 +365,11 @@ function uninstall_omf
   is_install_dir "$OMF_PATH"
     or abort "No installation detected at $OMF_PATH"
 
-  say (set_color -o red ^ /dev/null)"This will uninstall Oh My Fish and all plugins and themes from $OMF_PATH."(set_color normal ^ /dev/null)
+  say (set_color -o red 2> /dev/null)"This will uninstall Oh My Fish and all plugins and themes from $OMF_PATH."(set_color normal 2> /dev/null)
 
   # If we installed the bootstrap to the user's config, let them know they need to remove it themselves.
   if begin; test -f "$FISH_CONFIG/config.fish"; and grep -q OMF_PATH "$FISH_CONFIG/config.fish"; end
-    say (set_color -o ^ /dev/null)"Your configuration will not be modified. You may need to remove Oh My Fish startup code from $FISH_CONFIG/config.fish."(set_color normal ^ /dev/null)
+    say (set_color -o 2> /dev/null)"Your configuration will not be modified. You may need to remove Oh My Fish startup code from $FISH_CONFIG/config.fish."(set_color normal 2> /dev/null)
   end
 
   confirm_yes "Are you sure you want to continue?"
@@ -420,7 +420,7 @@ function backup_file -a file_path
   say "Existent $file found at $path"
   say "↳ Moving to $backup_file"
 
-  if not command cp "$file_path" $backup_file ^/dev/null
+  if not command cp "$file_path" $backup_file 2> /dev/null
     abort "Could not backup $file_path"
   end
 
@@ -441,7 +441,7 @@ function restore_backup_file -a file_path
 
     if confirm "Would you like to restore it (overwrite existing)?"
       say "Restoring backup file to $path/$file"
-      command mv "$backup_file_path" "$path/$file" ^/dev/null
+      command mv "$backup_file_path" "$path/$file" 2> /dev/null
         or abort "Could not restore backup $backup_file_path"
     end
   end
@@ -467,7 +467,7 @@ function sane_environment_check
     or abort (which sort)" is not a sane 'sort' implementation"
 
   debug "Checking for a working AWK interpreter"
-  cmd awk 'BEGIN{exit 42;}' < /dev/null ^ /dev/null
+  cmd awk 'BEGIN{exit 42;}' < /dev/null 2> /dev/null
   if not test $status -eq 42
     abort (which awk)" does not look like an AWK interpreter."
   end
@@ -501,7 +501,7 @@ end
 
 # Gets the version of Git installed.
 function get_git_version
-  type -f git > /dev/null ^ /dev/null
+  type -f git > /dev/null 2> /dev/null
     and command git --version | command cut -d' ' -f3
 end
 
@@ -516,7 +516,7 @@ end
 
 # Checks if OMF is set up properly and working.
 function is_omf_loaded
-  command fish -c "omf --version" > /dev/null ^&1
+  command fish -c "omf --version" > /dev/null 2>&1
 end
 
 
@@ -561,7 +561,7 @@ function assert_cmds
   set -l cmds awk basename cp cut date dirname env fish fold head mkdir mv readlink rm sed sort tar tr which
 
   for cmd in $cmds
-    type -f $cmd > /dev/null ^ /dev/null
+    type -f $cmd > /dev/null 2> /dev/null
       or abort "Missing required command: $cmd"
 
     debug "Command '$cmd' is "(which $cmd)
@@ -575,14 +575,14 @@ function assert_interactive
     and return
 
   test -c /dev/tty -a -r /dev/tty
-    and echo -n > /dev/tty ^ /dev/null
+    and echo -n > /dev/tty 2> /dev/null
     or abort "Running interactively, but can't read from tty (try running with --noninteractive)"
 end
 
 
 # A link-following `which` wrapper.
 function which
-  if type realpath > /dev/null ^ /dev/null
+  if type realpath > /dev/null 2> /dev/null
     realpath (command which $argv)
   else
     command readlink (command which $argv)
@@ -595,7 +595,7 @@ function cmd
   if set -q VERBOSE
     command env $argv
   else
-    command env $argv ^ /dev/null
+    command env $argv 2> /dev/null
   end
 end
 
@@ -621,9 +621,9 @@ function abort -a message code
   end
 
   if test -n "$message"
-    printf "%sInstall aborted: $message%s\n" (set_color -o red ^ /dev/null) (set_color normal ^ /dev/null) >&2
+    printf "%sInstall aborted: $message%s\n" (set_color -o red 2> /dev/null) (set_color normal 2> /dev/null) >&2
   else
-    printf "%sInstall aborted%s\n" (set_color -o red ^ /dev/null) (set_color normal ^ /dev/null) >&2
+    printf "%sInstall aborted%s\n" (set_color -o red 2> /dev/null) (set_color normal 2> /dev/null) >&2
   end
 
   exit $code
@@ -640,7 +640,7 @@ function confirm -a message
   set -q NONINTERACTIVE
     and return 1
 
-  printf "%s$message (y/N): %s" (set_color yellow ^ /dev/null) (set_color normal ^ /dev/null)
+  printf "%s$message (y/N): %s" (set_color yellow 2> /dev/null) (set_color normal 2> /dev/null)
   read -l answer < /dev/tty
     or abort "Failed to read from tty"
 
