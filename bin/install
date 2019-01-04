@@ -6,6 +6,16 @@ set -q OMF_REPO_URI;    or set OMF_REPO_URI "https://github.com/oh-my-fish/oh-my
 set -q OMF_REPO_BRANCH; or set OMF_REPO_BRANCH "master"
 
 
+# fish_exit polyfill for Fish versions < 3.
+if not set -q fish_pid
+  eval '
+    function fish_exit_polyfill --on-process-exit %self
+        emit fish_exit $argv[3]
+    end
+  '
+end
+
+
 function main
   # Set default settings
   set -q XDG_DATA_HOME
@@ -137,8 +147,8 @@ end
 
 
 # Add an exit hook to display a message if the installer aborts or errors.
-function on_exit -p %self
-  if not contains $argv[3] 0 2
+function on_exit --on-event fish_exit -a exit_status
+  if not contains $exit_status 0 2
     echo "
 Oh My Fish installation failed.
 
