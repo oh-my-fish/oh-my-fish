@@ -46,7 +46,7 @@ function omf.index.repositories -d 'Manage package repositories'
       end
 
       # Before we add, do a quick ls-remote to see if the URL is a valid repo.
-      if not command git ls-remote --exit-code $repo_url refs/heads/$repo_branch > /dev/null ^&1
+      if not command git ls-remote --exit-code $repo_url refs/heads/$repo_branch > /dev/null 2>&1
         echo "The remote repository could not be found." >&2
         return 1
       end

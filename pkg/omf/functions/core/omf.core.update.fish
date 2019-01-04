@@ -4,10 +4,10 @@ function omf.core.update
     # If the channel isn't explicitly set and we are currently tracking a branch instead of a version, the user probably
     # upgraded from an old version. Let them know that we will start updating to stable versions.
     if begin; not test -f $OMF_CONFIG/channel; and command git -C "$OMF_PATH" symbolic-ref -q HEAD > /dev/null; end
-      set_color yellow --bold ^ /dev/null
+      set_color yellow --bold 2> /dev/null
       echo ">> You have been switched to the stable release channel of Oh My Fish."
       echo ">> To switch back to the development channel, run `omf channel dev`."
-      set_color normal ^ /dev/null
+      set_color normal 2> /dev/null
     end
 
     # Determine the remote to fetch from.
@@ -19,7 +19,7 @@ function omf.core.update
     # Fetch the latest tags.
     command git -C "$OMF_PATH" fetch --quiet --tags $remote
       # Get the commit for the latest release.
-      and set -l hash (command git -C "$OMF_PATH" rev-list --tags='v*' --max-count=1 ^ /dev/null)
+      and set -l hash (command git -C "$OMF_PATH" rev-list --tags='v*' --max-count=1 2> /dev/null)
       # Get the release tag.
       and set -l tag (command git -C "$OMF_PATH" describe --tags $hash)
       # Checkout the release.

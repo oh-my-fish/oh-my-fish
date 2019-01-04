@@ -5,7 +5,7 @@ if not set -q OMF_CONFIG
 end
 # Source custom before.init.fish file
 test -f $OMF_CONFIG/before.init.fish
-  and source $OMF_CONFIG/before.init.fish ^/dev/null
+  and source $OMF_CONFIG/before.init.fish 2> /dev/null
 emit perf:timer:start "Oh My Fish initialisation"
 # Read current theme
 test -f $OMF_CONFIG/theme
