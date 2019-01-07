@@ -12,10 +12,10 @@ function omf.index.query -d 'Query packages in the index'
         set q_type plugin
       case '--type=theme'
         set q_type theme
-      case '--name=?*'
+      case '--name=*'
         set -l IFS '='
         echo "$arg" | read dummy q_name
-      case '--text=?*'
+      case '--text=*'
         set -l IFS '='
         echo "$arg" | read dummy q_text
       case '*'
