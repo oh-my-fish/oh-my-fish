@@ -2,13 +2,13 @@ function omf -d "Oh My Fish"
   # Parse any options before the command name.
   while set -q argv[1]
     switch $argv[1]
-      case '-h' '--help' '-\?' '/\?'
+      case '-h' '--help'
         set command help
 
       case '-v' '--version'
         set command version
 
-      case '-?*'
+      case '-*'
         echo (omf::err)"Unknown option: $argv[1]"(omf::off) >&2
         return $OMF_UNKNOWN_OPT
 
@@ -21,7 +21,7 @@ function omf -d "Oh My Fish"
 
   # Also extract a help flag from the last argument.
   switch "$argv[-1]"
-    case '-h' '--help' '-\?' '/\?'
+    case '-h' '--help'
       set command help
       set -e argv[-1]
   end

@@ -34,7 +34,7 @@ function omf.theme.set -a target_theme
 
   # Reload fish key bindings if reload is available and needed
   functions -q __fish_reload_key_bindings
-    and test (count {$OMF_CONFIG,$OMF_PATH}/key_binding?.fish) -gt 0
+    and test (count {$OMF_CONFIG,$OMF_PATH}/key_binding*.fish) -gt 0
     and __fish_reload_key_bindings
 
   # Persist the changes

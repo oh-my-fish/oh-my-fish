@@ -29,7 +29,7 @@ function main
   # Parse command args
   while set -q argv[1]
     switch "$argv[1]"
-      case --help -h '/?'
+      case --help -h
         echo "Usage: install [options]
   Install Oh My Fish
 
