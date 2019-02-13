@@ -1,3 +1,3 @@
-function omf.repo.clone -a url path
-  command git clone --quiet $url $path
+function omf.repo.clone -a url branch path
+  command git clone --quiet $url -b $branch $path
 end

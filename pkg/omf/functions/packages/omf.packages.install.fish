@@ -11,10 +11,14 @@ function __omf.packages.install.error.already
 end
 
 function omf.packages.install -a name_or_url
-  if set -l props (omf.index.stat $name_or_url type repository)
+  if set -l props (omf.index.stat $name_or_url type repository branch)
     set package_type $props[1]
     set name $name_or_url
     set url $props[2]
+    set branch $props[3]
+    if test -z "$branch"
+      set branch "master"
+    end
   else
     set name (omf.packages.name $name_or_url)
     set url $name_or_url
@@ -30,7 +34,7 @@ function omf.packages.install -a name_or_url
   set -l install_dir $OMF_PATH/pkg/$name
 
   # Clone the package repository.
-  if not omf.repo.clone $url $install_dir
+  if not omf.repo.clone $url $branch $install_dir
     __omf.packages.install.error "$name"
     return $OMF_UNKNOWN_ERR
   end
