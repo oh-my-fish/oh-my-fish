@@ -1929,7 +1929,7 @@ A minimalist fish theme which displays git branch and status information.
 #### Install
 
 ```fish
-$ omf u nelsonjchen
+$ omf install nelsonjchen
 ```
 
 #### Features and Differences
@@ -2019,7 +2019,7 @@ If you see a colored anchor icon instead of the white one, this is because your 
 
 
 ```fish
-$ omf u pastfish
+$ omf install pastfish
 ```
 
 #### Features
