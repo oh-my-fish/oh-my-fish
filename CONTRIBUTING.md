@@ -9,7 +9,7 @@
 
 ## Summary
 
-* [Issues](#issues)
+* [Issues](#bugs-and-discussions)
 * [Packages](#package-repositories)
 * [Commit Messages](#commit-messages)
 * [Code Style](#code-style)
@@ -28,6 +28,10 @@ When reporting bugs be sure to always fill the checklist below with data from yo
 * Git version: 1.9.5 (get using `git --version`)
 
 When you have a new feature or large change in mind, please open a new issue with your suggestion to discuss the idea together.
+
+### Issue triage [![Open Source Helpers](https://www.codetriage.com/oh-my-fish/oh-my-fish/badges/users.svg)](https://www.codetriage.com/oh-my-fish/oh-my-fish)
+
+You can contribute by triaging issues which may include reproducing bug reports or asking for vital information, such as version numbers or reproduction instructions. If you would like to start triaging issues, one easy way to get started is to [subscribe to oh-my-fish on CodeTriage](https://www.codetriage.com/oh-my-fish/oh-my-fish).
 
 ## Package Repositories
 
