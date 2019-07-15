@@ -48,4 +48,11 @@ end
 emit perf:timer:start "Oh My Fish init user config path"
 require --no-bundle --path $OMF_CONFIG
 emit perf:timer:finish "Oh My Fish init user config path"
+# Load conf.d for current theme if exists
+set -l theme_conf_d_path {$OMF_CONFIG,$OMF_PATH}/themes*/$theme/conf.d
+if test -d $theme_conf_d_path
+  for file in $theme_conf_d_path/*
+    source $file
+  end
+end
 emit perf:timer:finish "Oh My Fish initialisation"
