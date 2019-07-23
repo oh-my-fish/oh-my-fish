@@ -4,7 +4,7 @@ end
 
 function __fish-spec.all_specs_finished -e all_specs_finished -a spec
   set -l __fish_spec_end_time (__fish-spec.current_time)
-  set -l diff (math "scale=3;($__fish_spec_end_time - $__fish_spec_start_time) / 1000")
+  set -l diff (math --scale=3 "($__fish_spec_end_time - $__fish_spec_start_time) / 1000")
 
   echo -en '\n\nFinished in '
   printf '%g' $diff
