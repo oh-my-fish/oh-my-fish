@@ -41,8 +41,8 @@ Oh My Fish 自带的辅助命令工具 `omf` 可以帮助你快速获取安装�
 
 安装 _一个或多个_ 插件。
 
-- 你可以通过输入指定的 URL 直接安装插件 `omf install URL`
-- 当没有执行没有传入任何参数，将会从 [bundle](#dotfiles) 文件检索并安装本地尚未安装的插件和主题。
+- 你可以通过输入指定的 URL 直接从`URL`安装插件
+- 执行时没有传入任何参数时，Oh My Fish将会从 [bundle](#dotfiles) 文件检索并安装本地尚未安装的插件和主题。
 
 #### `omf list`
 
@@ -56,13 +56,13 @@ Oh My Fish 自带的辅助命令工具 `omf` 可以帮助你快速获取安装�
 
 移除主题或插件。
 
-> 包可以使用卸载挂钩，所以资源的自定义清理可以做到卸载时。有关更多信息，请参见 [卸载](Packages.md#uninstall) 。
+> 包可以使用卸载钩子，所以资源的自定义清理可以在卸载时进行。有关更多信息，请参见 [卸载](Packages.md#uninstall) 。
 
 #### `omf new pkg | theme` _`<name>`_
 
 创建新插件和主题的生成工具。
 
-> 创建的模板会新创建并保存于 `$OMF_CONFIG/{pkg | themes}/` 文件夹下面。
+> 从模板创建新的插件/主题并保存于 `$OMF_CONFIG/{pkg | themes}/` 文件夹下面。
 
 #### `omf submit` _`pkg/<name>`_ _`[<url>]`_
 
@@ -73,7 +73,7 @@ Oh My Fish 自带的辅助命令工具 `omf` 可以帮助你快速获取安装�
 
 #### `omf doctor`
 
-使用前[开馆问题][omf-issues-new] 解决。
+使用前[打开一个新的issue][omf-issues-new]。
 
 #### `omf destroy`
 
@@ -90,7 +90,7 @@ Oh My Fish 安装脚本会把自身启动代码加载到 fish 的配置文件 (`
 
 ## Dotfiles
 
-`$OMF_CONFIG` 目录存储用户使用 Oh My Fish 的重要配置参数，这是最完美的方式把该目录的所有文件加入你的 dotfiles 或加入到版本控制。
+`$OMF_CONFIG` 目录存储用户使用 Oh My Fish 的重要配置参数，这是把该目录的所有文件加入你的 dotfiles 或加入到版本控制的最完美的方式。
 有四个重要文件：
 
 - __`theme`__ - 当前主题
@@ -98,9 +98,9 @@ Oh My Fish 安装脚本会把自身启动代码加载到 fish 的配置文件 (`
 - __`init.fish`__ - 壳开始后执行的自定义脚本
 - __`before.init.fish`__ - 壳开始前执行的自定义脚本
 
-它强烈建议您自定义的启动命令进入 `init.fish` 文件而不是 `~/.config/omf/config.fish`，因为这可以让你保持在版本控制整个 `$OMF_CONFIG` 目录。
+它强烈建议您自定义的启动命令写入入 `init.fish` 文件而不是 `~/.config/omf/config.fish`，因为这可以让你保持在版本控制整个 `$OMF_CONFIG` 目录。
 
-如果你需要的Starup命令来运行*之前*噢，我的鱼开始加载插件，将它们放置在 `before.init.fish` 代替。如果你不确定，通常最好把东西 `init.fish` 。
+如果你需要的命令要在Oh My Fish开始加载插件之前执行，将它们放置在 `before.init.fish`。如果你不确定，通常最好把东西放在 `init.fish` 里面。
 
 ### 关于 bundle
 
@@ -109,7 +109,7 @@ Oh My Fish 安装脚本会把自身启动代码加载到 fish 的配置文件 (`
 
 ## 创建插件
 
-Oh My Fish 使用了友好的插件架构能够简化插件的开发，其中包括初始化、卸载事件和函数的自动加载。[查看相关文档](Packages.md) 获取更多信息。
+Oh My Fish 使用了友好的插件架构，能够简化插件的开发，其中包括初始化、卸载事件和函数的自动加载。[查看相关文档](Packages.md) 获取更多信息。
 
 [fishshell]: http://fishshell.com
 
