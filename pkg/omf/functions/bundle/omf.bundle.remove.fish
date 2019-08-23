@@ -10,7 +10,7 @@ function omf.bundle.remove
       set name $argv[2]
       set bundle_contents (cat $bundle | sort -u)
 
-      rm -f $bundle
+      command rm -f $bundle
 
       for record in $bundle_contents
         set record_type (echo $record | cut -d' ' -f1)
