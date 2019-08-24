@@ -41,7 +41,7 @@ Oh My Fish 自带的辅助命令工具 `omf` 可以帮助你快速获取安装�
 
 安装 _一个或多个_ 插件。
 
-- 你可以通过输入指定的 URL 直接从`URL`安装插件
+- 你可以通过输入指定的 URL 直接从`URL`安装插件。例子：`omf install url`
 - 执行时没有传入任何参数时，Oh My Fish将会从 [bundle](#dotfiles) 文件检索并安装本地尚未安装的插件和主题。
 
 #### `omf list`
