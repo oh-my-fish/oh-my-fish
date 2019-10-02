@@ -168,7 +168,7 @@ Cada vez que abre una nueva shell, el código de inicio inicializa la ruta de in
 predeterminada), ejecutando el script [`init.fish`](init.fish) posteriormente, que carga de manera automática los paquetes, temas y sus ficheros
 personalizados de inicio.
 
-Para más información puede consultar la sección de preguntas frecuentes [FAQ](FAQ.md#what-does-oh-my-fish-do-exactly).
+Para más información puede consultar la sección de preguntas frecuentes [FAQ](FAQ.md#qué-hace-oh-my-fish-exactamente).
 
 ### Archivos de configuración (Dotfiles)
 
