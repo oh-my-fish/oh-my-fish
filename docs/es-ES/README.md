@@ -170,7 +170,7 @@ personalizados de inicio.
 
 Para más información puede consultar la sección de preguntas frecuentes [FAQ](docs/es-ES/FAQ.md#what-does-oh-my-fish-do-exactly).
 
-### Archivos de configuración o _Dotfiles_
+### Archivos de configuración (Dotfiles)
 
 El directorio `$OMF_CONFIG` representa el estado del usuario de Oh My Fish. Es el perfecto candidato para ser añadido a sus archivos de configuración o
 _dotfiles_ y/o añadirlo a un control de versiones como puede ser Git. Allí se pueden encontrar tres archivos importantes:
