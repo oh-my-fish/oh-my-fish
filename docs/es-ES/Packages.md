@@ -65,8 +65,8 @@ del paquete.
 >Los _hooks_ que son llamados después del tiempo de arranque (`init.fish` y `key_bindings.fish`) pueden ralentizar el arranque de la _shell_. ¡Asegúrese de
 >evitar utilizar código lento en el proceso de arranque! También, si su paquete no necesita de un archivo hook, asegúrese de eliminarlo.
 
-El directorio de trabajo desntro de un hoo está siempre establecido en la raíz del directorio del paquete. Los hooks Oh My Fish actualmente admitidos están
-listados más abajo:
+El directorio de trabajo dentro de un hook está siempre establecido en la raíz del directorio del paquete. Los hooks Oh My Fish actualmente admitidos están
+listados a continuación:
 
 ## `init`
 
@@ -75,7 +75,7 @@ directorio del paquete.
 
 Dentro de este hook, puede acceder a tres variables relacionadas con el paquete:
 
-* `$package`: Nombre dl paquete
+* `$package`: Nombre del paquete
 * `$path`: Ruta de instalación del paquete
 * `$dependencies`: Dependencias del paquete
 
