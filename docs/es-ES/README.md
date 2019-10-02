@@ -162,59 +162,66 @@ Así que si `a_script.fish` depende de complementos gestionados por OMF, conside
 De manera similar, para asegurarse que un script se ejecuta antes de `omf.fish`, debería añadirle el prefijo `00_`.
 De manera alternativa también se puede utilizar `~/.config/omf/before.init.fish`.
 
-### Startup
+### Inicio 
 
-Every time you open a new shell, the startup code initializes Oh My Fish installation path and the _config_ path (`~/.config/omf` by default),
-sourcing the [`init.fish`](init.fish) script afterwards, which autoloads packages, themes and your custom init files.
+Cada vez que abre una nueva shell, el código de inicio inicializa la ruta de instalación y la ruta de configuración de Oh My Fish (`~/.config/omf` de manera
+predeterminada), ejecutando el script [`init.fish`](init.fish) posteriormente, que carga de manera automática los paquetes, temas y sus ficheros
+personalizados de inicio.
 
-For more information check the [FAQ](docs/en-US/FAQ.md#what-does-oh-my-fish-do-exactly).
+Para más información puede consultar la sección de preguntas frecuentes [FAQ](docs/es-ES/FAQ.md#what-does-oh-my-fish-do-exactly).
 
-### Dotfiles
+### Archivos de configuración o _Dotfiles_
 
-The `$OMF_CONFIG` directory represents the user state of Oh My Fish. It is the perfect
-candidate for being added to your dotfiles and/or checked out to version control. There you can find three important files:
+El directorio `$OMF_CONFIG` representa el estado del usuario de Oh My Fish. Es el perfecto candidato para ser añadido a sus archivos de configuración o
+_dotfiles_ y/o añadirlo a un control de versiones como puede ser Git. Allí se pueden encontrar tres archivos importantes:
 
-- __`theme`__ - The current theme
-- __`bundle`__ - List of currently installed packages/themes
-- __`channel`__ - The channel from which OMF gets updates (stable / dev)
+- __`theme`__ - El tema actual
+- __`bundle`__ - Lista de los temas/paquetes actualmente instalados
+- __`channel`__ - El canal desde el cual OMF descarga las actualizaciones (estable / dev)
 
-And you may create and customize these special files:
+Y puede crear o personalizar esos archivos especiales:
 
-- __`init.fish`__ - Custom script sourced after shell start
-- __`before.init.fish`__ - Custom script sourced before shell start
-- __`key_bindings.fish`__ - Custom key bindings where you can use the `bind` command freely
+- __`init.fish`__ - Script personalizado que se ejecuta después del arranque de la shell
+- __`before.init.fish`__ - Script personalizado que se ejecuta antes del arranque de la shell
+- __`key_bindings.fish`__ - Atajos de teclado personalizados donde puede utilizar el comando `bind` de manera libre
 
-#### Setting variables in `init.fish`
+#### Configurando variables en `init.fish`
 
-One of the most common startup commands used in `init.fish` is variables definition. Quite likely, such variables need to be available in any shell session. To achieve this, define them globally. For example:
+Uno de los usos más comunes utilizados en `init.fish` es la definición de variables. Seguramente, para variables que necesitan estar disponible en cualquier
+sesión de la shell. Para conseguir esto, es necesario definirlas de manera global. Por ejemplo:
 
 ```fish
-# Golang developers might need this one
+# Los desarrolladore de Golang quizás necesitan esto
 set -xg GOPATH $HOME/gocode
 
-# Python developers otherwise
+# En cambio los desarrolladores de Python 
 set -xg PYTHONDONTWRITEBYTECODE 1
 ```
 
-#### About the bundle
+#### Acerca de bundle
 
-Every time a package/theme is installed or removed, the `bundle` file is updated. You can also edit it manually and run `omf install` afterwards to satisfy the changes. Please note that while packages/themes added to the bundle get automatically installed, a package/theme removed from bundle isn't removed from user installation.
+Cada vez que un paquete/tema es instalado o eliminado, el archivo `bundle` es actualizado. También puedes editarlo manualmente y después ejecutar `omf
+install` para tomar en cuenta los cambios realizados. Por favor tenga en cuenta que mientras que los paquetes/temas añadidos a _bundle_ son automáticamente
+instalados, un paquete/tema eliminado de _bundle_ no es eliminado de la instalación del usuario.
 
-#### Older fish versions
+#### Versiones antiguas de fish
 
-In fish 2.2, there is no `conf.d` directory, so the startup code has to be placed in the fish config file (`~/.config/fish/config.fish`).
+En fish 2.2, no existe el directorio `conf.d`, así que el código de inicio tiene que ser ubicado en el archivo de configuración de fish (`~/.config/fish/config.fish`).
 
-It's highly recommended that your custom startup commands go into `init.fish` file instead of `~/.config/fish/config.fish`, as this allows you to keep the whole `$OMF_CONFIG` directory under version control.
+Es altamente recomendado que los comandos personalizados de inicio estén en el archivo `init.fish` en vez de en `~/.config/fish/config.fish`, ya que esto le
+permite mantener todo el directorio `$OMF_CONFIG` bajo un servicio de control de versiones.
 
-If you need startup commands to be run *before* Oh My Fish begins loading plugins, place them in `before.init.fish` instead. If you're unsure, it is usually best to put things in `init.fish`.
+Si necesita ejecutar comandos de inicio que sean ejecutados *antes* de que Oh My Fish comience a cargar complementos, ubiquelos en `before.init.fish`. Si no
+está seguro, normalmente es mejor poner las cosas en `init.fish`.
 
-## Creating Packages
+## Creando paquetes
 
-Oh My Fish uses an advanced and well defined plugin architecture to ease plugin development, including init/uninstall hooks, function and completion autoloading. [See the packages documentation](docs/en-US/Packages.md) for more details.
+Oh My Fish utiliza una avanzade y bien definida arquitectura de desarrollo de complementos, incluyendo _hooks_ de inicialización/instalación, carga
+automática de funciones. [Ver la documentación de paquetes](docs/es-ES/Packages.md) para más detalles.
 
 
 [fishshell]: http://fishshell.com
-[contributors]: https://github.com/oh-my-fish/oh-my-fish/graphs/contributors
+[colaboradores]: https://github.com/oh-my-fish/oh-my-fish/graphs/contributors
 [omf-pulls-link]: https://github.com/oh-my-fish/oh-my-fish/pulls
 [omf-issues-new]: https://github.com/oh-my-fish/oh-my-fish/issues/new
-[releases]: https://github.com/oh-my-fish/oh-my-fish/releases
+[publicaciones]: https://github.com/oh-my-fish/oh-my-fish/releases
