@@ -1,14 +1,16 @@
 <img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="192px" height="192px"/>
 <img align="left" width="0" height="192px" hspace="10"/>
 
-> The <a href="http://fishshell.com">Fishshell</a> Framework
+> El _framework_ de <a href="http://fishshell.com">Fishshell</a> 
 
 [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE) [![Fish Shell Version](https://img.shields.io/badge/fish-≥v2.2.0-007EC7.svg?style=flat-square)](http://fishshell.com) [![Travis Build Status](http://img.shields.io/travis/oh-my-fish/oh-my-fish.svg?style=flat-square)](https://travis-ci.org/oh-my-fish/oh-my-fish) [![Slack Status](https://oh-my-fish-slack.herokuapp.com/badge.svg)](https://oh-my-fish-slack.herokuapp.com)
 
 
-Oh My Fish provides core infrastructure to allow you to install packages which extend or modify the look of your shell. It's fast, extensible and easy to use.
+Oh My Fish ofrece la infraestructura básica para permitirle instalar paquetes que extiendan o modifiquen el aspecto de su _shell_. Es rápido, extensible y
+sencillo de utilizar.
 
-> Also in&nbsp;
+> También disponible en&nbsp;
+> <a href="../en-US/FAQ.md">🇺🇸</a>
 > <a href="docs/ru-RU/README.md">🇷🇺</a>
 > <a href="docs/zh-CN/README.md">🇨🇳</a>
 > <a href="docs/uk-UA/README.md">🇺🇦</a>
@@ -16,36 +18,36 @@ Oh My Fish provides core infrastructure to allow you to install packages which e
 
 <br>
 
-## Table of contents
-* [Installation](#installation)
-* [Getting Started (command descriptions)](#getting-started)
-* [Advanced](#advanced)
-  * [Startup](#startup)
-  * [Dotfiles](#dotfiles)
-* [Creating Packages](#creating-packages)
+## Índice de contenidos
+* [Instalación](#instalación)
+* [Comenzando (descripciones de los comandos)](#comenzando)
+* [Avanzado](#avanzado)
+  * [Inicio](#inicio)
+  * [Archivos de configuración (Dotfiles)](#dotfiles)
+* [Creando paquetes](#creando-paquetes)
 
-## Installation
+## Instalación 
 
-You can get started right away with the default setup by running this in your terminal:
+Puede comenzar de inmediate con la configuración predeterminada ejecutando lo siguiente en su terminal:
 
 ```fish
 curl -L https://get.oh-my.fish | fish
 ```
 
-This will download the installer script and start the installation. Alternatively, you can download the installer and customize your install:
+Esto descargará el script instalador y comenzará la instalación. De manera alternativa, puede descargar el instalador y personalizar su instalación:
 
 ```fish
 curl -L https://get.oh-my.fish > install
 fish install --path=~/.local/share/omf --config=~/.config/omf
 ```
 
-You can verify the integrity of the downloaded installer by verifying the script against [this checksum](bin/install.sha256):
+Puede verificar la integridad del instalador descargado comprobando el script con esta [suma de verificación](bin/install.sha256):
 
 ```
 434264c56e3a7bb74733d9b293d72403c404e0a0bded3e632433d391d302504e  install
 ```
 
-You can also install Oh My Fish with Git or with an offline source tarball downloaded from the [releases page][releases]:
+También puede insatalar Oh My Fish mediante Git o con un archivo tarball descargado desde la [página de publicaciones][releases]:
 
 ```fish
 # with git
@@ -57,100 +59,108 @@ $ curl -L https://get.oh-my.fish > install
 $ fish install --offline=omf.tar.gz
 ```
 
-Run `install --help` for a complete list of install options you can customize.
+Ejecute `install --help` para obtener una lista completa de opciones de instalación que puede personalizar.
 
-#### Requirements
+#### Requisitos
 
-- **fish** shell, version 2.2 or later
-- **git**, version 1.9.5 or later
+- **fish** shell, versión 2.2 o posterior
+- **git**, versión 1.9.5 o posterior 
 
-#### Known Issues
+#### Problemas conocidos
 
-- Due to a regression bug in fish 2.6 with some terminal emulators, right prompts make the shell unusable.
-  OMF's `default` theme features a right prompt, so it's necessary to use an alternative theme until a fix is released.
-  (see [#541](https://github.com/oh-my-fish/oh-my-fish/issues/541))
+- Debido a un error de regresión en fish 2.6 con algunos emuladores de terminal, los prompts a la derecha hace que la shell no se pueda utilizar.
+  El tema OMF's `default` ofrece un prompt a la derecha, así que es necesario utilizar untema alternativo hasta que se publique una solción.
+  (ver [#541](https://github.com/oh-my-fish/oh-my-fish/issues/541))
 
 
-## Getting Started
+## Comenzando 
 
-Oh My Fish includes a small utility `omf` to fetch and install new packages and themes.
+Oh My Fish incluye una pequeña utilidad `omf` para extraer e instalar nuevos paquetes y temas.
 
-#### `omf update` _`[omf]`_ _`[<package>...]`_
+#### `omf update` _`[omf]`_ _`[<paquete>...]`_
 
-Update Oh My Fish, all package repositories, and all installed packages.
+Actualiza Oh My Fish, todos los paquetes de los repositorios y todos los paquetes instalados.
 
-- When called without arguments, update core and all installed packages.
-- You can choose to update only the core, by running `omf update omf`.
-- For selective package update, list only the names of packages you wish to
-  update. You may still include "omf" in the list to update the core as well.
+- Cuando es llamado sin argumentos, actualiza el núcleo y todos los paquetes instalados.
+- Puede escoger actualizar sólo el núcleo, ejecutando `omf update omf`.
+- Para una actualización selectiva de paquetes, escriba solo los paquetes que desea actualizar. Debería incluir "omf" en la lista para actualizar también el
+  núcleo.
 
-#### `omf install` _`[<name>|<url>]`_
+#### `omf install` _`[<nombre>|<url>]`_
 
-Install one _or more_ packages.
+Instala uno _o más_ paquetes.
 
-- You can install packages directly by URL via `omf install URL`
-- When called without arguments, install missing packages from [bundle](#dotfiles).
+- Puede instalar paquetes directamente con la URL mediante `omf install URL`
+- Cuando es ejecutado sin argumentos, instala paquetes perdios desde [bundle](#dotfiles).
 
 #### `omf repositories` _`[list|add|remove]`_
 
-Manage user-installed package repositories. Package repositories are where packages come from used by commands like `omf install`. By default the [official repository](https://github.com/oh-my-fish/packages-main) is always installed and available.
+Gestiona los paquetes de los repositorios instalados por el usuario. Los paquetes de los repositorios son de donde los paquetes provienen utilizando
+comandos como `omf install`. De manera predeterminada el [repositorio oficial](https://github.com/oh-my-fish/packages-main) está siempre instalado y
+disponible.
 
 #### `omf list`
 
-List installed packages.
+Lista los paquetes instalados.
 
-#### `omf theme` _`<theme>`_
+#### `omf theme` _`<tema>`_
 
-Apply a theme. To list available themes, type `omf theme`. You can also [preview available themes](./docs/Themes.md) before installing.
+Aplica un tema. Para listar los temas disponibles, escriba `omf theme`. También puede [previsualizar los temas disponibles](./docs/Themes.md) antes de
+instalarlos.
 
-#### `omf remove` _`<name>`_
+#### `omf remove` _`<nombre>`_
 
-Remove a theme or package.
+Elimina un tema o paquete.
 
-> Packages can use uninstall hooks, so custom cleanup of resources can be done when uninstalling it. See [Uninstall](/docs/en-US/Packages.md#uninstall) for more information.
+> Los paquetes pueden utilizar _hooks_ al desinstalarlos, así que una limpieza de recursos personalizado puede ejecutarse cuando se desinstalen. Ver
+> [Desinstalar](/docs/es-ES/Packages.md#uninstall) para más información.
 
 #### `omf reload`
 
-Reload Oh My Fish and all plugins by using `exec` to replace current shell process with a brand new.
+Vuelve a cargar Oh My Fish y todos los complementos utilizando `exec` para reemplazar el proceso shell actual con uno nuevo.
 
-> This command tries to be as safe as possible, mitigating side-effects caused by `exec` and preventing the reload in case of background processes.
+> Este comando intenta ser lo más seguro posible, mitigando efectos colaterales cauados por `exec` y prevenir la recarga en el caso de procesos en segundo
+> plano.
 
-#### `omf new plugin | theme` _`<name>`_
+#### `omf new plugin | theme` _`<nombre>`_
 
-Scaffold out a new plugin or theme.
+Crea un esqueleto para un nuevo complemento o tema.
 
-> This creates a new directory under `$OMF_CONFIG/{pkg | themes}/` with a template.
+> Esto crea un nuevo directorio en `$OMF_CONFIG/{pkg | themes}/` con una plantilla.
 
-#### `omf search` _`-t|--theme / -p|--package`_ _`<name>`_
+#### `omf search` _`-t|--theme / -p|--package`_ _`<nombre>`_
 
-Searches Oh My Fish's database for a given package, theme or both. It also supports fuzzy search, so if you are not sure of the name you can simply `omf search simple`.
+Busca en la base de datos de Oh My Fish un paquete en concreto, tema o ambos. También soporta una búsqueda menos explícita, así que si no está seguro del
+nombre simplemente ejecute `omf search simple`.
 
 #### `omf channel`
 
-Gets or changes the update channel.
+Obtiene o cambia el canal de actualización.
 
-Two channels are available by default: the `stable` channel provides stable updates with the latest tagged version of Oh My Fish, and `dev` which provides the latest changes under development. The update channel currently set determines what version `omf update` will upgrade to.
+De manera predeterminada existen dos canales: el canal `stable` ofrece actualizaciones estables con las versión más recientes de Oh My Fish, y `dev` que
+ofrece los últimos cambios en desarrollo. El canal de actualización actual determina a qué versión de `omf update` se actualizará.
 
 #### `omf doctor`
 
-Use to troubleshoot before [opening an issue][omf-issues-new].
+Utilizar para diagnosticar un error antes de [abrir un _issue_][omf-issues-new].
 
 #### `omf destroy`
 
-Uninstall Oh My Fish.
+Desinstala Oh My Fish.
 
-## Advanced
+## Avanzado 
 
-Oh My Fish installer adds a snippet to fish's user config files (`~/.config/fish/conf.d/`) which calls OMF's startup code.
+El instalador de Oh My Fish añade un fragmento a los archivos de configuración de fish del usuario (`~/.config/fish/conf.d/`) que llama al código de
+arranque de OMF.
 
-Notice that the scripts in that directory are sourced in the order that the filesystem sees them,
-and so it may be necessary to prefix your script files with ordering numbers.
+Tenga en cuenta que los scripts en ese directorio se ofrecen en el orden en el que el sistema de archivos los ve, y quizás puede ser necesario añadir un
+prefijo a su script con números para ordenarlos.
 
-For example: `a_script.fish` will take precedence over the `omf.fish` snippet.
-So if `a_script.fish` depends on plugins managed by OMF, consider renaming the script file to `xx_a_script.fish`.
+Por ejemplo: `a_script.fish` tendrá preferencia sobre el fragmento `omf.fish`.
+Así que si `a_script.fish` depende de complementos gestionados por OMF, considere renombrar el archivo del script a `xx_a_script.fish`.
 
-Similiarly, to make sure that a script runs before `omf.fish`, you may prefix it with `00_`.
-Alternatively, `~/.config/omf/before.init.fish` may be used.
+De manera similar, para asegurarse que un script se ejecuta antes de `omf.fish`, debería añadirle el prefijo `00_`.
+De manera alternativa también se puede utilizar `~/.config/omf/before.init.fish`.
 
 ### Startup
 
