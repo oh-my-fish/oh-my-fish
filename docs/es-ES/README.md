@@ -216,8 +216,8 @@ está seguro, normalmente es mejor poner las cosas en `init.fish`.
 
 ## Creando paquetes
 
-Oh My Fish utiliza una avanzade y bien definida arquitectura de desarrollo de complementos, incluyendo _hooks_ de inicialización/instalación, carga
-automática de funciones. [Ver la documentación de paquetes](docs/es-ES/Packages.md) para más detalles.
+Oh My Fish utiliza una avanzada y bien definida arquitectura de desarrollo de complementos, incluyendo _hooks_ de inicialización/instalación, carga
+automática de funciones. [Ver la documentación de paquetes](Packages.md) para más detalles.
 
 
 [fishshell]: http://fishshell.com
