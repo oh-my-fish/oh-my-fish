@@ -14,7 +14,7 @@ O Oh My Fish fornece infra-estrutura básica para permitir que você instale pac
 > <a href="../ru-RU/README.md">🇷🇺</a>
 > <a href="../zh-CN/README.md">🇨🇳</a>
 > <a href="../uk-UA/README.md">🇺🇦</a>
-
+> <a href="../es-ES/README.md">🇪🇸</a>
 
 <br>
 

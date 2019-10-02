@@ -12,6 +12,7 @@ Oh My Fish надає базову інфраструктуру, щоб забе
 > <a href="../zh-CN/README.md">🇨🇳</a>
 > <a href="../ru-RU/README.md">🇷🇺</a>
 > <a href="../pt-BR/README.md">🇧🇷</a>
+> <a href="../es-ES/README.md">🇪🇸</a>
 
 <br>
 
