@@ -27,7 +27,7 @@ _Nada_. Puede instalar Oh My Fish y seguir utilizando Fish de manera normal. Cua
 
 ## ¿Qué son los paquetes Oh My Fish?
 
-Los paquetes Oh My Fish son temas o complementos esdcitor en fish que expanden las funcionalidades principales de la _shell_, ejecutan código durante la
+Los paquetes Oh My Fish son temas o complementos escritos en fish que expanden las funcionalidades principales de la _shell_, ejecutan código durante la
 inicialización, añaden auto completado para las utilidades más conocidas, etc.
 
 
