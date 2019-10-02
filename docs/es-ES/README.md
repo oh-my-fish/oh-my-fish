@@ -105,7 +105,7 @@ Lista los paquetes instalados.
 
 #### `omf theme` _`<tema>`_
 
-Aplica un tema. Para listar los temas disponibles, escriba `omf theme`. También puede [previsualizar los temas disponibles](../docs/Themes.md) antes de
+Aplica un tema. Para listar los temas disponibles, escriba `omf theme`. También puede [previsualizar los temas disponibles](../Themes.md) antes de
 instalarlos.
 
 #### `omf remove` _`<nombre>`_
