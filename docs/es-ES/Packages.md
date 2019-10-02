@@ -1,28 +1,30 @@
 <img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="128px" height="128px"/>
 <img align="left" width="0" height="128px"/>
 
-# Packages
+# Paquetes 
 
-> Oh My Fish Documentation&nbsp;&bull;&nbsp;Also in
+> La documentación de Oh My Fish&nbsp;&bull;&nbsp;También disponible en
+> <a href="../en-US/Packages.md">🇺🇸</a>
 > <a href="../ru-RU/Packages.md">🇷🇺</a>
 > <a href="../zh-CN/Packages.md">🇨🇳</a>
 > <a href="../uk-UA/Packages.md">🇺🇦</a>
 > <a href="../pt-BR/Packages.md">🇧🇷</a>
 <br>
 
-# Creating
+# Creando
 
-To learn package creation let's create a new package that will provide a `hello_world` command for your shell. Package names may only contain lowercase letters and hyphens to separate words.
+Para aprender en la creación de paquetes, vamos a crear un nuevo paquete que mostrará un comando `hello_world` para su _shell_. Los nombres de los paquetes
+solo pueden contener letras minúsculas y guiones para separar palabras.
 
-Oh My Fish can scaffold a package structure for you. Use the command `omf new`:
+Oh My Fish puede crear el esqueleto de una estructura de un paquete para usted. Para ello utilice el comando `omf new`:
 
 ```fish
 $ omf new plugin hello_world
 ```
 
-> Use `omf new theme my_theme_name` for themes.
+> Utilice `omf new theme my_theme_name` para crear un nuevo tema.
 
-The utility changes the current directory to the newly created package:
+La utilidad cambia el directorio actual al paquete recién creado:
 
 ```
 $ ls -l
@@ -32,12 +34,13 @@ $ ls -l
   completions/hello_world.fish
 ```
 
->Always describe how your package works in the `README.md`.
+>Proporcione siempre una descripción de cómo funciona su paquete en un archivo `README.md`.
 
 
->Also read more about [auto completion](http://fishshell.com/docs/current/commands.html#complete) and take care to provide it for your utilities when applicable.
+>Lea más sobre [auto completado](http://fishshell.com/docs/current/commands.html#complete) y tenga en cuenta el incluirlo para sus utilidades cuando sea
+>aplicable.
 
-`functions/hello_world.fish` defines a single function:
+`functions/hello_world.fish` define una única función:
 
 ```fish
 function hello_world -d "Prints hello world"
@@ -45,82 +48,96 @@ function hello_world -d "Prints hello world"
 end
 ```
 
-Each function in your package must be declared in its own file under `functions` directory. This is required by fish autoloading mechanism, which loads functions on demand, avoiding loading unused functions at startup time.
+Cada función en su paquete debe ser declarada en su propio archivo en el directorio `functions`. Esto es necesario para el mecanismo de carga automática de
+fish, que carga funciones bajo demanda, evitando funciones no utilizadas durante el tiempo de arranque.
 
-Bear in mind that fish lacks a private scope, so if you need to split your package into functions,  avoid name clashes prefixing your functions with something unique -- like your package name (e.g. `hello_world_print_help`). To avoid polluting command namespace, consider prefixing private functions with two underscores (e.g. `__function_name_print_help`).
+Tenga en cuenta que fish no tiene un ámbito privado, así que si necesita dividir su paquete en funciones, evite conflictos de nombres utilizando como
+prefijo de las funciones algo único, como el nombre dle paquete (por ejemplo: `hello_world_print_help`). Para evitar el contaminado de nombres de comandos,
+considere utilizar como prefijo de funciones privadas dos guiones bajos (e.g. `__function_name_print_help`).
 
 # Hooks
 
-Oh My Fish provides a "hooks" system that allows you to write scripts for your package that run when other interesting events occur. Packages can use these hooks to provide advanced installation, custom resource management, etc. Hooks are ordinary Fish scripts named after the event they are triggered by. Most hooks reside in a `hooks` directory inside a package's project directory.
+Oh My Fish ofrece un sistema de "hooks" que le permite escribir scripts para su paquete que son ejecutados cuando ocurre otro evento interesante. Los
+paquetes puede utilizar estos _hooks_ para ofrecer una instalación avanzada, una gestión de recursos personalizada, etc. Los _hooks_ son scripts normales de
+Fish nombrados después del evento por el que son lanzados. La mayoría de _hooks_ se encuentran en un directorio `hooks` dentro del directorio del proyecto
+del paquete.
 
->Hooks that are called at startup time (`init.fish` and `key_bindings.fish`) can slow down shell startup. Be sure to avoid slow code at startup time! Also, if your package doesn't need a hook file, be sure to remove it.
+>Los _hooks_ que son llamados después del tiempo de arranque (`init.fish` y `key_bindings.fish`) pueden ralentizar el arranque de la _shell_. ¡Asegúrese de
+>evitar utilizar código lento en el proceso de arranque! También, si su paquete no necesita de un archivo hook, asegúrese de eliminarlo.
 
-The working directory inside a hook is always set to the root directory of the package. The hooks Oh My Fish currently supports are listed below:
+El directorio de trabajo desntro de un hoo está siempre establecido en la raíz del directorio del paquete. Los hooks Oh My Fish actualmente admitidos están
+listados más abajo:
 
 ## `init`
 
-The `init` hook is run once when the shell first loads. Scripts to handle this hook should be located at `init.fish` at package's root directory.
+El hook `init` se ejecuta la primera vez que la shell se carga. Los scripts que utilicen este hook deberían estar ubicados en `init.fish` en la raíz del
+directorio del paquete.
 
-Inside this hook, you can access three package-related variables:
+Dentro de este hook, puede acceder a tres variables relacionadas con el paquete:
 
-* `$package`: Package name
-* `$path`: Package installation path
-* `$dependencies`: Package dependencies
+* `$package`: Nombre dl paquete
+* `$path`: Ruta de instalación del paquete
+* `$dependencies`: Dependencias del paquete
 
-For example, with an `init.fish` script containing the following code:
+Por ejemplo, con un script `init.fish` que contenga el siguiente código:
 
 ```fish
 echo "hello_world initialized"
 ```
 
-you will see the line `hello_world initialized` at the top of the terminal when it is first opened.
+verá la línea `hello_world initialized` en la parte superior de la terminal cuando sea abierta por primera vez.
 
-Use this hook to modify the environment, load resources, autoload functions, etc. If your package does not export any function, you can still use this event to add functionality to your package, or dynamically create functions.
+Utilice este hook para modificar el entorno, cargar recursos, cargar de manera automática funciones, etc. Si su paquete no exporta ninguna función, todavía
+puede utilizar este evento para añadir funcionalidades a su paquete, o de manera dinámica crear funciones.
 
 ## `key_bindings`
 
-If your package or theme need to use key bindings, be sure to set them up in the `key_bindings` hook. Key binding scripts must be located at `key_bindings.fish` at package's root directory. In this hook you can freely use the [`bind`][fish-bind] command to define custom key bindings.
+Si su paquete o sistema utiliza atajos de teclado, asegúrese de establecerlos en el hook `key_bindings`. El script del atajo de teclado debe estar ubicado
+en `key_bindings.fish` en la raíz  del directorio del paquete. En este hook puede utilizar libremente el comando [`bind`][fish-bind] para definir los atajos
+de teclado personalizados.
 
->Themes can define key bindings too! Oh My Fish will reload key bindings when you switch themes.
+>¡Los temas también pueden definir atajos de teclado! Oh My Fish volverá a cargar los atajos de teclado cuando cambie entre los temas.
 
 ## `install`
 
-The `install` hook is triggered when a package is first installed. Scripts for this hook must be located at `hooks/install.fish`.
+El hook `install` es lanzado cuando un paquete es instalado por primera vez. Los scripts para este hook deberán estar ubicados en `hooks/install.fish`.
 
-Inside this hook, you can access two package-related variables:
+Dentro de este hook, puede acceder a dos variables relacionadas con el paquete:
 
-* `$package`: Package name
-* `$path`: Package installation path
+* `$package`: Nombre del paquete
+* `$path`: Ruta de instalación del paquete
 
-This hook is useful for downloading additional resources, setting up Git submodules, or installing third-party dependencies like Bash scripts.
+Este hook es útil para descargar recursos adicionales, configurar submódulos de Git o instalar dependencias de terceros como scripts de Bash.
 
 ## `update`
 
-As you might have guessed, the `update` hook is triggered for a package after it is updated. Scripts for this hook must be located at `hooks/update.fish`.
+Como puede haber adivinado, el hook `update` es lanzado por un paquete después de haber sido actualizado. Los scripts para este hook deberán estar ubicados en `hooks/update.fish`.
 
-Inside this hook, you can access two package-related variables:
+Dentro de este hook, puede acceder a dos variables relacionadas con el paquete:
 
-* `$package`: Package name
-* `$path`: Package installation path
+* `$package`: Nombre del paquete
+* `$path`: Ruta de instalación del paquete
 
-This hook is useful for updating Git submodules or checking for new versions of third-party dependencies.
+Este hook es útil para actualizar submódulos de Git o para comprobar si existen nuevas versiones para dependencias de terceros.
 
 ## `uninstall`
 
-The `uninstall` hook will be triggered before a package is removed via `omf remove <pkg>`. Scripts for this hook must be located at `hooks/uninstall.fish`.
+El hook `uninstall` será lanzado antes de que un paquete sea eliminado mediante `omf remove <pkg>`. Los scripts para este hook deberán estar ubicados en `hooks/uninstall.fish`.
 
-Inside this hook, you can access two package-related variables:
+Dentro de este hook, puede acceder a dos variables relacionadas con el paquete:
 
-* `$package`: Package name
-* `$path`: Package installation path
+* `$package`: Nombre del paquete
+* `$path`: Ruta de instalación del paquete
 
-Packages can use this hook to clean up custom resources, etc.
+Los paquetes pueden utilizar este hook para limpiar recursos personalizados, etc.
 
-> Note: for backwards-compatibility, uninstall hooks will also be run if they are located at `uninstall.fish` in the package root.
+> Nota: para mantener la compatibilidad con versiones anteriores, los hooks uninstall también serán ejecutados si están ubicados en `uninstall.fish` en la
+> raíz del paquete.
 
-# Make it public
+# Hágalo público
 
-The official registry of public packages is managed in the [oh-my-fish/packages-main](https://github.com/oh-my-fish/packages-main) repository. See the README of that repository for instructions on how to add your package to the official package database.
+El registro oficial de paquetes públicos es gestionado en el repositorio [oh-my-fish/packages-main](https://github.com/oh-my-fish/packages-main). Vea el
+archivo README de ese repositorio para encontrar instrucciones de cómo añadir su paquete a la base de datos oficial de paquetes.
 
 
 [fish-bind]: http://fishshell.com/docs/current/commands.html#bind
