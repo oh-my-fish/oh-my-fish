@@ -1248,17 +1248,17 @@ $ omf install es
 
 #### Screenshot
 
-#####__Git folder__
+##### __Git folder__
 <p align="center">
 <img src="https://github.com/oh-my-fish/theme-es/blob/master/Fish%20Prompt%20Git-es.png?raw=true">
 </p>
 
-#####__Normal folder (no Git)__
+##### __Normal folder (no Git)__
 <p align="center">
 <img src="https://github.com/oh-my-fish/theme-es/blob/master/Fish%20Prompt%20NoGit-es.png?raw=true">
 </p>
 
-#####__Normal read-only folder (no Git)__
+##### __Normal read-only folder (no Git)__
 <p align="left">
 <img src="https://github.com/oh-my-fish/theme-es/blob/master/Fish%20Prompt%20NoGit%20Read-only-es.png?raw=true" width="280">
 </p>
@@ -2833,9 +2833,7 @@ Zhishen Wen's simple fun theme =)
 ###### Left prompt
 User, host, abbreviated path, and git branch info
 
-######Right prompt
+###### Right prompt
 Time and exit code
 
 Enjoy!
-
-
