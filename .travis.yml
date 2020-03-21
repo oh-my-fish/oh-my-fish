@@ -1,6 +1,5 @@
 language: c
 dist: trusty
-sudo: required
 
 os:
   - linux
