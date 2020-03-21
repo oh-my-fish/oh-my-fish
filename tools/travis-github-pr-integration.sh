@@ -6,7 +6,7 @@ if [[ "$TRAVIS_PULL_REQUEST" = "false" ]]; then
 fi
 
 GITHUB_PR_URL=https://api.github.com/repos/$TRAVIS_REPO_SLUG/pulls/$TRAVIS_PULL_REQUEST
-GITHUB_PR_BODY=$(curl -s $GITHUB_PR_URL ^/dev/null)
+GITHUB_PR_BODY=$(curl -s $GITHUB_PR_URL 2> /dev/null)
 
 if [[ $GITHUB_PR_BODY =~ \"ref\":\ *\"([a-zA-Z0-9_-]*)\" ]]; then
   export OMF_REPO_BRANCH=${BASH_REMATCH[1]}
