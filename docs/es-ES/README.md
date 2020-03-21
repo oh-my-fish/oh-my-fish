@@ -28,7 +28,7 @@ sencillo de utilizar.
 
 ## Instalación 
 
-Puede comenzar de inmediate con la configuración predeterminada ejecutando lo siguiente en su terminal:
+Puede comenzar de inmediato con la configuración predeterminada ejecutando lo siguiente en su terminal:
 
 ```fish
 curl -L https://get.oh-my.fish | fish
@@ -68,8 +68,8 @@ Ejecute `install --help` para obtener una lista completa de opciones de instalac
 
 #### Problemas conocidos
 
-- Debido a un error de regresión en fish 2.6 con algunos emuladores de terminal, los prompts a la derecha hace que la shell no se pueda utilizar.
-  El tema OMF's `default` ofrece un prompt a la derecha, así que es necesario utilizar untema alternativo hasta que se publique una solción.
+- Debido a un error de regresión en fish 2.6 con algunos emuladores de terminal, los prompts a la derecha hacen que la shell no se pueda utilizar.
+  El tema OMF's `default` ofrece un prompt a la derecha, así que es necesario utilizar un tema alternativo hasta que se publique una solución.
   (ver [#541](https://github.com/oh-my-fish/oh-my-fish/issues/541))
 
 
@@ -91,7 +91,7 @@ Actualiza Oh My Fish, todos los paquetes de los repositorios y todos los paquete
 Instala uno _o más_ paquetes.
 
 - Puede instalar paquetes directamente con la URL mediante `omf install URL`
-- Cuando es ejecutado sin argumentos, instala paquetes perdios desde [bundle](#dotfiles).
+- Cuando es ejecutado sin argumentos, instala paquetes faltantes desde [bundle](#dotfiles).
 
 #### `omf repositories` _`[list|add|remove]`_
 
@@ -201,8 +201,8 @@ set -xg PYTHONDONTWRITEBYTECODE 1
 #### Acerca de bundle
 
 Cada vez que un paquete/tema es instalado o eliminado, el archivo `bundle` es actualizado. También puedes editarlo manualmente y después ejecutar `omf
-install` para tomar en cuenta los cambios realizados. Por favor tenga en cuenta que mientras que los paquetes/temas añadidos a _bundle_ son automáticamente
-instalados, un paquete/tema eliminado de _bundle_ no es eliminado de la instalación del usuario.
+install` para tomar en cuenta los cambios realizados. Por favor tenga en cuenta que mientras que los paquetes/temas añadidos a _bundle_ son 
+instalados automáticamente, un paquete/tema eliminado de _bundle_ no es eliminado de la instalación del usuario.
 
 #### Versiones antiguas de fish
 
