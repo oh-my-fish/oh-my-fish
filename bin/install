@@ -481,7 +481,7 @@ function sane_environment_check
   end
 
   debug "Verifying Git autocrlf is not enabled"
-  if test (cmd git config --bool core.autocrlf; or echo false) = true
+  if test (cmd git config core.autocrlf; or echo false) = true
     abort "Please disable core.autocrlf in your Git configuration."
   end
 end
