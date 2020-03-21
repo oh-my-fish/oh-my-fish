@@ -43,7 +43,7 @@ fish install --path=~/.local/share/omf --config=~/.config/omf
 You can verify the integrity of the downloaded installer by verifying the script against [this checksum](bin/install.sha256):
 
 ```
-1b358563404af164fd7ff939d48f29cfe8fe06f21c90ee9bfebdc38fb3850202  install
+bb1f4025934600ea6feef2ec11660e17e2b6449c5a23c033860aed712ad328c9 install
 ```
 
 You can also install Oh My Fish with Git or with an offline source tarball downloaded from the [releases page][releases]:
