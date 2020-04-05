@@ -24,6 +24,7 @@ Oh My Fish provides core infrastructure to allow you to install packages which e
   * [Startup](#startup)
   * [Dotfiles](#dotfiles)
 * [Creating Packages](#creating-packages)
+* [Bring Oh My Fish wherever you go through the ssh](#bring-oh-my-fish-wherever-you-go-through-the-ssh)
 
 ## Installation
 
@@ -202,6 +203,16 @@ If you need startup commands to be run *before* Oh My Fish begins loading plugin
 ## Creating Packages
 
 Oh My Fish uses an advanced and well defined plugin architecture to ease plugin development, including init/uninstall hooks, function and completion autoloading. [See the packages documentation](docs/en-US/Packages.md) for more details.
+
+## Bring Oh My Fish wherever you go through the ssh
+To bring Oh My Fish with the portable fish shell to the ssh session there is a plugin in [xxh project](https://github.com/xxh/xxh):
+```bash
+xxh +I xxh-plugin-fish-ohmyfish
+xxh myhost +s fish
+myhost~> omf help
+Oh My Fish! - the fish shell framework
+```
+This allows to use Oh My Fish in ssh session without any installations on the host and root access.
 
 
 [fishshell]: http://fishshell.com
