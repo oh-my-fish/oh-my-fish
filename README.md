@@ -150,7 +150,7 @@ and so it may be necessary to prefix your script files with ordering numbers.
 For example: `a_script.fish` will take precedence over the `omf.fish` snippet.
 So if `a_script.fish` depends on plugins managed by OMF, consider renaming the script file to `xx_a_script.fish`.
 
-Similiarly, to make sure that a script runs before `omf.fish`, you may prefix it with `00_`.
+Similarly, to make sure that a script runs before `omf.fish`, you may prefix it with `00_`.
 Alternatively, `~/.config/omf/before.init.fish` may be used.
 
 ### Startup
