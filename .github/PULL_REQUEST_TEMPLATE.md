@@ -11,11 +11,12 @@ Run the command `omf doctor` and paste the output here. Example:
 -->
 
 ```
-Oh My Fish version:   6
+Oh My Fish version:   7
 OS type:              Linux
-Fish version:         fish, version 2.7.1
-Git version:          git version 2.17.1
+Fish version:         fish, version 3.1.0
+Git version:          git version 2.26.0
 Git core.autocrlf:    no
+Checking for a sane environment...
 Your shell is ready to swim.
 ```
 
