@@ -2,6 +2,51 @@
 Important changes to Oh My Fish are recorded here for each release.
 
 
+## [7] - 2020-04-11
+
+Another release that took long but is finally out! v7 supports Fish 3.0 and 3.1 and brings a few improvements and bug fixes.
+
+### Improvements
+
+- Plugin and theme templates improvements. [#596] [#691] [#709]
+- Support newer versions of Fish Shell. [#609] [#618] [#644] [#710] [#711] [#740]
+- Improvements to the require mechanism. [#653] [#666] [#713]
+- Speed up Git interoperability/support. [#706]
+
+### Bugs fixed
+
+- Installation fixes and improvements. [#577] [#603] [#609] [#738] [#742]
+- Documentation fixes and improvements. [#570] [#640] [#662] [#694] [#696] [#699] [#708] [#709] [#724] [#737] [#739]
+
+### Contributors
+
+Thanks to the people who contributed to this release.
+
+- [Adam Edelstein](mailto:Adam.Edelstein@tastytrade.com)
+- [Anton-Latukha](mailto:anton.latukha@gmail.com)
+- [Benedict Lee](mailto:benedictleejh@gmail.com)
+- [Derek W. Stavis](mailto:dekestavis@gmail.com)
+- [Édouard Lopez](mailto:edouard-lopez@users.noreply.github.com)
+- [Fabian Homborg](mailto:FHomborg@gmail.com)
+- [Frederick Henderson](mailto:frederickjh@users.noreply.github.com)
+- [Gustavo Pantuza](mailto:gustavopantuza@gmail.com)
+- [Itzik Ephraim](mailto:oranja@gmail.com)
+- [Jan T. Sott](mailto:jan@idleberg.com)
+- [Joel Burget](mailto:joelburget@gmail.com)
+- [Justin Hileman](mailto:github@0x7f.us)
+- [Kevin  F. Konrad](mailto:kevinkonrad@ymail.com)
+- [Leonardo de Oliveira da Silva](mailto:los.oliveirasilva@gmail.com)
+- [Pablo Santiago Blum de Aguiar](mailto:scorphus@gmail.com)
+- [Patryk Niedźwiedziński](mailto:pniedzwiedzinski19@gmail.com)
+- [Paul Wendelboe](mailto:pwendelboe.git@gmail.com)
+- [PoorPockets McNewHold](mailto:13170204PoorPocketsMcNewHold@users.noreply.github.com)
+- [pxgamer](mailto:owzie123@gmail.com)
+- [Sergey Kasmy](mailto:37976824SleeplessSloth@users.noreply.github.com)
+- [Stephen M. Coakley](mailto:me@stephencoakley.com)
+- [Thales Mello](mailto:thalesmello@gmail.com)
+- [Victorhck](mailto:victorhck@mailbox.org)
+
+
 ## [6] - 2017-10-05
 This release took far longer than we targeted for releasing, but we finally made it! Some notable fixes and improvements in this release, with some long-standing bugs eliminated.
 
@@ -284,3 +329,30 @@ Thanks to the people who contributed to this release.
 [#543]: https://github.com/oh-my-fish/oh-my-fish/pull/543
 [#546]: https://github.com/oh-my-fish/oh-my-fish/pull/546
 [#548]: https://github.com/oh-my-fish/oh-my-fish/pull/548
+[#570]: https://github.com/oh-my-fish/oh-my-fish/pull/570
+[#577]: https://github.com/oh-my-fish/oh-my-fish/issues/577
+[#596]: https://github.com/oh-my-fish/oh-my-fish/pull/596
+[#603]: https://github.com/oh-my-fish/oh-my-fish/pull/603
+[#609]: https://github.com/oh-my-fish/oh-my-fish/issues/609
+[#618]: https://github.com/oh-my-fish/oh-my-fish/pull/618
+[#640]: https://github.com/oh-my-fish/oh-my-fish/pull/640
+[#644]: https://github.com/oh-my-fish/oh-my-fish/issues/644
+[#653]: https://github.com/oh-my-fish/oh-my-fish/pull/653
+[#662]: https://github.com/oh-my-fish/oh-my-fish/pull/662
+[#666]: https://github.com/oh-my-fish/oh-my-fish/pull/666
+[#691]: https://github.com/oh-my-fish/oh-my-fish/pull/691
+[#694]: https://github.com/oh-my-fish/oh-my-fish/pull/694
+[#696]: https://github.com/oh-my-fish/oh-my-fish/pull/696
+[#699]: https://github.com/oh-my-fish/oh-my-fish/pull/699
+[#706]: https://github.com/oh-my-fish/oh-my-fish/pull/706
+[#708]: https://github.com/oh-my-fish/oh-my-fish/pull/708
+[#709]: https://github.com/oh-my-fish/oh-my-fish/pull/709
+[#710]: https://github.com/oh-my-fish/oh-my-fish/pull/710
+[#711]: https://github.com/oh-my-fish/oh-my-fish/pull/711
+[#713]: https://github.com/oh-my-fish/oh-my-fish/pull/713
+[#724]: https://github.com/oh-my-fish/oh-my-fish/pull/724
+[#737]: https://github.com/oh-my-fish/oh-my-fish/issues/737
+[#738]: https://github.com/oh-my-fish/oh-my-fish/issues/738
+[#739]: https://github.com/oh-my-fish/oh-my-fish/pull/739
+[#740]: https://github.com/oh-my-fish/oh-my-fish/pull/740
+[#742]: https://github.com/oh-my-fish/oh-my-fish/pull/742
