@@ -247,6 +247,7 @@ Thanks to the people who contributed to this release.
 [4]: https://github.com/oh-my-fish/oh-my-fish/releases/tag/v4
 [5]: https://github.com/oh-my-fish/oh-my-fish/releases/tag/v5
 [6]: https://github.com/oh-my-fish/oh-my-fish/releases/tag/v6
+[7]: https://github.com/oh-my-fish/oh-my-fish/releases/tag/v7
 [#191]: https://github.com/oh-my-fish/oh-my-fish/issues/191
 [#217]: https://github.com/oh-my-fish/oh-my-fish/issues/217
 [#235]: https://github.com/oh-my-fish/oh-my-fish/pull/235
