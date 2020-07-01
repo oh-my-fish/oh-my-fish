@@ -47,7 +47,7 @@
 - [pastfish](#pastfish)
 - [perryh](#perryh)
 - [plain](#plain)
-- [pure](#pure)
+- [pure](#pure-----)
 - [red-snapper](#red-snapper)
 - [robbyrussell](#robbyrussell)
 - [scorphish](#scorphish)
