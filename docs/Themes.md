@@ -137,16 +137,15 @@ _From left to right:_
 
 ### License
 
-[MIT][mit] © [Jorge Bucaran][author] et [al][THEMES-NAMESPACE-batman-contributors]
+[MIT][THEMES-NAMESPACE-batman-mit] © [Jorge Bucaran][THEMES-NAMESPACE-batman-author] et [al][THEMES-NAMESPACE-batman-contributors]
 
 > __Disclaimer:__ This work is not intended to infringe on any rights by and of the companies and/or individuals involved in the production of any series mentioned here. I don't own Batman.
 
 
 [THEMES-NAMESPACE-batman-mit]:            http://opensource.org/licenses/MIT
 [THEMES-NAMESPACE-batman-author]:         http://about.bucaran.me
-[omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
 [THEMES-NAMESPACE-batman-contributors]:   https://github.com/oh-my-fish/oh-my-fish/graphs/contributors
-
+[omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
 
 # beloglazov
 ####  beloglazov
@@ -703,7 +702,7 @@ The glyphs used in the chain can be customized using global variables. Here is a
 
 
 #### License
-[MIT][mit] © [coderstephen][author] et [al][THEMES-NAMESPACE-chain-contributors]
+[MIT][THEMES-NAMESPACE-chain-mit] © [coderstephen][THEMES-NAMESPACE-chain-author] et [al][THEMES-NAMESPACE-chain-contributors]
 
 [THEMES-NAMESPACE-chain-mit]:            http://opensource.org/licenses/MIT
 [THEMES-NAMESPACE-chain-author]:         https://github.com/coderstephen
@@ -817,7 +816,7 @@ Thanks!
     * new file `✚`
     * modified `M`
     * deleted `✖`
-    * reanme `➜`
+    * rename `➜`
     * unmerge `═` (TODO)
     * untracked `✭`
     * working directory clean `✔`
@@ -830,12 +829,12 @@ Thanks!
 
 ### License
 
-[MIT][mit] © [szwathub][author] et [al][THEMES-NAMESPACE-cyan-contributors]
+[MIT][THEMES-NAMESPACE-cyan-mit] © [cyrex][THEMES-NAMESPACE-cyan-author] et [al][THEMES-NAMESPACE-cyan-contributors]
 
 
 [THEMES-NAMESPACE-cyan-mit]:            http://opensource.org/licenses/MIT
-[THEMES-NAMESPACE-cyan-author]:         http://github.com/szwathub
-[THEMES-NAMESPACE-cyan-contributors]:   https://github.com/szwathub/cyan/graphs/contributors
+[THEMES-NAMESPACE-cyan-author]:         https://github.com/cyrex
+[THEMES-NAMESPACE-cyan-contributors]:   https://github.com/oh-my-fish/theme-default/graphs/contributors
 [omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
 
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
@@ -1104,7 +1103,7 @@ Only display the folder name:
 
 ### License
 
-[MIT][mit] © [bpinto][author] et [al][THEMES-NAMESPACE-default-contributors]
+[MIT][THEMES-NAMESPACE-default-mit] © [bpinto][THEMES-NAMESPACE-default-author] et [al][THEMES-NAMESPACE-default-contributors]
 
 
 [THEMES-NAMESPACE-default-mit]:            http://opensource.org/licenses/MIT
@@ -1205,7 +1204,7 @@ Font: [INCONSOLATA](https://www.google.com/fonts/specimen/Inconsolata)
 
 ### License
 
-[MIT][mit] © [Amio][THEMES-NAMESPACE-eden-author]
+[MIT][THEMES-NAMESPACE-eden-mit] © [Amio][THEMES-NAMESPACE-eden-author]
 
 
 [THEMES-NAMESPACE-eden-mit]:            http://opensource.org/licenses/MIT
@@ -1265,7 +1264,7 @@ $ omf install es
 
 ### License
 
-[MIT][mit] © [eugenesvk][THEMES-NAMESPACE-es-author]
+[MIT][THEMES-NAMESPACE-es-mit] © [eugenesvk][THEMES-NAMESPACE-es-author]
 
 
 [THEMES-NAMESPACE-es-mit]:            http://opensource.org/licenses/MIT
@@ -1328,7 +1327,7 @@ Bugs and improvements can be reported/suggested as [issues](https://github.com/o
 
 ### License
 
-[MIT][mit] © [pantuza][author] et [al][THEMES-NAMESPACE-fishbone-contributors]
+[MIT][THEMES-NAMESPACE-fishbone-mit] © [pantuza][THEMES-NAMESPACE-fishbone-author] et [al][THEMES-NAMESPACE-fishbone-contributors]
 
 
 [THEMES-NAMESPACE-fishbone-mit]:            https://opensource.org/licenses/MIT
@@ -1774,7 +1773,7 @@ set theme_display_rbenv_with_gemfile_only 'yes'
 
 ### License
 
-[MIT][mit] © [bpinto][author] et [al][THEMES-NAMESPACE-l-contributors]
+[MIT][THEMES-NAMESPACE-l-mit] © [bpinto][THEMES-NAMESPACE-l-author] et [al][THEMES-NAMESPACE-l-contributors]
 
 
 [THEMES-NAMESPACE-l-mit]:            http://opensource.org/licenses/MIT
@@ -1875,7 +1874,7 @@ how it's structured: `{directory name} > {prompt}`
 $ omf install mokou
 ```
 
-[MIT][mit] © [tentakel][author] et [al][THEMES-NAMESPACE-mokou-contributors]
+[MIT][THEMES-NAMESPACE-mokou-mit] © [tentakel][THEMES-NAMESPACE-mokou-author] et [al][THEMES-NAMESPACE-mokou-contributors]
 
 
 [THEMES-NAMESPACE-mokou-mit]:            http://opensource.org/licenses/MIT
@@ -1959,7 +1958,7 @@ src="https://cloud.githubusercontent.com/assets/5363/12106487/fe8b3c30-b314-11e5
 
 ### License
 
-[MIT][mit] © [Nelson Chen][author] et [al][THEMES-NAMESPACE-nelsonjchen-contributors]
+[MIT][THEMES-NAMESPACE-nelsonjchen-mit] © [Nelson Chen][THEMES-NAMESPACE-nelsonjchen-author] et [al][THEMES-NAMESPACE-nelsonjchen-contributors]
 
 
 [THEMES-NAMESPACE-nelsonjchen-mit]:            http://opensource.org/licenses/MIT
@@ -2036,7 +2035,7 @@ $ omf install pastfish
 
 ### License
 
-[MIT][mit] © [chgu82837][author] et [al][THEMES-NAMESPACE-pastfish-contributors]
+[MIT][THEMES-NAMESPACE-pastfish-mit] © [chgu82837][THEMES-NAMESPACE-pastfish-author] et [al][THEMES-NAMESPACE-pastfish-contributors]
 
 
 [THEMES-NAMESPACE-pastfish-mit]:            http://opensource.org/licenses/MIT
@@ -2213,7 +2212,10 @@ Kudos to all our awesome [:yellow_heart: contributors :yellow_heart:](../..//gra
 
 ## License
 
-MIT © [Rafael Rinaldi](http://rinaldi.io)
+[MIT][THEMES-NAMESPACE-fishtape-mit] © [Rafael Rinaldi][THEMES-NAMESPACE-fishtape-author]
+
+[THEMES-NAMESPACE-fishtape-mit]:            http://opensource.org/licenses/MIT
+[THEMES-NAMESPACE-fishtape-author]:         http://rinaldi.io
 
 ---
 
@@ -2353,13 +2355,13 @@ patch some fonts on you own.
 
 --------
 
-[MIT License] © [simnalamburt] et [al]
+[MIT][THEMES-NAMESPACE-shellder-mit] ©  [simnalamburt][THEMES-NAMESPACE-shellder-simnalamburt] et [al][THEMES-NAMESPACE-shellder-al]
 
 [Jean Anouilh]:   https://en.wikipedia.org/wiki/Jean_Anouilh
 [seoul256.vim]:   https://github.com/junegunn/seoul256.vim
 [THEMES-NAMESPACE-shellder-zplug]:          https://github.com/zplug/zplug
 [THEMES-NAMESPACE-shellder-chips]:          https://github.com/xtendo-org/chips
-[MIT License]:    https://opensource.org/licenses/MIT
+[THEMES-NAMESPACE-shellder-mit]:            http://opensource.org/licenses/MIT
 [THEMES-NAMESPACE-shellder-simnalamburt]:   https://github.com/simnalamburt
 [THEMES-NAMESPACE-shellder-al]:             https://github.com/simnalamburt/shellder/graphs/contributors
 
@@ -2426,7 +2428,7 @@ set -g simple_ass_prompt_greeting MyGreeting
 
 ### License
 
-[MIT][mit] © [lfiolhais][author] et [al][THEMES-NAMESPACE-simple-ass-prompt-contributors]
+[MIT][THEMES-NAMESPACE-simple-ass-prompt-mit] © [lfiolhais][THEMES-NAMESPACE-simple-ass-prompt-author] et [al][THEMES-NAMESPACE-simple-ass-prompt-contributors]
 
 
 [THEMES-NAMESPACE-simple-ass-prompt-mit]:            http://opensource.org/licenses/MIT
@@ -2523,7 +2525,7 @@ $ omf install sushi
 
 #### License
 
-[MIT][mit] © [Umayr Shahid][author] et [al][THEMES-NAMESPACE-sushi-contributors]
+[MIT][THEMES-NAMESPACE-sushi-mit] © [Umayr Shahid][THEMES-NAMESPACE-sushi-author] et [al][THEMES-NAMESPACE-sushi-contributors]
 
 
 [THEMES-NAMESPACE-sushi-mit]:            http://opensource.org/licenses/MIT
