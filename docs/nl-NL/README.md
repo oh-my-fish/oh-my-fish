@@ -1,14 +1,14 @@
 <img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="192px" height="192px"/>
 <img align="left" width="0" height="192px" hspace="10"/>
 
-> The <a href="http://fishshell.com">Fishshell</a> Framework
+> Het <a href="http://fishshell.com">Fish-shell</a>framework
 
 [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE) [![Fish Shell Version](https://img.shields.io/badge/fish-≥v2.2.0-007EC7.svg?style=flat-square)](http://fishshell.com) [![Travis Build Status](http://img.shields.io/travis/oh-my-fish/oh-my-fish.svg?style=flat-square)](https://travis-ci.org/oh-my-fish/oh-my-fish) [![Slack Status](https://oh-my-fish-slack.herokuapp.com/badge.svg)](https://oh-my-fish-slack.herokuapp.com)
 
 
-Oh My Fish provides core infrastructure to allow you to install packages which extend or modify the look of your shell. It's fast, extensible and easy to use.
+Oh My Fish biedt kerninfrastructuur zodat u pakketten kunt installeren om uw shell uit te breiden of aan te passen. Het is snel, uitbreidbaar en eenvoudig te gebruiken.
 
-> Also in&nbsp;
+> Ook beschikbaar in het&nbsp;
 > <a href="docs/ru-RU/README.md">🇷🇺</a>
 > <a href="docs/zh-CN/README.md">🇨🇳</a>
 > <a href="docs/uk-UA/README.md">🇺🇦</a>
@@ -17,191 +17,189 @@ Oh My Fish provides core infrastructure to allow you to install packages which e
 
 <br>
 
-## Table of contents
-* [Installation](#installation)
-* [Getting Started (command descriptions)](#getting-started)
-* [Advanced](#advanced)
-  * [Startup](#startup)
-  * [Dotfiles](#dotfiles)
-* [Creating Packages](#creating-packages)
+## Inhoudsopgave
+* [Installatie](#installation)
+* [Aan de slag (uitleg omtrent opdrachten)](#getting-started)
+* [Geavanceerd](#advanced)
+  * [Opstarten](#startup)
+  * [Puntbestanden](#dotfiles)
+* [Pakketten maken](#creating-packages)
 
-## Installation
+## Installatie
 
-You can get started right away with the default setup by running this in your terminal:
+U kunt direct aan de slag door deze opdracht uit te voeren in een terminalvenster:
 
 ```fish
 curl -L https://get.oh-my.fish | fish
 ```
 
-This will download the installer script and start the installation. Alternatively, you can download the installer and customize your install:
+Hiermee downloadt u het installatiescript en voert u de standaardinstallatie uit. Indien gewenst kunt u het installatiescript downloaden en aanvullende opties opgeven:
 
 ```fish
 curl -L https://get.oh-my.fish > install
 fish install --path=~/.local/share/omf --config=~/.config/omf
 ```
 
-You can verify the integrity of the downloaded installer by verifying the script against [this checksum](bin/install.sha256):
+U kunt de integriteit van het installatiescript verifiëren met [deze controlesom](bin/install.sha256):
 
 ```
 bb1f4025934600ea6feef2ec11660e17e2b6449c5a23c033860aed712ad328c9 install
 ```
 
-You can also install Oh My Fish with Git or with an offline source tarball downloaded from the [releases page][releases]:
+Ook kunt u Oh My Fish installeren middels Git of een offline-brontarball van de [uitgavenpagina][releases]:
 
 ```fish
-# with git
+# middels git
 $ git clone https://github.com/oh-my-fish/oh-my-fish
 $ cd oh-my-fish
 $ bin/install --offline
-# with a tarball
+# middels een tarball
 $ curl -L https://get.oh-my.fish > install
 $ fish install --offline=omf.tar.gz
 ```
 
-Run `install --help` for a complete list of install options you can customize.
+Voer `install --help` uit om een volledige lijst met installatieopties te bekijken.
 
-#### Requirements
+#### Vereisten
 
-- **fish** shell, version 2.2 or later
-- **git**, version 1.9.5 or later
+- **fish**-shell, versie 2.2 of hoger
+- **git**, versie 1.9.5 of hoger
 
-#### Known Issues
+#### Gemelde problemen
 
-- Due to a regression bug in fish 2.6 with some terminal emulators, right prompts make the shell unusable.
-  OMF's `default` theme features a right prompt, so it's necessary to use an alternative theme until a fix is released.
-  (see [#541](https://github.com/oh-my-fish/oh-my-fish/issues/541))
+- Door een bug in Fish 2.6 in sommige terminalemulators zijn opdrachtregels aan de rechterkant momenteel onbruikbaar.
+  OMF's `standaard`thema maakt hier gebruik van, dus raden wij aan een alternatief thema te gebruiken tot het probleem is opgelost.
+  (zie [#541](https://github.com/oh-my-fish/oh-my-fish/issues/541))
 
 
-## Getting Started
+## Aan de slag
 
-Oh My Fish includes a small utility `omf` to fetch and install new packages and themes.
+Oh My Fish bevat het hulpprogramma `omf` om pakketten en thema's op te halen en te installeren.
 
 #### `omf update` _`[omf]`_ _`[<package>...]`_
 
-Update Oh My Fish, all package repositories, and all installed packages.
+Werk Oh My Fish, alle pakketbronnen en geïnstalleerde pakketten bij.
 
-- When called without arguments, update core and all installed packages.
-- You can choose to update only the core, by running `omf update omf`.
-- For selective package update, list only the names of packages you wish to
-  update. You may still include "omf" in the list to update the core as well.
+- Zonder opdrachtregelopties worden de kern en alle geïnstalleerde pakketten bijgewerkt.
+- Voer `omf update omf` uit om alleen de kern bij te werken.
+- Geef pakketnamen op om alleen specifieke pakketten bij te werken. U kunt hieraan desgewenst "omf" toevoegen om ook de kern bij te werken.
 
 #### `omf install` _`[<name>|<url>]`_
 
-Install one _or more_ packages.
+Installeer één _of meerdere_ pakketten.
 
-- You can install packages directly by URL via `omf install URL`
-- When called without arguments, install missing packages from [bundle](#dotfiles).
+- U kunt pakketten installeren door een url op te geven met `omf install url`
+- Zonder opdrachtregelopties worden alleen ontbrekende pakketten geïnstalleerd uit de [bundel](#dotfiles).
 
 #### `omf repositories` _`[list|add|remove]`_
 
-Manage user-installed package repositories. Package repositories are where packages come from used by commands like `omf install`. By default the [official repository](https://github.com/oh-my-fish/packages-main) is always installed and available.
+Beheer eigen toegevoegde pakketbronnen. Pakketbronnen bevatten de pakketten die kunnen worden geïnstalleerd met `omf install`. Standaard is alleen de [officiële pakketbron](https://github.com/oh-my-fish/packages-main) beschikbaar.
 
 #### `omf list`
 
-List installed packages.
+Toon alle geïnstalleerde pakketten.
 
 #### `omf theme` _`<theme>`_
 
-Apply a theme. To list available themes, type `omf theme`. You can also [preview available themes](./docs/Themes.md) before installing.
+Pas een thema toe. Bekijk alle beschikbare thema's met `omf theme`. U kunt ze ook [voorvertonen](./docs/Themes.md).
 
 #### `omf remove` _`<name>`_
 
-Remove a theme or package.
+Verwijder een thema of pakket.
 
-> Packages can use uninstall hooks, so custom cleanup of resources can be done when uninstalling it. See [Uninstall](/docs/en-US/Packages.md#uninstall) for more information.
+> Pakketten kunnen deïnstallatieopties bevatten zodat er aangepaste opschoning kan plaatsvinden. Lees voor meer informatie [Deïnstalleren](/docs/nl-NL/Packages.md#uninstall).
 
 #### `omf reload`
 
-Reload Oh My Fish and all plugins by using `exec` to replace current shell process with a brand new.
+Herlaad Oh My Fish en alle plug-ins door `exec` uit te voeren om alle huidige shellprocessen te vervangen door een nieuw proces.
 
-> This command tries to be as safe as possible, mitigating side-effects caused by `exec` and preventing the reload in case of background processes.
+> Deze opdracht probeert zo veilig mogelijk te werk te gaan en bijwerkingen van `exec` te voorkomen.
 
 #### `omf new plugin | theme` _`<name>`_
 
-Scaffold out a new plugin or theme.
+Maak een nieuwe plug-in of nieuw thema.
 
-> This creates a new directory under `$OMF_CONFIG/{pkg | themes}/` with a template.
+> Hiermee maakt u een nieuwe map `$OMF_CONFIG/{pkg | themes}/` aan met een sjabloon.
 
 #### `omf search` _`-t|--theme / -p|--package`_ _`<name>`_
 
-Searches Oh My Fish's database for a given package, theme or both. It also supports fuzzy search, so if you are not sure of the name you can simply `omf search simple`.
+Zoek een specifiek pakket, thema of beide in Oh My Fish's databank. Als u de naam niet kent, is eenvoudig zoeken mogelijk met `omf search simple`.
 
 #### `omf channel`
 
-Gets or changes the update channel.
+Toon of wijzig het updatekanaal.
 
-Two channels are available by default: the `stable` channel provides stable updates with the latest tagged version of Oh My Fish, and `dev` which provides the latest changes under development. The update channel currently set determines what version `omf update` will upgrade to.
+Standaard zijn er twee kanalen beschikbaar: `stable`, welke stabiele updates aanbiedt op basis van de nieuwste tag en `dev`, welke updates aanbiedt met de allernieuwste code die vaak nog in ontwikkeling is. Het ingestelde updatekanaal bepaalt welke versie `omf update` installeert.
 
 #### `omf doctor`
 
-Use to troubleshoot before [opening an issue][omf-issues-new].
+Voer dit uit om foutopsporingsinformatie vast te leggen voor [een 'issue'][omf-issues-new].
 
 #### `omf destroy`
 
-Uninstall Oh My Fish.
+Deïnstalleer Oh My Fish.
 
 ## Advanced
 
-Oh My Fish installer adds a snippet to fish's user config files (`~/.config/fish/conf.d/`) which calls OMF's startup code.
+Het Oh My Fish-installatiescript voegt een knipsel toe aan de Fish-configuratiebestanden (`~/.config/fish/conf.d/`) dat OMF's opstartcode aanroept.
 
-Notice that the scripts in that directory are sourced in the order that the filesystem sees them,
-and so it may be necessary to prefix your script files with ordering numbers.
+Let op: de scripts in bovenstaande map worden uitgevoerd op basis van de volgorde die het bestandssysteem aanhoudt,
+dus kan het nuttig zijn scriptbestanden aan te duiden met een getal.
 
-For example: `a_script.fish` will take precedence over the `omf.fish` snippet.
-So if `a_script.fish` depends on plugins managed by OMF, consider renaming the script file to `xx_a_script.fish`.
+Voorbeeld: `a_script.fish` geniet de voorkeur boven het `omf.fish`-knipsel.
+Dus als `a_script.fish` afhankelijk is van door OMF beheerde plug-ins, is het raadzaam om de naam van het scriptbestand te wijzigen in `xx_a_script.fish`.
 
-Similarly, to make sure that a script runs before `omf.fish`, you may prefix it with `00_`.
-Alternatively, `~/.config/omf/before.init.fish` may be used.
+Als een script moet worden uitgevoerd voordat `omf.fish` wordt aangeroepen, kunt u het aanduiden met `00_`.
+Ook kunt u `~/.config/omf/before.init.fish` hiervoor gebruiken.
 
-### Startup
+### Opstarten
 
-Every time you open a new shell, the startup code initializes Oh My Fish installation path and the _config_ path (`~/.config/omf` by default),
-sourcing the [`init.fish`](init.fish) script afterwards, which autoloads packages, themes and your custom init files.
+Telkens als u een nieuwe shell opent, initialiseert de opstartcode het Oh My Fish-installatie- en _config_-pad (standaard: `~/.config/omf`),
+waardoor het [`init.fish`](init.fish)-script naderhand wordt aangeroepen. Dit script bevat een lijst met geïnstalleerde pakketten, thema's en aangepaste init-bestanden.
 
-For more information check the [FAQ](docs/en-US/FAQ.md#what-does-oh-my-fish-do-exactly).
+Lees voor meer informatie de [veelgestelde vragen](docs/nl-NL/FAQ.md#what-does-oh-my-fish-do-exactly).
 
-### Dotfiles
+### Puntbestanden
 
-The `$OMF_CONFIG` directory represents the user state of Oh My Fish. It is the perfect
-candidate for being added to your dotfiles and/or checked out to version control. There you can find three important files:
+De `$OMF_CONFIG`-map duidt de gebruikersstatus van Oh My Fish aan. Dit is dé perfecte map om toe te voegen aan uw puntbestanden en/of versiebeheersysteem. De map bevat drie belangrijke bestanden:
 
-- __`theme`__ - The current theme
-- __`bundle`__ - List of currently installed packages/themes
-- __`channel`__ - The channel from which OMF gets updates (stable / dev)
+- __`theme`__ - het huidige thema
+- __`bundle`__ - de lijst met geïnstalleerde pakketten en thema's
+- __`channel`__ - het OMF-updatekanaal (stable of dev)
 
-And you may create and customize these special files:
+Verder kunt u deze speciale bestanden aanmaken of aanpassen:
 
-- __`init.fish`__ - Custom script sourced after shell start
-- __`before.init.fish`__ - Custom script sourced before shell start
-- __`key_bindings.fish`__ - Custom key bindings where you can use the `bind` command freely
+- __`init.fish`__ - aangepast script dat wordt uitgevoerd na het starten van de shell
+- __`before.init.fish`__ - aangepast script dat wordt uitgevoerd vóór het starten van de shell
+- __`key_bindings.fish`__ - aangepaste sneltoetsen die kunnen worden toegewezen met de opdracht `bind`
 
-#### Setting variables in `init.fish`
+#### Variabelen instellen in `init.fish`
 
-One of the most common startup commands used in `init.fish` is variables definition. Quite likely, such variables need to be available in any shell session. To achieve this, define them globally. For example:
+Eén van de meestgebruikte opstartopdrachten in `init.fish` is de variabelendefinitie. Zulke variabelen dienen beschikbaar te zijn in elke shellsessie. Dit kan bijvoorbeeld middels het volgende:
 
 ```fish
-# Golang developers might need this one
+# Voor Golang-ontwikkelaars
 set -xg GOPATH $HOME/gocode
 
-# Python developers otherwise
+# Voor Python-ontwikkelaars
 set -xg PYTHONDONTWRITEBYTECODE 1
 ```
 
-#### About the bundle
+#### Over de bundel
 
-Every time a package/theme is installed or removed, the `bundle` file is updated. You can also edit it manually and run `omf install` afterwards to satisfy the changes. Please note that while packages/themes added to the bundle get automatically installed, a package/theme removed from bundle isn't removed from user installation.
+Telkens als een pakket of thema geïnstalleerd of verwijderd wordt, wordt het `bundle`-bestand bijgewerkt. U kunt dit bestand tevens handmatig aanpassen en nadien `omf install` uitvoeren om de wijzigingen toe te passen. Let op: als pakketten of thema's automatisch geïnstalleerd zijn, leidt verwijderen uit de bundel niet tot deïnstallatie.
 
-#### Older fish versions
+#### Oudere Fish-versies
 
-In fish 2.2, there is no `conf.d` directory, so the startup code has to be placed in the fish config file (`~/.config/fish/config.fish`).
+Fish 2.2 bevat geen `conf.d`-map, dus dient de opstartcode toegevoegd te worden aan het Fish-configuratiebestand (`~/.config/fish/config.fish`).
 
-It's highly recommended that your custom startup commands go into `init.fish` file instead of `~/.config/fish/config.fish`, as this allows you to keep the whole `$OMF_CONFIG` directory under version control.
+Het is raadzaam om uw aangepaste opstartopdracht toe te voegen aan `init.fish` in plaats van `~/.config/fish/config.fish`, zodat de gehele `$OMF_CONFIG`-map beschikbaar blijft voor versiebeheer.
 
-If you need startup commands to be run *before* Oh My Fish begins loading plugins, place them in `before.init.fish` instead. If you're unsure, it is usually best to put things in `init.fish`.
+Als opstartopdrachten uitgevoerd dienen te worden *vóór* Oh My Fish start, voeg ze dan toe aan `before.init.fish`. Voeg bij twijfel alles toe aan `init.fish`.
 
-## Creating Packages
+## Pakketten maken
 
-Oh My Fish uses an advanced and well defined plugin architecture to ease plugin development, including init/uninstall hooks, function and completion autoloading. [See the packages documentation](docs/en-US/Packages.md) for more details.
+Oh My Fish gebruikt een geavanceerde, goedgedocumenteerde plug-inarchitectuur om het maken van plug-ins te vereenvoudigen, inclusief init- en uninstall-opties, functies en automatische aanvulling. Lees voor meer informatie [de pakketdocumentatie](docs/nl-NL/Packages.md).
 
 
 [fishshell]: http://fishshell.com
