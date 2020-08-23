@@ -139,7 +139,7 @@ Voer dit uit om foutopsporingsinformatie vast te leggen voor [een 'issue'][omf-i
 
 Deïnstalleer Oh My Fish.
 
-## Advanced
+## Geavanceerd
 
 Het Oh My Fish-installatiescript voegt een knipsel toe aan de Fish-configuratiebestanden (`~/.config/fish/conf.d/`) dat OMF's opstartcode aanroept.
 
