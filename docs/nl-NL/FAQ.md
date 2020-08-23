@@ -1,88 +1,88 @@
 <img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="128px" height="128px"/>
 <img align="left" width="0" height="128px"/>
 
-# FAQ
+# Veelgestelde vragen
 
-> Oh My Fish Documentation&nbsp;&bull;&nbsp;Also in
+> Oh My Fish-documentatie&nbsp;&bull;&nbsp;Ook beschikbaar in het
 > <a href="../ru-RU/FAQ.md">🇷🇺</a>
 > <a href="../zh-CN/FAQ.md">🇨🇳</a>
 > <a href="../uk-UA/FAQ.md">🇺🇦</a>
 > <a href="../pt-BR/FAQ.md">🇧🇷</a>
 <br>
 
-Thanks for taking the time to read this FAQ. Feel free to create a new issue if your question is not answered here.
+Fijn dat u even de tijd neemt om de veelgestelde vragen door te nemen. Als uw vraag hierna nog niet beantwoord is, open dan een 'issue'.
 
 
-## What is Oh My Fish and why do I want it?
+## Wat is Oh My Fish en waarom zou ik het willen gebruiken?
 
-Oh My Fish is a _framework_ for the [Fishshell](http://fishshell.com/). It helps you manage your configuration, themes and packages.
-
-
-## What do I need to know to use Oh My Fish?
-
-_Nothing_. You can install Oh My Fish and keep using Fish as usual. When you are ready to learn more just type `omf help`.
+Oh My Fish (OMF) is een _framework_ voor de [Fish-shell](http://fishshell.com/). OMF helpt u de configuratie te beheren en thema's en pakketten te installeren.
 
 
-## What are Oh My Fish packages?
+## Wat moet ik kennen om Oh My Fish te kunnen gebruiken?
 
-Oh My Fish packages are themes or plugins written in fish that extend the shell core functionality, run code during initialization, add auto completion for known utilities, etc.
-
-
-## What kind of Oh My Fish packages are there?
-
-There are roughly 3 kinds of packages:
-
-1. Configuration utilities. For example [`pkg-pyenv`](https://github.com/oh-my-fish/pkg-pyenv) checks whether `pyenv` exists in your system and runs `(pyenv init - | psub)` for you during startup.
-
-2. Themes. Check our [theme gallery](https://github.com/oh-my-fish).
-
-3. Traditional shell utilities. For example [`pkg-copy`](https://github.com/oh-my-fish/pkg-copy), a clipboard utility compatible across Linux and OSX.
+_Niks_. Installeer Oh My Fish en gebruik Fish zoals gebruikelijk. Typ `omf help` als u iets nieuws wilt leren.
 
 
-## What does Oh My Fish do exactly?
+## Wat zijn Oh My Fish-pakketten?
 
-+ Run `$OMF_CONFIG/before.init.fish` if available.
-
-+ Autoload installed packages and themes under `$OMF_PATH/`.
-
-+ Autoload your config path. `~/.config/omf` by default, but configurable via `$OMF_CONFIG`.
-
-+ Autoload any `functions` directory under `$OMF_PATH` and `$OMF_CONFIG`
-
-+ Run `$OMF_CONFIG/init.fish` if available.
+Oh My Fish-pakketten zijn thema's of plug-ins, geschreven in fish, die de kernfunctionaliteit uitbreiden, code uitvoeren tijdens het opstarten, automatische aanvullingen van veelgebruikte programma's toevoegen, etc.
 
 
-## How can I upgrade from an existing Oh My Fish installation?
+## Wat voor Oh My Fish-pakketten zijn er zoal beschikbaar?
 
-> :warning: Remember to backup your dotfiles and other sensitive data first.
+Er zijn 3 soorten pakketgroepen:
+
+1. Configuratiehulpmiddelen. Een voorbeeld hiervan is [`pkg-pyenv`](https://github.com/oh-my-fish/pkg-pyenv), dat controleert of `pyenv` aanwezig is op uw systeem en `(pyenv init - | psub)` uitvoert tijdens het opstarten.
+
+2. Thema's. Bekijk de [themagalerij](https://github.com/oh-my-fish).
+
+3. Traditionele shell-hulpmiddelen. Een voorbeeld hiervan is [`pkg-copy`](https://github.com/oh-my-fish/pkg-copy), een klembordbeheerder die op zowel Linux als macOS werkt.
+
+
+## Wat doet Oh My Fish precies?
+
++ Voert `$OMF_CONFIG/before.init.fish` uit (indien beschikbaar).
+
++ Laadt automatisch pakketten en thema's uit `$OMF_PATH/`.
+
++ Laadt automatisch uw configuratiepad. Standaard is dit `~/.config/omf`, maar dit is instelbaar middels `$OMF_CONFIG`.
+
++ Laadt automatisch de `functions`-map uit `$OMF_PATH` en `$OMF_CONFIG`
+
++ Voert `$OMF_CONFIG/init.fish` uit (indien beschikbaar).
+
+
+## Hoe kan ik een reeds aanwezige Oh My Fish-installatie bijwerken?
+
+> :warning: Maak een back-up van uw verborgen bestanden en andere belangrijke gegevens.
 
 ```
 curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | sh
 ```
 
-You can now safely remove `$fish_path`.
+U kunt `$fish_path` nu veilig verwijderen.
 
 ```fish
 rm -rf "$fish_path"
 ```
 
 
-## How do I use fish as my default shell?
+## Hoe stel ik Fish in als mijn standaardshell?
 
-Add Fish to `/etc/shells`:
+Voeg Fish toe aan `/etc/shells`:
 
 ```sh
 echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
 ```
 
-Make Fish your default shell:
+en schakel over:
 
 ```sh
 chsh -s /usr/local/bin/fish
 ```
 
-To switch your default shell back:
-> Substitute `/bin/bash` with `/bin/tcsh` or `/bin/zsh` as appropriate.
+Indien gewenst kunt u altijd terug naar de vorige standaardshell:
+> Vervang, indien nodig, `/bin/bash` door `/bin/tcsh` of `/bin/zsh`.
 
 ```sh
 chsh -s /bin/bash
