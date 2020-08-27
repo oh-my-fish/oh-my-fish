@@ -1825,6 +1825,7 @@ Using [oh-my-fish](https://github.com/oh-my-fish/oh-my-fish):
 
 ```Bash
 omf install lolfish
+cp ~/.local/share/omf/themes/lolfish/lol.fish ~/.local/share/omf/themes/lolfish/fish_prompt.fish
 ```
 ##### Less Easy Install
 
