@@ -1,28 +1,28 @@
 <img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="128px" height="128px"/>
 <img align="left" width="0" height="128px"/>
 
-# Packages
+# Pakketten
 
-> Oh My Fish Documentation&nbsp;&bull;&nbsp;Also in
+> Oh My Fish-documentatie&nbsp;&bull;&nbsp;Ook beschikbaar in het
 > <a href="../ru-RU/Packages.md">🇷🇺</a>
 > <a href="../zh-CN/Packages.md">🇨🇳</a>
 > <a href="../uk-UA/Packages.md">🇺🇦</a>
 > <a href="../pt-BR/Packages.md">🇧🇷</a>
 <br>
 
-# Creating
+# Maken
 
-To learn package creation let's create a new package that will provide a `hello_world` command for your shell. Package names may only contain lowercase letters and hyphens to separate words.
+Om pakketten te leren maken, gaat u een nieuw pakket volgens een sjabloon maken. Dit pakket bevat een `hello_world`-opdracht voor uw shell. Pakketnamen mogen alleen kleine letters en streepjes bevatten.
 
-Oh My Fish can scaffold a package structure for you. Use the command `omf new`:
+Oh My Fish kan een pakketstructuur voor u samenstellen. Gebruik hiervoor `omf new`:
 
 ```fish
 $ omf new plugin hello_world
 ```
 
-> Use `omf new theme my_theme_name` for themes.
+> Voer `omf new theme my_theme_name` uit om thema's te maken.
 
-The utility changes the current directory to the newly created package:
+Er wordt overgeschakeld van de huidige map naar die van het pakket:
 
 ```
 $ ls -l
@@ -32,95 +32,95 @@ $ ls -l
   completions/hello_world.fish
 ```
 
->Always describe how your package works in the `README.md`.
+>Omschrijf altijd in `README.md` hoe uw pakket werkt.
 
 
->Also read more about [auto completion](http://fishshell.com/docs/current/commands.html#complete) and take care to provide it for your utilities when applicable.
+>Lees meer over [automatisch aanvullen](http://fishshell.com/docs/current/commands.html#complete) en gebruik het zorgvuldig.
 
-`functions/hello_world.fish` defines a single function:
+`functions/hello_world.fish` omvat een enkele functie:
 
 ```fish
-function hello_world -d "Prints hello world"
-  echo "Hello World!"
+function hello_world -d "Toont hallo wereld"
+  echo "Hallo wereld!"
 end
 ```
 
-Each function in your package must be declared in its own file under `functions` directory. This is required by fish autoloading mechanism, which loads functions on demand, avoiding loading unused functions at startup time.
+Elke functie in uw pakket dient te worden verklaard in een bestand in elke `functions`-map. Fish vereist dit voor het automatisch laden, welke functies op afroep laadt, zodat ongebruikte functies niet worden geladen.
 
-Bear in mind that fish lacks a private scope, so if you need to split your package into functions,  avoid name clashes prefixing your functions with something unique -- like your package name (e.g. `hello_world_print_help`). To avoid polluting command namespace, consider prefixing private functions with two underscores (e.g. `__function_name_print_help`).
+Let op: Fish bevat geen private scope, dus als u uw pakket moet splitsen in functies, voorkom dan dubbele namen door een aanduiding te gebruiken, zoals uw pakketnaam (bijv. `hello_world_print_help`). Om de opdrachtnamespace niet te bezaaien met onnodige functies, kunt u privéfuncties aanduiden met twee onderliggende streepjes (bijv. `__function_name_print_help`).
 
 # Hooks
 
-Oh My Fish provides a "hooks" system that allows you to write scripts for your package that run when other interesting events occur. Packages can use these hooks to provide advanced installation, custom resource management, etc. Hooks are ordinary Fish scripts named after the event they are triggered by. Most hooks reside in a `hooks` directory inside a package's project directory.
+Oh My Fish bevat een 'hooks'-systeem waarmee u scripts kunt maken voor uw pakket die worden uitgevoerd als andere gebeurtenissen plaatsvinden. Pakketten kunnen deze hooks gebruiken om geavanceerde installatie te bieden, aangepaste bronnen, etc. Hooks zijn eigenlijk Fish-scripts die genoemd zijn naar de gebeurtenis die ze aanroepen. De meeste hooks staan in een `hooks`-map in de projectmap van het pakket.
 
->Hooks that are called at startup time (`init.fish` and `key_bindings.fish`) can slow down shell startup. Be sure to avoid slow code at startup time! Also, if your package doesn't need a hook file, be sure to remove it.
+>Hooks die worden aangeroepen tijdens het opstarten (`init.fish` en `key_bindings.fish`) kunnen het starten van de shell vertragen. Voorkom dus langzame code tijdens het starten! Als uw pakket geen hook nodig heeft, verwijder dan het bestand.
 
-The working directory inside a hook is always set to the root directory of the package. The hooks Oh My Fish currently supports are listed below:
+De werkmap in een hook is altijd ingesteld op de hoofdmap van het pakket. De momenteel door Oh My Fish ondersteunde hooks staan hieronder:
 
 ## `init`
 
-The `init` hook is run once when the shell first loads. Scripts to handle this hook should be located at `init.fish` at package's root directory.
+De `init`-hook wordt uitgevoerd tijdens het starten van de shell. Scripts die deze hook aanroepen dienen te worden geplaatst in `init.fish` in de hoofdmap van het pakket.
 
-Inside this hook, you can access three package-related variables:
+Binnen deze hook heeft u toegang tot drie gerelateerde variabelen:
 
-* `$package`: Package name
-* `$path`: Package installation path
-* `$dependencies`: Package dependencies
+* `$package`: pakketnaam
+* `$path`: pakketinstallatiepad
+* `$dependencies`: pakketafhankelijkheden
 
-For example, with an `init.fish` script containing the following code:
+Voorbeeld: met een `init.fish`-script die de code
 
 ```fish
 echo "hello_world initialized"
 ```
 
-you will see the line `hello_world initialized` at the top of the terminal when it is first opened.
+bevat, ziet u de regel `hello_world is geïnitialiseerd` bovenaan het terminalvenster als de shell net is gestart.
 
-Use this hook to modify the environment, load resources, autoload functions, etc. If your package does not export any function, you can still use this event to add functionality to your package, or dynamically create functions.
+Gebruik deze hook om de omgeving aan te passen, bronnen te laden, functies automatisch te laden, etc. Als uw pakket geen functie aanroept, kunt u hiermee functionaliteit toevoegen aan uw pakket of dynamische functies samenstellen.
 
 ## `key_bindings`
 
-If your package or theme need to use key bindings, be sure to set them up in the `key_bindings` hook. Key binding scripts must be located at `key_bindings.fish` at package's root directory. In this hook you can freely use the [`bind`][fish-bind] command to define custom key bindings.
+Als uw pakket of thema sneltoetsen gebruikt, stel deze dan in in de `key_bindings`-hook. Sneltoetsscripts dienen geplaatst te worden in `key_bindings.fish` in de hoofdmap van het pakket. Binnen deze hook kunt u de [`bind`][fish-bind]-opdracht vrij gebruiken om aangepaste sneltoetsen in te stellen.
 
->Themes can define key bindings too! Oh My Fish will reload key bindings when you switch themes.
+>Thema's kunnen ook sneltoetsen bevatten! Oh My Fish herlaadt de sneltoetsen als u overschakelt naar een ander thema.
 
 ## `install`
 
-The `install` hook is triggered when a package is first installed. Scripts for this hook must be located at `hooks/install.fish`.
+De `install`-hook wordt aangeroepen als een pakket voor het eerst wordt geïnstalleerd. Scripts die deze hook gebruiken dienen te worden geplaatst in `hooks/install.fish`.
 
-Inside this hook, you can access two package-related variables:
+Binnen deze hook heeft u toegang tot twee gerelateerde variabelen:
 
-* `$package`: Package name
-* `$path`: Package installation path
+* `$package`: pakketnaam
+* `$path`: pakketinstallatiepad
 
-This hook is useful for downloading additional resources, setting up Git submodules, or installing third-party dependencies like Bash scripts.
+Deze hook is handig voor het downloaden van aanvullende bronnen, instellen van Git-submodules of het installeren van externe afhankelijkheden, zoals Bash-scripts.
 
 ## `update`
 
-As you might have guessed, the `update` hook is triggered for a package after it is updated. Scripts for this hook must be located at `hooks/update.fish`.
+Zoals de naam doet vermoeden wordt de `update`-hook aangeroepen nadat een pakket is bijgewerkt. Scripts die deze hook gebruiken dienen te worden geplaatst in `hooks/update.fish`.
 
-Inside this hook, you can access two package-related variables:
+Binnen deze hook heeft u toegang tot twee gerelateerde variabelen:
 
-* `$package`: Package name
-* `$path`: Package installation path
+* `$package`: pakketnaam
+* `$path`: pakketinstallatiepad
 
-This hook is useful for updating Git submodules or checking for new versions of third-party dependencies.
+Deze hook is handig voor het bijwerken van Git-submodules of controleren op nieuwe versies van externe afhankelijkheden.
 
 ## `uninstall`
 
-The `uninstall` hook will be triggered before a package is removed via `omf remove <pkg>`. Scripts for this hook must be located at `hooks/uninstall.fish`.
+De `uninstall`-hook wordt aangeroepen vlak voordat een pakket wordt verwijderd middels `omf remove <pkg>`. Scripts die deze hook gebruiken dienen te worden geplaatst in `hooks/uninstall.fish`.
 
-Inside this hook, you can access two package-related variables:
+Binnen deze hook heeft u toegang tot twee gerelateerde variabelen:
 
-* `$package`: Package name
-* `$path`: Package installation path
+* `$package`: pakketnaam
+* `$path`: pakketinstallatiepad
 
-Packages can use this hook to clean up custom resources, etc.
+Pakketten kunnen deze hook gebruiken om aangepaste bronnen te wissen of anderzijds op te schonen.
 
-> Note: for backwards-compatibility, uninstall hooks will also be run if they are located at `uninstall.fish` in the package root.
+> Let op: omwille van achterwaartse compatibiliteit worden uninstall-hooks ook aangeroepen door `uninstall.fish` in de hoofdmap van het pakket.
 
-# Make it public
+# Delen
 
-The official registry of public packages is managed in the [oh-my-fish/packages-main](https://github.com/oh-my-fish/packages-main) repository. See the README of that repository for instructions on how to add your package to the official package database.
+Het officiële register met openbare pakketten wordt beheerd in de [oh-my-fish/packages-main](https://github.com/oh-my-fish/packages-main)-pakketbron. Neem de README van die pakketbron door om te zien hoe u uw pakket kunt toevoegen.
 
 
 [fish-bind]: http://fishshell.com/docs/current/commands.html#bind
