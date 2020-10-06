@@ -1635,7 +1635,7 @@ set -g theme_display_jobs no
 set -g theme_display_jobs_always yes
 
 #### Hide the current directory read/write indicator.
-set -g theme_display_rwt no
+set -g theme_display_rw no
 
 #### Don't display the VirtualEnv prompt.
 set -g theme_display_virtualent no
