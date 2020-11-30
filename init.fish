@@ -5,7 +5,7 @@ if not set -q OMF_CONFIG
 end
 # Source custom before.init.fish file
 test -f $OMF_CONFIG/before.init.fish
-  and source $OMF_CONFIG/before.init.fish ^/dev/null
+  and source $OMF_CONFIG/before.init.fish 2> /dev/null
 emit perf:timer:start "Oh My Fish initialisation"
 # Read current theme
 test -f $OMF_CONFIG/theme
@@ -32,10 +32,11 @@ function fish_user_key_bindings
   test -f $OMF_CONFIG/theme
     and read -l theme < $OMF_CONFIG/theme
     or set -l theme default
+  test -e $OMF_CONFIG/key_bindings.fish;
+    and source $OMF_CONFIG/key_bindings.fish
   # Prepare packages key bindings paths
-  set -l key_bindings $OMF_CONFIG/key_binding?.fish \
-                      {$OMF_CONFIG,$OMF_PATH}/pkg/*/key_bindings.fish \
-                      {$OMF_CONFIG,$OMF_PATH}/themes/$theme/key_binding?.fish
+  set -l key_bindings {$OMF_CONFIG,$OMF_PATH}/pkg/*/key_bindings.fish \
+                      {$OMF_CONFIG,$OMF_PATH}/themes*/$theme/key_bindings.fish
   # Source all keybindings collected
   for file in $key_bindings
     source $file
@@ -47,4 +48,9 @@ end
 emit perf:timer:start "Oh My Fish init user config path"
 require --no-bundle --path $OMF_CONFIG
 emit perf:timer:finish "Oh My Fish init user config path"
+# Load conf.d for current theme if exists
+set -l theme_conf_path {$OMF_CONFIG,$OMF_PATH}/themes*/$theme/conf.d
+for conf in $theme_conf_path/*.fish
+  source $conf
+end
 emit perf:timer:finish "Oh My Fish initialisation"

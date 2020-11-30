@@ -31,6 +31,7 @@ function require
   set function_path $package_path/functions*
   set complete_path $package_path/completions*
   set init_path $package_path/init.fish*
+  set conf_path $package_path/conf.d/*.fish
 
   # Autoload functions
   test -n "$function_path"
@@ -72,10 +73,15 @@ function require
     end
 
     source $init $path
+
     emit init_$package $path
 
     set -g omf_init_path $omf_init_path $path
     emit perf:timer:finish $init
+  end
+
+  for conf in $conf_path
+    source $conf
   end
 
   return 0

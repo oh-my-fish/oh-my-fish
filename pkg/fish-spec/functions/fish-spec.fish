@@ -13,7 +13,7 @@ function fish-spec
   end
 
   # Load helper file
-  source spec/helper.fish ^/dev/null
+  source spec/helper.fish 2> /dev/null
 
   emit all_specs_init
 

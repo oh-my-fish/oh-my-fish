@@ -5,9 +5,12 @@
 
 > Oh My Fish Documentation&nbsp;&bull;&nbsp;Also in
 > <a href="../en-US/Packages.md">🇺🇸</a>
+> <a href="../es-ES/Packages.md">🇪🇸</a>
+> <a href="../nl-NL/Packages.md">🇳🇱</a>
+> <a href="../pt-BR/Packages.md">🇧🇷</a>
 > <a href="../ru-RU/Packages.md">🇷🇺</a>
 > <a href="../uk-UA/Packages.md">🇺🇦</a>
-> <a href="../pt-BR/Packages.md">🇧🇷</a>
+
 <br>
 
 # 创建插件或主题

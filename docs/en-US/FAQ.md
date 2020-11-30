@@ -4,10 +4,13 @@
 # FAQ
 
 > Oh My Fish Documentation&nbsp;&bull;&nbsp;Also in
-> <a href="../ru-RU/FAQ.md">🇷🇺</a>
-> <a href="../zh-CN/FAQ.md">🇨🇳</a>
-> <a href="../uk-UA/FAQ.md">🇺🇦</a>
+> <a href="../es-ES/FAQ.md">🇪🇸</a>
+> <a href="../nl-NL/FAQ.md">🇳🇱</a>
 > <a href="../pt-BR/FAQ.md">🇧🇷</a>
+> <a href="../ru-RU/FAQ.md">🇷🇺</a>
+> <a href="../uk-UA/FAQ.md">🇺🇦</a>
+> <a href="../zh-CN/FAQ.md">🇨🇳</a>
+
 <br>
 
 Thanks for taking the time to read this FAQ. Feel free to create a new issue if your question is not answered here.

@@ -17,10 +17,10 @@ function omf.packages.remove -a pkg
 
     # Run uninstall hook first.
     omf.packages.run_hook $path uninstall
-    source $path/uninstall.fish ^/dev/null;
+    source $path/uninstall.fish 2> /dev/null;
       and emit uninstall_$pkg
 
-    if rm -rf $path
+    if command rm -rf $path
       omf.bundle.remove "package" $pkg
       return 0
     else
@@ -36,7 +36,7 @@ function omf.packages.remove -a pkg
     test $pkg = (cat $OMF_CONFIG/theme);
       and echo default > $OMF_CONFIG/theme
 
-    if rm -rf $path
+    if command rm -rf $path
       omf.bundle.remove "theme" $pkg
       return 0
     else

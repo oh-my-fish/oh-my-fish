@@ -1,7 +1,7 @@
 function git_ahead -a ahead behind diverged none
   not git_is_repo; and return
 
-  set -l commit_count (command git rev-list --count --left-right "@{upstream}...HEAD" ^/dev/null)
+  set -l commit_count (command git rev-list --count --left-right "@{upstream}...HEAD" 2> /dev/null)
 
   switch "$commit_count"
   case ""

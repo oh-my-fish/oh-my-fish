@@ -1,5 +1,5 @@
 function omf.theme.set -a target_theme
-  if not test -d $OMF_PATH/themes/$target_theme
+  if not test -d $OMF_PATH/themes/$target_theme -o -d $OMF_CONFIG/themes/$target_theme
     return $OMF_INVALID_ARG
   end
 
@@ -34,8 +34,13 @@ function omf.theme.set -a target_theme
 
   # Reload fish key bindings if reload is available and needed
   functions -q __fish_reload_key_bindings
-    and test (count {$OMF_CONFIG,$OMF_PATH}/key_binding?.fish) -gt 0
+    and test -e $OMF_CONFIG/key_bindings.fish -o -e $OMF_PATH/key_bindings.fish
     and __fish_reload_key_bindings
+
+  # Load target theme's conf.d files
+  for conf in {$OMF_CONFIG,$OMF_PATH}/themes/$target_theme/conf.d/*.fish
+    source $conf
+  end
 
   # Persist the changes
   echo "$target_theme" > "$OMF_CONFIG/theme"

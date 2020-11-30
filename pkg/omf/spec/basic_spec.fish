@@ -14,7 +14,7 @@ function describe_basic_tests
   end
 
   function it_install_packages
-    set -l remove_output  (omf remove apt ^/dev/null)
+    set -l remove_output  (omf remove apt 2> /dev/null)
     set -l install_output (omf install apt)
 
     assert 0 = $status

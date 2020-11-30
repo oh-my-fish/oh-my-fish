@@ -9,12 +9,22 @@
 Oh My Fish provides core infrastructure to allow you to install packages which extend or modify the look of your shell. It's fast, extensible and easy to use.
 
 > Also in&nbsp;
-> <a href="docs/ru-RU/README.md">🇷🇺</a>
-> <a href="docs/zh-CN/README.md">🇨🇳</a>
-> <a href="docs/uk-UA/README.md">🇺🇦</a>
+> <a href="docs/es-ES/README.md">🇪🇸</a>
+> <a href="docs/nl-NL/README.md">🇳🇱</a>
 > <a href="docs/pt-BR/README.md">🇧🇷</a>
+> <a href="docs/ru-RU/README.md">🇷🇺</a>
+> <a href="docs/uk-UA/README.md">🇺🇦</a>
+> <a href="docs/zh-CN/README.md">🇨🇳</a>
 
 <br>
+
+## Table of contents
+* [Installation](#installation)
+* [Getting Started (command descriptions)](#getting-started)
+* [Advanced](#advanced)
+  * [Startup](#startup)
+  * [Dotfiles](#dotfiles)
+* [Creating Packages](#creating-packages)
 
 ## Installation
 
@@ -34,7 +44,7 @@ fish install --path=~/.local/share/omf --config=~/.config/omf
 You can verify the integrity of the downloaded installer by verifying the script against [this checksum](bin/install.sha256):
 
 ```
-06844ca6876fac0ea949c8089d8c5f71e14b69d2bb1dc41f1d0677250a1c62e1  install
+bb1f4025934600ea6feef2ec11660e17e2b6449c5a23c033860aed712ad328c9 install
 ```
 
 You can also install Oh My Fish with Git or with an offline source tarball downloaded from the [releases page][releases]:
@@ -107,9 +117,9 @@ Reload Oh My Fish and all plugins by using `exec` to replace current shell proce
 
 > This command tries to be as safe as possible, mitigating side-effects caused by `exec` and preventing the reload in case of background processes.
 
-#### `omf new pkg | theme` _`<name>`_
+#### `omf new plugin | theme` _`<name>`_
 
-Scaffold out a new package or theme.
+Scaffold out a new plugin or theme.
 
 > This creates a new directory under `$OMF_CONFIG/{pkg | themes}/` with a template.
 
@@ -141,7 +151,7 @@ and so it may be necessary to prefix your script files with ordering numbers.
 For example: `a_script.fish` will take precedence over the `omf.fish` snippet.
 So if `a_script.fish` depends on plugins managed by OMF, consider renaming the script file to `xx_a_script.fish`.
 
-Similiarly, to make sure that a script runs before `omf.fish`, you may prefix it with `00_`.
+Similarly, to make sure that a script runs before `omf.fish`, you may prefix it with `00_`.
 Alternatively, `~/.config/omf/before.init.fish` may be used.
 
 ### Startup

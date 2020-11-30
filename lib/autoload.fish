@@ -45,8 +45,8 @@ function __autoload_erase
       or  set function_indexes $function_indexes (contains -i $path $fish_function_path)
   end;
   test -n "$function_indexes"
-    and set -e fish_function_path[$function_indexes]
+    and set -e fish_function_path["$function_indexes"]
   test -n "$complete_indexes"
-    and set -e fish_complete_path[$complete_indexes]
+    and set -e fish_complete_path["$complete_indexes"]
   return 0
 end;
