@@ -9,11 +9,12 @@
 Oh My Fish biedt kerninfrastructuur zodat u pakketten kunt installeren om uw shell uit te breiden of aan te passen. Het is snel, uitbreidbaar en eenvoudig te gebruiken.
 
 > Ook beschikbaar in het&nbsp;
-> <a href="docs/ru-RU/README.md">🇷🇺</a>
-> <a href="docs/zh-CN/README.md">🇨🇳</a>
-> <a href="docs/uk-UA/README.md">🇺🇦</a>
-> <a href="docs/pt-BR/README.md">🇧🇷</a>
-> <a href="docs/es-ES/README.md">🇪🇸</a>
+> <a href="../../README.md">🇺🇸</a>
+> <a href="../es-ES/README.md">🇪🇸</a>
+> <a href="../pt-BR/README.md">🇧🇷</a>
+> <a href="../ru-RU/README.md">🇷🇺</a>
+> <a href="../uk-UA/README.md">🇺🇦</a>
+> <a href="../zh-CN/README.md">🇨🇳</a>
 
 <br>
 

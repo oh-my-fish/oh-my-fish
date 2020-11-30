@@ -9,11 +9,12 @@
 Oh My Fish provides core infrastructure to allow you to install packages which extend or modify the look of your shell. It's fast, extensible and easy to use.
 
 > Also in&nbsp;
-> <a href="docs/ru-RU/README.md">🇷🇺</a>
-> <a href="docs/zh-CN/README.md">🇨🇳</a>
-> <a href="docs/uk-UA/README.md">🇺🇦</a>
-> <a href="docs/pt-BR/README.md">🇧🇷</a>
 > <a href="docs/es-ES/README.md">🇪🇸</a>
+> <a href="docs/nl-NL/README.md">🇳🇱</a>
+> <a href="docs/pt-BR/README.md">🇧🇷</a>
+> <a href="docs/ru-RU/README.md">🇷🇺</a>
+> <a href="docs/uk-UA/README.md">🇺🇦</a>
+> <a href="docs/zh-CN/README.md">🇨🇳</a>
 
 <br>
 

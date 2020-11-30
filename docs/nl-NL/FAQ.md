@@ -4,10 +4,13 @@
 # Veelgestelde vragen
 
 > Oh My Fish-documentatie&nbsp;&bull;&nbsp;Ook beschikbaar in het
-> <a href="../ru-RU/FAQ.md">🇷🇺</a>
-> <a href="../zh-CN/FAQ.md">🇨🇳</a>
-> <a href="../uk-UA/FAQ.md">🇺🇦</a>
+> <a href="../en-US/FAQ.md">🇺🇸</a>
+> <a href="../es-ES/FAQ.md">🇪🇸</a>
 > <a href="../pt-BR/FAQ.md">🇧🇷</a>
+> <a href="../ru-RU/FAQ.md">🇷🇺</a>
+> <a href="../uk-UA/FAQ.md">🇺🇦</a>
+> <a href="../zh-CN/FAQ.md">🇨🇳</a>
+
 <br>
 
 Fijn dat u even de tijd neemt om de veelgestelde vragen door te nemen. Als uw vraag hierna nog niet beantwoord is, open dan een 'issue'.
