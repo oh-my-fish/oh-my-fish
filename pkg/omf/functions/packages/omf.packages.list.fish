@@ -14,8 +14,8 @@ function omf.packages.list -d 'List installed packages'
     set -e show_plugins
   end
 
-  set -l plugins_paths $OMF_PATH/pkg/*
-  set -l themes_paths $OMF_PATH/themes/*
+  set -l plugins_paths {$OMF_CONFIG, $OMF_PATH}/pkg/*
+  set -l themes_paths {$OMF_CONFIG, $OMF_PATH}/themes/*
 
   if set -q show_plugins
     for path in $plugins_paths

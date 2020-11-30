@@ -1,5 +1,5 @@
 function omf.theme.set -a target_theme
-  if not test -d $OMF_PATH/themes/$target_theme
+  if not test -d $OMF_PATH/themes/$target_theme -o -d $OMF_CONFIG/themes/$target_theme
     return $OMF_INVALID_ARG
   end
 
