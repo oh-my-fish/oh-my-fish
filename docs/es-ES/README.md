@@ -10,11 +10,12 @@ Oh My Fish ofrece la infraestructura básica para permitirle instalar paquetes q
 sencillo de utilizar.
 
 > También disponible en&nbsp;
-> <a href="../en-US/FAQ.md">🇺🇸</a>
-> <a href="docs/ru-RU/README.md">🇷🇺</a>
-> <a href="docs/zh-CN/README.md">🇨🇳</a>
-> <a href="docs/uk-UA/README.md">🇺🇦</a>
-> <a href="docs/pt-BR/README.md">🇧🇷</a>
+> <a href="../../README.md">🇺🇸</a>
+> <a href="../nl-NL/README.md">🇳🇱</a>
+> <a href="../pt-BR/README.md">🇧🇷</a>
+> <a href="../ru-RU/README.md">🇷🇺</a>
+> <a href="../uk-UA/README.md">🇺🇦</a>
+> <a href="../zh-CN/README.md">🇨🇳</a>
 
 <br>
 

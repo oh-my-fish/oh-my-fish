@@ -5,10 +5,12 @@
 
 > La documentación de Oh My Fish&nbsp;&bull;&nbsp;También disponible en
 > <a href="../en-US/FAQ.md">🇺🇸</a>
-> <a href="../ru-RU/FAQ.md">🇷🇺</a>
-> <a href="../zh-CN/FAQ.md">🇨🇳</a>
-> <a href="../uk-UA/FAQ.md">🇺🇦</a>
+> <a href="../nl-NL/FAQ.md">🇳🇱</a>
 > <a href="../pt-BR/FAQ.md">🇧🇷</a>
+> <a href="../ru-RU/FAQ.md">🇷🇺</a>
+> <a href="../uk-UA/FAQ.md">🇺🇦</a>
+> <a href="../zh-CN/FAQ.md">🇨🇳</a>
+
 <br>
 
 Gracias por dedicar tiempo para leer este apartado de preguntas frecuentes (FAQ). Siéntete libre de crear un nuevo _issue_ si su pregunta no está respondida
