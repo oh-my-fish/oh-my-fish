@@ -8,11 +8,9 @@ set -q OMF_REPO_BRANCH; or set OMF_REPO_BRANCH "master"
 
 # fish_exit polyfill for Fish versions < 3.
 if not set -q fish_pid
-  eval '
-    function fish_exit_polyfill --on-process-exit %self
-        emit fish_exit $argv[3]
-    end
-  '
+  function fish_exit_polyfill --on-process-exit %self
+    emit fish_exit $argv[3]
+  end
 end
 
 
