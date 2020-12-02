@@ -13,7 +13,7 @@ function omf.packages.update -a name
 
   # Only pull packages in version control
   if test -e $target_path/.git
-    omf.repo.pull $target_path $branch
+    omf.repo.pull $target_path "$branch"
     switch $status
       case 0
         omf.bundle.install $target_path/bundle

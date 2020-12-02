@@ -22,7 +22,7 @@ function omf.repo.pull -a repo_dir branch
   __omf.repo.git fetch --quiet $remote $refspec;
     or return 1
 
-  if test (__omf.repo.git rev-list --count $branch...FETCH_HEAD) -eq 0
+  if test (__omf.repo.git rev-list --count "$branch"...FETCH_HEAD) -eq 0
     return 2
   end
 
@@ -33,8 +33,8 @@ function omf.repo.pull -a repo_dir branch
       and set stashed
   end
 
-  if test "$initial_branch" != $branch
-    __omf.repo.git checkout $branch --quiet
+  if test "$initial_branch" != "$branch"
+    __omf.repo.git checkout "$branch" --quiet
   end
 
   if not __omf.repo.git merge --ff-only --quiet FETCH_HEAD
@@ -44,7 +44,7 @@ function omf.repo.pull -a repo_dir branch
     return 1
   end
 
-  if test "$initial_branch" != $branch
+  if test "$initial_branch" != "$branch"
     __omf.repo.git checkout $initial_branch --quiet
   end
 
