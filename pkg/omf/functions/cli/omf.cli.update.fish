@@ -30,9 +30,14 @@ function omf.cli.update
   omf.index.update
     or return 1
 
-  for package in $packages
-    omf.packages.update $package
+  if omf.packages.check-updates $packages
+    for package in $packages
+      omf.packages.update $package
+    end
+  else
+    echo (omf::em)"All packages are up to date."(omf::off)
   end
+
 
   # Opt-in flag for testing
   if set -q OMF_AUTO_RELOAD
