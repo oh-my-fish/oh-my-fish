@@ -1,0 +1,73 @@
+name: Build
+on: [push, pull_request]
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-16.04
+          - ubuntu-18.04
+          - ubuntu-20.04
+          - ubuntu-latest
+        fish:
+          - stock
+          - 2
+          - 3
+          - brew
+        exclude:
+          - os: ubuntu-20.04
+            fish: 2
+          - os: ubuntu-latest
+            fish: 2
+        include:
+          - os: macos-10.15
+            fish: brew
+          - os: macos-latest
+            fish: brew
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+
+      - name: Install Fish
+        run: FISH_RELEASE=${{ matrix.fish }} tools/ci-install-fish.sh
+
+      - name: Install Oh My Fish!
+        run: fish bin/install --verbose --offline --noninteractive --yes
+
+      - name: Run tests
+        run: |
+          tests/run.fish
+          pushd pkg/fish-spec; fish -c 'fish-spec'; popd
+          pushd pkg/omf; fish -c 'fish-spec'; popd
+
+  notify-success:
+    needs: [build]
+    if: success()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify on Slack
+        uses: rtCamp/action-slack-notify@ae4223259071871559b6e9d08b24a63d71b3f0c0
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_ICON: false
+          SLACK_COLOR: good
+          SLACK_USERNAME: GitHub Actions
+          SLACK_TITLE: Build Success
+          SLACK_FOOTER: ""
+
+  notify-failure:
+    needs: [build]
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify on Slack
+        uses: rtCamp/action-slack-notify@ae4223259071871559b6e9d08b24a63d71b3f0c0
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_ICON: false
+          SLACK_COLOR: danger
+          SLACK_USERNAME: GitHub Actions
+          SLACK_TITLE: Build Failure
+          SLACK_FOOTER: ""
