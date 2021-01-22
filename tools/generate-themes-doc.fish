@@ -1,11 +1,24 @@
 #!/usr/bin/env fish
 
-set -l project_dir (status -f|xargs dirname|xargs dirname)
+# This is meant to be run from the root:
+#
+# ./tools/generate-themes-doc.fish > docs/NewThemes.md
+#
+# Prior to running it, check out packages-main repository alongside oh-my-fish.
+# If it's checked out at another location, you can specify it with the only
+# optional argument
+#
+# ./tools/generate-themes-doc.fish /full-or-rel-path/packages-main > docs/NewThemes.md
+#
+
 if [ $argv ]
-  set theme_doc $argv
+  set packages "$argv/packages"
 else
-  set theme_doc "$project_dir/docs/Themes.md"
+  set packages "../packages-main/packages"
 end
+
+type -q gsed; and alias sed gsed
+
 set temp_theme_contents (mktemp /tmp/fish.Themes.Content.XXXXX.md)
 set temp_theme_toc (mktemp /tmp/fish.Themes.TOC.XXXXX.md)
 
@@ -31,19 +44,17 @@ function __find_readme -a raw_content
   end
 end
 
-echo "Generating Themes documentation to $theme_doc ..."
 echo "# Available themes" > $temp_theme_toc
-
-for theme in (command find $project_dir/db/themes/ -type f|sort)
+for theme in (command grep -r -l "type = theme" $packages | sort)
   set -l name (basename $theme)
-  read -l url < $theme
+  set -l url (grep repository $theme | string replace "repository = " "")
   set -l raw_content (echo $url | sed -r 's#\.git$#/#i; s#https://github.com/([-.a-z0-9]+)/([-.a-z0-9]+)#https://raw.githubusercontent.com/\1/\2/master#i')
   set -l readme (__find_readme $raw_content)
 
   echo "- [$name](#$name)" >> $temp_theme_toc
   echo "# $name" >> $temp_theme_contents
   if [ $readme ]
-    echo "Fetching readme for $name"
+    echo "Fetching readme for $name" >&2
     __write_theme_readme $name $raw_content $readme
   else
     echo "FAILED: No readme for $name" >&2
@@ -54,8 +65,8 @@ end
 echo "" >> $temp_theme_toc
 cat $temp_theme_contents >> $temp_theme_toc
 rm -f $theme_doc
-cat $temp_theme_toc >> $theme_doc
-echo "All done: $theme_doc"
+cat $temp_theme_toc
+echo "All done!" >&2
 
 rm $temp_theme_contents
 rm $temp_theme_toc
