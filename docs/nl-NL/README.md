@@ -1,7 +1,7 @@
 <img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="192px" height="192px"/>
 <img align="left" width="0" height="192px" hspace="10"/>
 
-> Het <a href="http://fishshell.com">Fish-shell</a>framework
+> Het <a href="http://fishshell.com">Fish-shell</a> framework
 
 [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE) [![Fish Shell Version](https://img.shields.io/badge/fish-≥v2.2.0-007EC7.svg?style=flat-square)](http://fishshell.com) [![Travis Build Status](http://img.shields.io/travis/oh-my-fish/oh-my-fish.svg?style=flat-square)](https://travis-ci.org/oh-my-fish/oh-my-fish) [![Slack Status](https://oh-my-fish-slack.herokuapp.com/badge.svg)](https://oh-my-fish-slack.herokuapp.com)
 
@@ -19,12 +19,12 @@ Oh My Fish biedt kerninfrastructuur zodat u pakketten kunt installeren om uw she
 <br>
 
 ## Inhoudsopgave
-* [Installatie](#installation)
-* [Aan de slag (uitleg omtrent opdrachten)](#getting-started)
-* [Geavanceerd](#advanced)
-  * [Opstarten](#startup)
-  * [Puntbestanden](#dotfiles)
-* [Pakketten maken](#creating-packages)
+* [Installatie](#installatie)
+* [Aan de slag (uitleg omtrent opdrachten)](#aan-de-slag)
+* [Geavanceerd](#geavanceerd)
+  * [Opstarten](#opstarten)
+  * [Puntbestanden](#puntbestanden)
+* [Pakketten maken](#pakketten-maken)
 
 ## Installatie
 
@@ -41,7 +41,7 @@ curl -L https://get.oh-my.fish > install
 fish install --path=~/.local/share/omf --config=~/.config/omf
 ```
 
-U kunt de integriteit van het installatiescript verifiëren met [deze controlesom](bin/install.sha256):
+U kunt de integriteit van het installatiescript verifiëren met [deze controlesom](/bin/install.sha256):
 
 ```
 bb1f4025934600ea6feef2ec11660e17e2b6449c5a23c033860aed712ad328c9 install
@@ -90,7 +90,7 @@ Werk Oh My Fish, alle pakketbronnen en geïnstalleerde pakketten bij.
 Installeer één _of meerdere_ pakketten.
 
 - U kunt pakketten installeren door een url op te geven met `omf install url`
-- Zonder opdrachtregelopties worden alleen ontbrekende pakketten geïnstalleerd uit de [bundel](#dotfiles).
+- Zonder opdrachtregelopties worden alleen ontbrekende pakketten geïnstalleerd uit de [bundel](#puntbestanden).
 
 #### `omf repositories` _`[list|add|remove]`_
 
@@ -102,7 +102,7 @@ Toon alle geïnstalleerde pakketten.
 
 #### `omf theme` _`<theme>`_
 
-Pas een thema toe. Bekijk alle beschikbare thema's met `omf theme`. U kunt ze ook [voorvertonen](./docs/Themes.md).
+Pas een thema toe. Bekijk alle beschikbare thema's met `omf theme`. U kunt ze ook [voorvertonen](/docs/Themes.md).
 
 #### `omf remove` _`<name>`_
 
@@ -156,9 +156,9 @@ Ook kunt u `~/.config/omf/before.init.fish` hiervoor gebruiken.
 ### Opstarten
 
 Telkens als u een nieuwe shell opent, initialiseert de opstartcode het Oh My Fish-installatie- en _config_-pad (standaard: `~/.config/omf`),
-waardoor het [`init.fish`](init.fish)-script naderhand wordt aangeroepen. Dit script bevat een lijst met geïnstalleerde pakketten, thema's en aangepaste init-bestanden.
+waardoor het [`init.fish`](/init.fish)-script naderhand wordt aangeroepen. Dit script bevat een lijst met geïnstalleerde pakketten, thema's en aangepaste init-bestanden.
 
-Lees voor meer informatie de [veelgestelde vragen](docs/nl-NL/FAQ.md#what-does-oh-my-fish-do-exactly).
+Lees voor meer informatie de [veelgestelde vragen](./FAQ.md#what-does-oh-my-fish-do-exactly).
 
 ### Puntbestanden
 
@@ -200,7 +200,7 @@ Als opstartopdrachten uitgevoerd dienen te worden *vóór* Oh My Fish start, voe
 
 ## Pakketten maken
 
-Oh My Fish gebruikt een geavanceerde, goedgedocumenteerde plug-inarchitectuur om het maken van plug-ins te vereenvoudigen, inclusief init- en uninstall-opties, functies en automatische aanvulling. Lees voor meer informatie [de pakketdocumentatie](docs/nl-NL/Packages.md).
+Oh My Fish gebruikt een geavanceerde, goedgedocumenteerde plug-inarchitectuur om het maken van plug-ins te vereenvoudigen, inclusief init- en uninstall-opties, functies en automatische aanvulling. Lees voor meer informatie [de pakketdocumentatie](Packages.md).
 
 
 [fishshell]: http://fishshell.com
