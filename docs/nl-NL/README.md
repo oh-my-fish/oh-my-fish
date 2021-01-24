@@ -158,7 +158,7 @@ Ook kunt u `~/.config/omf/before.init.fish` hiervoor gebruiken.
 Telkens als u een nieuwe shell opent, initialiseert de opstartcode het Oh My Fish-installatie- en _config_-pad (standaard: `~/.config/omf`),
 waardoor het [`init.fish`](/init.fish)-script naderhand wordt aangeroepen. Dit script bevat een lijst met geïnstalleerde pakketten, thema's en aangepaste init-bestanden.
 
-Lees voor meer informatie de [veelgestelde vragen](./FAQ.md#what-does-oh-my-fish-do-exactly).
+Lees voor meer informatie de [veelgestelde vragen](./FAQ.md#wat-doet-oh-my-fish-precies).
 
 ### Puntbestanden
 
