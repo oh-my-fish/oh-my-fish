@@ -41,33 +41,3 @@ jobs:
           tests/run.fish
           pushd pkg/fish-spec; fish -c 'fish-spec'; popd
           pushd pkg/omf; fish -c 'fish-spec'; popd
-
-  notify-success:
-    needs: [build]
-    if: success()
-    runs-on: ubuntu-latest
-    steps:
-      - name: Notify on Slack
-        uses: rtCamp/action-slack-notify@ae4223259071871559b6e9d08b24a63d71b3f0c0
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_ICON: false
-          SLACK_COLOR: good
-          SLACK_USERNAME: GitHub Actions
-          SLACK_TITLE: Build Success
-          SLACK_FOOTER: ""
-
-  notify-failure:
-    needs: [build]
-    if: failure()
-    runs-on: ubuntu-latest
-    steps:
-      - name: Notify on Slack
-        uses: rtCamp/action-slack-notify@ae4223259071871559b6e9d08b24a63d71b3f0c0
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_ICON: false
-          SLACK_COLOR: danger
-          SLACK_USERNAME: GitHub Actions
-          SLACK_TITLE: Build Failure
-          SLACK_FOOTER: ""
