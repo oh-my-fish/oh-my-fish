@@ -4,134 +4,112 @@
 
 <details>
 <summary><big><strong>Expand for a table of themes</strong></big></summary>
-<table>
-<tr>
-  <td><a href="#agnoster">agnoster</a></td>
-  <td><a href="#cmorrell">cmorrell</a></td>
-  <td><a href="#fishface">fishface</a></td>
-  <td><a href="#jacaetevha">jacaetevha</a></td>
-  <td><a href="#neolambda">neolambda</a></td>
-  <td><a href="#rider">rider</a></td>
-  <td><a href="#technopagan">technopagan</a></td>
-</tr>
-<tr>
-  <td><a href="#aight">aight</a></td>
-  <td><a href="#coffeeandcode">coffeeandcode</a></td>
-  <td><a href="#fishy-drupal">fishy-drupal</a></td>
-  <td><a href="#johanson">johanson</a></td>
-  <td><a href="#numist">numist</a></td>
-  <td><a href="#robbyrussell">robbyrussell</a></td>
-  <td><a href="#toaster">toaster</a></td>
-</tr>
-<tr>
-  <td><a href="#ays">ays</a></td>
-  <td><a href="#cor">cor</a></td>
-  <td><a href="#fisk">fisk</a></td>
-  <td><a href="#kawasaki">kawasaki</a></td>
-  <td><a href="#ocean">ocean</a></td>
-  <td><a href="#sashimi">sashimi</a></td>
-  <td><a href="#tomita">tomita</a></td>
-</tr>
-<tr>
-  <td><a href="#barracuda">barracuda</a></td>
-  <td><a href="#cyan">cyan</a></td>
-  <td><a href="#flash">flash</a></td>
-  <td><a href="#krisleech">krisleech</a></td>
-  <td><a href="#one">one</a></td>
-  <td><a href="#scorphish">scorphish</a></td>
-  <td><a href="#trout">trout</a></td>
-</tr>
-<tr>
-  <td><a href="#batman">batman</a></td>
-  <td><a href="#dangerous">dangerous</a></td>
-  <td><a href="#fox">fox</a></td>
-  <td><a href="#l">l</a></td>
-  <td><a href="#pastfish">pastfish</a></td>
-  <td><a href="#shellder">shellder</a></td>
-  <td><a href="#tweetjay">tweetjay</a></td>
-</tr>
-<tr>
-  <td><a href="#beloglazov">beloglazov</a></td>
-  <td><a href="#default">default</a></td>
-  <td><a href="#gentoo">gentoo</a></td>
-  <td><a href="#lambda">lambda</a></td>
-  <td><a href="#perryh">perryh</a></td>
-  <td><a href="#simple-ass-prompt">simple-ass-prompt</a></td>
-  <td><a href="#uggedal">uggedal</a></td>
-</tr>
-<tr>
-  <td><a href="#bira">bira</a></td>
-  <td><a href="#dmorrell">dmorrell</a></td>
-  <td><a href="#gianu">gianu</a></td>
-  <td><a href="#lavender">lavender</a></td>
-  <td><a href="#pie">pie</a></td>
-  <td><a href="#simplevi">simplevi</a></td>
-  <td><a href="#will">will</a></td>
-</tr>
-<tr>
-  <td><a href="#bobthefish">bobthefish</a></td>
-  <td><a href="#doughsay">doughsay</a></td>
-  <td><a href="#gitstatus">gitstatus</a></td>
-  <td><a href="#lolfish">lolfish</a></td>
-  <td><a href="#plain">plain</a></td>
-  <td><a href="#slacker">slacker</a></td>
-  <td><a href="#wolf-theme">wolf-theme</a></td>
-</tr>
-<tr>
-  <td><a href="#bongnoster">bongnoster</a></td>
-  <td><a href="#eclm">eclm</a></td>
-  <td><a href="#gnuykeaj">gnuykeaj</a></td>
-  <td><a href="#mars">mars</a></td>
-  <td><a href="#pure">pure</a></td>
-  <td><a href="#slavic-cat">slavic-cat</a></td>
-  <td><a href="#yimmy">yimmy</a></td>
-</tr>
-<tr>
-  <td><a href="#boxfish">boxfish</a></td>
-  <td><a href="#edan">edan</a></td>
-  <td><a href="#godfather">godfather</a></td>
-  <td><a href="#mish">mish</a></td>
-  <td><a href="#pygmalion">pygmalion</a></td>
-  <td><a href="#solarfish">solarfish</a></td>
-  <td><a href="#zeit">zeit</a></td>
-</tr>
-<tr>
-  <td><a href="#budspencer">budspencer</a></td>
-  <td><a href="#eden">eden</a></td>
-  <td><a href="#graystatus">graystatus</a></td>
-  <td><a href="#mokou">mokou</a></td>
-  <td><a href="#random">random</a></td>
-  <td><a href="#spacefish">spacefish</a></td>
-  <td><a href="#zephyr">zephyr</a></td>
-</tr>
-<tr>
-  <td><a href="#cbjohnson">cbjohnson</a></td>
-  <td><a href="#emoji-powerline">emoji-powerline</a></td>
-  <td><a href="#harleen">harleen</a></td>
-  <td><a href="#mtahmed">mtahmed</a></td>
-  <td><a href="#randomrussel">randomrussel</a></td>
-  <td><a href="#sushi">sushi</a></td>
-  <td><a href="#zish">zish</a></td>
-</tr>
-<tr>
-  <td><a href="#chain">chain</a></td>
-  <td><a href="#es">es</a></td>
-  <td><a href="#idan">idan</a></td>
-  <td><a href="#nai">nai</a></td>
-  <td><a href="#red-snapper">red-snapper</a></td>
-  <td><a href="#syl20bnr">syl20bnr</a></td>
-  <td>&nbsp;</td>
-</tr>
-<tr>
-  <td><a href="#clearance">clearance</a></td>
-  <td><a href="#fishbone">fishbone</a></td>
-  <td><a href="#integral">integral</a></td>
-  <td><a href="#nelsonjchen">nelsonjchen</a></td>
-  <td><a href="#redfish">redfish</a></td>
-  <td><a href="#taktoa">taktoa</a></td>
-  <td>&nbsp;</td>
-</tr>
-</table>
+<table><tr><td>
+  <a href="#agnoster">agnoster</a><br/>
+  <a href="#aight">aight</a><br/>
+  <a href="#ays">ays</a><br/>
+  <a href="#barracuda">barracuda</a><br/>
+  <a href="#batman">batman</a><br/>
+  <a href="#beloglazov">beloglazov</a><br/>
+  <a href="#bira">bira</a><br/>
+  <a href="#bobthefish">bobthefish</a><br/>
+  <a href="#bongnoster">bongnoster</a><br/>
+  <a href="#boxfish">boxfish</a><br/>
+  <a href="#budspencer">budspencer</a><br/>
+  <a href="#cbjohnson">cbjohnson</a><br/>
+  <a href="#chain">chain</a><br/>
+  <a href="#clearance">clearance</a><br/>
+</td><td>
+  <a href="#cmorrell">cmorrell</a><br/>
+  <a href="#coffeeandcode">coffeeandcode</a><br/>
+  <a href="#cor">cor</a><br/>
+  <a href="#cyan">cyan</a><br/>
+  <a href="#dangerous">dangerous</a><br/>
+  <a href="#default">default</a><br/>
+  <a href="#dmorrell">dmorrell</a><br/>
+  <a href="#doughsay">doughsay</a><br/>
+  <a href="#eclm">eclm</a><br/>
+  <a href="#edan">edan</a><br/>
+  <a href="#eden">eden</a><br/>
+  <a href="#emoji-powerline">emoji-powerline</a><br/>
+  <a href="#es">es</a><br/>
+  <a href="#fishbone">fishbone</a><br/>
+</td><td>
+  <a href="#fishface">fishface</a><br/>
+  <a href="#fishy-drupal">fishy-drupal</a><br/>
+  <a href="#fisk">fisk</a><br/>
+  <a href="#flash">flash</a><br/>
+  <a href="#fox">fox</a><br/>
+  <a href="#gentoo">gentoo</a><br/>
+  <a href="#gianu">gianu</a><br/>
+  <a href="#gitstatus">gitstatus</a><br/>
+  <a href="#gnuykeaj">gnuykeaj</a><br/>
+  <a href="#godfather">godfather</a><br/>
+  <a href="#graystatus">graystatus</a><br/>
+  <a href="#harleen">harleen</a><br/>
+  <a href="#idan">idan</a><br/>
+  <a href="#integral">integral</a><br/>
+</td><td>
+  <a href="#jacaetevha">jacaetevha</a><br/>
+  <a href="#johanson">johanson</a><br/>
+  <a href="#kawasaki">kawasaki</a><br/>
+  <a href="#krisleech">krisleech</a><br/>
+  <a href="#l">l</a><br/>
+  <a href="#lambda">lambda</a><br/>
+  <a href="#lavender">lavender</a><br/>
+  <a href="#lolfish">lolfish</a><br/>
+  <a href="#mars">mars</a><br/>
+  <a href="#mish">mish</a><br/>
+  <a href="#mokou">mokou</a><br/>
+  <a href="#mtahmed">mtahmed</a><br/>
+  <a href="#nai">nai</a><br/>
+  <a href="#nelsonjchen">nelsonjchen</a><br/>
+</td><td>
+  <a href="#neolambda">neolambda</a><br/>
+  <a href="#numist">numist</a><br/>
+  <a href="#ocean">ocean</a><br/>
+  <a href="#one">one</a><br/>
+  <a href="#pastfish">pastfish</a><br/>
+  <a href="#perryh">perryh</a><br/>
+  <a href="#pie">pie</a><br/>
+  <a href="#plain">plain</a><br/>
+  <a href="#pure">pure</a><br/>
+  <a href="#pygmalion">pygmalion</a><br/>
+  <a href="#random">random</a><br/>
+  <a href="#randomrussel">randomrussel</a><br/>
+  <a href="#red-snapper">red-snapper</a><br/>
+  <a href="#redfish">redfish</a><br/>
+</td><td>
+  <a href="#rider">rider</a><br/>
+  <a href="#robbyrussell">robbyrussell</a><br/>
+  <a href="#sashimi">sashimi</a><br/>
+  <a href="#scorphish">scorphish</a><br/>
+  <a href="#shellder">shellder</a><br/>
+  <a href="#simple-ass-prompt">simple-ass-prompt</a><br/>
+  <a href="#simplevi">simplevi</a><br/>
+  <a href="#slacker">slacker</a><br/>
+  <a href="#slavic-cat">slavic-cat</a><br/>
+  <a href="#solarfish">solarfish</a><br/>
+  <a href="#spacefish">spacefish</a><br/>
+  <a href="#sushi">sushi</a><br/>
+  <a href="#syl20bnr">syl20bnr</a><br/>
+  <a href="#taktoa">taktoa</a><br/>
+</td><td>
+  <a href="#technopagan">technopagan</a><br/>
+  <a href="#toaster">toaster</a><br/>
+  <a href="#tomita">tomita</a><br/>
+  <a href="#trout">trout</a><br/>
+  <a href="#tweetjay">tweetjay</a><br/>
+  <a href="#uggedal">uggedal</a><br/>
+  <a href="#will">will</a><br/>
+  <a href="#wolf-theme">wolf-theme</a><br/>
+  <a href="#yimmy">yimmy</a><br/>
+  <a href="#zeit">zeit</a><br/>
+  <a href="#zephyr">zephyr</a><br/>
+  <a href="#zish">zish</a><br/>
+  <br/>
+  <br/>
+</td></tr></table>
 </details>
 
 ***
