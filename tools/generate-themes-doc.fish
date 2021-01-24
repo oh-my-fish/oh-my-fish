@@ -11,6 +11,8 @@
 # ./tools/generate-themes-doc.fish /full-or-rel-path/packages-main > docs/NewThemes.md
 #
 
+set TOC_TBL_COLS 7
+
 if [ $argv ]
   set packages "$argv/packages"
 else
@@ -18,6 +20,7 @@ else
 end
 
 type -q gsed; and alias sed gsed
+type -q gmktemp; and alias mktemp gmktemp
 
 set temp_theme_contents (mktemp /tmp/fish.Themes.Content.XXXXX.md)
 set temp_theme_toc (mktemp /tmp/fish.Themes.TOC.XXXXX.md)
@@ -44,15 +47,44 @@ function __find_readme -a raw_content
   end
 end
 
-echo "# Available themes" > $temp_theme_toc
-for theme in (command grep -r -l "type = theme" $packages | sort)
+function __write_toc
+  set -l total (count $argv)
+  echo "Processing $total themes..." >&2
+  set -l table_rows (math "ceil($total / $TOC_TBL_COLS)")
+  echo "Creating a $table_rows-row table" >&2
+  echo "<details>" >> $temp_theme_toc
+  echo "<summary><big><strong>Expand for a table of themes</strong></big></summary>" >> $temp_theme_toc
+  echo "<table>" >> $temp_theme_toc
+  for row in (seq $table_rows)
+    echo "<tr>" >> $temp_theme_toc
+    for col in (seq $TOC_TBL_COLS)
+      set -l idx (math "($col - 1) * $table_rows + $row")
+      test -z "$argv[$idx]"
+        and echo "  <td>&nbsp;</td>" >> $temp_theme_toc
+        and continue
+      set -l name (basename $argv[$idx])
+      echo "  <td><a href=\"#$name\">$name</a></td>" >> $temp_theme_toc
+    end
+    echo "</tr>" >> $temp_theme_toc
+  end
+  echo "</table>" >> $temp_theme_toc
+  echo "</details>" >> $temp_theme_toc
+  echo -e "\n***" >> $temp_theme_toc
+end
+
+echo -e "# Available themes\n" > $temp_theme_toc
+echo -e "<!-- ATTENTION: This file is auto-generated! Changes will be lost! -->\n" >> $temp_theme_toc
+
+set -l themes (command grep -r -l "type = theme" $packages | sort)
+__write_toc $themes
+
+for theme in $themes
   set -l name (basename $theme)
   set -l url (grep repository $theme | string replace "repository = " "")
   set -l raw_content (echo $url | sed -r 's#\.git$#/#i; s#https://github.com/([-.a-z0-9]+)/([-.a-z0-9]+)#https://raw.githubusercontent.com/\1/\2/master#i')
   set -l readme (__find_readme $raw_content)
 
-  echo "- [$name](#$name)" >> $temp_theme_toc
-  echo "# $name" >> $temp_theme_contents
+  echo "# [$name]("$url")" >> $temp_theme_contents
   if [ $readme ]
     echo "Fetching readme for $name" >&2
     __write_theme_readme $name $raw_content $readme

@@ -1,100 +1,142 @@
 # Available themes
-- [agnoster](#agnoster)
-- [aight](#aight)
-- [ays](#ays)
-- [batman](#batman)
-- [beloglazov](#beloglazov)
-- [bira](#bira)
-- [bobthefish](#bobthefish)
-- [bongnoster](#bongnoster)
-- [boxfish](#boxfish)
-- [budspencer](#budspencer)
-- [cbjohnson](#cbjohnson)
-- [chain](#chain)
-- [clearance](#clearance)
-- [cmorrell](#cmorrell)
-- [coffeeandcode](#coffeeandcode)
-- [cor](#cor)
-- [cyan](#cyan)
-- [dangerous](#dangerous)
-- [default](#default)
-- [dmorrell](#dmorrell)
-- [doughsay](#doughsay)
-- [eclm](#eclm)
-- [edan](#edan)
-- [eden](#eden)
-- [emoji-powerline](#emoji-powerline)
-- [es](#es)
-- [fishbone](#fishbone)
-- [fishface](#fishface)
-- [fishy-drupal](#fishy-drupal)
-- [fisk](#fisk)
-- [flash](#flash)
-- [fox](#fox)
-- [gentoo](#gentoo)
-- [gianu](#gianu)
-- [gitstatus](#gitstatus)
-- [gnuykeaj](#gnuykeaj)
-- [godfather](#godfather)
-- [graystatus](#graystatus)
-- [harleen](#harleen)
-- [idan](#idan)
-- [integral](#integral)
-- [jacaetevha](#jacaetevha)
-- [johanson](#johanson)
-- [kawasaki](#kawasaki)
-- [krisleech](#krisleech)
-- [l](#l)
-- [lambda](#lambda)
-- [lavender](#lavender)
-- [lolfish](#lolfish)
-- [mars](#mars)
-- [mish](#mish)
-- [mokou](#mokou)
-- [mtahmed](#mtahmed)
-- [nai](#nai)
-- [nelsonjchen](#nelsonjchen)
-- [neolambda](#neolambda)
-- [numist](#numist)
-- [ocean](#ocean)
-- [one](#one)
-- [pastfish](#pastfish)
-- [perryh](#perryh)
-- [pie](#pie)
-- [plain](#plain)
-- [pure](#pure)
-- [pygmalion](#pygmalion)
-- [random](#random)
-- [randomrussel](#randomrussel)
-- [red-snapper](#red-snapper)
-- [redfish](#redfish)
-- [rider](#rider)
-- [robbyrussell](#robbyrussell)
-- [sashimi](#sashimi)
-- [scorphish](#scorphish)
-- [shellder](#shellder)
-- [simple-ass-prompt](#simple-ass-prompt)
-- [simplevi](#simplevi)
-- [slacker](#slacker)
-- [slavic-cat](#slavic-cat)
-- [spacefish](#spacefish)
-- [sushi](#sushi)
-- [syl20bnr](#syl20bnr)
-- [taktoa](#taktoa)
-- [technopagan](#technopagan)
-- [toaster](#toaster)
-- [tomita](#tomita)
-- [trout](#trout)
-- [tweetjay](#tweetjay)
-- [uggedal](#uggedal)
-- [will](#will)
-- [wolf-theme](#wolf-theme)
-- [yimmy](#yimmy)
-- [zeit](#zeit)
-- [zephyr](#zephyr)
-- [zish](#zish)
 
-# agnoster
+<!-- ATTENTION: This file is auto-generated! Changes will be lost! -->
+
+<details>
+<summary><big><strong>Expand for a table of themes</strong></big></summary>
+<table>
+<tr>
+  <td><a href="#agnoster">agnoster</a></td>
+  <td><a href="#coffeeandcode">coffeeandcode</a></td>
+  <td><a href="#fishy-drupal">fishy-drupal</a></td>
+  <td><a href="#johanson">johanson</a></td>
+  <td><a href="#numist">numist</a></td>
+  <td><a href="#robbyrussell">robbyrussell</a></td>
+  <td><a href="#tomita">tomita</a></td>
+</tr>
+<tr>
+  <td><a href="#aight">aight</a></td>
+  <td><a href="#cor">cor</a></td>
+  <td><a href="#fisk">fisk</a></td>
+  <td><a href="#kawasaki">kawasaki</a></td>
+  <td><a href="#ocean">ocean</a></td>
+  <td><a href="#sashimi">sashimi</a></td>
+  <td><a href="#trout">trout</a></td>
+</tr>
+<tr>
+  <td><a href="#ays">ays</a></td>
+  <td><a href="#cyan">cyan</a></td>
+  <td><a href="#flash">flash</a></td>
+  <td><a href="#krisleech">krisleech</a></td>
+  <td><a href="#one">one</a></td>
+  <td><a href="#scorphish">scorphish</a></td>
+  <td><a href="#tweetjay">tweetjay</a></td>
+</tr>
+<tr>
+  <td><a href="#batman">batman</a></td>
+  <td><a href="#dangerous">dangerous</a></td>
+  <td><a href="#fox">fox</a></td>
+  <td><a href="#l">l</a></td>
+  <td><a href="#pastfish">pastfish</a></td>
+  <td><a href="#shellder">shellder</a></td>
+  <td><a href="#uggedal">uggedal</a></td>
+</tr>
+<tr>
+  <td><a href="#beloglazov">beloglazov</a></td>
+  <td><a href="#default">default</a></td>
+  <td><a href="#gentoo">gentoo</a></td>
+  <td><a href="#lambda">lambda</a></td>
+  <td><a href="#perryh">perryh</a></td>
+  <td><a href="#simple-ass-prompt">simple-ass-prompt</a></td>
+  <td><a href="#will">will</a></td>
+</tr>
+<tr>
+  <td><a href="#bira">bira</a></td>
+  <td><a href="#dmorrell">dmorrell</a></td>
+  <td><a href="#gianu">gianu</a></td>
+  <td><a href="#lavender">lavender</a></td>
+  <td><a href="#pie">pie</a></td>
+  <td><a href="#simplevi">simplevi</a></td>
+  <td><a href="#wolf-theme">wolf-theme</a></td>
+</tr>
+<tr>
+  <td><a href="#bobthefish">bobthefish</a></td>
+  <td><a href="#doughsay">doughsay</a></td>
+  <td><a href="#gitstatus">gitstatus</a></td>
+  <td><a href="#lolfish">lolfish</a></td>
+  <td><a href="#plain">plain</a></td>
+  <td><a href="#slacker">slacker</a></td>
+  <td><a href="#yimmy">yimmy</a></td>
+</tr>
+<tr>
+  <td><a href="#bongnoster">bongnoster</a></td>
+  <td><a href="#eclm">eclm</a></td>
+  <td><a href="#gnuykeaj">gnuykeaj</a></td>
+  <td><a href="#mars">mars</a></td>
+  <td><a href="#pure">pure</a></td>
+  <td><a href="#slavic-cat">slavic-cat</a></td>
+  <td><a href="#zeit">zeit</a></td>
+</tr>
+<tr>
+  <td><a href="#boxfish">boxfish</a></td>
+  <td><a href="#edan">edan</a></td>
+  <td><a href="#godfather">godfather</a></td>
+  <td><a href="#mish">mish</a></td>
+  <td><a href="#pygmalion">pygmalion</a></td>
+  <td><a href="#spacefish">spacefish</a></td>
+  <td><a href="#zephyr">zephyr</a></td>
+</tr>
+<tr>
+  <td><a href="#budspencer">budspencer</a></td>
+  <td><a href="#eden">eden</a></td>
+  <td><a href="#graystatus">graystatus</a></td>
+  <td><a href="#mokou">mokou</a></td>
+  <td><a href="#random">random</a></td>
+  <td><a href="#sushi">sushi</a></td>
+  <td><a href="#zish">zish</a></td>
+</tr>
+<tr>
+  <td><a href="#cbjohnson">cbjohnson</a></td>
+  <td><a href="#emoji-powerline">emoji-powerline</a></td>
+  <td><a href="#harleen">harleen</a></td>
+  <td><a href="#mtahmed">mtahmed</a></td>
+  <td><a href="#randomrussel">randomrussel</a></td>
+  <td><a href="#syl20bnr">syl20bnr</a></td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td><a href="#chain">chain</a></td>
+  <td><a href="#es">es</a></td>
+  <td><a href="#idan">idan</a></td>
+  <td><a href="#nai">nai</a></td>
+  <td><a href="#red-snapper">red-snapper</a></td>
+  <td><a href="#taktoa">taktoa</a></td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td><a href="#clearance">clearance</a></td>
+  <td><a href="#fishbone">fishbone</a></td>
+  <td><a href="#integral">integral</a></td>
+  <td><a href="#nelsonjchen">nelsonjchen</a></td>
+  <td><a href="#redfish">redfish</a></td>
+  <td><a href="#technopagan">technopagan</a></td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td><a href="#cmorrell">cmorrell</a></td>
+  <td><a href="#fishface">fishface</a></td>
+  <td><a href="#jacaetevha">jacaetevha</a></td>
+  <td><a href="#neolambda">neolambda</a></td>
+  <td><a href="#rider">rider</a></td>
+  <td><a href="#toaster">toaster</a></td>
+  <td>&nbsp;</td>
+</tr>
+</table>
+</details>
+
+***
+
+# [agnoster](https://github.com/oh-my-fish/theme-agnoster)
 #### agnoster
 
 A fish theme optimized for people who use:
@@ -133,7 +175,7 @@ You will probably want to disable the default virtualenv prompt. Add to your [`i
 Ported from https://gist.github.com/agnoster/3712874.
 
 
-# aight
+# [aight](https://github.com/abingham/aight-fish-theme)
 ### Aight
 
 A theme for fish that puts most stuff on the right.
@@ -158,7 +200,7 @@ Just fork and make PRs.
 [MIT](https://opensource.org/licenses/MIT) © Austin Bingham 2017
 
 
-# ays
+# [ays](https://github.com/aollio/ays-fish-theme)
 ##### Ays
 
 Theme imported from oh-my-zsh [ys-theme](http://blog.ysmood.org/my-ys-terminal-theme/)
@@ -186,7 +228,7 @@ omf install ays
 [Oh-My-Fish]: https://github.com/oh-my-fish/oh-my-fish
 
 
-# batman
+# [batman](https://github.com/oh-my-fish/theme-batman)
 <img src="https://dl.dropboxusercontent.com/u/56336/omf/omf-logo-optimised.svg" align="left" width="144px" height="144px"/>
 
 ###### Batman
@@ -232,7 +274,7 @@ _From left to right:_
 [THEMES-NAMESPACE-batman-contributors]:   https://github.com/oh-my-fish/oh-my-fish/graphs/contributors
 
 
-# beloglazov
+# [beloglazov](https://github.com/oh-my-fish/theme-beloglazov)
 ####  beloglazov
 
 A theme based on the default robbyrussell theme. This theme adds time, the
@@ -249,7 +291,7 @@ number of non-pushed commits, and whether the previous command has failed.
 * Displays ✘ if the previous command failed
 
 
-# bira
+# [bira](https://github.com/oh-my-fish/theme-bira)
 #### bira
 
 Theme imported from Oh my ZSH: https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/bira.zsh-theme
@@ -263,7 +305,7 @@ TODO:
  - display Python version
 
 
-# bobthefish
+# [bobthefish](https://github.com/oh-my-fish/theme-bobthefish)
 ### bobthefish
 
 `bobthefish` is a Powerline-style, Git-aware [fish][THEMES-NAMESPACE-bobthefish-fish] theme optimized for awesome.
@@ -514,7 +556,7 @@ end
 [THEMES-NAMESPACE-bobthefish-nord]:            https://user-images.githubusercontent.com/39213657/72811435-f64ca800-3c5f-11ea-8711-dcce8cfc50fb.png "nord"
 
 
-# bongnoster
+# [bongnoster](https://github.com/kfkonrad/bongnoster-fish-theme)
 #### bongnoster
 
 A fish theme optimized for people who use:
@@ -546,7 +588,7 @@ You will probably want to disable the default virtualenv prompt. Add to your [`i
 Adapted from https://github.com/oh-my-fish/theme-agnoster.
 
 
-# boxfish
+# [boxfish](https://github.com/joelwanner/theme-boxfish)
 <img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="144px" height="144px"/>
 
 ###### boxfish
@@ -589,7 +631,7 @@ $ omf install boxfish
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 
 
-# budspencer
+# [budspencer](https://github.com/oh-my-fish/theme-budspencer)
 ### Budspencer theme
 
 A theme for nerds, makes fish even more powerful. It's equipped with a hell of a
@@ -883,7 +925,7 @@ Give me feedback if you ...
 [THEMES-NAMESPACE-budspencer-pwdstyle]: https://raw.githubusercontent.com/tannhuber/media/master/budspencer_pwd_style.jpg
 
 
-# cbjohnson
+# [cbjohnson](https://github.com/oh-my-fish/theme-cbjohnson)
 #### cbjohnson theme
 
 A minimal theme forked from the [yimmy][yimmy-commit] theme (thanks [jhillyerd][yimmy-author]!)
@@ -894,7 +936,7 @@ A minimal theme forked from the [yimmy][yimmy-commit] theme (thanks [jhillyerd][
 [yimmy-author]: https://github.com/jhillyerd
 
 
-# chain
+# [chain](https://github.com/oh-my-fish/theme-chain)
 ### chain
 A thin, classy theme composed of a chain of information.
 
@@ -999,7 +1041,7 @@ The glyphs used in the default links can be customized using global variables. H
 [THEMES-NAMESPACE-chain-omf]:            https://github.com/oh-my-fish/oh-my-fish
 
 
-# clearance
+# [clearance](https://github.com/oh-my-fish/theme-clearance)
 ### Fish Theme: clearance
 
 A minimalist [fish shell](http://fishshell.com/) theme for people who use git
@@ -1011,7 +1053,7 @@ A minimalist [fish shell](http://fishshell.com/) theme for people who use git
 Check out other versions of this theme for OSX Terminal or VIM!
 
 
-# cmorrell
+# [cmorrell](https://github.com/oh-my-fish/theme-cmorrell.com)
 ### Chris Morrell's Fish Theme
 
 This is a theme I designed for myself but have given to a few friends and decided to publish for others' enjoyment.
@@ -1030,7 +1072,7 @@ This is a theme I designed for myself but have given to a few friends and decide
 (Note: _This theme is designed for a light-on-dark theme like [Solarized](http://ethanschoonover.com/solarized) but should work in a dark-on-light terminal with a few terminal color tweaks_)
 
 
-# coffeeandcode
+# [coffeeandcode](https://github.com/oh-my-fish/theme-coffeeandcode)
 ### Fish Theme: coffeeandcode
 
 Another theme choice for Oh-My-Fish! originally created by
@@ -1045,7 +1087,7 @@ to customize them, you will have to make changes to the `fish_prompt.fish` file
 in this theme. All of the settings are listed at the top of the file.
 
 
-# cor
+# [cor](https://github.com/oh-my-fish/theme-cor)
 #### cor
 
 The name says it all
@@ -1072,7 +1114,7 @@ For this theme you need a emoji supporting terminal and the emoji-clock plugin
 * Time of last command
 
 
-# cyan
+# [cyan](https://github.com/oh-my-fish/theme-qing)
 ###### cyan
 
 > A theme for [Oh My Fish][omf-link].
@@ -1130,7 +1172,7 @@ Thanks!
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 
 
-# dangerous
+# [dangerous](https://github.com/oh-my-fish/theme-dangerous)
 ### Dangerous theme
 
 A theme for the 70s, makes fish even more powerful. It's equipped with a hell
@@ -1356,7 +1398,7 @@ Give me feedback if you ...
 [THEMES-NAMESPACE-dangerous-screenshot]: https://raw.githubusercontent.com/tannhuber/media/master/dangerous.gif
 
 
-# default
+# [default](https://github.com/oh-my-fish/theme-default)
 <div align="center">
   <a href="http://github.com/fish-shell/omf">
   <img width=90px  src="https://cloud.githubusercontent.com/assets/8317250/8510172/f006f0a4-230f-11e5-98b6-5c2e3c87088f.png">
@@ -1406,7 +1448,7 @@ Only display the folder name:
 [travis-link]:    https://travis-ci.org/oh-my-fish/theme-default
 
 
-# dmorrell
+# [dmorrell](https://github.com/reitzig/theme-dmorrell)
 ### DMorrell Fish Theme
 
 This is a theme for 
@@ -1463,12 +1505,12 @@ You can also add the same line to your own fork of the theme.
     [git_util](https://github.com/fisherman/git_util).
 
 
-# doughsay
+# [doughsay](https://github.com/doughsay/omf-theme-doughsay.git)
 <a href="/doughsay/omf-theme-doughsay/master/README.md">Moved Permanently</a>.
 
 
 
-# eclm
+# [eclm](https://github.com/oh-my-fish/theme-eclm)
 #### eclm
 Based on the robbyrussell theme.
 
@@ -1482,7 +1524,7 @@ Based on the robbyrussell theme.
 * If the last command was failed, the indicator would be red, otherwise it's green
 
 
-# edan
+# [edan](https://github.com/oh-my-fish/theme-edan)
 #### Theme Edan
 
 Inspired by idan, a functional, uncluttered fish theme with usability perks for git users and python developers.
@@ -1508,7 +1550,7 @@ Inspired by idan, a functional, uncluttered fish theme with usability perks for 
 Check out [Anonymous Pro](http://www.marksimonson.com/fonts/view/anonymous-pro).
 
 
-# eden
+# [eden](https://github.com/oh-my-fish/theme-eden)
 <img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="144px" height="144px"/>
 
 ###### eden
@@ -1570,7 +1612,7 @@ Font: [INCONSOLATA](https://www.google.com/fonts/specimen/Inconsolata)
 [license-badge]:  https://flat.badgen.net/badge/license/MIT
 
 
-# emoji-powerline
+# [emoji-powerline](https://github.com/wyqydsyq/emoji-powerline)
 #### emoji-powerline
 
 Based on Agnoster, extended with emojis representing home and root directories. Paths in the pwd prompt and git branch are split by "/" and joined as powerline segments for a clean aesthetic. Input is broken onto a new line for more consistent positioning.
@@ -1608,7 +1650,7 @@ set -U fish_prompt_pwd_dir_length 0
 Forked from https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md#agnoster-1
 
 
-# es
+# [es](https://github.com/oh-my-fish/theme-es)
 <img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="144px" height="144px"/>
 
 ###### es theme
@@ -1665,7 +1707,7 @@ $ omf install es
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 
 
-# fishbone
+# [fishbone](https://github.com/oh-my-fish/theme-fishbone)
 <img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="144px" height="144px"/>
 
 ### fishbone
@@ -1726,7 +1768,7 @@ Bugs and improvements can be reported/suggested as [issues](https://github.com/o
 [THEMES-NAMESPACE-fishbone-contributors]:   https://github.com/pantuza/fishbone/graphs/contributors
 
 
-# fishface
+# [fishface](https://github.com/oh-my-fish/theme-fishface)
 #### FishFace
 
 Shows an ASCII fish which is blue or green when in a git repo.
@@ -1734,7 +1776,7 @@ Shows an ASCII fish which is blue or green when in a git repo.
 ![fishface theme](https://f.cloud.github.com/assets/66143/1224622/ec9660d8-2750-11e3-9c96-cb7a5a69eada.png)
 
 
-# fishy-drupal
+# [fishy-drupal](https://github.com/oh-my-fish/theme-fishy-drupal)
 #### fishy-drupal
 
 ![fishy-drupal](https://raw.github.com/greggles/fishy-drupal/master/drups-fish-theme.png)
@@ -1747,7 +1789,7 @@ Shows an ASCII fish which is blue or green when in a git repo.
 * Shows yellow ✗ if the current git directory is "dirty"
 
 
-# fisk
+# [fisk](https://github.com/oh-my-fish/theme-fisk)
 ### Fisk
 
 ![theme screenshot](https://cloud.githubusercontent.com/assets/20814/6209746/60949aa6-b5c9-11e4-8edc-5a8e370f4527.png)
@@ -1762,7 +1804,7 @@ By [joar](https://github.com/joar), thanks to
 [adisbladis](https://github.com/adisbladis) for the starting point.
 
 
-# flash
+# [flash](https://github.com/alecgorge/fish-flash-theme)
 [![Slack Room][slack-badge]][slack-link]
 
 ### Flash
@@ -1798,7 +1840,7 @@ _From left to right:_
 </p>
 
 
-# fox
+# [fox](https://github.com/oh-my-fish/theme-fox)
 #### fox
 
 cloned from oh-my-zsh.
@@ -1806,7 +1848,7 @@ cloned from oh-my-zsh.
 ![fox theme](http://i60.tinypic.com/2myaibn.jpg)
 
 
-# gentoo
+# [gentoo](https://github.com/ribugent/theme-gentoo)
 <img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="144px" height="144px"/>
 
 ###### Gentoo fish theme
@@ -1866,7 +1908,7 @@ Unofficial Gentoo fish prompt theme which tries to follow Gentoo default bash $P
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 
 
-# gianu
+# [gianu](https://github.com/oh-my-fish/theme-gianu)
 #### Gianu
 
 Original theme made by [gianu](https://github.com/gianu) for oh-my-zsh, converted to oh-my-fish by [JBarberU](https://github.com/JBarberU)
@@ -1883,7 +1925,7 @@ Displays:
 * Git information when available.
 
 
-# gitstatus
+# [gitstatus](https://github.com/oh-my-fish/theme-gitstatus)
 #### GitStatus
 
 ![GitStatus](https://github.com/godfat/fish_prompt-gitstatus/raw/master/gitstatus.png)
@@ -1900,7 +1942,7 @@ Displays:
   - Shows no indicators if the working copy is clean.
 
 
-# gnuykeaj
+# [gnuykeaj](https://github.com/oh-my-fish/theme-gnuykeaj)
 ### Fish Theme: gnuykeaj
 
 Super minimal one line version of [clearance](https://github.com/oh-my-fish/theme-clearance) theme. Balance between need to know information and space. Has git branch and dirty state information based on the color of the branch name.
@@ -1909,7 +1951,7 @@ Super minimal one line version of [clearance](https://github.com/oh-my-fish/them
 
 
 
-# godfather
+# [godfather](https://github.com/oh-my-fish/theme-godfather)
 #### godfather fish theme
 
 Clean git theme with homey feel and git-centric features.
@@ -1934,7 +1976,7 @@ Colors and git functions taken from [amio](https://github.com/amio)'s
 
 
 
-# graystatus
+# [graystatus](https://github.com/usami-k/graystatus)
 ### graystatus
 
 Prompt theme for [fish shell](http://fishshell.com).
@@ -1986,7 +2028,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 
-# harleen
+# [harleen](https://github.com/aneveux/theme-harleen)
 <img src="https://avatars1.githubusercontent.com/u/11728505?s=200&v=4" align="left" width="144px" height="144px" style="margin:10px 20px;"/>
 
 ###### Harleen
@@ -2039,7 +2081,7 @@ Also a huge thanks to @sagebind for his really nice and helpful comments :thumbs
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 
 
-# idan
+# [idan](https://github.com/oh-my-fish/theme-idan)
 #### idan
 A functional, uncluttered fish theme with usability perks for git users and python developers.
 
@@ -2061,7 +2103,7 @@ A functional, uncluttered fish theme with usability perks for git users and pyth
 * Last error code (if applicable)
 
 
-# integral
+# [integral](https://github.com/oh-my-fish/theme-integral)
 #### integral
 
 A simple git upstream theme.
@@ -2077,7 +2119,7 @@ A simple git upstream theme.
 ![Integral Screenshot](https://cloud.githubusercontent.com/assets/21774/2715353/70af1520-c50a-11e3-9db3-74933fbb8d91.png)
 
 
-# jacaetevha
+# [jacaetevha](https://github.com/oh-my-fish/theme-jacaetevha)
 #### jacaetevha
 
 A theme optimized for people who use:
@@ -2104,7 +2146,7 @@ theme](http://jacaetevha.github.io/oh-my-fish/screenshot.png)
 ```
 
 
-# johanson
+# [johanson](https://github.com/johanson/theme-johanson)
 <img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="144px" height="144px"/>
 
 ###### johanson
@@ -2141,7 +2183,7 @@ $ omf install johanson
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 
 
-# kawasaki
+# [kawasaki](https://github.com/hastinbe/theme-kawasaki)
 ### kawasaki
 
 `kawasaki` is a customizable [fish][THEMES-NAMESPACE-kawasaki-fish] theme that emphasizes a simple and useful prompt without useless cluttter.
@@ -2355,7 +2397,7 @@ Copyright (c) 2016 Beau Hastings
 [THEMES-NAMESPACE-kawasaki-dotfiles]:   https://github.com/oh-my-fish/oh-my-fish#dotfiles
 
 
-# krisleech
+# [krisleech](https://github.com/oh-my-fish/theme-krisleech)
 #### krisleech
 
 A very simple theme optimized for Git. Less is more.
@@ -2371,7 +2413,7 @@ A very simple theme optimized for Git. Less is more.
 * Dirty working directory (✘)
 
 
-# l
+# [l](https://github.com/oh-my-fish/theme-l)
 <div align="center">
   <a href="http://github.com/fish-shell/omf">
   <img width=90px  src="https://cloud.githubusercontent.com/assets/8317250/8510172/f006f0a4-230f-11e5-98b6-5c2e3c87088f.png">
@@ -2434,7 +2476,7 @@ set theme_display_rbenv_with_gemfile_only 'yes'
 
 
 
-# lambda
+# [lambda](https://github.com/hasanozgan/theme-lambda)
 ##### Lambda
 
 [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
@@ -2470,7 +2512,7 @@ omf install lambda
 [Oh-My-Fish]: https://github.com/oh-my-fish/oh-my-fish
 
 
-# lavender
+# [lavender](https://github.com/tungpun/fish-theme-lavender)
 <img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="144px" height="144px"/>
 
 ###### lavender
@@ -2520,7 +2562,7 @@ Based on clearance theme. Display the following bits on the left:
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 
 
-# lolfish
+# [lolfish](https://github.com/er0/lolfish)
 ### lolfish
 
 such rainbow, wow.
@@ -2554,7 +2596,7 @@ curl -L https://github.com/er0/lolfish/raw/master/lol.fish -o $HOME/.config/fish
 [THEMES-NAMESPACE-lolfish-screenshot2]: http://i.imgur.com/v6aI9AB.png
 
 
-# mars
+# [mars](https://github.com/oh-my-fish/theme-mars)
 #### mars
 Based on the eclm theme (which was based on the robbyrussell theme).
 
@@ -2568,12 +2610,12 @@ Based on the eclm theme (which was based on the robbyrussell theme).
 * If the last command was failed, the indicator would be red, otherwise it's green
 
 
-# mish
+# [mish](https://github.com/M4rk9696/theme-mish.git)
 <a href="/M4rk9696/theme-mish/master/README.md">Moved Permanently</a>.
 
 
 
-# mokou
+# [mokou](https://github.com/oh-my-fish/theme-mokou)
 ### mokou
 possibly the dumbest theme for oh-my-fish
 
@@ -2596,7 +2638,7 @@ $ omf install mokou
 [omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
 
 
-# mtahmed
+# [mtahmed](https://github.com/oh-my-fish/theme-mtahmed)
 #### mtahmed
 
 Minimal theme.
@@ -2614,7 +2656,7 @@ Minimal theme.
 - Exit code of the previous command
 
 
-# nai
+# [nai](https://github.com/oh-my-fish/theme-nai)
 #### nai
 A minimalist fish theme which displays git branch and status information.
 
@@ -2628,7 +2670,7 @@ A minimalist fish theme which displays git branch and status information.
 * Git branch and dirty state (if applicable)
 
 
-# nelsonjchen
+# [nelsonjchen](https://github.com/nelsonjchen/omf-theme-nelsonjchen)
 <div align="center">
   <a href="http://github.com/oh-my-fish/oh-my-fish">
   <img width=90px  src="https://cloud.githubusercontent.com/assets/8317250/8510172/f006f0a4-230f-11e5-98b6-5c2e3c87088f.png">
@@ -2683,7 +2725,7 @@ src="https://cloud.githubusercontent.com/assets/5363/12106487/fe8b3c30-b314-11e5
 [travis-badge]:   http://img.shields.io/travis/nelsonjchen/omf-theme-nelsonjchen.svg?style=flat-square
 
 
-# neolambda
+# [neolambda](https://github.com/ipatch/theme-neolambda)
 ### NeoLambda
 
 > The unofficial fork of the [omf](https://github.com/oh-my-fish/oh-my-fish) [lambda](https://github.com/hasanozgan/theme-lambda) theme
@@ -2730,9 +2772,9 @@ omf install neolambda
   - `cat myrecrod.cast | svg-term --out myrecord.svg --window`
 
 
-# numist
+# [numist](https://github.com/oh-my-fish/theme-numist)
 See https://github.com/oh-my-fish/theme-numist for details
-# ocean
+# [ocean](https://github.com/oh-my-fish/theme-ocean)
 #### ocean
 
 A fish theme with ocean in mind.
@@ -2764,7 +2806,7 @@ This theme is based loosely on [agnoster](https://gist.github.com/agnoster/37128
 If you see a colored anchor icon instead of the white one, this is because your system font is lacking the anchor icon, and iTerm defaults to the Apple Emoji Font. To get the right icon, either add it to your current font, or chose a powerline font that has it (like Meslo for Powerline, available in https://github.com/powerline/fonts), and select it for your Non-ASCII font.
 
 
-# one
+# [one](https://github.com/rdev/omf-theme-one)
 <img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="144px" height="144px"/>
 
 ###### One v2
@@ -2823,7 +2865,7 @@ Aesthetic stolen from [Pure](https://github.com/sindresorhus/pure)
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 
 
-# pastfish
+# [pastfish](https://github.com/chgu82837/theme-PastFish)
 <div align="center">
   <a href="http://github.com/oh-my-fish/oh-my-fish">
   <img width=90px  src="https://cloud.githubusercontent.com/assets/8317250/8510172/f006f0a4-230f-11e5-98b6-5c2e3c87088f.png">
@@ -2867,7 +2909,7 @@ $ omf u pastfish
 [travis-link]:    https://travis-ci.org/chgu82837/pastfish
 
 
-# perryh
+# [perryh](https://github.com/oh-my-fish/theme-perryh)
 #### perryh
 
 This is similar to godfat's gitstatus theme, but mainly includes red, white, cyan, and yellow.
@@ -2875,7 +2917,7 @@ This is similar to godfat's gitstatus theme, but mainly includes red, white, cya
 ![perryh](http://perryhuang.com/stuff/perryh_fish.png)
 
 
-# pie
+# [pie](https://github.com/grissius/theme-pie)
 <img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="144px" height="144px"/>
 
 ###### 🥧 πie
@@ -2932,7 +2974,7 @@ $ omf theme pie
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 
 
-# plain
+# [plain](https://github.com/changyuheng/theme-plain)
 [![Slack Room][slack-badge]][slack-link]
 
 ### plain
@@ -2964,7 +3006,7 @@ fisher i plain
 [THEMES-NAMESPACE-plain-Fisherman]: https://github.com/fisherman/fisherman
 
 
-# pure
+# [pure](https://github.com/rafaelrinaldi/theme-pure)
 > ##### ✋ Psst! Migrating from v1.x to v2.x? We got you. Check our [**migration guide**](https://github.com/rafaelrinaldi/pure/releases/tag/v2.0.0) and happy upgrading
 
 ### pure [![github-ci-badge]][github-ci-link] ![fish-3]
@@ -3115,7 +3157,7 @@ Specify the [`FISH_VERSION`][fish-releases] you want, and the `CMD` executed by 
 [fish-set-color]: https://fishshell.com/docs/current/cmds/set_color.html
 
 
-# pygmalion
+# [pygmalion](https://github.com/corevo/theme-pygmalion)
 #### pygmalion theme
 
 A minimal theme forked from the [cbjohnson](https://github.com/oh-my-fish/theme-cbjohnson) theme
@@ -3125,7 +3167,7 @@ Based on the zsh theme [pygmalion](https://github.com/robbyrussell/oh-my-zsh/wik
 ![screenshot](https://cloud.githubusercontent.com/assets/888886/12481015/051b2096-c04f-11e5-962b-7c1a31c9ff8b.png)
 
 
-# random
+# [random](https://github.com/tycho01/theme-random)
 <img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="144px" height="144px"/>
 
 ###### random
@@ -3159,7 +3201,7 @@ $ omf install random
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 
 
-# randomrussel
+# [randomrussel](https://github.com/lightify97/randomrussel)
 #### randomrussell
 
 A colorful robbyrussel clone.
@@ -3182,7 +3224,7 @@ You will need [powerline](https://github.com/powerline/fonts
 You can download "D2Coding" powerline+nerdfont patched font [here](http://bit.ly/2pLiQku)
 
 
-# red-snapper
+# [red-snapper](https://github.com/oh-my-fish/theme-red-snapper)
 ### RED SNAPPER
 ![Red Snapper](https://raw.githubusercontent.com/ZuraGuerra/theme-red-snapper/master/redsnapper.jpg)
 
@@ -3206,7 +3248,7 @@ Something is fishy here! If you are not inside a Git working directory, your pet
 
 
 
-# redfish
+# [redfish](https://github.com/redxtech/redfish)
 ### [redfish][repo-link]
 > A theme for [Oh My Fish][omf-link].
 
@@ -3250,7 +3292,7 @@ $ omf install redfish
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 
 
-# rider
+# [rider](https://github.com/rideron89/rider-theme)
 <img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="144px" height="144px"/>
 
 ###### rider
@@ -3299,7 +3341,7 @@ $ omf install rider
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 
 
-# robbyrussell
+# [robbyrussell](https://github.com/oh-my-fish/theme-robbyrussell)
 #### robbyrussell
 The default theme – cloned from oh-my-zsh.
 
@@ -3312,7 +3354,7 @@ The default theme – cloned from oh-my-zsh.
 * If the last command was failed, the indicator would be red, otherwise it's green
 
 
-# sashimi
+# [sashimi](https://github.com/isacikgoz/sashimi)
 ### Sashimi
 
 [![Releases](https://img.shields.io/github/release/isacikgoz/sashimi.svg?label=latest)](https://github.com/isacikgoz/sashimi/releases)
@@ -3372,7 +3414,7 @@ This prompt was inspired by other promps such as:
 [MIT](LICENSE)
 
 
-# scorphish
+# [scorphish](https://github.com/oh-my-fish/theme-scorphish)
 #### Scorphish
 
 Compact. Sufficient.
@@ -3456,7 +3498,7 @@ authors!
 Enjoy!
 
 
-# shellder
+# [shellder](https://github.com/simnalamburt/shellder)
 <img align=left width=175px height=175px
 src="https://raw.githubusercontent.com/simnalamburt/i/master/shellder/shellder.png">
 
@@ -3526,7 +3568,7 @@ and the [Apache License (Version 2.0)]. See [COPYRIGHT] for details.
 [THEMES-NAMESPACE-shellder-COPYRIGHT]: COPYRIGHT
 
 
-# simple-ass-prompt
+# [simple-ass-prompt](https://github.com/lfiolhais/theme-simple-ass-prompt)
 <img
 src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg"
 align="left" width="144px" height="144px"/>
@@ -3602,7 +3644,7 @@ set -g simple_ass_prompt_greeting MyGreeting
 [THEMES-NAMESPACE-simple-ass-prompt-vf]: https://github.com/adambrenecki/virtualfish
 
 
-# simplevi
+# [simplevi](https://github.com/oh-my-fish/theme-simplevi)
 fish_prompt-simplevi
 
 
@@ -3617,7 +3659,7 @@ Screenshots:
 
 
 
-# slacker
+# [slacker](https://github.com/maqboolkhan/omf-theme-slacker)
 <img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="144px" height="144px"/>
 
 ###### slacker
@@ -3661,7 +3703,7 @@ $ omf install slacker
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 
 
-# slavic-cat
+# [slavic-cat](https://github.com/yangwao/omf-theme-slavic-cat)
 ### Slavic Cat
 
 A fish (shell) theme with a Slavic cat and a rainbow that signifies git status.
@@ -3697,7 +3739,7 @@ Once Oh My Fish is installed:
  * Two unicodes included!
 
 
-# spacefish
+# [spacefish](https://github.com/matchai/spacefish)
 <h1 align="center">
   <a href="https://github.com/starship/starship">
     <img alt="Focus has shifted to the development of Starship, the successor to Spacefish. If you are interested in contributing or using it, come take a look!" src="./images/starship-notice.svg" width="100%">
@@ -3888,7 +3930,7 @@ MIT © [Matan Kushner](http://matchai.dev)
 [THEMES-NAMESPACE-spacefish-zsh]: http://zsh.org
 
 
-# sushi
+# [sushi](https://github.com/umayr/theme-sushi)
 <div align="center">
   <a href="http://github.com/oh-my-fish/oh-my-fish">
   <img width=90px  src="https://cloud.githubusercontent.com/assets/8317250/8510172/f006f0a4-230f-11e5-98b6-5c2e3c87088f.png">
@@ -3942,7 +3984,7 @@ $ omf install sushi
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 
 
-# syl20bnr
+# [syl20bnr](https://github.com/oh-my-fish/theme-syl20bnr)
 ### syl20bnr theme
 
 A semi-compact oh-my-fish theme with [nice support for git](#git).
@@ -4085,7 +4127,7 @@ packages:
 [THEMES-NAMESPACE-syl20bnr-cygwin]: http://cygwin.com/
 
 
-# taktoa
+# [taktoa](https://github.com/oh-my-fish/theme-taktoa)
 #### taktoa
 
 A theme by taktoa
@@ -4100,7 +4142,7 @@ A theme by taktoa
 ![taktoa theme](http://taktoa.me/oh-my-fish/images/taktoa-screenshot.png)
 
 
-# technopagan
+# [technopagan](https://github.com/oh-my-fish/theme-technopagan)
 #### technopagan
 A minimalist fish theme forked from theme-nai ([@xorgy](https://github.com/xorgy)) but with added ([@rickycodes](https://github.com/rickycodes)) moonmoji support.
 
@@ -4111,7 +4153,7 @@ Display the following bits on the left:
  * Git branch and dirty state (if inside a git repo)
 
 
-# toaster
+# [toaster](https://github.com/oh-my-fish/theme-toaster)
 ### Toaster
 
 A fish (shell) theme with a poptart cat and a rainbow that signifies git status.
@@ -4119,7 +4161,7 @@ A fish (shell) theme with a poptart cat and a rainbow that signifies git status.
 ![Toaster in action](https://github.com/steeeve/toaster/raw/master/screenshot.png)
 
 
-# tomita
+# [tomita](https://github.com/daveyarwood/tomita)
 <p align="center">
   <img src="https://github.com/daveyarwood/tomita/blob/master/img/tomita.jpg?raw=true" alt="source: http://www.isaotomita.net/images/photo/tomi01.jpg" title="isao tomita" />
 </p>
@@ -4173,18 +4215,18 @@ In a git repo:
 
 
 
-# trout
+# [trout](https://github.com/oh-my-fish/theme-trout)
 A simple, but informative, prompt
 
 ![example](https://raw.githubusercontent.com/phaedryx/trout/master/prompt.png)
 
 
-# tweetjay
+# [tweetjay](https://github.com/tweetjay/theme-tweetjay.git)
 <a href="/tweetjay/theme-tweetjay/master/README.md">Moved Permanently</a>.
 
 
 
-# uggedal
+# [uggedal](https://github.com/oh-my-fish/theme-uggedal)
 #### uggedal
 Minimal theme.
 
@@ -4198,7 +4240,7 @@ Minimal theme.
 * Right prompt displays the last command's exit code if it was non-zero.
 
 
-# will
+# [will](https://github.com/oh-my-fish/theme-will)
 #### Will
 Minimalist theme.
 
@@ -4210,7 +4252,7 @@ Minimalist theme.
 * Uses logical entailment as the prompt character
 
 
-# wolf-theme
+# [wolf-theme](https://github.com/wolf-theme/fish-shell)
 ### Wolf Theme for [Fish Shell](https://fishshell.com/)
 Theme based in [eclm](https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md#eclm)
 
@@ -4227,7 +4269,7 @@ Theme based in [eclm](https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/
 [Igor Oliveira](https://github.com/devigor) |
 
 
-# yimmy
+# [yimmy](https://github.com/oh-my-fish/theme-yimmy)
 #### yimmy theme
 
 A simple two-line theme with support for terminals configured with Solarized
@@ -4253,9 +4295,9 @@ Dark colors.
 - Disable Solarized colors in prompt with: `set -U yimmy_solarized false`
 
 
-# zeit
+# [zeit](https://github.com/mcansh/zeit-fish-theme)
 See https://github.com/mcansh/zeit-fish-theme for details
-# zephyr
+# [zephyr](https://github.com/komarnitskyi/theme-zephyr)
 <img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="144px" height="144px"/>
 
 ###### zephyr
@@ -4316,7 +4358,7 @@ omf update zephyr
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 
 
-# zish
+# [zish](https://github.com/oh-my-fish/theme-zish)
 ### Zish
 
 Zhishen Wen's simple fun theme =)
