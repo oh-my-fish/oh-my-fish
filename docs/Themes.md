@@ -7,30 +7,39 @@
 <table>
 <tr>
   <td><a href="#agnoster">agnoster</a></td>
+  <td><a href="#cmorrell">cmorrell</a></td>
+  <td><a href="#fishface">fishface</a></td>
+  <td><a href="#jacaetevha">jacaetevha</a></td>
+  <td><a href="#neolambda">neolambda</a></td>
+  <td><a href="#rider">rider</a></td>
+  <td><a href="#technopagan">technopagan</a></td>
+</tr>
+<tr>
+  <td><a href="#aight">aight</a></td>
   <td><a href="#coffeeandcode">coffeeandcode</a></td>
   <td><a href="#fishy-drupal">fishy-drupal</a></td>
   <td><a href="#johanson">johanson</a></td>
   <td><a href="#numist">numist</a></td>
   <td><a href="#robbyrussell">robbyrussell</a></td>
-  <td><a href="#tomita">tomita</a></td>
+  <td><a href="#toaster">toaster</a></td>
 </tr>
 <tr>
-  <td><a href="#aight">aight</a></td>
+  <td><a href="#ays">ays</a></td>
   <td><a href="#cor">cor</a></td>
   <td><a href="#fisk">fisk</a></td>
   <td><a href="#kawasaki">kawasaki</a></td>
   <td><a href="#ocean">ocean</a></td>
   <td><a href="#sashimi">sashimi</a></td>
-  <td><a href="#trout">trout</a></td>
+  <td><a href="#tomita">tomita</a></td>
 </tr>
 <tr>
-  <td><a href="#ays">ays</a></td>
+  <td><a href="#barracuda">barracuda</a></td>
   <td><a href="#cyan">cyan</a></td>
   <td><a href="#flash">flash</a></td>
   <td><a href="#krisleech">krisleech</a></td>
   <td><a href="#one">one</a></td>
   <td><a href="#scorphish">scorphish</a></td>
-  <td><a href="#tweetjay">tweetjay</a></td>
+  <td><a href="#trout">trout</a></td>
 </tr>
 <tr>
   <td><a href="#batman">batman</a></td>
@@ -39,7 +48,7 @@
   <td><a href="#l">l</a></td>
   <td><a href="#pastfish">pastfish</a></td>
   <td><a href="#shellder">shellder</a></td>
-  <td><a href="#uggedal">uggedal</a></td>
+  <td><a href="#tweetjay">tweetjay</a></td>
 </tr>
 <tr>
   <td><a href="#beloglazov">beloglazov</a></td>
@@ -48,7 +57,7 @@
   <td><a href="#lambda">lambda</a></td>
   <td><a href="#perryh">perryh</a></td>
   <td><a href="#simple-ass-prompt">simple-ass-prompt</a></td>
-  <td><a href="#will">will</a></td>
+  <td><a href="#uggedal">uggedal</a></td>
 </tr>
 <tr>
   <td><a href="#bira">bira</a></td>
@@ -57,7 +66,7 @@
   <td><a href="#lavender">lavender</a></td>
   <td><a href="#pie">pie</a></td>
   <td><a href="#simplevi">simplevi</a></td>
-  <td><a href="#wolf-theme">wolf-theme</a></td>
+  <td><a href="#will">will</a></td>
 </tr>
 <tr>
   <td><a href="#bobthefish">bobthefish</a></td>
@@ -66,7 +75,7 @@
   <td><a href="#lolfish">lolfish</a></td>
   <td><a href="#plain">plain</a></td>
   <td><a href="#slacker">slacker</a></td>
-  <td><a href="#yimmy">yimmy</a></td>
+  <td><a href="#wolf-theme">wolf-theme</a></td>
 </tr>
 <tr>
   <td><a href="#bongnoster">bongnoster</a></td>
@@ -75,7 +84,7 @@
   <td><a href="#mars">mars</a></td>
   <td><a href="#pure">pure</a></td>
   <td><a href="#slavic-cat">slavic-cat</a></td>
-  <td><a href="#zeit">zeit</a></td>
+  <td><a href="#yimmy">yimmy</a></td>
 </tr>
 <tr>
   <td><a href="#boxfish">boxfish</a></td>
@@ -83,8 +92,8 @@
   <td><a href="#godfather">godfather</a></td>
   <td><a href="#mish">mish</a></td>
   <td><a href="#pygmalion">pygmalion</a></td>
-  <td><a href="#spacefish">spacefish</a></td>
-  <td><a href="#zephyr">zephyr</a></td>
+  <td><a href="#solarfish">solarfish</a></td>
+  <td><a href="#zeit">zeit</a></td>
 </tr>
 <tr>
   <td><a href="#budspencer">budspencer</a></td>
@@ -92,8 +101,8 @@
   <td><a href="#graystatus">graystatus</a></td>
   <td><a href="#mokou">mokou</a></td>
   <td><a href="#random">random</a></td>
-  <td><a href="#sushi">sushi</a></td>
-  <td><a href="#zish">zish</a></td>
+  <td><a href="#spacefish">spacefish</a></td>
+  <td><a href="#zephyr">zephyr</a></td>
 </tr>
 <tr>
   <td><a href="#cbjohnson">cbjohnson</a></td>
@@ -101,8 +110,8 @@
   <td><a href="#harleen">harleen</a></td>
   <td><a href="#mtahmed">mtahmed</a></td>
   <td><a href="#randomrussel">randomrussel</a></td>
-  <td><a href="#syl20bnr">syl20bnr</a></td>
-  <td>&nbsp;</td>
+  <td><a href="#sushi">sushi</a></td>
+  <td><a href="#zish">zish</a></td>
 </tr>
 <tr>
   <td><a href="#chain">chain</a></td>
@@ -110,7 +119,7 @@
   <td><a href="#idan">idan</a></td>
   <td><a href="#nai">nai</a></td>
   <td><a href="#red-snapper">red-snapper</a></td>
-  <td><a href="#taktoa">taktoa</a></td>
+  <td><a href="#syl20bnr">syl20bnr</a></td>
   <td>&nbsp;</td>
 </tr>
 <tr>
@@ -119,16 +128,7 @@
   <td><a href="#integral">integral</a></td>
   <td><a href="#nelsonjchen">nelsonjchen</a></td>
   <td><a href="#redfish">redfish</a></td>
-  <td><a href="#technopagan">technopagan</a></td>
-  <td>&nbsp;</td>
-</tr>
-<tr>
-  <td><a href="#cmorrell">cmorrell</a></td>
-  <td><a href="#fishface">fishface</a></td>
-  <td><a href="#jacaetevha">jacaetevha</a></td>
-  <td><a href="#neolambda">neolambda</a></td>
-  <td><a href="#rider">rider</a></td>
-  <td><a href="#toaster">toaster</a></td>
+  <td><a href="#taktoa">taktoa</a></td>
   <td>&nbsp;</td>
 </tr>
 </table>
@@ -228,6 +228,284 @@ omf install ays
 [Oh-My-Fish]: https://github.com/oh-my-fish/oh-my-fish
 
 
+# [barracuda](https://github.com/meverss/barracuda)
+### Barracuda theme (for fish in Termux terminal)
+
+This theme is a fork of [oh-my-fish/theme-budspencer](https://github.com/oh-my-fish/theme-budspencer), which means it keeps almost all it's awesome features.
+
+Some fancy visual changes has been done taking advantage of Powerline Symbols.
+
+Barracuda is in essence:
+
+> A theme for nerds, makes fish even more powerful. It's equipped with a hell of a
+lot of nice functions and key bindings to speed up your workflow
+
+![screenshot](https://raw.githubusercontent.com/meverss/barracuda/master/images/screenshot.jpg)
+
+#### Requirements
+
+* An up-to-date fish shell version from [github][fish-git] or a
+[nightly build][fish-nightly].
+* Patched Powerline fonts installed. \(See how to install [here](https://github.com/powerline/fonts))
+
+Non standard tools:
+
+* APK Termux:API plug-in \(It's recommended to download **Termux** and **Termux:API** from [F-Droid](https://f-droid.org) as both apps most have the same PGP signature\) 
+<details>
+<summary>termux-api</summary>
+
+```fish
+apt install termux-api
+```
+</details>
+<details>
+<summary>nodejs</summary>
+
+```fish
+apt install nodejs
+``` 
+</details>
+<details>
+<summary>pv</summary>
+
+```fish
+apt install pv
+``` 
+</details>
+
+#### Configuration
+
+##### General configuration
+
+The theme behaves similar to vim's airline/powerline plugins. Thus, it needs a
+[powerline font][THEMES-NAMESPACE-barracuda-font].
+It's also crucial to have vi mode enabled. Thus, execute
+```
+set -U fish_key_bindings fish_vi_key_bindings
+```
+before enabling the theme.
+
+##### Languages
+
+This theme can be shown in different languages (three langiages so far): Spanish, English and French
+
+There are two ways to change interface language: one is by using the function `termux-language` followed by the language identifier, and
+the other one, just typing the language name on the prompt.
+
+Supported languages and their identifiers are:
+
+* **sp** for **spanish**
+* **en** for **english**
+* **fr** for **french**
+
+e.g To set french language:
+```
+termux-language fr
+```
+
+Or
+```
+french
+```
+
+##### Colors
+
+Two color schemes for bright and dark environments are predefined. You can
+enable them with `day` and `night`, respectively.
+
+##### Command history
+Commands that shouldn't appear in the command history are defined by a universal
+list `$barracuda_nocmdhist`. Default:
+```
+set -U barracuda_nocmdhist c d ll ls m s
+```
+
+##### Disable/reenable greeting
+
+Disable:
+```
+set -U barracuda_nogreeting
+```
+
+Reenable:
+```
+set -e barracuda_nogreeting
+```
+
+##### Show Node version
+
+To show your current node version, do following in your Fish configs
+
+Enable:
+```
+set -g barracuda_alt_environment "node -v"
+```
+
+Disable:
+```
+set -U barracuda_alt_environment
+```
+
+#### Outer prompt segments
+
+- Vi mode is indicated by color of outer segments, cursor color also changes
+  if terminal supports it:
+    * green: NORMAL mode
+    * yellow: INSERT mode
+    * blue: VISUAL mode
+
+#### Left prompt segments
+
+- Present working directory (on top)
+- Prompt line number
+- Barracuda ASCII logo
+- Git repository information
+- Status symbols
+    * ✻: keep track of this shell session, can be toggled with `#` to show the number of
+       the session within the sessions list
+    * ⭐: present working directory is in bookmark list, can be toggled with `#` to
+        show the number of the bookmark
+    * V: vi is parent process
+    * R: [ranger][THEMES-NAMESPACE-barracuda-ranger] is parent process
+    * ⬜: there are background jobs, can be toggled with `#` to show the amount of
+        background jobs
+    * 🔒: no write permissions in present working directory
+    * ⚔: there are tasks scheduled for this week, can be toggled with `#` to
+        show the amount of weekly tasks
+    * ⚑: there are appointments for today, can be toggled with `#` to
+        show the amount of appointments
+    * ✔: last command succeeded, can be toggled with `#` to show the status value
+    * ✘: last command failed, can be toggled with `#` to show the status value
+    * ⚡: superuser indicator
+- Active Python [virtual environment](https://virtualenv.pypa.io/en/latest/). Requires [Virtual Fish](https://github.com/adambrenecki/virtualfish/)
+
+#### Right prompt segments
+
+- Shows current interface language
+
+#### Quickly navigate in history of working directories
+
+The function `d` drops down a menu showing the history as enumerated list. Unlike
+fish's builtin `dirh`, `d` does not show any duplicates. Enter a number to jump
+to a directory within the list.
+
+The following shortcuts need vi-mode:
+- Press `H` in NORMAL mode to change present working directory to previous
+  working directory in history.
+- Press `L` in NORMAL mode to change present working directory to next working
+  directory in history.
+
+#### Quickly navigate in command history
+
+The function `c` drops down a menu showing the command history as enumerated list similarly to
+the `d` function. Selections are also pasted into the X clipboard. It's possible
+to load a command of a former prompt by giving the prompt line number as
+argument.
+
+#### Bookmarks
+
+A bookmark can be created with `mark`. It can be removed with `unmark`. 
+
+`unmark` can take an argument to remove a specific bookmark in the bookmark list. 
+Simply add the number of the bookmark you would like to remove as the argument.
+
+Bookmarks are universal and thus persistant.
+A new shell automatically changes working directory on startup to newest bookmark.
+`m` is a function that drops down a menu showing the bookmarks as enumerated list
+equivalently to `d`.
+
+The following shortcuts need vi mode:
+- Create a bookmark for present working directory with `m` in NORMAL mode.
+- Remove a bookmark for present working directory with `M` in NORMAL mode.
+
+By default the shell will change to the directory of the latest bookmark on a new session. 
+This can be disabled by adding the following line:
+
+```
+set -U barracuda_no_cd_bookmark
+```
+
+#### Edit commandline with your favorite editor
+
+The function `edit-commandline` let you edit the commandline with your editor.
+It makes the commandline as powerful as your editor. If `$EDITOR` is not set,
+vi is used.
+
+The following shortcut needs vi mode:
+- Type `.` in NORMAL mode to edit commandline in editor.
+
+#### Sessions
+
+Shell session can be stored with `s <session name>`. If a session with `session
+name` already exists, the session with this name will be attached. If a session with
+`session name` is already active within another terminal, this terminal will be
+focussed.
+
+A list of available sessions can be shown with `s`.
+
+A session can be erased with `s -e <session name>`.
+
+Type `s -d` to detach current session.
+
+#### Set window title
+
+Just type `wt <title>`.
+
+#### Ring the bell in order to set the urgency hint flag
+
+If you have configured your terminal application to use the visual bell, your
+window manager will tell you when a job running in your shell has finished. You
+don't need to check manually whether it's done.
+
+If you have still activated the acoustic bell, you probably hate that feature.
+Switch it off in that case:
+```
+set -U barracuda_nobell
+```
+#### Termux Backup
+
+With this function it's possible to perdorm a full backup of system and user's files.
+
+To create a new backup type:
+```
+termux-backup -c <or> --create [file_name]
+```
+
+To list existing backups use:
+```
+termux-backup -l <or> --list
+```
+![screenshot](https://raw.githubusercontent.com/meverss/barracuda/master/images/screenshot_l.jpg)
+
+To delete an existing backup:
+```
+termux-backup -d <or> --delete
+```
+![screenshot](https://raw.githubusercontent.com/meverss/barracuda/master/images/screenshot_d.jpg)
+To show help:
+```
+termux-backup -h <or> --help
+```
+
+Unfortunately this function can only perform backups. Restores have to be decompressed and copied manually.
+
+<details>
+<summary>TODO</summary>
+
+* Add option to restore backups
+* Add support for more languages
+</details>
+
+[THEMES-NAMESPACE-barracuda-font]: https://github.com/Lokaltog/powerline-fonts
+[THEMES-NAMESPACE-barracuda-ranger]: http://ranger.nongnu.org/
+[THEMES-NAMESPACE-barracuda-remind]: http://www.roaringpenguin.com/products/remind
+[fish-git]: https://github.com/fish-shell/fish-shell.git
+[fish-nightly]: https://github.com/fish-shell/fish-shell/wiki/Nightly-builds
+[THEMES-NAMESPACE-barracuda-screenshot]: https://raw.githubusercontent.com/tannhuber/media/master/budspencer.jpg
+[THEMES-NAMESPACE-barracuda-colors]: https://raw.githubusercontent.com/tannhuber/media/master/budspencer_replace_colors.jpg
+[THEMES-NAMESPACE-barracuda-pwdstyle]: https://raw.githubusercontent.com/tannhuber/media/master/budspencer_pwd_style.jpg
+
+
 # [batman](https://github.com/oh-my-fish/theme-batman)
 <img src="https://dl.dropboxusercontent.com/u/56336/omf/omf-logo-optimised.svg" align="left" width="144px" height="144px"/>
 
@@ -308,11 +586,11 @@ TODO:
 # [bobthefish](https://github.com/oh-my-fish/theme-bobthefish)
 ### bobthefish
 
-`bobthefish` is a Powerline-style, Git-aware [fish][THEMES-NAMESPACE-bobthefish-fish] theme optimized for awesome.
+`bobthefish` is a Powerline-style, Git-aware [fish][btf-fish] theme optimized for awesome.
 
 [![Oh My Fish](https://img.shields.io/badge/Framework-Oh_My_Fish-blue.svg?style=flat)](https://github.com/oh-my-fish/oh-my-fish) [![MIT License](https://img.shields.io/github/license/oh-my-fish/theme-bobthefish.svg?style=flat)](/LICENSE.md)
 
-![bobthefish][THEMES-NAMESPACE-bobthefish-screencast]
+![bobthefish][btf-screencast]
 
 
 ##### Installation
@@ -321,15 +599,15 @@ Be sure to have Oh My Fish installed. Then just:
 
     omf install bobthefish
 
-You will need a [Powerline-patched font][THEMES-NAMESPACE-bobthefish-patching] for this to work, unless you enable the compatibility fallback option:
+You will need a [Powerline-patched font][btf-patching] for this to work, unless you enable the compatibility fallback option:
 
     set -g theme_powerline_fonts no
 
-[I recommend picking one of these][THEMES-NAMESPACE-bobthefish-fonts]. For more advanced awesome, install a [nerd fonts patched font][nerd-fonts], and enable nerd fonts support:
+[I recommend picking one of these][btf-fonts]. For more advanced awesome, install a [nerd fonts patched font][btf-nerd-fonts], and enable nerd fonts support:
 
     set -g theme_nerd_fonts yes
 
-This theme is based loosely on [agnoster][THEMES-NAMESPACE-bobthefish-agnoster].
+This theme is based loosely on [agnoster][btf-agnoster].
 
 
 ##### Features
@@ -355,7 +633,7 @@ This theme is based loosely on [agnoster][THEMES-NAMESPACE-bobthefish-agnoster].
  * Current RVM, rbenv or chruby (Ruby) version
  * Current virtualenv (Python) version
      * _If you use virtualenv, you will probably need to disable the default virtualenv prompt, since it doesn't play nice with fish: `set -x VIRTUAL_ENV_DISABLE_PROMPT 1`_
- * Current NVM version (Nodejs) (inactive by default; see configurations in the next paragraph)
+ * Current NVM/FNM version (Nodejs) (inactive by default; see configurations in the next paragraph)
  * Abbreviated parent directory
  * Current directory, or Git or Mercurial project name
  * Current project's repo branch (<img width="16" alt="branch-glyph" src="https://cloud.githubusercontent.com/assets/53660/8768360/53ee9b58-2e32-11e5-9977-cee0063936fa.png"> master) or detached head (`➦` d0dfd9b)
@@ -393,7 +671,7 @@ set -g theme_display_hg yes
 set -g theme_display_virtualenv no
 set -g theme_display_nix no
 set -g theme_display_ruby no
-set -g theme_display_nvm yes
+set -g theme_display_node yes
 set -g theme_display_user ssh
 set -g theme_display_hostname ssh
 set -g theme_display_vi no
@@ -432,7 +710,7 @@ set -g theme_newline_prompt '$ '
 **Prompt options**
 
 - `theme_display_ruby`. Use `no` to completely hide all information about Ruby version. By default Ruby version displayed if there is the difference from default settings.
-- `theme_display_nvm`. If set to `yes`, will display current NVM node version.
+- `theme_display_node`. If set to `yes`, will display current NVM or FNM node version.
 - `theme_display_vagrant`. This feature is disabled by default, use `yes` to display Vagrant status in your prompt. Please note that only the VirtualBox and VMWare providers are supported.
 - `theme_display_vi`. By default the vi mode indicator will be shown if vi or hybrid key bindings are enabled. Use `no` to hide the indicator, or `yes` to show the indicator.
 - `theme_display_k8s_context`. This feature is disabled by default. Use `yes` to show the current kubernetes context (`> kubectl config current-context`).
@@ -452,12 +730,12 @@ set -g theme_newline_prompt '$ '
 
 **Color scheme options**
 
-| ![dark][dark]           | ![light][THEMES-NAMESPACE-bobthefish-light]                     |
-| ----------------------- | ----------------------------------- |
-| ![solarized][THEMES-NAMESPACE-bobthefish-solarized] | ![solarized-light][solarized-light] |
-| ![base16][THEMES-NAMESPACE-bobthefish-base16]       | ![base16-light][base16-light]       |
-| ![zenburn][THEMES-NAMESPACE-bobthefish-zenburn]     | ![terminal-dark][terminal-dark]     |
-| ![nord][THEMES-NAMESPACE-bobthefish-nord]           |                                     |
+| ![dark][btf-dark]           | ![light][btf-light]                     |
+| --------------------------- | --------------------------------------- |
+| ![solarized][btf-solarized] | ![solarized-light][btf-solarized-light] |
+| ![base16][btf-base16]       | ![base16-light][btf-base16-light]       |
+| ![zenburn][btf-zenburn]     | ![terminal-dark][btf-terminal-dark]     |
+| ![nord][btf-nord]           |                                         |
 
 You can use the function `bobthefish_display_colors` to preview the prompts in
 any color scheme.
@@ -538,22 +816,22 @@ end
 ```
 
 
-[THEMES-NAMESPACE-bobthefish-fish]:       https://github.com/fish-shell/fish-shell
-[THEMES-NAMESPACE-bobthefish-screencast]: https://cloud.githubusercontent.com/assets/53660/18028510/f16f6b2c-6c35-11e6-8eb9-9f23ea3cce2e.gif
-[THEMES-NAMESPACE-bobthefish-patching]:   https://powerline.readthedocs.org/en/master/installation.html#patched-fonts
-[THEMES-NAMESPACE-bobthefish-fonts]:      https://github.com/Lokaltog/powerline-fonts
-[nerd-fonts]: https://github.com/ryanoasis/nerd-fonts
-[THEMES-NAMESPACE-bobthefish-agnoster]:   https://gist.github.com/agnoster/3712874
+[btf-fish]:       https://github.com/fish-shell/fish-shell
+[btf-screencast]: https://cloud.githubusercontent.com/assets/53660/18028510/f16f6b2c-6c35-11e6-8eb9-9f23ea3cce2e.gif
+[btf-patching]:   https://powerline.readthedocs.org/en/master/installation.html#patched-fonts
+[btf-fonts]:      https://github.com/Lokaltog/powerline-fonts
+[btf-nerd-fonts]: https://github.com/ryanoasis/nerd-fonts
+[btf-agnoster]:   https://gist.github.com/agnoster/3712874
 
-[THEMES-NAMESPACE-bobthefish-dark]:            https://cloud.githubusercontent.com/assets/53660/16141569/ee2bbe4a-3411-11e6-85dc-3d9b0226e833.png "dark"
-[THEMES-NAMESPACE-bobthefish-light]:           https://cloud.githubusercontent.com/assets/53660/16141570/f106afc6-3411-11e6-877d-fc2a8f6d3175.png "light"
-[THEMES-NAMESPACE-bobthefish-solarized]:       https://cloud.githubusercontent.com/assets/53660/16141572/f7724032-3411-11e6-8771-b43769e7afec.png "solarized"
-[solarized-light]: https://cloud.githubusercontent.com/assets/53660/16141575/fbed8036-3411-11e6-92e9-90da6d45f94b.png "solarized-light"
-[THEMES-NAMESPACE-bobthefish-base16]:          https://cloud.githubusercontent.com/assets/53660/16141577/0134763a-3412-11e6-9cca-6040d39c8fd4.png "base16"
-[base16-light]:    https://cloud.githubusercontent.com/assets/53660/16141579/02f7245e-3412-11e6-97c6-5f3cecffb73c.png "base16-light"
-[THEMES-NAMESPACE-bobthefish-zenburn]:         https://cloud.githubusercontent.com/assets/53660/16141580/06229dd4-3412-11e6-84aa-a48de127b6da.png "zenburn"
-[terminal-dark]:   https://cloud.githubusercontent.com/assets/53660/16141583/0b3e8eea-3412-11e6-8068-617c5371f6ea.png "terminal-dark"
-[THEMES-NAMESPACE-bobthefish-nord]:            https://user-images.githubusercontent.com/39213657/72811435-f64ca800-3c5f-11ea-8711-dcce8cfc50fb.png "nord"
+[btf-dark]:            https://cloud.githubusercontent.com/assets/53660/16141569/ee2bbe4a-3411-11e6-85dc-3d9b0226e833.png "dark"
+[btf-light]:           https://cloud.githubusercontent.com/assets/53660/16141570/f106afc6-3411-11e6-877d-fc2a8f6d3175.png "light"
+[btf-solarized]:       https://cloud.githubusercontent.com/assets/53660/16141572/f7724032-3411-11e6-8771-b43769e7afec.png "solarized"
+[btf-solarized-light]: https://cloud.githubusercontent.com/assets/53660/16141575/fbed8036-3411-11e6-92e9-90da6d45f94b.png "solarized-light"
+[btf-base16]:          https://cloud.githubusercontent.com/assets/53660/16141577/0134763a-3412-11e6-9cca-6040d39c8fd4.png "base16"
+[btf-base16-light]:    https://cloud.githubusercontent.com/assets/53660/16141579/02f7245e-3412-11e6-97c6-5f3cecffb73c.png "base16-light"
+[btf-zenburn]:         https://cloud.githubusercontent.com/assets/53660/16141580/06229dd4-3412-11e6-84aa-a48de127b6da.png "zenburn"
+[btf-terminal-dark]:   https://cloud.githubusercontent.com/assets/53660/16141583/0b3e8eea-3412-11e6-8068-617c5371f6ea.png "terminal-dark"
+[btf-nord]:            https://user-images.githubusercontent.com/39213657/72811435-f64ca800-3c5f-11ea-8711-dcce8cfc50fb.png "nord"
 
 
 # [bongnoster](https://github.com/kfkonrad/bongnoster-fish-theme)
@@ -3737,6 +4015,74 @@ Once Oh My Fish is installed:
  * Fish shell vi mode indicator
  * Next line prompt
  * Two unicodes included!
+
+
+# [solarfish](https://github.com/MrSiliconGuy/theme-solarfish)
+<img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="144px" height="144px"/>
+
+###### theme-solarfish
+> A simple, git-aware, two-line theme for [Oh My Fish][omf-link]. Based off of [simple-ass-prompt](https://github.com/lfiolhais/theme-simple-ass-prompt) and optimized for [solarized](https://ethanschoonover.com/solarized/).
+
+[![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
+[![Fish Shell Version](https://img.shields.io/badge/fish-v3.0.0-007EC7.svg?style=flat-square)](https://fishshell.com)
+[![Oh My Fish Framework](https://img.shields.io/badge/Oh%20My%20Fish-Framework-007EC7.svg?style=flat-square)](https://www.github.com/oh-my-fish/oh-my-fish)
+
+<br/>
+
+
+#### Install
+
+```fish
+$ omf install theme-solarfish
+```
+
+
+#### Features
+
+- Easy to read prompt, based directly on the bash default prompt
+- Long, short, and current folder directory options
+- Timestamp option
+- Git repository status:
+  - ahead "↑"
+  - behind "↓"
+  - diverged "⥄ "
+  - dirty "*"
+- Previous command status
+- Special greeting prompt if `cowsay` is installed!
+
+
+#### Screenshot
+
+<p align="center">
+<img src="./screenshot.png">
+</p>
+
+#### Configuration
+
+Add any of the following lines to
+`~/.config/fish/config.fish`
+
+```fish
+### Displays the timestamp in the prompt
+set -g theme_show_time yes
+
+### Uses a short directory path name
+set -g theme_short_path yes
+
+### Displays only the current folder name
+set -g theme_current_folder_path yes
+```
+
+### License
+
+[MIT][mit] © [thesilican][THEMES-NAMESPACE-solarfish-author]
+
+
+[THEMES-NAMESPACE-solarfish-mit]:            https://opensource.org/licenses/MIT
+[THEMES-NAMESPACE-solarfish-author]:         https://github.com/thesilican
+[omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
+
+[license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 
 
 # [spacefish](https://github.com/matchai/spacefish)
