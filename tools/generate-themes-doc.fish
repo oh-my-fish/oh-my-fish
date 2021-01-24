@@ -54,20 +54,19 @@ function __write_toc
   echo "Creating a $table_rows-row table" >&2
   echo "<details>" >> $temp_theme_toc
   echo "<summary><big><strong>Expand for a table of themes</strong></big></summary>" >> $temp_theme_toc
-  echo "<table>" >> $temp_theme_toc
-  for row in (seq $table_rows)
-    echo "<tr>" >> $temp_theme_toc
-    for col in (seq $TOC_TBL_COLS)
-      set -l idx (math "($col - 1) * $table_rows + $row")
-      test -z "$argv[$idx]"
-        and echo "  <td>&nbsp;</td>" >> $temp_theme_toc
-        and continue
-      set -l name (basename $argv[$idx])
-      echo "  <td><a href=\"#$name\">$name</a></td>" >> $temp_theme_toc
-    end
-    echo "</tr>" >> $temp_theme_toc
+  echo "<table><tr><td>" >> $temp_theme_toc
+  set -l i 0
+  for i in (seq (math "$table_rows x $TOC_TBL_COLS"))
+    test -z "$argv[$i]"
+      and echo "  <br/>" >> $temp_theme_toc
+      and continue
+    set -l name (basename $argv[$i])
+    echo "  <a href=\"#$name\">$name</a><br/>" >> $temp_theme_toc
+    test (math "$i % $table_rows") = 0
+      and test $i != $total
+      and echo "</td><td>" >> $temp_theme_toc
   end
-  echo "</table>" >> $temp_theme_toc
+  echo "</td></tr></table>" >> $temp_theme_toc
   echo "</details>" >> $temp_theme_toc
   echo -e "\n***" >> $temp_theme_toc
 end
