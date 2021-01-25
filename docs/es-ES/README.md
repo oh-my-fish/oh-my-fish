@@ -1,7 +1,7 @@
 <img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="192px" height="192px"/>
 <img align="left" width="0" height="192px" hspace="10"/>
 
-> El _framework_ de <a href="http://fishshell.com">Fishshell</a> 
+> El _framework_ de <a href="http://fishshell.com">Fishshell</a>
 
 [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE) [![Fish Shell Version](https://img.shields.io/badge/fish-≥v2.2.0-007EC7.svg?style=flat-square)](http://fishshell.com) [![Travis Build Status](http://img.shields.io/travis/oh-my-fish/oh-my-fish.svg?style=flat-square)](https://travis-ci.org/oh-my-fish/oh-my-fish) [![Slack Status](https://oh-my-fish-slack.herokuapp.com/badge.svg)](https://oh-my-fish-slack.herokuapp.com)
 
@@ -24,10 +24,10 @@ sencillo de utilizar.
 * [Comenzando (descripciones de los comandos)](#comenzando)
 * [Avanzado](#avanzado)
   * [Inicio](#inicio)
-  * [Archivos de configuración (Dotfiles)](#dotfiles)
+  * [Archivos de configuración (Dotfiles)](#archivos-de-configuraci%C3%B3n-dotfiles)
 * [Creando paquetes](#creando-paquetes)
 
-## Instalación 
+## Instalación
 
 Puede comenzar de inmediato con la configuración predeterminada ejecutando lo siguiente en su terminal:
 
@@ -42,13 +42,13 @@ curl -L https://get.oh-my.fish > install
 fish install --path=~/.local/share/omf --config=~/.config/omf
 ```
 
-Puede verificar la integridad del instalador descargado comprobando el script con esta [suma de verificación](bin/install.sha256):
+Puede verificar la integridad del instalador descargado comprobando el script con esta [suma de verificación](/bin/install.sha256):
 
 ```
-434264c56e3a7bb74733d9b293d72403c404e0a0bded3e632433d391d302504e  install
+bb1f4025934600ea6feef2ec11660e17e2b6449c5a23c033860aed712ad328c9  install
 ```
 
-También puede insatalar Oh My Fish mediante Git o con un archivo tarball descargado desde la [página de publicaciones][releases]:
+También puede insatalar Oh My Fish mediante Git o con un archivo tarball descargado desde la [página de publicaciones][/releases]:
 
 ```fish
 # with git
@@ -65,7 +65,7 @@ Ejecute `install --help` para obtener una lista completa de opciones de instalac
 #### Requisitos
 
 - **fish** shell, versión 2.2 o posterior
-- **git**, versión 1.9.5 o posterior 
+- **git**, versión 1.9.5 o posterior
 
 #### Problemas conocidos
 
@@ -74,7 +74,7 @@ Ejecute `install --help` para obtener una lista completa de opciones de instalac
   (ver [#541](https://github.com/oh-my-fish/oh-my-fish/issues/541))
 
 
-## Comenzando 
+## Comenzando
 
 Oh My Fish incluye una pequeña utilidad `omf` para extraer e instalar nuevos paquetes y temas.
 
@@ -92,7 +92,7 @@ Actualiza Oh My Fish, todos los paquetes de los repositorios y todos los paquete
 Instala uno _o más_ paquetes.
 
 - Puede instalar paquetes directamente con la URL mediante `omf install URL`
-- Cuando es ejecutado sin argumentos, instala paquetes faltantes desde [bundle](#dotfiles).
+- Cuando es ejecutado sin argumentos, instala paquetes faltantes desde [bundle](#archivos-de-configuraci%C3%B3n-dotfiles).
 
 #### `omf repositories` _`[list|add|remove]`_
 
@@ -149,7 +149,7 @@ Utilizar para diagnosticar un error antes de [abrir un _issue_][omf-issues-new].
 
 Desinstala Oh My Fish.
 
-## Avanzado 
+## Avanzado
 
 El instalador de Oh My Fish añade un fragmento a los archivos de configuración de fish del usuario (`~/.config/fish/conf.d/`) que llama al código de
 arranque de OMF.
@@ -163,10 +163,10 @@ Así que si `a_script.fish` depende de complementos gestionados por OMF, conside
 De manera similar, para asegurarse que un script se ejecuta antes de `omf.fish`, debería añadirle el prefijo `00_`.
 De manera alternativa también se puede utilizar `~/.config/omf/before.init.fish`.
 
-### Inicio 
+### Inicio
 
 Cada vez que abre una nueva shell, el código de inicio inicializa la ruta de instalación y la ruta de configuración de Oh My Fish (`~/.config/omf` de manera
-predeterminada), ejecutando el script [`init.fish`](init.fish) posteriormente, que carga de manera automática los paquetes, temas y sus ficheros
+predeterminada), ejecutando el script [`init.fish`](/init.fish) posteriormente, que carga de manera automática los paquetes, temas y sus ficheros
 personalizados de inicio.
 
 Para más información puede consultar la sección de preguntas frecuentes [FAQ](FAQ.md#qué-hace-oh-my-fish-exactamente).
@@ -195,14 +195,14 @@ sesión de la shell. Para conseguir esto, es necesario definirlas de manera glob
 # Los desarrolladore de Golang quizás necesitan esto
 set -xg GOPATH $HOME/gocode
 
-# En cambio los desarrolladores de Python 
+# En cambio los desarrolladores de Python
 set -xg PYTHONDONTWRITEBYTECODE 1
 ```
 
 #### Acerca de bundle
 
 Cada vez que un paquete/tema es instalado o eliminado, el archivo `bundle` es actualizado. También puedes editarlo manualmente y después ejecutar `omf
-install` para tomar en cuenta los cambios realizados. Por favor tenga en cuenta que mientras que los paquetes/temas añadidos a _bundle_ son 
+install` para tomar en cuenta los cambios realizados. Por favor tenga en cuenta que mientras que los paquetes/temas añadidos a _bundle_ son
 instalados automáticamente, un paquete/tema eliminado de _bundle_ no es eliminado de la instalación del usuario.
 
 #### Versiones antiguas de fish
