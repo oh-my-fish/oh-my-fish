@@ -1,8 +1,8 @@
-Install and list themes.
+Activate and list available themes.
 
 == USAGE
-  omf theme         List available themes to install
-  omf theme <name>  Install theme by name
+  omf theme         List available and installed themes
+  omf theme <name>  Activate theme by name
 
 == EXAMPLES
   omf theme
