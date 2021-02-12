@@ -20,7 +20,7 @@ Provides options to list, download and remove packages, update the framework, cr
 <<remove.adoc#,**r**emove>>::        Remove a package.
 <<repositories.adoc#,**repo**sitories>>::  Manage package repositories.
 <<search.adoc#,**s**earch>>::        Search for a package or theme.
-<<theme.adoc#,**t**heme>>::         Install and list themes.
+<<theme.adoc#,**t**heme>>::         Activate and list available themes.
 <<update.adoc#,**u**pdate>>::        Update Oh My Fish.
 <<version.adoc#,**version**>>::       Display version and exit.
 

@@ -45,6 +45,6 @@ complete -c omf -f -n "__fish_seen_subcommand_from repo repositories; and __omf_
 complete -c omf -f -n "__fish_seen_subcommand_from repo repositories; and __omf_assert_args_count 1" -a list -d "List installed repositories"
 complete -c omf -f -n "__fish_seen_subcommand_from repo repositories; and __omf_assert_args_count 1" -a remove -d "Remove a package repository"
 complete -c omf -f -a search   -n "__fish_use_subcommand" -d "Search for a plugin or theme"
-complete -c omf -f -a theme    -n "__fish_use_subcommand" -d "Install and list themes"
+complete -c omf -f -a theme    -n "__fish_use_subcommand" -d "Activate and list available themes"
 complete -c omf -f -a update   -n "__fish_use_subcommand" -d "Update Oh My Fish"
 complete -c omf -f -a version  -n "__fish_use_subcommand" -d "Display version"

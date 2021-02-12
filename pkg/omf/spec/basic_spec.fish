@@ -18,7 +18,7 @@ function describe_basic_tests
     echo $output | grep -Eq "remove.+Remove a package"
     echo $output | grep -Eq "repositories.+Manage package repositories"
     echo $output | grep -Eq "search.+Search for a package or theme"
-    echo $output | grep -Eq "theme.+Install and list themes"
+    echo $output | grep -Eq "theme.+Activate and list available themes"
     echo $output | grep -Eq "update.+Update Oh My Fish"
     echo $output | grep -Eq "version.+Display version and exit"
     assert 0 = $status
