@@ -16,12 +16,10 @@ function omf.packages.install -a name_or_url
     set name $name_or_url
     set url $props[2]
     set branch $props[3]
-    if test -z "$branch"
-      set branch "master"
-    end
   else
     set name (omf.packages.name $name_or_url)
     set url $name_or_url
+    set branch ""
   end
 
   if contains -- $name (omf.packages.list)
