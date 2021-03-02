@@ -86,11 +86,12 @@ Update Oh My Fish, all package repositories, and all installed packages.
 - For selective package update, list only the names of packages you wish to
   update. You may still include "omf" in the list to update the core as well.
 
-#### `omf install` _`[<name>|<url>]`_
+#### `omf install` _`[<name>|<url>|<user/repo>]`_
 
 Install one _or more_ packages.
 
 - You can install packages directly by URL via `omf install URL`
+- You can install packages from a GitHub repository via `omf install user/repo`
 - When called without arguments, install missing packages from [bundle](#dotfiles).
 
 #### `omf repositories` _`[list|add|remove]`_
@@ -107,7 +108,7 @@ Apply a theme. To list available themes, type `omf theme`. You can also [preview
 
 #### `omf remove` _`<name>`_
 
-Remove a theme or package.
+Remove a theme or package. If a package was installed via `user/repo`, use `repo` for `name`.
 
 > Packages can use uninstall hooks, so custom cleanup of resources can be done when uninstalling it. See [Uninstall](/docs/en-US/Packages.md#uninstall) for more information.
 
