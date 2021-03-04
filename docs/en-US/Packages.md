@@ -120,6 +120,7 @@ Inside this hook, you can access two package-related variables:
 Packages can use this hook to clean up custom resources, etc.
 
 > Note: for backwards-compatibility, uninstall hooks will also be run if they are located at `uninstall.fish` in the package root.
+> Hooks may also be triggered by listening for the event `{$package}_uninstall` or `uninstall_$package`.
 
 # Make it public
 

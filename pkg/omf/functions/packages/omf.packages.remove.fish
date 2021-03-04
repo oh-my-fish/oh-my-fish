@@ -17,8 +17,11 @@ function omf.packages.remove -a pkg
 
     # Run uninstall hook first.
     omf.packages.run_hook $path uninstall
-    source $path/uninstall.fish 2> /dev/null;
-      and emit uninstall_$pkg
+    if test -f $path/uninstall.fish
+      source $path/uninstall.fish 2> /dev/null
+    end
+    emit uninstall_$pkg
+    emit {$pkg}_uninstall
 
     if command rm -rf $path
       omf.bundle.remove "package" $pkg
