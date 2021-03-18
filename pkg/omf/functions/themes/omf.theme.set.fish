@@ -26,7 +26,7 @@ function omf.theme.set -a target_theme
   autoload $theme_path
 
   # Find target theme's fish_prompt and link to user function path
-  for path in {$OMF_CONFIG,$OMF_PATH}/themes/$target_theme/$prompt_filename
+  for path in {$OMF_CONFIG,$OMF_PATH}/themes/$target_theme/{,functions/}$prompt_filename
     if test -e $path
       ln -sf $path $user_functions_path/$prompt_filename; and break
     end
