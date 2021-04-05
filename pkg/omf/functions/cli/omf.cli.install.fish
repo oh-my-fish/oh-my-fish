@@ -14,8 +14,11 @@ function omf.cli.install
         and require $package
 
       # If package is a theme, set it to active.
-      if contains -- $package (omf.packages.list --theme)
+      set -l themes (omf.packages.list --theme)
+      if contains -- $package $themes
         omf.theme.set $package
+      else if set -l ind (contains -i -- (omf.packages.name $package) $themes)
+        omf.theme.set $themes[$ind]
       end
 
       test $status != 0;
