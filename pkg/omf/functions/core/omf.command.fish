@@ -10,6 +10,8 @@ function omf.command -d 'Lookup OMF command by name or alias' -a name
       echo destroy
     case 'doctor'
       echo doctor
+    case 'f' 'functions'
+      echo functions
     case 'help'
       echo help
     case 'i' 'in' 'install' 'get'
