@@ -227,7 +227,7 @@ function install_offline
 
     mkdir -p "$OMF_PATH"
 
-    command tar -xf "$OFFLINE_PATH" -C "$OMF_PATH"
+    command tar -xf "$OFFLINE_PATH" -C "$OMF_PATH" --strip-components=1
       or abort "Could not extract tar file $OFFLINE_PATH"
 
     return
