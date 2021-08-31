@@ -21,7 +21,7 @@ function omf.cli.theme -a name
     end
   case '*'
     echo (omf::err)"Invalid number of arguments"(omf::off) >&2
-    echo "Usage: $_ "(omf::em)"$argv[1]"(omf::off)" [<theme name>]" >&2
+    echo "Usage: $_ "(omf::em)"t"(omf::off)"heme [<theme name>]" >&2
     return $OMF_INVALID_ARG
   end
 end
