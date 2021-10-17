@@ -456,7 +456,7 @@ function sane_environment_check
   debug "Checking for a sane 'head' implementation"
   set -l result (printf 'a\nb\n' | cmd head -n 1)
     and test "$result" = 'a'
-    or abort (which head)" is not a sane 'head' implementation"
+    or abort (command -v head)" is not a sane 'head' implementation"
 
   debug "Checking for a sane 'sort' implementation"
   set -l result (printf '1.2.3\n2.2.4\n1.2.4\n' | cmd sort -r -n -t '.' -k 1,1 -k 2,2 -k 3,3 -k 4,4)
@@ -464,12 +464,12 @@ function sane_environment_check
     and test "$result[1]" = 2.2.4
     and test "$result[2]" = 1.2.4
     and test "$result[3]" = 1.2.3
-    or abort (which sort)" is not a sane 'sort' implementation"
+    or abort (command -v sort)" is not a sane 'sort' implementation"
 
   debug "Checking for a working AWK interpreter"
   cmd awk 'BEGIN{exit 42;}' < /dev/null 2> /dev/null
   if not test $status -eq 42
-    abort (which awk)" does not look like an AWK interpreter."
+    abort (command -v awk)" does not look like an AWK interpreter."
   end
 
   assert_fish_version_compatible 2.2.0
@@ -477,7 +477,7 @@ function sane_environment_check
 
   debug "Verifying Git implementation is not buggy Git for Windows"
   if cmd git --version | cmd grep -i -q windows
-    abort (which git)" is Git for Windows which is not supported."
+    abort (command -v git)" is Git for Windows which is not supported."
   end
 
   debug "Verifying Git autocrlf is not enabled"
@@ -558,13 +558,13 @@ end
 
 # Assert that all tools we need are available.
 function assert_cmds
-  set -l cmds awk basename cp cut date dirname env fish fold head mkdir mv readlink rm sed sort tar tr which
+  set -l cmds awk basename cp cut date dirname env fish fold head mkdir mv readlink rm sed sort tar tr
 
   for cmd in $cmds
     type -f $cmd > /dev/null 2> /dev/null
       or abort "Missing required command: $cmd"
 
-    debug "Command '$cmd' is "(which $cmd)
+    debug "Command '$cmd' is "(command -v $cmd)
   end
 end
 
