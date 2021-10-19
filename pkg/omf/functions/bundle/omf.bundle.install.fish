@@ -20,6 +20,7 @@ function omf.bundle.install
 
       if not contains $name $packages
         omf.packages.install $name_or_url;
+          and require $name_or_url
           or set error
       end
     end
