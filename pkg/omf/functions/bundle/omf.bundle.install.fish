@@ -20,14 +20,10 @@ function omf.bundle.install
       
       if not contains $name $packages
         omf.packages.install $name_or_url;
-        
-          # require if not a theme
-          and begin 
-            test $type = package; and begin
-              require $name
-                or echo "Failed to require $name"
-            end
-            or echo "Skipped require $name"
+          and begin
+            test $type = package
+              and require $name
+              or echo "Failed to require package: $name"
           end
           or set error
       end
