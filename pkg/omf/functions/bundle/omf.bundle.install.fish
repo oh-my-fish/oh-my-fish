@@ -22,8 +22,11 @@ function omf.bundle.install
         omf.packages.install $name_or_url;
           and begin
             test $type = package
-              and require $name
-              or echo "Failed to require package: $name"
+              and begin
+                require $name
+                  or echo "Failed to Require $package"
+              end
+              or true
           end
           or set error
       end
