@@ -17,7 +17,6 @@ function omf.bundle.install
       test -n "$name_or_url"; or continue
 
       set name (omf.packages.name $name_or_url)
-      
       if not contains $name $packages
         omf.packages.install $name_or_url;
           and begin
