@@ -54,3 +54,6 @@ for conf in $theme_conf_path/*.fish
   source $conf
 end
 emit perf:timer:finish "Oh My Fish initialisation"
+function config
+  cd ~/.config/fish/ $argv
+end
