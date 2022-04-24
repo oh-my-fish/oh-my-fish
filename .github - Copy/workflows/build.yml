@@ -1,0 +1,47 @@
+name: Build
+on:
+  push:
+    paths-ignore:
+      - '**.md'
+  pull_request:
+    paths-ignore:
+      - '**.md'
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-18.04
+          - ubuntu-latest
+        fish:
+          - stock
+          - 2
+          - 3
+          - brew
+        exclude:
+          - os: ubuntu-20.04
+            fish: 2
+          - os: ubuntu-latest
+            fish: 2
+        include:
+          - os: macos-latest
+            fish: brew
+          - os: macos-11
+            fish: brew
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+
+      - name: Install Fish
+        run: FISH_RELEASE=${{ matrix.fish }} tools/ci-install-fish.sh
+
+      - name: Install Oh My Fish!
+        run: fish bin/install --verbose --offline --noninteractive --yes
+
+      - name: Run tests
+        run: |
+          tests/run.fish
+          pushd pkg/fish-spec; fish -c 'fish-spec'; popd
+          pushd pkg/omf; fish -c 'fish-spec'; popd

@@ -1,0 +1,16 @@
+Show help text about Oh My Fish.
+
+== USAGE
+  omf help [<command>]
+  omf <command> --help
+  omf <command> -h
+
+== DESCRIPTION
+If no arguments are given, the usage guide for the *omf* command will be printed to standard output.
+
+If <command> is specified, the usage guide for <command> will be displayed. If <command> is an alias, it will be translated into the corresponding command.
+
+== EXAMPLES
+To display the text you are currently reading, you can run:
+
+  omf help help

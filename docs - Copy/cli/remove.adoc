@@ -1,0 +1,14 @@
+Remove a package.
+
+== USAGE
+  omf remove <package>
+
+== DESCRIPTION
+Removes an installed package identified by <package>.
+
+== EXAMPLES
+  omf remove brew
+  omf remove l
+
+== ALIASES
+*omf r*, *omf rm*, *omf uninstall*

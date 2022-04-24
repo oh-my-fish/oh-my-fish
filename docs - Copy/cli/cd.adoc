@@ -1,0 +1,10 @@
+Change directory to root or package directory.
+
+== USAGE
+  omf cd                Change to Oh My Fish root folder
+  omf cd <package>      Change to package directory by name
+
+== EXAMPLES
+  omf cd
+  omf cd brew
+  omf cd l

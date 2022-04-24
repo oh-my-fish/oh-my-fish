@@ -1,0 +1,2 @@
+# Ensure Fish scripts always use LF line endings, otherwise multiline commands break.
+*.fish text eol=lf

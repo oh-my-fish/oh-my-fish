@@ -1,0 +1,14 @@
+Create a new package from a template.
+
+== USAGE
+  omf new (_plugin_ | _theme_) <name>
+
+== DESCRIPTION
+Creates a new package skeleton under `$OMF_CONFIG` named <name>. The type of package is determined by the first argument.
+
+== EXAMPLES
+  omf new plugin myplugin
+  omf new theme mytheme
+
+== ALIASES
+*omf n*

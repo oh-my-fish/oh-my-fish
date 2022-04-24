@@ -1,0 +1,9 @@
+Reload the current shell.
+
+== USAGE
+  omf reload
+
+== DESCRIPTION
+Reload Oh My Fish and all plugins by using `exec` to replace current shell process with a brand new process.
+
+This command tries to be as safe as possible, mitigating side-effects caused by exec and preventing the reload in case of background processes.
