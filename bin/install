@@ -54,13 +54,13 @@ Options:
         set -g OMF_CHANNEL dev
 
       case '--channel=*'
-        abort "Unknown release channel \""(echo "$argv[1]" | command cut -d= -f2)"\"."
+        abort "Unknown release channel \""(echo "$argv[1]" | command cut -d= -f2-)"\"."
 
       case --check
         set -g CHECK_ONLY
 
       case '--config=*'
-        echo "$argv[1]" | command cut -d= -f2 | command sed -e "s#~#$HOME#" | read -g OMF_CONFIG
+        echo "$argv[1]" | command cut -d= -f2- | command sed -e "s#~#$HOME#" | read -g OMF_CONFIG
 
       case --noninteractive
         set -g NONINTERACTIVE
@@ -70,10 +70,10 @@ Options:
 
       case '--offline=*'
         set -g OFFLINE
-        echo "$argv[1]" | command cut -d= -f2 | command sed -e "s#~#$HOME#" | read -g OFFLINE_PATH
+        echo "$argv[1]" | command cut -d= -f2- | command sed -e "s#~#$HOME#" | read -g OFFLINE_PATH
 
       case '--path=*'
-        echo "$argv[1]" | command cut -d= -f2 | command sed -e "s#~#$HOME#" | read -g OMF_PATH
+        echo "$argv[1]" | command cut -d= -f2- | command sed -e "s#~#$HOME#" | read -g OMF_PATH
 
       case --uninstall
         set -g UNINSTALL
