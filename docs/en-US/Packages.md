@@ -52,6 +52,9 @@ Each function in your package must be declared in its own file under `functions`
 
 Bear in mind that fish lacks a private scope, so if you need to split your package into functions,  avoid name clashes prefixing your functions with something unique -- like your package name (e.g. `hello_world_print_help`). To avoid polluting command namespace, consider prefixing private functions with two underscores (e.g. `__function_name_print_help`).
 
+### Tip: [See Instructions](https://github.com/oh-my-fish/oh-my-fish/issues/906#issuecomment-1159821990) to reload your plugin during development
+
+
 # Hooks
 
 Oh My Fish provides a "hooks" system that allows you to write scripts for your package that run when other interesting events occur. Packages can use these hooks to provide advanced installation, custom resource management, etc. Hooks are ordinary Fish scripts named after the event they are triggered by. Most hooks reside in a `hooks` directory inside a package's project directory.
