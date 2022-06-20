@@ -1,10 +1,10 @@
 function omf.repo.pull -a repo_dir branch
-  if test -z "$branch"
-    set branch "master"
-  end
-
   function __omf.repo.git -V repo_dir
     command git -C "$repo_dir" $argv
+  end
+
+  if test -z "$branch"
+    set branch (__omf.repo.git symbolic-ref -q --short HEAD)
   end
 
   set -l remote origin
