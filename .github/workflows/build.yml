@@ -30,6 +30,8 @@ jobs:
             fish: brew
           - os: macos-11
             fish: brew
+          - os: macos-12
+            fish: brew
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout the repository
