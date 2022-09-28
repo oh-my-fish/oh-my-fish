@@ -34,6 +34,12 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v2
 
+      - name: Add brew to path for Ubuntu
+        if: startsWith(matrix.os, 'ubuntu') && matrix.fish == 'brew'
+        run: |
+          echo "/home/linuxbrew/.linuxbrew/bin" >> $GITHUB_PATH
+          echo "/home/linuxbrew/.linuxbrew/sbin" >> $GITHUB_PATH
+
       - name: Install Fish
         run: FISH_RELEASE=${{ matrix.fish }} tools/ci-install-fish.sh
 
