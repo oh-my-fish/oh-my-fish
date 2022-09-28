@@ -33,7 +33,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout the repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Add brew to path for Ubuntu
         if: startsWith(matrix.os, 'ubuntu') && matrix.fish == 'brew'
