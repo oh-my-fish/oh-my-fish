@@ -1,54 +1,53 @@
 <img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="192px" height="192px"/>
 <img align="left" width="0" height="192px" hspace="10"/>
 
-> The <a href="http://fishshell.com">Fishshell</a> Framework
+> Kerangka kerja untuk<a href="http://fishshell.com"> Fish Shell</a>
 
 [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE) [![Fish Shell Version](https://img.shields.io/badge/fish-≥v2.2.0-007EC7.svg?style=flat-square)](http://fishshell.com) [![Build](https://github.com/oh-my-fish/oh-my-fish/workflows/Build/badge.svg)](https://github.com/oh-my-fish/oh-my-fish/actions?query=workflow%3ABuild)
 
 
-Oh My Fish provides core infrastructure to allow you to install packages which extend or modify the look of your shell. It's fast, extensible and easy to use.
+Oh My Fish menyediakan infrastruktur inti yang memungkinkan Anda menginstal paket yang memperluas atau mengubah tampilan shell Anda. Ini cepat, dapat diperluas, dan mudah digunakan.
 
-> Also in&nbsp;
+> Tersedia dalam bahasa&nbsp;
 > <a href="docs/es-ES/README.md">🇪🇸</a>
 > <a href="docs/nl-NL/README.md">🇳🇱</a>
 > <a href="docs/pt-BR/README.md">🇧🇷</a>
 > <a href="docs/ru-RU/README.md">🇷🇺</a>
 > <a href="docs/uk-UA/README.md">🇺🇦</a>
 > <a href="docs/zh-CN/README.md">🇨🇳</a>
-> <a href="docs/id-ID/README.md">ɪᴅ</a>
 
 <br>
 
 ## Table of contents
-* [Installation](#installation)
-* [Getting Started (command descriptions)](#getting-started)
-* [Advanced](#advanced)
-  * [Startup](#startup)
+* [Instalasi](#instalasi)
+* [Memulai (deskripsi perintah)](#memulai)
+* [Lanjutan](#lanjutan)
+  * [Permulaan](#permulaan)
   * [Dotfiles](#dotfiles)
-* [Creating Packages](#creating-packages)
+* [Membuat Paket](#membuat-paket)
 
-## Installation
+## Instalasi
 
-You can get started right away with the default setup by running this in your terminal:
+Anda dapat langsung memulai persiapan bawaan dengan menjalankan ini di terminal Anda:
 
 ```fish
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 ```
 
-This will download the installer script and start the installation. Alternatively, you can download the installer and customize your install:
+Ini akan mengunduh skrip penginstal dan memulai instalasi. Alternatifnya, Anda dapat mengunduh penginstal dan menyesuaikan instalasi Anda:
 
 ```fish
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > install
 fish install --path=~/.local/share/omf --config=~/.config/omf
 ```
 
-You can verify the integrity of the downloaded installer by verifying the script against [this checksum](bin/install.sha256):
+Anda dapat memverifikasi integritas penginstal yang diunduh dengan memverifikasi skripnya terhadap [ceksum ini](bin/install.sha256):
 
 ```
 curl -sL https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install.sha256 | shasum -a 256 --check
 ```
 
-You can also install Oh My Fish with Git or with an offline source tarball downloaded from the [releases page][releases]:
+Anda juga dapat menginstal Oh My Fish dengan Git atau dengan tarball sumber offline yang diunduh dari [halaman rilis][https://github.com/oh-my-fish/oh-my-fish/releases]:
 
 ```fish
 # with git
@@ -56,25 +55,24 @@ $ git clone https://github.com/oh-my-fish/oh-my-fish
 $ cd oh-my-fish
 $ bin/install --offline
 # with a tarball
-$ curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > install
+$ curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > instal
 $ fish install --offline=omf.tar.gz
 ```
 
-Run `install --help` for a complete list of install options you can customize.
+Jalankan `install --help` untuk daftar lengkap opsi instalasi yang dapat Anda sesuaikan.
 
-#### Requirements
+#### Persyaratan
 
-- **fish** shell, version 2.2 or later
-- **git**, version 1.9.5 or later
+- **fish** shell, versi 2.2 atau yang lebih baru
+- **git**, versi 1.9.5 atau yang lebih baru
 
-#### Known Issues
+#### Masalah Yang Dikenali
 
-- Due to a regression bug in fish 2.6 with some terminal emulators, right prompts make the shell unusable.
-  OMF's `default` theme features a right prompt, so it's necessary to use an alternative theme until a fix is released.
-  (see [#541](https://github.com/oh-my-fish/oh-my-fish/issues/541))
+- Karena bug regresi pada fish 2.6 dengan beberapa emulator terminal, perintah yang tepat membuat shell tidak dapat digunakan. Tema `default` OMF menampilkan prompt yang tepat, jadi penting untuk menggunakan tema alternatif hingga perbaikan dirilis.
+  (lihat [#541](https://github.com/oh-my-fish/oh-my-fish/issues/541))
 
 
-## Getting Started
+## Memulai
 
 Oh My Fish includes a small utility `omf` to fetch and install new packages and themes.
 
@@ -212,3 +210,4 @@ Oh My Fish uses an advanced and well defined plugin architecture to ease plugin 
 [omf-pulls-link]: https://github.com/oh-my-fish/oh-my-fish/pulls
 [omf-issues-new]: https://github.com/oh-my-fish/oh-my-fish/issues/new
 [releases]: https://github.com/oh-my-fish/oh-my-fish/releases
+
