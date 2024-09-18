@@ -1,3 +1,5 @@
+> ⚠️ Oh My Fish has been unmaintained for years, and certain parts of it may not work for you. A few themes and packages are currently broken, and the code is due a significant overhaul. The current set of maintainers have ran out of steam, so if you are interested in becoming a maintainer send an email to *oh-my-fish [at] googlegroups.com*.
+
 <img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="192px" height="192px"/>
 <img align="left" width="0" height="192px" hspace="10"/>
 
