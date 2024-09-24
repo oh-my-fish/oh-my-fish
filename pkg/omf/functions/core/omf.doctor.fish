@@ -45,6 +45,52 @@ function __omf.doctor.git_version
   end
 end
 
+function __omf.doctor.remote_match_db -a pkg_path
+  if test -z "$pkg_path"
+    # No package specified, run test for all packages
+
+    omf.index.update
+
+    set -l check_result 0
+    for pkg_path in $OMF_PATH/{themes,pkg}/*
+      __omf.doctor.remote_match_db $pkg_path
+      set check_result (math $check_result + $status)
+    end
+    return $check_result
+  end
+
+  # Check if the package remote matches the package repository
+  set -l path_parts
+  begin
+    set -l IFS '/'
+    echo $pkg_path | read -a path_parts
+  end
+  set -l pkg_name $path_parts[-1]
+
+  set -l index_uri (omf.index.stat $pkg_name repository)
+    or begin
+      # Built-in 'omf' and 'fish-spec' are exempt from this check
+      contains -- $pkg_name omf fish-spec; and return 0
+
+      echo (omf::err)"Warning:"(omf::off) "No index entry for "(omf::em)$pkg_name(omf::off)"."
+      echo
+      return 1
+    end
+
+  set -l repo_uri (omf.repo.remote_uri "$pkg_path")
+
+  set -l db_canonical (omf.repo.uri_components $index_uri)
+  set -l repo_canonical (omf.repo.uri_components $repo_uri)
+  if test "$db_canonical" != "$repo_canonical"
+    echo (omf::err)"Warning:"(omf::off) "The remote URI for "(omf::em)"$pkg_name"(omf::off)" doesn't match the URI in OMF's database."
+    echo "Remote URI:" $repo_uri
+    echo "Index URI:" $index_uri
+    echo
+    return 1
+  end
+  return 0
+end
+
 function omf.doctor
   echo "Oh My Fish version:   "(omf.version)
   echo "OS type:              "(uname)
@@ -55,6 +101,7 @@ function omf.doctor
   __omf.doctor.fish_version; or set -l doctor_failed
   __omf.doctor.git_version; or set -l doctor_failed
   __omf.doctor.theme; or set -l doctor_failed
+  __omf.doctor.remote_match_db; or set -l doctor_failed
 
   fish "$OMF_PATH/bin/install" --check
     or set -l doctor_failed
