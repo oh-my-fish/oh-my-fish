@@ -453,7 +453,6 @@ end
 # Verify we have a sane environment that OMF can run in.
 function sane_environment_check
   say "Checking for a sane environment..."
-    # assert_cmds
 
   debug "Checking for a sane 'head' implementation"
   set -l result (printf 'a\nb\n' | cmd head -n 1)
@@ -479,13 +478,12 @@ function sane_environment_check
 
   debug "Verifying Git implementation is not buggy Git for Windows"
   if cmd git --version | cmd grep -i -q windows
-        # abort (which git)" "
-        say "OMF for Git for Windows is buggy. Proceed at your own risk."
+    say "OMF for Git for Windows is buggy. Proceed at your own risk."
   end
 
   debug "Verifying Git autocrlf is not enabled"
   if test (cmd git config core.autocrlf; or echo false) = true
-        abort "Please disable core.autocrlf in your Git configuration with the following command: git config --global core.autocrlf false."
+    abort "Please disable core.autocrlf in your Git configuration with the following command: git config --global core.autocrlf false."
   end
 end
 
