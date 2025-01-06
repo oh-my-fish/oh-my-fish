@@ -2,7 +2,7 @@
 # Oh My Fish installer. See `install --help` for usage.
 
 # Set environment options.
-set -q OMF_REPO_URI;    or set OMF_REPO_URI "https://github.com/oh-my-fish/oh-my-fish"
+set -q OMF_REPO_URI;    or set OMF_REPO_URI "https://github.com/chrisflory/oh-my-fish"
 set -q OMF_REPO_BRANCH; or set OMF_REPO_BRANCH "master"
 
 
