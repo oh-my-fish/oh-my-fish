@@ -1,5 +1,4 @@
 function omf.cli.help
-  set -l IFS ''
   set -l doc_root $OMF_PATH/docs/cli
   set -l doc $doc_root/omf.adoc
 
