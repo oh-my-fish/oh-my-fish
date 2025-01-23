@@ -474,7 +474,7 @@ function sane_environment_check
     abort (which awk)" does not look like an AWK interpreter."
   end
 
-  assert_fish_version_compatible 2.2.0
+  assert_fish_version_compatible 3.0.0
   assert_git_version_compatible 1.9.5
 
   debug "Verifying Git implementation is not buggy Git for Windows"
