@@ -12,25 +12,25 @@ jobs:
       fail-fast: false
       matrix:
         os:
-          - ubuntu-18.04
           - ubuntu-20.04
+          - ubuntu-22.04
           - ubuntu-latest
         fish:
           - stock
-          - 2
           - 3
+          - 4
           - brew
         exclude:
           - os: ubuntu-20.04
-            fish: 2
+            fish: 4
           - os: ubuntu-latest
-            fish: 2
+            fish: 4
         include:
           - os: macos-latest
             fish: brew
-          - os: macos-11
+          - os: macos-13
             fish: brew
-          - os: macos-12
+          - os: macos-14
             fish: brew
     runs-on: ${{ matrix.os }}
     steps:
