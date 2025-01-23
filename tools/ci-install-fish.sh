@@ -8,8 +8,8 @@ if [[ $FISH_RELEASE = "brew" ]]; then
   brew update
   brew install fish
 else
-  if [[ $FISH_RELEASE == "2" ]]; then
-    REPO_PPA="ppa:fish-shell/release-2"
+  if [[ $FISH_RELEASE == "4" ]]; then
+    REPO_PPA="ppa:fish-shell/beta-4"
   else
     REPO_PPA="ppa:fish-shell/release-3"
   fi
