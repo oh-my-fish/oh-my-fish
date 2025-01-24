@@ -13,11 +13,10 @@ function __omf.doctor.theme
 end
 
 function __omf.doctor.fish_version
-  set -l min_version 2.2.0
+  set -l min_version 3.0.0
   set -l current_version
   begin
-    set -l IFS '-'
-    echo $FISH_VERSION | read -la version_parts
+    echo $FISH_VERSION | read -la --delimiter - version_parts
     set current_version "$version_parts[1]"
   end
 
