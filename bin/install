@@ -247,6 +247,9 @@ function install_offline
   command cp -r "$OFFLINE_PATH" "$OMF_PATH"
     or abort "Failed to copy source!"
 
+  # Make sure OMF_PATH is writable by the user.
+  chmod -R u+w $OMF_PATH
+
   # Set up Git remotes only if the offline install is a Git repository.
   test -d "$OMF_PATH/.git"
     and set_git_remotes
