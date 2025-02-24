@@ -3,6 +3,10 @@ function describe_omf_list_tests
     set -gx CI WORKAROUND
   end
 
+  function before_all
+    set -e CI
+  end
+
   function it_can_list_plugins
     set -l list_output (omf list -p)
     assert 0 = $status

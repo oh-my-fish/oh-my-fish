@@ -18,7 +18,7 @@ function assert
     $first unused \
     'Assertion \"test $first\" passed!' \
     'Assertion failed: \"test $first\" evaluated to false.' \
-    "test $argv"
+    "test '$argv'"
     return $status
 end
 

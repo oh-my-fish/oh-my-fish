@@ -3,6 +3,10 @@ function describe_basic_tests
     set -gx CI WORKAROUND
   end
 
+  function before_all
+    set -e CI
+  end
+
   function it_has_a_help_command
     set -l output (omf help)
     echo $output | grep -Eq "cd.+Change to root or package directory"
