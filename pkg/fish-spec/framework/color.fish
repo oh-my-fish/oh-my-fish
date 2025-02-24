@@ -1,35 +1,35 @@
-function echo::success
+function __fish_spec.color.echo.success
   set_color -o green
   echo $argv
   set_color normal
 end
 
-function echo::failure
+function __fish_spec.color.echo.failure
   set_color -o red
   echo $argv
   set_color normal
 end
 
-function echo::mixed
+function __fish_spec.color.echo.mixed
   set_color -o yellow
   echo $argv
   set_color normal
 end
 
-function echo::info
+function __fish_spec.color.echo.info
   set_color -o cyan
   echo $argv
   set_color normal
 end
 
-function echo::autocolor -a total failed
+function __fish_spec.color.echo.autocolor -a total failed
   if test $total -eq $failed -a $total -eq 0
-    echo::success $argv[3..]
+    __fish_spec.color.echo.success $argv[3..]
   else if test $total -eq $failed
-    echo::failure $argv[3..]
+    __fish_spec.color.echo.failure $argv[3..]
   else if test $failed -gt 0
-    echo::mixed $argv[3..]
+    __fish_spec.color.echo.mixed $argv[3..]
   else
-    echo::success $argv[3..]
+    __fish_spec.color.echo.success $argv[3..]
   end
 end

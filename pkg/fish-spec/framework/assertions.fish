@@ -4,11 +4,11 @@ function __fish_spec_assert_generic -a first second success_template failure_tem
   if eval not "$test_command"
     set __fish_spec_failed_assertions_in_file (math $__fish_spec_failed_assertions_in_file + 1)
     set __fish_spec_last_assertion_failed yes
-    eval echo::failure "$failure_template"
+    eval __fish_spec.color.echo.failure "$failure_template"
     return 1
   end
   if test "$FISH_SPEC_VERBOSE_ASSERTS" = 1
-    eval echo::success "$success_template"
+    eval __fish_spec.color.echo.success "$success_template"
   end
 end
 

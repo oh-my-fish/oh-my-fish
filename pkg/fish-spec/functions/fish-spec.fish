@@ -21,7 +21,7 @@ function fish-spec
 
   # Global summary
   echo
-  echo::autocolor $__fish_spec_total_assertions $__fish_spec_failed_assertions "Test complete: $__fish_spec_total_assertions assertions run, $__fish_spec_failed_assertions failed."
+  __fish_spec.color.echo.autocolor $__fish_spec_total_assertions $__fish_spec_failed_assertions "Test complete: $__fish_spec_total_assertions assertions run, $__fish_spec_failed_assertions failed."
   if test $__fish_spec_failed_assertions -gt 0
     return 1
   end
@@ -33,7 +33,7 @@ function __fish_spec_run_tests_in_file -a test_file
   set -g __fish_spec_total_assertions_in_file 0
   set -g __fish_spec_last_assertion_failed no
 
-  echo::info "Running tests in $test_file..."
+  __fish_spec.color.echo.info "Running tests in $test_file..."
   source $test_file
 
   for suite in (functions | string match -r '^describe_.*')
@@ -44,12 +44,12 @@ function __fish_spec_run_tests_in_file -a test_file
 
   # File-level summary
   echo
-  echo::autocolor $__fish_spec_total_assertions_in_file $__fish_spec_failed_assertions_in_file "Summary for $test_file: $__fish_spec_total_assertions_in_file assertions, $__fish_spec_failed_assertions_in_file failed."
+  __fish_spec.color.echo.autocolor $__fish_spec_total_assertions_in_file $__fish_spec_failed_assertions_in_file "Summary for $test_file: $__fish_spec_total_assertions_in_file assertions, $__fish_spec_failed_assertions_in_file failed."
   echo
 end
 
 function __fish_spec_run_tests_in_suite -a suite
-  echo::info (string replace 'describe_' 'DESCRIBE ' $suite | string replace '_' ' ')
+  __fish_spec.color.echo.info (string replace 'describe_' 'DESCRIBE ' $suite | string replace '_' ' ')
   $suite
 
   if functions --query before_all
@@ -73,7 +73,7 @@ end
 
 function __fish_spec_run_test_function -a test_func
   set test_func_human_readable (string replace 'it_' 'IT ' $test_func | string replace -a '_' ' ')
-  echo::info $test_func_human_readable
+  __fish_spec.color.echo.info $test_func_human_readable
 
   if functions --query before_each
     before_each
@@ -87,9 +87,9 @@ function __fish_spec_run_test_function -a test_func
   end
 
   if test $__fish_spec_last_assertion_failed = no
-    echo::success "✔ $test_func_human_readable passed!"
+    __fish_spec.color.echo.success "✔ $test_func_human_readable passed!"
   else
-    echo::failure "✘ $test_func_human_readable failed."
+    __fish_spec.color.echo.failure "✘ $test_func_human_readable failed."
     set __fish_spec_last_assertion_failed no
   end
 end
