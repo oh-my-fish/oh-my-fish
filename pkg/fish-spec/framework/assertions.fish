@@ -1,5 +1,5 @@
 function __fish_spec_assert_generic -a first second success_template failure_template test_command
-  set __fish_spec_total_assertions_in_file (math $total_assertions_in_file + 1)
+  set __fish_spec_total_assertions_in_file (math $__fish_spec_total_assertions_in_file + 1)
 
   if eval not "$test_command"
     set __fish_spec_failed_assertions_in_file (math $__fish_spec_failed_assertions_in_file + 1)
@@ -19,6 +19,7 @@ function assert
     'Assertion \"test $first\" passed!' \
     'Assertion failed: \"test $first\" evaluated to false.' \
     "test $argv"
+    return $status
 end
 
 function assert_equal -a first second
@@ -40,8 +41,8 @@ end
 function assert_exit_code -a expected_status
   __fish_spec_assert_generic \
     $expected_status $status \
-    'Assertion \"$first\" != \"$second\" passed!' \
-    'Assertion failed: Expected exit code \"$first\", but got \"$second.\"' \
+    'Assertion exit code $second == $first passed!' \
+    'Assertion failed: Expected exit code $first, but got $second.' \
     'test "$first" -eq "$second"'
 end
 
