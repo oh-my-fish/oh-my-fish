@@ -22,6 +22,10 @@ function __fish_spec.color.echo.info
   set_color normal
 end
 
+function __fish_spec.color.echo-n.info
+  echo -n (set_color -o cyan)$argv(set_color normal)
+end
+
 function __fish_spec.color.echo.autocolor -a total failed
   if test $total -eq $failed -a $total -eq 0
     __fish_spec.color.echo.success $argv[3..]

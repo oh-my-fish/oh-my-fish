@@ -7,7 +7,7 @@ function __fish_spec_assert_generic -a first second success_template failure_tem
     eval __fish_spec.color.echo.failure "$failure_template"
     return 1
   end
-  if test "$FISH_SPEC_VERBOSE_ASSERTS" = 1
+  if test "$FISH_SPEC_VERBOSE" = 1
     eval __fish_spec.color.echo.success "$success_template"
   end
 end
