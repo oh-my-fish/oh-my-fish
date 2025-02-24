@@ -164,7 +164,7 @@ function __fish_spec_in_array_helper -a value
 end
 
 function assert_in_array -a value
-  set -g __fish_spec_assertion_array $argv[2..]
+  set -g __fish_spec_assertion_array $argv[2..-1]
   __fish_spec_assert_generic \
     $value "$__fish_spec_assertion_array" \
     'Assertion \"$first\" in [$second] passed!' \
@@ -176,7 +176,7 @@ function assert_in_array -a value
 end
 
 function assert_not_in_array -a value
-  set -g __fish_spec_assertion_array $argv[2..]
+  set -g __fish_spec_assertion_array $argv[2..-1]
   __fish_spec_assert_generic \
     $value "$__fish_spec_assertion_array" \
     'Assertion \"$first\" not in [$second] passed!' \
