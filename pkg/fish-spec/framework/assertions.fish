@@ -155,22 +155,13 @@ function assert_not_file_contains_regex -a file pattern
     'not grep -qE "$second" $first'
 end
 
-function __fish_spec_in_array_helper -a value
-  for item in $__fish_spec_assertion_array
-    if test "$item" = "$value"
-      return 0
-    end
-  end
-  return 1
-end
-
 function assert_in_array -a value
   set -g __fish_spec_assertion_array $argv[2..-1]
   __fish_spec_assert_generic \
     $value "$__fish_spec_assertion_array" \
     'Assertion \"$first\" in [$second] passed!' \
     'Assertion failed: Value \"$first\" is not in the array [$second].' \
-    '__fish_spec_in_array_helper $first'
+    'contains -- $first $__fish_spec_assertion_array'
   set result $status
   set -e __fish_spec_assertion_array
   return $result
@@ -182,7 +173,7 @@ function assert_not_in_array -a value
     $value "$__fish_spec_assertion_array" \
     'Assertion \"$first\" not in [$second] passed!' \
     'Assertion failed: Value \"$first\" is in the array [$second].' \
-    'not __fish_spec_in_array_helper $first'
+    'not contains -- $first $__fish_spec_assertion_array'
   set result $status
   set -e __fish_spec_assertion_array
   return $result
