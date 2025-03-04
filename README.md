@@ -203,6 +203,16 @@ It's highly recommended that your custom startup commands go into `init.fish` fi
 
 If you need startup commands to be run *before* Oh My Fish begins loading plugins, place them in `before.init.fish` instead. If you're unsure, it is usually best to put things in `init.fish`.
 
+## Testing
+
+Oh My Fish provides a test framework inspired by RSpec called `fish-spec` via a built-in package. You can use
+`fish-spec` to test your fish package by writing tests in `spec/*_spec.fish` files within your package. To run the tests
+type in `fish-spec`. If your tests are in different files you can also list your test files (or globs of test files)
+like so: `fish-spec tests/test_*.fish other-tests/foo.fish`
+
+For syntax and available assertions see the tests for the fish-spec package in
+[pkg/fish-spec/spec/](https://github.com/oh-my-fish/oh-my-fish/tree/master/pkg/fish-spec/spec).
+
 ## Creating Packages
 
 Oh My Fish uses an advanced and well defined plugin architecture to ease plugin development, including init/uninstall hooks, function and completion autoloading. [See the packages documentation](docs/en-US/Packages.md) for more details.

@@ -3,6 +3,10 @@ function describe_omf_packages_tests
     set -gx CI WORKAROUND
   end
 
+  function before_all
+    set -e CI
+  end
+
   function it_can_extract_name_from_name
     set -l output (omf.packages.name foo)
     assert 0 = $status
