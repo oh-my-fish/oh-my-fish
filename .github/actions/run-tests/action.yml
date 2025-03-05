@@ -1,0 +1,19 @@
+name: "Run tests"
+description: "Install fish and Oh My Fish! if necessary and run CI tests"
+runs:
+  using: "composite"
+  steps:
+    - name: Install Fish
+      shell: bash
+      if: runner.os == 'macOS'
+      run: brew update && brew install fish
+
+    - name: Install Oh My Fish!
+      shell: bash
+      run: fish bin/install --verbose --offline --noninteractive --yes
+
+    - name: Run tests on latest fish
+      shell: bash
+      run: |
+        tests/run.fish
+        fish -c 'fish-spec pkg/{fish-spec,omf}/spec/*_spec.fish'
