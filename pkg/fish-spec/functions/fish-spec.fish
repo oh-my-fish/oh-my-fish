@@ -75,29 +75,32 @@ function __fish_spec_run_test_function -a test_func
   set test_func_human_readable (string replace 'it_' 'IT ' $test_func | string replace -a '_' ' ')
   __fish_spec.color.echo-n.info "⏳ $test_func_human_readable"
 
+  set -l before_each_output ""
   if functions --query before_each
-    set -l before_each_output (before_each 2>&1 | string collect)
+    before_each 2>1 | while read -l line; test -z "$before_each_output" && set before_each_output $line || set before_each_output $before_each_output\n$line; end
   end
 
-  set -l test_func_output ($test_func 2>&1 | string collect)
+  set -l test_func_output ""
+  $test_func 2>&1 | while read -l line; test -z "$test_func_output" && set test_func_output $line || set test_func_output $test_func_output\n$line; end
   set result $status
 
+  set -l after_each_output ""
   if functions --query after_each
-    set -l before_each_output (before_each 2>&1 | string collect)
+    after_each 2>&1 | while read -l line; test -z "$after_each_output" && set after_each_output $line || set after_each_output $after_each_output\n$line; end
   end
 
   if test $__fish_spec_last_assertion_failed = no
     __fish_spec.color.echo.success \r"✅ $test_func_human_readable passed!"
     if test "$FISH_SPEC_VERBOSE" = 1
-      test -n "$before_each_output" && echo $before_each_output
-      test -n "$test_func_output" && echo $test_func_output
-      test -n "$after_each_output" && echo $after_each_output
+      test -n "$before_each_output" && echo "$before_each_output"
+      test -n "$test_func_output" && echo "$test_func_output"
+      test -n "$after_each_output" && echo "$after_each_output"
     end
   else
     __fish_spec.color.echo.failure \r"❌ $test_func_human_readable failed."
-    test -n "$before_each_output" && echo $before_each_output
-    test -n "$test_func_output" && echo $test_func_output
-    test -n "$after_each_output" && echo $after_each_output
+    test -n "$before_each_output" && echo "$before_each_output"
+    test -n "$test_func_output" && echo "$test_func_output"
+    test -n "$after_each_output" && echo "$after_each_output"
     set __fish_spec_last_assertion_failed no
   end
 end

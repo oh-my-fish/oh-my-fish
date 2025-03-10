@@ -7,50 +7,45 @@ on:
     paths-ignore:
       - '**.md'
 jobs:
-  build:
+  build-linux:
+    strategy:
+      fail-fast: false
+      matrix:
+        # only use the latest patch level for all minor versions to reduce number of jobs
+        fish:
+          - '3.0.0' # since 3.0.0 is the oldest officially supported version it's included as well
+          - '3.0.2'
+          - '3.1.2'
+          - '3.2.2'
+          - '3.3.1'
+          - '3.4.1'
+          - '3.5.1'
+          - '3.6.4'
+          - '3.7.1'
+          - '4.0.0'
+    runs-on: ubuntu-latest
+    container:
+      image: ohmyfish/fish:${{ matrix.fish }}
+      options: --user root
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+
+      - name: Run tests
+        uses: ./.github/actions/run-tests
+
+  build-macos:
     strategy:
       fail-fast: false
       matrix:
         os:
-          - ubuntu-20.04
-          - ubuntu-22.04
-          - ubuntu-latest
-        fish:
-          - stock
-          - 3
-          - 4
-          - brew
-        exclude:
-          - os: ubuntu-20.04
-            fish: 4
-          - os: ubuntu-latest
-            fish: 4
-        include:
-          - os: macos-latest
-            fish: brew
-          - os: macos-13
-            fish: brew
-          - os: macos-14
-            fish: brew
+          - macos-latest
+          - macos-13
+          - macos-14
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout the repository
-        uses: actions/checkout@v3
-
-      - name: Add brew to path for Ubuntu
-        if: startsWith(matrix.os, 'ubuntu') && matrix.fish == 'brew'
-        run: |
-          echo "/home/linuxbrew/.linuxbrew/bin" >> $GITHUB_PATH
-          echo "/home/linuxbrew/.linuxbrew/sbin" >> $GITHUB_PATH
-
-      - name: Install Fish
-        run: FISH_RELEASE=${{ matrix.fish }} tools/ci-install-fish.sh
-
-      - name: Install Oh My Fish!
-        run: fish bin/install --verbose --offline --noninteractive --yes
+        uses: actions/checkout@v4
 
       - name: Run tests
-        run: |
-          tests/run.fish
-          pushd pkg/fish-spec; fish -c 'fish-spec'; popd
-          pushd pkg/omf; fish -c 'fish-spec'; popd
+        uses: ./.github/actions/run-tests
