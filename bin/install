@@ -332,8 +332,12 @@ function install_config
     or echo "default" > "$OMF_CONFIG/theme"
 
   # Install plugins
-  fish -c "omf install"
-    or abort "Error installing plugins"
+  if set -q OFFLINE
+    say "To complete the Oh My Fish installation, please run the command \"omf install\" (without \") when network access is available"
+  else
+    fish -c "omf install"
+      or abort "Error installing plugins"
+  end
 end
 
 
