@@ -40,8 +40,8 @@ jobs:
       matrix:
         os:
           - macos-latest
-          - macos-13
           - macos-14
+          - macos-15
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout the repository
