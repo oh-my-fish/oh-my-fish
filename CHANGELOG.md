@@ -2,6 +2,55 @@
 Important changes to Oh My Fish are recorded here for each release.
 
 
+## [8] - 2026-04-06
+
+The first release in several years updates Oh My Fish for modern Fish versions, refreshes the test matrix, and fixes a number of long-standing install and package-management issues.
+
+### Improvements
+
+- Raise the minimum supported Fish version to 3.0 and update CI coverage for current Linux and macOS environments.
+- Improve installer behavior for offline installs, tarball extraction, branch handling, and package installation from GitHub repositories.
+- Improve package and theme handling with better theme activation, uninstall hook support, bundle loading, and `OMF_CONFIG` package discovery.
+- Refresh documentation, translated READMEs, and repository metadata.
+
+### Bugs fixed
+
+- Fix the `conf.d` `$path` variable during initialization.
+- Fix installer path handling for values containing `=`.
+- Fix package-name parsing for repository names containing dots.
+- Fix behavior in bare Git repositories and worktrees.
+- Fix the published installer checksum and several documentation issues.
+
+### Contributors
+
+Thanks to the people who contributed to this release.
+
+- Andy Chen
+- Brian Thompson
+- Derek Stavis
+- Emily Grace Seville
+- Fabian Homborg
+- fdeitylink
+- Heimen Stoffels
+- Hernawan Faïz Abdillah
+- Iago S
+- Jean-Luc Thumm
+- jjangga0214
+- Johannes Altmanninger
+- Justin Hileman
+- Karan Verma
+- Kevin F. Konrad
+- M4rk9696
+- Manu [tennox]
+- Marcelo dos Santos Mafra
+- Ninamma Rai
+- Noa
+- Pablo Santiago Blum de Aguiar
+- Simon Plakolb
+- YangKeao
+- Yevhen Zabrodin
+
+
 ## [7] - 2020-04-11
 
 Another release that took long but is finally out! v7 supports Fish 3.0 and 3.1 and brings a few improvements and bug fixes.
@@ -242,6 +291,7 @@ Thanks to the people who contributed to this release.
 
 
 [packages-main]: https://github.com/oh-my-fish/packages-main
+[8]: https://github.com/oh-my-fish/oh-my-fish/releases/tag/v8
 [2]: https://github.com/oh-my-fish/oh-my-fish/releases/tag/v2
 [3]: https://github.com/oh-my-fish/oh-my-fish/releases/tag/v3
 [4]: https://github.com/oh-my-fish/oh-my-fish/releases/tag/v4
