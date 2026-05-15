@@ -7,38 +7,40 @@
 <table><tr><td>
   <a href="#agnoster">agnoster</a><br/>
   <a href="#aight">aight</a><br/>
+  <a href="#anchor">anchor</a><br/>
   <a href="#ays">ays</a><br/>
-  <a href="#barracuda">barracuda</a><br/>
   <a href="#batman">batman</a><br/>
   <a href="#beloglazov">beloglazov</a><br/>
   <a href="#bira">bira</a><br/>
   <a href="#bobthefish">bobthefish</a><br/>
-  <a href="#bongnoster">bongnoster</a><br/>
   <a href="#boxfish">boxfish</a><br/>
   <a href="#budspencer">budspencer</a><br/>
   <a href="#cbjohnson">cbjohnson</a><br/>
   <a href="#chain">chain</a><br/>
   <a href="#clearance">clearance</a><br/>
-</td><td>
   <a href="#cmorrell">cmorrell</a><br/>
   <a href="#coffeeandcode">coffeeandcode</a><br/>
+</td><td>
   <a href="#cor">cor</a><br/>
   <a href="#cyan">cyan</a><br/>
+  <a href="#damin">damin</a><br/>
   <a href="#dangerous">dangerous</a><br/>
   <a href="#default">default</a><br/>
   <a href="#dmorrell">dmorrell</a><br/>
   <a href="#doughsay">doughsay</a><br/>
+  <a href="#easy-eel">easy-eel</a><br/>
   <a href="#eclm">eclm</a><br/>
   <a href="#edan">edan</a><br/>
   <a href="#eden">eden</a><br/>
   <a href="#emoji-powerline">emoji-powerline</a><br/>
   <a href="#es">es</a><br/>
   <a href="#fishbone">fishbone</a><br/>
-</td><td>
   <a href="#fishface">fishface</a><br/>
+</td><td>
   <a href="#fishy-drupal">fishy-drupal</a><br/>
   <a href="#fisk">fisk</a><br/>
   <a href="#flash">flash</a><br/>
+  <a href="#fluffy">fluffy</a><br/>
   <a href="#fox">fox</a><br/>
   <a href="#gentoo">gentoo</a><br/>
   <a href="#gianu">gianu</a><br/>
@@ -47,24 +49,29 @@
   <a href="#godfather">godfather</a><br/>
   <a href="#graystatus">graystatus</a><br/>
   <a href="#harleen">harleen</a><br/>
+  <a href="#heartsteal">heartsteal</a><br/>
   <a href="#idan">idan</a><br/>
   <a href="#integral">integral</a><br/>
 </td><td>
   <a href="#jacaetevha">jacaetevha</a><br/>
   <a href="#johanson">johanson</a><br/>
   <a href="#kawasaki">kawasaki</a><br/>
+  <a href="#kovial">kovial</a><br/>
   <a href="#krisleech">krisleech</a><br/>
   <a href="#l">l</a><br/>
   <a href="#lambda">lambda</a><br/>
+  <a href="#lambda-zero">lambda-zero</a><br/>
   <a href="#lavender">lavender</a><br/>
   <a href="#lolfish">lolfish</a><br/>
   <a href="#mars">mars</a><br/>
+  <a href="#mint">mint</a><br/>
   <a href="#mish">mish</a><br/>
   <a href="#mokou">mokou</a><br/>
   <a href="#mtahmed">mtahmed</a><br/>
-  <a href="#nai">nai</a><br/>
-  <a href="#nelsonjchen">nelsonjchen</a><br/>
 </td><td>
+  <a href="#nai">nai</a><br/>
+  <a href="#neel">neel</a><br/>
+  <a href="#nelsonjchen">nelsonjchen</a><br/>
   <a href="#neolambda">neolambda</a><br/>
   <a href="#numist">numist</a><br/>
   <a href="#ocean">ocean</a><br/>
@@ -74,40 +81,40 @@
   <a href="#pie">pie</a><br/>
   <a href="#plain">plain</a><br/>
   <a href="#pure">pure</a><br/>
+  <a href="#puritan">puritan</a><br/>
   <a href="#pygmalion">pygmalion</a><br/>
   <a href="#random">random</a><br/>
+</td><td>
   <a href="#randomrussel">randomrussel</a><br/>
   <a href="#red-snapper">red-snapper</a><br/>
-  <a href="#redfish">redfish</a><br/>
-</td><td>
   <a href="#rider">rider</a><br/>
   <a href="#robbyrussell">robbyrussell</a><br/>
   <a href="#sashimi">sashimi</a><br/>
   <a href="#scorphish">scorphish</a><br/>
-  <a href="#shellder">shellder</a><br/>
+  <a href="#separation">separation</a><br/>
+  <a href="#simple">simple</a><br/>
   <a href="#simple-ass-prompt">simple-ass-prompt</a><br/>
   <a href="#simplevi">simplevi</a><br/>
   <a href="#slacker">slacker</a><br/>
   <a href="#slavic-cat">slavic-cat</a><br/>
   <a href="#solarfish">solarfish</a><br/>
-  <a href="#spacefish">spacefish</a><br/>
   <a href="#sushi">sushi</a><br/>
   <a href="#syl20bnr">syl20bnr</a><br/>
-  <a href="#taktoa">taktoa</a><br/>
 </td><td>
+  <a href="#taktoa">taktoa</a><br/>
   <a href="#technopagan">technopagan</a><br/>
   <a href="#toaster">toaster</a><br/>
   <a href="#tomita">tomita</a><br/>
   <a href="#trout">trout</a><br/>
   <a href="#tweetjay">tweetjay</a><br/>
   <a href="#uggedal">uggedal</a><br/>
+  <a href="#ultrafish">ultrafish</a><br/>
   <a href="#will">will</a><br/>
   <a href="#wolf-theme">wolf-theme</a><br/>
   <a href="#yimmy">yimmy</a><br/>
   <a href="#zeit">zeit</a><br/>
   <a href="#zephyr">zephyr</a><br/>
   <a href="#zish">zish</a><br/>
-  <br/>
   <br/>
 </td></tr></table>
 </details>
@@ -136,10 +143,12 @@ For Mac users, I highly recommend iTerm 2 + Solarized Dark
 * If the previous command failed (✘)
 - If private mode is enabled (🔒)
 * User @ Hostname (if user is not DEFAULT_USER, which can be set in your profile)
-* Git/HG status
+* Git status
 * Subversion status enabled by adding `set -g theme_svn_prompt_enabled yes` to your `config.fish`.
+* Mercurial status enabled by adding `set -g theme_mercurial_prompt_enabled yes` to your `config.fish`.
 * Branch () or detached head (➦)
 * Current branch / SHA1 in detached head state
+  * Current branch name is shortened to 15 characters by default. Change it to `N` characters with `set -g fish_vcs_branch_name_length N` in your `config.fish`.
 * Dirty working directory (±, color change)
   * By default, git repos will show as dirty if there are untracked files. This can be changed by adding `set -g fish_git_prompt_untracked_files no` to your `config.fish`. This value is passed into `git status --untracked-files`, so any value git supports is valid for this command
 * Current working directory
@@ -149,6 +158,7 @@ You will probably want to disable the default virtualenv prompt. Add to your [`i
 `set -gx VIRTUAL_ENV_DISABLE_PROMPT 1`
 * Indicate vi mode.
 * Source control blacklist. To disable source control prompts in certain directories, you can add the following to your `init.fish` or `config.fish`: `set -g scm_prompt_blacklist "/path/to/blacklist"`.
+* The icons can be configured by setting variables. E.g. to replace the icon of failed command from the default "✘" use `set -g glyph_status_nonzero "💀"`. For  configuration options see [`fish_prompt.fish`](https://github.com/oh-my-fish/theme-agnoster/blob/master/functions/fish_prompt.fish).
 
 Ported from https://gist.github.com/agnoster/3712874.
 
@@ -178,7 +188,61 @@ Just fork and make PRs.
 [MIT](https://opensource.org/licenses/MIT) © Austin Bingham 2017
 
 
-# [ays](https://github.com/aollio/ays-fish-theme)
+# [anchor](https://github.com/nseezero/fish-anchor)
+### fish-anchor
+
+An elegant and minimalist theme for the [Fish Shell](https://fishshell.com).
+
+#### Features
+
+- Displays the directory.
+- Support for `git` *(branch name and repository status)*.
+- Shows the name of a Docker container if one.
+- Displays information of an SSH connection.
+
+##### Git
+
+The little symbol displayed next to the branch name has a meaning:
+
+| Symbol | Meaning |
+|---|---|
+| ⥄ | Branch diverged |
+| ↑ | Commits to push |
+| ↓ | Changes to pull |
+| ⨯ | Not staged changes |
+| ◦ | Branch up-to-date |
+|  | Nothing |
+
+#### Screenshot
+
+![Screenshot of the theme!](https://raw.githubusercontent.com/nseezero/fish-anchor/master/.github/example.png)
+
+- *White:* Current working directory.
+- *Magenta:* Repository branch name with repository status.
+- *Cyan:* Docker container's name.
+- *Yellow:* Username and hostname of an SSH connection.
+
+#### Installation
+
+##### Requirements
+
+You need [Fish Shell](https://fishshell.com) and [Oh My Fish!](https://github.com/oh-my-fish/oh-my-fish/).
+
+##### Installing
+
+Using **Oh-My-Fish**:
+
+`omf install anchor`,
+
+`omf theme anchor`.
+
+#### License
+
+The theme is licensed under the MIT License,
+please read the [LICENSE](LICENSE) file to get more information.
+
+
+# [ays](https://github.com/yeseni-today/ays-fish-theme)
 ##### Ays
 
 Theme imported from oh-my-zsh [ys-theme](http://blog.ysmood.org/my-ys-terminal-theme/)
@@ -204,284 +268,6 @@ omf install ays
 ```
 
 [Oh-My-Fish]: https://github.com/oh-my-fish/oh-my-fish
-
-
-# [barracuda](https://github.com/meverss/barracuda)
-### Barracuda theme (for fish in Termux terminal)
-
-This theme is a fork of [oh-my-fish/theme-budspencer](https://github.com/oh-my-fish/theme-budspencer), which means it keeps almost all it's awesome features.
-
-Some fancy visual changes has been done taking advantage of Powerline Symbols.
-
-Barracuda is in essence:
-
-> A theme for nerds, makes fish even more powerful. It's equipped with a hell of a
-lot of nice functions and key bindings to speed up your workflow
-
-![screenshot](https://raw.githubusercontent.com/meverss/barracuda/master/images/screenshot.jpg)
-
-#### Requirements
-
-* An up-to-date fish shell version from [github][fish-git] or a
-[nightly build][fish-nightly].
-* Patched Powerline fonts installed. \(See how to install [here](https://github.com/powerline/fonts))
-
-Non standard tools:
-
-* APK Termux:API plug-in \(It's recommended to download **Termux** and **Termux:API** from [F-Droid](https://f-droid.org) as both apps most have the same PGP signature\) 
-<details>
-<summary>termux-api</summary>
-
-```fish
-apt install termux-api
-```
-</details>
-<details>
-<summary>nodejs</summary>
-
-```fish
-apt install nodejs
-``` 
-</details>
-<details>
-<summary>pv</summary>
-
-```fish
-apt install pv
-``` 
-</details>
-
-#### Configuration
-
-##### General configuration
-
-The theme behaves similar to vim's airline/powerline plugins. Thus, it needs a
-[powerline font][THEMES-NAMESPACE-barracuda-font].
-It's also crucial to have vi mode enabled. Thus, execute
-```
-set -U fish_key_bindings fish_vi_key_bindings
-```
-before enabling the theme.
-
-##### Languages
-
-This theme can be shown in different languages (three langiages so far): Spanish, English and French
-
-There are two ways to change interface language: one is by using the function `termux-language` followed by the language identifier, and
-the other one, just typing the language name on the prompt.
-
-Supported languages and their identifiers are:
-
-* **sp** for **spanish**
-* **en** for **english**
-* **fr** for **french**
-
-e.g To set french language:
-```
-termux-language fr
-```
-
-Or
-```
-french
-```
-
-##### Colors
-
-Two color schemes for bright and dark environments are predefined. You can
-enable them with `day` and `night`, respectively.
-
-##### Command history
-Commands that shouldn't appear in the command history are defined by a universal
-list `$barracuda_nocmdhist`. Default:
-```
-set -U barracuda_nocmdhist c d ll ls m s
-```
-
-##### Disable/reenable greeting
-
-Disable:
-```
-set -U barracuda_nogreeting
-```
-
-Reenable:
-```
-set -e barracuda_nogreeting
-```
-
-##### Show Node version
-
-To show your current node version, do following in your Fish configs
-
-Enable:
-```
-set -g barracuda_alt_environment "node -v"
-```
-
-Disable:
-```
-set -U barracuda_alt_environment
-```
-
-#### Outer prompt segments
-
-- Vi mode is indicated by color of outer segments, cursor color also changes
-  if terminal supports it:
-    * green: NORMAL mode
-    * yellow: INSERT mode
-    * blue: VISUAL mode
-
-#### Left prompt segments
-
-- Present working directory (on top)
-- Prompt line number
-- Barracuda ASCII logo
-- Git repository information
-- Status symbols
-    * ✻: keep track of this shell session, can be toggled with `#` to show the number of
-       the session within the sessions list
-    * ⭐: present working directory is in bookmark list, can be toggled with `#` to
-        show the number of the bookmark
-    * V: vi is parent process
-    * R: [ranger][THEMES-NAMESPACE-barracuda-ranger] is parent process
-    * ⬜: there are background jobs, can be toggled with `#` to show the amount of
-        background jobs
-    * 🔒: no write permissions in present working directory
-    * ⚔: there are tasks scheduled for this week, can be toggled with `#` to
-        show the amount of weekly tasks
-    * ⚑: there are appointments for today, can be toggled with `#` to
-        show the amount of appointments
-    * ✔: last command succeeded, can be toggled with `#` to show the status value
-    * ✘: last command failed, can be toggled with `#` to show the status value
-    * ⚡: superuser indicator
-- Active Python [virtual environment](https://virtualenv.pypa.io/en/latest/). Requires [Virtual Fish](https://github.com/adambrenecki/virtualfish/)
-
-#### Right prompt segments
-
-- Shows current interface language
-
-#### Quickly navigate in history of working directories
-
-The function `d` drops down a menu showing the history as enumerated list. Unlike
-fish's builtin `dirh`, `d` does not show any duplicates. Enter a number to jump
-to a directory within the list.
-
-The following shortcuts need vi-mode:
-- Press `H` in NORMAL mode to change present working directory to previous
-  working directory in history.
-- Press `L` in NORMAL mode to change present working directory to next working
-  directory in history.
-
-#### Quickly navigate in command history
-
-The function `c` drops down a menu showing the command history as enumerated list similarly to
-the `d` function. Selections are also pasted into the X clipboard. It's possible
-to load a command of a former prompt by giving the prompt line number as
-argument.
-
-#### Bookmarks
-
-A bookmark can be created with `mark`. It can be removed with `unmark`. 
-
-`unmark` can take an argument to remove a specific bookmark in the bookmark list. 
-Simply add the number of the bookmark you would like to remove as the argument.
-
-Bookmarks are universal and thus persistant.
-A new shell automatically changes working directory on startup to newest bookmark.
-`m` is a function that drops down a menu showing the bookmarks as enumerated list
-equivalently to `d`.
-
-The following shortcuts need vi mode:
-- Create a bookmark for present working directory with `m` in NORMAL mode.
-- Remove a bookmark for present working directory with `M` in NORMAL mode.
-
-By default the shell will change to the directory of the latest bookmark on a new session. 
-This can be disabled by adding the following line:
-
-```
-set -U barracuda_no_cd_bookmark
-```
-
-#### Edit commandline with your favorite editor
-
-The function `edit-commandline` let you edit the commandline with your editor.
-It makes the commandline as powerful as your editor. If `$EDITOR` is not set,
-vi is used.
-
-The following shortcut needs vi mode:
-- Type `.` in NORMAL mode to edit commandline in editor.
-
-#### Sessions
-
-Shell session can be stored with `s <session name>`. If a session with `session
-name` already exists, the session with this name will be attached. If a session with
-`session name` is already active within another terminal, this terminal will be
-focussed.
-
-A list of available sessions can be shown with `s`.
-
-A session can be erased with `s -e <session name>`.
-
-Type `s -d` to detach current session.
-
-#### Set window title
-
-Just type `wt <title>`.
-
-#### Ring the bell in order to set the urgency hint flag
-
-If you have configured your terminal application to use the visual bell, your
-window manager will tell you when a job running in your shell has finished. You
-don't need to check manually whether it's done.
-
-If you have still activated the acoustic bell, you probably hate that feature.
-Switch it off in that case:
-```
-set -U barracuda_nobell
-```
-#### Termux Backup
-
-With this function it's possible to perdorm a full backup of system and user's files.
-
-To create a new backup type:
-```
-termux-backup -c <or> --create [file_name]
-```
-
-To list existing backups use:
-```
-termux-backup -l <or> --list
-```
-![screenshot](https://raw.githubusercontent.com/meverss/barracuda/master/images/screenshot_l.jpg)
-
-To delete an existing backup:
-```
-termux-backup -d <or> --delete
-```
-![screenshot](https://raw.githubusercontent.com/meverss/barracuda/master/images/screenshot_d.jpg)
-To show help:
-```
-termux-backup -h <or> --help
-```
-
-Unfortunately this function can only perform backups. Restores have to be decompressed and copied manually.
-
-<details>
-<summary>TODO</summary>
-
-* Add option to restore backups
-* Add support for more languages
-</details>
-
-[THEMES-NAMESPACE-barracuda-font]: https://github.com/Lokaltog/powerline-fonts
-[THEMES-NAMESPACE-barracuda-ranger]: http://ranger.nongnu.org/
-[THEMES-NAMESPACE-barracuda-remind]: http://www.roaringpenguin.com/products/remind
-[fish-git]: https://github.com/fish-shell/fish-shell.git
-[fish-nightly]: https://github.com/fish-shell/fish-shell/wiki/Nightly-builds
-[THEMES-NAMESPACE-barracuda-screenshot]: https://raw.githubusercontent.com/tannhuber/media/master/budspencer.jpg
-[THEMES-NAMESPACE-barracuda-colors]: https://raw.githubusercontent.com/tannhuber/media/master/budspencer_replace_colors.jpg
-[THEMES-NAMESPACE-barracuda-pwdstyle]: https://raw.githubusercontent.com/tannhuber/media/master/budspencer_pwd_style.jpg
 
 
 # [batman](https://github.com/oh-my-fish/theme-batman)
@@ -571,7 +357,8 @@ TODO:
 ![bobthefish][btf-screencast]
 
 
-##### Installation
+
+#### Installation
 
 Be sure to have Oh My Fish installed. Then just:
 
@@ -588,7 +375,8 @@ You will need a [Powerline-patched font][btf-patching] for this to work, unless 
 This theme is based loosely on [agnoster][btf-agnoster].
 
 
-##### Features
+
+#### Features
 
  * A helpful, but not too distracting, greeting.
  * A subtle timestamp hanging out off to the right.
@@ -599,7 +387,8 @@ This theme is based loosely on [agnoster][btf-agnoster].
  * Visual indication that you can't write to the current directory.
 
 
-##### The Prompt
+
+#### The Prompt
 
  * Status flags:
      * Previous command failed (**`!`**)
@@ -624,96 +413,251 @@ This theme is based loosely on [agnoster][btf-agnoster].
      * Unpushed commits (**`+`**)
      * Unpulled _and_ unpushed commits (**`±`**)
      * _Note that not all of these have been implemented for hg yet :)_
+ * Fossil status:
+     * Dirty working directory (**`*`**)
+     * Untracked files (**`…`**)
+     * Conflicts (**`!`**)
  * Abbreviated project-relative path
 
 
-##### Configuration
 
-You can override some of the following default options in your `config.fish`:
+#### Configuration
+
+You can override theme defaults in a Fish config file (for example `~/.config/fish/conf.d/bobthefish.fish`):
 
 ```fish
-set -g theme_display_git no
-set -g theme_display_git_dirty no
-set -g theme_display_git_untracked no
-set -g theme_display_git_ahead_verbose yes
-set -g theme_display_git_dirty_verbose yes
-set -g theme_display_git_stashed_verbose yes
-set -g theme_display_git_default_branch yes
-set -g theme_git_default_branches master main
-set -g theme_git_worktree_support yes
-set -g theme_use_abbreviated_branch_name yes
-set -g theme_display_vagrant yes
-set -g theme_display_docker_machine no
-set -g theme_display_k8s_context yes
-set -g theme_display_hg yes
-set -g theme_display_virtualenv no
-set -g theme_display_nix no
-set -g theme_display_ruby no
-set -g theme_display_node yes
-set -g theme_display_user ssh
-set -g theme_display_hostname ssh
-set -g theme_display_vi no
-set -g theme_display_date no
-set -g theme_display_cmd_duration yes
-set -g theme_title_display_process yes
-set -g theme_title_display_path no
-set -g theme_title_display_user yes
-set -g theme_title_use_abbreviated_path no
-set -g theme_date_format "+%a %H:%M"
-set -g theme_date_timezone America/Los_Angeles
-set -g theme_avoid_ambiguous_glyphs yes
-set -g theme_powerline_fonts no
 set -g theme_nerd_fonts yes
-set -g theme_show_exit_status yes
-set -g theme_display_jobs_verbose yes
-set -g default_user your_normal_user
 set -g theme_color_scheme dark
-set -g fish_prompt_pwd_dir_length 0
-set -g theme_project_dir_length 1
-set -g theme_newline_cursor yes
-set -g theme_newline_prompt '$ '
+set -g theme_display_user ssh
+set -g default_user bobthecow
 ```
-**Git options**
 
-- `theme_display_git_default_branch`. By default theme will hide/collapse the branch name in your prompt when you are using a Git _default branch_ i.e. historically `master` and often `main` now. Set to `yes` to stop these branches from being hidden/collapsed.
-- `theme_git_default_branches`. The big cloud repos (GitHub, Bitbucket, GitLab et al.) are moving away from using `master` as the default branch name, and allow you to choose your own. As of version **2.28**, Git also supports custom default branch names via the `init.defaultBranch` config option. If our defaults of `master main` don't suit you, you can add/remove names in thist list i.e. `main trunk`. This ensures correct hiding/collapsing behaviour with custom default branch names (unless option above is activated).
+See (many) more options below.
 
-**Title options**
 
-- `theme_title_display_process`. By default theme doesn't show current process name in terminal title. If you want to show it, just set to `yes`.
-- `theme_title_display_path`. Use `no` to hide current working directory from title.
-- `theme_title_display_user`. Set to `yes` to show the current user in the tab title (unless you're the default user).
-- `theme_title_use_abbreviated_path`. Default is `yes`. This means your home directory will be displayed as `~` and `/usr/local` as `/u/local`. Set it to `no` if you prefer full paths in title.
 
-**Prompt options**
+##### Prompt options
 
-- `theme_display_ruby`. Use `no` to completely hide all information about Ruby version. By default Ruby version displayed if there is the difference from default settings.
-- `theme_display_node`. If set to `yes`, will display current NVM or FNM node version.
-- `theme_display_vagrant`. This feature is disabled by default, use `yes` to display Vagrant status in your prompt. Please note that only the VirtualBox and VMWare providers are supported.
-- `theme_display_vi`. By default the vi mode indicator will be shown if vi or hybrid key bindings are enabled. Use `no` to hide the indicator, or `yes` to show the indicator.
-- `theme_display_k8s_context`. This feature is disabled by default. Use `yes` to show the current kubernetes context (`> kubectl config current-context`).
-- `theme_display_k8s_namespace`. This feature is disabled by default. Use `yes` to show the current kubernetes namespace.
-- `theme_display_aws_vault_profile`. This feature is disabled by default. Use `yes` to show the currently executing [AWS Vault](https://github.com/99designs/aws-vault) profile.
-- `theme_display_user`. If set to `yes`, display username always, if set to `ssh`, only when an SSH-Session is detected, if set to no, never.
-- `theme_display_hostname`. Same behaviour as `theme_display_user`.
-- `theme_display_sudo_user`. If set to `yes`, displays the sudo-username in a root shell. For example, when calling `sudo -s` and having this option set to `yes`, the username of the user, who called `sudo -s`, will be displayed.
-- `theme_show_exit_status`. Set this option to `yes` to have the prompt show the last exit code if it was non_zero instead of just the exclamation mark.
-- `theme_display_jobs_verbose`. If set to `yes` this option displays the number of currently running background jobs next to the percent sign.
-- `theme_git_worktree_support`. If you do any git worktree shenanigans, setting this to `yes` will fix incorrect project-relative path display. If you don't do any git worktree shenanigans, leave it disabled. It's faster this way :)
-- `theme_use_abbreviated_branch_name`. Set to `yes` to truncate git branch names in the prompt.
-- `fish_prompt_pwd_dir_length`. bobthefish respects the Fish `$fish_prompt_pwd_dir_length` setting to abbreviate the prompt path. Set to `0` to show the full path, `1` (default) to show only the first character of each parent directory name, or any other number to show up to that many characters.
-- `theme_project_dir_length`. The same as `$fish_prompt_pwd_dir_length`, but for the path relative to the current project root. Defaults to `0`; set to any other number to show an abbreviated path.
-- `theme_newline_cursor`. Use `yes` to have cursor start on a new line. By default the prompt is only one line. When working with long directories it may be preferrend to have cursor on the next line. Setting this to `clean` instead of `yes` suppresses the caret on the new line.
-- `theme_newline_prompt`. Use a custom prompt with newline cursor. By default this is the chevron right glyph or `>` when powerline fonts are disabled.
+###### `set -g theme_display_vi yes`
 
-**Color scheme options**
+By default the vi mode indicator will be shown if vi or hybrid key bindings are enabled. Use `no` to always hide the indicator, or `yes` to always show the indicator.
+
+###### `set -g theme_show_exit_status yes`
+
+Use `yes` to show any non-zero exit code next to the exclamation mark.
+
+###### `set -g theme_display_jobs_verbose yes`
+
+Use `yes` to display the number of currently running background jobs next to the percent sign.
+
+###### `set -g theme_display_user yes`
+
+Set to `yes` to always display the username, to `ssh` to display only when an SSH session is active, or to `no` to never display the username.
+
+###### `set -g default_user your_normal_user`
+
+If a `default_user` is provided, the username will only be shown when it differs from the default.
+
+###### `set -g theme_display_sudo_user yes`
+
+If set to `yes`, displays the sudoer's username in a root shell. For example, when calling `sudo -s` with this option set to `yes`, the user who called `sudo -s` will be displayed.
+
+###### `set -g theme_display_hostname yes`
+
+Set to `yes` to always display the hostname, to `ssh` to display only when an SSH session is active, or to `no` to never display the hostname.
+
+###### `set -g fish_prompt_pwd_dir_length 1`
+
+Bobthefish respects the Fish `$fish_prompt_pwd_dir_length` setting to abbreviate the prompt path; set to `0` to show the full path, `1` (default) to show only the first character of each parent directory name, or any other number to show up to that many characters.
+
+###### `set -g theme_project_dir_length 1`
+
+The same as `$fish_prompt_pwd_dir_length`, but for the path relative to the current project root. Defaults to `0`; set to any other number to show an abbreviated path.
+
+###### `set -g theme_show_project_parent no`
+
+Use `no` to only show the project directory name, and not its parent path, when inside a project.
+
+###### `set -g theme_newline_cursor yes`
+
+Use `yes` to place the cursor on the next line, rather than the same line as the prompt. Setting this to `clean` instead of `yes` suppresses the caret on the new line.
+
+###### `set -g theme_newline_prompt "\$"`
+
+Use a custom prompt with newline cursor. By default this is the chevron right glyph or `>` when powerline fonts are disabled.
+
+###### `set -g theme_avoid_ambiguous_glyphs yes`
+
+You probably don't need this option, unless your terminal doesn't like Unicode. Setting to `yes` will avoid ambiguous-width characters in an attempt to
+
+###### `set -g theme_powerline_fonts no`
+
+Bobthefish really likes Powerline-enhanced fonts. If you can't make that work, set to `no` to use plaintext fallbacks.
+
+###### `set -g theme_nerd_fonts yes`
+
+Bobthefish likes Nerd Fonts even better! Use `yes` if you've got Nerd Font capable fonts.
+
+###### `set -g theme_color_scheme dark`
+
+See below for all the color scheming you can handle.
+
+
+
+##### Virtual environments and version manager options
+
+###### `set -g theme_display_screen no`
+
+Use `no` to disable screen session information.
+
+###### `set -g theme_display_vagrant yes`
+
+This feature is disabled by default, use `yes` to display Vagrant status in your prompt. Please note that only the VirtualBox and VMWare providers are supported.
+
+###### `set -g theme_display_docker_machine no`
+
+Use `no` to disable the current Docker machine name.
+
+###### `set -g theme_display_ruby no`
+
+Use `no` to disable Ruby version information. By default, the Ruby version is displayed unless it's your system Ruby version.
+
+###### `set -g theme_display_virtualenv no`
+
+Use `no` to disable Python version information. By default, the Python version is shown when it's interesting, along with the Virtualenv or Conda environmenmt.
+
+###### `set -g theme_display_go verbose`
+
+Use `no` to disable the Go version information. Set to `verbose` to show both the required and current Go version.
+
+###### `set -g theme_display_node yes`
+
+This feature is disabled by default. Use `yes`, display the version if an `.nvmrc`, `.node-version` or `package.json` file is found in the parent path. Set to `always` to always display the current NPM, NVM or FNM node version.
+
+###### `set -g theme_display_nix no`
+
+Use `no` to disable Nix environment information.
+
+###### `set -g theme_display_k8s_context yes`
+
+This feature is disabled by default. Use `yes` to show the current Kubernetes context (`> kubectl config current-context`).
+
+###### `set -g theme_display_k8s_namespace yes`
+
+This feature is disabled by default. Use `yes` to show the current Kubernetes namespace.
+
+###### `set -g theme_display_aws_vault_profile yes`
+
+This feature is disabled by default. Use `yes` to show the currently executing [AWS Vault](https://github.com/99designs/aws-vault) profile.
+
+
+
+##### Git (and other VCS) options
+
+###### `set -g theme_display_git no`
+
+Use `no` to disable Git integration. If you're doing this for performance reasons, try some of the options below before disabling it entirely!
+
+###### `set -g theme_display_git_dirty no`
+
+Use `no` to hide Git dirty state. Set the Git `bash.showDirtyState` option on a per-repository basis to disable it just for especially large repos.
+
+###### `set -g theme_display_git_dirty_verbose yes`
+
+This feature is disabled by default. Use `yes` to show more verbose dirty state information.
+
+###### `set -g theme_display_git_untracked no`
+
+Use `no` to hide Git untracked file state. Set the Git `bash.showUntrackedFiles` option on a per-repository basis to disable it just for especially large repos.
+
+###### `set -g theme_display_git_ahead_verbose yes`
+
+This feature is disabled by default. Use `yes` to show more verbose ahead/behind state information.
+
+###### `set -g theme_display_git_stashed_verbose yes`
+
+This feature is disabled by default. Use `yes` to show more verbose stashed state information.
+
+###### `set -g theme_display_git_default_branch yes`
+
+By default, Bobthefish hides the default branch name (e.g. `main` or `master`). Use `yes` to always show these branche names.
+
+###### `set -g theme_git_default_branches main trunk`
+
+By default, Bobthefish hides default branch names (e.g. `main` or `master`). To hide other branch names, you can set a custom default branch name via the `init.defaultBranch` Git config option, or override the list entirely.
+
+###### `set -g theme_use_abbreviated_branch_name yes`
+
+This feature is disabled by default. Use `yes` to truncate extremely long Git branch names.
+
+###### `set -g theme_git_worktree_support yes`
+
+If you do any Git worktree shenanigans, setting this to `yes` will fix incorrect project-relative paths. If you don't do any Git worktree shenanigans, leave it disabled. It's faster this way :)
+
+###### `set -g theme_display_hg yes`
+
+This feature is disabled by default. Use `yes` to enable Mercurial support in Bobthefish. If you don't use Mercurial, leave it disabled because it's ... not fast.
+
+###### `set -g theme_display_fossil yes`
+
+This feature is also disabled by default. It should be faster than Mercurial, but if you aren't using Fossil it's safe to leave disabled.
+
+###### `set -g theme_vcs_ignore_paths /some/path /some/other/path{foo,bar}`
+
+Ignore project paths for Git or Mercurial. Supports glob patterns.
+
+
+
+##### Right prompt options
+
+The right prompt can be configured with the following options, or overridden entirely by supplying your own `fish_right_prompt` function.
+
+###### `set -g theme_display_date`
+
+Use `no` to disable the date in the right prompt.
+
+###### `set -g theme_date_format +%c`
+
+Customize date formatting. See `man date` for more information.
+
+###### `set -g theme_date_timezone America/Los_Angeles`
+
+Supply a TZ argument variable for date formatting. See `man date` for more information.
+
+###### `set -g theme_display_cmd_duration no`
+
+Use `no` to disable command duration in the right prompt.
+
+
+
+##### Title options
+
+###### `set -g theme_title_display_process yes`
+
+This feature is disabled by default. Use `yes` to show current process name in the terminal title.
+
+###### `set -g theme_title_display_path no`
+
+Use `no` to hide current working directory from the terminal title.
+
+###### `set -g theme_title_display_user yes`
+
+Use `yes` to show the current user in the tab title (unless you're the default user).
+
+###### `set -g theme_title_use_abbreviated_path no`
+
+By default, directory names will be abbreviated in the terminal title, for example `~` instead of `$HOME` and `/u/local` instead of `/usr/local`. Set to `no` to always show full paths in the title.
+
+
+
+##### Color schemes
 
 | ![dark][btf-dark]           | ![light][btf-light]                     |
 | --------------------------- | --------------------------------------- |
 | ![solarized][btf-solarized] | ![solarized-light][btf-solarized-light] |
 | ![base16][btf-base16]       | ![base16-light][btf-base16-light]       |
 | ![zenburn][btf-zenburn]     | ![terminal-dark][btf-terminal-dark]     |
-| ![nord][btf-nord]           |                                         |
+| ![nord][btf-nord]           | ![gruvbox-light][gruvbox-light]         |
 
 You can use the function `bobthefish_display_colors` to preview the prompts in
 any color scheme.
@@ -728,9 +672,10 @@ one of the following options to change the prompt colors.
 - `base16` (or `base16-dark`), `base16-light`. Dark and light variants of the
   default Base16 theme.
 - `zenburn`. An adaptation of Zenburn.
-- `gruvbox`. An adaptation of gruvbox.
+- `gruvbox`, `gruvbox-light`. An adaptation of gruvbox dark and light variants.
 - `dracula`. An adaptation of dracula.
 - `nord`. An adaptation of nord.
+- `catpuccin-latte`, `catpuccin-frappe`, `catpuccin-macchiato`, `catpuccin-mocha`. Adaptations of the Cattpuccin themes.
 
 Some of these may not look right if your terminal does not support 24 bit color,
 in which case you can try one of the `terminal` schemes (below). However, if
@@ -759,16 +704,45 @@ and bright white.
 - `terminal2-light` (or `terminal2-light-white`)
 - `terminal2-light-black`
 
-Finally, you can specify your very own color scheme by setting
-`theme_color_scheme` to `user`. In that case, you also need to define some
-variables to set the colors of the prompt. See the "Colors" section of
-`fish_prompt.fish` for details.
+##### Custom Color Schemes
 
+To override the colors provided by a theme, set up a `bobthefish_colors` function in your configuration (`config.fish` or otherwise):
+```fish
+function bobthefish_colors -S -d 'Define a custom bobthefish color scheme'
 
-**VCS options**
-- `set -g theme_vcs_ignore_paths /some/path /some/other/path{foo,bar}`. Ignore project paths for Git or Mercurial. Supports glob patterns.
+  # optionally include a base color scheme...
+  ___bobthefish_colors default
 
-##### Overrides
+  # then override everything you want! note that these must be defined with `set -x`
+  set -x color_initial_segment_exit     ffffff ce000f --bold
+  set -x color_initial_segment_private  ffffff 255e87
+  set -x color_initial_segment_su       ffffff 189303 --bold
+  set -x color_initial_segment_jobs     ffffff 255e87 --bold
+  set -x color_path                     333333 999999
+  set -x color_path_basename            333333 ffffff --bold
+  set -x color_path_nowrite             660000 cc9999
+  set -x color_path_nowrite_basename    660000 cc9999 --bold
+  set -x color_repo                     addc10 0c4801
+  set -x color_repo_work_tree           333333 ffffff --bold
+  set -x color_repo_dirty               ce000f ffffff
+  set -x color_repo_staged              f6b117 3a2a03
+  set -x color_vi_mode_default          999999 333333 --bold
+  set -x color_vi_mode_insert           189303 333333 --bold
+  set -x color_vi_mode_visual           f6b117 3a2a03 --bold
+  set -x color_vagrant                  48b4fb ffffff --bold
+  set -x color_aws_vault
+  set -x color_aws_vault_expired
+  set -x color_username                 cccccc 255e87 --bold
+  set -x color_hostname                 cccccc 255e87
+  set -x color_rvm                      af0000 cccccc --bold
+  set -x color_virtualfish              005faf cccccc --bold
+  set -x color_virtualgo                005faf cccccc --bold
+  set -x color_desk                     005faf cccccc --bold
+  set -x color_nix                      005faf cccccc --bold
+end
+```
+
+#### Overrides
 
 You can disable the theme default greeting, vi mode prompt, right prompt, or title entirely — or override with your own — by adding custom functions to `~/.config/fish/functions`:
 
@@ -810,38 +784,7 @@ end
 [btf-zenburn]:         https://cloud.githubusercontent.com/assets/53660/16141580/06229dd4-3412-11e6-84aa-a48de127b6da.png "zenburn"
 [btf-terminal-dark]:   https://cloud.githubusercontent.com/assets/53660/16141583/0b3e8eea-3412-11e6-8068-617c5371f6ea.png "terminal-dark"
 [btf-nord]:            https://user-images.githubusercontent.com/39213657/72811435-f64ca800-3c5f-11ea-8711-dcce8cfc50fb.png "nord"
-
-
-# [bongnoster](https://github.com/kfkonrad/bongnoster-fish-theme)
-#### bongnoster
-
-A fish theme optimized for people who use:
-
-* Solarized
-* Git
-* Mercurial (requires 'hg prompt')
-* SVN
-* Unicode-compatible fonts and terminals (I use iTerm2 + Menlo)
-* Fish Vi-mode
-
-For Mac users, I highly recommend iTerm 2 + Solarized Dark
-
-###### Characteristics
-
-* If the previous command failed (✘)
-* User @ Hostname (if user is not DEFAULT_USER, which can then be set in your profile)
-* Git/HG/SVN status
-* Branch () or detached head (➦)
-* Current branch / SHA1 in detached head state
-* Dirty working directory (±, color change)
-* Working directory
-* Elevated (root) privileges (⚡)
-* Current virtualenv (Python)
-You will probably want to disable the default virtualenv prompt. Add to your [`init.fish`](https://github.com/oh-my-fish/oh-my-fish#dotfiles):
-`set --export VIRTUAL_ENV_DISABLE_PROMPT 1`
-* Indicate vi mode.
-
-Adapted from https://github.com/oh-my-fish/theme-agnoster.
+[gruvbox-light]:   https://user-images.githubusercontent.com/458535/97345492-6a207e80-188a-11eb-92df-30f33419238b.png "gruvbox-light"
 
 
 # [boxfish](https://github.com/joelwanner/theme-boxfish)
@@ -920,6 +863,7 @@ Non standard tools:
 * xsel
 * wmctrl
 * git
+* svn
 * [taskwarrior][THEMES-NAMESPACE-budspencer-taskwarrior] (optional)
 * [remind][THEMES-NAMESPACE-budspencer-remind] (optional)
 
@@ -1025,7 +969,7 @@ set -U budspencer_nobell
 #### Left prompt segments
 
 - Prompt line number
-- Git repository information
+- Repository information
 - Status symbols
     * ✻: keep track of this shell session, can be toggled with `#` to show the number of
        the session within the sessions list
@@ -1049,7 +993,7 @@ set -U budspencer_nobell
 #### Right prompt segments
 
 - Last command's duration time
-- Git status symbols:
+- Repo status symbols:
     * ↑: git repository is ahead origin
     * ↓: git repository is behind origin
     * +: changes have been added to git index
@@ -1083,7 +1027,7 @@ The following shortcuts need vi-mode:
     * styles implemented:
         - `symbols` (shows status symbols)
         - `numbers` (shows numbers instead of symbols in left prompt as well as amount of changes in
-          right git prompt)
+          right repo prompt)
 
 Note, the format is _username@hostname:pathname_. Thus, you can cut
 the whole string with your mouse and paste it into `ssh` commands.
@@ -1428,6 +1372,152 @@ Thanks!
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 
 
+# [damin](https://github.com/miniex/fish-theme-damin)
+### fish-theme-damin
+
+> Small, opinionated fish prompt. Florette (`✿`) left, heart bullet (`❥`) right, two-color palette (`#98ABCC` / `#E890B0`). Pure dingbats — no Nerd Font required. Works with [Fisher][fisher] and [Oh My Fish][THEMES-NAMESPACE-damin-omf].
+
+#### Preview
+
+Git workflow — counts, op state, conflict, duration, exit code. Past prompts collapse to `✿` after Enter:
+
+![git workflow](https://raw.githubusercontent.com/miniex/fish-theme-damin/master/assets/preview-0.gif)
+
+Language detection, env (`.venv` / `nix`), vi mode, custom segment:
+
+![lang + env + vi + custom segment](https://raw.githubusercontent.com/miniex/fish-theme-damin/master/assets/preview-1.gif)
+
+Cloud + DevOps — `aws:<profile>@<region>` / `k8s:<ctx>/<ns>` / `tf:<workspace>` / `pulumi:<stack>`:
+
+![cloud + devops](https://raw.githubusercontent.com/miniex/fish-theme-damin/master/assets/preview-2.gif)
+
+#### Install
+
+Requires **fish ≥ 3.7** (for the `path mtime` builtin).
+
+**Fisher**
+
+```fish
+fisher install miniex/fish-theme-damin
+```
+
+**Oh My Fish**
+
+```fish
+omf install damin
+omf theme damin
+```
+
+**Local hacking — Fisher**
+
+```fish
+git clone https://github.com/miniex/fish-theme-damin.git
+fisher install (pwd)/fish-theme-damin
+```
+
+**Local hacking — Oh My Fish**
+
+```fish
+git clone https://github.com/miniex/fish-theme-damin.git
+ln -sfn (pwd)/fish-theme-damin ~/.local/share/omf/themes/damin
+omf theme damin
+```
+
+#### Update
+
+**Fisher**
+
+```fish
+fisher update miniex/fish-theme-damin
+```
+
+**Oh My Fish**
+
+```fish
+omf update damin   # just this theme
+omf update         # framework + all packages
+```
+
+#### Highlights
+
+- **Fast** — ~0.5 ms/prompt. In-memory PWD memos on lang/git/cwd skip disk i/o after the first prompt. Async refresh forks a ~3 KB core. Cloud/devops/battery/jj autoload only when enabled. `-uno` opt-out for monorepos
+- **git / jj** — counts (`X2 ?2 ✗3 ✓1 ⇡N`), op state, `wt:<name>`, unmerged-first, opt-in `#N` GitHub PR
+- **Context** — `ssh` / `root` / `dkr` / `ctr` / `k8s:<ctx>/<ns>`, opt-in `aws` / `gcp` / `az`. Pure-fish, no CLI forks
+- **Lang + env** — 10 langs via pin files first. `(.venv)` / `(conda)` / `(direnv:<dir>)` / `(nix:<devshell>)`
+- **Terraform / Pulumi** — opt-in `tf:<workspace>` / `pulumi:<stack>`
+- **Terminal-native** — OSC 7 + OSC 133, opt-in OSC 9 + `notify-send` long-command alert
+- **9 palettes** — Catppuccin x4 + gruvbox / tokyonight / rosepine / nord / dracula. Live switch via `damin_set_palette`
+- **Transient prompt**, **vi-mode badge**, **ASCII fallback**, **TRAMP / dumb auto-minimal**
+- **Customizable** — 35+ `theme_damin_*` toggles, `damin_segment_<name>` hooks
+
+#### Commands
+
+| Command                | Purpose                                                                |
+|------------------------|------------------------------------------------------------------------|
+| `damin_config`         | Interactive setup wizard                                               |
+| `damin_help`           | List every toggle, current value, default                              |
+| `damin_doctor`         | Environment + install diagnostic                                       |
+| `damin_profile`        | Per-segment ms/render timer (means)                                    |
+| `damin_bench`          | Per-segment P50/P95/P99 distribution                                   |
+| `damin_set_palette`    | Switch palette                                                         |
+| `damin_install_themes` | Write `.theme` files into `~/.config/fish/themes/`                     |
+| `damin_reset_cache`    | Wipe on-disk cache                                                     |
+
+#### Configuration
+
+Every option is a `theme_damin_*` universal variable. `damin_help` lists them all; full reference + palette + cache details in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+
+```fish
+set -U theme_damin_show_jobs 0
+```
+
+#### Troubleshooting
+
+Nuke and reinstall.
+
+**Fisher**
+
+```fish
+damin_reset_cache
+fisher remove miniex/fish-theme-damin
+fisher install miniex/fish-theme-damin
+exec fish
+```
+
+**Oh My Fish**
+
+```fish
+damin_reset_cache
+omf theme default; and rm -rf ~/.local/share/omf/themes/damin
+omf install damin; and omf theme damin
+exec fish
+```
+
+Run `damin_doctor` if anything looks off. `Conflicting prompt setting` after reinstall = stale symlink (`hooks/install.fish` handles this; on older installs, `rm ~/.config/fish/functions/fish_prompt.fish; omf theme damin`).
+
+#### Companion repos
+
+- [btop-theme-damin](https://github.com/miniex/btop-theme-damin) — btop theme
+- [dotfiles.tmux](https://github.com/miniex/dotfiles.tmux) — tmux config
+- [dotfiles.kitty](https://github.com/miniex/dotfiles.kitty) — kitty terminal config
+- [dotfiles.nvim](https://github.com/miniex/dotfiles.nvim) — Neovim config
+
+#### Contributing
+
+PRs welcome. Run `./tools/format.sh`, `./tools/lint.sh`, `./tools/test.sh`. Hot-path changes need before / after `./tools/bench.sh` numbers. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+#### Changelog
+
+See [CHANGELOG.md](CHANGELOG.md). Current version: **1.2.0**.
+
+#### License
+
+[MIT](LICENSE) © 2026 Han Damin. Bundled palette hex values are MIT-licensed third-party color schemes (Catppuccin, Gruvbox, Tokyo Night, Rosé Pine, Nord, Dracula) — see [`LICENSES/`](LICENSES/).
+
+[THEMES-NAMESPACE-damin-fisher]: https://github.com/jorgebucaran/fisher
+[THEMES-NAMESPACE-damin-omf]:    https://github.com/oh-my-fish/oh-my-fish
+
+
 # [dangerous](https://github.com/oh-my-fish/theme-dangerous)
 ### Dangerous theme
 
@@ -1689,6 +1779,16 @@ Only display the folder name:
   set -g theme_short_path yes
 ```
 
+Display `git stash` indicator:
+```
+  set -g theme_stash_indicator yes
+```
+
+Do not display `user@hostname` when in an SSH session:
+```
+  set -g theme_ignore_ssh_awareness yes
+```
+
 ### License
 
 [MIT][mit] © [bpinto][author] et [al][THEMES-NAMESPACE-default-contributors]
@@ -1697,7 +1797,7 @@ Only display the folder name:
 [THEMES-NAMESPACE-default-mit]:            http://opensource.org/licenses/MIT
 [THEMES-NAMESPACE-default-author]:         http://github.com/bpinto
 [THEMES-NAMESPACE-default-contributors]:   https://github.com/oh-my-fish/theme-default/graphs/contributors
-[omf-link]:       https://www.github.com/fish-shell/oh-my-fish
+[omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
 
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 [travis-badge]:   http://img.shields.io/travis/oh-my-fish/theme-default.svg?style=flat-square
@@ -1762,8 +1862,117 @@ You can also add the same line to your own fork of the theme.
 
 
 # [doughsay](https://github.com/doughsay/omf-theme-doughsay.git)
-<a href="/doughsay/omf-theme-doughsay/master/README.md">Moved Permanently</a>.
+<a href="/doughsay/omf-theme-doughsay/master/README.md">Temporary Redirect</a>.
 
+
+
+# [easy-eel](https://github.com/pgolebiowski/theme-easy-eel)
+### 🌊 Easy Eel
+
+Dive into a minimalistic command line experience with Easy Eel for the Fish shell. With comprehensive customization features, you can tailor the theme to your liking. And to brighten your sessions, expect unique, ocean-themed greetings each time!
+
+<img src="https://github.com/pgolebiowski/theme-easy-eel/assets/7394091/ff5920f6-721a-4d49-823c-b2dfbda530a4" alt="Demonstration of the Easy Eel theme in action: showcasing user, host, directory, Git branch, and repository states. Also illustrates the outcome-based color change of the prompt indicator." width="75%">
+
+#### 🎣 Getting started
+
+With [Fish Shell](https://fishshell.com) and [Fisher](https://github.com/jorgebucaran/fisher) installed, simply run:
+
+```sh
+fisher install pgolebiowski/theme-easy-eel
+```
+
+#### 🌟 Features
+
+- 🐠 **Clean Interface.** A straightforward and uncluttered prompt.
+- 🌅 **Oceanic Greetings.** Get inspired with sea-themed messages every time you open a new terminal session.
+- 🛠️ **Granular Customization.** Tailor the theme to your needs, from aesthetics to behavior.
+
+#### 🦑 Customization
+
+Easy Eel provides two distinct avenues for personalization:
+
+1. **Environment Variables.** For refining the theme's appearance, make use of specific variables. Adjust elements like colors, symbols, or even toggle on/off certain prompt parts.
+   
+<img src="https://github.com/pgolebiowski/theme-easy-eel/assets/7394091/633f9200-6398-4f5a-9a1c-12723a2ea602" alt="Demonstrating the use of environment variables to modify the prompt appearance. In this example, the prompt indicator has been changed to '🌊 ', the user color is set to blue, and the host display has been hidden." width="75%">
+
+2. **Override Functions.** When you wish to modify the theme's behavior or replace entire prompt sections, these functions come into play. When defined, they will override Easy Eel's defaults for the associated prompt segment.
+
+<img src="https://github.com/pgolebiowski/theme-easy-eel/assets/7394091/e19ef564-62fa-4f85-88b6-32a9ed306c68" alt="Showcasing the use of an override function to replace the default user name. Here, the `easy_eel_override_user` function is defined to change the user name to 'Dockside Dave' in the prompt." width="75%">
+
+#### 📚 Documentation
+
+##### Greeting 
+
+- **Purpose:** Welcome users with random ocean-themed inspirations.
+- **Default:** A collection of light-hearted and encouraging ocean-themed greetings to kickstart your terminal session.
+- **Override:** `easy_eel_override_greeting`
+
+##### Title
+
+- **Purpose:** Terminal title. Shows the directory by default.
+- **Override:** `easy_eel_override_title`
+
+##### Prompt Sections
+
+###### User
+
+- **Purpose**: Display the current user.
+- **Color**: `EASY_EEL_COLOR_USER` (default: `brred`)
+- **Override**: `easy_eel_override_user`
+- **Toggle**: `EASY_EEL_HIDE_USER`
+
+###### Host
+
+- **Purpose**: Show hostname. Different style for SSH sessions.
+- **Default Color**: `EASY_EEL_COLOR_HOST_DEFAULT` (default: `yellow`)
+- **SSH Color**: `EASY_EEL_COLOR_HOST_SSH` (default: `--bold red`)
+- **Override**: `easy_eel_override_host`
+- **Toggle**: `EASY_EEL_HIDE_HOST`
+
+###### Current Directory
+
+- **Purpose**: Reveal current directory.
+- **Color**: `EASY_EEL_COLOR_CURRENT_DIRECTORY` (default: `green`)
+- **Override**: `easy_eel_override_current_directory`
+- **Toggle**: `EASY_EEL_HIDE_CURRENT_DIRECTORY`
+
+###### Git
+
+- **Purpose**: Displays the Git branch name and repository state.
+- **Variables:**
+  - `EASY_EEL_COLOR_GIT_BRANCH` (default: `purple`)
+  - `EASY_EEL_COLOR_GIT_STATE` (default: `blue`)
+  - `EASY_EEL_SYMBOL_GIT_DIRTY` (default: `!`)
+  - `EASY_EEL_SYMBOL_GIT_UNTRACKED` (default: `☡`)
+  - `EASY_EEL_SYMBOL_GIT_STASH` (default: `↩`)
+  - `EASY_EEL_SYMBOL_GIT_CLEAN` (default: `✓`)
+- **Toggle**: `EASY_EEL_HIDE_GIT_STATE`
+
+###### Prompt Indicator
+
+- **Purpose**: Indicates where the user can start typing commands. Color changes based on the outcome of the previous command.
+- **Variables:**
+  - `EASY_EEL_SYMBOL_PROMPT_INDICATOR` (default: `↪ `)
+  - `EASY_EEL_COLOR_PROMPT_NORMAL` (default: `normal`)
+  - `EASY_EEL_COLOR_ERROR` (default: `red`)
+
+#### 🐳 Support
+
+Having trouble with Easy Eel or have a feature suggestion? Simply head to the [**Issues** tab](https://github.com/pgolebiowski/theme-easy-eel/issues) to share your feedback. Every comment helps make the theme better!
+
+#### 🤝 Contributions
+
+You're welcome to contribute! Fork the repository, implement and test your changes, and submit a pull request detailing your updates.
+
+#### 💡 Inspiration
+
+- https://github.com/mathiasbynens/dotfiles
+- https://github.com/necolas/dotfiles
+- https://github.com/lfiolhais/theme-simple-ass-prompt
+
+#### ⚖️ License
+
+The theme code is yours to customize, utilize, and spread ([the MIT License](/LICENSE)). Kindly consider a mention or link back to this project whenever you share it. Enjoy!
 
 
 # [eclm](https://github.com/oh-my-fish/theme-eclm)
@@ -1806,7 +2015,7 @@ Inspired by idan, a functional, uncluttered fish theme with usability perks for 
 Check out [Anonymous Pro](http://www.marksimonson.com/fonts/view/anonymous-pro).
 
 
-# [eden](https://github.com/oh-my-fish/theme-eden)
+# [eden](https://github.com/amio/fish-theme-eden)
 <img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="144px" height="144px"/>
 
 ###### eden
@@ -1838,7 +2047,7 @@ $ fisher rm theme-eden
 
 #### Features
 
-* Last command's timestamp & exit status on right.
+* Last command's **timestamp**, **duration**, and **exit status**(if not zero) on right.
 * `eden_toggle_path` display long or short pwd.
 * `eden_toggle_host` show or hide host & user.
 * `eden_prompt_char` custom prompt char.
@@ -1847,11 +2056,7 @@ $ fisher rm theme-eden
 
 #### Screenshot
 
-<p align="center">
-<img width="883" height="529" alt="Theme Eden Screenshot" src="https://cloud.githubusercontent.com/assets/215282/14846313/c3e211f0-0c95-11e6-8814-93a2b9a78b2c.png">
-</p>
-
-Font: [INCONSOLATA](https://www.google.com/fonts/specimen/Inconsolata)
+![Fish Shell theme Eden screenshot](https://github.com/amio/fish-theme-eden/assets/215282/fd437f9b-acfe-473b-b6e6-fa28f92ff7c1)
 
 ### License
 
@@ -1912,7 +2117,9 @@ Forked from https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md#
 ###### es theme
 > A Powerline-style, Git-aware theme for [Oh My Fish][omf-link].
 
-[![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE) [![Fish Shell Version](https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square)](http://fishshell.com) [![Oh My Fish Framework](https://img.shields.io/badge/Oh%20My%20Fish-Framework-007EC7.svg?style=flat-square)](https://www.github.com/oh-my-fish/oh-my-fish)
+[![MIT License][license-badge]](/LICENSE)
+[![Fish Shell Version][fish-version-badge]](https://fishshell.com)
+[![Oh My Fish Framework][omf-badge]](https://www.github.com/oh-my-fish/oh-my-fish)
 
 <br/>
 
@@ -1923,44 +2130,121 @@ $ omf install es
 ```
 
 #### Requirements
-* Latest fish version with a builtin `string` function (above `2.2.0`, so please get the latest version from  `HEAD`)
-* Powerline-patched font
+* A font patched with extra glyphs from [Powerline](https://github.com/powerline/fonts) (`E0A0-E0B3`), [Devicons][font-devicons] (`E600-E6C5`), and [Octicons ][font-octicons] (`F000-F0E8`) (see the [__Nerd Fonts__](https://github.com/ryanoasis/nerd-fonts) project for more details)
 
 #### Features
 
-* Git-aware theme with detailed __Git status__ in the left prompt (added, removed, modified, renamed, unstaged, stashed)
-* __Node/Python/Ruby@gemset__ current version inside a git folder in the right prompt if respective virtual environment manager is installed (nvm, pyenv, rbenv)
-* __Error status__ and __duration of last command__ in the right prompt
+* Git-aware theme with detailed __Git status__
+  - at the left prompt: `added`, `removed`, `modified`, `renamed`, `unstaged`, `stashed`
+  - at the right prompt: `sha`
+* __Node/Python/Ruby@gemset__ current version (local/global in a git folder, only local elsewhere) at the right prompt if respective virtual environment manager is installed (nodenv/NVM, pyenv, rbenv/RVM)
+* __Error status__ and __duration of last command__ at the right prompt
 * Mac-notifications on completion of long commands (10+&nbsp;seconds by default) if terminal (iTerm and Terminal) is out of focus
-* Limits path to __two last folders__ for better visibility, with `$HOME` directory abbreviated to `~`
+* Limits path to __last two folders__ for better visibility, with `$HOME` directory abbreviated to `~`
 
-#### Screenshot
+#### Configuration
+* Set the following variables in your `~/.config/fish/config.fish` to define how this theme looks:
+```fish
+###      Variable                  	Default	  Option 	Prompt	Description
+set -g theme_es_show_symbols     	'yes'  	# no     	  ←   	Show pre-path symbols, e.g. read-only
+set -g theme_es_extra_space      	''     	# ' '    	  ←   	Add an extra symbol before each icon (e.g., an extra space)
+set -g theme_es_verbose_git_ahead	'yes'  	# no     	  ←   	Print the ahead/behind state for the current branch	(52 instead of ⇕)
+set -g theme_es_show_git_count   	'no'   	# yes    	  ←   	Show git count
+set -g theme_es_spacer_count     	''     	# ' '    	  ←   	Add extra symbol before each count (e.g., an extra space)
+set -g theme_es_git_sha          	'short'	# long no	  →   	Show git sha (short/long)
+set -g theme_es_show_user        	'no'   	# yes    	  →   	Show username
+set -g theme_es_show_hostname    	'yes'  	# no     	  →   	Show hostname on SSH connections
+set -g theme_es_show_node_v      	'yes'  	# no     	  →   	Show Node.js version
+set -g theme_es_show_python_v    	'yes'  	# no     	  →   	Show Python version
+set -g theme_es_show_ruby_v      	'yes'  	# no     	  →   	Show Ruby prompt @ gemset
+set -g theme_es_notify_duration  	10     	#        	      	Notify if command runs longer than this time (seconds)
+```
+
+* You can also override every single icon  by setting the following variables in your `~/.config/fish/config.fish`:
+<details>
+  <summary>List of icon variable names and default values</summary>
+
+```fish
+###echo A quick test of glyph output: \Uf00a \ue709 \ue791 \ue739 \uF0DD \UF020 \UF01F \UF07B \UF015 \UF00C \UF00B \UF06B \UF06C \UF06E \UF091 \UF02C \UF026 \UF06D \UF0CF \UF03A \UF005 \UF03D \UF081 \UF02A \UE606 \UE73C
+set -g theme_es_icon_NODE                	\UE718" "	#  from Devicons or ⬢
+set -g theme_es_icon_RUBY                	\UE791" "	# \UE791 from Devicons; \UF047; \UE739; 💎
+set -g theme_es_icon_PYTHON              	\UE606" "	# \UE606; \UE73C
+set -g theme_es_icon_PERL                	\UE606" "	# \UE606; \UE73C
+set -g theme_es_icon_TEST                	\UF091   	# 
+set -g theme_es_icon_VCS_STAGED          	\UF06B   	#  (added) →
+set -g theme_es_icon_VCS_DELETED         	\UF06C   	# 
+set -g theme_es_icon_VCS_MODIFIED        	\UF06D   	# 
+set -g theme_es_icon_VCS_RENAMED         	\UF06E   	# 
+set -g theme_es_icon_VCS_UNMERGED        	\UF026   	#    #═: there are unmerged commits
+set -g theme_es_icon_VCS_UNTRACKED       	\UF02C   	#    #●: there are untracked (new) files
+set -g theme_es_icon_VCS_DIFF            	\UF06B" "	# 
+set -g theme_es_icon_VCS_STASH           	\UF0CF" "	#      #✭: there are stashed commits
+set -g theme_es_icon_VCS_INCOMING_CHANGES	\UF00B" "	#  or \UE1EB or \UE131
+set -g theme_es_icon_VCS_OUTGOING_CHANGES	\UF00C" "	#  or \UE1EC or 
+set -g theme_es_icon_VCS_TAG             	\UF015" "	# 
+set -g theme_es_icon_VCS_BOOKMARK        	\UF07B" "	# 
+set -g theme_es_icon_VCS_COMMIT          	\UF01F" "	# 
+set -g theme_es_icon_VCS_BRANCH          	\UE0A0   	# \UE0A0 or \UF020
+set -g theme_es_icon_VCS_BRANCH_REMOTE   	\UE804" "	#  not displayed, should be branch icon on a book
+set -g theme_es_icon_VCS_BRANCH_DETACHED 	\U27A6" "	# ➦
+set -g theme_es_icon_VCS_GIT             	\UF00A" "	#  from Octicons
+set -g theme_es_icon_VCS_HG              	\UF0DD" "	# Got cut off from Octicons on patching
+set -g theme_es_icon_VCS_CLEAN           	\UF03A   	# 
+set -g theme_es_icon_VCS_PUSH            	\UF005" "	# 
+set -g theme_es_icon_VCS_DIRTY           	±        	#
+set -g theme_es_icon_ARROW_UP            	\UF03D"" 	#  ↑
+set -g theme_es_icon_ARROW_DOWN          	\UF03F"" 	#  ↓
+set -g theme_es_icon_OK                  	\UF03A   	# 
+set -g theme_es_icon_FAIL                	\UF081   	# 
+set -g theme_es_icon_STAR                	\UF02A   	# 
+set -g theme_es_icon_JOBS                	\U2699" "	# ⚙
+set -g theme_es_icon_VIM                 	\UE7C5" "	# 
+set -g theme_es_icon_LOCK                	        	#
+```
+</details>
+
+#### Screenshots
 
 ##### __Git folder__
 <p align="center">
-<img src="https://github.com/oh-my-fish/theme-es/blob/master/Fish%20Prompt%20Git-es.png?raw=true">
+<img src="../img/Fish%20Prompt%20Git-es.png?raw=true">
 </p>
 
 ##### __Normal folder (no Git)__
 <p align="center">
-<img src="https://github.com/oh-my-fish/theme-es/blob/master/Fish%20Prompt%20NoGit-es.png?raw=true">
+<img src="../img/Fish%20Prompt%20NoGit-es.png?raw=true">
 </p>
 
 ##### __Normal read-only folder (no Git)__
 <p align="left">
-<img src="https://github.com/oh-my-fish/theme-es/blob/master/Fish%20Prompt%20NoGit%20Read-only-es.png?raw=true" width="280">
+<img src="../img/Fish%20Prompt%20NoGit%20Read-only-es.png?raw=true" width="280">
 </p>
 
-### License
+<details>
+  <summary>Icons</summary>
 
-[MIT][mit] © [eugenesvk][THEMES-NAMESPACE-es-author]
+  ![Icons](../img/Icons.png?raw=true)
 
+</details>
 
-[THEMES-NAMESPACE-es-mit]:            http://opensource.org/licenses/MIT
-[THEMES-NAMESPACE-es-author]:         http://github.com/eugenesvk
-[omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
+#### License
 
-[license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
+[MIT][mit] © [eugenesvk][author] et [al][THEMES-NAMESPACE-es-contributors]
+
+[THEMES-NAMESPACE-es-mit]:               	https://opensource.org/licenses/MIT
+[THEMES-NAMESPACE-es-author]:            	https://github.com/eugenesvk
+[THEMES-NAMESPACE-es-contributors]:      	https://github.com/oh-my-fish/theme-es/graphs/contributors
+[omf-link]:          	https://www.github.com/oh-my-fish/oh-my-fish
+[license-badge]:     	https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
+[fish-version-badge]:	https://img.shields.io/badge/fish-v3.0.0-007EC7.svg?style=flat-square
+[omf-badge]:         	https://img.shields.io/badge/Oh%20My%20Fish-Framework-007EC7.svg?style=flat-square
+
+[font-awesome]:                          	https://github.com/FortAwesome/Font-Awesome
+[font-devicons]:                         	https://vorillaz.github.io/devicons/
+[font-octicons]:                         	https://github.com/primer/octicons
+[font-material-design-icons]:            	https://github.com/Templarian/MaterialDesign
+[font-weather]:                          	https://github.com/erikflowers/weather-icons
+[font-ryanoasis-powerline-extra-symbols]:	https://github.com/ryanoasis/powerline-extra-symbols
 
 
 # [fishbone](https://github.com/oh-my-fish/theme-fishbone)
@@ -2096,6 +2380,43 @@ _From left to right:_
 </p>
 
 
+# [fluffy](https://github.com/katekyy/fluffy)
+##### Fluffy
+<div>
+  <img src=".pastes/fluff.png"/>
+</div>
+
+A fluffy-ish like theme for [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish) based on [nai](https://github.com/oh-my-fish/theme-nai).
+
+[![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?color=%237CAFC2&style=flat-square)](/LICENSE)
+[![Fish Shell Version](https://img.shields.io/badge/fish-v3.0.0-007EC7.svg?color=%237CAFC2&style=flat-square)](https://fishshell.com)
+[![Oh My Fish Framework](https://img.shields.io/badge/Oh%20My%20Fish-Framework-007EC7.svg?color=%237CAFC2&style=flat-square)](https://www.github.com/oh-my-fish/oh-my-fish)
+
+<br/>
+
+> **Warning**:
+> You need to have Nerd Fonts in order to get this theme to work.
+
+###### Features
+
+- Truncated CWD (just the current and previous directory name)
+- Git branch, dirty state (M) and head detach (HD)
+- Icons
+
+######  Basic Customization
+```bash
+~> cd ~/.local/share/omf/themes/fluffy/functions
+~> nano fish_prompt.fish
+```
+You will see different settings that you can set:
+<div>
+  <img src=".pastes/2022-06-28-18-39-13.png"/>
+</div>
+
+<br/>
+
+
+
 # [fox](https://github.com/oh-my-fish/theme-fox)
 #### fox
 
@@ -2147,7 +2468,7 @@ Unofficial Gentoo fish prompt theme which tries to follow Gentoo default bash $P
 ### Credits:
 
 * Forked from https://github.com/oh-my-fish/theme-godfather and modified to follow Gentoo default bash $PS1
-* Colors and git functions taken from [amio](https://github.com/amio)'s [edan](https://github.com/oh-my-fish/oh-my-fish/blob/master/db/themes/edan) theme.
+* Colors and git functions taken from [amio](https://github.com/amio)'s [edan](https://github.com/oh-my-fish/theme-edan) theme.
 * "Gentoo" is a trademark of Gentoo Foundation, Inc.
 
 
@@ -2337,6 +2658,54 @@ Also a huge thanks to @sagebind for his really nice and helpful comments :thumbs
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 
 
+# [heartsteal](https://github.com/AnashiKitsun/heartsteal)
+<img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="144px" height="144px"/>
+
+###### heartsteal
+> A theme for [Oh My Fish][omf-link].
+
+[![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
+[![Fish Shell Version](https://img.shields.io/badge/fish-v3.0.0-007EC7.svg?style=flat-square)](https://fishshell.com)
+[![Oh My Fish Framework](https://img.shields.io/badge/Oh%20My%20Fish-Framework-007EC7.svg?style=flat-square)](https://www.github.com/oh-my-fish/oh-my-fish)
+
+<br/>
+
+
+#### Install
+
+```fish
+$ omf install heartsteal
+```
+
+
+#### Features
+
+* Highly minimal two line fish prompt.
+* Basal git information, current directory, command exit status.
+
+#### Note
+Works best with the Fira Code font, as ligatures are used in the design.
+
+#### Screenshot
+
+<p align="center">
+<img src="screenshot.png">
+</p>
+
+
+### License
+
+[MIT][mit] © [AnashiKitsun][author] et [al][THEMES-NAMESPACE-heartsteal-contributors]
+
+
+[THEMES-NAMESPACE-heartsteal-mit]:            https://opensource.org/licenses/MIT
+[THEMES-NAMESPACE-heartsteal-author]:         https://github.com/{{USER}}
+[THEMES-NAMESPACE-heartsteal-contributors]:   https://github.com/{{USER}}/theme-heartsteal/graphs/contributors
+[omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
+
+[license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
+
+
 # [idan](https://github.com/oh-my-fish/theme-idan)
 #### idan
 A functional, uncluttered fish theme with usability perks for git users and python developers.
@@ -2449,10 +2818,10 @@ $ omf install johanson
 
 ![kawasaki][THEMES-NAMESPACE-kawasaki-screenshot]
 
-###### Example customizations
+###### Example presets
 
-| [Minimal Midnight](#customizing) | [Joker](#customizing) |
-| -------------------------------- | --------------------- |
+| [Minimal Midnight](#presets) | [Joker](#presets) |
+| ---------------------------- | ----------------- |
 | ![midnight](https://user-images.githubusercontent.com/195790/96850333-45429a80-1489-11eb-8b28-043b2999b75d.png) | ![joker](https://user-images.githubusercontent.com/195790/96945002-0820eb80-150f-11eb-91fe-ecfa0e2b9131.png) |
 
 #### Installation
@@ -2483,161 +2852,93 @@ To use kawasaki's virtualenv prompt instead of the default virtualenv prompt app
  * Virtualenv prompt indicator.
 
 
+#### Presets
+
+kawasaki comes with several pre-built presets that you can use right away. Each preset has unique colors and display configurations.
+
+##### Available Presets
+
+- **kawasaki** (default) - The original kawasaki theme
+- **midnight** - Minimal, clean prompt with purple accents
+- **joker** - Vibrant green and yellow color scheme
+- **nord** - Professional arctic color scheme (shows all segments)
+- **dracula** - Popular purple/pink theme (always shows jobs)
+- **gruvbox** - Retro warm colors (minimal display)
+- **spaceship** - Clean minimal style (essential info only)
+- **ocean** - Calming blues and teals (balanced display)
+
+##### Using Presets
+
+The easiest way to apply a preset is using the `kawasaki_preset` function:
+
+```fish
+### Apply a preset (temporary - only for current shell session)
+kawasaki_preset midnight
+kawasaki_preset joker
+kawasaki_preset nord
+
+### Apply and save preset to config file (persists across sessions)
+kawasaki_preset --save midnight
+kawasaki_preset -s joker  # Short form
+```
+
+The `--save` (or `-s`) flag automatically adds the preset command to your `~/.config/fish/config.fish` file, so it will load automatically in future shell sessions.
+
+You can also use a custom color palette:
+
+```fish
+### Define your color palette
+set theme_primary 1eb980
+set theme_secondary ffcf44
+set theme_primary_variant 045d56
+set theme_secondary_variant ff6859
+set theme_hilight b15dff
+
+### Apply the custom palette
+kawasaki_preset custom
+```
+
+##### Creating Your Own Preset
+
+You can easily create your own preset by creating a `.fish` file in the presets directory:
+
+1. **Find your presets directory:**
+   ```fish
+   # Usually located at:
+   ~/.config/omf/themes/kawasaki/presets/
+   ```
+
+2. **Create a new preset file** (e.g., `mytheme.fish`):
+   ```fish
+   # My Custom Preset
+   # Usage: kawasaki_preset mytheme
+
+   # Set your custom colors
+   set -g theme_color_user aa55ff
+   set -g theme_color_path brgreen
+   set -g theme_color_prompt white
+
+   # Configure display options
+   set -g theme_display_group no
+   set -g theme_display_hostname no
+   set -gx fish_prompt_pwd_dir_length 1
+   ```
+
+3. **Use your preset:**
+   ```fish
+   kawasaki_preset mytheme
+   ```
+
+4. **Persist your preset** (optional):
+   ```fish
+   kawasaki_preset --save mytheme
+   ```
+
+The `kawasaki_preset` function will automatically discover your new preset and make it available. You can see all available presets by running `kawasaki_preset` without arguments.
+
 #### Customizing
 
-###### Override defaults
-
-You can override the default display settings by specifying any of the following settings in your [init.fish][THEMES-NAMESPACE-kawasaki-dotfiles]:
-
-```fish
-#### Enable the time to be displayed.
-set -g theme_display_time yes
-
-#### Disable playing the user's current group.
-set -g theme_display_group no
-
-### Display the system hostname.
-set -g theme_display_hostname no
-
-#### Disable Git-awareness.
-set -g theme_display_git no
-
-#### Don't disable jobs indicator.
-set -g theme_display_jobs no
-
-#### Always display the jobs indicator, even if there are no jobs.
-set -g theme_display_jobs_always yes
-
-#### Hide the current directory read/write indicator.
-set -g theme_display_rw no
-
-#### Don't display the VirtualEnv prompt.
-set -g theme_display_virtualenv no
-
-#### Display the battery
-set -g theme_display_batt no
-set -g theme_display_batt_icon no
-```
-
-###### Look and feel
-
-Nearly every aspect of kawasaki can be customized. The following can be set to adjust the look and feel of kawasaki:
-
-```fish
-set -g theme_color_error                           red
-set -g theme_color_superuser                       red
-set -g theme_color_user                            white
-set -g theme_color_group                           666666
-set -g theme_color_host                            brgreen
-set -g theme_color_separator                       brblack
-set -g theme_color_bracket                         brblue
-set -g theme_color_normal                          normal
-set -g theme_color_time                            666666
-set -g theme_color_path                            brwhite
-set -g theme_color_prompt                          white
-set -g theme_color_virtualenv                      bryellow
-set -g theme_color_status_prefix                   brblue
-set -g theme_color_status_jobs                     brgreen
-set -g theme_color_status_rw                       brwhite
-set -g theme_color_batt_icon                       white
-set -g theme_color_batt_charging                   brgreen
-set -g theme_color_batt_discharging                red
-set -g theme_color_batt_0                          red
-set -g theme_color_batt_25                         red
-set -g theme_color_batt_50                         bryellow
-set -g theme_color_batt_75                         bryellow
-set -g theme_color_batt_100                        brgreen
-
-set -g theme_prompt_char_normal                    '$'
-set -g theme_prompt_char_superuser                 '#'
-set -g theme_prompt_char                           "$theme_prompt_char_normal"
-
-set -g theme_prompt_superuser_glyph                \u2605
-set -g theme_prompt_userhost_separator              '@'
-set -g theme_prompt_group_separator                 ':'
-
-set -g theme_prompt_segment_separator_char         ' '
-set -g theme_prompt_segment_separator_color        normal
-
-set -g theme_prompt_status_jobs_char               '%'
-set -g theme_prompt_status_rw_char                 '.'
-set -g theme_prompt_status_separator_char          '/'
-
-set -g theme_prompt_virtualenv_char_begin          '('
-set -g theme_prompt_virtualenv_char_end            ')'
-set -g theme_prompt_virtualenv_color_char_begin    normal
-set -g theme_prompt_virtualenv_color_char_end      normal
-
-set -g theme_prompt_batt_charging_char             '↑'
-set -g theme_prompt_batt_discharging_char          '↓'
-set -g theme_prompt_batt_0                         ''
-set -g theme_prompt_batt_25                        ''
-set -g theme_prompt_batt_50                        ''
-set -g theme_prompt_batt_75                        ''
-set -g theme_prompt_batt_100                       ''
-
-set -g theme_display_time_format                   '+%I:%M'
-
-set -g __fish_git_prompt_color_merging             red
-set -g __fish_git_prompt_color_branch              brblue
-set -g __fish_git_prompt_showcolorhints            yes
-set -g __fish_git_prompt_show_informative_status   yes
-set -g __fish_git_prompt_char_stateseparator       ' '
-
-set -g __fish_git_prompt_char_branch_begin         ''
-set -g __fish_git_prompt_char_branch_end           ''
-set -g __fish_git_prompt_color_branch_begin        bryellow
-set -g __fish_git_prompt_color_branch_end          bryellow
-```
-
-####### Examples
-
-__Minimal midnight__
-
-![midnight](https://user-images.githubusercontent.com/195790/96850333-45429a80-1489-11eb-8b28-043b2999b75d.png)
-
-```fish
-set -gx fish_prompt_pwd_dir_length 0
-set -g theme_display_group no
-set -g theme_display_hostname no
-set -g theme_color_user aa55ff
-set -g theme_display_rw no
-```
-
-__Joker__
-
-![joker](https://user-images.githubusercontent.com/195790/96945002-0820eb80-150f-11eb-91fe-ecfa0e2b9131.png)
-
-```fish
-set theme_primary                                   1eb980
-set theme_secondary                                 ffcf44
-set theme_primary_variant                           045d56
-set theme_secondary_variant                         ff6859
-set theme_hilight                                   b15dff
-
-set -g theme_color_user                             $theme_hilight
-set -g theme_color_host                             $theme_primary_variant
-set -g theme_color_separator                        brblack
-set -g theme_color_normal                           normal
-set -g theme_color_time                             $theme_secondary_variant
-set -g theme_color_path                             $theme_primary
-set -g theme_color_prompt                           $theme_secondary_variant
-set -g theme_color_virtualenv                       $theme_secondary
-set -g theme_color_status_prefix                    $theme_hilight
-set -g theme_color_status_jobs                      $theme_primary
-set -g theme_color_status_rw                        $theme_primary
-set -g theme_display_group                          no
-set -g theme_prompt_segment_separator_color         $theme_primary
-set -g theme_prompt_userhost_separator              '.'
-set -g __fish_git_prompt_char_branch_begin          '['
-set -g __fish_git_prompt_char_branch_end            ']'
-set -g __fish_git_prompt_color_branch_begin         brblack
-set -g __fish_git_prompt_color_branch_end           brblack
-set -g __fish_git_prompt_color_branch               $theme_secondary
-
-set -gx fish_prompt_pwd_dir_length                  1
-set -g theme_display_jobs_always                    yes
-```
+For detailed customization options including all color variables, display toggles, prompt characters, and more, see [CUSTOMIZATION.md](CUSTOMIZATION.md).
 
 #### License
 
@@ -2651,6 +2952,47 @@ Copyright (c) 2016 Beau Hastings
 [THEMES-NAMESPACE-kawasaki-screenshot]: https://cloud.githubusercontent.com/assets/195790/20061473/9545bd4c-a4c5-11e6-83da-8b0a954b8a5a.gif
 [THEMES-NAMESPACE-kawasaki-bira]:       https://github.com/oh-my-fish/theme-bira
 [THEMES-NAMESPACE-kawasaki-dotfiles]:   https://github.com/oh-my-fish/oh-my-fish#dotfiles
+
+
+# [kovial](https://github.com/sokryptk/kovial)
+<img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="144px" height="144px"/>
+
+###### kovial
+> A theme for [Oh My Fish][omf-link].
+
+[![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
+[![Fish Shell Version](https://img.shields.io/badge/fish-v3.0.0-007EC7.svg?style=flat-square)](https://fishshell.com)
+[![Oh My Fish Framework](https://img.shields.io/badge/Oh%20My%20Fish-Framework-007EC7.svg?style=flat-square)](https://www.github.com/oh-my-fish/oh-my-fish)
+
+<br/>
+
+#### Install
+
+```fish
+$ omf install kovial
+```
+
+
+#### Features
+
+* __jovial with a k__
+
+
+#### Screenshot
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/28943200/143537236-36de1ae6-dca1-454a-93e0-d06dfb0cff3c.png">
+</p>
+
+
+### License
+
+[MIT][mit] © [krypticallusion][THEMES-NAMESPACE-kovial-author]
+
+[THEMES-NAMESPACE-kovial-mit]:            https://opensource.org/licenses/MIT
+[THEMES-NAMESPACE-kovial-author]:         https://github.com/krypticallusion
+[omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
+[license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 
 
 # [krisleech](https://github.com/oh-my-fish/theme-krisleech)
@@ -2732,7 +3074,7 @@ set theme_display_rbenv_with_gemfile_only 'yes'
 
 
 
-# [lambda](https://github.com/hasanozgan/theme-lambda)
+# [lambda](https://github.com/netologist/theme-lambda)
 ##### Lambda
 
 [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
@@ -2747,8 +3089,12 @@ set theme_display_rbenv_with_gemfile_only 'yes'
 </p>
 
 ######## Added VirtualEnv Support
-![preview](http://i.imgur.com/fWurs47.png)
+![preview](https://i.imgur.com/fWurs47.png)
 
+######## Added Mode Indicator Support
+<p align="center">
+<img src="https://raw.githubusercontent.com/js402882/theme-lambda/master/screenshot-mode-indicator.png">
+</p>
 
 ###### Install
 
@@ -2764,8 +3110,89 @@ fisher i lambda
 omf install lambda
 ```
 
+####### [home-manager]
+```nix
+plugins = [
+  {
+    name = "theme-lambda";
+    src = pkgs.fetchFromGitHub {
+      owner = "hasanozgan";
+      repo = "theme-lambda";
+      rev = "1d599f05dc560d7c9fa0660fa72e2d32251f6f65";
+      sha256 = "1s0pyc7nlxlynszlskmzrg57rq2nszbkzjq714hl15g1 gxp95k";
+    };
+  }
+];
+```
+
+
+####### Fish Mode Indicator Installation Note
+
+Disable default Fish mode indicator via
+
+```
+function fish_mode_prompt; end
+funcsave fish_mode_prompt
+```
+
+Details in https://fishshell.com/docs/current/cmds/fish_mode_prompt.html
+
+
+
+
 [THEMES-NAMESPACE-lambda-Fisherman]: https://github.com/fisherman/fisherman
 [Oh-My-Fish]: https://github.com/oh-my-fish/oh-my-fish
+[home-manager]: https://github.com/nix-community/home-manager
+
+
+# [lambda-zero](https://github.com/marcin-dudek/lambda-zero)
+<img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="144px" height="144px"/>
+
+###### lambda-zero
+> A theme for [Oh My Fish][omf-link].
+
+[![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
+[![Fish Shell Version](https://img.shields.io/badge/fish-v3.0.0-007EC7.svg?style=flat-square)](https://fishshell.com)
+[![Oh My Fish Framework](https://img.shields.io/badge/Oh%20My%20Fish-Framework-007EC7.svg?style=flat-square)](https://www.github.com/oh-my-fish/oh-my-fish)
+
+<br/>
+
+
+#### Install
+
+```fish
+omf install lambda-zero
+```
+or
+
+```fish
+omf install marcin-dudek/lambda-zero
+```
+
+#### Features
+
+* Awesome λ prompt.
+* Minimalistic theme.
+* Current time.
+
+#### Screenshot
+
+<p align="center">
+<img src="./screenshot.png" alt="screenshot to be done">
+</p>
+
+
+### License
+
+[MIT][mit] © [Marcin Dudek][author] et [al][THEMES-NAMESPACE-lambda-zero-contributors]
+
+
+[THEMES-NAMESPACE-lambda-zero-mit]:            https://opensource.org/licenses/MIT
+[THEMES-NAMESPACE-lambda-zero-author]:         https://github.com/marcin-dudek
+[THEMES-NAMESPACE-lambda-zero-contributors]:   https://github.com/marcin-dudek/lambda-zero/graphs/contributors
+[omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
+
+[license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 
 
 # [lavender](https://github.com/tungpun/fish-theme-lavender)
@@ -2866,9 +3293,32 @@ Based on the eclm theme (which was based on the robbyrussell theme).
 * If the last command was failed, the indicator would be red, otherwise it's green
 
 
-# [mish](https://github.com/M4rk9696/theme-mish.git)
-<a href="/M4rk9696/theme-mish/master/README.md">Moved Permanently</a>.
+# [mint](https://github.com/MortalHappiness/theme-mint.git)
+<a href="/MortalHappiness/theme-mint/master/README.md">Temporary Redirect</a>.
 
+
+
+# [mish](https://github.com/Mark1626/theme-mish)
+### mish
+
+[![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
+[![Fish Shell Version](https://img.shields.io/badge/fish-v3.0.0-007EC7.svg?style=flat-square)](https://fishshell.com)
+[![Oh My Fish Framework](https://img.shields.io/badge/Oh%20My%20Fish-Framework-007EC7.svg?style=flat-square)](https://www.github.com/oh-my-fish/oh-my-fish)
+
+A minimal fish theme with just the essentials
+
+##### Feature
+
+![alt text](https://raw.githubusercontent.com/Mark1626/theme-mish/master/./mish.png)
+
+###### Left Prompt
+- Branch name, `*` is branch is dirty
+- Displays number of commits the repository is above or behind the repository
+- Shows only the folder name
+
+###### Right Prompt
+- Status code
+- Time stamp
 
 
 # [mokou](https://github.com/oh-my-fish/theme-mokou)
@@ -2924,6 +3374,65 @@ A minimalist fish theme which displays git branch and status information.
 
 * Truncated CWD (just the current folder name)
 * Git branch and dirty state (if applicable)
+
+
+# [neel](https://github.com/neelshah2409/neel)
+<div align="center">
+  <a href="http://github.com/fish-shell/omf">
+  <img width=90px  src="https://cloud.githubusercontent.com/assets/8317250/8510172/f006f0a4-230f-11e5-98b6-5c2e3c87088f.png">
+  </a>
+</div>
+<br>
+
+> neel theme for [Oh My Fish][omf-link].
+
+#### Install
+
+```fish
+$ omf theme neel
+```
+
+#### Features
+* Minimal Prompt
+* All the things you need to know about Git in a glance.
+* A subtle timestamp hanging out off to the right.
+* Previous command status.
+* Displays git information in the command prompt when available.
+* Displays the current time.
+* Displays current branch name
+* By default it shows only the name of the current directory but it provides a flag `theme_complete_path` to display abbreviated current working directory instead.
+
+#### Screenshot
+
+
+- ![image](https://user-images.githubusercontent.com/71593494/138031763-facac119-ad6f-427f-a6d2-f0628828feab.png)
+  
+- ![Screenshot (786)](https://user-images.githubusercontent.com/71593494/138031907-a55cfa52-5db5-4793-9508-38ecfd3dd81f.png)
+  
+- ![Screenshot (788)](https://user-images.githubusercontent.com/71593494/138031938-b80a153f-ed8e-411f-860a-9f86073617d4.png)
+  
+
+
+#### Configuration
+
+Only display the folder name:
+```
+  set -g theme_short_path yes
+```
+
+### License
+
+[MIT][mit] © [neelshah2409][THEMES-NAMESPACE-neel-author] 
+
+
+[THEMES-NAMESPACE-neel-mit]:            http://opensource.org/licenses/MIT
+[THEMES-NAMESPACE-neel-author]:         http://github.com/neelshah2409
+[THEMES-NAMESPACE-neel-contributors]:   https://github.com/oh-my-fish/theme-default/graphs/contributors
+[omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
+
+[license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
+[travis-badge]:   http://img.shields.io/travis/oh-my-fish/theme-default.svg?style=flat-square
+[travis-link]:    https://travis-ci.org/oh-my-fish/theme-default
 
 
 # [nelsonjchen](https://github.com/nelsonjchen/omf-theme-nelsonjchen)
@@ -2984,7 +3493,10 @@ src="https://cloud.githubusercontent.com/assets/5363/12106487/fe8b3c30-b314-11e5
 # [neolambda](https://github.com/ipatch/theme-neolambda)
 ### NeoLambda
 
-> The unofficial fork of the [omf](https://github.com/oh-my-fish/oh-my-fish) [lambda](https://github.com/hasanozgan/theme-lambda) theme
+> The unofficial fork of the [omf][lnk1] [lambda][THEMES-NAMESPACE-neolambda-lnk2] theme
+
+[THEMES-NAMESPACE-neolambda-lnk1]: <https://github.com/oh-my-fish/oh-my-fish>
+[THEMES-NAMESPACE-neolambda-lnk2]: <https://github.com/hasanozgan/theme-lambda>
 
 [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
 [![Fish Shell Version](https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square)](http://fishshell.com)
@@ -3019,13 +3531,27 @@ set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
 ##### [Oh-My-Fish](https://github.com/oh-my-fish/oh-my-fish)
 
 ```shell
+echo "install omf first"
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+
 omf install neolambda
 ```
 
+#### Testing new features
+
+the quickest way i found to test a PR or feature is to pull in a docker container, for my use case `archlinux` and then install `which`, and `git` using pacman followed by omf and this theme `neolambda`.
+
 #### TODOs
 
-- [ ] experiment with creating an animated svg to replace / complement the animaged gif
-  - `cat myrecrod.cast | svg-term --out myrecord.svg --window`
+<a name="todos"></a>
+
+- [ ] when working with cmake based projects and out of source build dirs it'd be nice to print the current git branch within the build dir for managing multi build dirs and git forks with branches
+- [ ] look into creating project based icons, ie. replace `λ` with a green box if inside a node project, ie. if the shell/theme detects a `package.json` file. 
+- [ ] use command+right-arrow to toggle the display of the `fish_right_prompt.fish`
+    - or possible control+\
+- [ ] experiment with creating an animated svg to replace / complement the animated gif
+  `cat myrecrod.cast | svg-term --out myrecord.svg --window`
+- [ ] when working with subshells add a super/sub script to the `λ` to aid in knowing which subshell _one_ is working in 
 
 
 # [numist](https://github.com/oh-my-fish/theme-numist)
@@ -3121,7 +3647,7 @@ Aesthetic stolen from [Pure](https://github.com/sindresorhus/pure)
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 
 
-# [pastfish](https://github.com/chgu82837/theme-PastFish)
+# [pastfish](https://github.com/pastleo/theme-PastFish)
 <div align="center">
   <a href="http://github.com/oh-my-fish/oh-my-fish">
   <img width=90px  src="https://cloud.githubusercontent.com/assets/8317250/8510172/f006f0a4-230f-11e5-98b6-5c2e3c87088f.png">
@@ -3173,7 +3699,7 @@ This is similar to godfat's gitstatus theme, but mainly includes red, white, cya
 ![perryh](http://perryhuang.com/stuff/perryh_fish.png)
 
 
-# [pie](https://github.com/grissius/theme-pie)
+# [pie](https://github.com/smolijar/theme-pie)
 <img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="144px" height="144px"/>
 
 ###### 🥧 πie
@@ -3230,7 +3756,7 @@ $ omf theme pie
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 
 
-# [plain](https://github.com/changyuheng/theme-plain)
+# [plain](https://github.com/changyuheng/theme-plain.fish)
 [![Slack Room][slack-badge]][slack-link]
 
 ### plain
@@ -3262,155 +3788,152 @@ fisher i plain
 [THEMES-NAMESPACE-plain-Fisherman]: https://github.com/fisherman/fisherman
 
 
-# [pure](https://github.com/rafaelrinaldi/theme-pure)
-> ##### ✋ Psst! Migrating from v1.x to v2.x? We got you. Check our [**migration guide**](https://github.com/rafaelrinaldi/pure/releases/tag/v2.0.0) and happy upgrading
+# [pure](https://github.com/pure-fish/pure)
+<!-- markdownlint-disable MD041 -->
+<div align="center">
 
-### pure [![github-ci-badge]][github-ci-link] ![fish-3]
+<img src="https://user-images.githubusercontent.com/1212392/262604075-db5d0ad2-a7ed-4a62-a1cc-ec677cf76351.png" width="61.8%" alt="Pure.fish logo"/><br>
+
+[![ci-status]][ci-link] ![fish-4] ![fish-3] [![release-version]][release-link] [![sponsors]][sponsor-link] <!-- 0 width spaces on this line -->
+
+</div>
+
+### _Pure_  `❯❮❯`
 
 > Pretty, minimal and fast Fish 🐟 prompt, ported from [`zsh`](https://github.com/sindresorhus/pure).
 
 <div align=center>
-  <a href="https://camo.githubusercontent.com/be014be282ef66e5c5cad19458aa61d7df6865ecbe55bcc882e0d53580f81de9/68747470733a2f2f692e696d6775722e636f6d2f424878556f68522e706e67" target=blank><img width=440 src=https://camo.githubusercontent.com/be014be282ef66e5c5cad19458aa61d7df6865ecbe55bcc882e0d53580f81de9/68747470733a2f2f692e696d6775722e636f6d2f424878556f68522e706e67 alt="Pure with dark colorscheme"></a>
-  <a href="https://camo.githubusercontent.com/5934e8c1d3b5f9218d05d5e1741e23963a7803d6098236d36e586336a6c6a5b7/68747470733a2f2f692e696d6775722e636f6d2f714a646f6e716f2e706e67" target=blank><img width=440 src=https://camo.githubusercontent.com/5934e8c1d3b5f9218d05d5e1741e23963a7803d6098236d36e586336a6c6a5b7/68747470733a2f2f692e696d6775722e636f6d2f714a646f6e716f2e706e67 alt="Pure with light colorscheme"></a>
+  <a href="https://user-images.githubusercontent.com/13354491/51189594-6b6cfb00-18f1-11e9-9e4f-7d0f2cb52ac9.png" target=blank><img width=45% src=https://user-images.githubusercontent.com/13354491/51189594-6b6cfb00-18f1-11e9-9e4f-7d0f2cb52ac9.png alt="Pure with dark colorscheme"></a>
+  <a href="https://user-images.githubusercontent.com/13354491/51189552-55f7d100-18f1-11e9-8edd-74e303fe5e1f.png" target=blank><img width=45% src=https://user-images.githubusercontent.com/13354491/51189552-55f7d100-18f1-11e9-8edd-74e303fe5e1f.png alt="Pure with light colorscheme"></a>
 </div>
+
+#### Documentation
+
+:sparkles: Check-out our [brand-new documentation][THEMES-NAMESPACE-pure-doc] for configurations, features and colours as well as contributing guide.
 
 #### :rocket: Install
 
-**:warning: requirements**: fish `≥3.x`
+**:warning: requirements**: install [Fish shell](https://fishshell.com/) `≥3.x`, then install [Fisher](https://github.com/jorgebucaran/fisher) plugin manager:
 
-##### [Fisher](https://github.com/jorgebucaran/fisher)
-
-```fish
-fisher install rafaelrinaldi/pure
-```
-
-##### Manually
-
-Via [cURL](https://curl.haxx.se):
-
-```sh
-### Download the installer to `/tmp`
-curl git.io/pure-fish --output /tmp/pure_installer.fish --location --silent
-### Source and trigger the installer
-source /tmp/pure_installer.fish; and install_pure
+```shell
+fisher install pure-fish/pure
 ```
 
 #### Features
 
 Fully **customizable** (colors, symbols and features):
 
-- Excellent prompt character `❯` :
-  - Change `❯` to red when previous command has failed ;
-  - Start prompt with _current working directory_ 🏳️ ;
-  - Compact-mode (single-line prompt) 🏳️ ;
-- Display current directory tail ;
-- check for new release on start 🏳️ ;
-- Display _username_ and _hostname_ when in an `SSH` session ;
-- Display command _duration_ when longer than `5` seconds ;
-- Display `Python` _virtualenv_ when activated ;
-- Display `VI` mode and custom symbol for non-insert mode 🏳️ ;
-- Show system time 🏳️ ;
-- Show number of running jobs 🏳️ ;
-- Prefix when `root` 🏳️ ;
-- Display `git` branch name 🏳️ ;
-  - Display `*` when `git` repository is _dirty_ ;
-  - Display `≡` when `git` repository is _stashed_ ;
-  - Display `⇡` when branch is _ahead_ (commits to push) ;
-  - Display `⇣` when branch is _behind_ (commits to pull) ;
-- Update terminal title with _current folder_ and _command_ ;
+* [Excellent prompt character `❯` 🛠][prompt-symbol]:
 
-#### :paintbrush: Configuration
+    * [Change `❯` to red when previous command has failed 🛠][separate-error-symbol] ;
+    * [Start prompt with _current working directory_ 🏴][current-working-directory] ;
+    * [Compact-mode (single-line prompt) 🏴][single-line-prompt] ;
+    * [List exit statuses if the last command failed 🏴][list-exit-statuses] ;
+  
+* [Check for new release on start 🏴🐌][check-for-new-release] ;
+* [Display _username_ and _hostname_ when in an `SSH` session 🛠][ssh-session] ;
+* [Display command _duration_ when longer than `5` seconds 🛠][time-duration] ;
+* [Display `Python` _virtualenv_ when activated 🏴🛠][python-virtualenv] ;
+* [Display `AWS` profile when set 🏴🛠][aws-profile] ;
+* [Display `VI` mode and custom symbol for non-insert mode 🏴🛠][vi-mode] ;
+* [Display `kubernetes` context and namespace 🏴🛠][THEMES-NAMESPACE-pure-kubernetes] ;
+* [Detect when running in a container (e.g. `docker`, `podman`, `LXC`/`LXD`) 🏴🛠][container-detection-docker]
+* [Indicate if a `nix develop` shell is activated 🏴🛠][nix-os].
+* [Show system time 🏴][time-duration] ;
+* [Transient prompt mode simplifies previous prompts 🏴][transient-prompt] ;
+* [Show number of running jobs 🏴][THEMES-NAMESPACE-pure-jobs] ;
+* [Prefix when `root` 🏴🛠][working-as-root] ;
+* [Display `git` branch name 🏴🛠][THEMES-NAMESPACE-pure-git] ;
+  
+    * Display `*` when `git` repository is _dirty_ ;
+    * Display `≡` when `git` repository is _stashed_ ;
+    * Display `⇡` when branch is _ahead_ (commits to push) ;
+    * Display `⇣` when branch is _behind_ (commits to pull) ;
+    * Display the number of stashes, ahead and behind commits (e.g. `≡3 ⇡5 ⇣2`) ;
+    * [Async update when configured with fish-async-prompt][THEMES-NAMESPACE-pure-async] ;
 
-You can tweak `pure` behavior and color by changing [universal variables](https://fishshell.com/docs/current/tutorial.html#tut_universal) either directly in the terminal, _e.g._:
+* [Update terminal title with _current folder_ and _command_ 🛠][THEMES-NAMESPACE-pure-title] ;
+* [Shorten or truncate _current folder_ component 🏴🛠][current-working-directory] ;
+* and more…
 
-    set --universal pure_show_system_time true
-    set --universal pure_color_system_time pure_color_mute
+🏴 means it's controlled by a feature flag, 🛠 means it's configurable.
 
-or changing the defaults in your `config.fish`, _e.g._:
+#### Configuration
 
-    _pure_set_default pure_show_system_time false
-    _pure_set_default pure_color_system_time grey --reverse
+See [How to configure pure prompt?][THEMES-NAMESPACE-pure-configure]
 
-##### Prompt Symbol
+#### Features' Flags
 
-| Option                                 | Default | Description                                          |
-| :------------------------------------- | :------ | :--------------------------------------------------- |
-| **`pure_symbol_git_dirty`**            | `*`     | Repository is Dirty (uncommitted/untracked changes). |
-| **`pure_symbol_git_stash`**            | `≡`     | Repository git stash status.                         |
-| **`pure_symbol_git_unpulled_commits`** | `⇣`     | Branch is behind upstream (commits to pull).         |
-| **`pure_symbol_git_unpushed_commits`** | `⇡`     | Branch is ahead upstream (commits to push).          |
-| **`pure_symbol_prefix_root_prompt`**   | `#`     | Prefix prompt when logged in as `root`.              |
-| **`pure_symbol_prompt`**               | `❯`     | Prompt symbol.                                       |
-| **`pure_symbol_reverse_prompt`**       | `❮`     | VI non-insert mode symbol.                           |
-| **`pure_symbol_title_bar_separator`**  | `-`     | Separator in terminal's windows title.               |
+See [Features and their respective options][THEMES-NAMESPACE-pure-features].
 
-> :information_source: Need [safer `git` symbols](https://github.com/sindresorhus/pure/wiki#safer-symbols)?
+#### :heart: Contribute
 
-##### 🔌 Features' Flags
+If you have any ideas or suggestions, we encourage you to submit a pull request. Our team will review and discuss your contribution.
 
-| Option                                         | Default | Description                                                                                     |
-| :--------------------------------------------- | :------ | :---------------------------------------------------------------------------------------------- |
-| **`pure_begin_prompt_with_current_directory`** | `true`  | `true`: _`pwd` `git`, `SSH`, duration_.<br/>`false`: _`SSH` `pwd` `git`, duration_.             |
-| **`pure_check_for_new_release`**               | `false` | `true`: check repo for new release (on every shell start)                                       |
-| **`pure_enable_git`**                          | `true`  | Show info about Git repository.                                                                 |
-| **`pure_enable_single_line_prompt`**           | `false` | `true`: Compact prompt as a single line                                                         |
-| **`pure_reverse_prompt_symbol_in_vimode`**     | `true`  | `true`: `❮` indicate a non-insert mode.<br/>`false`: indicate vi mode with `[I]`, `[N]`, `[V]`. |
-| **`pure_separate_prompt_on_error`**            | `false` | Show last command [exit code as a separate character][exit-code].                               |
-| **`pure_show_jobs`**                           | `false` | Show Number of running jobs                                                                     |
-| **`pure_show_prefix_root_prompt`**             | `false` | `true`: shows prompt prefix when logged in as `root`.                                           |
-| **`pure_show_subsecond_command_duration`**     | `false` | Show subsecond (ex. 1.5s) in command duration.                                                  |
-| **`pure_show_system_time`**                    | `false` | `true`: shows system time before the prompt symbol (as `%H:%M:%S`).                             |
-| **`pure_threshold_command_duration`**          | `5`     | Show command duration when above this value (seconds).                                          |
+Checkout our [Contribution Guide][THEMES-NAMESPACE-pure-contribution] to get familiar with our conventions and requirements.
 
-##### 🎨 Colours
+#### :man_technologist: People
 
-> :information_source: See [`set_color`][fish-set-color] documentation for full possibilities.
-
-> :warning: The absence of `$` sign is expected in `pure_` named colours.
-
-| Base Color               | Inherited by                                                                                                                                                                                                                  | Default   |
-| :----------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------- |
-| **`pure_color_danger`**  | **`pure_color_prompt_on_error`**                                                                                                                                                                                              | `red`     |
-| **`pure_color_dark`**    |                                                                                                                                                                                                                               | `black`   |
-| **`pure_color_info`**    | **`pure_color_git_unpulled_commits`**<br>**`pure_color_git_unpushed_commits`**                                                                                                                                                | `cyan`    |
-| **`pure_color_light`**   | **`pure_color_ssh_user_root`**                                                                                                                                                                                                | `white`   |
-| **`pure_color_mute`**    | **`pure_color_git_branch`**<br>**`pure_color_git_dirty`**<br>**`pure_color_git_stash`**<br>**`pure_color_ssh_hostname`**<br>**`pure_color_ssh_separator`**<br>**`pure_color_ssh_user_normal`**<br>**`pure_color_virtualenv`** | `brblack` |
-| **`pure_color_normal`**  | **`pure_color_jobs`**                                                                                                                                                                                                         | `normal`  |
-| **`pure_color_primary`** | **`pure_color_current_directory`**                                                                                                                                                                                            | `blue`    |
-| **`pure_color_success`** | **`pure_color_prompt_on_success`**                                                                                                                                                                                            | `magenta` |
-| **`pure_color_warning`** | **`pure_color_command_duration`**                                                                                                                                                                                             | `yellow`  |
-
-#### :+1:  Contribute
-
-> **requirements:** [`docker`](https://docs.docker.com/install/) (isolate from your environment)
-
-Specify the [`FISH_VERSION`][fish-releases] you want, and the `CMD` executed by the container:
-
-    make build-pure-on FISH_VERSION=3.1.2
-    make dev-pure-on FISH_VERSION=3.1.2 CMD="fishtape tests/*.test.fish"
-
-#### :man_technologist: Maintainer
-
-- [Édouard Lopez](https://github.com/edouard-lopez)
-
-#### :clap: Thanks
-
+* [Édouard Lopez](https://github.com/edouard-lopez) product lead ;
 * [@andreiborisov](https://github.com/andreiborisov) for the [docker images][docker-images] ;
 * [@jorgebucaran](https://github.com/jorgebucaran/) for [fishtape](https://github.com/jorgebucaran/fishtape) ;
-* [@rafaelrinaldi](https://github.com/rafaelrinaldi/pure) for starting the project ;
+* [@rafaelrinaldi](https://github.com/rafaelrinaldi) for starting the project and publishing the initial releases
 
-#### :classical_building: License
+#### [MIT][THEMES-NAMESPACE-pure-MIT] License
 
-[MIT][THEMES-NAMESPACE-pure-MIT]
+#### Ports
 
-[github-ci-link]: <https://github.com/rafaelrinaldi/pure/actions> "Github CI"
-[github-ci-badge]: <https://github.com/rafaelrinaldi/pure/workflows/Run%20tests%20on%20CI/badge.svg>
+* Original [sindresorhus/pure](https://github.com/sindresorhus/pure) Zsh implementation ;
+* :fish: [pure-fish/pure](https://github.com/pure-fish/pure/) Fish implementation (features rich) ;
+* :snake: [edouard-lopez/pure.py](https://github.com/edouard-lopez/pure.py/) Python implementation  (partial features) ;
+* :goat: [edouard-lopez/pure.go](https://github.com/edouard-lopez/pure.go/) Golang implementation  (partial features) ;
+* :gear: [xcambar/purs](https://github.com/xcambar/purs) Rust implementation ;
+* :window: [nickcox/pure-pwsh](https://github.com/nickcox/pure-pwsh/) PowerShell implementation.
+* :shell: [krashikiworks/pure-prompt-bash](https://github.com/krashikiworks/pure-prompt-bash) Bash implementation.
+
+[THEMES-NAMESPACE-pure-doc]: https://pure-fish.github.io/pure/
+[THEMES-NAMESPACE-pure-configure]: https://pure-fish.github.io/pure/#configuration
+[THEMES-NAMESPACE-pure-features]: https://pure-fish.github.io/pure/#overview
+[contribution]:https://pure-fish.github.io/pure/contributing/
+
+[ci-link]: <https://github.com/pure-fish/pure/actions> "Github CI"
+[ci-status]: https://img.shields.io/github/actions/workflow/status/pure-fish/pure/.github/workflows/ci.yml?style=flat-square
+
 [fish-3]: <https://img.shields.io/badge/fish-v3-007EC7.svg?style=flat-square> "Support Fish 3"
-[exit-code]: <https://github.com/sindresorhus/pure/wiki#show-exit-code-of-last-command-as-a-separate-prompt-character> "See pure-zsh wiki"
-[fish-releases]: https://github.com/fish-shell/fish-shell/releases
+[fish-4]: <https://img.shields.io/badge/fish-v4-7dc600.svg?style=flat-square> "Support Fish 4"
 [docker-images]: https://github.com/andreiborisov/docker-fish/
 [THEMES-NAMESPACE-pure-MIT]: LICENSE.md
-[fish-set-color]: https://fishshell.com/docs/current/cmds/set_color.html
+
+[release-version]: https://img.shields.io/github/v/tag/pure-fish/pure?label=latest%20&style=flat-square
+[release-link]: https://github.com/pure-fish/pure/releases "GitHub tag (latest SemVer)"
+[THEMES-NAMESPACE-pure-sponsors]: https://img.shields.io/github/sponsors/edouard-lopez?label=💰&style=flat-square "GitHub Sponsors"
+[sponsor-link]: https://github.com/sponsors/edouard-lopez/ "Become a sponsor"
+
+[THEMES-NAMESPACE-pure-async]: https://github.com/pure-fish/pure/wiki/Async-git-Prompt
+[check-for-new-release]: https://pure-fish.github.io/pure/#check-for-new-release
+[container-detection-docker]: https://pure-fish.github.io/pure/#container-detection-docker
+[current-working-directory]: https://pure-fish.github.io/pure/#current-working-directory
+[THEMES-NAMESPACE-pure-git]: https://pure-fish.github.io/pure/#git
+[THEMES-NAMESPACE-pure-jobs]: https://pure-fish.github.io/pure/#jobs
+[THEMES-NAMESPACE-pure-kubernetes]: https://pure-fish.github.io/pure/#kubernetes
+[list-exit-statuses]: https://pure-fish.github.io/pure/#list-exit-statuses
+[nix-os]: https://pure-fish.github.io/pure/#nix-os
+[prompt-symbol]: https://pure-fish.github.io/pure/#prompt-symbol
+[python-virtualenv]: https://pure-fish.github.io/pure/#python-virtualenv
+[aws-profile]: https://pure-fish.github.io/pure/#aws-profile
+[separate-error-symbol]: https://pure-fish.github.io/pure/#separate-error-symbol
+[single-line-prompt]: https://pure-fish.github.io/pure/#single-line-prompt
+[ssh-session]: https://pure-fish.github.io/pure/#ssh-session
+[time-duration]: https://pure-fish.github.io/pure/#time-duration
+[transient-prompt]: https://pure-fish.github.io/pure/#transient-prompt
+[THEMES-NAMESPACE-pure-title]: https://pure-fish.github.io/pure/#title
+[vi-mode]: https://pure-fish.github.io/pure/#vi-mode
+[working-as-root]: https://pure-fish.github.io/pure/#working-as-root
+
+
+# [puritan](https://github.com/Lodobo/puritan-fish-prompt.git)
+<a href="/Lodobo/puritan-fish-prompt/master/README.md">Temporary Redirect</a>.
+
 
 
 # [pygmalion](https://github.com/corevo/theme-pygmalion)
@@ -3423,12 +3946,12 @@ Based on the zsh theme [pygmalion](https://github.com/robbyrussell/oh-my-zsh/wik
 ![screenshot](https://cloud.githubusercontent.com/assets/888886/12481015/051b2096-c04f-11e5-962b-7c1a31c9ff8b.png)
 
 
-# [random](https://github.com/tycho01/theme-random)
+# [random](https://github.com/KiaraGrouwstra/theme-random)
 <img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="144px" height="144px"/>
 
 ###### random
-> A 'theme' for [Oh My Fish][omf-link] that loads a random theme.
 
+> A 'theme' for [Oh My Fish][omf-link] that loads a random theme.
 
 [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
 [![Fish Shell Version](https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square)](https://fishshell.com)
@@ -3436,25 +3959,21 @@ Based on the zsh theme [pygmalion](https://github.com/robbyrussell/oh-my-zsh/wik
 
 <br/>
 
-
 #### Install
 
 ```fish
 $ omf install random
 ```
 
-
 ### License
 
-[MIT][mit] © [Tycho Grouwstra][author] et [al][THEMES-NAMESPACE-random-contributors]
+[MIT][mit] © [Kiara Grouwstra][author] et [al][THEMES-NAMESPACE-random-contributors]
 
-
-[THEMES-NAMESPACE-random-mit]:            https://opensource.org/licenses/MIT
-[THEMES-NAMESPACE-random-author]:         https://github.com/{{USER}}
-[THEMES-NAMESPACE-random-contributors]:   https://github.com/{{USER}}/theme-random/graphs/contributors
-[omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
-
-[license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
+[THEMES-NAMESPACE-random-mit]: https://opensource.org/licenses/MIT
+[THEMES-NAMESPACE-random-author]: https://github.com/KiaraGrouwstra
+[THEMES-NAMESPACE-random-contributors]: https://github.com/KiaraGrouwstra/theme-random/graphs/contributors
+[omf-link]: https://www.github.com/oh-my-fish/oh-my-fish
+[license-badge]: https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 
 
 # [randomrussel](https://github.com/lightify97/randomrussel)
@@ -3502,50 +4021,6 @@ After you commit, he will close his mouth, satiated.
 Something is fishy here! If you are not inside a Git working directory, your pet will go to sleep.
 ![fish shell not using git](https://raw.githubusercontent.com/ZuraGuerra/theme-red-snapper/master/fishy.png)
 
-
-
-# [redfish](https://github.com/redxtech/redfish)
-### [redfish][repo-link]
-> A theme for [Oh My Fish][omf-link].
-
-[![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
-[![Fish Shell Version](https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square)](https://fishshell.com)
-[![Oh My Fish Framework](https://img.shields.io/badge/Oh%20My%20Fish-Framework-007EC7.svg?style=flat-square)](https://www.github.com/oh-my-fish/oh-my-fish)
-
-
-#### Install
-
-```fish
-$ omf install redfish
-```
-
-#### Features
-
-* Current Directory shown in prompt.
-* Full path shown in right prompt.
-* Git branch and status shown.
-* Show exit status in right prompt.
-* Show current time in right prompt.
-* Set title to current prompt.
-* More!
-
-#### Screenshot
-
-<p align="center">
-<img src="https://i.imgur.com/H9crBDc.png" alt="Image in which I meant to exclude -rf to show the exit code of a failed command">
-</p>
-
-
-#### Author
-
-**redfish** © [redxtech][author], Released under the [MIT][THEMES-NAMESPACE-redfish-mit] License.
-
-[THEMES-NAMESPACE-redfish-mit]:            https://opensource.org/licenses/MIT
-[THEMES-NAMESPACE-redfish-author]:         https://github.com/redxtech
-[omf-link]:       https://github.com/oh-my-fish/oh-my-fish
-[repo-link]:      https://github.com/redxtech/redfish
-
-[license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 
 
 # [rider](https://github.com/rideron89/rider-theme)
@@ -3599,15 +4074,27 @@ $ omf install rider
 
 # [robbyrussell](https://github.com/oh-my-fish/theme-robbyrussell)
 #### robbyrussell
+
 The default theme – cloned from oh-my-zsh.
 
-![robbyrussell theme](https://bachue.github.io/oh-my-fish/images/robbyrussell-screenshot.png)
-
+![robbyrussell theme][THEMES-NAMESPACE-robbyrussell-screenshot]
 
 ###### Characteristics
 
-* Displays git information in the command prompt when available.
-* If the last command was failed, the indicator would be red, otherwise it's green
+- Displays git information in the command prompt when available.
+- If the last command was failed, the indicator would be red, otherwise it's
+  green
+
+###### Configuration
+
+To ignore untracked files when signaling repository status, set
+`theme_display_git_untracked` to `no`:
+
+```fish
+set theme_display_git_untracked no
+```
+
+[THEMES-NAMESPACE-robbyrussell-screenshot]: https://bachue.github.io/oh-my-fish/images/robbyrussell-screenshot.png
 
 
 # [sashimi](https://github.com/isacikgoz/sashimi)
@@ -3754,74 +4241,45 @@ authors!
 Enjoy!
 
 
-# [shellder](https://github.com/simnalamburt/shellder)
-<img align=left width=175px height=175px
-src="https://raw.githubusercontent.com/simnalamburt/i/master/shellder/shellder.png">
+# [separation](https://github.com/roflcopter4/separation)
+### separation
+Separation is a very simple fish theme for folks who, like me, prefer to have the output of each of their commands clearly delineated, and who prefer to always have enough space on the line to type a command without overflowing to a new line. To that end, this theme outputs a horizontal bar across the display for each and every prompt. On the second line, only the return status of the previous command (if it was not 0), your username, your hostname, and your working directory are displayed. If this information should ever happen to take up more than two fifths of the screen, the actual prompt is displayed on a third line, giving you plenty of space to type.
 
-shellder
+By default the full working directory without any of Fish's normal abbreviations will be displayed. This can be easily overridden by setting the "Use_Fish_PWD" variable to anything in your init file. Given that the prompt will go to a third line if the working directory is too long, I don't find the abbreviations to be very useful, but the choise is yours. You can also use the '%' character as your prompt instead of '$' by setting the "csh_junkie" variable to anything.
 
-1. **No solarized** ― xterm256 colors are beautiful enough
-2. **zsh** + **fish** support
-3. **Speed** ― Carefully optimized for slow environments like MSYS2
+There used to be a noteable bug in Fish in which the "COLUMNS" variable, which stores the width of your terminal, is always set to 78 regardless of the terminal's actual size for the first prompt after starting Fish. Afterwards it was set correctly. This unfortunately meant that the horizontal bar would be too short for that first prompt, however it would seem that this bug has been fixed.
 
-![screenshot image of shellder](https://raw.githubusercontent.com/simnalamburt/i/master/shellder/screenshot.png)
+Pictures always speak a thousand words. Note the former bug manifesting itself after switching to root.
 
-Installation
---------
-You can install shellder via various plugin managers.
+<p align="center">
+<img src="https://i.imgur.com/QftI04P.png">
+</p>
 
-##### Zsh, [zinit]
-```zsh
-### ~/.zshrc
-zinit light simnalamburt/shellder
-```
 
-##### Fish, [chips]
-```yaml
-### ~/.config/chips/plugin.yaml
-github:
-- simnalamburt/shellder
-```
+# [simple](https://github.com/devansh08/simple)
+#### simple fish theme
 
-##### Fish, [oh-my-fish]
-```yaml
-### ~/.config/chips/plugin.yaml
-github:
-- simnalamburt/shellder
-```
+Clean git theme with homey feel and git-centric features.
 
-&nbsp;
+###### Screenshot
 
-Configuration
--------
-You can turn off Fish-like path shrinking by adding the following to your `~/.zshrc`:
+![simple theme screenshot](https://raw.githubusercontent.com/devansh08/simple/master/screenshot.png)
 
-```zsh
-### ~/.zshrc
-export SHELLDER_KEEP_PATH=1
-```
+###### Prompt structure
 
-&nbsp;
+* Left-hand side:
+	* user@host:
+	* short name cwd (first letter of each folder)
+	* git branch with state info (if applicable)
 
-#### Fonts
-You'll need a powerline patched font. If you don't have one, download one or
-patch some fonts on you own.
+* Right-hand side:
+	* number of bg processes running (if any)
+	* last error code (if applicable)
+	* timestamp
 
-- https://github.com/powerline/fonts
-- https://github.com/ryanoasis/nerd-fonts
+###### Credits
 
-&nbsp;
-
---------
-*shellder* is primarily distributed under the terms of both the [MIT license]
-and the [Apache License (Version 2.0)]. See [COPYRIGHT] for details.
-
-[THEMES-NAMESPACE-shellder-zinit]: https://github.com/zdharma/zinit
-[THEMES-NAMESPACE-shellder-chips]: https://github.com/xtendo-org/chips
-[oh-my-fish]: https://github.com/oh-my-fish/oh-my-fish
-[MIT license]: LICENSE-MIT
-[Apache License (Version 2.0)]: LICENSE-APACHE
-[THEMES-NAMESPACE-shellder-COPYRIGHT]: COPYRIGHT
+Forked from [godfather](https://github.com/oh-my-fish/theme-godfather) theme
 
 
 # [simple-ass-prompt](https://github.com/lfiolhais/theme-simple-ass-prompt)
@@ -3995,263 +4453,51 @@ Once Oh My Fish is installed:
  * Two unicodes included!
 
 
-# [solarfish](https://github.com/MrSiliconGuy/theme-solarfish)
-<img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="144px" height="144px"/>
+# [solarfish](https://github.com/thesilican/theme-solarfish)
+### solarfish
 
-###### theme-solarfish
-> A simple, git-aware, two-line theme for [Oh My Fish][omf-link]. Based off of [simple-ass-prompt](https://github.com/lfiolhais/theme-simple-ass-prompt) and optimized for [solarized](https://ethanschoonover.com/solarized/).
+[![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg)](/LICENSE)
+[![Fish Shell Version](https://img.shields.io/badge/fish-v3.6.4-007EC7.svg)](https://fishshell.com)
 
-[![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
-[![Fish Shell Version](https://img.shields.io/badge/fish-v3.0.0-007EC7.svg?style=flat-square)](https://fishshell.com)
-[![Oh My Fish Framework](https://img.shields.io/badge/Oh%20My%20Fish-Framework-007EC7.svg?style=flat-square)](https://www.github.com/oh-my-fish/oh-my-fish)
+A git-aware two-line [fish shell](https://fishshell.com) theme. Inspired by [simple-ass-prompt](https://github.com/lfiolhais/theme-simple-ass-prompt) and the default bash prompt.
 
-<br/>
+<p align="center">
+<img src="https://i.imgur.com/Ij2DTOh.png" alt="shell theme screenshot">
+</p>
 
+#### Features
+
+- Two-line prompt
+- Git status icons: dirty `*`, staged `+`, ahead `↑`, behind `↓`, diverged `⥄`
+- Previous command status (prompt turns red on error)
+- Root user indicator (username turns red when running as root)
+- Remote host indicator (hostname turns red when running under a ssh connection)
 
 #### Install
 
-```fish
-$ omf install theme-solarfish
+Using [fisher](https://github.com/jorgebucaran/fisher):
+
+```
+fisher install thesilican/solarfish
 ```
 
+Using [oh my fish](https://www.github.com/oh-my-fish/oh-my-fish):
 
-#### Features
-
-- Easy to read prompt, based directly on the bash default prompt
-- Long, short, and current folder directory options
-- Timestamp option
-- Git repository status:
-  - ahead "↑"
-  - behind "↓"
-  - diverged "⥄ "
-  - dirty "*"
-- Previous command status
-- Special greeting prompt if `cowsay` is installed!
-
-
-#### Screenshot
-
-<p align="center">
-<img src="./screenshot.png">
-</p>
+```
+omf install solarfish
+```
 
 #### Configuration
 
-Add any of the following lines to
-`~/.config/fish/config.fish`
+Add any of the following lines to `~/.config/fish/config.fish`
 
-```fish
-### Displays the timestamp in the prompt
-set -g theme_show_time yes
-
-### Uses a short directory path name
+```bash
+### Display a shortened directory path
 set -g theme_short_path yes
 
-### Displays only the current folder name
-set -g theme_current_folder_path yes
+### Disable the git indicator
+set -g theme_no_git_indicator yes
 ```
-
-### License
-
-[MIT][mit] © [thesilican][THEMES-NAMESPACE-solarfish-author]
-
-
-[THEMES-NAMESPACE-solarfish-mit]:            https://opensource.org/licenses/MIT
-[THEMES-NAMESPACE-solarfish-author]:         https://github.com/thesilican
-[omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
-
-[license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
-
-
-# [spacefish](https://github.com/matchai/spacefish)
-<h1 align="center">
-  <a href="https://github.com/starship/starship">
-    <img alt="Focus has shifted to the development of Starship, the successor to Spacefish. If you are interested in contributing or using it, come take a look!" src="./images/starship-notice.svg" width="100%">
-  </a><br><br>
-  <a href="https://github.com/matchai/spacefish">
-    <img alt="spacefish fish shell theme" src="./images/banner.svg" width="100%">
-  </a>
-  <br>
-  <br> Spacefish 🚀🐟 <br>
-</h1>
-
-<h4 align="center">
-  <a href="https://fishshell.com" target="_blank"><code>Fish Shell</code></a> prompt for Astronauts.
-</h4>
-
-<p align="center">
-  <a href="https://travis-ci.org/matchai/spacefish">
-    <img src="https://badgen.net/travis/matchai/spacefish/master"
-      alt="Mac OSX & Linux CI Status" />
-  </a>
-  <a href="https://fishshell.com/">
-  <img src="https://badgen.net/badge/fish/v3.0.2"
-    alt="Fish Version" />
-  </a>
-  <a href="https://github.com/matchai/spacefish/blob/master/LICENSE">
-    <img src="https://badgen.net/github/license/matchai/spacefish" alt="GitHub License">
-  </a>
-</p>
-
-<div align="center">
-  <h4>
-    <a href="https://spacefish.matchai.dev/">Website</a> |
-    <a href="#installation">Install</a> |
-    <a href="#features">Features</a> |
-    <a href="./docs/Options.md">Options</a> |
-    <a href="./docs/API.md">API</a>
-  </h4>
-</div>
-
-<div align="center">
-  <sub>Built with ❤︎ by
-  <a href="https://matchai.dev">Matan Kushner</a> and
-  <a href="#contributors">contributors </a></sub>
-  <br>
-  <sub>A port of <a href="https://github.com/denysdovhan/spaceship-prompt">Spaceship ZSH</a> by
-  <a href="https://denysdovhan.com/">Denys Dovhan</a></sub>
-</div>
-
-<br>
-Spacefish is a minimalistic, powerful and extremely customizable <a href="https://fishshell.com">Fish Shell</a> prompt. It combines everything you may need for convenient work, without unnecessary complications, like a real spacefish.
-
-<p align="center"></p>
-  <img alt="Spaceship with Hyper and One Dark" src="./images/preview.gif" width="980px">
-</p>
-
-<sub>Vist <a href="./docs/Troubleshooting.md#why-doesnt-my-prompt-look-like-the-preview">Troubleshooting</a> for instructions to recreate this terminal setup.</sub>
-
-#### Features
-
-* Clever hostname and username displaying.
-* Indicator if user is root.
-* Prompt character turns red if the last command exits with non-zero code.
-* Current Git branch and rich repo status:
-  * `?` — untracked changes;
-  * `+` — uncommitted changes in the index;
-  * `!` — unstaged changes;
-  * `»` — renamed files;
-  * `✘` — deleted files;
-  * `$` — stashed changes;
-  * `=` — unmerged changes;
-  * `⇡` — ahead of remote branch;
-  * `⇣` — behind of remote branch;
-  * `⇕` — diverged changes.
-* Indicator for jobs in the background (`✦`).
-* Current Node.js version, through nvm/nodenv/n (`⬢`).
-* Current Docker version and connected machine (`🐳`).
-* Current Ruby version, through rvm/rbenv/chruby/asdf (`💎`).
-* Current Go version (`🐹`).
-* Current PHP version (`🐘`).
-* Current Rust version (`𝗥`).
-* Current version of Haskell GHC Compiler, defined in stack.yaml file (`λ`).
-* Current Julia version (`ஃ`).
-* Current Amazon Web Services (AWS) profile (`☁️`) ([Using named profiles](http://docs.aws.amazon.com/cli/latest/userguide/cli-multiple-profiles.html)).
-* Current Python virtualenv.
-* Current Conda version (`🅒`).
-* Current Elixir Version (`💧`).
-* Current Python pyenv (`🐍`).
-* Current .NET SDK version, through dotnet-cli (`.NET`).
-* Current Kubectl context (`☸️`).
-* Package version, if there is a package in current directory (`📦`).
-* Current battery level and status:
-  * `⇡` - charging;
-  * `⇣` - discharging;
-  * `•` - fully charged.
-* Current Vi-mode mode.
-* Optional exit-code of last command.
-* Optional time stamps 12/24hr in format.
-* Execution time of the last command if it exceeds 5 seconds.
-
-Want more features? Please [open an issue](https://github.com/matchai/spacefish/issues/new?template=Feature_request.md) or send pull request!
-
-#### Requirements
-
-To get spacefish working correctly, you will need:
-
-* [`fish`][THEMES-NAMESPACE-spacefish-fish] (v2.7.0 or newer)
-* [Powerline Font](https://github.com/powerline/fonts) must be installed and enabled in your terminal.
-
-#### Installation
-
-##### [Fisher](https://github.com/jorgebucaran/fisher)
-
-```fish
-$ fisher install matchai/spacefish
-```
-
-##### [Oh My Fish!](https://github.com/oh-my-fish/oh-my-fish)
-
-```fish
-$ omf install spacefish
-```
-
-#### Customization
-
-Spacefish works really well out of the box, but you can customize your fish to your heart's content!
-
-* [**Options**](./docs/Options.md) — Tweak section's behavior with tons of options.
-
-You have the ability to customize or disable specific elements of Spacefish. All options must be overridden in your `config.fish`.
-
-#### Troubleshooting
-
-Having issues? Take a look at our [Troubleshooting](./docs/Troubleshooting.md) page.
-
-Still struggling? Please [file an issue](https://github.com/matchai/spacefish/issues/new?template=Support_question.md), describe your problem, and we will gladly help you.
-
-#### Contributors
-
-Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
-<table>
-  <tr>
-    <td align="center"><a href="https://twitter.com/matchai"><img src="https://avatars0.githubusercontent.com/u/4658208?v=4" width="100px;" alt="Matan Kushner"/><br /><sub><b>Matan Kushner</b></sub></a><br /><a href="https://github.com/matchai/spacefish/issues?q=author%3Amatchai" title="Bug reports">🐛</a> <a href="https://github.com/matchai/spacefish/commits?author=matchai" title="Code">💻</a> <a href="https://github.com/matchai/spacefish/commits?author=matchai" title="Documentation">📖</a> <a href="#review-matchai" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/matchai/spacefish/commits?author=matchai" title="Tests">⚠️</a> <a href="#tool-matchai" title="Tools">🔧</a> <a href="#design-matchai" title="Design">🎨</a></td>
-    <td align="center"><a href="https://github.com/sirMerr"><img src="https://avatars2.githubusercontent.com/u/11183523?v=4" width="100px;" alt="Tiffany Le-Nguyen"/><br /><sub><b>Tiffany Le-Nguyen</b></sub></a><br /><a href="https://github.com/matchai/spacefish/issues?q=author%3AsirMerr" title="Bug reports">🐛</a> <a href="https://github.com/matchai/spacefish/commits?author=sirMerr" title="Code">💻</a> <a href="https://github.com/matchai/spacefish/commits?author=sirMerr" title="Documentation">📖</a> <a href="#review-sirMerr" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/matchai/spacefish/commits?author=sirMerr" title="Tests">⚠️</a></td>
-    <td align="center"><a href="https://github.com/Snuggle"><img src="https://avatars0.githubusercontent.com/u/26250962?v=4" width="100px;" alt="Snuggle"/><br /><sub><b>Snuggle</b></sub></a><br /><a href="https://github.com/matchai/spacefish/issues?q=author%3ASnuggle" title="Bug reports">🐛</a> <a href="https://github.com/matchai/spacefish/commits?author=Snuggle" title="Code">💻</a> <a href="https://github.com/matchai/spacefish/commits?author=Snuggle" title="Documentation">📖</a> <a href="#review-Snuggle" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/matchai/spacefish/commits?author=Snuggle" title="Tests">⚠️</a></td>
-    <td align="center"><a href="https://github.com/jskrnbindra"><img src="https://avatars2.githubusercontent.com/u/11844760?v=4" width="100px;" alt="Jaskaran Bindra"/><br /><sub><b>Jaskaran Bindra</b></sub></a><br /><a href="https://github.com/matchai/spacefish/commits?author=jskrnbindra" title="Code">💻</a> <a href="https://github.com/matchai/spacefish/commits?author=jskrnbindra" title="Documentation">📖</a> <a href="https://github.com/matchai/spacefish/commits?author=jskrnbindra" title="Tests">⚠️</a></td>
-    <td align="center"><a href="https://labun.me"><img src="https://avatars3.githubusercontent.com/u/6306918?v=4" width="100px;" alt="Konstantin Labun"/><br /><sub><b>Konstantin Labun</b></sub></a><br /><a href="https://github.com/matchai/spacefish/commits?author=kulabun" title="Code">💻</a> <a href="https://github.com/matchai/spacefish/commits?author=kulabun" title="Documentation">📖</a> <a href="https://github.com/matchai/spacefish/commits?author=kulabun" title="Tests">⚠️</a></td>
-    <td align="center"><a href="https://medium.com/@kyleholzinger"><img src="https://avatars0.githubusercontent.com/u/2652762?v=4" width="100px;" alt="Kyle Holzinger"/><br /><sub><b>Kyle Holzinger</b></sub></a><br /><a href="https://github.com/matchai/spacefish/commits?author=kyleholzinger" title="Code">💻</a> <a href="https://github.com/matchai/spacefish/commits?author=kyleholzinger" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://github.com/salmanulfarzy"><img src="https://avatars0.githubusercontent.com/u/10276208?v=4" width="100px;" alt="Salmanul Farzy"/><br /><sub><b>Salmanul Farzy</b></sub></a><br /><a href="https://github.com/matchai/spacefish/commits?author=salmanulfarzy" title="Code">💻</a> <a href="#review-salmanulfarzy" title="Reviewed Pull Requests">👀</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://owais.lone.pw"><img src="https://avatars0.githubusercontent.com/u/46186?v=4" width="100px;" alt="owais"/><br /><sub><b>owais</b></sub></a><br /><a href="https://github.com/matchai/spacefish/commits?author=owais" title="Code">💻</a> <a href="https://github.com/matchai/spacefish/commits?author=owais" title="Documentation">📖</a> <a href="https://github.com/matchai/spacefish/commits?author=owais" title="Tests">⚠️</a></td>
-    <td align="center"><a href="https://github.com/ladysamantha"><img src="https://avatars3.githubusercontent.com/u/35412203?v=4" width="100px;" alt="Samantha Enders"/><br /><sub><b>Samantha Enders</b></sub></a><br /><a href="https://github.com/matchai/spacefish/commits?author=ladysamantha" title="Code">💻</a> <a href="https://github.com/matchai/spacefish/commits?author=ladysamantha" title="Documentation">📖</a> <a href="https://github.com/matchai/spacefish/commits?author=ladysamantha" title="Tests">⚠️</a></td>
-    <td align="center"><a href="https://evanrelf.com"><img src="https://avatars2.githubusercontent.com/u/887196?v=4" width="100px;" alt="Evan Relf"/><br /><sub><b>Evan Relf</b></sub></a><br /><a href="https://github.com/matchai/spacefish/commits?author=evanrelf" title="Code">💻</a> <a href="https://github.com/matchai/spacefish/commits?author=evanrelf" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://jasonet.co"><img src="https://avatars1.githubusercontent.com/u/10660468?v=4" width="100px;" alt="Jason Etcovitch"/><br /><sub><b>Jason Etcovitch</b></sub></a><br /><a href="https://github.com/matchai/spacefish/commits?author=JasonEtco" title="Code">💻</a> <a href="https://github.com/matchai/spacefish/commits?author=JasonEtco" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://github.com/hrvoj3e"><img src="https://avatars0.githubusercontent.com/u/4988133?v=4" width="100px;" alt="hrvoj3e"/><br /><sub><b>hrvoj3e</b></sub></a><br /><a href="https://github.com/matchai/spacefish/issues?q=author%3Ahrvoj3e" title="Bug reports">🐛</a> <a href="https://github.com/matchai/spacefish/commits?author=hrvoj3e" title="Code">💻</a></td>
-    <td align="center"><a href="http://newmaniese.com"><img src="https://avatars1.githubusercontent.com/u/64894?v=4" width="100px;" alt="Michael Newman"/><br /><sub><b>Michael Newman</b></sub></a><br /><a href="https://github.com/matchai/spacefish/issues?q=author%3Anewmaniese" title="Bug reports">🐛</a> <a href="https://github.com/matchai/spacefish/commits?author=newmaniese" title="Code">💻</a> <a href="https://github.com/matchai/spacefish/commits?author=newmaniese" title="Documentation">📖</a> <a href="https://github.com/matchai/spacefish/commits?author=newmaniese" title="Tests">⚠️</a></td>
-    <td align="center"><a href="https://github.com/k-lyda"><img src="https://avatars0.githubusercontent.com/u/6491400?v=4" width="100px;" alt="Konrad"/><br /><sub><b>Konrad</b></sub></a><br /><a href="https://github.com/matchai/spacefish/issues?q=author%3Ak-lyda" title="Bug reports">🐛</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/dubnev"><img src="https://avatars1.githubusercontent.com/u/3227558?v=4" width="100px;" alt="Will Neville"/><br /><sub><b>Will Neville</b></sub></a><br /><a href="https://github.com/matchai/spacefish/issues?q=author%3Adubnev" title="Bug reports">🐛</a></td>
-    <td align="center"><a href="https://github.com/danieltrautmann"><img src="https://avatars1.githubusercontent.com/u/4022138?v=4" width="100px;" alt="Daniel Trautmann"/><br /><sub><b>Daniel Trautmann</b></sub></a><br /><a href="https://github.com/matchai/spacefish/commits?author=danieltrautmann" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/Menturan"><img src="https://avatars0.githubusercontent.com/u/16061385?v=4" width="100px;" alt="Jonas Öhlander"/><br /><sub><b>Jonas Öhlander</b></sub></a><br /><a href="https://github.com/matchai/spacefish/issues?q=author%3AMenturan" title="Bug reports">🐛</a></td>
-    <td align="center"><a href="https://twitter.com/lynzt"><img src="https://avatars1.githubusercontent.com/u/3099491?v=4" width="100px;" alt="lindsay"/><br /><sub><b>lindsay</b></sub></a><br /><a href="https://github.com/matchai/spacefish/commits?author=lynzt" title="Documentation">📖</a></td>
-    <td align="center"><a href="http://www.bradcypert.com"><img src="https://avatars0.githubusercontent.com/u/1455979?v=4" width="100px;" alt="Brad"/><br /><sub><b>Brad</b></sub></a><br /><a href="https://github.com/matchai/spacefish/commits?author=bradcypert" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/nammn"><img src="https://avatars3.githubusercontent.com/u/23652004?v=4" width="100px;" alt="Nam Nguyen"/><br /><sub><b>Nam Nguyen</b></sub></a><br /><a href="https://github.com/matchai/spacefish/commits?author=nammn" title="Code">💻</a></td>
-    <td align="center"><a href="http://www.halostatue.ca/"><img src="https://avatars3.githubusercontent.com/u/11361?v=4" width="100px;" alt="Austin Ziegler"/><br /><sub><b>Austin Ziegler</b></sub></a><br /><a href="#review-halostatue" title="Reviewed Pull Requests">👀</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="http://kouk.surukle.me"><img src="https://avatars1.githubusercontent.com/u/456007?v=4" width="100px;" alt="Konstantinos Koukopoulos"/><br /><sub><b>Konstantinos Koukopoulos</b></sub></a><br /><a href="https://github.com/matchai/spacefish/commits?author=kouk" title="Code">💻</a> <a href="https://github.com/matchai/spacefish/commits?author=kouk" title="Tests">⚠️</a></td>
-  </tr>
-</table>
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
-
-#### License
-
-MIT © [Matan Kushner](http://matchai.dev)
-
-<!-- Links -->
-
-[THEMES-NAMESPACE-spacefish-spaceship]: https://github.com/denysdovhan/spaceship-prompt
-[THEMES-NAMESPACE-spacefish-fish]: https://fishshell.com
-[THEMES-NAMESPACE-spacefish-zsh]: http://zsh.org
 
 
 # [sushi](https://github.com/umayr/theme-sushi)
@@ -4545,9 +4791,48 @@ A simple, but informative, prompt
 ![example](https://raw.githubusercontent.com/phaedryx/trout/master/prompt.png)
 
 
-# [tweetjay](https://github.com/tweetjay/theme-tweetjay.git)
-<a href="/tweetjay/theme-tweetjay/master/README.md">Moved Permanently</a>.
+# [tweetjay](https://github.com/j0d5/theme-tweetjay)
+<img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="144px" height="144px"/>
 
+###### tweetjay
+> A theme for [Oh My Fish][omf-link].
+
+[![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
+[![Fish Shell Version](https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square)](https://fishshell.com)
+[![Oh My Fish Framework](https://img.shields.io/badge/Oh%20My%20Fish-Framework-007EC7.svg?style=flat-square)](https://www.github.com/oh-my-fish/oh-my-fish)
+
+<br/>
+
+
+#### Install
+
+```fish
+$ omf install tweetjay
+```
+
+
+#### Features
+
+* It's my first theme for oh-my-fish and still in progress
+* It's a git oriented theme
+
+
+#### Screenshot
+
+![screenshot](https://cloud.githubusercontent.com/assets/234182/23456975/faefed52-fe75-11e6-8753-c4d262884a6f.png)"
+
+
+### License
+
+[MIT][mit] © [Johannes Steudle][author] et [al][THEMES-NAMESPACE-tweetjay-contributors]
+
+
+[THEMES-NAMESPACE-tweetjay-mit]:            https://opensource.org/licenses/MIT
+[THEMES-NAMESPACE-tweetjay-author]:         https://github.com/{{USER}}
+[THEMES-NAMESPACE-tweetjay-contributors]:   https://github.com/{{USER}}/theme-tweetjay/graphs/contributors
+[omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
+
+[license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 
 
 # [uggedal](https://github.com/oh-my-fish/theme-uggedal)
@@ -4562,6 +4847,11 @@ Minimal theme.
 * Only displays the `$CWD`.
 * Displays hostname if you're connected through `ssh(1)`.
 * Right prompt displays the last command's exit code if it was non-zero.
+
+
+# [ultrafish](https://github.com/Ultra980/ultrafish-theme.git)
+<a href="/Ultra980/ultrafish-theme/master/README.md">Temporary Redirect</a>.
+
 
 
 # [will](https://github.com/oh-my-fish/theme-will)
@@ -4619,8 +4909,8 @@ Dark colors.
 - Disable Solarized colors in prompt with: `set -U yimmy_solarized false`
 
 
-# [zeit](https://github.com/mcansh/zeit-fish-theme)
-See https://github.com/mcansh/zeit-fish-theme for details
+# [zeit](https://github.com/mcansh/vercel-fish-theme)
+See https://github.com/mcansh/vercel-fish-theme for details
 # [zephyr](https://github.com/komarnitskyi/theme-zephyr)
 <img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="144px" height="144px"/>
 
