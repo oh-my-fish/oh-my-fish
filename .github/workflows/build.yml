@@ -6,7 +6,36 @@ on:
   pull_request:
     paths-ignore:
       - '**.md'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    container:
+      image: ohmyfish/fish:4.8.1
+      options: --user root
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v7
+
+      - name: Check fish syntax
+        shell: bash
+        # `fish --no-execute` only checks its first argument, so check one file per call.
+        run: |
+          find . -name '*.fish' -not -path './.git/*' -print0 | xargs -0 -n1 fish --no-execute
+          fish --no-execute bin/install
+
+      - name: Verify installer checksum
+        shell: bash
+        run: cd bin && sha256sum --check install.sha256
+
   build-linux:
     strategy:
       fail-fast: false
@@ -32,12 +61,23 @@ jobs:
           - '4.7.1'
           - '4.8.1'
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     container:
       image: ohmyfish/fish:${{ matrix.fish }}
       options: --user root
     steps:
+      # The images for fish >= 4.1 are Alpine based and ship without git.
+      # Install it before checkout, or actions/checkout falls back to a
+      # tarball download and the tests run against a checkout with no .git.
+      - name: Install Git
+        run: |
+          command -v git && exit 0
+          if command -v apk; then apk add --no-cache git
+          elif command -v apt-get; then apt-get update && apt-get install -y git
+          fi
+
       - name: Checkout the repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Run tests
         uses: ./.github/actions/run-tests
@@ -47,13 +87,14 @@ jobs:
       fail-fast: false
       matrix:
         os:
-          - macos-latest
-          - macos-14
+          # macos-14 is deprecated and macos-latest already aliases macos-26.
           - macos-15
+          - macos-26
     runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
     steps:
       - name: Checkout the repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Run tests
         uses: ./.github/actions/run-tests
