@@ -126,10 +126,12 @@ function describe_omf_doctor
 
   function it_records_installed_packages_missing_from_the_bundle
     omf.bundle.remove theme spec_root
+    omf.bundle.remove theme spec_funcs
     set -l output (omf doctor 2>&1 | string replace -ra '\e\[[0-9;]*m' '')
-    assert_match 'missing from your bundle: .*theme spec_root' "$output"
+    assert_match 'missing from your bundle: .*theme spec_funcs, theme spec_root' "$output"
     omf doctor --fix > /dev/null 2>&1
     assert_file_contains_regex $OMF_CONFIG/bundle '^theme spec_root$'
+    assert_file_contains_regex $OMF_CONFIG/bundle '^theme spec_funcs$'
   end
 
   function it_rejects_unknown_options

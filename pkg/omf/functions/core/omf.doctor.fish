@@ -38,7 +38,7 @@ function __omf.doctor.bundle
     set -l name_or_url (echo $record | cut -s -d' ' -f2-)
     test -n "$name_or_url"; or continue
     contains -- (omf.packages.name $name_or_url) $installed
-      or set missing $missing $record
+      or set missing $missing "$record"
   end
 
   if set -q missing[1]
@@ -59,7 +59,7 @@ function __omf.doctor.bundle
     test $type = package; and set -l flag --plugin; or set -l flag --theme
     for name in (omf.packages.list $flag)
       contains -- $name (omf.bundle.names $type)
-        or set unlisted "$type $name"
+        or set unlisted $unlisted "$type $name"
     end
   end
 
