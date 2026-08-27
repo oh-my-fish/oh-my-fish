@@ -80,8 +80,14 @@ end
 
 function __omf.doctor.packages
   set -l broken
+  set -l theme (cat $OMF_CONFIG/theme 2> /dev/null)
 
-  for path in {$OMF_PATH,$OMF_CONFIG}/pkg/* {$OMF_PATH,$OMF_CONFIG}/themes/*
+  # Only what a shell actually loads: every package and the active theme.
+  # Every file costs a `fish --no-execute` process, so inactive themes are skipped.
+  set -l paths {$OMF_PATH,$OMF_CONFIG}/pkg/* {$OMF_PATH,$OMF_CONFIG}/themes/$theme
+  echo "Checking "(count $paths)" installed packages for syntax errors..."
+
+  for path in $paths
     test -d $path; or continue
     set -l name (command basename $path)
     contains -- $name omf fish-spec; and continue
