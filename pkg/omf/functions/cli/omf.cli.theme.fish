@@ -9,10 +9,10 @@ function omf.cli.theme -a name
     set -l highlight_current s/"$regex_current"/"\1"(omf::em)"\2"(omf::off)"\3"/g
 
     echo (omf::under)"Installed:"(omf::off)
-    omf.packages.list --theme | column | sed -E "$highlight_current"
+    omf.packages.list --theme | omf.columns | sed -E "$highlight_current"
     echo
     echo (omf::under)"Available:"(omf::off)
-    omf.index.query --type=theme | column
+    omf.index.query --type=theme | omf.columns
   case 1
     if not omf.theme.set $name
       echo (omf::err)"Theme not installed!"(omf::off)

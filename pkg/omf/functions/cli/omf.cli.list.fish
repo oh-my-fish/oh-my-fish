@@ -2,11 +2,11 @@ function omf.cli.list
   switch (count $argv)
   case 0
     echo (omf::under)Plugins(omf::off)
-    omf.packages.list --plugin | column
+    omf.packages.list --plugin | omf.columns
     echo
     echo (omf::under)Themes(omf::off)
-    omf.packages.list --theme | column
+    omf.packages.list --theme | omf.columns
   case '*'
-    omf.packages.list $argv | column
+    omf.packages.list $argv | omf.columns
   end
 end
