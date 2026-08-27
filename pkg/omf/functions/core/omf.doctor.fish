@@ -30,7 +30,6 @@ end
 
 function __omf.doctor.bundle
   set -l installed (omf.packages.list)
-  set -l failed
 
   # Records in the bundle whose package is not on disk.
   set -l missing
@@ -46,7 +45,7 @@ function __omf.doctor.bundle
     if set -q __omf_doctor_fix
       omf.bundle.install
         and echo (omf::em)"  Fixed: missing packages installed."(omf::off)
-        or set failed
+        or set -l failed
     else
       echo "  Run "(omf::em)"omf doctor --fix"(omf::off)" (or "(omf::em)"omf install"(omf::off)") to install them."
     end

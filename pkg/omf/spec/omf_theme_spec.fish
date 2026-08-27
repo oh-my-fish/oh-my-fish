@@ -134,6 +134,14 @@ function describe_omf_doctor
     assert_file_contains_regex $OMF_CONFIG/bundle '^theme spec_funcs$'
   end
 
+  function it_reports_a_healthy_install
+    omf doctor --fix > /dev/null 2>&1
+    set -l output (omf doctor 2>&1 | string replace -ra '\e\[[0-9;]*m' '')
+    assert_exit_code 0
+    assert_match 'ready to swim' "$output"
+    assert_not_match 'Warning' "$output"
+  end
+
   function it_rejects_unknown_options
     omf doctor --nope 2>/dev/null
     assert_exit_code 2
