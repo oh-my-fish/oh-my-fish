@@ -10,7 +10,9 @@ function omf.cli.install
       or set fail_count 1
   case '*'
     for package in $argv
-      omf.packages.install $package;
+      omf.packages.install $package
+      set -l install_status $status
+      test $install_status -eq 0
         and require $package
 
       # If package is a theme, set it to active.
@@ -21,7 +23,7 @@ function omf.cli.install
         omf.theme.set $themes[$ind]
       end
 
-      test $status != 0;
+      test $install_status -ne 0
         and set fail_count (math $fail_count + 1)
     end
   end
