@@ -34,6 +34,7 @@ complete -c omf -f -a channel  -n "__fish_use_subcommand" -d "Gets or changes th
 complete -c omf -f -a describe -n "__fish_use_subcommand" -d "Get information about what packages do"
 complete -c omf -f -a destroy  -n "__fish_use_subcommand" -d "Remove Oh My Fish"
 complete -c omf -f -a doctor   -n "__fish_use_subcommand" -d "Troubleshoot Oh My Fish"
+complete -c omf -f -l fix      -n "__fish_seen_subcommand_from doctor" -d "Repair detected problems"
 complete -c omf -f -a help     -n "__fish_use_subcommand" -d "Display this help"
 complete -c omf -f -a install  -n "__fish_use_subcommand" -d "Install one or more packages"
 complete -c omf -f -a list     -n "__fish_use_subcommand" -d "List local packages"

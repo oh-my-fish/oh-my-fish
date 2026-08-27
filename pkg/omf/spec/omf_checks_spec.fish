@@ -51,7 +51,7 @@ function describe_omf_check_fish_prompt
   function it_is_healthy_when_prompt_links_to_the_active_theme
     read -l theme < $OMF_CONFIG/theme
     command rm -f $__spec_prompt
-    command ln -s $OMF_PATH/themes/$theme/fish_prompt.fish $__spec_prompt
+    command ln -s (omf.theme.prompt_path $theme) $__spec_prompt
     omf.check.fish_prompt
     assert_exit_code 0
   end

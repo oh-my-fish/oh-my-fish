@@ -1,7 +1,16 @@
 Troubleshoot Oh My Fish.
 
 == USAGE
-  omf doctor
+  omf doctor [--fix]
 
 == DESCRIPTION
-  Checks your environment and Oh My Fish install for any potential or common problems.
+  Checks your environment and Oh My Fish install for any potential or common problems:
+  fish and git versions, a fish_prompt.fish that shadows the active theme, bundle
+  entries that are not installed (or installed packages missing from the bundle),
+  and packages with syntax errors.
+
+== OPTIONS
+  --fix::   Repair what can be repaired: relink fish_prompt.fish to the active theme
+            (a prompt you wrote yourself is backed up first), install missing bundle
+            entries and record unlisted packages. Broken packages are only reported;
+            remove them with `omf remove <name>`.
