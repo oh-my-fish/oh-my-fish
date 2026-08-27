@@ -79,7 +79,8 @@ function describe_omf_theme_prompt
     assert_match 'moved to' "$output"
     assert_equal $OMF_CONFIG/themes/spec_funcs/functions/fish_prompt.fish (readlink $__spec_link)
     assert_equal 1 (count $__spec_link.*.copy)
-    assert_file_contains (ls $__spec_link.*.copy) 'mine> '
+    set -l backup_content (cat $__spec_link.*.copy)
+    assert_equal 'function fish_prompt; echo "mine> "; end' "$backup_content"
   end
 
   function it_reports_a_missing_theme
