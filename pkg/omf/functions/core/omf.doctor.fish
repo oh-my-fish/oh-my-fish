@@ -34,9 +34,9 @@ function __omf.doctor.bundle
   # Records in the bundle whose package is not on disk.
   set -l missing
   for record in (cat $OMF_CONFIG/bundle 2> /dev/null | sort -u)
-    set -l name_or_url (echo $record | cut -s -d' ' -f2-)
-    test -n "$name_or_url"; or continue
-    contains -- (omf.packages.name $name_or_url) $installed
+    set -l fields (string split -m1 ' ' -- $record)
+    test (count $fields) -eq 2; or continue
+    contains -- (omf.packages.name $fields[2]) $installed
       or set missing $missing "$record"
   end
 
@@ -56,8 +56,9 @@ function __omf.doctor.bundle
   set -l unlisted
   for type in package theme
     test $type = package; and set -l flag --plugin; or set -l flag --theme
+    set -l bundle_names (omf.bundle.names $type)
     for name in (omf.packages.list $flag)
-      contains -- $name (omf.bundle.names $type)
+      contains -- $name $bundle_names
         or set unlisted $unlisted "$type $name"
     end
   end
