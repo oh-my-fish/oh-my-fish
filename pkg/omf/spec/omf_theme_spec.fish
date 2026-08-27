@@ -142,6 +142,28 @@ function describe_omf_doctor
     assert_not_match 'Warning' "$output"
   end
 
+  function it_reports_a_prompt_that_prints_errors
+    __spec_make_theme spec_noisy functions
+    echo "function fish_prompt; no_such_command_omf_spec; echo 'x> '; end" > $OMF_CONFIG/themes/spec_noisy/functions/fish_prompt.fish
+    omf.theme.set spec_noisy > /dev/null
+    set -l output (omf doctor 2>&1 | string replace -ra '\e\[[0-9;]*m' '')
+    assert_match 'theme spec_noisy prints errors when rendering the prompt' "$output"
+    assert_match 'no_such_command_omf_spec' "$output"
+    omf.theme.set spec_root > /dev/null
+    command rm -rf $OMF_CONFIG/themes/spec_noisy
+    omf.bundle.remove theme spec_noisy
+  end
+
+  function it_reports_packages_that_error_on_startup
+    command mkdir -p $OMF_CONFIG/pkg/spec_loud/conf.d
+    echo "no_such_command_omf_spec" > $OMF_CONFIG/pkg/spec_loud/conf.d/spec_loud.fish
+    set -l output (omf doctor 2>&1 | string replace -ra '\e\[[0-9;]*m' '')
+    assert_match 'prints errors on startup' "$output"
+    assert_match 'spec_loud' "$output"
+    command rm -rf $OMF_CONFIG/pkg/spec_loud
+    omf.bundle.remove package spec_loud
+  end
+
   function it_rejects_unknown_options
     omf doctor --nope 2>/dev/null
     assert_exit_code 2

@@ -108,6 +108,53 @@ function __omf.doctor.packages
   not set -q broken[1]
 end
 
+# Start a fresh shell and render the prompt, reporting anything written to
+# stderr. This catches what `fish --no-execute` cannot: missing commands,
+# removed fish syntax, and broken packages loaded at startup.
+function __omf.doctor.runtime
+  set -l theme (cat $OMF_CONFIG/theme 2> /dev/null)
+  set -l startup_errors (fish -c '' 2>&1 > /dev/null)
+  # Only errors whose trace points into Oh My Fish (packages, themes or the
+  # config directory) are ours to report; fish prints $HOME as ~.
+  set -l omf_paths (string replace -- "$HOME" '~' $OMF_PATH $OMF_CONFIG) $OMF_PATH $OMF_CONFIG
+  set -l omf_startup_errors
+  for line in $startup_errors
+    for path in $omf_paths
+      if string match -q -- "*$path/*" $line
+        set omf_startup_errors $startup_errors
+        break
+      end
+    end
+  end
+  set startup_errors $omf_startup_errors
+  set -l startup_output (fish -c '' 2>&1 > /dev/null)
+  set -l prompt_output (fish -c 'fish_prompt; functions -q fish_right_prompt; and fish_right_prompt' 2>&1 > /dev/null)
+  set -l prompt_errors
+  for line in $prompt_output
+    contains -- $line $startup_output; or set prompt_errors $prompt_errors $line
+  end
+
+  if set -q startup_errors[1]
+    echo (omf::err)"Warning: "(omf::off)"your shell prints errors on startup:"
+    printf '  %s\n' $startup_errors[1..8]
+    test (count $startup_errors) -gt 8; and echo "  ..."
+    echo "  The file paths above show which package is responsible; fix it or "(omf::em)"omf remove <name>"(omf::off)"."
+    echo
+    set failed
+  end
+
+  if set -q prompt_errors[1]
+    echo (omf::err)"Warning: "(omf::off)"theme "(omf::em)$theme(omf::off)" prints errors when rendering the prompt:"
+    printf '  %s\n' $prompt_errors[1..8]
+    test (count $prompt_errors) -gt 8; and echo "  ..."
+    echo "  Install the commands it needs, or switch with "(omf::em)"omf theme <name>"(omf::off)"."
+    echo
+    set failed
+  end
+
+  not set -q failed
+end
+
 function __omf.doctor.fish_version
   set -l min_version 3.0.0
   set -l current_version
@@ -164,6 +211,7 @@ function omf.doctor
   __omf.doctor.theme; or set -l doctor_failed
   __omf.doctor.bundle; or set -l doctor_failed
   __omf.doctor.packages; or set -l doctor_failed
+  __omf.doctor.runtime; or set -l doctor_failed
 
   fish "$OMF_PATH/bin/install" --check
     or set -l doctor_failed
