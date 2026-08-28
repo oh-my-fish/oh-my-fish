@@ -73,7 +73,11 @@ function describe_omf_version
   end
 
   function it_does_not_truncate_a_commit_hash_when_there_are_no_tags
-    set -l head (command git -C $OMF_PATH rev-parse --short HEAD)
+    if not set -l head (command git -C $OMF_PATH rev-parse --short HEAD 2> /dev/null)
+      # Not a Git checkout (e.g. installed from a tarball).
+      assert_equal unknown (omf.version)
+      return
+    end
     if test -z (command git -C $OMF_PATH tag -l 'v*' | head -n1)
       assert_equal $head (omf.version)
     end
