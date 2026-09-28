@@ -33,16 +33,11 @@ function omf.index.repositories -d 'Manage package repositories'
       set -l repo "$repo_url $repo_branch"
 
       # Check if we already have the repository.
-      if test -f $OMF_CONFIG/repositories
-        if command grep -q $repo $OMF_CONFIG/repositories
+      for file in {$OMF_PATH,$OMF_CONFIG}/repositories
+        if test -f $file; and command grep -qxF -- "$repo" $file
           echo "The repository is already added." >&2
           return 1
         end
-      end
-
-      if command grep -q $repo $OMF_PATH/repositories
-        echo "The repository is already added." >&2
-        return 1
       end
 
       # Before we add, do a quick ls-remote to see if the URL is a valid repo.
@@ -51,6 +46,7 @@ function omf.index.repositories -d 'Manage package repositories'
         return 1
       end
 
+      command mkdir -p $OMF_CONFIG
       echo "$repo" >> $OMF_CONFIG/repositories
 
     case rm remove
@@ -71,16 +67,16 @@ function omf.index.repositories -d 'Manage package repositories'
 
       # Check to see if user has repositories and if the given URL is listed.
       if test -f $OMF_CONFIG/repositories
-        if command grep -q $repo $OMF_CONFIG/repositories
-          command grep -v $repo $OMF_CONFIG/repositories > $OMF_CONFIG/repositories.swp
+        if command grep -qxF -- "$repo" $OMF_CONFIG/repositories
+          command grep -vxF -- "$repo" $OMF_CONFIG/repositories > $OMF_CONFIG/repositories.swp
           command mv $OMF_CONFIG/repositories.swp $OMF_CONFIG/repositories
 
-          return
+          return 0
         end
       end
 
       # The given URL is not listed, check if it is a built-in repository they can't remove.
-      if command grep -q $repo $OMF_PATH/repositories
+      if test -f $OMF_PATH/repositories; and command grep -qxF -- "$repo" $OMF_PATH/repositories
         echo "The repository '$repo' is built-in and cannot be removed." >&2
       else
         echo "Could not find user repository '$repo'" >&2

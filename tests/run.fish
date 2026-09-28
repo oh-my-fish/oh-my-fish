@@ -28,14 +28,14 @@ set -e OMF_CONFIG
 
 echo "Sandbox: $sandbox"
 
-if not fish "$repo/bin/install" --offline="$repo" --noninteractive --yes
+if not fish "$repo/bin/install" --local-source="$repo" --noninteractive --yes
   echo "Failed to install Oh My Fish into the sandbox" >&2
   emit omf_tests_done
   exit 1
 end
 
 # Every command below runs in a fresh fish that boots from the sandbox
-# config, exactly as a user's shell would. An offline install skips the
+# config, exactly as a user's shell would. A local-source install skips the
 # bundle, so `omf install` first fetches the default theme.
 set -l smoke_commands "omf install" "omf help" "omf doctor" "omf install apt" "omf remove apt"
 for cmd in $smoke_commands
