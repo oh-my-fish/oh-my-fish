@@ -8,7 +8,7 @@ function omf.bundle.add -a type name_or_url
   set -l record "$type $name_or_url"
 
   if test -f $bundle
-    if not grep $record $bundle > /dev/null 2>&1
+    if not command grep -qxF -- "$record" $bundle
       echo $record >> $bundle
     end
   else

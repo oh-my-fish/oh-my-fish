@@ -15,6 +15,7 @@ function __omf.packages.new.from_template -a path github user name
       mkdir (basename $file)
       pushd (basename $file)
       __omf.packages.new.from_template $file $github $user $name
+      popd
     else
       set -l target (begin
         if test (basename $file) = "{{NAME}}.fish"
@@ -35,7 +36,6 @@ function __omf.packages.new.from_template -a path github user name
       end)$target
     end
   end
-  popd >/dev/null 2>&1
 end
 
 
@@ -70,6 +70,6 @@ function omf.packages.new -a option name
     echo (omf::em)"Switched to $dir"(omf::off)
   else
     echo (omf::err)"\$OMF_CONFIG and/or \$OMF_PATH undefined."(omf::off) >&2
-    exit $OMF_UNKNOWN_ERR
+    return $OMF_UNKNOWN_ERR
   end
 end

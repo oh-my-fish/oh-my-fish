@@ -13,14 +13,11 @@ function omf.cli.update
 
   if set -q update_core
     omf.core.update
+    set -l core_status $status
 
-    if type -q omf.version
-      set OMF_VERSION (omf.version)
-    end
-
-    if test $status -ne 1
+    if test $core_status -eq 0
       echo (omf::em)"Oh My Fish is up to date."(omf::off)
-      echo (omf::em)"You are now using Oh My Fish version $OMF_VERSION."(omf::off)
+      echo (omf::em)"You are now using Oh My Fish version "(omf.version)"."(omf::off)
     else
       echo (omf::err)"Oh My Fish failed to update."(omf::off)
       echo "Please open a new issue here → "(omf::em)"github.com/oh-my-fish/oh-my-fish/issues"(omf::off)
