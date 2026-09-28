@@ -8,11 +8,11 @@ set -q OMF_REPO_BRANCH; or set OMF_REPO_BRANCH "master"
 
 function main
   # Set default settings
-  set -q XDG_DATA_HOME
+  test -n "$XDG_DATA_HOME"
     and set -g OMF_PATH_DEFAULT "$XDG_DATA_HOME/omf"
     or set -g OMF_PATH_DEFAULT "$HOME/.local/share/omf"
 
-  set -q XDG_CONFIG_HOME
+  test -n "$XDG_CONFIG_HOME"
     and set -g CONFIG_PATH "$XDG_CONFIG_HOME"
     or set -g CONFIG_PATH "$HOME/.config"
 
@@ -24,7 +24,7 @@ function main
   set -g OMF_CHANNEL stable
 
   # Ensure repository URL ends with .git
-  set OMF_REPO_URI (echo $OMF_REPO_URI | command sed 's/\.git//').git
+  set OMF_REPO_URI (echo $OMF_REPO_URI | command sed 's/\.git$//').git
 
   # Parse command args
   while set -q argv[1]
@@ -194,7 +194,7 @@ function install_from_github
       and set -l tag (command git --git-dir "$OMF_PATH/.git" --work-tree "$OMF_PATH" describe --tags $hash)
       # Checkout the release.
       and command git --git-dir "$OMF_PATH/.git" --work-tree "$OMF_PATH" checkout --quiet tags/$tag
-      or report error "Error getting latest version!"
+      or abort "Error getting latest version!"
   end
 
   set_git_remotes
@@ -249,6 +249,10 @@ function install_from_local_source
   # Copy the source into the install location.
   command cp -r "$LOCAL_SOURCE_PATH" "$OMF_PATH"
     or abort "Failed to copy source!"
+
+  # A read-only source (e.g. a tarball extracted by root) must not produce a
+  # read-only install, or every later `omf` command fails.
+  command chmod -R u+w "$OMF_PATH"
 
   # Set up Git remotes only if the local source is a Git repository.
   test -d "$OMF_PATH/.git"
@@ -350,7 +354,7 @@ function generate_bootstrap
 
   if test "$OMF_PATH" = "$OMF_PATH_DEFAULT"
     echo "\
-set -q XDG_DATA_HOME
+test -n \"\$XDG_DATA_HOME\"
   and set -gx OMF_PATH \"\$XDG_DATA_HOME/omf\"
   or set -gx OMF_PATH \"\$HOME/.local/share/omf\""
   else
@@ -374,11 +378,11 @@ function uninstall_omf
   is_install_dir "$OMF_PATH"
     or abort "No installation detected at $OMF_PATH"
 
-  say (set_color -o red 2> /dev/null)"This will uninstall Oh My Fish and all plugins and themes from $OMF_PATH."(set_color normal 2> /dev/null)
+  say (color -o red)"This will uninstall Oh My Fish and all plugins and themes from $OMF_PATH."(color normal)
 
   # If we installed the bootstrap to the user's config, let them know they need to remove it themselves.
   if begin; test -f "$FISH_CONFIG/config.fish"; and grep -q OMF_PATH "$FISH_CONFIG/config.fish"; end
-    say (set_color -o 2> /dev/null)"Your configuration will not be modified. You may need to remove Oh My Fish startup code from $FISH_CONFIG/config.fish."(set_color normal 2> /dev/null)
+    say (color -o)"Your configuration will not be modified. You may need to remove Oh My Fish startup code from $FISH_CONFIG/config.fish."(color normal)
   end
 
   confirm_yes "Are you sure you want to continue?"
@@ -386,6 +390,7 @@ function uninstall_omf
 
   # Trigger package uninstall events
   for path in $OMF_PATH/pkg/*
+    test -d "$path"; or continue
     set -l package (command basename "$path")
 
     test -f "$path/hooks/uninstall.fish"
@@ -486,12 +491,12 @@ function sane_environment_check
 
   debug "Verifying Git implementation is not buggy Git for Windows"
   if cmd git --version | cmd grep -i -q windows
-    abort (which git)" is Git for Windows which is not supported."
+    say "Warning: Git for Windows is not well supported by Oh My Fish. Proceed at your own risk."
   end
 
   debug "Verifying Git autocrlf is not enabled"
   if test (cmd git config core.autocrlf; or echo false) = true
-    abort "Please disable core.autocrlf in your Git configuration."
+    abort "Please disable core.autocrlf in your Git configuration: git config --global core.autocrlf false"
   end
 end
 
@@ -567,7 +572,7 @@ end
 
 # Assert that all tools we need are available.
 function assert_cmds
-  set -l cmds awk basename cp cut date dirname env fish fold head mkdir mv readlink rm sed sort tar tr which
+  set -l cmds awk basename chmod cp cut date dirname env fish fold git grep head mkdir mv readlink rm sed sort tar tr which
 
   for cmd in $cmds
     type -f $cmd > /dev/null 2> /dev/null
@@ -589,12 +594,24 @@ function assert_interactive
 end
 
 
+# Colour codes for use inside a string: `(color red)"text"(color normal)`.
+# Always prints one line, because a substitution that prints nothing (no
+# terminal) would expand to zero elements and drop the whole argument.
+function color
+  set_color $argv 2> /dev/null
+  echo
+end
+
+
 # A link-following `which` wrapper.
 function which
+  set -l path (command which $argv)
   if type realpath > /dev/null 2> /dev/null
-    realpath (command which $argv)
+    realpath "$path"
   else
-    command readlink (command which $argv)
+    # BSD readlink prints nothing for a regular file; fall back to the path.
+    command readlink "$path"
+      or echo "$path"
   end
 end
 
@@ -653,7 +670,7 @@ function confirm -a message
   read -l answer < /dev/tty
     or abort "Failed to read from tty"
 
-  not test "$answer" != y -a "$answer" != Y -a "$answer" != yes
+  contains -- (string lower -- "$answer") y yes
 end
 
 

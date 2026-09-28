@@ -1,3 +1,3 @@
 function omf.cli.doctor
-  omf.doctor
+  omf.doctor $argv
 end

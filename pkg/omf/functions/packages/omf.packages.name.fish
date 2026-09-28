@@ -1,3 +1,7 @@
+# omf.packages.name <name-or-url>
+# Derives the package name from a name, repository URL or path.
 function omf.packages.name -a name_or_url
-  command basename $name_or_url | sed -E 's/^(omf-)?((plugin|pkg|theme)-)?//;s/\\.git$//'
+  set -l name (string replace -r '/+$' '' -- "$name_or_url" | string replace -r '^.*/' '')
+  set name (string replace -r '^(omf-)?((plugin|pkg|theme)-)?' '' -- "$name" | string replace -r '\.git$' '')
+  echo $name
 end
