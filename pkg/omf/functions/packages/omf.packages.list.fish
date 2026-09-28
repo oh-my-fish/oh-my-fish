@@ -1,7 +1,5 @@
-set -l builtin_packages {$OMF_PATH,$OMF_CONFIG}/pkg*/{omf,fish-spec}
-
-
 function omf.packages.list -d 'List installed packages'
+  set -l builtin_packages {$OMF_PATH,$OMF_CONFIG}/pkg*/{omf,fish-spec}
   set -l show_plugins
   set -l show_themes
 

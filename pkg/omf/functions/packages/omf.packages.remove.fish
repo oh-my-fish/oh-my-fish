@@ -23,12 +23,13 @@ function omf.packages.remove -a pkg
     emit uninstall_$pkg
     emit {$pkg}_uninstall
 
-    if command rm -rf $path
-      omf.bundle.remove "package" $pkg
-      return 0
-    else
-      return 1
-    end
+    command rm -rf $path
+      or return 1
+  end
+
+  if set -q found
+    omf.bundle.remove "package" $pkg
+    return 0
   end
 
   for path in {$OMF_PATH,$OMF_CONFIG}/themes/$pkg
@@ -36,15 +37,17 @@ function omf.packages.remove -a pkg
       and set found;
       or continue
 
-    test $pkg = (cat $OMF_CONFIG/theme);
+    set -l current_theme (cat $OMF_CONFIG/theme 2> /dev/null)
+    test "$pkg" = "$current_theme";
       and echo default > $OMF_CONFIG/theme
 
-    if command rm -rf $path
-      omf.bundle.remove "theme" $pkg
-      return 0
-    else
-      return 1
-    end
+    command rm -rf $path
+      or return 1
+  end
+
+  if set -q found
+    omf.bundle.remove "theme" $pkg
+    return 0
   end
 
   set -q found; or return 2

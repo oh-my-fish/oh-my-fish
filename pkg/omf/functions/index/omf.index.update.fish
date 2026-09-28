@@ -32,6 +32,7 @@ function omf.index.update -d 'Update package indexes'
     set -l url $repositories[1]
     set -l branch $repositories[2]
     set -l path (omf.index.path)/$repositories[3]
+      or return 1
     set valid_paths $valid_paths $path
 
     echo -n "Updating $url $branch... "
@@ -52,7 +53,10 @@ function omf.index.update -d 'Update package indexes'
   end
 
   # Remove repositories not in the lists.
-  for path in (omf.index.path)/*
+  set -l index_path (omf.index.path)
+    or return 1
+
+  for path in $index_path/*
     if not contains -- $path $valid_paths
       command rm -rf $path
     end
