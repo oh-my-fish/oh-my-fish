@@ -12,6 +12,24 @@ function __omf.doctor.theme
   return 0
 end
 
+function __omf.doctor.terminal_font
+  if not omf.check.terminal_font
+    set -l active_theme
+    test -f "$OMF_CONFIG/theme"; and set active_theme (cat "$OMF_CONFIG/theme")
+    test -z "$active_theme"; and set active_theme "default"
+
+    echo (omf::em)"Notice: "(omf::off)"Theme "(omf::em)"$active_theme"(omf::off)" uses Powerline glyphs, but you are running in Apple Terminal."
+    echo "  Apple Terminal does not automatically substitute missing glyphs with fallback fonts."
+    echo "  If prompt icons or arrows appear as question marks ('?') or rectangles:"
+    echo "    1. Install and select a Nerd Font in Terminal Settings -> Profiles -> Font, OR"
+    echo "    2. Disable Powerline glyphs by adding to "(omf::em)"~/.config/fish/config.fish"(omf::off)":"
+    echo (omf::em)"       set -g theme_powerline_fonts no"(omf::off)
+    echo
+  end
+
+  return 0
+end
+
 function __omf.doctor.fish_version
   set -l min_version 3.0.0
   set -l current_version
@@ -54,6 +72,7 @@ function omf.doctor
   __omf.doctor.fish_version; or set -l doctor_failed
   __omf.doctor.git_version; or set -l doctor_failed
   __omf.doctor.theme; or set -l doctor_failed
+  __omf.doctor.terminal_font; or set -l doctor_failed
 
   fish "$OMF_PATH/bin/install" --check
     or set -l doctor_failed
