@@ -80,7 +80,7 @@ __write_toc $themes
 for theme in $themes
   set -l name (basename $theme)
   set -l url (grep repository $theme | string replace "repository = " "")
-  set -l raw_content (echo $url | sed -r 's#\.git$#/#i; s#https://github.com/([-.a-z0-9]+)/([-.a-z0-9]+)#https://raw.githubusercontent.com/\1/\2/master#i')
+  set -l raw_content (echo $url | sed -r 's#\.git$#/#i; s#https://github.com/([-._a-z0-9]+)/([-._a-z0-9]+)#https://raw.githubusercontent.com/\1/\2/master#i')
   set -l readme (__find_readme $raw_content)
 
   echo "# [$name]("$url")" >> $temp_theme_contents
