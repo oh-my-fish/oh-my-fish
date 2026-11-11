@@ -56,6 +56,7 @@
   <a href="#jacaetevha">jacaetevha</a><br/>
   <a href="#johanson">johanson</a><br/>
   <a href="#kawasaki">kawasaki</a><br/>
+  <a href="#keep_the_fish_alive">keep_the_fish_alive</a><br/>
   <a href="#kovial">kovial</a><br/>
   <a href="#krisleech">krisleech</a><br/>
   <a href="#l">l</a><br/>
@@ -67,8 +68,8 @@
   <a href="#mint">mint</a><br/>
   <a href="#mish">mish</a><br/>
   <a href="#mokou">mokou</a><br/>
-  <a href="#mtahmed">mtahmed</a><br/>
 </td><td>
+  <a href="#mtahmed">mtahmed</a><br/>
   <a href="#nai">nai</a><br/>
   <a href="#neel">neel</a><br/>
   <a href="#nelsonjchen">nelsonjchen</a><br/>
@@ -83,8 +84,8 @@
   <a href="#pure">pure</a><br/>
   <a href="#puritan">puritan</a><br/>
   <a href="#pygmalion">pygmalion</a><br/>
-  <a href="#random">random</a><br/>
 </td><td>
+  <a href="#random">random</a><br/>
   <a href="#randomrussel">randomrussel</a><br/>
   <a href="#red-snapper">red-snapper</a><br/>
   <a href="#rider">rider</a><br/>
@@ -99,8 +100,8 @@
   <a href="#slavic-cat">slavic-cat</a><br/>
   <a href="#solarfish">solarfish</a><br/>
   <a href="#sushi">sushi</a><br/>
-  <a href="#syl20bnr">syl20bnr</a><br/>
 </td><td>
+  <a href="#syl20bnr">syl20bnr</a><br/>
   <a href="#taktoa">taktoa</a><br/>
   <a href="#technopagan">technopagan</a><br/>
   <a href="#toaster">toaster</a><br/>
@@ -115,7 +116,6 @@
   <a href="#zeit">zeit</a><br/>
   <a href="#zephyr">zephyr</a><br/>
   <a href="#zish">zish</a><br/>
-  <br/>
 </td></tr></table>
 </details>
 
@@ -1391,6 +1391,14 @@ Cloud + DevOps — `aws:<profile>@<region>` / `k8s:<ctx>/<ns>` / `tf:<workspace>
 
 ![cloud + devops](https://raw.githubusercontent.com/miniex/fish-theme-damin/master/assets/preview-2.gif)
 
+Palette switching — 19 flavors, live via `damin_set_palette`, preview-before-apply with `damin_palette_preview`:
+
+![palette switching](https://raw.githubusercontent.com/miniex/fish-theme-damin/master/assets/preview-3.gif)
+
+Beyond git — Jujutsu (`jj`), Mercurial (`hg`), and Fossil all render in the same prompt:
+
+![non-git VCS](https://raw.githubusercontent.com/miniex/fish-theme-damin/master/assets/preview-4.gif)
+
 #### Install
 
 Requires **fish ≥ 3.7** (for the `path mtime` builtin).
@@ -1408,20 +1416,15 @@ omf install damin
 omf theme damin
 ```
 
-**Local hacking — Fisher**
+#### What you get
 
-```fish
-git clone https://github.com/miniex/fish-theme-damin.git
-fisher install (pwd)/fish-theme-damin
-```
+- **Fast & fresh** — git counts computed inline so they reflect on the prompt they change; ~0.5 ms theme overhead, in-memory PWD memos, async fallback in huge repos (~3 KB subshell), opt-out `-uno` for monorepos
+- **git / jj / hg / fossil** — counts, op state, worktree, opt-in `#N` GitHub PR badge, branch issue-key auto-link
+- **Context** — `ssh` / `root` / `dkr` / `tmux` / `wsl` / `k8s` / opt-in `aws` / `gcp` / `az`. Pure-fish, no CLI forks
+- **19 palettes**, live switch + preview without applying. OSC 7 / 8 / 133 shell integration. Custom segment hooks
+- **70+ toggles**, configurable right-prompt order, ASCII fallback + optional Nerd Font preset, dumb-terminal auto-minimal
 
-**Local hacking — Oh My Fish**
-
-```fish
-git clone https://github.com/miniex/fish-theme-damin.git
-ln -sfn (pwd)/fish-theme-damin ~/.local/share/omf/themes/damin
-omf theme damin
-```
+Full feature reference + every command + every toggle: **[docs/USAGE.md](docs/USAGE.md)**. Internals (cache layers, async IPC, palette plumbing): **[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)**.
 
 #### Update
 
@@ -1434,41 +1437,7 @@ fisher update miniex/fish-theme-damin
 **Oh My Fish**
 
 ```fish
-omf update damin   # just this theme
-omf update         # framework + all packages
-```
-
-#### Highlights
-
-- **Fast** — ~0.5 ms/prompt. In-memory PWD memos on lang/git/cwd skip disk i/o after the first prompt. Async refresh forks a ~3 KB core. Cloud/devops/battery/jj autoload only when enabled. `-uno` opt-out for monorepos
-- **git / jj** — counts (`X2 ?2 ✗3 ✓1 ⇡N`), op state, `wt:<name>`, unmerged-first, opt-in `#N` GitHub PR
-- **Context** — `ssh` / `root` / `dkr` / `ctr` / `k8s:<ctx>/<ns>`, opt-in `aws` / `gcp` / `az`. Pure-fish, no CLI forks
-- **Lang + env** — 10 langs via pin files first. `(.venv)` / `(conda)` / `(direnv:<dir>)` / `(nix:<devshell>)`
-- **Terraform / Pulumi** — opt-in `tf:<workspace>` / `pulumi:<stack>`
-- **Terminal-native** — OSC 7 + OSC 133, opt-in OSC 9 + `notify-send` long-command alert
-- **9 palettes** — Catppuccin x4 + gruvbox / tokyonight / rosepine / nord / dracula. Live switch via `damin_set_palette`
-- **Transient prompt**, **vi-mode badge**, **ASCII fallback**, **TRAMP / dumb auto-minimal**
-- **Customizable** — 35+ `theme_damin_*` toggles, `damin_segment_<name>` hooks
-
-#### Commands
-
-| Command                | Purpose                                                                |
-|------------------------|------------------------------------------------------------------------|
-| `damin_config`         | Interactive setup wizard                                               |
-| `damin_help`           | List every toggle, current value, default                              |
-| `damin_doctor`         | Environment + install diagnostic                                       |
-| `damin_profile`        | Per-segment ms/render timer (means)                                    |
-| `damin_bench`          | Per-segment P50/P95/P99 distribution                                   |
-| `damin_set_palette`    | Switch palette                                                         |
-| `damin_install_themes` | Write `.theme` files into `~/.config/fish/themes/`                     |
-| `damin_reset_cache`    | Wipe on-disk cache                                                     |
-
-#### Configuration
-
-Every option is a `theme_damin_*` universal variable. `damin_help` lists them all; full reference + palette + cache details in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
-
-```fish
-set -U theme_damin_show_jobs 0
+omf update damin
 ```
 
 #### Troubleshooting
@@ -1493,7 +1462,7 @@ omf install damin; and omf theme damin
 exec fish
 ```
 
-Run `damin_doctor` if anything looks off. `Conflicting prompt setting` after reinstall = stale symlink (`hooks/install.fish` handles this; on older installs, `rm ~/.config/fish/functions/fish_prompt.fish; omf theme damin`).
+Run `damin_doctor` (or `damin_doctor --fix` to auto-resolve safe items) if anything looks off.
 
 #### Companion repos
 
@@ -1508,14 +1477,14 @@ PRs welcome. Run `./tools/format.sh`, `./tools/lint.sh`, `./tools/test.sh`. Hot-
 
 #### Changelog
 
-See [CHANGELOG.md](CHANGELOG.md). Current version: **1.2.0**.
+See [CHANGELOG.md](CHANGELOG.md). Current version: **1.3.0**.
 
 #### License
 
 [MIT](LICENSE) © 2026 Han Damin. Bundled palette hex values are MIT-licensed third-party color schemes (Catppuccin, Gruvbox, Tokyo Night, Rosé Pine, Nord, Dracula) — see [`LICENSES/`](LICENSES/).
 
 [THEMES-NAMESPACE-damin-fisher]: https://github.com/jorgebucaran/fisher
-[THEMES-NAMESPACE-damin-omf]:    https://github.com/oh-my-fish/oh-my-fish
+[THEMES-NAMESPACE-damin-omf]: https://github.com/oh-my-fish/oh-my-fish
 
 
 # [dangerous](https://github.com/oh-my-fish/theme-dangerous)
@@ -2016,61 +1985,54 @@ Check out [Anonymous Pro](http://www.marksimonson.com/fonts/view/anonymous-pro).
 
 
 # [eden](https://github.com/amio/fish-theme-eden)
-<img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="144px" height="144px"/>
+### Eden
 
-###### eden
-> A theme for [fishshell][fish-link].
-
-[![MIT License][license-badge]](/LICENSE)
-[![Fish Shell Version][fish-badge]](http://fishshell.com)
-[![Oh My Fish Framework][omf-badge]][omf-link]
-
-<br/>
+A theme for [Fish](https://fishshell.com) with Git status and a right-aligned summary of the last command.
 
 #### Install
 
-Using [Oh My Fish][omf-link]:
-```shell
-$ omf install eden
+With [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish):
 
-### to uninstall :/
-$ omf uninstall eden
+```fish
+omf install eden
 ```
 
-Using [Fisherman][fisher-link]:
-```shell
-$ fisher https://github.com/amio/fish-theme-eden
+Remove it with `omf remove eden`.
 
-### to uninstall :/
-$ fisher rm theme-eden
+With [Fisher](https://github.com/jorgebucaran/fisher):
+
+```fish
+fisher install amio/fish-theme-eden
 ```
+
+Remove it with `fisher remove amio/fish-theme-eden`.
 
 #### Features
 
-* Last command's **timestamp**, **duration**, and **exit status**(if not zero) on right.
-* `eden_toggle_path` display long or short pwd.
-* `eden_toggle_host` show or hide host & user.
-* `eden_prompt_char` custom prompt char.
-* `eden_toggle_ssh_tag` show or hide `-SSH-` tag.
-* A blue (red for root user) `-SSH-` tag on ssh connection.
+- After each command, a line above the next prompt shows its completion time, duration, and nonzero exit status on the right.
+- The left prompt starts on a new line directly below the command summary, or after a blank line when there is no summary. It shows the current directory and Git branch, with diff statistics for uncommitted changes.
+- Linked Git worktrees use braces, for example `{feature}`, while the main checkout uses brackets, for example `[feature]`. A detached HEAD shows `detached@` followed by the short commit ID, for example `{detached@abc1234}` in a linked worktree or `[detached@abc1234]` in the main checkout. Clean Git labels are green; uncommitted changes turn them red and append statistics such as `+88-25`, with additions in green and deletions in red. Line counts show the net diff against HEAD for tracked files, including staged new files. Untracked files appear separately as a yellow count such as `u12`; their contents are not read. Changes without tracked text line differences, such as binary, empty, or untracked-only changes, show `+0-0`.
+- `eden_toggle_path` switches between an abbreviated path with the last two directories shown in full and the current directory alone.
+- `eden_toggle_diff_stats` shows or hides Git diff statistics. Hiding them restores the red `×` dirty marker, for example `[feature]×`.
+- `eden_toggle_host` shows or hides the host and user.
+- `eden_prompt_char` sets a custom prompt character; run it without an argument to restore `»`.
+- `eden_toggle_ssh_tag` shows or hides the `-SSH-` tag on SSH connections. The tag is red for root and blue otherwise.
+
+Toggle settings persist across fish sessions as universal variables. A global variable set in `config.fish` overrides the corresponding toggle setting.
+
+Diff statistics use Myers and copy detection (`git diff --diff-algorithm=myers --find-copies HEAD`), matching Tig's default diff settings. This can differ from plain `git diff` when `diff.algorithm` is configured or files are copied. Tig shows staged and unstaged changes separately; Eden shows their net effect. Untracked files make the branch dirty and are counted by path without reading their contents or running their clean/LFS filters. Use `git add` to include a new file in line statistics. External diff helpers and text conversion are disabled.
 
 #### Screenshot
 
-![Fish Shell theme Eden screenshot](https://github.com/amio/fish-theme-eden/assets/215282/fd437f9b-acfe-473b-b6e6-fa28f92ff7c1)
+![Fish Shell theme Eden screenshot](https://raw.githubusercontent.com/amio/fish-theme-eden/master/screenshot.png)
 
-### License
+#### Development
 
-[MIT][mit] © [Amio][THEMES-NAMESPACE-eden-author]
+Run `fish --no-config tests/smoke.fish` to check prompt formatting and Git status detection.
 
+#### License
 
-[THEMES-NAMESPACE-eden-mit]:            http://opensource.org/licenses/MIT
-[THEMES-NAMESPACE-eden-author]:         http://github.com/amio
-[fish-link]:      http://fishshell.com/
-[omf-link]:       https://github.com/oh-my-fish/oh-my-fish
-[fisher-link]:    https://github.com/fisherman/fisherman
-[omf-badge]:      https://flat.badgen.net/badge/Oh%20My%20Fish/Framework
-[fish-badge]:     https://flat.badgen.net/badge/fish/v2.2.0
-[license-badge]:  https://flat.badgen.net/badge/license/MIT
+[MIT](LICENSE) © [Amio](https://github.com/amio)
 
 
 # [emoji-powerline](https://github.com/wyqydsyq/emoji-powerline)
@@ -2952,6 +2914,59 @@ Copyright (c) 2016 Beau Hastings
 [THEMES-NAMESPACE-kawasaki-screenshot]: https://cloud.githubusercontent.com/assets/195790/20061473/9545bd4c-a4c5-11e6-83da-8b0a954b8a5a.gif
 [THEMES-NAMESPACE-kawasaki-bira]:       https://github.com/oh-my-fish/theme-bira
 [THEMES-NAMESPACE-kawasaki-dotfiles]:   https://github.com/oh-my-fish/oh-my-fish#dotfiles
+
+
+# [keep_the_fish_alive](https://github.com/NCMBianchi/keep_the_fish_alive)
+### 'Keep The Fish Alive' custom theme for OhMyFish
+[![CI](https://github.com/NCMBianchi/keep_the_fish_alive/actions/workflows/ci.yml/badge.svg)](https://github.com/NCMBianchi/keep_the_fish_alive/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/NCMBianchi/keep_the_fish_alive)](https://github.com/NCMBianchi/keep_the_fish_alive/releases)
+[![fish](https://img.shields.io/badge/fish-%E2%89%A5%203.3-blue)](https://fishshell.com)
+[![omf](https://img.shields.io/badge/omf-v7%20%7C%20v8-blue)](https://github.com/oh-my-fish/oh-my-fish)
+[![omf listing](https://img.shields.io/badge/omf%20listing-listed-green)](https://github.com/oh-my-fish/packages-main/blob/master/packages/keep_the_fish_alive)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](https://github.com/NCMBianchi/keep_the_fish_alive/blob/main/LICENSE.txt)
+
+My own take on the default [OhMyFish theme](https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md): it turns `⋊> ~` into `⋊≡°> ~`. Moreover, it turns into `⋊≡⁎> ~` after an error -mimicking a dead fish- and it adds standardised information on project directories (<i>i.e.</i> git, node.js and bun) and virtual environments (<i>i.e.</i> Python venv, conda env).
+
+![omf_theme-3](https://raw.githubusercontent.com/NCMBianchi/keep_the_fish_alive/master/figures/omf_theme-3.jpg)
+
+This theme was optimised for the [Ghostty](https://ghostty.org) terminal emulator, with the 'Afterglow' color theme.
+
+#### Requirements
+The [fish](https://fishshell.com) shell and [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish) (omf):
+
+| | fish | omf |
+|---|---|---|
+| macOS | `brew install fish` ([homebrew](https://brew.sh)) | `curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install \| fish` |
+| Arch Linux | `sudo pacman -S fish` | `curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install \| fish` (or the AUR package `oh-my-fish`) |
+
+#### Installation (MacOS, Linux)
+The theme is listed in the [official omf package repository](https://github.com/oh-my-fish/packages-main):
+
+```fish
+omf install keep_the_fish_alive
+```
+
+`omf install` also switches to the theme; to switch back to it later, `omf theme keep_the_fish_alive`. To update: `omf update keep_the_fish_alive`.
+
+> Use the name, not the URL: for URLs (`omf install https://github.com/...`), omf only recognises a theme if `fish_prompt.fish` is at the repository root, otherwise it installs it as a plugin.
+
+Alternatively, clone the repository directly into omf's themes directory: `~/.local/share/omf/themes/` (more precisely `$OMF_PATH/themes/`, which differs only if `$XDG_DATA_HOME` or `$OMF_PATH` were changed), and update it with `git -C $OMF_PATH/themes/keep_the_fish_alive pull`:
+
+```fish
+git clone https://github.com/NCMBianchi/keep_the_fish_alive.git $OMF_PATH/themes/keep_the_fish_alive
+omf theme keep_the_fish_alive
+```
+
+#### Tests
+Tests use [fishtape](https://github.com/jorgebucaran/fishtape) 3.x (`fisher install jorgebucaran/fishtape`) and need fish 3.3 or later:
+```fish
+fishtape tests/*.test.fish
+```
+
+CI also runs the tests on the oldest supported fish versions (Ubuntu 22.04 and 24.04 packages), checks the exit code with a real conda installation (`tests/conda_check.fish`), and installs the theme with omf as described above.
+
+#### License
+This project is licensed under the MIT License. Feel free to use and modify the code as per your needs.
 
 
 # [kovial](https://github.com/sokryptk/kovial)
@@ -3843,6 +3858,7 @@ Fully **customizable** (colors, symbols and features):
 * [Transient prompt mode simplifies previous prompts 🏴][transient-prompt] ;
 * [Show number of running jobs 🏴][THEMES-NAMESPACE-pure-jobs] ;
 * [Prefix when `root` 🏴🛠][working-as-root] ;
+* [Prefix in private mode 🏴🛠][working-in-private-mode] ;
 * [Display `git` branch name 🏴🛠][THEMES-NAMESPACE-pure-git] ;
   
     * Display `*` when `git` repository is _dirty_ ;
@@ -4456,14 +4472,9 @@ Once Oh My Fish is installed:
 # [solarfish](https://github.com/thesilican/theme-solarfish)
 ### solarfish
 
-[![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg)](/LICENSE)
-[![Fish Shell Version](https://img.shields.io/badge/fish-v3.6.4-007EC7.svg)](https://fishshell.com)
-
 A git-aware two-line [fish shell](https://fishshell.com) theme. Inspired by [simple-ass-prompt](https://github.com/lfiolhais/theme-simple-ass-prompt) and the default bash prompt.
 
-<p align="center">
-<img src="https://i.imgur.com/Ij2DTOh.png" alt="shell theme screenshot">
-</p>
+![Screenshot of solarfish theme](https://raw.githubusercontent.com/thesilican/theme-solarfish/master/./docs/screenshot.png)
 
 #### Features
 
@@ -4477,26 +4488,18 @@ A git-aware two-line [fish shell](https://fishshell.com) theme. Inspired by [sim
 
 Using [fisher](https://github.com/jorgebucaran/fisher):
 
-```
+```sh
 fisher install thesilican/solarfish
 ```
 
-Using [oh my fish](https://www.github.com/oh-my-fish/oh-my-fish):
-
-```
-omf install solarfish
-```
 
 #### Configuration
 
-Add any of the following lines to `~/.config/fish/config.fish`
+Add configuration changes to your `~/.config/fish/config.fish` file.
 
-```bash
-### Display a shortened directory path
-set -g theme_short_path yes
-
+```sh
 ### Disable the git indicator
-set -g theme_no_git_indicator yes
+set -g theme_no_git yes
 ```
 
 
